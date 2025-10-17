@@ -1,1 +1,23 @@
-/ClasesJavaSwing/target/
+# Directorios de compilación y build
+**/target/
+**/build/
+**/out/
+**/.gradle/
+**/.idea/
+
+# Archivos de configuración local
+**/local.properties
+
+# Archivos temporales y logs
+**/*.log
+**/tmp/
+**/temp/
+
+# Archivos de IDE
+**/.vscode/
+**/.eclipse/
+**/*.iml
+
+# Archivos de sistema
+**/.DS_Store
+**/Thumbs.db
