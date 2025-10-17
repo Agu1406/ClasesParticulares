@@ -11,9 +11,9 @@ public class Practica1 {
         int opcionMenu = 0;
         boolean mostrarMenu = true, entradaValida = false;
         // Variables relacionadas con las figuras geometricas.
-        int baseRectangulo, alturaRectangulo;
-        int baseTriangulo, alturaTriangulo;
-        int ladoRombo;
+        int baseRectangulo = 0, alturaRectangulo = 0;
+        int baseTriangulo = 0;
+        int ladoRombo = 0;
 
         while (mostrarMenu) {
 
