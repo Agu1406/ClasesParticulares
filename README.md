@@ -1,75 +1,75 @@
-# 📚 Clases Particulares - Repositorio Educativo
+# Clases Particulares - Repositorio Educativo
 
-## 🎯 Propósito del Repositorio
+## Propósito del Repositorio
 
 Este repositorio nace con el objetivo de **preservar y organizar todo el contenido teórico y práctico** que enseño a través de mi servicio de clases particulares a distancia. 
 
-### 💡 Origen de la Idea
+### Origen de la Idea
 
-La idea surgió este año (2024) después de más de un año impartiendo clases, cuando me di cuenta de que **no estaba guardando el contenido en ningún lugar** y era demasiado valioso para dejarlo perder. Cada ejercicio, práctica, proyecto y explicación representa horas de trabajo y conocimiento acumulado que merece ser preservado.
+La idea surgió este año (2025) después de más de un año impartiendo clases, cuando me di cuenta de que **no estaba guardando el contenido en ningún lugar** y era demasiado valioso para dejarlo perder. Cada ejercicio, práctica, proyecto y explicación representa horas de trabajo y conocimiento acumulado que merece ser preservado.
 
-## 📁 Estructura del Repositorio
+## Estructura del Repositorio
 
-### 🖥️ **clases-android/**
+### **clases-android/**
 - Proyectos de desarrollo móvil con Android
 - Ejercicios de Kotlin y Java para Android
 - Aplicaciones prácticas y ejemplos de código
 
-### ⚙️ **clases-cpp/**
+### **clases-cpp/**
 - Programación en C++
 - Ejercicios de estructuras de datos
 - Proyectos de gestión y algoritmos
 
-### 🌐 **clases-interfaces-web/**
+### **clases-interfaces-web/**
 - Desarrollo de interfaces web
 - HTML, CSS y JavaScript
 - Proyectos frontend y diseño web
 
-### ☕ **clases-java/**
+### **clases-java/**
 - Programación en Java
 - Ejercicios de POO (Programación Orientada a Objetos)
 - Proyectos con JavaFX y Swing
 - Aplicaciones de gestión y bases de datos
 
-### 🎨 **clases-java-swing/**
+### **clases-java-swing/**
 - Interfaces gráficas con Java Swing
 - Aplicaciones de escritorio
 - Proyectos con Maven
 
-### 🐘 **clases-php/**
+### **clases-php/**
 - Desarrollo web con PHP
 - Gestión de bases de datos
 - Proyectos web dinámicos
 - Ejercicios de formularios y validación
 
-## 🎓 Contenido Educativo
+## Contenido Educativo
 
 ### Tipos de Material Incluido:
-- ✅ **Ejercicios prácticos** con soluciones completas
-- ✅ **Proyectos de ejemplo** paso a paso
-- ✅ **Documentación técnica** y guías
-- ✅ **Código fuente comentado** y explicado
-- ✅ **Enunciados de prácticas** y exámenes
-- ✅ **Ejemplos de buenas prácticas** de programación
+- **Ejercicios prácticos** con soluciones completas
+- **Proyectos de ejemplo** paso a paso
+- **Documentación técnica** y guías
+- **Código fuente comentado** y explicado
+- **Enunciados de prácticas** y exámenes
+- **Ejemplos de buenas prácticas** de programación
 
-### Niveles de Dificultad:
-- 🟢 **Básico**: Conceptos fundamentales y primeros pasos
-- 🟡 **Intermedio**: Aplicaciones prácticas y proyectos
-- 🔴 **Avanzado**: Optimización y técnicas avanzadas
 
-## 🚀 Tecnologías y Lenguajes
+## Tecnologías y Lenguajes
 
-| Lenguaje | Uso Principal | Nivel |
-|----------|---------------|-------|
-| **Java** | POO, Swing, JavaFX, JDBC | Intermedio-Avanzado |
-| **PHP** | Desarrollo web, formularios, BD | Básico-Intermedio |
-| **C++** | Algoritmos, estructuras de datos | Intermedio |
-| **Kotlin** | Desarrollo Android | Básico-Intermedio |
-| **HTML/CSS/JS** | Interfaces web | Básico-Intermedio |
+| Lenguaje | Uso Principal |
+|----------|---------------|
+| **Java** | POO, Swing, JavaFX, JDBC |
+| **PHP** | Desarrollo web, formularios, BD |
+| **C++** | Algoritmos, estructuras de datos |
+| **Kotlin** | Desarrollo Android |
+| **HTML/CSS/JS** | Interfaces web |
 
-## 📋 Convenciones del Proyecto
+Espero agregar más proximamente, si hubiese guardado todo lo que
+he enseñado el año anterior tendría docenas de archivos, teoría
+y practica para ofrecer.
 
-### 📝 Commits
+## Convenciones del Proyecto
+
+### Commits
 Seguimos la convención de **Conventional Commits** para mantener un historial claro:
 - `feat`: Nuevas funcionalidades
 - `fix`: Corrección de errores
@@ -77,12 +77,14 @@ Seguimos la convención de **Conventional Commits** para mantener un historial c
 - `style`: Formato y estilo
 - `refactor`: Refactorización
 
-### 🗂️ Organización
+Exista un documento dentro del directorio principal con una guía de commits para juniors (como yo) si deseas verla.
+
+### Organización
 - **Por comunidad autónoma** → **Ciudad** → **Centro educativo**
 - **Por módulo** → **Unidad** → **Ejercicio**
 - **Código fuente** separado de **documentación**
 
-## 🎯 Objetivos
+## Objetivos
 
 1. **Preservar el conocimiento** generado durante las clases
 2. **Facilitar el aprendizaje** con ejemplos prácticos
@@ -90,19 +92,17 @@ Seguimos la convención de **Conventional Commits** para mantener un historial c
 4. **Documentar el progreso** educativo de los estudiantes
 5. **Compartir buenas prácticas** de programación
 
-## 🤝 Contribuciones
+## Contribuciones
 
 Este repositorio es principalmente personal, pero está abierto a:
 - **Sugerencias de mejora** en los ejercicios
 - **Correcciones** de errores encontrados
 - **Nuevos ejemplos** que complementen el contenido
 
-## 📞 Contacto
+## Contacto
 
 Para consultas sobre el contenido educativo o clases particulares, puedes contactarme a través de los canales habituales.
 
 ---
 
-*"La educación es el arma más poderosa que puedes usar para cambiar el mundo"* - Nelson Mandela
-
-**Última actualización**: Diciembre 2024
+*"La educación es la base de la libertad y el progreso de los pueblos"* - Simón Bolívar
