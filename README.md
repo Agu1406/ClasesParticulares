@@ -31,10 +31,11 @@ La idea surgió este año (2025) después de más de un año impartiendo clases,
 - Proyectos con JavaFX y Swing
 - Aplicaciones de gestión y bases de datos
 
-### **clases-java-swing/**
-- Interfaces gráficas con Java Swing
+### **clases-javafx-gradle/**
+- Interfaces gráficas con JavaFX
 - Aplicaciones de escritorio
-- Proyectos con Maven
+- Aplicaciones moviles.
+- Proyectos con Gradle.
 
 ### **clases-php/**
 - Desarrollo web con PHP
