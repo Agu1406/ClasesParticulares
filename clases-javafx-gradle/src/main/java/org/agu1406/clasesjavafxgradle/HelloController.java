@@ -1,14 +1,28 @@
 package org.agu1406.clasesjavafxgradle;
 
+import javafx.fxml.FXMLLoader;
 import javafx.fxml.FXML;
-import javafx.scene.control.Label;
+import javafx.scene.Scene;
+import javafx.stage.Stage;
+import java.io.IOException;
 
 public class HelloController {
-    @FXML
-    private Label welcomeText;
-
+    
     @FXML
     protected void onHelloButtonClick() {
-        welcomeText.setText("Welcome to JavaFX Application!");
+        try {
+            // Cargar el FXML del formulario
+            FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("secundary-view.fxml"));
+            Scene scene = new Scene(fxmlLoader.load());
+            
+            // Crear una nueva ventana (Stage)
+            Stage secondaryStage = new Stage();
+            secondaryStage.setTitle("Formulario");
+            secondaryStage.setScene(scene);
+            secondaryStage.show();
+            
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
     }
 }
