@@ -4,6 +4,7 @@
 **/out/
 **/.gradle/
 **/.idea/
+**/lib/
 
 # Archivos de configuración local
 **/local.properties
@@ -21,3 +22,10 @@
 # Archivos de sistema
 **/.DS_Store
 **/Thumbs.db
+
+# Otros
+**/*.zip
+**/*.jmod
+**/*.jar
+**/*.properties
+**/*.gradle
