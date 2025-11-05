@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Respuestas ejercicio 1</title>
+  </head>
+
+  <body>
+    <h1>Autor/a: RAFAEL MORONES BURGOS - Ejercicio 1 - Tarea 2</h1>
+
+    <h1>Respuesta Ejercicio 1 Pregunta 1</h1>
+    <p>
+      <strong> 1º- Modelo relacional: </strong> La información se organiza en
+      entidades las cuales se representan mediante tablas.
+    </p>
+    <p>
+      Cada tabla se relaciona con las demás a través de su clave primaria y
+      foráena. En nuestro caso las peliculas se organizan por filas. Cada fila
+      contiene un grupo de datos al que llamamos registro y que representa una
+      película concreta.
+    </p>
+    <p>
+      Cada columna de la tabla representa a su vez un atributo de la película
+      (año, director, género, duración, argumento).
+      <strong> Ejemplo de SGBD es MySQL</strong>
+    </p>
+    <p>
+      <strong> 2º- Modelo no relacional: </strong>No sigue el modelo tradicional
+      relacional de filas y columnas. Su estructura es mucho más flexible y está
+      pensando para almacenar grandes volúmnes de datos con estructuras muy
+      variables.
+    </p>
+    <p>
+      Están pensados para almacenar una variedad de datos en forma de documentos
+      (JSON), como un diccionario usando pares clave-valor o datos por columnas
+      en vez de por filas
+    </p>
+    <p>
+      En nuestro caso, cada película está recogida en vez de en tablas dividas
+      por filas y columnas, en un único documento donde cada clave seria:
+      duracion, genero, director y el valor el dato correspondiente
+    </p>
+    <p>
+      Aunque pueden usarlo, su legunje de consulta principal no es SQL, sino
+      otros más personalizados
+      <strong> Ejemplo de SGBD es MongoDB</strong>
+
+      <p>
+      <strong> 3º- Modelo oriendato a objetos: </strong> Al igual que ocurre en la programación orientada a objetos, la información se organiza en objetos que contiene tanto atributos como métodos. 
+    </p>
+    <p>
+      Es ideal cuando estamos usandos lenguajes de POO como java. Permite almacenar estructuras de datos complejas como videos o gráficos. 
+    </p>
+    <p>
+     En nuestro caso cada película podría ser un objeto con los atributos: director, año, duración, género. 
+     Y si quisiéramos también podriamos crear un objeto llamado actores que se relacione con las películas a través de un ArrayList
+      <strong> Ejemplo de SGBD es db4o</strong>
+    </p>
+    </p>
+
+    <h1>Respuesta Ejercicio 1 Pregunta 2</h1>
+    <p>Para el caso concreto de las películas el SGBD elegido sería el  <strong>entidad-relacional </strong> por varias razones</p>
+    <p>
+        1. Es el sistema de base de datos más extendido de la web con desarrollo PHP </br>
+        2. Tiene una gran facilidad de uso y un alto rendimiento</br>
+        3. Se adapta perfectamente a una estructura de datos no compleja como es nuestro caso </br>
+        4. Cuenta con librerias fuertes como PDO y MySQLi que permite la conexión segura</br>
+        5. Permite realizar consultas complejas con SQL y establecer relaciones entre las películas </br>
+        6. Amplia comunidad, documentación y escalable.
+    </p>
+
+    <p>No usamos NoSQL porque nuestra base de datos de películas tiene una estructura simple<br>
+       Y no usamos BD orientadas a objetos porque son menos comunes en PHP y porque no aporta mejora para nuestra base de datos relacional simple y estructurada
+    </p>
+
+    <h1>Respuesta Ejercicio 1 Pregunta 3</h1>
+    <p>Tanto MySQL como MariaDB son <strong>sistemas de base de datos relacionales</strong> <br> <br>
+    1.En ambos casos los datos se organiza en  tablas relacionadas <br>
+    2. Cada tabla representa una entidad y se organiza por fila y columna <br>
+    3. Cada fila representa un registro único y cada columna un atributo de dicho registro<br> 
+    4. En ambas SGBD usan el lenguaje SQL para manipular los datos (CRUD) <br>
+    5. Y finalmente igualmente las tablas se relacionan por sus claves primarias y foráneas. <br>
+    </p>
+
+    <p> Tanto MySQL como MariaDB permite realizar consultas complejas, realizar transacciones y mantiene la integridad</p>
+
+    <h1>Respuesta Ejercicio 1 Pregunta 4</h1>
+    <p>Existe dos formas de acceder a MariaDB y MySQL</p>
+
+    <p><strong>MySQLi (MySQL Improved):</strong> Extensión de PHP diseñada para interactuar con bases de datos MySQL y MariaDb. Se caracteriza por:
+    1.Uso de una intefaz gráfica mejorada en comparación con la antigua extensión MySQL </br>
+    2.Soporta tanto tanto el enfoque procedural como el orientado a objetos</br>
+    3.Permite realizar conexiones, ejectura consultar y gestionar los resultados</br>
+    4.Es mucho más segura al permitir el uso de declariones preparadas 
+    </p>
+
+    <p><strong>PDO (PHP Data Objects): </strong> Extensión de PHP diseñada para interactuar con bases a través de una interfaz unificada. Se caracteriza por:
+    1.Permite trabajar, además de  MariaDB y MySQL con una gran cantidad de bases de datos como: ostgreSQL, SQLite, SQL Server, Oracle Database, entre otras. </br>
+    2.Su interfaz unificada le permite cambiar facilmente entre los distintos SGBD</br>
+    3.Permite el manejo de excepciones facilitando la gestión y depuración de errores. </br>
+    4.Es adecuado para aquellos proyectos que necesiten cambiar de base de datos o busquen un punto de vista más profesional.
+    </p>
+
+    <h1>Respuesta Ejercicio 1 Pregunta 5</h1>
+    <p><strong>1. Tipo de SBGD:</strong> <br>
+    Cassandra: No relacional, por columnas de código abierto    <br>
+    MySQL: Relacional de código abierto. 
+    <p><strong>2. Estructura de datos:</strong><br>
+
+    Cassandra: Columnas distribuidas, donde cada tabla puede tener distinto número de columnas<br>
+    MySQL: Filas y columnas con relaciones entre las tablas
+
+     <p><strong>3. Lenguaje de consulta:</strong><br>
+    Cassandra: Uno suyo propio, el CQL<br>
+    MySQL: El lenguaje estándar SQL
+
+    <p><strong>4. Integridad de datos:</strong><br>
+    Cassandra: Consistencia eventual, ACID parcial. Los datos replicados convergerán al mismo valor pero no al mismo momento instantáneo<br>
+    MySQL:ACID Atomicidad, Coherencia, Aislamiento y Durabilidad.</p>
+
+    <p><strong>5. Escalabilidad:</strong><br>
+    Cassandra: Tiene una escabilidad horizontal, añadiendo nuevos nodos al cluster.<br>
+    MySQL: La escabilidad se puede mejorar si se mejora el rendimiento del servidor</p>
+
+    <p><strong>Ventajas</strong><br>
+    Cassandra: Es muy escalable, tolerante a fallos, alta disponibilidad y manejo de un gran volumen de datos.
+    MySQL: Modelo muy conodio, soportado por un gran número de hosting, soporta relaciones complejas, transacciones completas, integridad de gran comunidad</p>
+
+    <p><strong>Desventajas</strong><br>
+    Cassandra: Resulta dificil implementar consultas que sean complejas y las relaciones entre datos.Tampoco soporta transacciones completas ACID. Al ser menos comun requiero de aprendizaje especifico y librerias propias.<br>
+    MySQL: Si el volumen es alto la escalabilidad limitada. Menos flexible si la estructura de datos cambia con frecuencia. No es adecuado para tener varias bases de datos en distintos puntos geográficos
+    </p>
+    
+
+
+
+  </body>
+</html>
