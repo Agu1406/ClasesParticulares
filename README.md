@@ -43,6 +43,12 @@ La idea surgió este año (2025) después de más de un año impartiendo clases,
 - Proyectos web dinámicos
 - Ejercicios de formularios y validación
 
+### **clases-python**
+- Desarrollo orietando a objetos.
+- Sintaxis básica y ejercicios sencillos.
+- Pequeños ejercicios teorico practico.
+- Documentación relacionada con ejercicios.
+
 ## Contenido Educativo
 
 ### Tipos de Material Incluido:
@@ -58,11 +64,12 @@ La idea surgió este año (2025) después de más de un año impartiendo clases,
 
 | Lenguaje | Uso Principal |
 |----------|---------------|
-| **Java** | POO, Swing, JavaFX, JDBC |
+| **Java** | POO, Swing, JavaFX, JDBC, Spring |
 | **PHP** | Desarrollo web, formularios, BD |
-| **C++** | Algoritmos, estructuras de datos |
+| **C++** | Algoritmos, estructuras de datos, POO |
 | **Kotlin** | Desarrollo Android |
-| **HTML/CSS/JS** | Interfaces web |
+| **HTML/CSS/JS** | Interfaces web, maquetación, figma |
+| **Python** | Desarollo web y multiplataforma |
 
 Espero agregar más proximamente, si hubiese guardado todo lo que
 he enseñado el año anterior tendría docenas de archivos, teoría
@@ -102,8 +109,11 @@ Este repositorio es principalmente personal, pero está abierto a:
 
 ## Contacto
 
-Para consultas sobre el contenido educativo o clases particulares, puedes contactarme a través de los canales habituales.
+Para consultas sobre el contenido educativo o clases particulares, puedes contactarme a través de los siguientes canales:
+- LinkedIn: https://www.linkedin.com/in/agustin6041
+- Correo: agu1406@outlook.es 
 
----
 
-*"La educación es la base de la libertad y el progreso de los pueblos"* - Simón Bolívar
+
+## Frases
+*"La educación es la base de la libertad y el progreso de los pueblos"* - **Simón Bolívar**
