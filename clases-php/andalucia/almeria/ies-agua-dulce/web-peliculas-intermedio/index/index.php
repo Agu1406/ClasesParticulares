@@ -1,9 +1,9 @@
 <?php
 //incluimos los archivos necesarios para la conexion
 //Constantes de conexión y función de conexión
-require_once "funciones/connect-db.php";
+require_once "../funciones/connect-db.php";
 //Función para obtener películas
-require_once "funciones/dao-peliculas.php";
+require_once "../funciones/dao-peliculas.php";
 
 //Creamos la conexion usando la funcion conectarDB
 $conexion = conectarDB();
@@ -72,8 +72,8 @@ if ($conexion === false) {
     <H1>Autor/a: RAFAEL MORONES BURGOS - Ejercicio 2 - Tarea 2 </H1>
     <HR>
     <a href="<?= $_SERVER['PHP_SELF'] ?>"> Resetear </a> |
-    <a href="ejercicio1.html">Ir a respuestas ejercicio 1</a> |
-    <a href="./insertar/form-insertar-pelicula.php"> Ir a formulario para insertar película </a>
+    <a href="../ejercicio1.html">Ir a respuestas ejercicio 1</a> |
+    <a href="../insertar/form-insertar-pelicula.php"> Ir a formulario para insertar película </a>
         <HR>
         <!-- filtro por años -->
         <H1>Haz clic para filtrar por año:</H1>
@@ -92,7 +92,7 @@ if ($conexion === false) {
             <?php 
             // Pasamos las variables necesarias al script incluido
             $generos = $valorGeneros; // Para compatibilidad con cargar-peliculas.php
-            include('./recuperar/cargar-peliculas.php'); 
+            include('../recuperar/cargar-peliculas.php'); 
             ?>
         <?php else: ?>
             <p>No hay datos de peliculas para mostrar.</p>
@@ -102,3 +102,4 @@ if ($conexion === false) {
 </body>
 
 </html>
+

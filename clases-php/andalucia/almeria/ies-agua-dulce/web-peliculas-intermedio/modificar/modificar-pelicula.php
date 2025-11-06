@@ -11,7 +11,7 @@
 <body>
     <H1>Autor/a: INDICAR AUTOR/A - Ejercicio 4 - Tarea 2 </H1>
     Resultado de la acción:
-    <a href="../index.php">Ir a la página principal</a><br><br>
+    <a href="../index/index.php">Ir a la página principal</a><br><br>
 </body>
 </html>
 

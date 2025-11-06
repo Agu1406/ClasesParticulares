@@ -10,7 +10,7 @@
 <body>
     <H1>Autor/a: INDICAR AUTOR/A - Ejercicio 4 - Tarea 2 </H1>
     <h1>Formulario para modificar una película </h1>
-    <a href="../index.php">Ir a la página principal</a><br><br>
+    <a href="../index/index.php">Ir a la página principal</a><br><br>
 
     <!-- Inicio formulario de modificación de la película -->    
     <form>

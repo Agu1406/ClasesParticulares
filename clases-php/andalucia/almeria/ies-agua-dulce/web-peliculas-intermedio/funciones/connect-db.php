@@ -1,7 +1,8 @@
 <?php
 
 //Incluimos el archivo donde están guardadas las constantes de la conexion
-require_once 'conf/db.php';
+// La ruta es relativa: desde funciones/ subimos un nivel (../) y entramos en conf/
+require_once '../conf/db.php';
 
 //Creamos la funcion de conexión sin parámetros
 function conectarDB()

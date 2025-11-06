@@ -50,6 +50,6 @@ $confirmar = filter_input(INPUT_POST, 'confirmar', FILTER_VALIDATE_INT);
     ?>
     
     <br>
-    <a href="../index.php">Ir a la página principal</a><br><br>
+    <a href="../index/index.php">Ir a la página principal</a><br><br>
 </body>
 </html>
