@@ -1,9 +1,4 @@
 <?php
-//Iniciamos sesión si no está iniciada (para pasar errores)
-if (session_status() === PHP_SESSION_NONE) {
-    session_start();
-}
-
 //Incluimos los archivos necesarios
 require_once "../funciones/connect-db.php";
 require_once "../funciones/dao-peliculas.php";
@@ -12,8 +7,9 @@ require_once "../funciones/dao-peliculas.php";
 $conexion = conectarDB();
 
 //Variables para errores y valores del formulario
-$errores = [];
-$valores = [
+//Estas variables pueden venir desde insertar-pelicula.php cuando hay errores
+$errores = $errores ?? [];
+$valores = $valores ?? [
     'titulo' => '',
     'genero' => '',
     'direccion' => '',
@@ -21,17 +17,6 @@ $valores = [
     'argumento' => '',
     'anio' => ''
 ];
-
-//Si hay errores pasados desde insertar-pelicula.php, los recuperamos
-if (isset($_SESSION['errores'])) {
-    $errores = $_SESSION['errores'];
-    unset($_SESSION['errores']);
-}
-
-if (isset($_SESSION['valores'])) {
-    $valores = $_SESSION['valores'];
-    unset($_SESSION['valores']);
-}
 
 //Obtenemos los géneros disponibles
 $generos = [];
@@ -83,7 +68,6 @@ if ($conexion !== false) {
                             <?= htmlspecialchars($genero['nombre']) ?>
                         </option>
                     <?php endforeach; ?>
-                    <option value="<?= bin2hex(random_bytes(5)) ?>">Valor al azar</option>
                     <option value="9999999"> GENERO NO EXISTENTE (TEST) </option>
                 </SELECT>
             </label>

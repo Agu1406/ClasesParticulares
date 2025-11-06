@@ -1,9 +1,4 @@
 <?php
-//Iniciamos sesión para pasar errores y valores al formulario
-if (session_status() === PHP_SESSION_NONE) {
-    session_start();
-}
-
 //Incluimos los archivos necesarios
 require_once "../funciones/connect-db.php";
 require_once "../funciones/dao-peliculas.php";
@@ -117,11 +112,11 @@ if ($argumento === null || $argumento === false) {
     }
 }
 
-//Si hay errores, los guardamos en sesión y redirigimos al formulario
+//Si hay errores, pasamos las variables al formulario e incluimos el formulario
 if (!empty($errores)) {
-    $_SESSION['errores'] = $errores;
-    $_SESSION['valores'] = $valoresCorrectos;
-    header('Location: form-insertar-pelicula.php');
+    //Pasamos las variables $errores y $valoresCorrectos al formulario
+    $valores = $valoresCorrectos;
+    include('form-insertar-pelicula.php');
     exit;
 }
 
@@ -129,10 +124,10 @@ if (!empty($errores)) {
 $idInsertado = insertarPelicula($conexion, $valoresCorrectos);
 
 if ($idInsertado === false) {
-    //Si falló la inserción, guardamos error y redirigimos
-    $_SESSION['errores'] = ['Error al insertar la película en la base de datos.'];
-    $_SESSION['valores'] = $valoresCorrectos;
-    header('Location: form-insertar-pelicula.php');
+    //Si falló la inserción, mostramos error en el formulario
+    $errores = ['Error al insertar la película en la base de datos.'];
+    $valores = $valoresCorrectos;
+    include('form-insertar-pelicula.php');
     exit;
 }
 ?>
