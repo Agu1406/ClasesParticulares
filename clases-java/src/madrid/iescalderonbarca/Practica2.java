@@ -5,7 +5,7 @@ import java.util.Scanner;
 /*
  *author Alvaro Medina
  */
-public class JuegoPalabras {
+public class Practica2 {
     public static void main(String[] args) {
         // Scanner para introducir datos desde el teclado.
         Scanner teclado = new Scanner(System.in);
