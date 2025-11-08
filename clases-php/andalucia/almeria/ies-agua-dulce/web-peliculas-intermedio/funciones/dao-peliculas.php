@@ -181,3 +181,52 @@ function obtenerPeliculaPorId(PDO $pdo, $id)
     //Retornamos el array asociativo con los datos de la película o false
     return $resultado;
 }
+
+/*
+FUNCION PARA ACTUALIZAR UNA PELICULA
+Recibe por parámetro la instancia de PDO con una conexión válida a la base de datos.
+Recibe por parámetro el id de la película a modificar.
+Recibe por parámetro un array con los datos de la película.
+Retorna el número de registros modificados si se ha modificado correctamente, o false en caso contrario.
+*/
+function actualizarPelicula(PDO $pdo, $id, array $datos)
+{
+    $resultado = false;
+    try {
+        //Creamos el query del UPDATE
+        $sql = "UPDATE peliculas 
+                SET titulo = :titulo, genero = :genero, direccion = :direccion, 
+                    duracion = :duracion, argumento = :argumento, anio = :anio 
+                WHERE id = :id";
+
+        //Preparamos la consulta        
+        $stmt = $pdo->prepare($sql);
+
+        //Vinculamos parámetros    
+        $stmt->bindParam(':id', $id, PDO::PARAM_INT);
+        $stmt->bindParam(':titulo', $datos['titulo'], PDO::PARAM_STR);
+        $stmt->bindParam(':genero', $datos['genero'], PDO::PARAM_INT);
+        $stmt->bindParam(':direccion', $datos['direccion'], PDO::PARAM_STR);
+        $stmt->bindParam(':duracion', $datos['duracion'], PDO::PARAM_INT);
+        $stmt->bindParam(':argumento', $datos['argumento'], PDO::PARAM_STR);
+        $stmt->bindParam(':anio', $datos['anio'], PDO::PARAM_INT);
+
+        //Ejecutamos la consulta
+        if ($stmt->execute()) {
+            //Usamos rowCount para verificar cuántas filas se han modificado
+            $filasModificadas = $stmt->rowCount();
+            if ($filasModificadas > 0) {
+                //Si se modificó al menos una fila, retornamos el número de filas modificadas
+                $resultado = $filasModificadas;
+            } else {
+                //Si no se modificó ninguna fila (el id no existe), retornamos false
+                $resultado = false;
+            }
+        }
+    } catch (PDOException $e) {
+        $resultado = false;
+    }
+
+    //Retornamos el número de filas modificadas o false en caso de error
+    return $resultado;
+}

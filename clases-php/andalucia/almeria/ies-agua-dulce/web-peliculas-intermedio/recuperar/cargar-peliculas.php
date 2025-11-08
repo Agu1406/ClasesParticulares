@@ -30,6 +30,10 @@
                 <td><?= htmlspecialchars($pelicula['argumento']) ?></td>
                 <td><?= htmlspecialchars($pelicula['anio']) ?></td>
                 <td>
+                    <form method="post" action="../modificar/form-modificar-pelicula.php" style="display: inline;">
+                        <input type="hidden" name="id" value="<?= htmlspecialchars($pelicula['id']) ?>">
+                        <input type="submit" value="Modificar">
+                    </form>
                     <form method="post" action="../eliminar/confirma-eliminar-pelicula.php" style="display: inline;">
                         <input type="hidden" name="id" value="<?= htmlspecialchars($pelicula['id']) ?>">
                         <input type="submit" value="Eliminar">
