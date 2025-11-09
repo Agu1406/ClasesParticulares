@@ -23,6 +23,10 @@
 **/.DS_Store
 **/Thumbs.db
 
+# Imagenes 
+**/*.png
+**/*.jpg
+
 # Otros
 **/*.zip
 **/*.jmod

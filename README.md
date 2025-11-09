@@ -49,6 +49,12 @@ La idea surgió este año (2025) después de más de un año impartiendo clases,
 - Pequeños ejercicios teorico practico.
 - Documentación relacionada con ejercicios.
 
+### **clases-react-native/**
+- Desarrollo de aplicaciones móviles multiplataforma
+- React Native con Expo
+- Proyectos de interfaces móviles
+- Ejercicios y simulacros de examen
+
 ## Contenido Educativo
 
 ### Tipos de Material Incluido:
@@ -70,6 +76,8 @@ La idea surgió este año (2025) después de más de un año impartiendo clases,
 | **Kotlin** | Desarrollo Android |
 | **HTML/CSS/JS** | Interfaces web, maquetación, figma |
 | **Python** | Desarollo web y multiplataforma |
+| **C** | Desarrollo multiplataforma y POO |
+| **React Native** | Desarrollo multiplataforma Android & IOS |
 
 Espero agregar más proximamente, si hubiese guardado todo lo que
 he enseñado el año anterior tendría docenas de archivos, teoría
