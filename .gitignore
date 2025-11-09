@@ -5,6 +5,7 @@
 **/.gradle/
 **/.idea/
 **/lib/
+**/node_modules/
 
 # Archivos de configuración local
 **/local.properties
@@ -23,9 +24,10 @@
 **/.DS_Store
 **/Thumbs.db
 
-# Imagenes 
-**/*.png
-**/*.jpg
+# Imagenes (excepto assets del proyecto)
+# **/*.png
+# **/*.jpg
+# Nota: Las imágenes de assets se incluyen en el repositorio
 
 # Otros
 **/*.zip
