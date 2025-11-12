@@ -1,0 +1,826 @@
+/* 
+ * Variables CSS para mantener un tema consistente en toda la aplicacion
+ * Cambiar estos valores afecta a todos los elementos que los usan
+ */
+:root {
+    --primary-color: #4285f4;
+    --primary-hover: #357ae8;
+    --secondary-color: #34a853;
+    --danger-color: #ea4335;
+    --warning-color: #fbbc04;
+    --bg-color: #f8f9fa;
+    --card-bg: #ffffff;
+    --text-primary: #202124;
+    --text-secondary: #5f6368;
+    --border-color: #dadce0;
+    --shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
+    --shadow-hover: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
+    --border-radius: 8px;
+}
+
+/* Reset basico para eliminar estilos por defecto del navegador */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Estilos generales del body */
+body {
+    font-family: 'Google Sans', 'Segoe UI', Roboto, Arial, sans-serif;
+    background: var(--bg-color);
+    color: var(--text-primary);
+    line-height: 1.6;
+    min-height: 100vh;
+}
+
+/* Contenedor principal que centra el contenido y limita el ancho maximo */
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+/* Cabecera de la pagina principal */
+.header {
+    text-align: center;
+    padding: 40px 20px;
+    background: linear-gradient(135deg, var(--primary-color) 0%, #6c5ce7 100%);
+    color: white;
+    border-radius: var(--border-radius);
+    margin-bottom: 30px;
+    box-shadow: var(--shadow);
+}
+
+.header h1 {
+    font-size: 2.5em;
+    margin-bottom: 10px;
+    font-weight: 400;
+}
+
+.subtitle {
+    font-size: 1.2em;
+    opacity: 0.9;
+}
+
+/* Contenedor principal con grid para las tarjetas de tests */
+.main-content {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 25px;
+    margin-bottom: 30px;
+}
+
+/* Tarjetas individuales de cada test */
+.test-card {
+    background: var(--card-bg);
+    border-radius: var(--border-radius);
+    padding: 30px;
+    box-shadow: var(--shadow);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    border: 1px solid var(--border-color);
+}
+
+/* Efecto hover en las tarjetas de test */
+.test-card:hover {
+    transform: translateY(-5px);
+    box-shadow: var(--shadow-hover);
+}
+
+/* Titulo de la tarjeta de test */
+.test-card h2 {
+    color: var(--text-primary);
+    margin-bottom: 15px;
+    font-size: 1.5em;
+    font-weight: 400;
+}
+
+/* Descripcion del test */
+.test-description {
+    color: var(--text-secondary);
+    margin-bottom: 20px;
+    line-height: 1.6;
+}
+
+/* Contenedor de badges con informacion del test */
+.test-info {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-bottom: 20px;
+}
+
+/* Badges que muestran informacion como numero de preguntas o tiempo */
+.badge {
+    display: inline-block;
+    padding: 5px 12px;
+    background: var(--bg-color);
+    color: var(--text-secondary);
+    border-radius: 20px;
+    font-size: 0.85em;
+    border: 1px solid var(--border-color);
+}
+
+/* Badge especial para tests que aun no estan disponibles */
+.badge-coming {
+    background: var(--warning-color);
+    color: white;
+    border: none;
+}
+
+/* Estilos base para todos los botones */
+.btn {
+    display: inline-block;
+    padding: 12px 24px;
+    border-radius: 4px;
+    text-decoration: none;
+    font-size: 1em;
+    font-weight: 500;
+    text-align: center;
+    cursor: pointer;
+    border: none;
+    transition: all 0.3s ease;
+    width: 100%;
+}
+
+.btn-primary {
+    background: var(--primary-color);
+    color: white;
+}
+
+.btn-primary:hover {
+    background: var(--primary-hover);
+    box-shadow: 0 2px 4px rgba(66, 133, 244, 0.3);
+}
+
+.btn-secondary {
+    background: var(--border-color);
+    color: var(--text-secondary);
+    cursor: not-allowed;
+}
+
+.btn-secondary:disabled {
+    opacity: 0.6;
+}
+
+/* Estilos para la pagina del test */
+.test-container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+.test-header {
+    background: white;
+    padding: 25px;
+    border-radius: var(--border-radius);
+    margin-bottom: 20px;
+    box-shadow: var(--shadow);
+    border: 1px solid var(--border-color);
+}
+
+.test-header h1 {
+    color: var(--text-primary);
+    margin-bottom: 10px;
+    font-size: 1.8em;
+    font-weight: 400;
+}
+
+/* Contenedor de la barra de progreso */
+.test-progress {
+    margin-top: 15px;
+}
+
+/* Barra de progreso base */
+.progress-bar {
+    width: 100%;
+    height: 8px;
+    background: var(--bg-color);
+    border-radius: 4px;
+    overflow: hidden;
+    margin-bottom: 10px;
+}
+
+/* Barra de progreso que se llena dinamicamente */
+.progress-fill {
+    height: 100%;
+    background: var(--primary-color);
+    transition: width 0.3s ease;
+    border-radius: 4px;
+}
+
+/* Texto que muestra el progreso */
+.progress-text {
+    color: var(--text-secondary);
+    font-size: 0.9em;
+}
+
+/* Tarjeta que contiene la pregunta y sus opciones */
+.question-card {
+    background: white;
+    border-radius: var(--border-radius);
+    padding: 30px;
+    margin-bottom: 20px;
+    box-shadow: var(--shadow);
+    border: 1px solid var(--border-color);
+}
+
+.question-number {
+    color: var(--primary-color);
+    font-weight: 500;
+    margin-bottom: 10px;
+    font-size: 0.9em;
+}
+
+/* Texto de la pregunta */
+.question-text {
+    font-size: 1.2em;
+    margin-bottom: 25px;
+    color: var(--text-primary);
+    line-height: 1.6;
+}
+
+/* Lista de opciones de respuesta */
+.options-list {
+    list-style: none;
+}
+
+/* Cada item de opcion */
+.option-item {
+    margin-bottom: 12px;
+}
+
+/* Label clickeable de cada opcion */
+.option-label {
+    display: flex;
+    align-items: center;
+    padding: 15px;
+    border: 2px solid var(--border-color);
+    border-radius: var(--border-radius);
+    cursor: pointer;
+    transition: all 0.2s ease;
+    background: white;
+}
+
+.option-label:hover {
+    border-color: var(--primary-color);
+    background: #f8f9ff;
+}
+
+/* Estado cuando una opcion esta seleccionada */
+.option-label.selected {
+    border-color: var(--primary-color);
+    background: #e8f0fe;
+}
+
+/* Radio button de cada opcion */
+.option-radio {
+    margin-right: 15px;
+    width: 20px;
+    height: 20px;
+    cursor: pointer;
+}
+
+/* Texto de la opcion */
+.option-text {
+    flex: 1;
+    color: var(--text-primary);
+}
+
+/* Bloque de codigo que puede aparecer en algunas preguntas */
+.code-block {
+    background: #f5f5f5;
+    border: 1px solid var(--border-color);
+    border-radius: 4px;
+    padding: 15px;
+    margin: 15px 0;
+    font-family: 'Courier New', monospace;
+    font-size: 0.9em;
+    overflow-x: auto;
+}
+
+/* Contenedor de botones de navegacion */
+.test-navigation {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 15px;
+    margin-top: 30px;
+    padding-top: 20px;
+    border-top: 1px solid var(--border-color);
+}
+
+/* Grupo de botones de navegacion (anterior, siguiente, enviar) */
+.nav-buttons-group {
+    display: flex;
+    gap: 15px;
+    flex: 1;
+    justify-content: flex-end;
+}
+
+.btn-nav {
+    padding: 12px 24px;
+    border-radius: 4px;
+    border: none;
+    font-size: 1em;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    flex: 1;
+}
+
+/* Boton cancelar */
+.btn-cancel {
+    background: white;
+    color: var(--text-secondary);
+    border: 1px solid var(--border-color);
+    flex: 0 0 auto;
+    padding: 12px 20px;
+}
+
+.btn-cancel:hover {
+    background: var(--bg-color);
+    color: var(--danger-color);
+    border-color: var(--danger-color);
+}
+
+.btn-nav:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+}
+
+.btn-prev {
+    background: white;
+    color: var(--text-primary);
+    border: 1px solid var(--border-color);
+}
+
+/* Efecto hover en boton anterior */
+.btn-prev:hover:not(:disabled) {
+    background: var(--bg-color);
+}
+
+/* Boton siguiente */
+.btn-next {
+    background: var(--primary-color);
+    color: white;
+}
+
+/* Efecto hover en boton siguiente */
+.btn-next:hover:not(:disabled) {
+    background: var(--primary-hover);
+}
+
+/* Boton de enviar test */
+.btn-submit {
+    background: var(--secondary-color);
+    color: white;
+}
+
+/* Efecto hover en boton enviar */
+.btn-submit:hover {
+    background: #2d8f47;
+}
+
+/* Estilos para la pagina de resultados */
+.results-container {
+    text-align: center;
+    padding: 40px 20px;
+}
+
+.results-card {
+    background: white;
+    border-radius: var(--border-radius);
+    padding: 40px;
+    box-shadow: var(--shadow);
+    border: 1px solid var(--border-color);
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.results-icon {
+    font-size: 5em;
+    margin-bottom: 20px;
+}
+
+.results-score {
+    font-size: 3em;
+    font-weight: 500;
+    margin: 20px 0;
+    color: var(--text-primary);
+}
+
+.results-percentage {
+    font-size: 1.5em;
+    color: var(--text-secondary);
+    margin-bottom: 30px;
+}
+
+.results-details {
+    text-align: left;
+    margin: 30px 0;
+    padding: 20px;
+    background: var(--bg-color);
+    border-radius: var(--border-radius);
+}
+
+.results-details h3 {
+    margin-bottom: 15px;
+    color: var(--text-primary);
+}
+
+/* Cada item de resultado individual */
+.result-item {
+    display: flex;
+    justify-content: space-between;
+    padding: 10px 0;
+    border-bottom: 1px solid var(--border-color);
+}
+
+.result-item:last-child {
+    border-bottom: none;
+}
+
+/* Texto de la pregunta en los resultados */
+.result-question {
+    flex: 1;
+    color: var(--text-primary);
+}
+
+/* Estado de la respuesta (correcta/incorrecta) */
+.result-status {
+    font-weight: 500;
+}
+
+/* Color para respuesta correcta */
+.result-correct {
+    color: var(--secondary-color);
+}
+
+/* Color para respuesta incorrecta */
+.result-incorrect {
+    color: var(--danger-color);
+}
+
+/* Boton para volver a intentar el test */
+.btn-retry {
+    margin-top: 20px;
+    background: var(--primary-color);
+    color: white;
+    padding: 12px 24px;
+    border: none;
+    border-radius: 4px;
+    font-size: 1em;
+    font-weight: 500;
+    cursor: pointer;
+    text-decoration: none;
+    display: inline-block;
+}
+
+.btn-retry:hover {
+    background: var(--primary-hover);
+}
+
+/* Pie de pagina */
+.footer {
+    text-align: center;
+    padding: 50px 20px;
+    background: linear-gradient(135deg, var(--primary-color) 0%, #6c5ce7 100%);
+    color: white;
+    border-radius: var(--border-radius);
+    margin-top: 50px;
+    box-shadow: var(--shadow);
+}
+
+.footer > p {
+    color: rgba(255, 255, 255, 0.9);
+    font-size: 1em;
+    margin-bottom: 0;
+    font-style: italic;
+}
+
+/* Footer con redes sociales */
+.footer-social {
+    margin-top: 30px;
+    padding-top: 30px;
+    border-top: 2px solid rgba(255, 255, 255, 0.2);
+}
+
+.footer-social h3 {
+    font-size: 1.3em;
+    margin-bottom: 25px;
+    color: white;
+    font-weight: 500;
+    letter-spacing: 0.5px;
+}
+
+.footer-social-links {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 15px;
+    margin-bottom: 20px;
+}
+
+.footer-social-links a {
+    background: rgba(255, 255, 255, 0.2);
+    color: white;
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 12px 20px;
+    border-radius: 25px;
+    transition: all 0.3s ease;
+    font-size: 0.95em;
+    font-weight: 500;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    backdrop-filter: blur(10px);
+}
+
+.footer-social-links a:hover {
+    background: rgba(255, 255, 255, 0.3);
+    color: white;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+    text-decoration: none;
+    border-color: rgba(255, 255, 255, 0.5);
+}
+
+.footer-social-links a::before {
+    font-size: 1.3em;
+    line-height: 1;
+}
+
+.footer-social-links a[href*="github"]::before {
+    content: '💻';
+}
+
+.footer-social-links a[href*="linkedin"]::before {
+    content: '💼';
+}
+
+.footer-social-links a[href^="mailto"]::before {
+    content: '✉️';
+}
+
+
+/* Footer en paginas de test */
+.test-footer {
+    margin-top: 50px;
+    padding: 40px 20px;
+    background: linear-gradient(135deg, var(--primary-color) 0%, #6c5ce7 100%);
+    color: white;
+    border-radius: var(--border-radius);
+    text-align: center;
+    box-shadow: var(--shadow);
+}
+
+.test-footer > p {
+    color: rgba(255, 255, 255, 0.9);
+    font-size: 0.95em;
+    margin-bottom: 20px;
+    font-style: italic;
+}
+
+.test-footer-social {
+    margin-top: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.test-footer-social a {
+    background: rgba(255, 255, 255, 0.2);
+    color: white;
+    text-decoration: none;
+    padding: 10px 18px;
+    border-radius: 20px;
+    font-size: 0.9em;
+    font-weight: 500;
+    transition: all 0.3s ease;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    backdrop-filter: blur(10px);
+}
+
+.test-footer-social a::before {
+    font-size: 1.1em;
+}
+
+.test-footer-social a[href*="github"]::before {
+    content: '💻';
+}
+
+.test-footer-social a[href*="linkedin"]::before {
+    content: '💼';
+}
+
+.test-footer-social a[href^="mailto"]::before {
+    content: '✉️';
+}
+
+.test-footer-social a:hover {
+    background: rgba(255, 255, 255, 0.3);
+    color: white;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+    text-decoration: none;
+    border-color: rgba(255, 255, 255, 0.5);
+}
+
+/* Media queries para hacer la pagina responsive en dispositivos moviles */
+@media (max-width: 768px) {
+    .header h1 {
+        font-size: 2em;
+    }
+    
+    .main-content {
+        grid-template-columns: 1fr;
+    }
+    
+    .test-navigation {
+        flex-direction: column;
+    }
+    
+    .nav-buttons-group {
+        width: 100%;
+    }
+    
+    .btn-cancel {
+        width: 100%;
+        margin-bottom: 10px;
+    }
+    
+    .question-card {
+        padding: 20px;
+    }
+    
+    .footer {
+        padding: 35px 15px;
+    }
+    
+    .footer-social h3 {
+        font-size: 1.1em;
+    }
+    
+    .footer-social-links {
+        gap: 10px;
+    }
+    
+    .footer-social-links a {
+        padding: 10px 16px;
+        font-size: 0.85em;
+    }
+    
+    .test-footer {
+        padding: 30px 15px;
+    }
+    
+    .test-footer-social {
+        gap: 8px;
+    }
+    
+    .test-footer-social a {
+        padding: 8px 14px;
+        font-size: 0.85em;
+    }
+}
+
+/* Animacion de aparicion para las tarjetas de pregunta */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.question-card {
+    animation: fadeIn 0.3s ease;
+}
+
+/* Estado de carga (por si en el futuro queremos mostrar un loading) */
+.loading {
+    text-align: center;
+    padding: 40px;
+    color: var(--text-secondary);
+}
+
+/* Spinner de carga */
+.spinner {
+    border: 3px solid var(--bg-color);
+    border-top: 3px solid var(--primary-color);
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    animation: spin 1s linear infinite;
+    margin: 0 auto 20px;
+}
+
+/* Animacion de rotacion para el spinner */
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+/* Estilos para feedback inmediato en modo estudio */
+.feedback-correct {
+    background: #e8f5e9;
+    border: 2px solid var(--secondary-color);
+    border-radius: var(--border-radius);
+    padding: 15px;
+    color: #2e7d32;
+    font-weight: 500;
+}
+
+.feedback-incorrect {
+    background: #ffebee;
+    border: 2px solid var(--danger-color);
+    border-radius: var(--border-radius);
+    padding: 15px;
+    color: #c62828;
+}
+
+.feedback-incorrect strong {
+    display: block;
+    margin-bottom: 10px;
+    font-size: 1.1em;
+}
+
+.feedback-incorrect p {
+    margin: 8px 0;
+    line-height: 1.6;
+}
+
+/* Estilos para opciones correctas e incorrectas en modo estudio */
+.option-label.correct-answer {
+    border-color: var(--secondary-color);
+    background: #e8f5e9;
+}
+
+.option-label.incorrect-answer {
+    border-color: var(--danger-color);
+    background: #ffebee;
+}
+
+/* Filtros y badges para el menu principal */
+.filter-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin-bottom: 30px;
+    flex-wrap: wrap;
+}
+
+.filter-btn {
+    padding: 8px 16px;
+    border: 2px solid var(--border-color);
+    background: white;
+    color: var(--text-primary);
+    border-radius: 20px;
+    cursor: pointer;
+    font-size: 0.9em;
+    transition: all 0.3s ease;
+}
+
+.filter-btn:hover {
+    border-color: var(--primary-color);
+    background: #f8f9ff;
+}
+
+.filter-btn.active {
+    background: var(--primary-color);
+    color: white;
+    border-color: var(--primary-color);
+}
+
+.badge-mode {
+    display: inline-block;
+    padding: 4px 10px;
+    border-radius: 12px;
+    font-size: 0.75em;
+    font-weight: 500;
+    margin-left: 8px;
+}
+
+.badge-examen {
+    background: #e3f2fd;
+    color: #1976d2;
+}
+
+.badge-estudio {
+    background: #fff3e0;
+    color: #f57c00;
+}
+
