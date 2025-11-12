@@ -32,6 +32,13 @@
 # Otros
 **/*.zip
 **/*.jmod
+# Ignorar .jar excepto gradle-wrapper.jar (necesario para Gradle)
 **/*.jar
+!**/gradle/wrapper/gradle-wrapper.jar
+# Ignorar .properties excepto archivos de configuración de Gradle
 **/*.properties
-**/*.gradle
+!gradle.properties
+!**/gradle.properties
+!**/gradle/wrapper/gradle-wrapper.properties
+# Nota: Los archivos .gradle.kts y build.gradle.kts SÍ deben estar en el repositorio
+# La carpeta .gradle/ (caché) ya está ignorada arriba en la línea 5
