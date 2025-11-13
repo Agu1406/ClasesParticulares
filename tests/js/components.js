@@ -25,6 +25,29 @@ async function loadComponent(componentPath, targetId, options = {}) {
                 `$1${options.subtitle}$3`);
         }
         
+        // Corregir la ruta del enlace "Volver" según la profundidad
+        if (options.basePath) {
+            // Calcular la ruta relativa al index.html principal
+            let backPath = '';
+            if (options.basePath.includes('../../components/')) {
+                // Estamos en tests/tests/xxx/ -> ../../ para llegar a tests/ -> ../ para llegar a raíz
+                backPath = '../../../';
+            } else if (options.basePath.includes('../components/')) {
+                // Estamos en tests/arrays/ o tests/javafx/ -> ../ para llegar a tests/ -> ../ para llegar a raíz
+                backPath = '../../';
+            } else if (options.basePath.includes('./components/')) {
+                // Estamos en tests/ -> ../ para llegar a raíz
+                backPath = '../';
+            } else {
+                // Estamos en la raíz
+                backPath = './';
+            }
+            // Reemplazar href="/" con la ruta relativa correcta
+            // Buscar el enlace con clase header-back-link y reemplazar su href
+            html = html.replace(/(<a[^>]*class="[^"]*header-back-link[^"]*"[^>]*href=")\/(")/g, 
+                `$1${backPath}$2`);
+        }
+        
         // Ocultar enlace "Volver" si se especifica
         if (options.hideBackLink) {
             html = html.replace(/<a[^>]*header-back-link[^>]*>.*?<\/a>/g, '');
@@ -71,7 +94,8 @@ document.addEventListener('DOMContentLoaded', function() {
     if (headerContainer) {
         loadComponent(`${basePath}header.html`, 'global-header', {
             subtitle: headerContainer.getAttribute('data-subtitle') || 'JavaFX y Diseño de Interfaces',
-            hideBackLink: headerContainer.hasAttribute('data-hide-back-link')
+            hideBackLink: headerContainer.hasAttribute('data-hide-back-link'),
+            basePath: basePath
         });
     }
     
