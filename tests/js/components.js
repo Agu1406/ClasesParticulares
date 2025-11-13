@@ -43,8 +43,8 @@ async function loadComponent(componentPath, targetId, options = {}) {
                 backPath = './';
             }
             // Reemplazar href="/" con la ruta relativa correcta
-            // Buscar el enlace con clase header-back-link y reemplazar su href
-            html = html.replace(/(<a[^>]*class="[^"]*header-back-link[^"]*"[^>]*href=")\/(")/g, 
+            // Buscar el enlace con clase header-back-link y reemplazar su href="/"
+            html = html.replace(/(<a[^>]*header-back-link[^>]*href=")\/(")/g, 
                 `$1${backPath}$2`);
         }
         
