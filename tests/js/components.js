@@ -36,7 +36,7 @@ async function loadComponent(componentPath, targetId, options = {}) {
         const testsIndex = pathSegments.indexOf('tests');
         
         if (testsIndex === -1) {
-            // No estamos en tests/, estamos en la raíz
+            // No estamos en tests/, estamos en la raíz del repositorio
             backPath = './';
         } else {
             // Contar segmentos después de "tests" (sin contar index.html ni archivos .html)
@@ -44,15 +44,29 @@ async function loadComponent(componentPath, targetId, options = {}) {
                 .filter(p => p !== 'index.html' && !p.endsWith('.html'));
             
             // Profundidad = 1 (tests/) + segmentos después de tests
+            // Ejemplo: /ClasesParticulares/tests/arrays/index.html
+            // pathSegments = ['ClasesParticulares', 'tests', 'arrays']
+            // testsIndex = 1
+            // segmentsAfterTests = ['arrays']
+            // depth = 1 + 1 = 2
+            // backPath = '../../' (correcto: sube de arrays/ a tests/ y luego a ClasesParticulares/)
             const depth = 1 + segmentsAfterTests.length;
             
             // Calcular la ruta relativa: subir 'depth' niveles para llegar a la raíz del repo
             backPath = '../'.repeat(depth);
         }
         
-        // Reemplazar href="/" con la ruta relativa correcta
-        // Buscar el enlace con clase header-back-link y reemplazar su href="/"
-        html = html.replace(/(<a[^>]*header-back-link[^>]*href=")\/(")/g, 
+        // Reemplazar href="/" con la ruta relativa correcta que apunta a la raíz del repositorio
+        // Buscar el enlace con id="header-back-link" o clase header-back-link y reemplazar su href="/"
+        // Usar múltiples patrones para cubrir diferentes órdenes de atributos
+        
+        // Patrón más general: buscar cualquier href="/" dentro de un <a que tenga header-back-link
+        // Esto funciona sin importar el orden de los atributos
+        html = html.replace(/(<a[^>]*(?:header-back-link|id="header-back-link")[^>]*href=")\/(")/g, 
+            `$1${backPath}$2`);
+        
+        // También buscar si href="/" está antes de header-back-link (diferente orden)
+        html = html.replace(/(<a[^>]*href=")\/("[^>]*(?:header-back-link|id="header-back-link"))/g, 
             `$1${backPath}$2`);
         
         // Ocultar enlace "Volver" si se especifica
