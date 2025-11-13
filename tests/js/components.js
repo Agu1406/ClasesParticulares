@@ -26,27 +26,34 @@ async function loadComponent(componentPath, targetId, options = {}) {
         }
         
         // Corregir la ruta del enlace "Volver" según la profundidad
-        if (options.basePath) {
-            // Calcular la ruta relativa al index.html principal
-            let backPath = '';
-            if (options.basePath.includes('../../components/')) {
-                // Estamos en tests/tests/xxx/ -> ../../ para llegar a tests/ -> ../ para llegar a raíz
-                backPath = '../../../';
-            } else if (options.basePath.includes('../components/')) {
-                // Estamos en tests/arrays/ o tests/javafx/ -> ../ para llegar a tests/ -> ../ para llegar a raíz
-                backPath = '../../';
-            } else if (options.basePath.includes('./components/')) {
-                // Estamos en tests/ -> ../ para llegar a raíz
-                backPath = '../';
-            } else {
-                // Estamos en la raíz
-                backPath = './';
-            }
-            // Reemplazar href="/" con la ruta relativa correcta
-            // Buscar el enlace con clase header-back-link y reemplazar su href="/"
-            html = html.replace(/(<a[^>]*header-back-link[^>]*href=")\/(")/g, 
-                `$1${backPath}$2`);
+        // Calcular la ruta relativa al index.html principal basándose en la URL actual
+        const currentPath = window.location.pathname;
+        let backPath = '';
+        
+        // Estrategia: encontrar el segmento "tests" y calcular la profundidad desde ahí
+        // Esto funciona tanto si el repo está en la raíz como si tiene nombre
+        const pathSegments = currentPath.split('/').filter(p => p);
+        const testsIndex = pathSegments.indexOf('tests');
+        
+        if (testsIndex === -1) {
+            // No estamos en tests/, estamos en la raíz
+            backPath = './';
+        } else {
+            // Contar segmentos después de "tests" (sin contar index.html ni archivos .html)
+            const segmentsAfterTests = pathSegments.slice(testsIndex + 1)
+                .filter(p => p !== 'index.html' && !p.endsWith('.html'));
+            
+            // Profundidad = 1 (tests/) + segmentos después de tests
+            const depth = 1 + segmentsAfterTests.length;
+            
+            // Calcular la ruta relativa: subir 'depth' niveles para llegar a la raíz del repo
+            backPath = '../'.repeat(depth);
         }
+        
+        // Reemplazar href="/" con la ruta relativa correcta
+        // Buscar el enlace con clase header-back-link y reemplazar su href="/"
+        html = html.replace(/(<a[^>]*header-back-link[^>]*href=")\/(")/g, 
+            `$1${backPath}$2`);
         
         // Ocultar enlace "Volver" si se especifica
         if (options.hideBackLink) {
