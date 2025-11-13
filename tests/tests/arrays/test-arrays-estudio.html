@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Test Estudio: Arrays en Java</title>
+    <link rel="icon" type="image/svg+xml" href="../../favicon.svg">
+    <link rel="stylesheet" href="../../css/styles.css">
+</head>
+<body>
+    <!-- Contenedor principal del test -->
+    <div class="test-container">
+        <!-- Cabecera del test con titulo y barra de progreso -->
+        <div class="test-header">
+            <h1>Test Estudio: Arrays en Java</h1>
+            <p style="color: var(--text-secondary); margin-top: 10px;">
+                Modo estudio: Recibes feedback inmediato al responder. Ideal para aprender mientras practicas.
+                <br>
+                <small style="font-size: 0.85em; opacity: 0.8;">
+                    Tip: Usa las flechas ← → para navegar, números 1-4 para seleccionar opciones, o Enter para avanzar.
+                </small>
+            </p>
+            <!-- Barra de progreso que se actualiza dinamicamente -->
+            <div class="test-progress" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="20" aria-label="Progreso del test">
+                <div class="progress-bar">
+                    <div class="progress-fill" id="progress-fill" style="width: 0%"></div>
+                </div>
+                <div class="progress-text" id="progress-text" aria-live="polite">0 de 20 preguntas respondidas</div>
+            </div>
+        </div>
+
+        <!-- Tarjeta de pregunta que se actualiza con cada pregunta -->
+        <div class="question-card" id="question-card" role="region" aria-label="Pregunta del test">
+            <div class="question-number" id="question-number" aria-live="polite">Pregunta 1 de 20</div>
+            <div class="question-text" id="question-text" role="heading" aria-level="2">
+                <!-- La pregunta se carga aqui dinamicamente mediante JavaScript -->
+            </div>
+            <ul class="options-list" id="options-list" role="radiogroup" aria-label="Opciones de respuesta">
+                <!-- Las opciones se crean dinamicamente mediante JavaScript -->
+            </ul>
+            
+            <!-- Area de feedback que aparece cuando se responde -->
+            <div id="feedback-area" style="display: none; margin-top: 20px; padding: 15px; border-radius: var(--border-radius);">
+                <!-- El feedback se carga aqui dinamicamente -->
+            </div>
+        </div>
+
+        <!-- Botones de navegacion entre preguntas -->
+        <div class="test-navigation" role="navigation" aria-label="Navegación del test">
+            <button class="btn-nav btn-cancel" id="btn-cancel" aria-label="Cancelar test y volver al menú">Cancelar</button>
+            <div class="nav-buttons-group">
+                <button class="btn-nav btn-prev" id="btn-prev" disabled aria-label="Pregunta anterior">Anterior</button>
+                <button class="btn-nav btn-next" id="btn-next" aria-label="Siguiente pregunta">Siguiente</button>
+                <button class="btn-nav btn-submit" id="btn-submit" style="display: none;" aria-label="Ver resumen final">Ver Resumen</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer con redes sociales -->
+    <footer class="test-footer">
+        <p>Tip: Usa el modo Estudio para aprender y el modo Examen para evaluarte</p>
+        <div class="test-footer-social">
+            <a href="https://github.com/Agu1406" target="_blank" rel="noopener noreferrer" aria-label="GitHub">GitHub</a> |
+            <a href="https://www.linkedin.com/in/agustin6041" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">LinkedIn</a> |
+            <a href="mailto:agu1406@outlook.es" aria-label="Email">Email</a>
+        </div>
+    </footer>
+
+    <!-- Cargar primero las preguntas y luego la logica del test -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
+    <script src="../../js/questions/arrays.js"></script>
+    <script src="../../js/test-estudio.js"></script>
+</body>
+</html>
+

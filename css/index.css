@@ -1,0 +1,300 @@
+/* Variables CSS para mantener un tema consistente */
+:root {
+    --primary-color: #4285f4;
+    --primary-hover: #357ae8;
+    --secondary-color: #34a853;
+    --danger-color: #ea4335;
+    --warning-color: #fbbc04;
+    --bg-color: #f8f9fa;
+    --card-bg: #ffffff;
+    --text-primary: #202124;
+    --text-secondary: #5f6368;
+    --border-color: #dadce0;
+    --shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
+    --shadow-hover: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
+    --border-radius: 8px;
+}
+
+/* Reset básico */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Google Sans', 'Segoe UI', Roboto, Arial, sans-serif;
+    background: var(--bg-color);
+    color: var(--text-primary);
+    line-height: 1.6;
+    min-height: 100vh;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+/* Cabecera */
+.header {
+    text-align: center;
+    padding: 40px 20px;
+    background: linear-gradient(135deg, var(--primary-color) 0%, #6c5ce7 100%);
+    color: white;
+    border-radius: var(--border-radius);
+    margin-bottom: 40px;
+    box-shadow: var(--shadow);
+}
+
+.header h1 {
+    font-size: 2.5em;
+    margin-bottom: 10px;
+    font-weight: 500;
+}
+
+/* Enlace para volver a categorías en el header */
+.header-back-link {
+    color: white;
+    text-decoration: none;
+    font-size: 0.9em;
+    opacity: 0.9;
+    display: inline-block;
+    margin-bottom: 10px;
+    transition: opacity 0.3s ease;
+}
+
+.header-back-link:hover {
+    opacity: 1;
+    text-decoration: underline;
+}
+
+.header .subtitle {
+    font-size: 1.2em;
+    opacity: 0.95;
+}
+
+/* Grid de categorías */
+.categories-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+    margin-bottom: 40px;
+}
+
+/* Tarjeta de categoría */
+.category-card {
+    background: var(--card-bg);
+    border-radius: var(--border-radius);
+    padding: 30px;
+    box-shadow: var(--shadow);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    cursor: pointer;
+    text-decoration: none;
+    color: inherit;
+    display: block;
+    border: 2px solid transparent;
+}
+
+.category-card:hover {
+    transform: translateY(-5px);
+    box-shadow: var(--shadow-hover);
+    border-color: var(--primary-color);
+}
+
+.category-card.disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+    pointer-events: none;
+}
+
+.category-icon {
+    font-size: 3em;
+    margin-bottom: 15px;
+    display: block;
+}
+
+.category-card h2 {
+    font-size: 1.8em;
+    margin-bottom: 10px;
+    color: var(--primary-color);
+    font-weight: 500;
+}
+
+.category-card p {
+    color: var(--text-secondary);
+    margin-bottom: 15px;
+    line-height: 1.6;
+}
+
+.category-info {
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+    margin-top: 15px;
+}
+
+.badge {
+    display: inline-block;
+    padding: 5px 12px;
+    border-radius: 20px;
+    font-size: 0.85em;
+    font-weight: 500;
+    background: var(--bg-color);
+    color: var(--text-secondary);
+    border: 1px solid var(--border-color);
+}
+
+.badge-coming {
+    background: var(--warning-color);
+    color: white;
+    border: none;
+}
+
+.btn {
+    display: inline-block;
+    padding: 12px 24px;
+    border-radius: var(--border-radius);
+    text-decoration: none;
+    font-weight: 500;
+    transition: all 0.3s ease;
+    border: none;
+    cursor: pointer;
+    font-size: 1em;
+    margin-top: 10px;
+}
+
+.btn-primary {
+    background: var(--primary-color);
+    color: white;
+}
+
+.btn-primary:hover {
+    background: var(--primary-hover);
+}
+
+.btn-secondary {
+    background: var(--bg-color);
+    color: var(--text-secondary);
+    border: 1px solid var(--border-color);
+}
+
+/* Footer */
+.footer {
+    text-align: center;
+    padding: 50px 20px;
+    background: linear-gradient(135deg, var(--primary-color) 0%, #6c5ce7 100%);
+    color: white;
+    border-radius: var(--border-radius);
+    margin-top: 50px;
+    box-shadow: var(--shadow);
+}
+
+.footer > p {
+    color: rgba(255, 255, 255, 0.9);
+    font-size: 1em;
+    margin-bottom: 0;
+    font-style: italic;
+}
+
+/* Footer con redes sociales */
+.footer-social {
+    margin-top: 30px;
+    padding-top: 30px;
+    border-top: 2px solid rgba(255, 255, 255, 0.2);
+}
+
+.footer-social h3 {
+    font-size: 1.3em;
+    margin-bottom: 25px;
+    color: white;
+    font-weight: 500;
+    letter-spacing: 0.5px;
+}
+
+.footer-social-links {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 15px;
+    margin-bottom: 20px;
+}
+
+.footer-social-links a {
+    background: rgba(255, 255, 255, 0.2);
+    color: white;
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 12px 20px;
+    border-radius: 25px;
+    transition: all 0.3s ease;
+    font-size: 0.95em;
+    font-weight: 500;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    backdrop-filter: blur(10px);
+}
+
+.footer-social-links a:hover {
+    background: rgba(255, 255, 255, 0.3);
+    color: white;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+    text-decoration: none;
+    border-color: rgba(255, 255, 255, 0.5);
+}
+
+.footer-social-links a[href*="github"]::before {
+    content: '💻';
+    font-size: 1.3em;
+    line-height: 1;
+}
+
+.footer-social-links a[href*="linkedin"]::before {
+    content: '💼';
+    font-size: 1.3em;
+    line-height: 1;
+}
+
+.footer-social-links a[href^="mailto"]::before {
+    content: '✉️';
+    font-size: 1.3em;
+    line-height: 1;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .header h1 {
+        font-size: 2em;
+    }
+
+    .categories-grid {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+
+    .category-card {
+        padding: 20px;
+    }
+
+    .footer {
+        padding: 35px 15px;
+    }
+    
+    .footer-social h3 {
+        font-size: 1.1em;
+    }
+    
+    .footer-social-links {
+        gap: 10px;
+    }
+    
+    .footer-social-links a {
+        padding: 10px 16px;
+        font-size: 0.85em;
+    }
+}
+

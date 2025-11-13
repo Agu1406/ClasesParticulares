@@ -6,16 +6,74 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="refresh" content="0; url=tests/">
-    <title>Tests de Preparación - JavaFX</title>
+    <title>Tests de Preparación - Clases Particulares</title>
     <link rel="icon" type="image/svg+xml" href="tests/favicon.svg">
-    <script>
-        // Redirección inmediata usando JavaScript como respaldo
-        window.location.replace("tests/");
-    </script>
+    <link rel="stylesheet" href="css/index.css">
 </head>
 <body>
-    <p>Si no eres redirigido automáticamente, <a href="tests/">haz clic aquí</a>.</p>
+    <div class="container">
+        <!-- Cabecera -->
+        <header class="header">
+            <h1>Tests de Preparación para Examen</h1>
+            <p class="subtitle">Elige la categoría de tests que deseas realizar</p>
+        </header>
+
+        <!-- Grid de categorías -->
+        <main class="categories-grid">
+            <!-- Categoría: JavaFX -->
+            <a href="tests/" class="category-card">
+                <span class="category-icon">☕</span>
+                <h2>JavaFX</h2>
+                <p>
+                    Tests sobre JavaFX y Diseño de Interfaces. Incluye preguntas sobre Application, 
+                    Stage, Scene, FXML, Controllers y conceptos fundamentales.
+                </p>
+                <div class="category-info">
+                    <span class="badge">2 tests disponibles</span>
+                    <span class="badge">37 preguntas totales</span>
+                </div>
+            </a>
+
+            <!-- Categoría: Arrays en Java -->
+            <a href="tests/arrays/" class="category-card">
+                <span class="category-icon">📊</span>
+                <h2>Arrays en Java</h2>
+                <p>
+                    Tests sobre manipulación de arrays en Java. Incluye ejercicios sobre suma, 
+                    filtrado, transformación y operaciones con arrays.
+                </p>
+                <div class="category-info">
+                    <span class="badge">1 test disponible</span>
+                    <span class="badge">20 preguntas totales</span>
+                </div>
+            </a>
+
+            <!-- Categoría: Más categorías en el futuro -->
+            <div class="category-card disabled">
+                <span class="category-icon">➕</span>
+                <h2>Más Categorías</h2>
+                <p>
+                    Se añadirán más categorías de tests según vayamos avanzando en las clases.
+                </p>
+                <div class="category-info">
+                    <span class="badge badge-coming">Próximamente</span>
+                </div>
+            </div>
+        </main>
+
+        <!-- Pie de página -->
+        <footer class="footer">
+            <p>Tip: Cada categoría tiene tests en modo Examen y modo Estudio</p>
+            <div class="footer-social">
+                <h3>Contacto</h3>
+                <div class="footer-social-links">
+                    <a href="https://github.com/Agu1406" target="_blank" rel="noopener noreferrer" aria-label="GitHub">GitHub</a>
+                    <a href="https://www.linkedin.com/in/agustin6041" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">LinkedIn</a>
+                    <a href="mailto:agu1406@outlook.es" aria-label="Email">Email</a>
+                </div>
+            </div>
+        </footer>
+    </div>
 </body>
 </html>
 

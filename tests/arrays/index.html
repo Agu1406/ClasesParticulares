@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tests de Preparación - Arrays en Java</title>
+    <link rel="icon" type="image/svg+xml" href="../favicon.svg">
+    <link rel="stylesheet" href="../css/styles.css">
+</head>
+<body>
+    <div class="container">
+        <!-- Cabecera con titulo -->
+        <header class="header">
+            <a href="/" class="header-back-link">← Volver a Categorías</a>
+            <h1>Tests de Preparación para Examen</h1>
+            <p class="subtitle">Arrays en Java</p>
+        </header>
+
+        <!-- Filtros para mostrar diferentes modos de test -->
+        <div class="filter-buttons">
+            <button class="filter-btn active" data-filter="all" onclick="filterTests('all')">Todos</button>
+            <button class="filter-btn" data-filter="examen" onclick="filterTests('examen')">Modo Examen</button>
+            <button class="filter-btn" data-filter="estudio" onclick="filterTests('estudio')">Modo Estudio</button>
+        </div>
+
+        <!-- Lista de tests disponibles -->
+        <main class="main-content">
+            <!-- Test: Arrays en Java - Modo Examen -->
+            <div class="test-card" data-mode="examen">
+                <h2>Test: Arrays en Java <span class="badge-mode badge-examen">Examen</span></h2>
+                <p class="test-description">
+                    Preguntas sobre manipulación de arrays, suma, filtrado, transformación y operaciones con arrays en Java.
+                    <br>
+                    <small style="color: var(--text-secondary);">Modo examen: No recibes feedback hasta el final.</small>
+                </p>
+                <div class="test-info">
+                    <span class="badge">20 preguntas</span>
+                    <span class="badge">~25 minutos</span>
+                </div>
+                <a href="../tests/arrays/test-arrays.html" class="btn btn-primary">Comenzar Test</a>
+            </div>
+
+            <!-- Test: Arrays en Java - Modo Estudio -->
+            <div class="test-card" data-mode="estudio">
+                <h2>Test: Arrays en Java <span class="badge-mode badge-estudio">Estudio</span></h2>
+                <p class="test-description">
+                    Preguntas sobre manipulación de arrays, suma, filtrado, transformación y operaciones con arrays en Java.
+                    <br>
+                    <small style="color: var(--text-secondary);">Modo estudio: Feedback inmediato al responder.</small>
+                </p>
+                <div class="test-info">
+                    <span class="badge">20 preguntas</span>
+                    <span class="badge">~25 minutos</span>
+                </div>
+                <a href="../tests/arrays/test-arrays-estudio.html" class="btn btn-primary">Comenzar Test</a>
+            </div>
+        </main>
+
+        <!-- Pie de pagina con consejo y redes sociales -->
+        <footer class="footer">
+            <p>Tip: Usa el modo Estudio para aprender y el modo Examen para evaluarte</p>
+            <div class="footer-social">
+                <h3>Contacto</h3>
+                <div class="footer-social-links">
+                    <a href="https://github.com/Agu1406" target="_blank" rel="noopener noreferrer" aria-label="GitHub">GitHub</a>
+                    <a href="https://www.linkedin.com/in/agustin6041" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">LinkedIn</a>
+                    <a href="mailto:agu1406@outlook.es" aria-label="Email">Email</a>
+                </div>
+            </div>
+        </footer>
+    </div>
+
+    <!-- Script para filtrar tests por modo -->
+    <script>
+        function filterTests(filter) {
+            // Actualizar botones activos
+            document.querySelectorAll('.filter-btn').forEach(btn => {
+                btn.classList.remove('active');
+                if (btn.getAttribute('data-filter') === filter) {
+                    btn.classList.add('active');
+                }
+            });
+
+            // Mostrar/ocultar tests segun el filtro
+            document.querySelectorAll('.test-card').forEach(card => {
+                const mode = card.getAttribute('data-mode');
+                if (filter === 'all') {
+                    card.style.display = 'block';
+                } else {
+                    card.style.display = mode === filter ? 'block' : 'none';
+                }
+            });
+        }
+    </script>
+</body>
+</html>
+
