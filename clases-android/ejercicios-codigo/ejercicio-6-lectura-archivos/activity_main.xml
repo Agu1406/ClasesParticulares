@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="16dp">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Ejercicio 6: Lectura de Archivos"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        android:layout_marginBottom="16dp" />
+
+    <Button
+        android:id="@+id/buttonCrearArchivo"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Crear archivo de ejemplo"
+        android:layout_marginBottom="16dp" />
+
+    <TextView
+        android:id="@+id/textViewInfo"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="No hay archivo creado"
+        android:padding="12dp"
+        android:background="@android:color/darker_gray"
+        android:textColor="@android:color/white"
+        android:layout_marginBottom="16dp" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Métodos de lectura:"
+        android:textStyle="bold"
+        android:layout_marginBottom="8dp" />
+
+    <Button
+        android:id="@+id/buttonLeerBufferedReader"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Leer con BufferedReader"
+        android:layout_marginBottom="8dp" />
+
+    <Button
+        android:id="@+id/buttonLeerInputStream"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Leer con InputStream.readBytes()"
+        android:layout_marginBottom="8dp" />
+
+    <Button
+        android:id="@+id/buttonLeerScanner"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Leer con Scanner"
+        android:layout_marginBottom="16dp" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Resultado:"
+        android:textStyle="bold"
+        android:layout_marginBottom="8dp" />
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1">
+
+        <TextView
+            android:id="@+id/textViewResultado"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Los resultados aparecerán aquí"
+            android:padding="12dp"
+            android:background="@android:color/black"
+            android:textColor="@android:color/white"
+            android:fontFamily="monospace" />
+
+    </ScrollView>
+
+</LinearLayout>
+

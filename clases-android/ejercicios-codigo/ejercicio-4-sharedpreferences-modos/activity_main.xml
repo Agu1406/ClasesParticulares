@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="16dp">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Ejercicio 4: Modos de Acceso"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        android:layout_marginBottom="24dp" />
+
+    <EditText
+        android:id="@+id/editTextValor"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Introduce un valor"
+        android:layout_marginBottom="16dp" />
+
+    <Button
+        android:id="@+id/buttonGuardar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Guardar valor"
+        android:layout_marginBottom="8dp" />
+
+    <Button
+        android:id="@+id/buttonVerificar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Verificar valores"
+        android:layout_marginBottom="24dp" />
+
+    <TextView
+        android:id="@+id/textViewPrefs1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Instancia 1: No definido"
+        android:padding="16dp"
+        android:background="@android:color/darker_gray"
+        android:textColor="@android:color/white"
+        android:layout_marginBottom="8dp" />
+
+    <TextView
+        android:id="@+id/textViewPrefs2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Instancia 2: No definido"
+        android:padding="16dp"
+        android:background="@android:color/darker_gray"
+        android:textColor="@android:color/white"
+        android:layout_marginBottom="24dp" />
+
+    <Button
+        android:id="@+id/buttonIrSegundaActivity"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Abrir Segunda Activity" />
+
+</LinearLayout>
+
