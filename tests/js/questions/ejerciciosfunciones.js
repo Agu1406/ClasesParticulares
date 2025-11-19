@@ -204,6 +204,136 @@ const questions = [
         correct: 0,
         explanation: "Una función puede tener múltiples return, pero solo se ejecuta el primero que se alcanza. Después de un return, la función termina inmediatamente. Esto es útil en funciones con if-else o switch.",
         code: "public static String evaluar(int numero) {\n    if (numero > 10) {\n        return \"Grande\"; // Si se ejecuta, la función termina aquí\n    }\n    return \"Pequeño\"; // Solo se ejecuta si el if es falso\n}"
+    },
+    {
+        id: 16,
+        question: "Si tenemos una función que retorna void, ¿podemos usar return dentro de ella?",
+        options: [
+            "Sí, pero solo return; sin valor",
+            "No, las funciones void no pueden tener return",
+            "Sí, con cualquier valor",
+            "Solo return 0;"
+        ],
+        correct: 0,
+        explanation: "En funciones void, podemos usar return; sin valor para terminar la función antes de tiempo. No podemos retornar un valor porque void significa 'sin retorno'.",
+        code: "public static void mostrar(int numero) {\n    if (numero < 0) {\n        return; // Termina la función sin retornar nada\n    }\n    System.out.println(numero);\n}"
+    },
+    {
+        id: 17,
+        question: "Si tenemos una función que recibe dos parámetros int y retorna int, ¿cuántos return puede tener?",
+        options: [
+            "Uno o más, pero solo se ejecuta el primero que se alcanza",
+            "Solo uno",
+            "Debe tener exactamente dos",
+            "No puede tener return"
+        ],
+        correct: 0,
+        explanation: "Una función puede tener múltiples return, pero solo se ejecuta el primero que se alcanza. Después de un return, la función termina inmediatamente.",
+        code: "public static int comparar(int a, int b) {\n    if (a > b) return 1;\n    if (a < b) return -1;\n    return 0; // Solo se ejecuta si las anteriores son falsas\n}"
+    },
+    {
+        id: 18,
+        question: "Si queremos que una función retorne el mayor de dos números, ¿qué estructura usamos?",
+        options: [
+            "if-else que compara y retorna el mayor",
+            "Solo return a;",
+            "Solo return b;",
+            "Un bucle for"
+        ],
+        correct: 0,
+        explanation: "Usamos if-else para comparar los dos números. Si a > b, retornamos a, en caso contrario retornamos b.",
+        code: "public static int mayor(int a, int b) {\n    if (a > b) {\n        return a;\n    } else {\n        return b;\n    }\n}"
+    },
+    {
+        id: 19,
+        question: "Si tenemos una función que retorna String y recibe un int, ¿qué tipo de valor debemos retornar?",
+        options: [
+            "Un String (texto entre comillas)",
+            "Un int",
+            "Un boolean",
+            "Cualquier tipo"
+        ],
+        correct: 0,
+        explanation: "Si la función retorna String, debemos retornar un valor de tipo String. Puede ser un String literal como \"Hola\" o una variable String.",
+        code: "public static String convertir(int numero) {\n    return \"El número es: \" + numero; // Retorna un String\n}"
+    },
+    {
+        id: 20,
+        question: "Si queremos crear una función que calcule el promedio de tres números, ¿qué tipo de retorno usamos?",
+        options: [
+            "double (para poder tener decimales)",
+            "int",
+            "String",
+            "boolean"
+        ],
+        correct: 0,
+        explanation: "El promedio puede tener decimales (por ejemplo, promedio de 1, 2, 3 es 2.0, pero promedio de 1, 2, 4 es 2.33...). Por eso usamos double para mantener la precisión decimal.",
+        code: "public static double promedio(int a, int b, int c) {\n    return (a + b + c) / 3.0; // Retorna double\n}"
+    },
+    {
+        id: 21,
+        question: "Si tenemos una función que retorna boolean para verificar si un número es positivo, ¿qué retornamos?",
+        options: [
+            "return (numero > 0);",
+            "return numero;",
+            "return \"positivo\";",
+            "return 1;"
+        ],
+        correct: 0,
+        explanation: "Una función boolean debe retornar true o false. La expresión (numero > 0) ya es un boolean, así que podemos retornarla directamente.",
+        code: "public static boolean esPositivo(int numero) {\n    return (numero > 0); // Retorna true o false\n}"
+    },
+    {
+        id: 22,
+        question: "Si queremos que una función reciba un String y retorne su longitud, ¿qué método usamos?",
+        options: [
+            "return texto.length();",
+            "return texto.size();",
+            "return texto.length;",
+            "return texto.count();"
+        ],
+        correct: 0,
+        explanation: "Para obtener la longitud de un String, usamos el método length(). Los Strings tienen length() como método, no como propiedad.",
+        code: "public static int longitud(String texto) {\n    return texto.length(); // Retorna el número de caracteres\n}"
+    },
+    {
+        id: 23,
+        question: "Si tenemos una función que no recibe parámetros y retorna void, ¿cómo la llamamos?",
+        options: [
+            "nombreFuncion();",
+            "nombreFuncion(0);",
+            "nombreFuncion(null);",
+            "nombreFuncion;"
+        ],
+        correct: 0,
+        explanation: "Para llamar a una función sin parámetros, usamos su nombre seguido de paréntesis vacíos: nombreFuncion();",
+        code: "public static void saludar() {\n    System.out.println(\"Hola\");\n}\n// Llamada:\nsaludar();"
+    },
+    {
+        id: 24,
+        question: "Si queremos que una función retorne el resultado de una operación matemática, ¿dónde hacemos la operación?",
+        options: [
+            "Dentro de la función, antes del return",
+            "Fuera de la función",
+            "En el main",
+            "No se puede hacer"
+        ],
+        correct: 0,
+        explanation: "La operación matemática se hace dentro de la función, y luego retornamos el resultado. La función encapsula la lógica y retorna el resultado.",
+        code: "public static int multiplicar(int a, int b) {\n    int resultado = a * b; // Operación dentro de la función\n    return resultado; // Retornamos el resultado\n}"
+    },
+    {
+        id: 25,
+        question: "Si tenemos una función que retorna int y queremos retornar el resultado de una división, ¿qué debemos considerar?",
+        options: [
+            "Que la división de enteros trunca el resultado",
+            "Que siempre retorna decimal",
+            "Que retorna String",
+            "Que no se puede hacer"
+        ],
+        correct: 0,
+        explanation: "Si dividimos dos enteros en una función que retorna int, el resultado se trunca (se pierde la parte decimal). Si necesitamos decimales, debemos usar double como tipo de retorno.",
+        code: "public static int dividir(int a, int b) {\n    return a / b; // Si a=7, b=2, retorna 3 (no 3.5)\n}\n// Para decimales:\npublic static double dividirDecimal(int a, int b) {\n    return (double) a / b; // Retorna 3.5\n}"
     }
 ];
 

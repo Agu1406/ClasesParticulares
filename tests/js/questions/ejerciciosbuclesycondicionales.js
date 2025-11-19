@@ -204,6 +204,136 @@ const questions = [
         correct: 0,
         explanation: "i++ (post-incremento) primero usa el valor actual de i y luego lo incrementa. ++i (pre-incremento) primero incrementa i y luego usa el nuevo valor. En bucles simples, ambos funcionan igual.",
         code: "int i = 5;\nint a = i++; // a = 5, i = 6\nint b = ++i; // b = 7, i = 7"
+    },
+    {
+        id: 16,
+        question: "Si tenemos un bucle for que va del 0 al 9, ¿cuántas veces se ejecuta?",
+        options: [
+            "10 veces",
+            "9 veces",
+            "8 veces",
+            "11 veces"
+        ],
+        correct: 0,
+        explanation: "Un bucle for (int i = 0; i < 10; i++) se ejecuta 10 veces: cuando i vale 0, 1, 2, 3, 4, 5, 6, 7, 8, 9. El bucle termina cuando i alcanza 10.",
+        code: "for (int i = 0; i < 10; i++) {\n    // Se ejecuta 10 veces (i = 0 a 9)\n}"
+    },
+    {
+        id: 17,
+        question: "Si tenemos int numero = 0; while (numero < 5) { numero++; }, ¿cuántas veces se ejecuta el bucle?",
+        options: [
+            "5 veces",
+            "4 veces",
+            "6 veces",
+            "Infinitas veces"
+        ],
+        correct: 0,
+        explanation: "El bucle se ejecuta mientras numero < 5. Empieza en 0, y en cada iteración incrementa numero. Se ejecuta cuando numero vale 0, 1, 2, 3, 4 (5 veces en total).",
+        code: "int numero = 0;\nwhile (numero < 5) {\n    numero++; // Se ejecuta 5 veces\n}"
+    },
+    {
+        id: 18,
+        question: "Si tenemos un switch con case 1, case 2, case 3 y default, y la variable vale 5, ¿qué case se ejecuta?",
+        options: [
+            "default",
+            "case 1",
+            "case 2",
+            "Ninguno"
+        ],
+        correct: 0,
+        explanation: "Si ningún case coincide con el valor (5), se ejecuta el case default. El default es opcional pero muy útil para manejar valores inesperados.",
+        code: "int opcion = 5;\nswitch (opcion) {\n    case 1: System.out.println(\"Uno\"); break;\n    case 2: System.out.println(\"Dos\"); break;\n    case 3: System.out.println(\"Tres\"); break;\n    default: System.out.println(\"Otro\"); // Este se ejecuta\n}"
+    },
+    {
+        id: 19,
+        question: "Si queremos que un bucle for muestre los números del 10 al 1 (en orden descendente), ¿qué condición usamos?",
+        options: [
+            "for (int i = 10; i >= 1; i--)",
+            "for (int i = 10; i <= 1; i++)",
+            "for (int i = 1; i >= 10; i--)",
+            "for (int i = 1; i <= 10; i++)"
+        ],
+        correct: 0,
+        explanation: "Para contar hacia atrás, empezamos en 10, la condición es i >= 1 (mientras i sea mayor o igual a 1), y usamos i-- para decrementar en cada iteración.",
+        code: "for (int i = 10; i >= 1; i--) {\n    System.out.println(i); // Muestra 10, 9, 8, ..., 1\n}"
+    },
+    {
+        id: 20,
+        question: "Si tenemos un bucle while que debe ejecutarse mientras una condición sea verdadera, ¿qué palabra clave usamos para salir del bucle antes de tiempo?",
+        options: [
+            "break",
+            "continue",
+            "return",
+            "exit"
+        ],
+        correct: 0,
+        explanation: "La palabra clave break termina el bucle inmediatamente, incluso si la condición del while sigue siendo verdadera. Es útil para salir del bucle cuando se cumple una condición especial.",
+        code: "while (condicion) {\n    if (condicionEspecial) {\n        break; // Sale del bucle inmediatamente\n    }\n}"
+    },
+    {
+        id: 21,
+        question: "Si tenemos un bucle for del 1 al 100 y queremos mostrar solo los múltiplos de 5, ¿qué condición usamos?",
+        options: [
+            "if (i % 5 == 0)",
+            "if (i % 5 != 0)",
+            "if (i / 5 == 0)",
+            "if (i * 5 == 0)"
+        ],
+        correct: 0,
+        explanation: "Un número es múltiplo de 5 si al dividirlo entre 5 el resto es 0. Usamos i % 5 == 0 para verificar si i es múltiplo de 5.",
+        code: "for (int i = 1; i <= 100; i++) {\n    if (i % 5 == 0) { // Si es múltiplo de 5\n        System.out.println(i);\n    }\n}"
+    },
+    {
+        id: 22,
+        question: "Si tenemos un if-else if-else anidado, ¿cuántos bloques de código pueden ejecutarse?",
+        options: [
+            "Solo uno (el primero cuya condición sea verdadera)",
+            "Todos",
+            "Dos",
+            "Ninguno"
+        ],
+        correct: 0,
+        explanation: "En una estructura if-else if-else, solo se ejecuta el primer bloque cuya condición sea verdadera. Una vez que se ejecuta uno, se salta el resto.",
+        code: "if (condicion1) {\n    // Solo este se ejecuta si condicion1 es verdadera\n} else if (condicion2) {\n    // Solo este se ejecuta si condicion1 es falsa y condicion2 es verdadera\n} else {\n    // Solo este se ejecuta si ambas son falsas\n}"
+    },
+    {
+        id: 23,
+        question: "Si tenemos un bucle do-while que verifica si numero < 0, y numero inicia en 5, ¿cuántas veces se ejecuta?",
+        options: [
+            "Una vez (porque do-while siempre se ejecuta al menos una vez)",
+            "Cero veces",
+            "Infinitas veces",
+            "Dos veces"
+        ],
+        correct: 0,
+        explanation: "El do-while siempre ejecuta el código al menos una vez, incluso si la condición es falsa desde el inicio. Luego verifica la condición y si es falsa, termina.",
+        code: "int numero = 5;\ndo {\n    System.out.println(numero); // Se ejecuta una vez\n    numero++;\n} while (numero < 0); // La condición es falsa, pero ya se ejecutó una vez"
+    },
+    {
+        id: 24,
+        question: "Si tenemos un bucle for que suma números del 1 al 10, ¿qué variable usamos para acumular la suma?",
+        options: [
+            "Una variable int suma que inicia en 0",
+            "Una variable int suma que inicia en 1",
+            "Una variable String suma",
+            "No necesitamos variable"
+        ],
+        correct: 0,
+        explanation: "Creamos una variable int suma = 0 antes del bucle. Dentro del bucle, acumulamos cada número con suma += i. Al final, suma contiene la suma total.",
+        code: "int suma = 0;\nfor (int i = 1; i <= 10; i++) {\n    suma += i; // Acumula cada número\n}"
+    },
+    {
+        id: 25,
+        question: "Si queremos que un switch maneje múltiples valores con el mismo código, ¿cómo lo hacemos?",
+        options: [
+            "Poniendo varios case seguidos sin break entre ellos",
+            "Usando varios switch",
+            "Usando if-else",
+            "No se puede hacer"
+        ],
+        correct: 0,
+        explanation: "Podemos poner varios case seguidos sin break para que todos ejecuten el mismo código. Esto se llama 'fall-through' y es útil cuando varios valores necesitan la misma acción.",
+        code: "switch (opcion) {\n    case 1:\n    case 2:\n    case 3:\n        System.out.println(\"Pequeño\"); // Se ejecuta para 1, 2 o 3\n        break;\n    default:\n        System.out.println(\"Otro\");\n}"
     }
 ];
 

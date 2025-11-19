@@ -204,6 +204,136 @@ const questions = [
         correct: 0,
         explanation: "Java no permite asignar un valor decimal (double) directamente a una variable int sin hacer un casting explícito. Esto genera un error de compilación para evitar pérdida de datos.",
         code: "// int numero = 5.7; // ERROR de compilación\nint numero = (int) 5.7; // Correcto: casting explícito, numero = 5"
+    },
+    {
+        id: 16,
+        question: "Si tenemos int a = 8; int b = 2; ¿cuál es el resultado de a / b?",
+        options: [
+            "4",
+            "6",
+            "10",
+            "16"
+        ],
+        correct: 0,
+        explanation: "La división de 8 / 2 es 4. Cuando divides dos enteros, obtienes un entero como resultado.",
+        code: "int a = 8;\nint b = 2;\nint resultado = a / b; // resultado = 4"
+    },
+    {
+        id: 17,
+        question: "Si tenemos int a = 3; int b = 4; int c = 5; ¿cuál es el resultado de a + b * c?",
+        options: [
+            "23",
+            "35",
+            "60",
+            "12"
+        ],
+        correct: 0,
+        explanation: "La multiplicación tiene prioridad sobre la suma. Primero: b * c = 4 * 5 = 20, luego: a + 20 = 3 + 20 = 23.",
+        code: "int a = 3;\nint b = 4;\nint c = 5;\nint resultado = a + b * c; // 3 + (4*5) = 3 + 20 = 23"
+    },
+    {
+        id: 18,
+        question: "¿Cuál es el resultado de 7 % 3?",
+        options: [
+            "1",
+            "2",
+            "3",
+            "4"
+        ],
+        correct: 0,
+        explanation: "El operador % devuelve el resto de la división. 7 dividido entre 3 es 2 con resto 1, así que 7 % 3 = 1.",
+        code: "int resto = 7 % 3; // resto = 1"
+    },
+    {
+        id: 19,
+        question: "Si tenemos double precio = 19.99; ¿qué tipo de variable es precio?",
+        options: [
+            "double",
+            "int",
+            "String",
+            "boolean"
+        ],
+        correct: 0,
+        explanation: "double es el tipo de dato para números decimales. Puede almacenar valores como 19.99, 3.14, etc.",
+        code: "double precio = 19.99;\ndouble pi = 3.14159;"
+    },
+    {
+        id: 20,
+        question: "Si queremos calcular el área de un rectángulo y guardarla en una variable, ¿qué tipo de variable debemos usar?",
+        options: [
+            "int o double (depende si queremos decimales)",
+            "Solo String",
+            "Solo boolean",
+            "Solo char"
+        ],
+        correct: 0,
+        explanation: "El área puede ser un número entero (int) si trabajamos con valores enteros, o decimal (double) si necesitamos precisión decimal. No puede ser String, boolean o char.",
+        code: "int base = 5;\nint altura = 8;\nint area = base * altura; // area = 40 (int)\n// o\ndouble areaDecimal = 5.5 * 8.2; // areaDecimal = 45.1 (double)"
+    },
+    {
+        id: 21,
+        question: "Si tenemos char letra = 'A'; ¿qué tipo de dato es letra?",
+        options: [
+            "char",
+            "String",
+            "int",
+            "boolean"
+        ],
+        correct: 0,
+        explanation: "char es el tipo de dato para un solo carácter. Se escribe con comillas simples 'A', a diferencia de String que usa comillas dobles \"A\".",
+        code: "char letra = 'A';\nchar numero = '5';"
+    },
+    {
+        id: 22,
+        question: "Si tenemos int a = 5; int b = 3; ¿cuál es el resultado de a * b + 2?",
+        options: [
+            "17",
+            "16",
+            "25",
+            "10"
+        ],
+        correct: 0,
+        explanation: "Primero se hace la multiplicación: a * b = 5 * 3 = 15, luego se suma: 15 + 2 = 17. La multiplicación tiene prioridad sobre la suma.",
+        code: "int a = 5;\nint b = 3;\nint resultado = a * b + 2; // (5*3) + 2 = 15 + 2 = 17"
+    },
+    {
+        id: 23,
+        question: "Si tenemos int numero = 25; ¿cuál es el resultado de numero / 5?",
+        options: [
+            "5",
+            "20",
+            "30",
+            "125"
+        ],
+        correct: 0,
+        explanation: "La división de 25 / 5 es 5. Cuando divides dos enteros, obtienes un entero como resultado.",
+        code: "int numero = 25;\nint resultado = numero / 5; // resultado = 5"
+    },
+    {
+        id: 24,
+        question: "¿Cuál es la diferencia entre 'A' y \"A\" en Java?",
+        options: [
+            "'A' es un char, \"A\" es un String",
+            "No hay diferencia",
+            "'A' es un String, \"A\" es un char",
+            "Ambos son int"
+        ],
+        correct: 0,
+        explanation: "Las comillas simples 'A' se usan para char (un solo carácter). Las comillas dobles \"A\" se usan para String (cadena de caracteres).",
+        code: "char letra = 'A'; // char\nString texto = \"A\"; // String"
+    },
+    {
+        id: 25,
+        question: "Si tenemos int resultado = (10 + 5) * 2; ¿cuál es el valor de resultado?",
+        options: [
+            "30",
+            "20",
+            "25",
+            "15"
+        ],
+        correct: 0,
+        explanation: "Primero se resuelve el paréntesis: (10 + 5) = 15, luego se multiplica: 15 * 2 = 30. Los paréntesis tienen la máxima prioridad.",
+        code: "int resultado = (10 + 5) * 2; // (15) * 2 = 30"
     }
 ];
 

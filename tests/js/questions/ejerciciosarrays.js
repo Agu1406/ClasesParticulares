@@ -204,6 +204,136 @@ const questions = [
         correct: 0,
         explanation: "En array[fila][columna], el primer índice [fila] representa la fila (posición vertical, de arriba a abajo) y el segundo índice [columna] representa la columna (posición horizontal, de izquierda a derecha).",
         code: "int[][] array = new int[3][3];\n// array[0][1] = fila 0, columna 1\n// array[2][0] = fila 2, columna 0"
+    },
+    {
+        id: 16,
+        question: "Si tenemos un array de 10 elementos, ¿cuál es el último índice válido?",
+        options: [
+            "9",
+            "10",
+            "11",
+            "8"
+        ],
+        correct: 0,
+        explanation: "Si un array tiene 10 elementos (índices 0-9), el último índice válido es 9. El índice 10 está fuera de rango y causaría un error.",
+        code: "int[] array = new int[10];\n// array.length = 10\n// Último índice válido = 9\n// array[9] ✓, array[10] ✗ (error)"
+    },
+    {
+        id: 17,
+        question: "Si queremos copiar todos los elementos de un array a otro, ¿qué estructura usamos?",
+        options: [
+            "Un bucle for que copia elemento por elemento",
+            "array2 = array1;",
+            "Un if",
+            "Un switch"
+        ],
+        correct: 0,
+        explanation: "Para copiar elementos de un array a otro, usamos un bucle for que recorre el array original y copia cada elemento a la misma posición del nuevo array.",
+        code: "int[] array1 = {1, 2, 3, 4, 5};\nint[] array2 = new int[array1.length];\nfor (int i = 0; i < array1.length; i++) {\n    array2[i] = array1[i]; // Copia cada elemento\n}"
+    },
+    {
+        id: 18,
+        question: "Si tenemos un array bidimensional de 4 filas y 5 columnas, ¿cuántos elementos tiene en total?",
+        options: [
+            "20 elementos (4 * 5)",
+            "9 elementos",
+            "16 elementos",
+            "25 elementos"
+        ],
+        correct: 0,
+        explanation: "Un array bidimensional de 4 filas y 5 columnas tiene 4 * 5 = 20 elementos en total. Es como una tabla con 4 filas y 5 columnas.",
+        code: "int[][] array = new int[4][5];\n// 4 filas * 5 columnas = 20 elementos"
+    },
+    {
+        id: 19,
+        question: "Si queremos encontrar el menor elemento en un array, ¿qué estructura usamos?",
+        options: [
+            "Una variable menor que inicia con array[0], luego comparamos con if en un bucle",
+            "Solo un bucle for",
+            "Solo un if",
+            "Un switch"
+        ],
+        correct: 0,
+        explanation: "Iniciamos 'menor' con el primer elemento (array[0]). Luego, en un bucle, comparamos cada elemento con 'menor' usando if. Si encontramos uno menor, actualizamos 'menor'.",
+        code: "int[] array = {5, 2, 8, 1, 9};\nint menor = array[0];\nfor (int i = 1; i < array.length; i++) {\n    if (array[i] < menor) {\n        menor = array[i];\n    }\n}"
+    },
+    {
+        id: 20,
+        question: "Si queremos llenar un array con el mismo valor en todas las posiciones, ¿qué hacemos?",
+        options: [
+            "Un bucle for que asigna el valor a cada posición",
+            "array = valor;",
+            "Un if",
+            "No se puede hacer"
+        ],
+        correct: 0,
+        explanation: "Usamos un bucle for que recorre todas las posiciones del array y asigna el mismo valor a cada una. No podemos asignar un valor a todo el array de una vez.",
+        code: "int[] array = new int[5];\nint valor = 10;\nfor (int i = 0; i < array.length; i++) {\n    array[i] = valor; // Asigna 10 a cada posición\n}"
+    },
+    {
+        id: 21,
+        question: "Si tenemos array[fila][columna] y queremos acceder a la primera fila, primera columna, ¿qué índices usamos?",
+        options: [
+            "array[0][0]",
+            "array[1][1]",
+            "array[0][1]",
+            "array[1][0]"
+        ],
+        correct: 0,
+        explanation: "En Java, los índices empiezan en 0. La primera fila es índice 0 y la primera columna es índice 0, así que usamos array[0][0].",
+        code: "int[][] array = new int[3][3];\n// Primera fila, primera columna:\narray[0][0];"
+    },
+    {
+        id: 22,
+        question: "Si queremos contar cuántos elementos de un array son mayores que un valor específico, ¿qué estructura usamos?",
+        options: [
+            "Un bucle for con un if que incrementa un contador",
+            "Solo un bucle for",
+            "Solo un if",
+            "Un switch"
+        ],
+        correct: 0,
+        explanation: "Creamos un contador que inicia en 0. En el bucle, verificamos cada elemento con if. Si es mayor que el valor, incrementamos el contador.",
+        code: "int[] array = {5, 8, 3, 10, 2};\nint valor = 5;\nint contador = 0;\nfor (int i = 0; i < array.length; i++) {\n    if (array[i] > valor) {\n        contador++;\n    }\n}"
+    },
+    {
+        id: 23,
+        question: "Si tenemos un array bidimensional y queremos sumar todos sus elementos, ¿cuántos bucles necesitamos?",
+        options: [
+            "Dos bucles for anidados",
+            "Un solo bucle for",
+            "Tres bucles for",
+            "No necesitamos bucles"
+        ],
+        correct: 0,
+        explanation: "Para recorrer un array bidimensional necesitamos dos bucles for anidados: uno para las filas y otro para las columnas. Dentro sumamos cada elemento.",
+        code: "int suma = 0;\nfor (int fila = 0; fila < array.length; fila++) {\n    for (int columna = 0; columna < array[fila].length; columna++) {\n        suma += array[fila][columna];\n    }\n}"
+    },
+    {
+        id: 24,
+        question: "Si queremos invertir un array (el primer elemento al final y viceversa), ¿qué estructura usamos?",
+        options: [
+            "Un bucle for que intercambia elementos desde los extremos hacia el centro",
+            "Solo un bucle for",
+            "Un if",
+            "No se puede hacer"
+        ],
+        correct: 0,
+        explanation: "Usamos un bucle que va desde el inicio hasta la mitad del array. Intercambiamos el elemento en la posición i con el elemento en la posición (length - 1 - i).",
+        code: "for (int i = 0; i < array.length / 2; i++) {\n    int aux = array[i];\n    array[i] = array[array.length - 1 - i];\n    array[array.length - 1 - i] = aux;\n}"
+    },
+    {
+        id: 25,
+        question: "Si queremos verificar si un array contiene un valor específico, ¿qué estructura usamos?",
+        options: [
+            "Un bucle for con un if que verifica si array[i] == valor",
+            "Solo un bucle for",
+            "Solo un if",
+            "Un switch"
+        ],
+        correct: 0,
+        explanation: "Recorremos el array con un bucle for. En cada iteración, verificamos con if si el elemento actual es igual al valor buscado. Si lo encontramos, podemos retornar true o guardar la posición.",
+        code: "int valor = 5;\nfor (int i = 0; i < array.length; i++) {\n    if (array[i] == valor) {\n        return true; // O guardar la posición\n    }\n}"
     }
 ];
 
