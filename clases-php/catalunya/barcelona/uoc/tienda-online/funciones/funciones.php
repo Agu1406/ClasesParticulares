@@ -95,5 +95,14 @@ function hashPassword($password) {
 function verificarPassword($password, $hash) {
     return password_verify($password, $hash);
 }
+
+/**
+ * Obtiene la ruta base relativa desde el archivo actual hasta la raíz del proyecto
+ * @return string Ruta base relativa (ej: "" o "../")
+ */
+function obtenerRutaBase() {
+    // Usar la constante BASE_PATH definida en config.php
+    return defined('BASE_PATH') ? BASE_PATH : '';
+}
 ?>
 

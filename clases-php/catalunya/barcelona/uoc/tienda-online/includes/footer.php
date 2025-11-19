@@ -15,8 +15,8 @@
                 <div class="footer-section">
                     <h3>Enlaces</h3>
                     <ul>
-                        <li><a href="<?php echo APP_URL; ?>index.php">Inicio</a></li>
-                        <li><a href="<?php echo APP_URL; ?>catalogo.php">Catálogo</a></li>
+                        <li><a href="<?php echo BASE_PATH; ?>index.php">Inicio</a></li>
+                        <li><a href="<?php echo BASE_PATH; ?>catalogo.php">Catálogo</a></li>
                     </ul>
                 </div>
             </div>

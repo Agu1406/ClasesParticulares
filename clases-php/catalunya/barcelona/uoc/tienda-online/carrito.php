@@ -58,10 +58,10 @@ include __DIR__ . '/includes/header.php';
                             <td>
                                 <div class="item-producto">
                                     <?php if ($item['imagen']): ?>
-                                        <img src="<?php echo APP_URL; ?>imagenes/<?php echo htmlspecialchars($item['imagen']); ?>" 
+                                        <img src="imagenes/<?php echo htmlspecialchars($item['imagen']); ?>" 
                                              alt="<?php echo htmlspecialchars($item['nombre']); ?>"
                                              class="item-imagen"
-                                             onerror="this.src='<?php echo APP_URL; ?>imagenes/placeholder.jpg'">
+                                             onerror="this.src='imagenes/placeholder.jpg'">
                                     <?php endif; ?>
                                     <span><?php echo htmlspecialchars($item['nombre']); ?></span>
                                 </div>

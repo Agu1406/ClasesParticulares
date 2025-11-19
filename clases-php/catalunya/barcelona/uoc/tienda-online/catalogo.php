@@ -40,11 +40,11 @@ include __DIR__ . '/includes/header.php';
                     <div class="producto-card">
                         <div class="producto-imagen">
                             <?php if ($producto['imagen']): ?>
-                                <img src="<?php echo APP_URL; ?>imagenes/<?php echo htmlspecialchars($producto['imagen']); ?>" 
+                                <img src="imagenes/<?php echo htmlspecialchars($producto['imagen']); ?>" 
                                      alt="<?php echo htmlspecialchars($producto['nombre']); ?>"
-                                     onerror="this.src='<?php echo APP_URL; ?>imagenes/placeholder.jpg'">
+                                     onerror="this.src='imagenes/placeholder.jpg'">
                             <?php else: ?>
-                                <img src="<?php echo APP_URL; ?>imagenes/placeholder.jpg" 
+                                <img src="imagenes/placeholder.jpg" 
                                      alt="<?php echo htmlspecialchars($producto['nombre']); ?>">
                             <?php endif; ?>
                         </div>
