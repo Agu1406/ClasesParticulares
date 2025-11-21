@@ -17,72 +17,126 @@ La idea surgió este año (2025) después de más de un año impartiendo clases,
 ## Estructura del Repositorio
 
 ### **clases-android/**
-- Proyectos de desarrollo móvil con Android
-- Ejercicios de Kotlin y Java para Android
-- Aplicaciones prácticas y ejemplos de código
-- Proyectos con Gradle
+- Desarrollo móvil con Android y Kotlin
+- **15 ejercicios prácticos** sobre:
+  - SharedPreferences (básico, email, agenda, modos)
+  - Sistema de archivos (lectura, escritura, verificación)
+  - SQLite (conceptos, SQLiteOpenHelper, CRUD completo)
+- Proyectos completos: Gestor de Tareas, aplicaciones híbridas
+- Proyectos de exámenes y convocatorias extraordinarias
+- Proyectos con Gradle y estructura modular
 
 ### **clases-c/**
-- Programación en C
-- Estructuras de datos (pilas, colas, registros)
-- Ejercicios de laboratorio
-- Documentación y guías prácticas
+- Programación en C estructurada en **12 módulos progresivos**:
+  - 01-introduccion: Hola mundo, estructura de programas, compilación
+  - 02-sintaxis-basica: Tipos de datos, casting, variables, operadores, E/S
+  - 03-control-flujo: if, switch, bucles (for, while, do-while), break/continue
+  - 04-funciones
+  - 05-arreglos-strings
+  - 06-punteros
+  - 07-estructuras-uniones
+  - 08-memoria-dinamica
+  - 09-archivos
+  - 10-preprocesador
+  - 11-bibliotecas-estandar
+  - 12-proyectos-practicos
+- **Ejercicios resueltos** en cada módulo (más de 20 ejercicios)
+- Documentación PDF sobre pilas, colas y registros
+- Ejercicios de laboratorio con soluciones
 
 ### **clases-cpp/**
-- Programación en C++
-- Ejercicios de estructuras de datos
-- Proyectos de gestión y algoritmos
-- Aplicaciones con CMake
+- Programación en C++ con proyectos prácticos
+- Proyectos de gestión: Supermercado (archivos, productos, ventas, reportes)
+- Juegos: Juego de conquistas
+- Aplicaciones con CMake y estructura modular
+- Proyectos organizados por universidad (UAX)
 
 ### **clases-css/**
-- Estilos CSS reutilizables
-- Componentes de diseño compartidos
+- Estilos CSS reutilizables y compartidos
+- Componentes de diseño comunes
 - Variables CSS globales
+- Archivo index.css con estilos base
 
 ### **clases-interfaces-web/**
-- Desarrollo de interfaces web
-- HTML, CSS y JavaScript
-- Proyectos frontend y diseño web
-- Maquetación y diseño responsive
+- Desarrollo de interfaces web con HTML, CSS y JavaScript
+- Tareas prácticas de maquetación y diseño responsive
+- Proyectos frontend: páginas web, formularios interactivos
+- Ejercicios de diseño web y estilos avanzados
+- Organización por comunidad autónoma y centro educativo
 
 ### **clases-java/**
-- Programación en Java
-- Ejercicios de POO (Programación Orientada a Objetos)
-- Proyectos con JavaFX y Swing
-- Aplicaciones de gestión y bases de datos
-- Ejercicios de arrays y estructuras de datos
+- Programación en Java con estructura completa organizada por regiones:
+  - **Andalucía**: Almería, Sevilla (JavaFX, JDBC, multihilo, talleres)
+  - **Castilla y León**: Valladolid, Salamanca (aplicaciones bancarias, e-commerce)
+  - **Galicia**: Santiago de Compostela (USC - POO completa: encapsulación, herencia, polimorfismo, interfaces, excepciones)
+  - **Madrid**: UAX, IES Calderón Barca, CES Juan Pablo Segundo (estructuras de datos, técnicas de programación, arrays, ArrayList, HashMap)
+  - **Valencia**: Alicante (UA)
+- **Ejercicios organizados por categorías**:
+  - Ejercicios básicos (variables, operaciones)
+  - Bucles y condicionales
+  - Funciones
+  - Arrays
+  - ArrayList
+  - Ejercicios conocidos (27 ejercicios resueltos)
+- Proyectos con JavaFX, Swing, JDBC, multihilo
+- Aplicaciones de gestión: bancarias, e-commerce, talleres mecánicos
+- Documentación PDF completa sobre POO y técnicas de programación
+- Bibliotecas: JavaFX, Jakarta Servlet API
 
 ### **clases-javafx-gradle/**
 - Interfaces gráficas con JavaFX
-- Aplicaciones de escritorio
-- Aplicaciones móviles
-- Proyectos con Gradle
+- Aplicaciones de escritorio con FXML
+- Proyectos con Gradle y JavaFX SDK 25.0.1
+- Documentación sobre diseño de interfaces (DAW 2)
+- Estructura modular con recursos y layouts
+
+### **clases-javascript/**
+- Desarrollo con JavaScript (en desarrollo)
+- Preparado para ejercicios y proyectos JavaScript
 
 ### **clases-php/**
-- Desarrollo web con PHP
-- Gestión de bases de datos
-- Proyectos web dinámicos
-- Ejercicios de formularios y validación
+- Desarrollo web con PHP organizado por regiones:
+  - **Andalucía** (Almería): Web de películas (fácil e intermedio) con CSV y MySQL
+  - **Catalunya** (Barcelona - UOC): Tienda online completa con carrito, autenticación, pedidos
+  - **Madrid**: Ejercicios de relación (UD2, UD3, UD4) - más de 40 problemas resueltos
+- Proyectos completos: e-commerce, gestión de películas, formularios
+- Integración con bases de datos MySQL
+- Arquitectura MVC y DAO (Data Access Object)
+- Documentación PDF de prácticas y ejercicios
 
 ### **clases-python/**
-- Desarrollo orientado a objetos
-- Sintaxis básica y ejercicios sencillos
-- Pequeños ejercicios teórico-prácticos
-- Documentación relacionada con ejercicios
-- Gestión de tareas y proyectos prácticos
+- **13 ejercicios numerados** progresivos:
+  - Variables, operadores, input
+  - Control de flujo (if, if-else)
+  - Bucles (for, while)
+  - Estructuras de datos (listas, tuplas, diccionarios)
+  - Diccionarios avanzados
+- Proyectos prácticos: Calculadora, Gestor de Tareas, Tienda de Compra
+- Documentación PDF sobre proyectos y ejercicios de ampliación
+- Organización por sintaxis básica y proyectos avanzados
 
 ### **clases-react-native/**
-- Desarrollo de aplicaciones móviles multiplataforma
-- React Native con Expo
-- Proyectos de interfaces móviles
+- Desarrollo de aplicaciones móviles multiplataforma con React Native y Expo
+- Proyecto completo: **Sevici** (aplicación de bicicletas públicas)
+  - Autenticación (login, registro multi-paso)
+  - Navegación con tabs (explore, map, profile, trips)
+  - Componentes reutilizables y temas
+  - Validación y almacenamiento
 - Ejercicios y simulacros de examen
+- Documentación PDF de prácticas y exámenes
+- TypeScript y componentes modernos
 
 ### **clases-sql/**
-- Introducción a MySQL
-- Creación de bases de datos y tablas
-- Consultas y filtrado de datos
-- Operadores y funciones SQL
-- Inserción, actualización y eliminación de datos
+- **10 ejercicios progresivos** sobre MySQL:
+  - Introducción a MySQL
+  - Creación de bases de datos y tablas
+  - Tipos de datos
+  - Inserción, consulta, filtrado (WHERE)
+  - Actualización y eliminación de datos
+  - Operadores y funciones SQL
+- Contenido adicional: Microsoft Access (prácticas con archivos .mdb)
+- Documentación PDF de prácticas
+- Organización por ejercicios numerados y contenido por región
 
 ### **tests/**
 - **Sistema de tests interactivos** tipo Google Forms
@@ -109,16 +163,17 @@ La idea surgió este año (2025) después de más de un año impartiendo clases,
 
 | Lenguaje | Uso Principal |
 |----------|---------------|
-| **Java** | POO, Swing, JavaFX, JDBC, Spring |
-| **PHP** | Desarrollo web, formularios, BD |
-| **C++** | Algoritmos, estructuras de datos, POO |
-| **C** | Estructuras de datos, pilas, colas, registros |
-| **Kotlin** | Desarrollo Android |
-| **HTML/CSS/JS** | Interfaces web, maquetación, diseño responsive |
-| **Python** | Desarrollo web y multiplataforma, POO |
-| **React Native** | Desarrollo multiplataforma Android & iOS |
-| **SQL** | Bases de datos MySQL, consultas, gestión de datos |
-| **CSS** | Estilos reutilizables, diseño web |
+| **Java** | POO, Swing, JavaFX, JDBC, multihilo, estructuras de datos |
+| **PHP** | Desarrollo web, formularios, BD, MVC, DAO |
+| **C++** | Algoritmos, estructuras de datos, POO, gestión de proyectos |
+| **C** | Programación estructurada, estructuras de datos, pilas, colas, registros, memoria dinámica |
+| **Kotlin** | Desarrollo Android, SharedPreferences, SQLite, archivos |
+| **HTML/CSS/JS** | Interfaces web, maquetación, diseño responsive, frontend |
+| **JavaScript** | Desarrollo web, interactividad (en desarrollo) |
+| **Python** | Sintaxis básica, POO, estructuras de datos, proyectos prácticos |
+| **React Native** | Desarrollo multiplataforma Android & iOS, Expo, TypeScript |
+| **SQL** | Bases de datos MySQL, consultas, gestión de datos, Microsoft Access |
+| **CSS** | Estilos reutilizables, diseño web, componentes compartidos |
 
 ## Sistema de Tests Interactivos
 
