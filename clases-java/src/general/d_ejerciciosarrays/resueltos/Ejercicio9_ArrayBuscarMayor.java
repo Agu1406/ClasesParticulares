@@ -33,9 +33,9 @@ public class Ejercicio9_ArrayBuscarMayor {
      */
     public static int buscarMayor(int[] array) {
         int mayor = array[0]; // Inicializar con el primer elemento
-        for (int i = 1; i < array.length; i++) {
-            if (array[i] > mayor) {
-                mayor = array[i];
+        for (int indice = 1; indice < array.length; indice++) {
+            if (array[indice] > mayor) {
+                mayor = array[indice];
             }
         }
         return mayor;

@@ -29,28 +29,28 @@ public class Ejercicio8_ArraySumarFila {
     
     /**
      * Función que suma todos los elementos de una fila específica
-     * @param matriz Array bidimensional de enteros
+     * @param tablaNumeros Array bidimensional de enteros
      * @param fila Número de fila a sumar (0-indexed)
      * @return Suma de los elementos de la fila
      */
-    public static int sumarFila(int[][] matriz, int fila) {
+    public static int sumarFila(int[][] tablaNumeros, int fila) {
         int suma = 0;
-        for (int j = 0; j < matriz[fila].length; j++) {
-            suma += matriz[fila][j];
+        for (int columna = 0; columna < tablaNumeros[fila].length; columna++) {
+            suma += tablaNumeros[fila][columna];
         }
         return suma;
     }
     
     public static void main(String[] args) {
         // Crear array bidimensional de 3 filas y 3 columnas y asignar valores
-        int[][] matriz = {
+        int[][] tablaNumeros = {
             {1, 2, 3},
             {4, 5, 6},
             {7, 8, 9}
         };
         
         // Llamar a la función para sumar la primera fila (fila 0)
-        int sumaFila0 = sumarFila(matriz, 0);
+        int sumaFila0 = sumarFila(tablaNumeros, 0);
         System.out.println("La suma de la fila 0 es: " + sumaFila0);
     }
 }

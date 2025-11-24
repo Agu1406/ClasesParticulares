@@ -31,8 +31,8 @@ public class Ejercicio2_ArrayConFuncion {
      */
     public static void mostrarArray(int[] array) {
         System.out.println("Valores del array:");
-        for (int i = 0; i < array.length; i++) {
-            System.out.println("Posición " + i + ": " + array[i]);
+        for (int indice = 0; indice < array.length; indice++) {
+            System.out.println("Posición " + indice + ": " + array[indice]);
         }
     }
     

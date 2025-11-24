@@ -52,16 +52,16 @@ public class Ejercicio13_ArrayBidimensionalCharVocalesConsonantes {
     }
     
     /**
-     * Función que cuenta vocales y consonantes en la matriz
-     * @param matriz Array bidimensional de caracteres
+     * Función que cuenta vocales y consonantes en la tabla
+     * @param tablaLetras Array bidimensional de caracteres
      */
-    public static void contarVocalesYConsonantes(char[][] matriz) {
+    public static void contarVocalesYConsonantes(char[][] tablaLetras) {
         int contadorVocales = 0;
         int contadorConsonantes = 0;
         
-        for (int i = 0; i < matriz.length; i++) {
-            for (int j = 0; j < matriz[i].length; j++) {
-                char letra = matriz[i][j];
+        for (int fila = 0; fila < tablaLetras.length; fila++) {
+            for (int columna = 0; columna < tablaLetras[fila].length; columna++) {
+                char letra = tablaLetras[fila][columna];
                 // Verificar que sea una letra
                 if (Character.isLetter(letra)) {
                     if (esVocal(letra)) {
@@ -79,7 +79,7 @@ public class Ejercicio13_ArrayBidimensionalCharVocalesConsonantes {
     
     public static void main(String[] args) {
         // Crear array bidimensional de 4 filas y 4 columnas
-        char[][] matriz = {
+        char[][] tablaLetras = {
             {'A', 'N', 'N', 'A'},
             {'R', 'A', 'D', 'A'},
             {'O', 'S', 'O', 'S'},
@@ -87,7 +87,7 @@ public class Ejercicio13_ArrayBidimensionalCharVocalesConsonantes {
         };
         
         // Llamar a la función contarVocalesYConsonantes
-        contarVocalesYConsonantes(matriz);
+        contarVocalesYConsonantes(tablaLetras);
     }
 }
 

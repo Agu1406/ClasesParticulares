@@ -36,8 +36,8 @@ public class Ejercicio1_ArrayUnidimensional {
         
         // Mostrar todos los valores usando bucle for
         System.out.println("Valores del array:");
-        for (int i = 0; i < numeros.length; i++) {
-            System.out.println("Posición " + i + ": " + numeros[i]);
+        for (int indice = 0; indice < numeros.length; indice++) {
+            System.out.println("Posición " + indice + ": " + numeros[indice]);
         }
     }
 }

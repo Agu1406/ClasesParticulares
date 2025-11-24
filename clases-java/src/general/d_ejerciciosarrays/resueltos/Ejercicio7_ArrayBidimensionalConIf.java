@@ -26,7 +26,7 @@ package madrid.iescalderonbarca.d_ejerciciosarrays;
 public class Ejercicio7_ArrayBidimensionalConIf {
     public static void main(String[] args) {
         // Crear array bidimensional de 3 filas y 3 columnas y asignar valores
-        int[][] matriz = {
+        int[][] tablaNumeros = {
             {2, 8, 3},
             {6, 1, 9},
             {4, 7, 5}
@@ -34,10 +34,10 @@ public class Ejercicio7_ArrayBidimensionalConIf {
         
         // Recorrer el array y mostrar solo los números mayores que 5
         System.out.println("Números mayores que 5:");
-        for (int i = 0; i < matriz.length; i++) {
-            for (int j = 0; j < matriz[i].length; j++) {
-                if (matriz[i][j] > 5) {
-                    System.out.println("Fila " + i + ", Columna " + j + ": " + matriz[i][j]);
+        for (int fila = 0; fila < tablaNumeros.length; fila++) {
+            for (int columna = 0; columna < tablaNumeros[fila].length; columna++) {
+                if (tablaNumeros[fila][columna] > 5) {
+                    System.out.println("Fila " + fila + ", Columna " + columna + ": " + tablaNumeros[fila][columna]);
                 }
             }
         }

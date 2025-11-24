@@ -55,14 +55,14 @@ public class Ejercicio12_ArrayBidimensionalStringPalindromo {
     
     /**
      * Función que cuenta cuántas palabras empiezan con vocal
-     * @param matriz Array bidimensional de Strings
+     * @param tablaPalabras Array bidimensional de Strings
      * @return Número total de palabras que empiezan con vocal
      */
-    public static int contarPalabrasConVocal(String[][] matriz) {
+    public static int contarPalabrasConVocal(String[][] tablaPalabras) {
         int contador = 0;
-        for (int i = 0; i < matriz.length; i++) {
-            for (int j = 0; j < matriz[i].length; j++) {
-                if (empiezaConVocal(matriz[i][j])) {
+        for (int fila = 0; fila < tablaPalabras.length; fila++) {
+            for (int columna = 0; columna < tablaPalabras[fila].length; columna++) {
+                if (empiezaConVocal(tablaPalabras[fila][columna])) {
                     contador++;
                 }
             }

@@ -30,9 +30,9 @@ public class Ejercicio3_ArrayConIf {
         
         // Recorrer el array y mostrar solo los números mayores que 5
         System.out.println("Números mayores que 5:");
-        for (int i = 0; i < numeros.length; i++) {
-            if (numeros[i] > 5) {
-                System.out.println("Posición " + i + ": " + numeros[i]);
+        for (int indice = 0; indice < numeros.length; indice++) {
+            if (numeros[indice] > 5) {
+                System.out.println("Posición " + indice + ": " + numeros[indice]);
             }
         }
     }

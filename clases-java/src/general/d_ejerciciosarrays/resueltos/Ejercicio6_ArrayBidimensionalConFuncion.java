@@ -28,13 +28,13 @@ public class Ejercicio6_ArrayBidimensionalConFuncion {
     
     /**
      * Función que muestra todos los valores del array bidimensional
-     * @param matriz Array bidimensional de enteros a mostrar
+     * @param tablaNumeros Array bidimensional de enteros a mostrar
      */
-    public static void mostrarArrayBidimensional(int[][] matriz) {
+    public static void mostrarArrayBidimensional(int[][] tablaNumeros) {
         System.out.println("Matriz 3x3:");
-        for (int i = 0; i < matriz.length; i++) {
-            for (int j = 0; j < matriz[i].length; j++) {
-                System.out.print(matriz[i][j] + " ");
+        for (int fila = 0; fila < tablaNumeros.length; fila++) {
+            for (int columna = 0; columna < tablaNumeros[fila].length; columna++) {
+                System.out.print(tablaNumeros[fila][columna] + " ");
             }
             System.out.println(); // Salto de línea después de cada fila
         }
@@ -42,14 +42,14 @@ public class Ejercicio6_ArrayBidimensionalConFuncion {
     
     public static void main(String[] args) {
         // Crear array bidimensional de 3 filas y 3 columnas y asignar valores
-        int[][] matriz = {
+        int[][] tablaNumeros = {
             {1, 2, 3},
             {4, 5, 6},
             {7, 8, 9}
         };
         
         // Llamar a la función mostrarArrayBidimensional
-        mostrarArrayBidimensional(matriz);
+        mostrarArrayBidimensional(tablaNumeros);
     }
 }
 

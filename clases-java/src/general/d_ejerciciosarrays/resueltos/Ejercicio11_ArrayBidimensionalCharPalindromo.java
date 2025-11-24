@@ -56,36 +56,36 @@ public class Ejercicio11_ArrayBidimensionalCharPalindromo {
     }
     
     /**
-     * Función que busca palíndromos en filas y columnas de la matriz
-     * @param matriz Array bidimensional de caracteres
+     * Función que busca palíndromos en filas y columnas de la tabla
+     * @param tablaLetras Array bidimensional de caracteres
      */
-    public static void buscarPalindromos(char[][] matriz) {
+    public static void buscarPalindromos(char[][] tablaLetras) {
         // Verificar filas
         System.out.println("Buscando palíndromos en filas:");
-        for (int i = 0; i < matriz.length; i++) {
-            if (esPalindromo(matriz[i])) {
-                System.out.println("La fila " + i + " es un palíndromo");
+        for (int fila = 0; fila < tablaLetras.length; fila++) {
+            if (esPalindromo(tablaLetras[fila])) {
+                System.out.println("La fila " + fila + " es un palíndromo");
             }
         }
         
         // Verificar columnas
         System.out.println("\nBuscando palíndromos en columnas:");
-        for (int j = 0; j < matriz[0].length; j++) {
+        for (int columna = 0; columna < tablaLetras[0].length; columna++) {
             // Crear array temporal para la columna
-            char[] columna = new char[matriz.length];
-            for (int i = 0; i < matriz.length; i++) {
-                columna[i] = matriz[i][j];
+            char[] columnaLetras = new char[tablaLetras.length];
+            for (int fila = 0; fila < tablaLetras.length; fila++) {
+                columnaLetras[fila] = tablaLetras[fila][columna];
             }
             
-            if (esPalindromo(columna)) {
-                System.out.println("La columna " + j + " es un palíndromo");
+            if (esPalindromo(columnaLetras)) {
+                System.out.println("La columna " + columna + " es un palíndromo");
             }
         }
     }
     
     public static void main(String[] args) {
         // Crear array bidimensional de 4 filas y 4 columnas
-        char[][] matriz = {
+        char[][] tablaLetras = {
             {'A', 'N', 'N', 'A'},
             {'R', 'A', 'D', 'A'},
             {'O', 'S', 'O', 'S'},
@@ -93,7 +93,7 @@ public class Ejercicio11_ArrayBidimensionalCharPalindromo {
         };
         
         // Llamar a la función buscarPalindromos
-        buscarPalindromos(matriz);
+        buscarPalindromos(tablaLetras);
     }
 }
 

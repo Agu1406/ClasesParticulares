@@ -29,14 +29,14 @@ public class Ejercicio10_ArrayBidimensionalComplejo {
     
     /**
      * Función que cuenta cuántos números pares hay en el array bidimensional
-     * @param matriz Array bidimensional de enteros
+     * @param tablaNumeros Array bidimensional de enteros
      * @return Número total de elementos pares
      */
-    public static int contarPares(int[][] matriz) {
+    public static int contarPares(int[][] tablaNumeros) {
         int contador = 0;
-        for (int i = 0; i < matriz.length; i++) {
-            for (int j = 0; j < matriz[i].length; j++) {
-                if (matriz[i][j] % 2 == 0) {
+        for (int fila = 0; fila < tablaNumeros.length; fila++) {
+            for (int columna = 0; columna < tablaNumeros[fila].length; columna++) {
+                if (tablaNumeros[fila][columna] % 2 == 0) {
                     contador++;
                 }
             }
@@ -46,7 +46,7 @@ public class Ejercicio10_ArrayBidimensionalComplejo {
     
     public static void main(String[] args) {
         // Crear array bidimensional de 4 filas y 4 columnas y asignar valores
-        int[][] matriz = {
+        int[][] tablaNumeros = {
             {1, 2, 3, 4},
             {5, 6, 7, 8},
             {9, 10, 11, 12},
@@ -54,7 +54,7 @@ public class Ejercicio10_ArrayBidimensionalComplejo {
         };
         
         // Llamar a la función y mostrar el resultado
-        int cantidadPares = contarPares(matriz);
+        int cantidadPares = contarPares(tablaNumeros);
         System.out.println("La cantidad de números pares es: " + cantidadPares);
     }
 }
