@@ -44,7 +44,7 @@ async function loadComponent(componentPath, targetId, options = {}) {
                 .filter(p => p !== 'index.html' && !p.endsWith('.html'));
             
             // Profundidad = 1 (tests/) + segmentos después de tests
-            // Ejemplo: /ClasesParticulares/tests/arrays/index.html
+            // Ejemplo: /ClasesParticulares/tests/java/index.html
             // pathSegments = ['ClasesParticulares', 'tests', 'arrays']
             // testsIndex = 1
             // segmentsAfterTests = ['arrays']
@@ -102,7 +102,7 @@ document.addEventListener('DOMContentLoaded', function() {
     // Si estamos en tests/ -> ./components/
     if (path.includes('/tests/tests/')) {
         basePath = '../../components/'; // tests/tests/xxx/
-    } else if (path.includes('/tests/arrays/') || path.includes('/tests/javafx/')) {
+    } else if (path.includes('/tests/java/') || path.includes('/tests/javafx/')) {
         basePath = '../components/'; // tests/xxx/
     } else if (path.includes('/tests/')) {
         basePath = './components/'; // tests/
