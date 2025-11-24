@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tests de Preparación - Java</title>
+    <link rel="icon" type="image/svg+xml" href="favicon.svg">
+    <link rel="stylesheet" href="../clases-css/index.css">
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+    <!-- Contenedor principal de la pagina -->
+    <div class="container">
+        <!-- Cabecera global (se carga dinámicamente) -->
+        <div id="global-header" data-subtitle="Tests de Preparación - Java"></div>
+
+        <!-- Filtros para mostrar diferentes modos de test -->
+        <div class="filter-buttons">
+            <button class="filter-btn active" data-filter="all" onclick="filterTests('all')">Todos</button>
+            <button class="filter-btn" data-filter="examen" onclick="filterTests('examen')">Modo Examen</button>
+            <button class="filter-btn" data-filter="estudio" onclick="filterTests('estudio')">Modo Estudio</button>
+        </div>
+
+        <!-- Lista de tests disponibles -->
+        <main class="main-content">
+            <h2 style="margin-top: 20px; margin-bottom: 10px; color: var(--primary-color); font-size: 1.8em; border-bottom: 2px solid var(--primary-color); padding-bottom: 10px;">Java - Fundamentos</h2>
+            <p style="color: var(--text-secondary); margin-bottom: 20px; font-size: 0.95em;">
+                Tests sobre conceptos básicos de Java: variables, bucles, condicionales, funciones, arrays y ArrayList.
+            </p>
+            
+            <!-- Test: Ejercicios Básicos - Modo Examen -->
+            <div class="test-card" data-mode="examen">
+                <h2>Ejercicios Básicos <span class="badge-mode badge-examen">Examen</span></h2>
+                <p class="test-description">
+                    Operaciones básicas, variables, tipos de datos y conceptos fundamentales de Java.
+                    <br>
+                    <small style="color: var(--text-secondary);">Modo examen: No recibes feedback hasta el final.</small>
+                </p>
+                <div class="test-info">
+                    <span class="badge">25 preguntas</span>
+                    <span class="badge">~30 minutos</span>
+                </div>
+                <a href="tests/iescalderonbarca/test-ejerciciosbasicos.html" class="btn btn-primary">Comenzar Test</a>
+            </div>
+
+            <!-- Test: Ejercicios Básicos - Modo Estudio -->
+            <div class="test-card" data-mode="estudio">
+                <h2>Ejercicios Básicos <span class="badge-mode badge-estudio">Estudio</span></h2>
+                <p class="test-description">
+                    Operaciones básicas, variables, tipos de datos y conceptos fundamentales de Java.
+                    <br>
+                    <small style="color: var(--text-secondary);">Modo estudio: Feedback inmediato al responder.</small>
+                </p>
+                <div class="test-info">
+                    <span class="badge">25 preguntas</span>
+                    <span class="badge">~30 minutos</span>
+                </div>
+                <a href="tests/iescalderonbarca/test-ejerciciosbasicos-estudio.html" class="btn btn-primary">Comenzar Test</a>
+            </div>
+
+            <!-- Test: Bucles y Condicionales - Modo Examen -->
+            <div class="test-card" data-mode="examen">
+                <h2>Bucles y Condicionales <span class="badge-mode badge-examen">Examen</span></h2>
+                <p class="test-description">
+                    Preguntas sobre bucles (for, while, do-while) y condicionales (if, if-else, switch).
+                    <br>
+                    <small style="color: var(--text-secondary);">Modo examen: No recibes feedback hasta el final.</small>
+                </p>
+                <div class="test-info">
+                    <span class="badge">25 preguntas</span>
+                    <span class="badge">~30 minutos</span>
+                </div>
+                <a href="tests/iescalderonbarca/test-buclesycondicionales.html" class="btn btn-primary">Comenzar Test</a>
+            </div>
+
+            <!-- Test: Bucles y Condicionales - Modo Estudio -->
+            <div class="test-card" data-mode="estudio">
+                <h2>Bucles y Condicionales <span class="badge-mode badge-estudio">Estudio</span></h2>
+                <p class="test-description">
+                    Preguntas sobre bucles (for, while, do-while) y condicionales (if, if-else, switch).
+                    <br>
+                    <small style="color: var(--text-secondary);">Modo estudio: Feedback inmediato al responder.</small>
+                </p>
+                <div class="test-info">
+                    <span class="badge">25 preguntas</span>
+                    <span class="badge">~30 minutos</span>
+                </div>
+                <a href="tests/iescalderonbarca/test-buclesycondicionales-estudio.html" class="btn btn-primary">Comenzar Test</a>
+            </div>
+
+            <!-- Test: Funciones - Modo Examen -->
+            <div class="test-card" data-mode="examen">
+                <h2>Funciones <span class="badge-mode badge-examen">Examen</span></h2>
+                <p class="test-description">
+                    Preguntas sobre creación de funciones, tipos de retorno, parámetros y uso de funciones.
+                    <br>
+                    <small style="color: var(--text-secondary);">Modo examen: No recibes feedback hasta el final.</small>
+                </p>
+                <div class="test-info">
+                    <span class="badge">25 preguntas</span>
+                    <span class="badge">~30 minutos</span>
+                </div>
+                <a href="tests/iescalderonbarca/test-funciones.html" class="btn btn-primary">Comenzar Test</a>
+            </div>
+
+            <!-- Test: Funciones - Modo Estudio -->
+            <div class="test-card" data-mode="estudio">
+                <h2>Funciones <span class="badge-mode badge-estudio">Estudio</span></h2>
+                <p class="test-description">
+                    Preguntas sobre creación de funciones, tipos de retorno, parámetros y uso de funciones.
+                    <br>
+                    <small style="color: var(--text-secondary);">Modo estudio: Feedback inmediato al responder.</small>
+                </p>
+                <div class="test-info">
+                    <span class="badge">25 preguntas</span>
+                    <span class="badge">~30 minutos</span>
+                </div>
+                <a href="tests/iescalderonbarca/test-funciones-estudio.html" class="btn btn-primary">Comenzar Test</a>
+            </div>
+
+            <!-- Test: Arrays - Modo Examen -->
+            <div class="test-card" data-mode="examen">
+                <h2>Arrays <span class="badge-mode badge-examen">Examen</span></h2>
+                <p class="test-description">
+                    Preguntas sobre arrays unidimensionales y bidimensionales, recorrido, manipulación y funciones con arrays.
+                    <br>
+                    <small style="color: var(--text-secondary);">Modo examen: No recibes feedback hasta el final.</small>
+                </p>
+                <div class="test-info">
+                    <span class="badge">25 preguntas</span>
+                    <span class="badge">~30 minutos</span>
+                </div>
+                <a href="tests/iescalderonbarca/test-arrays.html" class="btn btn-primary">Comenzar Test</a>
+            </div>
+
+            <!-- Test: Arrays - Modo Estudio -->
+            <div class="test-card" data-mode="estudio">
+                <h2>Arrays <span class="badge-mode badge-estudio">Estudio</span></h2>
+                <p class="test-description">
+                    Preguntas sobre arrays unidimensionales y bidimensionales, recorrido, manipulación y funciones con arrays.
+                    <br>
+                    <small style="color: var(--text-secondary);">Modo estudio: Feedback inmediato al responder.</small>
+                </p>
+                <div class="test-info">
+                    <span class="badge">25 preguntas</span>
+                    <span class="badge">~30 minutos</span>
+                </div>
+                <a href="tests/iescalderonbarca/test-arrays-estudio.html" class="btn btn-primary">Comenzar Test</a>
+            </div>
+
+            <!-- Test: ArrayList - Modo Examen -->
+            <div class="test-card" data-mode="examen">
+                <h2>ArrayList <span class="badge-mode badge-examen">Examen</span></h2>
+                <p class="test-description">
+                    Preguntas sobre ArrayList, métodos add, get, remove, size y diferencias con arrays primitivos.
+                    <br>
+                    <small style="color: var(--text-secondary);">Modo examen: No recibes feedback hasta el final.</small>
+                </p>
+                <div class="test-info">
+                    <span class="badge">25 preguntas</span>
+                    <span class="badge">~30 minutos</span>
+                </div>
+                <a href="tests/iescalderonbarca/test-arraylist.html" class="btn btn-primary">Comenzar Test</a>
+            </div>
+
+            <!-- Test: ArrayList - Modo Estudio -->
+            <div class="test-card" data-mode="estudio">
+                <h2>ArrayList <span class="badge-mode badge-estudio">Estudio</span></h2>
+                <p class="test-description">
+                    Preguntas sobre ArrayList, métodos add, get, remove, size y diferencias con arrays primitivos.
+                    <br>
+                    <small style="color: var(--text-secondary);">Modo estudio: Feedback inmediato al responder.</small>
+                </p>
+                <div class="test-info">
+                    <span class="badge">25 preguntas</span>
+                    <span class="badge">~30 minutos</span>
+                </div>
+                <a href="tests/iescalderonbarca/test-arraylist-estudio.html" class="btn btn-primary">Comenzar Test</a>
+            </div>
+
+            <!-- Test: Ejercicios Conocidos - Modo Examen -->
+            <div class="test-card" data-mode="examen">
+                <h2>Ejercicios Conocidos <span class="badge-mode badge-examen">Examen</span></h2>
+                <p class="test-description">
+                    Preguntas sobre ejercicios conocidos: arrays, juegos (Piedra Papel Tijera, Ahorcado), figuras geométricas.
+                    <br>
+                    <small style="color: var(--text-secondary);">Modo examen: No recibes feedback hasta el final.</small>
+                </p>
+                <div class="test-info">
+                    <span class="badge">25 preguntas</span>
+                    <span class="badge">~30 minutos</span>
+                </div>
+                <a href="tests/iescalderonbarca/test-ejerciciosconocidos.html" class="btn btn-primary">Comenzar Test</a>
+            </div>
+
+            <!-- Test: Ejercicios Conocidos - Modo Estudio -->
+            <div class="test-card" data-mode="estudio">
+                <h2>Ejercicios Conocidos <span class="badge-mode badge-estudio">Estudio</span></h2>
+                <p class="test-description">
+                    Preguntas sobre ejercicios conocidos: arrays, juegos (Piedra Papel Tijera, Ahorcado), figuras geométricas.
+                    <br>
+                    <small style="color: var(--text-secondary);">Modo estudio: Feedback inmediato al responder.</small>
+                </p>
+                <div class="test-info">
+                    <span class="badge">25 preguntas</span>
+                    <span class="badge">~30 minutos</span>
+                </div>
+                <a href="tests/iescalderonbarca/test-ejerciciosconocidos-estudio.html" class="btn btn-primary">Comenzar Test</a>
+            </div>
+        </main>
+
+        <!-- Footer global (se carga dinámicamente) -->
+        <div id="global-footer"></div>
+    </div>
+
+    <!-- Script para cargar componentes globales -->
+    <script src="js/components.js"></script>
+    <!-- Script para filtrar tests por modo -->
+    <script>
+        function filterTests(filter) {
+            // Actualizar botones activos
+            document.querySelectorAll('.filter-btn').forEach(btn => {
+                btn.classList.remove('active');
+                if (btn.getAttribute('data-filter') === filter) {
+                    btn.classList.add('active');
+                }
+            });
+
+            // Mostrar/ocultar tests segun el filtro
+            document.querySelectorAll('.test-card').forEach(card => {
+                const mode = card.getAttribute('data-mode');
+                if (filter === 'all') {
+                    card.style.display = 'block';
+                } else {
+                    card.style.display = mode === filter ? 'block' : 'none';
+                }
+            });
+        }
+    </script>
+</body>
+</html>
+
