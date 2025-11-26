@@ -1,8 +1,20 @@
+<!-- Markdown es compatible (solo un poco) con HTML/CSS, lo usaré
+para darle estilos mis archivos, me gusta los titutlos centrados
+siempre y el resto de texto justificando. -->
+<style>
+    h1, h2, h3, h4, h5, h6 {
+        text-align: center;
+    }
+
+    p, li {
+        text-align: justify;
+    }
+</style>
 # Clases Particulares - Repositorio Educativo
 
 ## Despliegue en Vivo con Github Pages (HTML/CSS/JS todo nativo)
 
-**Sistema de Tests Interactivos:** [https://agu1406.github.io/ClasesParticulares](https://agu1406.github.io/ClasesParticulares)
+#### **Sistema de Tests Interactivos:** [https://agu1406.github.io/ClasesParticulares](https://agu1406.github.io/ClasesParticulares)
 
 Los estudiantes pueden acceder a tests interactivos tipo Google Forms para preparar sus exámenes. El sistema incluye tests sobre JavaFX y Arrays en Java, con más categorías en desarrollo.
 
