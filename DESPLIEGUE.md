@@ -1,15 +1,3 @@
-<!-- Markdown es compatible (solo un poco) con HTML/CSS, lo usaré
-para darle estilos mis archivos, me gusta los titutlos centrados
-siempre y el resto de texto justificando. -->
-<style>
-    h1, h2, h3, h4, h5, h6 {
-        text-align: center;
-    }
-
-    p, li {
-        text-align: justify;
-    }
-</style>
 # **Lista de objetivos**
 
 - [X] Inicializar el proyecto con **REACT** + **TYPESCRIPT** + **VITE**.
