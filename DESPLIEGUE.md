@@ -17,9 +17,9 @@ siempre y el resto de texto justificando. -->
 - [X] Instalar dependencia para estilos. (**TailWindCSS & PostCSS**).
 - [X] Configurar la base/ruta de carga de **Vite**.
 - [X] Configurar la carga/lectura de archivos de **TailWind**. 
-- [ ] Crear la estructura del proyecto (directorios en src).
-- [ ] Configurar el routing de la aplicación.
-- [ ] Generar el MPV (Minimo producto viable).
+- [X] Crear la estructura del proyecto (directorios en src).
+- [X] Configurar el routing de la aplicación.
+- [X] Generar el MPV (Minimo producto viable).
 - 
 
 
@@ -167,17 +167,17 @@ Este paso ha sido facíl porque hay docenas de sitios webs que recomiendan difer
 
 ```bash
 src/
-├── components/ # Componentes reutilizables (Header, Footer, Card, etc.)
-├── pages/ # Páginas principales de la aplicación (Home, Lenguaje, etc.)
-├── data/ # Metadatos y datos estáticos (JSON generados de los directorios)
-├── hooks/ # Custom hooks de React (useContent, useLanguage, etc.)
-├── types/ # Definiciones de tipos TypeScript
-├── utils/ # Funciones utilitarias (helpers, formatters, etc.)
-├── assets/ # Recursos estáticos (imágenes, iconos, PDFs, etc.)
-├── App.tsx # Componente principal con routing
-├── App.css # Estilos del componente App
-├── main.tsx # Punto de entrada de la aplicación
-└── index.css # Estilos globales (con directivas de Tailwind)
+├─── components/ # Componentes reutilizables (Header, Footer, Card, etc.)
+├─── pages/ # Páginas principales de la aplicación (Home, Lenguaje, etc.)
+├─── data/ # Metadatos y datos estáticos (JSON generados de los directorios)
+├─── hooks/ # Custom hooks de React (useContent, useLanguage, etc.)
+├─── types/ # Definiciones de tipos TypeScript
+├─── utils/ # Funciones utilitarias (helpers, formatters, etc.)
+├─── assets/ # Recursos estáticos (imágenes, iconos, PDFs, etc.)
+├─── App.tsx # Componente principal con routing
+├─── App.css # Estilos del componente App
+├─── main.tsx # Punto de entrada de la aplicación
+└─── index.css # Estilos globales (con directivas de Tailwind)
 ```
 
 Si te gusta este arbol de directorios se puede conseguír desde una terminal de comandos en el directorio desde el que quieres generarlo con el comando **"tree -d"**.
@@ -186,6 +186,167 @@ Si te gusta este arbol de directorios se puede conseguír desde una terminal de 
 
 Uno de los limites de **Github pages** es que no permiten el uso directo de **backend** (se puede arreglar con, por ejemplo, **firebase** u otras soluciones), pero yo he decidio dejar el manejo de toda la logica del **lado cliente** (estudiantes de **DAW** sabreís que hay una asignatura con este nombre), por eso hemos instaldo antes **react routing dom (dependencia)**.
 
+Para esto debemos a entender los principios basicos del routing que ennumero a continuación en forma de pasos a seguir.
+
+## **1. Crear los tipos del proyecto:** 
+
+En mi caso, el sitio web entero va de ofrecer a mis alumnos material educativo (ejercicios, teoría, practica, test) de los diferentes lenguajes de programación que enseño, entonces debo crear una estructura llamada **Languages** para identificar y describir cada uno, ademñas, todos los lenguajes que enseño tienen ejercicios, por lo tanto creo una interfaz **Excercise** que relaciona 1 o varios ejercicios con "X" lenguaje, para ello dentro de **src > types** creamos un archivo **index.ts** con el siguiente contenido:
+
+```ts
+export interface Language {
+    id: string;
+    name: string;
+    icon: string;
+    description: string;
+    path: string;
+}
+
+export interface Exercise {
+    id: string;
+    title: string;
+    file: string;
+    language: string;
+}
+```
+
+## **2. Crear al menos dos paginas de ejemplo**
+
+Ahora, ya tengo las dos estructuras iniciales, vamos a crear la pagina principal del sitio web y por ejemplo la de **Java** (mi lenguaje de programación favorito), para ello en el directorio **src > pages** creamos dos archivos, por ejemplo:
+
+- **HomePage.tsx:** Pagina principal de nuestra aplicación **SPA**.
+- **JavaPage.tsx:** Pagina principal del lenguaje **Java**.
+
+```bash
+src/
+├───pages/
+    ├───HomePage.tsx
+    └───JavaPage.tsx
+```
+
+**NOTA SUPER IMPORTANTE:** Somos desarrolladores full-stack (en teoría), no se puede hacer sitios web de la nada (no si somos juniors), te recomiendo primero **maquetar** por ejemplo, en figma y luego con la maqueta a un lado intentar crearla del otro lado probando poco a poco que hace cada una de las clases que ofrece **TailWind**, en **fuentes** te he dejado un **playground** oficial de ellos para probar en tiempo real que hace cada cosa, también puedes probar a diseñar en **Figma** (en modo movil siempre porque Tailwind es **first-mobile** por defecto), lo que menos aconsejo es meterse de cabeza a escribír código porque se vuelve más larga la curva de aprendizaje, si os vaís a **fuentes** podeís ver también el **taildwind cheat sheet** que explica todas las clases de taildwind.
+
+En **React** y sobretodo haciendo **SPA** las paginas se cargan solo en el momento en el que son llamadas, por eso son funciones, aunque haré más paginas os dejo los ejemplos sencillos de la pagina de **HomePage.tsx** y **JavaPage.tsx**:
+
+### **HomePage.tsx**
+
+```ts
+function HomePage() {
+    // La función invocada devuelve código cargable/leible.
+    return (
+        <div className="min-h-screen p-8">
+            <h1 className="text-4xl font-bold text-center m-8">
+                Portal de clases particulares de Agustín
+            </h1>
+            <p className="text-center m-8">
+                ¡Bienvenido! Elige el tema en el que estás interesado.
+            </p>
+        </div>
+    );
+}
+```
+
+### **JavaPage.tsx**
+
+```ts
+function JavaPage() {
+    // La función invocada devuelve código cargable/leible.
+    return (
+        <div className="min-h-screen p-8">
+            <h1 className="text-4xl font-bold text-center m-8">
+                Clases particulares de Java y contenido
+            </h1>
+            <p className="text-center m-8">
+                ¡Has elegido mi lenguaje favorito! Ahora, sientete libre de explorar el contenido disponible.
+            </p>
+        </div>
+    );
+}
+```
+
+Estos son meros diseños de prueba, para ver que todo funcione bien, poco más, si usas est guía para tus propios proyectos debe maquetar que quieres que vean tus usarios y como quieres que lo vean y luego plasmarlos aquí, en los componentes/paginas de **react**.
+
+## **3. Configurar el routing en App.tsx**
+
+Recordemos que anteriormente dijimos que **App.tsx** es el punto de entrada de toda la aplicación, desde ahí debemos configurar el **routing** de nuestra **SPA**, por defecto viene así:
+
+```tsx
+import { useState } from 'react'
+import reactLogo from './assets/react.svg'
+import viteLogo from '/vite.svg'
+import './App.css'
+
+function App() {
+  const [count, setCount] = useState(0)
+
+  return (
+    <>
+      <div>
+        <a href="https://vite.dev" target="_blank">
+          <img src={viteLogo} className="logo" alt="Vite logo" />
+        </a>
+        <a href="https://react.dev" target="_blank">
+          <img src={reactLogo} className="logo react" alt="React logo" />
+        </a>
+      </div>
+      <h1>Vite + React</h1>
+      <div className="card">
+        <button onClick={() => setCount((count) => count + 1)}>
+          count is {count}
+        </button>
+        <p>
+          Edit <code>src/App.tsx</code> and save to test HMR
+        </p>
+      </div>
+      <p className="read-the-docs">
+        Click on the Vite and React logos to learn more
+      </p>
+    </>
+  )
+}
+
+export default App
+```
+
+Es la vista por defecto con un pequeño contador que muestra el logo de **React** y de **Vite**, nos lo cargamos todo completo el archivo y lo hacemos de cero de la siguiente forma:
+
+```tsx
+// Importamos todos los componentes de react-router-dom
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+// Importamos las paginas que hemos creado para la demo.
+import HomePage from "./pages/HomePage";
+import JavaPage from "./pages/JavaPage";
+
+// Creamos la función "App" encargada de manejar toda la logica de redireccionamiento.
+function App () {
+  return (
+    // Activamos el enrutamiento (routing) de la aplicación.
+    <BrowserRouter>
+      {/* Dentro de BrowserRouter indicamos las rutas que existen.*/}
+      <Routes>
+        {/* Definimos las rutas (URL) y los componentes que cargan, ejemplo con la URL "/"*/}
+        <Route path="/" element={<HomePage />}></Route>
+        {/* Otro ejemplo, si la URL es "/java" carga el componente (page) JavaPage.tsx*/}
+        <Route path="/java" element={<JavaPage />}></Route>
+      </Routes>
+    </BrowserRouter>
+  );
+}
+
+// Exportamos esta función para que "main.tsx" pueda utilizarla.
+export default App;
+```
+
+# **Guía rapida de TailWind**
+
+- **"min-h-screen":** Altura minima del elemento en la pantalla, por defecto, 100%.
+- **"p":** padding (separación desde el interior hacía todos los lados), ejemplo "p-8".
+- **mb:** margin-bottom (margen/separación inferior de algo), ejemplo "mb-8".
+- **"bg-color-num":** Color del fondo (backgroun) de un elemento, en "color" ponemos un color, ejemplo, **gray** y en number cual tonalidad de **gray** queremos, ejemplo, "bg-gray-600".
+- **"text-size":** Como dije antes en notas, desde el **taildwind cheat sheet** podemos ver en **font-size** los tamaños de taildwin, los más comunes, text-xs (extra small), text-sm (small), text-base (tamaño normal, 16px creo), text-xl, text-1xl, text-2xl, etc.
+- **"font-weight":** El grosor, por ejemplo, "font-bold" para negrita o "font-light" para algo ligero.
+- **"text-align":** Identico a CSS nativo, hay "center", "justify", etc.
+- **"max-w-size":** Permite darle un tamaño maximo de ancho a un elemento, funciona con la misma nomenclatura de **font-size** (xs, sm, base, xl, 1xl, etc).
+- **"mx-auto":** Define el margen vertical, en este caso automatico, lo que centra el elemento horizontalmente según el contenedor padre.
 
 
 # **Fuentes**
@@ -196,4 +357,7 @@ Uno de los limites de **Github pages** es que no permiten el uso directo de **ba
 - [**Tailwind CSS - Instalación**](https://tailwindcss.com/docs/installation): Documentación oficial a modo de guía sobre cómo instalar y utilizar **Tailwind CSS**.
 - [**Tutoriales Markdown**](https://www.markdowntutorial.com/es/): Guía/tutoriales con teoría y práctica sobre cómo usar **Markdown**.
 - [**Recomendación de estructura para proyectos react N.º1**](https://dev.to/shubhadip_bhowmik/best-folder-structure-for-react-complex-projects-432p): Recomendación de organización y creación de directorios para proyectos con **React** de **dev.to**.
-- [**Recomendación de estructura para proyectos react N.º2**](https://javascript.plainenglish.io/react-project-folder-structure-that-actually-scales-2025-6dbd5f41767f): Recomendación de organización y creacios de directorios para proyecto con **React** de **javascript.plainenglish.io** 
+- [**Recomendación de estructura para proyectos react N.º2**](https://javascript.plainenglish.io/react-project-folder-structure-that-actually-scales-2025-6dbd5f41767f): Recomendación de organización y creacios de directorios para proyecto con **React** de **javascript.plainenglish.io**
+- [**Sandbox de TailWind**](https://play.tailwindcss.com): Sitio web oficial de TailWind para practicar que hacen sus diferentes clases y aprender a usarlo.
+- [**TailWind Cheat Sheet**](https://nerdcave.com/tailwind-cheat-sheet): Guía facíl y rapida de clases de Tailwind, su sintaxis y que hace dada una.
+- [****]():
