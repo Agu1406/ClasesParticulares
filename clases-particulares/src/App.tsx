@@ -1,35 +1,41 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
+// Importamos todos los componentes de react-router-dom
+import { BrowserRouter, Routes, Route } from "react-router-dom";
 
-function App() {
-  const [count, setCount] = useState(0)
+/**
+ * Las paginas que creamos (pages) son funciones invocables, desde
+ * aquí debemos importarlas todas para tenerlas listas y que nuestra
+ * aplicación (SPA) pueda llamarlas/invocarlas cuano sea necesario.
+ */
+import HomePage from "./pages/HomePage";
+import JavaPage from "./pages/JavaPage";
 
+/**
+ * En java normalmente declaramos la clase y luego el main, ejemplo:
+ * 
+ * public class Ejemplo {
+ *    public static void main (String[] args) {
+ *        ... código ...
+ *    }
+ * }
+ * 
+ * En React pasa algo similar, hay un archivo llamado "main.tsx" donde todo converge y es el punto de entrada principal de la aplicación, "App.tsx" es utilizado por "main.tsx" para configurar/ejecutar código, en este caso, para activar y usar el redireccionamiento de forma activa.
+ * 
+ * La logica la maneja "App.tsx" y "main.tsx" le utiliza para mostrar el contenido al usuario final basandose en esa logica.
+ */
+function App () {
   return (
-    <>
-      <div>
-        <a href="https://vite.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.tsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
-    </>
-  )
+    // Activamos el enrutamiento (routing) de la aplicación.
+    <BrowserRouter>
+      {/* Dentro de BrowserRouter indicamos las rutas que existen.*/}
+      <Routes>
+        {/* Tenemos que definarlas una por una indicando la URL y que elemento tiene que carga la SPA si coincide con esa ruta, este primer ejemplo, si el usuario accede a la URL www.misitio.com/ entonces React carga el componente (page) llamado HomePage.tsx*/}
+        <Route path="/" element={<HomePage />}></Route>
+        {/* Ahora otro ejemplo, si la URL es "/java" carga el componente (page) JavaPage.tsx*/}
+        <Route path="/java" element={<JavaPage />}></Route>
+      </Routes>
+    </BrowserRouter>
+  );
 }
 
-export default App
+// Exportamos esta función para que "main.tsx" pueda utilizarla.
+export default App;
