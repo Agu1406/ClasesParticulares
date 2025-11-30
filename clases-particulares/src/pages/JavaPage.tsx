@@ -1,5 +1,13 @@
 /**
- * Cuando esta función es invocada crea y muestra el código necesario para cargar la pagina principal (home) de esté proyecto SPA.
+ * Componente de la página dedicada a Java.
+ * Renderiza la página específica para el contenido de Java,
+ * incluyendo ejercicios, proyectos y material educativo relacionado.
+ * 
+ * @author Agustín. A. Marquez. Piña
+ * @since 1.0.0
+ * 
+ * @see https://github.com/Agu1406/ClasesParticulares Repositorio GitHub
+ * @see https://agu1406.github.io/ClasesParticulares GitHub Pages
  */
 function JavaPage() {
     // La función invocada devuelve código cargable/leible.
@@ -14,3 +22,5 @@ function JavaPage() {
         </div>
     );
 }
+
+export default JavaPage;
