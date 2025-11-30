@@ -137,3 +137,75 @@ class MySQLConexion
         return $this->conexion->rollBack();
     }
 }
+
+/**
+ * =====> El bloque de código inferior es para realizar pruebas <======
+ * 
+ * Este ejemplo demuestra el uso de transacciones:
+ * 1. Inicia una transacción con iniciarTransaccion()
+ * 2. Ejecuta múltiples operaciones dentro de la transacción
+ * 3. Si todo va bien, confirma los cambios con confirmarTransaccion()
+ * 4. Si hay un error, revierte todos los cambios con revertirTransaccion()
+ * 
+ * Las transacciones garantizan que todas las operaciones se ejecuten correctamente
+ * o que ninguna se ejecute (principio de atomicidad).
+ */
+try {
+    $conexion = new MySQLConexion("../secure/mysql_config.php");
+
+    if ($conexion->conectar()) {
+        echo "Conexión establecida correctamente.<br>";
+
+        // Iniciamos una transacción
+        // Todas las operaciones siguientes formarán parte de esta transacción
+        if ($conexion->iniciarTransaccion()) {
+            echo "Transacción iniciada.<br>";
+
+            try {
+                // Primera operación: INSERT
+                $stmt1 = "INSERT INTO EMPLEADOS(num_empleado, dni, nombre, apellido1, apellido2, tfno_empresa, sueldo, tfno_personal, transporte, num_jefe)
+                         VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
+                
+                $parametros1 = [100, '12345678X', 'Nombre6', 'Apellido16', 'Apellido26', 999100, 30000, 555000, 2500, 1];
+                
+                $filasAfectadas1 = $conexion->ejecutarSentencia($stmt1, $parametros1);
+                echo "Primera inserción realizada: $filasAfectadas1 fila(s) afectada(s).<br>";
+
+                // Segunda operación: otro INSERT (ejemplo de múltiples operaciones en la misma transacción)
+                // Descomenta las siguientes líneas si quieres probar con múltiples operaciones:
+                /*
+                $stmt2 = "INSERT INTO EMPLEADOS(num_empleado, dni, nombre, apellido1, apellido2, tfno_empresa, sueldo, tfno_personal, transporte, num_jefe)
+                         VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
+                
+                $parametros2 = [101, '87654321Y', 'Nombre7', 'Apellido17', 'Apellido27', 999101, 32000, 555001, 2600, 1];
+                
+                $filasAfectadas2 = $conexion->ejecutarSentencia($stmt2, $parametros2);
+                echo "Segunda inserción realizada: $filasAfectadas2 fila(s) afectada(s).<br>";
+                */
+
+                // Si llegamos aquí sin errores, confirmamos la transacción
+                // Esto hace que todos los cambios se guarden permanentemente en la base de datos
+                if ($conexion->confirmarTransaccion()) {
+                    echo "Transacción confirmada (COMMIT). Los datos han sido insertados correctamente.<br>";
+                } else {
+                    echo "Error al confirmar la transacción.<br>";
+                }
+
+            } catch (PDOException $e) {
+                // Si ocurre un error durante la ejecución, revertimos la transacción
+                // Esto deshace todos los cambios realizados dentro de la transacción
+                if ($conexion->revertirTransaccion()) {
+                    echo "Transacción revertida (ROLLBACK). Todos los cambios han sido deshechos.<br>";
+                }
+                throw $e; // Re-lanzamos la excepción para que sea capturada por el catch externo
+            }
+        }
+
+        $conexion->desconectar();
+    }
+} catch (PDOException $e) {
+    echo "Error de base de datos: " . $e->getMessage() . "<br>";
+} catch (Exception $e) {
+    echo "Error general: " . $e->getMessage() . "<br>";
+}
+?>
