@@ -324,6 +324,18 @@ function App () {
 export default App;
 ```
 
+Si lo explicamos de la forma más junior posible es que **BrowserRouter** activa la dependencia de enrutamiento/redireccionamiento **react router dom**, **Routes** es simplemente la etiqueta utilizad para agrupar una o varias rutas y **Route** es la etiqueta que define la URL de la ruta y el elemento/componente que debe cargar nuestra **SPA** en caso de ser utilizada.
+
+## **4. Crear navegación con Link**
+
+El HTML tradicional es muy limitado a la hora de diseñar **SPA**, en nuestro caso, queremos evitar la recarga completa del sitio web en el intercambio de rutas, por eso, la etiqueta nativa HTML **"\<a href="rute">"** no nos sirve, la buena noticia es que **React Router DOM** incluye una etiqueta propia la cual es **"\<Link to="ruta">"** que permite cambiar dinamicamente, sin recarga completa, la ruta de la **SPA**, perfecta para nosotros.
+
+Como **App.tsx** es el encargado de (dinamicamente) mostrar el contenido dependiendo de la ruta cargando el componente especifico de cada una, tiene que contar con este "menú de navegación" usando **Link**, por lo tanto, diseñamos un componente reutilizable para ello dentro del directorio **components** llamando, por ejemplo **Navigation.tsx** que queda de la siguiente forma:
+
+```tsx
+
+```
+
 # **Guía rapida de TailWind**
 
 - **"min-h-screen":** Altura minima del elemento en la pantalla, por defecto, 100%.
