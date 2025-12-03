@@ -2,8 +2,8 @@ plugins {
     id 'java'
     id 'application'
     id 'org.javamodularity.moduleplugin' version '1.8.12'
-    id 'org.openjfx.javafxplugin' version '0.0.13'
-    id 'org.beryx.jlink' version '2.25.0'
+    id 'org.openjfx.javafxplugin' version '0.1.0'
+    id 'org.beryx.jlink' version '2.26.0'
 }
 
 group 'org.agu1406'
@@ -17,8 +17,8 @@ ext {
     junitVersion = '5.10.2'
 }
 
-sourceCompatibility = '21'
-targetCompatibility = '21'
+sourceCompatibility = '23'
+targetCompatibility = '23'
 
 tasks.withType(JavaCompile) {
     options.encoding = 'UTF-8'
@@ -30,7 +30,7 @@ application {
 }
 
 javafx {
-    version = '21'
+    version = '25.0.1'
     modules = ['javafx.controls', 'javafx.fxml']
 }
 
