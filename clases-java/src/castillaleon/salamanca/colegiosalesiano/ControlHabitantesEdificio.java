@@ -199,7 +199,7 @@ public class ControlHabitantesEdificio {
     private static void opcionC_MediaPorPiso() {
         double[] mediasPisos = new double[NUM_PISOS];
         
-  en      // Calcular la media de cada piso
+        // Calcular la media de cada piso
         for (int piso = 0; piso < NUM_PISOS; piso++) {
             int suma = 0;
             for (int puerta = 0; puerta < NUM_PUERTAS; puerta++) {
