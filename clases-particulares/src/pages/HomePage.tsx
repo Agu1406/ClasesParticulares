@@ -13,11 +13,11 @@
 function HomePage() {
     // La función invocada devuelve código cargable/leible.
     return (
-        <div className="min-h-screen p-8">
-            <h1 className="text-4xl font-bold text-center m-8">
+        <div className="min-h-screen bg-lavender p-8">
+            <h1 className="text-4xl font-bold text-center m-8 text-evergreen">
                 Portal de clases particulares de Agustín
             </h1>
-            <p className="text-center m-8">
+            <p className="text-center m-8 text-slate-grey text-lg">
                 ¡Bienvenido! Elige el tema en el que estás interesado.
             </p>
         </div>
