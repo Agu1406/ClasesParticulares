@@ -5,5 +5,4 @@ import react from '@vitejs/plugin-react-swc'
 export default defineConfig({
   plugins: [react()],
   // Base/ruta principal del proyecto con React.
-  base: "/clases-particulares",
-})
+  base: process.env.NODE_ENV === 'production' ? '/clases-particulares' : '/'})
