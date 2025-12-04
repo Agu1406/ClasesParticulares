@@ -8,12 +8,15 @@
  * - Description: Descripción corta del lenguaje y el material ofrecido.
  * - Path: URL especifica del lenguaje, ejemplo "/java".
  * 
+ * Las dos interfaces aquí mostradas se utilizan principalmente en el directorio
+ * "data" en el archivo "languages.ts".
+ * 
  * @author Agustín. A. Marquez. Piña
  * @since 1.0.0
  * 
  * @see https://github.com/Agu1406/ClasesParticulares Repositorio GitHub
  * @see https://agu1406.github.io/ClasesParticulares GitHub Pages
- */
+ * */
 export interface Language {
     id: string;
     name: string;

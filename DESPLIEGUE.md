@@ -2,13 +2,18 @@
 
 - [X] Inicializar el proyecto con **REACT** + **TYPESCRIPT** + **VITE**.
 - [X] Instalar dependencia para routing. (**React router DOM**).
-- [X] Instalar dependencia para estilos. (**TailWindCSS & PostCSS**).
+- [X] Instalar dependencia para estilos. (**TailWindCSS & PostCSS & Autoprefixer**).
 - [X] Configurar la base/ruta de carga de **Vite**.
 - [X] Configurar la carga/lectura de archivos de **TailWind**. 
 - [X] Crear la estructura del proyecto (directorios en src).
 - [X] Configurar el routing de la aplicación.
+- [X] Crear el componente de navegación de URLS con **\<Link>** de **React Router DOM**.
 - [X] Generar el MPV (Minimo producto viable).
 - [ ] Ignorar esto, es la linea que copio-pego para agregar cosas.
+- [ ] Ignorar esto, es la linea que copio-pego para agregar cosas.
+- [ ] Ignorar esto, es la linea que copio-pego para agregar cosas.
+- [ ] Ignorar esto, es la linea que copio-pego para agregar cosas.
+
 
 # **Paso N.º1 - Inicializar REACT + VITE**
 
@@ -356,7 +361,34 @@ function Navigation() {
 
 export default Navigation;
 ```
+# **Paso N.º9 - Agregar los iconos necesarios para los datos**
 
+Este paso en teoría debería ser el N.º10 y viceversa, el N.º10 debería ser el N.º9, pero me dije a mi mismo, **al definir los datos de los lenguajes necesitas la URL de las imagenes/iconos que usaras para representarlos**, así que, **¿Por que dejar para mañana lo que puedes hacer hoy?**.
+
+Para ello, desde **src** navegamos hasta **assets** y creamos ahí el directorio **icons** donde subiremos (de preferencia SVG) los iconos que representaran los lenguajes que imparto en clases.
+
+En el encabezado **fuentes** de este documento dejo el enlace a la libreria gratuita de **SVG** que yo he utilizado para bajarme los iconos.
+
+# **Paso N.º10 - Crear los datos (lenguajes) de la SPA**
+
+Ahora ya tenemos un **MVP** (algo parecido), es hora utilizar la interfaz que diseñamos que define los campos que deben tener los lenguajes de programación de los que imparto clases así como la relación que tienen los ejercicios con los mismos, para eso, desde el directorio **src** creamos un subdirectorio llamado **data** y ahí creamos el archivo **languages.ts** el cual importa la interfaz `Languages`, en el siguiente fragmento muestro, por ejemplo, como se ve solo con los datos de **JAVA** aunque, por supuesto, tengo que agregarlos todos y puedes ver el archivo completo finalizado:
+
+```ts
+// Importación de la interfaz "Language" del directorio de tipos.
+import type { Language } from "../types";
+
+// Creación del Array del tipo Lenguage con los lenguajes que imparto.
+export const languages: Language[] = [
+    {
+        id: "java",
+        name: "Java",
+        icon: " ",
+        description: "Programación orientada a objetos (POO), Swing, JavaFX, JDBC, Spring y más",
+        path: "/java"
+    }
+    // Aquí deberan ir todos los otros lenguajes...
+]
+```
 # **Preguntas comunes que yo mismo me hice**
 
 ### **¿Como pruebo el código que estoy haciendo?**
