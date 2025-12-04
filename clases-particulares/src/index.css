@@ -1,3 +1,19 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+/* Variables CSS personalizadas para la paleta de colores */
+@layer base {
+  :root {
+    --evergreen: #223127;
+    --scarlet-rush: #da2c38;
+    --slate-grey: #72788d;
+    --soft-fawn: #d8bd8a;
+    --lavender: #eeeeff;
+  }
+
+  /* Estilos base personalizados */
+  body {
+    @apply bg-lavender text-evergreen;
+  }
+}
