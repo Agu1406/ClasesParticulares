@@ -8,8 +8,7 @@
 - [X] Crear la estructura del proyecto (directorios en src).
 - [X] Configurar el routing de la aplicación.
 - [X] Generar el MPV (Minimo producto viable).
-- 
-
+- [ ] Ignorar esto, es la linea que copio-pego para agregar cosas.
 
 # **Paso N.º1 - Inicializar REACT + VITE**
 
@@ -39,19 +38,19 @@ Este paso es muy importante, recuerdas, estás creando tú proyecto, es importan
 
 Yo elegí las siguientes dependencias, recuerda, como ya hemos creado/inicializado **REACT + VITE** tenemos que desplazarnos dentro del directorio del proyecto y desde ahí ejecutar en una terminal los siguientes comandos:
 
-- **npm install react-router-dom:** Permite que el **routing** (redireccionamiento) dentro del proyecto sea del lado del cliente y no usando un **backend**, lo mejor en mi caos ya que **Github pages** no permite utilizar **backend** (no directamente). esta dependencia la conseguí investigando en **npmjs.com** que he citado en las fuentes.
+- **npm install react-router-dom:** Permite que el **routing** (redireccionamiento) dentro del proyecto sea del lado del cliente y no usando un **backend**, lo mejor en mi caso ya que **Github pages** no permite utilizar **backend** (no directamente). esta dependencia la conseguí investigando en **npmjs.com** que he citado en las fuentes.
 
 ```bash
 npm install react-router-dom
 ```
 
-- **npm install -D tailwindcss@^3.4.0 postcss**: El comando instala **TailWind** para el diseño y maquetado, la instrucción **"-D"** lo instala en modo **build** (son herramientas que necesito yo para el desarrollo, no el usuario final ni el despliegue), **postcss** es el plugin que lee las clases/código de Tailwind y al construir (build) lo transforma en **CSS** estatico para el sitio web, la **versión 3.4.0** es la más usada en el mercado porque es estable y tiene muchos plugins.
+- **npm install -D tailwindcss@^3.4.0 postcss autoprefixer**: El comando instala **TailWind** para el diseño y maquetado, la instrucción **"-D"** lo instala en modo **build** (son herramientas que necesito yo para el desarrollo, no el usuario final ni el despliegue), **postcss** es el plugin que lee las clases/código de Tailwind y al construir (build) lo transforma en **CSS** estatico para el sitio web, **autoprefixer** es una dependencia **requerida** por PostCSS que agrega automáticamente los prefijos de navegadores necesarios para compatibilidad (como -webkit-, -moz-, etc.), la **versión 3.4.0** de Tailwind es la más usada en el mercado porque es estable y tiene muchos plugins.
 
 ```bash
-npm install -D tailwindcss@^3.4.0 postcss
+npm install -D tailwindcss@^3.4.0 postcss autoprefixer
 ```
 
-- **npx tailwindcss init -p:** Ahora que ya se ha instalado **tailwind** con **postcss** necesitamos ejecutarlo/inicializarlo para que genere sus archivos de configuración, uno de **tailwind** y otro de **postcss** que usaremos para configurar ambos, cuando llegue el momento, si es que es necesario.
+- **npx tailwindcss init -p:** Ahora que ya se ha instalado **tailwind** con **postcss** y **autoprefixer** necesitamos ejecutarlo/inicializarlo para que genere sus archivos de configuración, uno de **tailwind** y otro de **postcss** que usaremos para configurar ambos. **IMPORTANTE:** El archivo `postcss.config.js` que se genera automáticamente incluye `autoprefixer` en su configuración, por lo que es **necesario** haberlo instalado previamente, de lo contrario obtendrás un error al ejecutar `npm run dev`.
 
 ```bash
 npx tailwindcss init -p
@@ -172,13 +171,13 @@ Si te gusta este arbol de directorios se puede conseguír desde una terminal de 
 
 # **Paso N.º8 - Configurar el routing (redireccionamiento)**
 
-Uno de los limites de **Github pages** es que no permiten el uso directo de **backend** (se puede arreglar con, por ejemplo, **firebase** u otras soluciones), pero yo he decidio dejar el manejo de toda la logica del **lado cliente** (estudiantes de **DAW** sabreís que hay una asignatura con este nombre), por eso hemos instaldo antes **react routing dom (dependencia)**.
+Uno de los limites de **Github pages** es que no permiten el uso directo de **backend** (se puede arreglar con, por ejemplo, **firebase** u otras soluciones), pero yo he decidido dejar el manejo de toda la logica del **lado cliente** (estudiantes de **DAW** sabréis que hay una asignatura con este nombre), por eso hemos instalado antes **react routing dom (dependencia)**.
 
 Para esto debemos a entender los principios basicos del routing que ennumero a continuación en forma de pasos a seguir.
 
 ## **1. Crear los tipos del proyecto:** 
 
-En mi caso, el sitio web entero va de ofrecer a mis alumnos material educativo (ejercicios, teoría, practica, test) de los diferentes lenguajes de programación que enseño, entonces debo crear una estructura llamada **Languages** para identificar y describir cada uno, ademñas, todos los lenguajes que enseño tienen ejercicios, por lo tanto creo una interfaz **Excercise** que relaciona 1 o varios ejercicios con "X" lenguaje, para ello dentro de **src > types** creamos un archivo **index.ts** con el siguiente contenido:
+En mi caso, el sitio web entero va de ofrecer a mis alumnos material educativo (ejercicios, teoría, practica, test) de los diferentes lenguajes de programación que enseño, entonces debo crear una estructura llamada **Languages** para identificar y describir cada uno, además, todos los lenguajes que enseño tienen ejercicios, por lo tanto creo una interfaz **Exercise** que relaciona 1 o varios ejercicios con "X" lenguaje, para ello dentro de **src > types** creamos un archivo **index.ts** con el siguiente contenido:
 
 ```ts
 export interface Language {
@@ -221,11 +220,11 @@ En **React** y sobretodo haciendo **SPA** las paginas se cargan solo en el momen
 function HomePage() {
     // La función invocada devuelve código cargable/leible.
     return (
-        <div className="min-h-screen p-8">
-            <h1 className="text-4xl font-bold text-center m-8">
+        <div className="min-h-screen bg-lavender p-8">
+            <h1 className="text-4xl font-bold text-center m-8 text-evergreen">
                 Portal de clases particulares de Agustín
             </h1>
-            <p className="text-center m-8">
+            <p className="text-center m-8 text-slate text-lg">
                 ¡Bienvenido! Elige el tema en el que estás interesado.
             </p>
         </div>
@@ -239,11 +238,11 @@ function HomePage() {
 function JavaPage() {
     // La función invocada devuelve código cargable/leible.
     return (
-        <div className="min-h-screen p-8">
-            <h1 className="text-4xl font-bold text-center m-8">
+        <div className="min-h-screen bg-lavender p-8">
+            <h1 className="text-4xl font-bold text-center m-8 text-evergreen">
                 Clases particulares de Java y contenido
             </h1>
-            <p className="text-center m-8">
+            <p className="text-center m-8 text-slate text-lg">
                 ¡Has elegido mi lenguaje favorito! Ahora, sientete libre de explorar el contenido disponible.
             </p>
         </div>
@@ -303,12 +302,16 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 // Importamos las paginas que hemos creado para la demo.
 import HomePage from "./pages/HomePage";
 import JavaPage from "./pages/JavaPage";
+// Importamos el componente de navegación
+import Navigation from "./components/Navigation";
 
 // Creamos la función "App" encargada de manejar toda la logica de redireccionamiento.
 function App () {
   return (
     // Activamos el enrutamiento (routing) de la aplicación.
     <BrowserRouter>
+      {/* Barra de navegación global */}
+      <Navigation />
       {/* Dentro de BrowserRouter indicamos las rutas que existen.*/}
       <Routes>
         {/* Definimos las rutas (URL) y los componentes que cargan, ejemplo con la URL "/"*/}
@@ -332,21 +335,69 @@ El HTML tradicional es muy limitado a la hora de diseñar **SPA**, en nuestro ca
 
 Como **App.tsx** es el encargado de (dinamicamente) mostrar el contenido dependiendo de la ruta cargando el componente especifico de cada una, tiene que contar con este "menú de navegación" usando **Link**, por lo tanto, diseñamos un componente reutilizable para ello dentro del directorio **components** llamando, por ejemplo **Navigation.tsx** que queda de la siguiente forma:
 
-```tsx
+**NOTA:** Aunque React Router DOM recomienda usar `<Link to>` en lugar de `<a href>` para evitar recargas completas, en este ejemplo se muestra con `<a href>` para simplicidad. En producción, es recomendable usar `<Link to="/ruta">` importado de `react-router-dom`.
 
+```tsx
+function Navigation() {
+    return (
+        <nav className="bg-evergreen text-lavender p-4 shadow-md">
+            <div className="container mx-auto flex justify-between items-center">
+                <a href="/" className="text-xl font-bold hover:text-fawn transition-colors">
+                    Clases Particulares
+                </a>
+                <div className="space-x-4">
+                    <a href="/" className="hover:text-fawn transition-colors">Inicio</a>
+                    <a href="/java" className="hover:text-fawn transition-colors">Java</a>
+                </div>
+            </div>
+        </nav>
+    );
+}
+
+export default Navigation;
 ```
+
+# **Preguntas comunes que yo mismo me hice**
+
+### **¿Como pruebo el código que estoy haciendo?**
+
+Existen varias formas, la mejor (para mi) es correr en modo desarrollo (**dev mode**) el proyecto lo que me permite correrlo en localhost, para ello ejecutamos el siguiente comando desde la raiz del proyecto:
+
+```bash
+npm run dev
+```
+
+¿Que tiene de especial el modo **dev**? Son principlamente dos, los cuales nos ayudan mucho durante el desarrollo y son los siguientes:
+
+- **Hot Module Replacement (HMR):** Todos los cambios que realize en el proyecto se muestran automaticamente en la pagina sin necesidad de recargar.
+- **Console errors:** Todos los errores que haya en compilación o en el código aparecen en (ambos) el propio navegador web a través de la consola y en el terminal donde se ejecuta el comando.
+
+**NOTA SUPER IMPORTANTE:** Como yo despliego desde **Github pages** tengo que modificar la **URL** base del proyecto, para desarrollo local eso me da problemas así que modifique el **vite.config.ts** para que detecte el modo **dev** y utilice una ruta diferente en ese escenario, quedando de la siguiente forma:
+
+```ts
+import { defineConfig } from 'vite'
+import react from '@vitejs/plugin-react-swc'
+
+// https://vite.dev/config/
+export default defineConfig({
+  plugins: [react()],
+  // Base/ruta principal del proyecto con React.
+  base: process.env.NODE_ENV === 'production' ? '/clases-particulares' : '/'})
+```
+
+**¿NODE_ENV === 'production'?** Si la respuesta es sí (modo producción), la **URL** base es **/clases-particulares** (para GitHub Pages), si no (modo desarrollo), es **/** (para localhost).
 
 # **Guía rapida de TailWind**
 
 - **"min-h-screen":** Altura minima del elemento en la pantalla, por defecto, 100%.
 - **"p":** padding (separación desde el interior hacía todos los lados), ejemplo "p-8".
 - **mb:** margin-bottom (margen/separación inferior de algo), ejemplo "mb-8".
-- **"bg-color-num":** Color del fondo (backgroun) de un elemento, en "color" ponemos un color, ejemplo, **gray** y en number cual tonalidad de **gray** queremos, ejemplo, "bg-gray-600".
-- **"text-size":** Como dije antes en notas, desde el **taildwind cheat sheet** podemos ver en **font-size** los tamaños de taildwin, los más comunes, text-xs (extra small), text-sm (small), text-base (tamaño normal, 16px creo), text-xl, text-1xl, text-2xl, etc.
+- **"bg-color-num":** Color del fondo (background) de un elemento, en "color" ponemos un color, ejemplo, **gray** y en number cual tonalidad de **gray** queremos, ejemplo, "bg-gray-600". También puedes usar colores personalizados como "bg-evergreen", "bg-lavender", etc.
+- **"text-size":** Como dije antes en notas, desde el **tailwind cheat sheet** podemos ver en **font-size** los tamaños de tailwind, los más comunes, text-xs (extra small), text-sm (small), text-base (tamaño normal, 16px creo), text-xl, text-2xl, text-3xl, text-4xl, etc.
 - **"font-weight":** El grosor, por ejemplo, "font-bold" para negrita o "font-light" para algo ligero.
 - **"text-align":** Identico a CSS nativo, hay "center", "justify", etc.
 - **"max-w-size":** Permite darle un tamaño maximo de ancho a un elemento, funciona con la misma nomenclatura de **font-size** (xs, sm, base, xl, 1xl, etc).
-- **"mx-auto":** Define el margen vertical, en este caso automatico, lo que centra el elemento horizontalmente según el contenedor padre.
+- **"mx-auto":** Define el margen horizontal (mx = margin-x), en este caso automático, lo que centra el elemento horizontalmente según el contenedor padre. Para margen vertical se usa **"my-auto"** (my = margin-y).
 
 
 # **Fuentes**
@@ -359,5 +410,6 @@ Como **App.tsx** es el encargado de (dinamicamente) mostrar el contenido dependi
 - [**Recomendación de estructura para proyectos react N.º1**](https://dev.to/shubhadip_bhowmik/best-folder-structure-for-react-complex-projects-432p): Recomendación de organización y creación de directorios para proyectos con **React** de **dev.to**.
 - [**Recomendación de estructura para proyectos react N.º2**](https://javascript.plainenglish.io/react-project-folder-structure-that-actually-scales-2025-6dbd5f41767f): Recomendación de organización y creacios de directorios para proyecto con **React** de **javascript.plainenglish.io**
 - [**Sandbox de TailWind**](https://play.tailwindcss.com): Sitio web oficial de TailWind para practicar que hacen sus diferentes clases y aprender a usarlo.
-- [**TailWind Cheat Sheet**](https://nerdcave.com/tailwind-cheat-sheet): Guía facíl y rapida de clases de Tailwind, su sintaxis y que hace dada una.
-- [****]():
+- [**Tailwind Cheat Sheet**](https://nerdcave.com/tailwind-cheat-sheet): Guía fácil y rápida de clases de Tailwind, su sintaxis y que hace cada una.
+- [**Generador de paletas de colores CSS**](https://coolors.co): Generador aleatorio de paletas de colores que use hasta conseguir una paleta que me gustase.
+- [**Ignorar esta linea**](): Es la que copio-pego para agregar más enlaces.
