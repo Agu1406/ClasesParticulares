@@ -387,17 +387,32 @@ export default defineConfig({
 
 **¿NODE_ENV === 'production'?** Si la respuesta es sí (modo producción), la **URL** base es **/clases-particulares** (para GitHub Pages), si no (modo desarrollo), es **/** (para localhost).
 
-# **Guía rapida de TailWind**
+# **Guía rápida de Tailwind**
 
-- **"min-h-screen":** Altura minima del elemento en la pantalla, por defecto, 100%.
-- **"p":** padding (separación desde el interior hacía todos los lados), ejemplo "p-8".
-- **mb:** margin-bottom (margen/separación inferior de algo), ejemplo "mb-8".
-- **"bg-color-num":** Color del fondo (background) de un elemento, en "color" ponemos un color, ejemplo, **gray** y en number cual tonalidad de **gray** queremos, ejemplo, "bg-gray-600". También puedes usar colores personalizados como "bg-evergreen", "bg-lavender", etc.
-- **"text-size":** Como dije antes en notas, desde el **tailwind cheat sheet** podemos ver en **font-size** los tamaños de tailwind, los más comunes, text-xs (extra small), text-sm (small), text-base (tamaño normal, 16px creo), text-xl, text-2xl, text-3xl, text-4xl, etc.
-- **"font-weight":** El grosor, por ejemplo, "font-bold" para negrita o "font-light" para algo ligero.
-- **"text-align":** Identico a CSS nativo, hay "center", "justify", etc.
-- **"max-w-size":** Permite darle un tamaño maximo de ancho a un elemento, funciona con la misma nomenclatura de **font-size** (xs, sm, base, xl, 1xl, etc).
-- **"mx-auto":** Define el margen horizontal (mx = margin-x), en este caso automático, lo que centra el elemento horizontalmente según el contenedor padre. Para margen vertical se usa **"my-auto"** (my = margin-y).
+| Clase | Descripción | Ejemplo |
+|-------|-------------|---------|
+| `min-h-screen` | Altura mínima del elemento en la pantalla, por defecto 100% de la altura visible. | `min-h-screen` |
+| `p-{n}` | Padding (separación desde el interior hacia todos los lados). El número indica el tamaño. | `p-8` (padding de 2rem en todos los lados) |
+| `px-{n}` / `py-{n}` | Padding horizontal (px) o vertical (py). | `px-4 py-2` |
+| `m-{n}` | Margin (separación externa hacia todos los lados). | `m-8` |
+| `mx-{n}` / `my-{n}` | Margin horizontal (mx) o vertical (my). | `mx-auto` (centra horizontalmente) |
+| `mt-{n}` / `mb-{n}` / `ml-{n}` / `mr-{n}` | Margin específico: top, bottom, left, right. | `mb-8` (margin-bottom de 2rem) |
+| `bg-{color}-{n}` | Color del fondo (background). Puede ser color estándar o personalizado. | `bg-gray-600`, `bg-evergreen`, `bg-lavender` |
+| `text-{color}-{n}` | Color del texto. Puede ser color estándar o personalizado. | `text-white`, `text-evergreen`, `text-slate` |
+| `text-{size}` | Tamaño de fuente. Tamaños comunes: xs, sm, base, lg, xl, 2xl, 3xl, 4xl. | `text-xl`, `text-2xl`, `text-4xl` |
+| `font-{weight}` | Grosor de la fuente. Opciones: thin, light, normal, medium, semibold, bold, extrabold. | `font-bold`, `font-light` |
+| `text-{align}` | Alineación del texto. Idéntico a CSS nativo. | `text-center`, `text-justify`, `text-left` |
+| `max-w-{size}` | Ancho máximo del elemento. Usa la misma nomenclatura que font-size. | `max-w-xl`, `max-w-2xl`, `max-w-7xl` |
+| `container` | Contenedor con ancho máximo responsivo que se centra automáticamente. | `container mx-auto` |
+| `flex` | Activa el display flexbox. | `flex` |
+| `justify-{align}` | Alineación horizontal en flexbox. | `justify-between`, `justify-center`, `justify-start` |
+| `items-{align}` | Alineación vertical en flexbox. | `items-center`, `items-start`, `items-end` |
+| `space-x-{n}` | Espaciado horizontal entre elementos hijos. | `space-x-4` (espacio de 1rem entre elementos) |
+| `shadow-{size}` | Sombra del elemento. | `shadow-md`, `shadow-lg`, `shadow-xl` |
+| `hover:{class}` | Aplica estilos cuando el cursor está sobre el elemento. | `hover:text-fawn`, `hover:underline` |
+| `transition-{property}` | Transición suave de propiedades. | `transition-colors`, `transition-all` |
+| `rounded-{size}` | Bordes redondeados. | `rounded-lg`, `rounded-full` |
+| `ignorar esto`| Es lo que utilizo para copiar y pegar la siguiente linea| `curioso, ¿no?`|
 
 
 # **Fuentes**
