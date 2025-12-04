@@ -12,14 +12,14 @@
  */
 function Navigation() {
     return (
-        <nav className="bg-blue-600 text-white p-4">
+        <nav className="bg-evergreen text-lavender p-4 shadow-md">
             <div className="container mx-auto flex justify-between items-center">
-                <a href="/" className="text-xl font-bold">
+                <a href="/" className="text-xl font-bold hover:text-fawn transition-colors">
                     Clases Particulares
                 </a>
                 <div className="space-x-4">
-                    <a href="/" className="hover:underline">Inicio</a>
-                    <a href="/java" className="hover:underline">Java</a>
+                    <a href="/" className="hover:text-fawn transition-colors">Inicio</a>
+                    <a href="/java" className="hover:text-fawn transition-colors">Java</a>
                 </div>
             </div>
         </nav>
