@@ -102,7 +102,7 @@ El script generará un archivo Word (.docx) con todo el contenido configurado.
             "descripcion": "Análisis de la estrategia de fragmentación propuesta para RentUOC.",
             "archivos": [
                 {
-                    "ruta": "clases-sql/documentos/20251_75607_ENUPEC1.pdf",
+                    "ruta": "sql/documentos/20251_75607_ENUPEC1.pdf",
                     "explicacion": "Enunciado de la práctica"
                 }
             ],

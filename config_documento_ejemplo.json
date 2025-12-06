@@ -22,7 +22,7 @@
             "descripcion": "Se procedió a instalar PrestaShop en el servidor local. La instalación se realizó mediante el asistente web, configurando la base de datos MySQL y los parámetros iniciales del sistema.",
             "archivos": [
                 {
-                    "ruta": "clases-php/general/ejercicios/01-basicos/Ejercicio1_SumarNumeros.php",
+                    "ruta": "php/general/ejercicios/01-basicos/Ejercicio1_SumarNumeros.php",
                     "explicacion": "Ejemplo de archivo PHP básico (reemplaza con tus archivos reales)"
                 }
             ],
@@ -33,7 +33,7 @@
             "descripcion": "Se configuraron los productos de la tienda con sus respectivas categorías, precios, imágenes y descripciones.",
             "archivos": [
                 {
-                    "ruta": "clases-php/general/ejercicios/02-bucles-y-condicionales/Ejercicio1_BucleFor.php",
+                    "ruta": "php/general/ejercicios/02-bucles-y-condicionales/Ejercicio1_BucleFor.php",
                     "explicacion": "Ejemplo de archivo PHP (reemplaza con tus archivos reales)"
                 }
             ],
