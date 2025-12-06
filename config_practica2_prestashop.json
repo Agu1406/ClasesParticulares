@@ -1,0 +1,142 @@
+{
+    "titulo": "Práctica 2 - Comercio Electrónico",
+    "subtitulo": "Desarrollo de Tienda Online con PrestaShop",
+    "autor": "TU_NOMBRE_COMPLETO",
+    "fecha": "07/01/2026",
+    "nombre_archivo": "ApellidosNombre_CE_Practica2.docx",
+    
+    "introduccion": [
+        "Este documento describe el desarrollo de la Práctica 2 sobre Comercio Electrónico.",
+        "Se ha implementado una tienda online utilizando PrestaShop 8.0.4 siguiendo las especificaciones del enunciado.",
+        "La práctica incluye los siguientes puntos principales:",
+        "1. Mantenimiento del catálogo de productos",
+        "2. Consultas del catálogo de productos",
+        "3. Gestión de los pedidos y proceso de compra",
+        "4. Sistemas de pago (PayPal)"
+    ],
+    
+    "ejercicios": [
+        {
+            "titulo": "Punto 1: Mantenimiento del catálogo de productos",
+            "descripcion": "Se ha trabajado con la gestión del catálogo de productos en PrestaShop, incluyendo altas, modificaciones, bajas y consultas de productos.",
+            "capturas": [
+                {
+                    "ruta": "capturas/punto1/alta_producto.png",
+                    "descripcion": "Figura 1.1: Pantalla de alta de producto en PrestaShop",
+                    "ancho": 6
+                },
+                {
+                    "ruta": "capturas/punto1/listado_productos.png",
+                    "descripcion": "Figura 1.2: Listado de productos con categorías",
+                    "ancho": 6
+                },
+                {
+                    "ruta": "capturas/punto1/gestion_stock.png",
+                    "descripcion": "Figura 1.3: Configuración de gestión de stock",
+                    "ancho": 6
+                }
+            ],
+            "explicacion": "RESPUESTAS A LAS PREGUNTAS:\n\n1. ¿De qué forma se pueden agrupar varios productos por categoría?\n[Escribe aquí tu respuesta sobre cómo se agrupan productos por categoría en PrestaShop]\n\n2. ¿En qué consiste la opción de categoría principal?\n[Escribe aquí tu respuesta sobre la categoría principal]\n\n3. ¿Cómo se puede mantener actualizado el stock de productos en PrestaShop 8?\n[Escribe aquí las tres acciones para gestionar el stock]",
+            "errores": []
+        },
+        {
+            "titulo": "Punto 2: Consultas del catálogo de productos",
+            "descripcion": "Se ha configurado y probado el sistema de búsqueda y consultas del catálogo de productos desde la zona pública de la tienda.",
+            "capturas": [
+                {
+                    "ruta": "capturas/punto2/busqueda_productos.png",
+                    "descripcion": "Figura 2.1: Sistema de búsqueda de productos",
+                    "ancho": 6
+                },
+                {
+                    "ruta": "capturas/punto2/listado_paginado.png",
+                    "descripcion": "Figura 2.2: Listado paginado de productos",
+                    "ancho": 6
+                },
+                {
+                    "ruta": "capturas/punto2/detalle_producto.png",
+                    "descripcion": "Figura 2.3: Página de detalle de producto",
+                    "ancho": 6
+                },
+                {
+                    "ruta": "capturas/punto2/busqueda_ajax.png",
+                    "descripcion": "Figura 2.4: Búsqueda con autocompletado Ajax",
+                    "ancho": 6
+                }
+            ],
+            "explicacion": "RESPUESTAS A LAS PREGUNTAS:\n\n1. ¿Qué módulos disponibles por defecto en PrestaShop 8 se pueden usar para implementar un sistema de búsqueda en vivo usando Ajax o autocompletado?\n[Escribe aquí tu respuesta sobre los módulos de búsqueda]\n\n2. ¿Qué ventajas ofrece este tipo de búsquedas en la experiencia de usuario?\n[Escribe aquí las ventajas de la búsqueda Ajax]",
+            "errores": []
+        },
+        {
+            "titulo": "Punto 3: Gestión de los pedidos y proceso de compra",
+            "descripcion": "Se ha configurado y probado el proceso completo de compra, incluyendo el carrito de la compra, cálculo de totales y gestión de pedidos.",
+            "capturas": [
+                {
+                    "ruta": "capturas/punto3/carrito_compra.png",
+                    "descripcion": "Figura 3.1: Carrito de la compra con productos",
+                    "ancho": 6
+                },
+                {
+                    "ruta": "capturas/punto3/modificar_cantidad.png",
+                    "descripcion": "Figura 3.2: Modificación de cantidad en el carrito",
+                    "ancho": 6
+                },
+                {
+                    "ruta": "capturas/punto3/checkout.png",
+                    "descripcion": "Figura 3.3: Proceso de checkout con cálculo de totales",
+                    "ancho": 6
+                },
+                {
+                    "ruta": "capturas/punto3/gestion_pedidos.png",
+                    "descripcion": "Figura 3.4: Gestión de pedidos desde el panel de administración",
+                    "ancho": 6
+                },
+                {
+                    "ruta": "capturas/punto3/detalle_pedido.png",
+                    "descripcion": "Figura 3.5: Detalle completo de un pedido",
+                    "ancho": 6
+                }
+            ],
+            "explicacion": "Se ha verificado que todas las funcionalidades del proceso de compra funcionan correctamente:\n- Añadir productos al carrito\n- Modificar cantidades\n- Eliminar productos del carrito\n- Calcular totales (precio bruto, impuestos, costes de envío)\n- Visualizar y gestionar pedidos desde el panel de administración\n- Editar información de pedidos",
+            "errores": []
+        },
+        {
+            "titulo": "Punto 4: Sistemas de pago",
+            "descripcion": "Se ha investigado la pasarela de pago PayPal y su integración con PrestaShop 8, incluyendo el proceso de instalación, configuración y el módulo de recargo.",
+            "capturas": [
+                {
+                    "ruta": "capturas/punto4/modulo_paypal.png",
+                    "descripcion": "Figura 4.1: Módulo PayPal disponible en PrestaShop",
+                    "ancho": 6
+                },
+                {
+                    "ruta": "capturas/punto4/configuracion_paypal.png",
+                    "descripcion": "Figura 4.2: Pantalla de configuración del módulo PayPal",
+                    "ancho": 6
+                },
+                {
+                    "ruta": "capturas/punto4/credenciales_api.png",
+                    "descripcion": "Figura 4.3: Campos para credenciales de API de PayPal",
+                    "ancho": 6
+                },
+                {
+                    "ruta": "capturas/punto4/modulo_recargo.png",
+                    "descripcion": "Figura 4.4: Opción de módulo PayPal con recargo",
+                    "ancho": 6
+                }
+            ],
+            "explicacion": "INVESTIGACIÓN SOBRE PAYPAL:\n\n1. Proceso básico de instalación en PrestaShop 8:\n[Escribe aquí el proceso de instalación del módulo PayPal]\n\n2. Credenciales concretas de la API de PayPal necesarias:\n[Escribe aquí las credenciales necesarias: Client ID, Secret, etc.]\n\n3. Módulo de PayPal con recargo:\n[Escribe aquí para qué se utiliza el módulo con recargo y cómo funciona]",
+            "errores": [
+                "Nota: No se ha instalado el plugin de PayPal ya que se requieren datos reales para su funcionamiento, tal como se indica en el enunciado."
+            ]
+        }
+    ],
+    
+    "valoracion_personal": {
+        "como_ha_ido": "[Escribe aquí cómo te ha ido la práctica en general. ¿Fue fácil o difícil? ¿Qué te ha parecido?]",
+        "mas_dificil": "[Escribe aquí qué parte te ha resultado más difícil y por qué]",
+        "mas_interesante": "[Escribe aquí qué te ha parecido más interesante de la práctica]",
+        "sugerencias": "[Escribe aquí cualquier sugerencia, comentario adicional o reflexión sobre la práctica]"
+    }
+}
+
