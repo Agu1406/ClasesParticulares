@@ -1,0 +1,64 @@
+{
+    "titulo": "Práctica 2 - Comercio Electrónico",
+    "subtitulo": "Desarrollo de Tienda Online con PrestaShop",
+    "autor": "Tu Nombre Completo",
+    "fecha": "06/12/2025",
+    "nombre_archivo": "Practica2_ComercioElectronico.docx",
+    
+    "introduccion": [
+        "Este documento describe el desarrollo de la Práctica 2 sobre Comercio Electrónico.",
+        "Se ha implementado una tienda online utilizando PrestaShop siguiendo las especificaciones del enunciado.",
+        "La práctica incluye las siguientes funcionalidades principales:",
+        "- Instalación y configuración inicial de PrestaShop",
+        "- Gestión de productos y categorías",
+        "- Configuración de métodos de pago y envío",
+        "- Personalización del tema y diseño",
+        "- Configuración de usuarios y permisos"
+    ],
+    
+    "ejercicios": [
+        {
+            "titulo": "Ejercicio 1: Instalación de PrestaShop",
+            "descripcion": "Se procedió a instalar PrestaShop en el servidor local. La instalación se realizó mediante el asistente web, configurando la base de datos MySQL y los parámetros iniciales del sistema.",
+            "archivos": [
+                {
+                    "ruta": "clases-php/general/ejercicios/01-basicos/Ejercicio1_SumarNumeros.php",
+                    "explicacion": "Ejemplo de archivo PHP básico (reemplaza con tus archivos reales)"
+                }
+            ],
+            "explicacion": "La instalación se completó exitosamente. Se configuraron los siguientes parámetros:\n- Base de datos: prestashop_db\n- Usuario administrador: admin@tienda.com\n- Idioma: Español\n- Moneda: Euro (EUR)"
+        },
+        {
+            "titulo": "Ejercicio 2: Configuración de Productos",
+            "descripcion": "Se configuraron los productos de la tienda con sus respectivas categorías, precios, imágenes y descripciones.",
+            "archivos": [
+                {
+                    "ruta": "clases-php/general/ejercicios/02-bucles-y-condicionales/Ejercicio1_BucleFor.php",
+                    "explicacion": "Ejemplo de archivo PHP (reemplaza con tus archivos reales)"
+                }
+            ],
+            "explicacion": "Se crearon 15 productos distribuidos en 5 categorías principales. Cada producto incluye:\n- Nombre y descripción detallada\n- Precio y precio con IVA\n- Imágenes de alta calidad\n- Stock disponible\n- Referencia única"
+        },
+        {
+            "titulo": "Ejercicio 3: Configuración de Métodos de Pago",
+            "descripcion": "Se configuraron los métodos de pago disponibles en la tienda, incluyendo tarjeta de crédito, transferencia bancaria y contra reembolso.",
+            "archivos": [],
+            "explicacion": "Se activaron los siguientes métodos de pago:\n- Tarjeta de crédito/débito (mediante módulo de pago seguro)\n- Transferencia bancaria\n- Contra reembolso\n\nCada método fue configurado con sus respectivos parámetros y restricciones."
+        },
+        {
+            "titulo": "Ejercicio 4: Personalización del Tema",
+            "descripcion": "Se personalizó el tema por defecto de PrestaShop modificando colores, logos, banners y estructura de la página principal.",
+            "archivos": [],
+            "explicacion": "Las personalizaciones incluyen:\n- Cambio de colores corporativos\n- Logo personalizado de la tienda\n- Banners promocionales en la página principal\n- Reorganización de módulos y bloques\n- Configuración de menús de navegación"
+        }
+    ],
+    
+    "conclusiones": [
+        "La práctica se ha completado exitosamente, implementando todas las funcionalidades requeridas en el enunciado.",
+        "PrestaShop se ha demostrado como una plataforma robusta y flexible para el desarrollo de tiendas online.",
+        "El sistema está funcionando correctamente y listo para ser desplegado en un entorno de producción.",
+        "Se han adquirido conocimientos prácticos sobre la gestión de plataformas de comercio electrónico.",
+        "La experiencia ha sido muy enriquecedora y ha permitido comprender mejor el funcionamiento de los sistemas de e-commerce."
+    ]
+}
+
