@@ -28,7 +28,7 @@ La idea surgió este año (2025) después de más de un año impartiendo clases,
 
 ## Estructura del Repositorio
 
-### **clases-android/**
+### **android/**
 - Desarrollo móvil con Android y Kotlin
 - **15 ejercicios prácticos** sobre:
   - SharedPreferences (básico, email, agenda, modos)
@@ -38,7 +38,7 @@ La idea surgió este año (2025) después de más de un año impartiendo clases,
 - Proyectos de exámenes y convocatorias extraordinarias
 - Proyectos con Gradle y estructura modular
 
-### **clases-c/**
+### **c-lang/**
 - Programación en C estructurada en **12 módulos progresivos**:
   - 01-introduccion: Hola mundo, estructura de programas, compilación
   - 02-sintaxis-basica: Tipos de datos, casting, variables, operadores, E/S
@@ -56,27 +56,27 @@ La idea surgió este año (2025) después de más de un año impartiendo clases,
 - Documentación PDF sobre pilas, colas y registros
 - Ejercicios de laboratorio con soluciones
 
-### **clases-cpp/**
+### **cpp/**
 - Programación en C++ con proyectos prácticos
 - Proyectos de gestión: Supermercado (archivos, productos, ventas, reportes)
 - Juegos: Juego de conquistas
 - Aplicaciones con CMake y estructura modular
 - Proyectos organizados por universidad (UAX)
 
-### **clases-css/**
+### **css/**
 - Estilos CSS reutilizables y compartidos
 - Componentes de diseño comunes
 - Variables CSS globales
 - Archivo index.css con estilos base
 
-### **clases-interfaces-web/**
+### **c-interfaces/**
 - Desarrollo de interfaces web con HTML, CSS y JavaScript
 - Tareas prácticas de maquetación y diseño responsive
 - Proyectos frontend: páginas web, formularios interactivos
 - Ejercicios de diseño web y estilos avanzados
 - Organización por comunidad autónoma y centro educativo
 
-### **clases-java/**
+### **java/**
 - Programación en Java con estructura completa organizada por regiones:
   - **Andalucía**: Almería, Sevilla (JavaFX, JDBC, multihilo, talleres)
   - **Castilla y León**: Valladolid, Salamanca (aplicaciones bancarias, e-commerce)
@@ -95,18 +95,18 @@ La idea surgió este año (2025) después de más de un año impartiendo clases,
 - Documentación PDF completa sobre POO y técnicas de programación
 - Bibliotecas: JavaFX, Jakarta Servlet API
 
-### **clases-javafx-gradle/**
+### **javafx/**
 - Interfaces gráficas con JavaFX
 - Aplicaciones de escritorio con FXML
 - Proyectos con Gradle y JavaFX SDK 25.0.1
 - Documentación sobre diseño de interfaces (DAW 2)
 - Estructura modular con recursos y layouts
 
-### **clases-javascript/**
+### **js/**
 - Desarrollo con JavaScript (en desarrollo)
 - Preparado para ejercicios y proyectos JavaScript
 
-### **clases-php/**
+### **php/**
 - Desarrollo web con PHP organizado por regiones:
   - **Andalucía** (Almería): Web de películas (fácil e intermedio) con CSV y MySQL
   - **Catalunya** (Barcelona - UOC): Tienda online completa con carrito, autenticación, pedidos
@@ -116,7 +116,7 @@ La idea surgió este año (2025) después de más de un año impartiendo clases,
 - Arquitectura MVC y DAO (Data Access Object)
 - Documentación PDF de prácticas y ejercicios
 
-### **clases-python/**
+### **python/**
 - **13 ejercicios numerados** progresivos:
   - Variables, operadores, input
   - Control de flujo (if, if-else)
@@ -127,7 +127,7 @@ La idea surgió este año (2025) después de más de un año impartiendo clases,
 - Documentación PDF sobre proyectos y ejercicios de ampliación
 - Organización por sintaxis básica y proyectos avanzados
 
-### **clases-react-native/**
+### **rn/**
 - Desarrollo de aplicaciones móviles multiplataforma con React Native y Expo
 - Proyecto completo: **Sevici** (aplicación de bicicletas públicas)
   - Autenticación (login, registro multi-paso)
@@ -138,7 +138,7 @@ La idea surgió este año (2025) después de más de un año impartiendo clases,
 - Documentación PDF de prácticas y exámenes
 - TypeScript y componentes modernos
 
-### **clases-sql/**
+### **sql/**
 - **10 ejercicios progresivos** sobre MySQL:
   - Introducción a MySQL
   - Creación de bases de datos y tablas
