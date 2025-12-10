@@ -1,4 +1,8 @@
+// Importación de la interfaz que define la estructura de datos.
 import type { Language } from "../types";
+
+// Importación de los iconos SVG como módulos ES6/Vite.
+import javaIcon from "../assets/icons/java/java-original.svg";
 /**
  * Creación de los datos asociados a las interfaces diseñadas y creadas
  * en el directorio de "types", puedes verlas en {@link Language} para
@@ -20,7 +24,7 @@ export const languages: Language[] = [
     {
         id: "java",
         name: "Java",
-        icon: " ",
+        icon: javaIcon,
         description: "Programación orientada a objetos (POO), Swing, JavaFX, JDBC, Spring y más",
         path: "/java"
     },

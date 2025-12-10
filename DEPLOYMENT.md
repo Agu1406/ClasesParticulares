@@ -442,19 +442,22 @@ En el encabezado **fuentes** de este documento dejo el enlace a la libreria grat
 Ahora ya tenemos un **MVP** (algo parecido), es hora utilizar la interfaz que diseñamos que define los campos que deben tener los lenguajes de programación de los que imparto clases así como la relación que tienen los ejercicios con los mismos, para eso, desde el directorio **src** creamos un subdirectorio llamado **data** y ahí creamos el archivo **languages.ts** el cual importa la interfaz `Languages`, en el siguiente fragmento muestro, por ejemplo, como se ve solo con los datos de **JAVA** aunque, por supuesto, tengo que agregarlos todos y puedes ver el archivo completo finalizado:
 
 ```ts
-// Importación de la interfaz "Language" del directorio de tipos.
+// Importación de la interfaz que define los tipos de lenguajes y sus datos.
 import type { Language } from "../types";
+// Los iconos SVG se deben importar de esta forma si no, no compilan bien.
+import javaIcon from "../assets/icons/java/java-original.svg";
 
-// Creación del Array del tipo Lenguage con los lenguajes que imparto.
 export const languages: Language[] = [
+    // Ejemplo con el lenguaje de Java.
     {
         id: "java",
         name: "Java",
-        icon: " ",
+        // Fijaros que el icono y su ruta son previamente importados y usados aquí.
+        icon: javaIcon,
         description: "Programación orientada a objetos (POO), Swing, JavaFX, JDBC, Spring y más",
         path: "/java"
-    }
-    // Aquí deberan ir todos los otros lenguajes...
+    },
+    // El resto de lenguajes...
 ]
 ```
 # **Preguntas comunes que yo mismo me hice**
