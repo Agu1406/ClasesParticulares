@@ -367,8 +367,76 @@ Este paso en teoría debería ser el N.º10 y viceversa, el N.º10 debería ser 
 
 Para ello, desde **src** navegamos hasta **assets** y creamos ahí el directorio **icons** donde subiremos (de preferencia SVG) los iconos que representaran los lenguajes que imparto en clases.
 
-En el encabezado **fuentes** de este documento dejo el enlace a la libreria gratuita de **SVG** que yo he utilizado para bajarme los iconos.
+En el encabezado **fuentes** de este documento dejo el enlace a la libreria gratuita de **SVG** que yo he utilizado para bajarme los iconos, la unica pega es que trae 2019 iconos SVG/EPS pero yo no necesito tantos, sumando los frameworks, lenguajes base y tecnologías que se utilizar y he enseñado llego a 109, por lo tanto, actualizamos nuestro **gitignore** para excluir todos excepto los que nos interesan, quedando así el apartado de iconos del gitignore:
 
+```bash
+# Excluir todos los SVG y EPS para luego elegir manualmente los que quiero.
+*.svg
+
+# Incluir los SVG que me interesan de los lenguajes que imparto.
+!src/assets/icons/java/
+!src/assets/icons/python/
+!src/assets/icons/c/
+!src/assets/icons/cplusplus/
+!src/assets/icons/csharp/
+!src/assets/icons/php/
+!src/assets/icons/mysql/
+!src/assets/icons/kotlin/
+!src/assets/icons/typescript/
+!src/assets/icons/javascript/
+!src/assets/icons/html5/
+!src/assets/icons/css3/
+!src/assets/icons/xml/
+!src/assets/icons/json/
+
+# Frameworks y librerías Frontend
+!src/assets/icons/react/*
+!src/assets/icons/reactnative/*
+!src/assets/icons/angular/*
+!src/assets/icons/angularjs/*
+!src/assets/icons/vite/*
+!src/assets/icons/vitejs/*
+!src/assets/icons/astro/*
+!src/assets/icons/tailwindcss/*
+!src/assets/icons/nodejs/*
+!src/assets/icons/express/*
+!src/assets/icons/npm/*
+!src/assets/icons/yarn/*
+
+# Frameworks Backend PHP
+!src/assets/icons/laravel/*
+!src/assets/icons/symfony/*
+!src/assets/icons/composer/*
+
+# Frameworks Java
+!src/assets/icons/spring/*
+!src/assets/icons/gradle/*
+!src/assets/icons/maven/*
+
+# Herramientas de desarrollo
+!src/assets/icons/git/*
+!src/assets/icons/github/*
+!src/assets/icons/gitlab/*
+!src/assets/icons/vscode/*
+!src/assets/icons/intellij/*
+!src/assets/icons/androidstudio/*
+
+# Bases de datos
+!src/assets/icons/postgresql/*
+!src/assets/icons/sqlite/*
+!src/assets/icons/mongodb/*
+
+# Herramientas de build y deployment
+!src/assets/icons/docker/*
+!src/assets/icons/cmake/*
+!src/assets/icons/expo/*
+
+# Mobile
+!src/assets/icons/android/*
+
+# Exlcuimos todos los EPS porque no los usare.
+*.eps
+```
 # **Paso N.º10 - Crear los datos (lenguajes) de la SPA**
 
 Ahora ya tenemos un **MVP** (algo parecido), es hora utilizar la interfaz que diseñamos que define los campos que deben tener los lenguajes de programación de los que imparto clases así como la relación que tienen los ejercicios con los mismos, para eso, desde el directorio **src** creamos un subdirectorio llamado **data** y ahí creamos el archivo **languages.ts** el cual importa la interfaz `Languages`, en el siguiente fragmento muestro, por ejemplo, como se ve solo con los datos de **JAVA** aunque, por supuesto, tengo que agregarlos todos y puedes ver el archivo completo finalizado:
@@ -459,4 +527,5 @@ export default defineConfig({
 - [**Sandbox de TailWind**](https://play.tailwindcss.com): Sitio web oficial de TailWind para practicar que hacen sus diferentes clases y aprender a usarlo.
 - [**Tailwind Cheat Sheet**](https://nerdcave.com/tailwind-cheat-sheet): Guía fácil y rápida de clases de Tailwind, su sintaxis y que hace cada una.
 - [**Generador de paletas de colores CSS**](https://coolors.co): Generador aleatorio de paletas de colores que use hasta conseguir una paleta que me gustase.
+- [**Repositorio gratuito de iconos SVG**](https://devicon.dev): Maravillosa libreria open-source con iconos especialemnte enfocados en desarrollo de software, programación, etc.
 - [**Ignorar esta linea**](): Es la que copio-pego para agregar más enlaces.
