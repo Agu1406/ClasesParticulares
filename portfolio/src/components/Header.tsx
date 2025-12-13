@@ -1,3 +1,5 @@
+import { Link } from "react-router-dom";
+
 /**
  * Componente de navegación que proporciona una barra de navegación
  * para la aplicación SPA. Este componente utiliza React Router DOM para crear
@@ -18,21 +20,24 @@
  * Como tal, las clases existen, pero los colores ("evergreen", "lavender", "fawn")
  * son los colores personalizados que he definido en "tailwind.config.js"
  */
-function Navigation() {
+function Header() {
     return (
-        <nav className="bg-evergreen text-lavender p-4 shadow-md">
-            <div className="container mx-auto flex justify-between items-center">
-                <a href="/" className="text-xl font-bold hover:text-fawn transition-colors">
-                    Clases Particulares
-                </a>
-                <div className="space-x-4">
-                    <a href="/" className="hover:text-fawn transition-colors">Inicio</a>
-                    <a href="/java" className="hover:text-fawn transition-colors">Java</a>
-                    <a href="/php" className="hover:text-fawn transition-colors">PHP</a>
+        <header>
+            <nav className="bg-evergreen text-lavender p-4 shadow-md">
+                <div className="container mx-auto flex justify-between items-center">
+                    <Link to="/" className="text-xl font-bold hover:text-fawn transition-colors">
+                        Clases Particulares
+                    </Link>
+                    <div className="space-x-4">
+                        <Link to="/" className="hover:text-fawn transition-colors">Inicio</Link>
+                        <Link to="/java" className="hover:text-fawn transition-colors">Java</Link>
+                        <Link to="/php" className="hover:text-fawn transition-colors">PHP</Link>
+                    </div>
                 </div>
-            </div>
-        </nav>
+            </nav>
+        </header>
+
     );
 }
 
-export default Navigation;
+export default Header;
