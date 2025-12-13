@@ -8,7 +8,7 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
  */
 import HomePage from "./pages/HomePage";
 import JavaPage from "./pages/JavaPage";
-import Navigation from "./components/Navigation";
+import Header from "./components/Header";
 
 /**
  * Componente principal de la aplicación que configura el routing.
@@ -30,7 +30,7 @@ function App () {
     // Activamos el enrutamiento (routing) de la aplicación.
     <BrowserRouter>
       {/* Barra de navegación global */}
-      <Navigation />
+      <Header />
       {/* Dentro de BrowserRouter indicamos las rutas que existen.*/}
       <Routes>
         {/* Tenemos que definarlas una por una indicando la URL y que elemento tiene que carga la SPA si coincide con esa ruta, este primer ejemplo, si el usuario accede a la URL www.misitio.com/ entonces React carga el componente (page) llamado HomePage.tsx*/}
