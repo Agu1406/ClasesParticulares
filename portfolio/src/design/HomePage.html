@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Maqueta web para desarrollo de componentes</title>
+    <!-- A veces agrego margenes para ver la posición de cada cosa. -->
+    <style>
+        a {
+            border: 1px none red !important;
+        }
+    </style>
+</head>
+<!-- Importamos TailWindCSS para poder usarlo en nuestra maqueta. -->
+<script src="https://cdn.tailwindcss.com"></script>
+<!-- Importamos nuestra paleta de colores personalizada desde un script. -->
+<script src="theme_script.js"></script>
+
+<body class="bg-lavender min-h-screen flex flex-col">
+
+    <!-- Componente REACT de nombre "Header.tsx" -->
+    <header>
+        <nav class="bg-evergreen text-lavender p-4 shadow-md">
+            <div class="container mx-auto flex justify-between items-center">
+                <a href="/" class="hover:text-fawn text-xl font-bold">Clases particulares</a>
+                <div class="space-x-4">
+                    <a href="/" class="hover:text-fawn">Inicio</a>
+                    <a href="/java" class="hover:text-fawn">Java</a>
+                    <a href="/php" class="hover:text-fawn">PHP</a>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <!-- El contenido del main cambia dinamicamente según la URL desde "App.tsx" -->
+    <main class="flex-grow p-8">
+        <div class="container mx-auto">
+            <!-- 
+            Grid de elementos clickeables (lenguajes)
+            
+            Por defecto hay una sola columna, incrementamos las columnas según dependiendo del tamaño de la pantalla con "md" con 2 columnas, "lg" con 3 columnas y "xl" con 4 columnas. además agregamos un espaciado (gap) entre los elementos de nivel 6 (1,5rem).
+            -->
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
+                <!-- 
+                Cada elementos del grid es un enlace compuesto de varios elementos para estetica, se muestra en forma de bloque, redondeado y con un fondo blanco y un padding de 6 (1,5rem).
+                 -->
+                <!-- Java -->
+                <a href="/java"
+                    class="block bg-white rounded-lg shadow-md p-6 hover:shadow-xl transition-all duration-300 border border-gray-200 hover:border-evergreen group">
+                    <div class="text-center">
+                        <div class="flex justify-center mb-4">
+                            <img src="../assets/icons/java/java-original.svg" alt="Java icon"
+                                class="w-16 h-16 object-contain group-hover:scale-110 transition-transform duration-300">
+                        </div>
+                        <h3 class="text-2xl font-bold text-evergreen mb-2">Java</h3>
+                        <p class="text-slate-grey text-sm leading-relaxed">
+                            Programación orientada a objetos (POO), Swing, JavaFX, JDBC, multihilo, estructuras de datos
+                        </p>
+                    </div>
+                </a>
+
+                <!-- Python -->
+                <a href="/python"
+                    class="block bg-white rounded-lg shadow-md p-6 hover:shadow-xl transition-all duration-300 border border-gray-200 hover:border-evergreen group">
+                    <div class="text-center">
+                        <div class="flex justify-center mb-4">
+                            <img src="../assets/icons/python/python-original.svg" alt="Python icon"
+                                class="w-16 h-16 object-contain group-hover:scale-110 transition-transform duration-300">
+                        </div>
+                        <h3 class="text-2xl font-bold text-evergreen mb-2">Python</h3>
+                        <p class="text-slate-grey text-sm leading-relaxed">
+                            Sintaxis básica, POO, estructuras de datos (listas, tuplas, diccionarios), proyectos
+                            prácticos
+                        </p>
+                    </div>
+                </a>
+
+                <!-- C -->
+                <a href="/c"
+                    class="block bg-white rounded-lg shadow-md p-6 border border-gray-200 hover:border-evergreen group">
+                    <div class="text-center">
+                        <div class="flex justify-center mb-4">
+                            <img src="../assets/icons/c/c-original.svg" alt="C icon" class="w-16 h-16">
+                        </div>
+                        <h3 class="text-2xl font-bold text-evergreen mb-2">C</h3>
+                        <p class="text-slate-grey text-sm leading-relaxed">
+                            Programación estructurada, estructuras de datos, pilas, colas, registros, memoria dinámica
+                        </p>
+                    </div>
+                </a>
+            </div>
+    </main>
+
+    <!-- Componente REACT de nombre "Footer.tsx" -->
+    <footer class="bg-evergreen text-lavender p-4">
+        <div class="container mx-auto text-center font-bold">
+            Pie de pagina de prueba
+        </div>
+    </footer>
+</body>
+
+</html>
