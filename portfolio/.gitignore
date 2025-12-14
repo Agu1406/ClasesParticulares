@@ -1,4 +1,4 @@
-# Logs
+﻿# Logs
 logs
 *.log
 npm-debug.log*
@@ -22,3 +22,70 @@ dist-ssr
 *.njsproj
 *.sln
 *.sw?
+
+# Excluir todos los SVG y EPS para luego elegir manualmente los que quiero.
+*.svg
+
+# Incluir los SVG que me interesan de los lenguajes que imparto.
+!src/assets/icons/java/
+!src/assets/icons/python/
+!src/assets/icons/c/
+!src/assets/icons/cplusplus/
+!src/assets/icons/csharp/
+!src/assets/icons/php/
+!src/assets/icons/mysql/
+!src/assets/icons/kotlin/
+!src/assets/icons/typescript/
+!src/assets/icons/javascript/
+!src/assets/icons/html5/
+!src/assets/icons/css3/
+!src/assets/icons/xml/
+!src/assets/icons/json/
+
+# Frameworks y librerías Frontend
+!src/assets/icons/react/*
+!src/assets/icons/reactnative/*
+!src/assets/icons/angular/*
+!src/assets/icons/angularjs/*
+!src/assets/icons/vite/*
+!src/assets/icons/vitejs/*
+!src/assets/icons/astro/*
+!src/assets/icons/tailwindcss/*
+!src/assets/icons/nodejs/*
+!src/assets/icons/express/*
+!src/assets/icons/npm/*
+!src/assets/icons/yarn/*
+
+# Frameworks Backend PHP
+!src/assets/icons/laravel/*
+!src/assets/icons/symfony/*
+!src/assets/icons/composer/*
+
+# Frameworks Java
+!src/assets/icons/spring/*
+!src/assets/icons/gradle/*
+!src/assets/icons/maven/*
+
+# Herramientas de desarrollo
+!src/assets/icons/git/*
+!src/assets/icons/github/*
+!src/assets/icons/gitlab/*
+!src/assets/icons/vscode/*
+!src/assets/icons/intellij/*
+!src/assets/icons/androidstudio/*
+
+# Bases de datos
+!src/assets/icons/postgresql/*
+!src/assets/icons/sqlite/*
+!src/assets/icons/mongodb/*
+
+# Herramientas de build y deployment
+!src/assets/icons/docker/*
+!src/assets/icons/cmake/*
+!src/assets/icons/expo/*
+
+# Mobile
+!src/assets/icons/android/*
+
+# Exlcuimos todos los EPS porque no los usare.
+*.eps
