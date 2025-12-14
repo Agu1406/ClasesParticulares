@@ -1,19 +1,39 @@
 # **Lista de objetivos**
 
+## **Configuración inicial**
 - [X] Inicializar el proyecto con **REACT** + **TYPESCRIPT** + **VITE**.
 - [X] Instalar dependencia para routing. (**React router DOM**).
 - [X] Instalar dependencia para estilos. (**TailWindCSS & PostCSS & Autoprefixer**).
 - [X] Configurar la base/ruta de carga de **Vite**.
 - [X] Configurar la carga/lectura de archivos de **TailWind**. 
-- [X] Crear la estructura del proyecto (directorios en src).
-- [X] Configurar el routing de la aplicación.
-- [X] Crear el componente de navegación de URLS con **\<Link>** de **React Router DOM**.
-- [X] Generar el MPV (Minimo producto viable).
-- [ ] Ignorar esto, es la linea que copio-pego para agregar cosas.
-- [ ] Ignorar esto, es la linea que copio-pego para agregar cosas.
-- [ ] Ignorar esto, es la linea que copio-pego para agregar cosas.
-- [ ] Ignorar esto, es la linea que copio-pego para agregar cosas.
+- [X] Configurar colores personalizados en **TailWind** (evergreen, lavender, fawn, etc.).
 
+## **Estructura y tipos**
+- [X] Crear la estructura del proyecto (directorios en src).
+- [X] Crear tipos TypeScript (**Language**, **Exercise**).
+- [X] Crear datos de lenguajes (**languages.ts** con todos los lenguajes e iconos).
+
+## **Componentes base**
+- [X] Configurar el routing de la aplicación en **App.tsx**.
+- [X] Crear el componente **Header.tsx** con navegación usando **\<Link>** de **React Router DOM**.
+- [X] Crear el componente **Footer.tsx**.
+- [X] Configurar layout flex en **index.html** (body con flex flex-col).
+- [X] Configurar layout flex en **App.tsx** (main con flex-grow).
+
+## **Páginas**
+- [X] Crear **HomePage.tsx** (estructura básica).
+- [X] Crear **JavaPage.tsx** (página de ejemplo).
+
+## **Funcionalidad principal**
+- [ ] Crear componente **LanguageCard.tsx** para mostrar tarjetas de lenguajes.
+- [ ] Implementar grid de lenguajes en **HomePage.tsx** (usando LanguageCard).
+- [ ] Mejorar **Footer.tsx** (agregar enlaces a GitHub, GitHub Pages, etc.).
+- [ ] Crear páginas individuales para cada lenguaje (Python, C, C++, PHP, etc.).
+
+## **MVP (Mínimo Producto Viable)**
+- [ ] Completar MVP: HomePage con grid funcional de todos los lenguajes.
+- [ ] Probar navegación entre páginas.
+- [ ] Verificar responsive design en diferentes tamaños de pantalla.
 
 # **Paso N.º1 - Inicializar REACT + VITE**
 
@@ -460,6 +480,77 @@ export const languages: Language[] = [
     // El resto de lenguajes...
 ]
 ```
+
+# **Paso N.º11 - Maquetado web inicial y correciones**
+
+Anteriormente trabaje como **especialista SEO/SEM** antes de aprender a programar y entendí (en su momento) la importancia de una buena ortografía, semantica, etc, por eso, incopore las etiquietas **HTML** de **header, footer y main** para seccionar el contenido de nuestra **SPA**, lo primero, como todo nuestro diseño esta basado en flex modifique el **index.html** del proyecto para incorporar la clase TailWind necesaria para utilizarlo y aproveche de cambiar el **lang** de inglés a español.
+
+```html
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>clases-particulares</title>
+  </head>
+  <!--
+  Explicación de los estilos incoporados a todo el cuerpo de la SPA (excepto el color de fondo que se entiende que es).
+
+  1. min-h-screen: el "body" (cuerpo) HTML ocupa como altura minima el 100% de la pantalla visible.
+  
+  2. flex: Activamos "flex" es nuestra SPA para estructuración.
+  
+  3. flex-col: Flex tiene modo "fila" y "columna", elegimos columna para representar todo el contenido de nuestro sitio web en forma de columna de arriba hacía abajo.
+  -->
+  <body class="bg-lavender min-h-screen flex flex-col">
+    <div id="root"></div>
+    <script type="module" src="/src/main.tsx"></script>
+  </body>
+</html>
+```
+
+Ahora recordemos que **App.tsx** es quien (dinamicamente) "pinta" (renderiza) el contenido que queremos ver en la **SPA** dependiendo de la **URL**, por lo tanto, creamos en el la etiquieta **HTML** llamada **"\</main>"** y le agregamos la clase **flex-grow** que hará que el main, incluso sin contenido, ocupe todo el espacio posible que no ocupen el resto de elementos como **header** o **footer**, esto por ejemplo, empuja el **footer** hacía abajo, actualmente se ve así:
+
+```tsx
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+import HomePage from "./pages/HomePage";
+import JavaPage from "./pages/JavaPage";
+import Header from "./components/Header";
+import Footer from "./components/Footer";
+
+function App() {
+  return (
+    <BrowserRouter>
+      <Header />
+      <!-- Usamos la etiquita HTML main para mejorar el SEO. -->
+      <main className="flex-grow">
+      <Routes>
+        <Route path="/" element={<HomePage />}></Route>
+        <Route path="/java" element={<JavaPage />}></Route>
+      </Routes>
+      </main>
+      <Footer />
+    </BrowserRouter>
+  );
+}
+
+export default App;
+```
+
+De esta forma toda la **SPA** siempre utilizara en el cuerpo (body) flex como forma de estructura y organización y el **main** siempre ocupara todo el espacio disponible que no ocupen el **header** y el **footer**, garantizado empujar ambos, **footer** y **header** hacía sus respectivas direcciones.
+
+# **Paso N.º12 - Crear los datos (lenguajes) de la SPA**
+
+# **Paso N.º13 - Crear los datos (lenguajes) de la SPA**
+
+# **Paso N.º14 - Crear los datos (lenguajes) de la SPA**
+
+# **Paso N.º15 - Crear los datos (lenguajes) de la SPA**
+
+# **Paso N.º16 - Crear los datos (lenguajes) de la SPA**
+
+
 # **Preguntas comunes que yo mismo me hice**
 
 ### **¿Como pruebo el código que estoy haciendo?**
