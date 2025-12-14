@@ -9,7 +9,7 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import HomePage from "./pages/HomePage";
 import JavaPage from "./pages/JavaPage";
 import Header from "./components/Header";
-
+import Footer from "./components/Footer";
 /**
  * Componente principal de la aplicación que configura el routing.
  * 
@@ -25,12 +25,14 @@ import Header from "./components/Header";
  * @see https://github.com/Agu1406/ClasesParticulares Repositorio GitHub
  * @see https://agu1406.github.io/ClasesParticulares GitHub Pages
  */
-function App () {
+function App() {
   return (
     // Activamos el enrutamiento (routing) de la aplicación.
     <BrowserRouter>
-      {/* Barra de navegación global */}
+      {/* Aquí se carga y renderiza el Header.tsx */}
       <Header />
+      {/* Usamos la etiquita HTML main para mejorar el SEO. */}
+      <main>
       {/* Dentro de BrowserRouter indicamos las rutas que existen.*/}
       <Routes>
         {/* Tenemos que definarlas una por una indicando la URL y que elemento tiene que carga la SPA si coincide con esa ruta, este primer ejemplo, si el usuario accede a la URL www.misitio.com/ entonces React carga el componente (page) llamado HomePage.tsx*/}
@@ -38,6 +40,9 @@ function App () {
         {/* Ahora otro ejemplo, si la URL es "/java" carga el componente (page) JavaPage.tsx*/}
         <Route path="/java" element={<JavaPage />}></Route>
       </Routes>
+      </main>
+      {/* Aquí se carga y renderiza Footer.tsx */}
+      <Footer />
     </BrowserRouter>
   );
 }
