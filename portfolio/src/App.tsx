@@ -32,7 +32,7 @@ function App() {
       {/* Aquí se carga y renderiza el Header.tsx */}
       <Header />
       {/* Usamos la etiquita HTML main para mejorar el SEO. */}
-      <main>
+      <main className="flex-grow">
       {/* Dentro de BrowserRouter indicamos las rutas que existen.*/}
       <Routes>
         {/* Tenemos que definarlas una por una indicando la URL y que elemento tiene que carga la SPA si coincide con esa ruta, este primer ejemplo, si el usuario accede a la URL www.misitio.com/ entonces React carga el componente (page) llamado HomePage.tsx*/}

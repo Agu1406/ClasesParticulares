@@ -13,8 +13,8 @@
  */
 function Footer() {
     return (
-        <footer>
-            <div>
+        <footer className="bg-evergreen text-lavender p-4">
+            <div className="container mx-auto text-center font-bold">
                 Pie de pagina de prueba
             </div>
         </footer>

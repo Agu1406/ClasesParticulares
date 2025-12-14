@@ -39,4 +39,5 @@ function Header() {
     );
 }
 
+// Exportamos la función para que pueda ser importada y usada.
 export default Header;
