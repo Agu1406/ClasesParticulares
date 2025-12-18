@@ -1,6 +1,7 @@
 <?php
 // Cargamos las funciones guardadas en DAO
 require_once "../funciones/dao.php";
+require_once "../funciones/dbconn.php";
 
 // Comenzamos la sesión SIEMPRE al principio del script
 session_start();
@@ -11,13 +12,11 @@ $errores = [];
 // Comprobamos si existe una sesión con el id del usuario (ya está autentificado)
 if (isset($_SESSION['id'])) {
     $mensaje = "El usuario ya se ha autenticado previamente.";
-    $mostrarHTML = true;
+    header("Location: ../index/index.php");
 } else {
-    $mostrarHTML = false;
     // Comprobamos si el formulario ha llegado por POST
     if ($_SERVER['REQUEST_METHOD'] !== 'POST' || !isset($_POST['entrar'])) {
         $errores[] = "El formulario no ha sido enviado correctamente.";
-        $mostrarHTML = true;
     } else {
         // Validamos los datos del formulario
 
@@ -52,64 +51,56 @@ if (isset($_SESSION['id'])) {
             //si no es posible establecer conexión con la base de datos
             if ($conexion === false) {
                 $errores[] = "Error en la conexión con la base de datos.";
-                $mostrarHTML = true;
             } else {
                 // Si hay conexión intentamos autentificar la usuario
                 $idUsuario = autenticarUsuario($conexion, $usuario, $password);
                 //Esta fución nos devuelve false si no hemos tenido éxito
                 if ($idUsuario === false) {
                     $errores[] = "El usuario o la contraseña no son correctos.";
-                    $mostrarHTML = true;
                 } else {
                     // Si tenemos éxito en la autentificación 
                     // Guardamos solo lo necesario en la sesión
                     $_SESSION['id'] = $idUsuario;
-                    $_SESSION['ultimo_acceso'] = time();
+                    $_SESSION['lastlogin'] = time();
 
                     $mensaje = "El usuario se ha autenticado correctamente.";
-                    $mostrarHTML = true;
-                }
-            }
-        } else {
-            $mostrarHTML = true;
-        }
-    }
-}
-
-// Mostramos el HTML si hay que mostrarlo (errores, ya autenticado, o éxito)
-if ($mostrarHTML || !empty($errores)) {
 ?>
-<!DOCTYPE html>
-<html lang="es">
+                    <!DOCTYPE html>
+                    <html lang="es">
 
-<head>
-    <meta charset="UTF-8">
-    <title>Resultado de la operación de login</title>
-</head>
+                    <head>
+                        <meta charset="UTF-8">
+                        <title>Resultado de la operación de login</title>
+                    </head>
 
-<body>
+                    <body>
 
-    <h1>DWES 03. AUTOR: RAFAEL MORONES BURGOS.</h1>
+                        <h1>DWES 03. AUTOR: RAFAEL MORONES BURGOS.</h1>
 
-    <?php
-    // MOSTRAMOS MENSAJES
-    if (!empty($errores)) {
-        echo "<h2>Se han producido los siguientes errores:</h2><ul>";
-        foreach ($errores as $error) {
-            echo "<li>" . htmlspecialchars($error) . "</li>";
-        }
-        echo "</ul>";
-    } else {
-        echo "<p>" . htmlspecialchars($mensaje ?? '') . "</p>";
-    }
-    ?>
+                        <?php
+                        // MOSTRAMOS MENSAJES
+                        if (!empty($errores)) {
+                            echo "<h2>Se han producido los siguientes errores:</h2><ul>";
+                            foreach ($errores as $error) {
+                                echo "<li>" . htmlspecialchars($error) . "</li>";
+                            }
+                            echo "</ul>";
+                        } else {
+                            echo "<p>" . htmlspecialchars($mensaje) . "</p>";
+                        }
+                        ?>
 
-    <a href="../index/index.php">Volver al inicio</a>
+                        <a href="../index/index.php">Volver al inicio</a>
 
-</body>
+                    </body>
 
-</html>
+
+                    </html>
 
 <?php
+                }
+            }
+        }
+    }
 }
 ?>

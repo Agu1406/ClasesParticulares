@@ -1,84 +1,88 @@
 <?php
-// Incluimos el control de acceso al área privada
-require_once 'accesoareaprivada.php';
+//Nos aseguramos la sesión está iniciada y no hemos excedido el tiempo
+require_once "accesoareaprivada.php";
 
-// Cargamos las funciones necesarias
-require_once '../funciones/dao.php';
+//Cargamos las funciones definidas en DAO
+require_once "../funciones/dao.php";
+require_once "../funciones/dbconn.php";
 
-// Iniciamos la sesión (ya iniciada en accesoareaprivada.php, pero por seguridad)
-session_start();
-
-// Creamos la conexión
+//Variables auxiliares
 $conexion = conectarDB();
-
-// Array para errores
 $errores = [];
-$mensaje = '';
+$voto = null;
+$votoRegistrado = false;
+$nuevoVoto = [];
 
-// Verificamos que el formulario se haya enviado por POST
-if ($_SERVER['REQUEST_METHOD'] !== 'POST') {
-    $errores[] = "No ha seguido el proceso de votación correctamente.";
+//Comprobamos que existe $voto;
+if (!isset($_SESSION['voto_en_curso'])) {
+    $errores[] = "No hay ninguna votación en curso.";
+    //en caso de que exista
 } else {
-    // Verificamos que se hayan marcado los dos checkboxes
-    $confirmar = filter_input(INPUT_POST, 'confirmar', FILTER_VALIDATE_INT);
-    $declaracion = filter_input(INPUT_POST, 'declaracion', FILTER_VALIDATE_INT);
-    
-    if ($confirmar !== 1 || $declaracion !== 1) {
-        $errores[] = "Debe marcar ambas casillas de confirmación para poder votar.";
-    }
-    
-    // Verificamos que existe información de votación en la sesión
-    if (!isset($_SESSION['voto_en_curso']) || empty($_SESSION['voto_en_curso'])) {
-        $errores[] = "No hay información de votación en curso. Por favor, regrese al listado de películas y vuelva a iniciar el proceso.";
+    $voto = $_SESSION['voto_en_curso'];
+    $idPelicula = $voto['id_pelicula'];
+    $valoracion = $voto['valoracion'];
+    $comentario = $voto['comentario'];
+    $idUsuario = $_SESSION['id'];
+
+    // Comprobamos que se ha llegado aqui por el formulario
+    if ($_SERVER['REQUEST_METHOD'] !== 'POST') {
+        $errores[] = "El formulario no ha sido enviado por POST.";
+        //Y que los 2 checks están marcados
     } else {
-        $votoEnCurso = $_SESSION['voto_en_curso'];
-        $idPelicula = $votoEnCurso['pelicula_id'] ?? null;
-        $valoracion = $votoEnCurso['valoracion'] ?? null;
-        $comentario = $votoEnCurso['comentario'] ?? null;
-        
-        if ($idPelicula === null || $valoracion === null || $comentario === null) {
-            $errores[] = "La información de votación en la sesión está incompleta.";
+        if (empty($_POST['confirmar']) || empty($_POST['declaracion'])) {
+            $errores[] = "Debe marcar ambas casillas de confirmación para enviar el voto.";
+        }
+    }
+
+    //Si no hay errores hasta ahora comprobamos la conexión. 
+    if (empty($errores)) {
+        if ($conexion === false) {
+            $errores[] = "No ha sido posible establecer una conexión con la base de datos.";
         } else {
-            // Verificamos que la conexión es válida
-            if ($conexion === false) {
-                $errores[] = "No ha sido posible establecer una conexión con la base de datos.";
+            // Comprobamos si el usuario ya ha votado esta película
+            $votoRegistrado = consultarVoto($conexion, $idUsuario, $idPelicula);
+
+            if ($votoRegistrado === null) {
+                $errores[] = "Se ha producido un error al comprobar el voto.";
+            } else if ($votoRegistrado === true) {
+                $errores[] = "El usuario ya ha votado al menos una vez esta película.";
+                //Si no ha votado creamos un array llamado nuevoVoto
             } else {
-                // Verificamos nuevamente que el usuario no haya votado esta película
-                $idUsuario = $_SESSION['id'];
-                $yaVoto = usuarioYaVoto($conexion, $idUsuario, $idPelicula);
-                
-                if ($yaVoto) {
-                    // Si ya votó, descartamos la información de sesión
-                    unset($_SESSION['voto_en_curso']);
-                    $errores[] = "Ya ha votado esta película previamente. La información de votación ha sido descartada.";
-                } else {
-                    // Insertamos el voto en la base de datos
-                    $resultado = insertarVotacion($conexion, $idUsuario, $idPelicula, $valoracion, $comentario);
-                    
-                    if ($resultado === false) {
-                        $errores[] = "No ha sido posible registrar el voto en la base de datos.";
-                    } else {
-                        // Si todo fue correcto, eliminamos la información de sesión
-                        unset($_SESSION['voto_en_curso']);
-                        $mensaje = "El voto y comentario se han registrado correctamente.";
-                    }
+
+                $nuevoVoto = [ //este array lo usamos como parámetros para la función de insertar voto en la BD
+                    'valoracion' => $valoracion,
+                    'comentario' => $comentario,
+                    'idPelicula' => $idPelicula,
+                    'idUsuario' => $idUsuario
+                ];
+
+                //Guardamos la llamada de la función en una variable
+                $resultadoInsertarVoto = insertarNuevoVoto($conexion, $nuevoVoto);
+
+                if ($resultadoInsertarVoto === false) {
+                    $errores[] = "ha habido un error a la hora de insertar el voto";
                 }
             }
         }
     }
+
+    // 5) En cualquier caso, descartamos la votación en curso
+    unset($_SESSION['voto_en_curso']);
 }
 ?>
+
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=100%, initial-scale=1.0">
     <title>Proceso de votación</title>
 </head>
+
 <body>
-    <H1>DWES 03. AUTOR: RAFAEL MORONES BURGOS.</H1>
-    <h1>Proceso de votación</h1>
-    
+    <h1>DWES 03. AUTOR: RAFAEL MORONES BURGOS.</h1>
+
     <?php if (!empty($errores)): ?>
         <h2>Se han producido los siguientes errores:</h2>
         <ul>
@@ -86,11 +90,22 @@ if ($_SERVER['REQUEST_METHOD'] !== 'POST') {
                 <li><?= htmlspecialchars($error) ?></li>
             <?php endforeach; ?>
         </ul>
+
+        <h3>No ha seguido el proceso de votación correctamente.</h3>
+        <h4>Por favor, regrese al listado de películas y vuelva a iniciar el proceso.</h4>
+        <a href="../index/index.php">Volver al inicio</a>
+        <a href="form-confirmar-voto.php">Volver a la confirmación de voto.</a>
+
+    <?php elseif ($votoRegistrado): ?>
+        <h3>Ya había registrado un voto para esta película.</h3>
+        <h4>Por favor, regrese al listado de películas.</h4>
+        <a href="../index/index.php">Volver al inicio</a>
+
     <?php else: ?>
-        <p><?= htmlspecialchars($mensaje) ?></p>
+        <h3>¡FELICIDADES! Su voto ha sido registrado con número:</h3>
+        <p><?= htmlspecialchars($resultadoInsertarVoto) ?></p>
+        <a href="../index/index.php">Volver al inicio</a>
     <?php endif; ?>
-    
-    <p>Por favor, regrese al listado de películas y vuelva a iniciar el proceso si desea votar otra película.</p>
-    <a href="../index/index.php">Volver al listado de películas</a>
 </body>
+
 </html>

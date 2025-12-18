@@ -1,111 +1,136 @@
 <?php
-// Incluimos el control de acceso al área privada
-require_once 'accesoareaprivada.php';
+// Control de acceso al área privada 
+require_once "accesoareaprivada.php";
+//Cargamos las funciones guaradas en DAO.php
+require_once "../funciones/dao.php";
+require_once "../funciones/dbconn.php";
 
-// Cargamos las funciones necesarias
-require_once '../funciones/dao.php';
-
-// Creamos la conexión
+//Creamos una conexión
 $conexion = conectarDB();
 
-// Array para errores
-$errores = [];
+//Variables auxiliares
+$errores = []; //Array para mostrar errores
+$criticas = []; // array para guardar las críticas
 
-// Validamos el id de la película recibido por GET
-$idPelicula = filter_input(INPUT_GET, 'id', FILTER_VALIDATE_INT);
-
-if ($idPelicula === false || $idPelicula === null || $idPelicula < 1) {
-    $errores[] = "El id de la película no es válido.";
+//Comprobamos si existe conexión. 
+if ($conexion === false) {
+    echo "No ha sido posible establecer una conexión con la base de datos.";
+    exit;
 } else {
-    // Verificamos que la conexión es válida
-    if ($conexion === false) {
-        $errores[] = "No ha sido posible establecer una conexión con la base de datos.";
+
+    //si existe una sesión verificamos el método GET
+    if ($_SERVER['REQUEST_METHOD'] != 'GET') {
+        $errores[] = "El formulario no ha sido enviado por GET";
     } else {
-        // Obtenemos los datos de la película
-        $pelicula = obtenerPeliculaPorId($conexion, $idPelicula);
-        
-        if ($pelicula === false || empty($pelicula)) {
-            $errores[] = "La película no existe en la base de datos.";
+        //Si ha sido enviada por GET comprobamos que no está vacío
+        if (empty($_GET)) {
+            $errores[] = "La petición no puede estar vacía";
+        }
+
+        // Validamos los datos del formulario
+        $idPelicula = filter_input(INPUT_GET, "id", FILTER_VALIDATE_INT);
+
+        if ($idPelicula === false || $idPelicula === null) {
+            $errores[] = "ID de película inválido";
+
+            //Si el id es correcto buscamos la película correspondiente a dicho id
         } else {
-            // Obtenemos las votaciones de la película
-            $votaciones = obtenerVotacionesPorPelicula($conexion, $idPelicula);
-            
-            if ($votaciones === false) {
-                $errores[] = "No ha sido posible obtener las votaciones de la película.";
+            $pelicula = obtenerPeliculaPorID($conexion, $idPelicula);
+
+            //Comprobamos que existe una película con ese id
+            if (empty($pelicula)) {
+                $errores[] = "La película no ha sido localizada";
+            } else {
+                //Si la película existe obtenemos las críticas
+                $criticas = obtenerCriticaCompleta($conexion, $idPelicula);
+
+                if (empty($criticas)) {
+                    $avisoSinCriticas = "No existe críticas para esta película";
+                }
             }
         }
     }
 }
-
-// Obtenemos el id del usuario autenticado
-$idUsuarioAutenticado = $_SESSION['id'] ?? null;
 ?>
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=100%, initial-scale=1.0">
-    <title>Lista de votos y criticas</title>
+    <title>Lista de votos y críticas</title>
 </head>
+
 <body>
-    <H1>DWES 03. AUTOR: RAFAEL MORONES BURGOS.</H1>
-    <h1>Lista de votos y criticas</h1>
-    
-    <?php if (!empty($errores)): ?>
-        <h2>Se han producido los siguientes errores:</h2>
-        <ul>
-            <?php foreach ($errores as $error): ?>
-                <li><?= htmlspecialchars($error) ?></li>
-            <?php endforeach; ?>
-        </ul>
-        <a href="../index/index.php">Volver al listado de películas</a>
-    <?php else: ?>
-        <H2>Datos de la película</H2>
-        <div>
-            <strong>Título:</strong> <?= htmlspecialchars($pelicula['titulo']) ?><br>
-            <strong>Género:</strong> <?= htmlspecialchars($pelicula['nombre_genero'] ?? 'Sin género') ?><br>
-            <strong>Director:</strong> <?= htmlspecialchars($pelicula['direccion']) ?><br>
-            <strong>Duración:</strong> <?= htmlspecialchars($pelicula['duracion']) ?> minutos<br>
-            <strong>Año:</strong> <?= htmlspecialchars($pelicula['anio']) ?><br>
-        </div>
-        <hr>
-        <table border="1" cellpadding="6" cellspacing="0">
-            <thead>
-                <tr>
-                    <th>Usuario</th>
-                    <th>Voto</th>
-                    <th>Crítica</th>
-                    <th>Eliminar</th>
-                </tr>
-            </thead>
-            <tbody>
-                <?php if ($votaciones === false || empty($votaciones)): ?>
+
+    <h1>DWES 03. AUTOR: RAFAEL MORONES BURGOS</h1>
+    <p>
+        <a href="../index/index.php">Volver al listado de películas</a> |
+        <a href="../login/cerrarsesion.php">Cerrar sesión</a>
+    </p>
+
+    <h2>Lista de votos y críticas</h2>
+    <h2>Datos de la película</h2>
+
+    <div>
+        <?php
+        // Mostramos errores si existen
+        if (!empty($errores)) {
+            echo "<ul>";
+            foreach ($errores as $error) {
+                echo "<li>" . htmlspecialchars($error) . "</li>";
+            }
+            echo "</ul>";
+            exit; // Salimos si hay errores
+        } else {
+            // Mostramos los datos de la película
+            echo "<p><b>Título:</b> " . htmlspecialchars($pelicula['titulo']) . "</p>";
+            echo "<p><b>Género:</b> " . htmlspecialchars($pelicula['genero']) . "</p>";
+            echo "<p><b>Director:</b> " . htmlspecialchars($pelicula['direccion']) . "</p>";
+            echo "<p><b>Duración:</b> " . htmlspecialchars($pelicula['duracion']) . " minutos</p>";
+            echo "<p><b>Año:</b> " . htmlspecialchars($pelicula['anio']) . "</p>";
+
+            // Mostramos aviso si no hay críticas
+            if (!empty($avisoSinCriticas)) {
+                echo "<p>" . htmlspecialchars($avisoSinCriticas) . "</p>";
+            }
+        }
+        ?>
+    </div>
+
+    <hr>
+    <table border="1" cellpadding="6" cellspacing="0">
+        <thead>
+            <tr>
+                <th>Usuario</th>
+                <th>Voto</th>
+                <th>Crítica</th>
+                <th>Eliminar</th>
+            </tr>
+        </thead>
+        <tbody>
+            <?php if (!empty($criticas)): ?>
+                <?php foreach ($criticas as $critica): ?>
                     <tr>
-                        <td colspan="4">No hay votaciones para esta película.</td>
+                        <td><?= htmlspecialchars($critica['usuario']) ?></td>
+                        <td><?= htmlspecialchars($critica['valoracion']) ?></td>
+                        <td><?= htmlspecialchars($critica['comentario']) ?></td>
+                        <td>
+                            <form method="post" action="eliminarvoto.php">
+                                <input type="hidden" name="id_critica" value="<?= htmlspecialchars($critica['id']) ?>">
+                                <input type="submit" value="Eliminar voto/critica">
+                            </form>
+                        </td>
                     </tr>
-                <?php else: ?>
-                    <?php foreach ($votaciones as $votacion): ?>
-                        <tr>
-                            <td><?= htmlspecialchars($votacion['login']) ?></td>
-                            <td><?= htmlspecialchars($votacion['valoracion']) ?></td>
-                            <td><?= htmlspecialchars($votacion['comentario']) ?></td>
-                            <td>
-                                <?php if ($idUsuarioAutenticado !== null && $votacion['usuario'] == $idUsuarioAutenticado): ?>
-                                    <form method="post" action="eliminarvoto.php">
-                                        <input type="hidden" name="id_critica" value="<?= htmlspecialchars($votacion['id']) ?>">
-                                        <input type="submit" value="Eliminar voto/critica">
-                                    </form>
-                                <?php else: ?>
-                                    -
-                                <?php endif; ?>
-                            </td>
-                        </tr>
-                    <?php endforeach; ?>
-                <?php endif; ?>
-            </tbody>
-        </table>
-        <br>
-        <a href="../index/index.php">Volver al listado de películas</a>
-    <?php endif; ?>
+                <?php endforeach; ?>
+            <?php else: ?>
+                <tr>
+                    <td colspan="4">No existe críticas para esta película</td>
+                </tr>
+            <?php endif; ?>
+        </tbody>
+    </table>
+
 </body>
+
 </html>
