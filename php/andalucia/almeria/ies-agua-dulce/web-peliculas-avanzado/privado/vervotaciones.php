@@ -116,10 +116,12 @@ if ($conexion === false) {
                         <td><?= htmlspecialchars($critica['valoracion']) ?></td>
                         <td><?= htmlspecialchars($critica['comentario']) ?></td>
                         <td>
-                            <form method="post" action="eliminarvoto.php">
-                                <input type="hidden" name="id_critica" value="<?= htmlspecialchars($critica['id']) ?>">
-                                <input type="submit" value="Eliminar voto/critica">
-                            </form>
+                            <?php if ($critica['usuario'] == $_SESSION['id']): ?>
+                                <form method="post" action="eliminarvoto.php">
+                                    <input type="hidden" name="id_critica" value="<?= htmlspecialchars($critica['id']) ?>">
+                                    <input type="submit" value="Eliminar voto/critica">
+                                </form>
+                            <?php endif; ?>
                         </td>
                     </tr>
                 <?php endforeach; ?>

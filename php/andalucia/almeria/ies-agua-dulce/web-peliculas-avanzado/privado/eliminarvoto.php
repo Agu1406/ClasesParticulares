@@ -40,7 +40,7 @@ if ($conexion === false) {
                 //Si existe una crítica comprobamos que coincida con el usuario de la sesión
             } else {
                 $idUsuarioSesion = $_SESSION["id"];
-                if ($critica["usuario"] != $idUsuarioSesion) {
+                if ($critica != $idUsuarioSesion) {
                     $errores[] = "No puede eliminar una valoración que no es suya";
 
                     //Si coinciden procedemos a eliminar la crítica

@@ -64,8 +64,10 @@ function obtenerGenerosPreferidosDeCookies()
             //Destruimos la cookies
             forzarEliminacionCookies();
             $generos = false;
-        } //En caso contrario devolvemos la cookie generos deserializada
-        $generos = unserialize($datos);
+        } else {
+            //En caso contrario devolvemos la cookie generos deserializada
+            $generos = unserialize($datos);
+        }
     }
     return $generos;
 }
