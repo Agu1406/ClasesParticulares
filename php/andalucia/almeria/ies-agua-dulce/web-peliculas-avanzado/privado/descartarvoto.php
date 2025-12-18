@@ -1,14 +1,5 @@
 <?php
-// Incluimos el control de acceso al área privada
-require_once 'accesoareaprivada.php';
 
-// Iniciamos la sesión (ya iniciada en accesoareaprivada.php, pero por seguridad)
-session_start();
-
-// Eliminamos la información de votación en curso de la sesión
-if (isset($_SESSION['voto_en_curso'])) {
-    unset($_SESSION['voto_en_curso']);
-}
 ?>
 <!DOCTYPE html>
 <html lang="es">
@@ -18,9 +9,8 @@ if (isset($_SESSION['voto_en_curso'])) {
     <title>Proceso de votación</title>
 </head>
 <body>
-    <H1>DWES 03. AUTOR: RAFAEL MORONES BURGOS.</H1>
+    <H1>DWES 03. AUTOR: indicar nombre de alumno y apellidos.</H1>
     <h1>Proceso de votación</h1>
-    <p>La votación ha sido descartada correctamente.</p>
-    <a href="../index/index.php">Volver al listado de películas</a>
+
 </body>
 </html>

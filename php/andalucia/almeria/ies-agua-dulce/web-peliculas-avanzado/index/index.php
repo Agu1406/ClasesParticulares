@@ -1,10 +1,11 @@
 <?php
-// Iniciamos la sesión para verificar si el usuario está autenticado
 session_start();
 
 //Cargamos las funciones guaradas en DAO.php y en COOKIES.php
+require_once "../funciones/dbconn.php";
 require_once "../funciones/dao.php";
 require_once "../funciones/cookies.php";
+
 
 
 //Creamos una conexión
@@ -13,6 +14,7 @@ $conexion = conectarDB();
 //Variables auxiliares a utilizar
 $generos = [];
 $peliculas = [];
+$generosSeleccionadosCookis = [];
 
 //comprobamos que la conexión es válida
 if ($conexion === false) {
@@ -28,11 +30,13 @@ if ($conexion === false) {
         $generosGuardosCookies = obtenerGenerosPreferidosDeCookies();
 
         //Si es la primera vez que entra no habrá ningún género guardado
-        if ($generosGuardosCookies === null) {
+        if ($generosGuardosCookies === false) {
             $peliculas = listadoPeliculas($conexion, null); //Cargamos todas las películas por defecto
+            $generosSeleccionados = []; // ningún checkbox marcado
         } else {
             //Cargamos solo las películas de los géneros seleccionados
             $peliculas = listadoPeliculas($conexion, $generosGuardosCookies);
+            $generosSeleccionados = $generosGuardosCookies; //guardamos los checkbox marcados
         }
 
         // A partir de los géneros cargados con la funcion listadPorGeneros
@@ -53,13 +57,11 @@ if ($conexion === false) {
 
         <body>
             <H1>DWES 03. AUTOR: RAFAEL MORONES BURGOS.</H1>
-            
-            <?php if (isset($_SESSION['id'])): ?>
-                <p>Usuario autenticado | <a href="../login/cerrarsesion.php">Cerrar sesión</a></p>
+            <?php if (isset($_SESSION["id"])): ?>
+                <p>Has inicicado sesión, <a href="../login/cerrarsesion.php">¿Deseas cerrar sesión?</a></p>
             <?php else: ?>
-                <p><a href="../login/form-login.php">Iniciar sesión</a></p>
+                <p>No has iniciado sesión, <a href="../login/form-login.php">¿Deseas iniciar sesión?</a></p>
             <?php endif; ?>
-            
             <h2>Resultado de procesar las cookies recibidas:</h2>
             <p></p>
             <h2>Formulario para seleccionar preferencias (géneros) a almacenar en cookies:</h2>
@@ -105,28 +107,39 @@ if ($conexion === false) {
                 <tbody>
                     <tr>
                         <?php if ($peliculas === false || empty($peliculas)): ?>
-                            <tr>
-                                <td colspan="9">No hay películas disponibles.</td>
-                            </tr>
+                            <td>...</td>
+                            <td>...</td>
+                            <td>...</td>
+                            <td>...</td>
+                            <td>...</td>
+                            <td>...</td>
+                            <td><a href="privado/vervotaciones.php?id=..." alt="Haz clic para ver los comentarios">...</a></td>
+                            <td></td>
+                            <td>
+                                <form action="privado/form-nuevo-voto.php" method="post">
+                                    <input type="hidden" name="id" value="...">
+                                    <input type="submit" value="Votar">
+                                </form>
+                            </td>
                         <?php else: ?>
                             <?php foreach ($peliculas as $pelicula): ?>
                                 <?php
-                                // Obtenemos las estadísticas de votaciones para esta película
-                                $estadisticas = obtenerEstadisticasVotaciones($conexion, $pelicula['id']);
-                                $numVotos = $estadisticas !== false ? $estadisticas['num_votos'] : 0;
-                                $puntuacionMedia = $estadisticas !== false ? $estadisticas['puntuacion_media'] : 0;
+                                $datos = obtenerCriticasPeliculas($conexion, $pelicula["id"]);
+
+                                $cantidadVotos = $datos["cantidad_votos"];
+                                $puntuacionMedia = $datos["puntuacion_media"];
                                 ?>
                     <tr>
                         <td><?= htmlspecialchars($pelicula['id']) ?></td>
                         <td><?= htmlspecialchars($pelicula['titulo']) ?></td>
                         <td>
-                            <?= htmlspecialchars($idNombreGeneros[$pelicula['genero']] ?? 'Sin género') ?>
+                            <?= htmlspecialchars($idNombreGeneros[$pelicula['genero']] ?? '...') ?>
                         </td>
                         <td><?= htmlspecialchars($pelicula['direccion']) ?></td>
                         <td><?= htmlspecialchars($pelicula['duracion']) ?></td>
                         <td><?= htmlspecialchars($pelicula['anio']) ?></td>
-                        <td><a href="../privado/vervotaciones.php?id=<?= htmlspecialchars($pelicula['id']) ?>" alt="Haz clic para ver los comentarios"><?= htmlspecialchars($numVotos) ?></a></td>
-                        <td><?= htmlspecialchars($puntuacionMedia > 0 ? number_format($puntuacionMedia, 2) : '-') ?></td>
+                        <td><a href="../privado/vervotaciones.php?id=<?= htmlspecialchars($pelicula['id']) ?>" alt="Haz clic para ver los comentarios"><?= htmlspecialchars($cantidadVotos) ?></a></td>
+                        <td><?= htmlspecialchars($puntuacionMedia) ?></td>
                         <td>
                             <form action="../privado/form-nuevo-voto.php" method="post">
                                 <input type="hidden" name="id" value="<?= htmlspecialchars($pelicula['id']) ?>">
