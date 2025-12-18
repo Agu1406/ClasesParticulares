@@ -8,7 +8,7 @@ $sesion = $_SESSION['id'] ?? null;
 // Si existe una sesión, eliminamos los datos del usuario autenticado
 if ($sesion) {
     unset($_SESSION['id']);
-    unset($_SESSION['ultimo_acceso']);
+    unset($_SESSION['lastlogin']);
 }
 ?>
 <!DOCTYPE html>

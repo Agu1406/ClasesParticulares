@@ -91,7 +91,6 @@ function autenticarUsuario(PDO $pdo, $login, $password)
         $usuario = $stmt->fetch(PDO::FETCH_ASSOC);
         //Si existe usuario
         if ($usuario == false || empty($usuario)) {
-            echo "¡Error! Los datos no son correctos, intentalo de nuevo.";
             $id = false;
         } else {
             $id = $usuario['id'];
@@ -246,7 +245,7 @@ function insertarNuevoVoto(PDO $pdo, array $nuevoVoto)
 
     try {
         //Creamos el query del INSERT
-        $sql = "INSERT INTO comentarios (valoracion, comentario, pelicula, usuario)
+        $sql = "INSERT INTO criticas (valoracion, comentario, pelicula, usuario)
                 VALUES (:valoracion, :comentario, :pelicula, :usuario)";
         //Preparamos al consulta        
         $stmt = $pdo->prepare($sql);

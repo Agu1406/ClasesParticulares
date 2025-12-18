@@ -12,8 +12,8 @@ if (!isset($_SESSION["id"])) {
     exit;
 }
 
-// Comprobar tiempo de inactividad
-$ultimoAcceso = $_SESSION["ultimo_acceso"] ?? time();
+// Comprobar tiempo de inactividad (compatible con lastlogin de procesarlogin.php)
+$ultimoAcceso = $_SESSION["lastlogin"] ?? time();
 $inactividad = time() - $ultimoAcceso;
 
 if ($inactividad > $tiempoMaxInactividad) {
@@ -21,11 +21,11 @@ if ($inactividad > $tiempoMaxInactividad) {
     session_unset();
     session_destroy();
 
-    echo "<h1>ERROR: no autenticado</h1>";
-    echo "<p>Debes iniciar sesión para acceder a esta página.</p>";
-    echo '<p><a href="../index/index.php">Volver al listado de películas</a></p>';
+    echo "<h1>ERROR: sesión expirada</h1>";
+    echo "<p>Tu sesión ha expirado por inactividad. Debes iniciar sesión de nuevo.</p>";
+    echo '<p><a href="../login/form-login.php">Iniciar sesión</a></p>';
     exit;
 }
 
 // Si todo es correcto, renovamos último acceso y dejamos continuar
-$_SESSION["ultimo_acceso"] = time();
+$_SESSION["lastlogin"] = time();
