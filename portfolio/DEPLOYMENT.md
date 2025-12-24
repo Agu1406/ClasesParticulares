@@ -1,19 +1,32 @@
 # **Lista de objetivos**
 
+## **Configuración inicial**
 - [X] Inicializar el proyecto con **REACT** + **TYPESCRIPT** + **VITE**.
 - [X] Instalar dependencia para routing. (**React router DOM**).
 - [X] Instalar dependencia para estilos. (**TailWindCSS & PostCSS & Autoprefixer**).
 - [X] Configurar la base/ruta de carga de **Vite**.
 - [X] Configurar la carga/lectura de archivos de **TailWind**. 
-- [X] Crear la estructura del proyecto (directorios en src).
-- [X] Configurar el routing de la aplicación.
-- [X] Crear el componente de navegación de URLS con **\<Link>** de **React Router DOM**.
-- [X] Generar el MPV (Minimo producto viable).
-- [ ] Ignorar esto, es la linea que copio-pego para agregar cosas.
-- [ ] Ignorar esto, es la linea que copio-pego para agregar cosas.
-- [ ] Ignorar esto, es la linea que copio-pego para agregar cosas.
-- [ ] Ignorar esto, es la linea que copio-pego para agregar cosas.
+- [X] Configurar colores personalizados en **TailWind** (evergreen, lavender, fawn, etc.).
 
+## **Estructura y tipos**
+- [X] Crear la estructura del proyecto (directorios en src).
+- [X] Crear tipos TypeScript (**Language**, **Exercise**).
+- [X] Crear datos de lenguajes (**languages.ts** con todos los lenguajes e iconos).
+
+## **Componentes base**
+- [X] Configurar el routing de la aplicación en **App.tsx**.
+- [X] Crear el componente **Navigation.tsx** con navegación usando **\<Link>** de **React Router DOM**.
+- [X] Crear el componente **LanguageCard.tsx** para mostrar tarjetas de lenguajes.
+
+## **Páginas**
+- [X] Crear **HomePage.tsx** (estructura básica).
+- [X] Implementar grid de lenguajes en **HomePage.tsx** (usando LanguageCard).
+- [X] Crear **JavaPage.tsx** (página de ejemplo).
+
+## **MVP (Mínimo Producto Viable)**
+- [X] Completar MVP: HomePage con grid funcional de todos los lenguajes.
+- [ ] Probar navegación entre páginas.
+- [ ] Verificar responsive design en diferentes tamaños de pantalla.
 
 # **Paso N.º1 - Inicializar REACT + VITE**
 
@@ -155,7 +168,7 @@ Hecho esto, tenemos que ir al directorio **src** y modificar el **index.css** do
 
 # **Paso N.º7 - Definir la estructura del proyecto**
 
-Este paso ha sido facíl porque hay docenas de sitios webs que recomiendan diferente tipo de estructuras, en el apartado de **fuentes** he dejado las dos que más me han gustado señalando una estructura muy común en la comunidad escalable, la cual se ve de la siguiente forma:
+Este paso ha sido fácil porque hay docenas de sitios webs que recomiendan diferente tipo de estructuras, en el apartado de **fuentes** he dejado las dos que más me han gustado señalando una estructura muy común en la comunidad escalable, la cual se ve de la siguiente forma:
 
 ```bash
 src/
@@ -229,7 +242,7 @@ function HomePage() {
             <h1 className="text-4xl font-bold text-center m-8 text-evergreen">
                 Portal de clases particulares de Agustín
             </h1>
-            <p className="text-center m-8 text-slate text-lg">
+            <p className="text-center m-8 text-slate-grey text-lg">
                 ¡Bienvenido! Elige el tema en el que estás interesado.
             </p>
         </div>
@@ -247,7 +260,7 @@ function JavaPage() {
             <h1 className="text-4xl font-bold text-center m-8 text-evergreen">
                 Clases particulares de Java y contenido
             </h1>
-            <p className="text-center m-8 text-slate text-lg">
+            <p className="text-center m-8 text-slate-grey text-lg">
                 ¡Has elegido mi lenguaje favorito! Ahora, sientete libre de explorar el contenido disponible.
             </p>
         </div>
@@ -255,7 +268,7 @@ function JavaPage() {
 }
 ```
 
-Estos son meros diseños de prueba, para ver que todo funcione bien, poco más, si usas est guía para tus propios proyectos debe maquetar que quieres que vean tus usarios y como quieres que lo vean y luego plasmarlos aquí, en los componentes/paginas de **react**.
+Estos son meros diseños de prueba, para ver que todo funcione bien, poco más, si usas esta guía para tus propios proyectos debes maquetar que quieres que vean tus usuarios y como quieres que lo vean y luego plasmarlos aquí, en los componentes/páginas de **react**.
 
 ## **3. Configurar el routing en App.tsx**
 
@@ -304,14 +317,14 @@ Es la vista por defecto con un pequeño contador que muestra el logo de **React*
 ```tsx
 // Importamos todos los componentes de react-router-dom
 import { BrowserRouter, Routes, Route } from "react-router-dom";
-// Importamos las paginas que hemos creado para la demo.
+// Importamos las páginas que hemos creado para la demo.
 import HomePage from "./pages/HomePage";
 import JavaPage from "./pages/JavaPage";
 // Importamos el componente de navegación
 import Navigation from "./components/Navigation";
 
-// Creamos la función "App" encargada de manejar toda la logica de redireccionamiento.
-function App () {
+// Creamos la función "App" encargada de manejar toda la lógica de redireccionamiento.
+function App() {
   return (
     // Activamos el enrutamiento (routing) de la aplicación.
     <BrowserRouter>
@@ -336,23 +349,25 @@ Si lo explicamos de la forma más junior posible es que **BrowserRouter** activa
 
 ## **4. Crear navegación con Link**
 
-El HTML tradicional es muy limitado a la hora de diseñar **SPA**, en nuestro caso, queremos evitar la recarga completa del sitio web en el intercambio de rutas, por eso, la etiqueta nativa HTML **"\<a href="rute">"** no nos sirve, la buena noticia es que **React Router DOM** incluye una etiqueta propia la cual es **"\<Link to="ruta">"** que permite cambiar dinamicamente, sin recarga completa, la ruta de la **SPA**, perfecta para nosotros.
+El HTML tradicional es muy limitado a la hora de diseñar **SPA**, en nuestro caso, queremos evitar la recarga completa del sitio web en el intercambio de rutas, por eso, la etiqueta nativa HTML **"\<a href="ruta">"** no nos sirve, la buena noticia es que **React Router DOM** incluye una etiqueta propia la cual es **"\<Link to="ruta">"** que permite cambiar dinámicamente, sin recarga completa, la ruta de la **SPA**, perfecta para nosotros.
 
-Como **App.tsx** es el encargado de (dinamicamente) mostrar el contenido dependiendo de la ruta cargando el componente especifico de cada una, tiene que contar con este "menú de navegación" usando **Link**, por lo tanto, diseñamos un componente reutilizable para ello dentro del directorio **components** llamando, por ejemplo **Navigation.tsx** que queda de la siguiente forma:
+Como **App.tsx** es el encargado de (dinámicamente) mostrar el contenido dependiendo de la ruta cargando el componente específico de cada una, tiene que contar con este "menú de navegación" usando **Link**, por lo tanto, diseñamos un componente reutilizable para ello dentro del directorio **components** llamando, por ejemplo **Navigation.tsx** que queda de la siguiente forma:
 
-**NOTA:** Aunque React Router DOM recomienda usar `<Link to>` en lugar de `<a href>` para evitar recargas completas, en este ejemplo se muestra con `<a href>` para simplicidad. En producción, es recomendable usar `<Link to="/ruta">` importado de `react-router-dom`.
+**NOTA IMPORTANTE:** Aunque React Router DOM recomienda usar `<Link to>` en lugar de `<a href>` para evitar recargas completas, en el ejemplo inicial se muestra con `<a href>` para simplicidad. **Es recomendable actualizar el componente para usar `<Link to="/ruta">` importado de `react-router-dom` en producción.**
 
 ```tsx
+import { Link } from "react-router-dom";
+
 function Navigation() {
     return (
         <nav className="bg-evergreen text-lavender p-4 shadow-md">
             <div className="container mx-auto flex justify-between items-center">
-                <a href="/" className="text-xl font-bold hover:text-fawn transition-colors">
+                <Link to="/" className="text-xl font-bold hover:text-fawn transition-colors">
                     Clases Particulares
-                </a>
+                </Link>
                 <div className="space-x-4">
-                    <a href="/" className="hover:text-fawn transition-colors">Inicio</a>
-                    <a href="/java" className="hover:text-fawn transition-colors">Java</a>
+                    <Link to="/" className="hover:text-fawn transition-colors">Inicio</Link>
+                    <Link to="/java" className="hover:text-fawn transition-colors">Java</Link>
                 </div>
             </div>
         </nav>
@@ -363,11 +378,11 @@ export default Navigation;
 ```
 # **Paso N.º9 - Agregar los iconos necesarios para los datos**
 
-Este paso en teoría debería ser el N.º10 y viceversa, el N.º10 debería ser el N.º9, pero me dije a mi mismo, **al definir los datos de los lenguajes necesitas la URL de las imagenes/iconos que usaras para representarlos**, así que, **¿Por que dejar para mañana lo que puedes hacer hoy?**.
+Este paso en teoría debería ser el N.º10 y viceversa, el N.º10 debería ser el N.º9, pero me dije a mi mismo, **al definir los datos de los lenguajes necesitas la URL de las imágenes/iconos que usarás para representarlos**, así que, **¿Por qué dejar para mañana lo que puedes hacer hoy?**.
 
 Para ello, desde **src** navegamos hasta **assets** y creamos ahí el directorio **icons** donde subiremos (de preferencia SVG) los iconos que representaran los lenguajes que imparto en clases.
 
-En el encabezado **fuentes** de este documento dejo el enlace a la libreria gratuita de **SVG** que yo he utilizado para bajarme los iconos, la unica pega es que trae 2019 iconos SVG/EPS pero yo no necesito tantos, sumando los frameworks, lenguajes base y tecnologías que se utilizar y he enseñado llego a 109, por lo tanto, actualizamos nuestro **gitignore** para excluir todos excepto los que nos interesan, quedando así el apartado de iconos del gitignore:
+En el encabezado **fuentes** de este documento dejo el enlace a la librería gratuita de **SVG** que yo he utilizado para bajarme los iconos, la única pega es que trae 2019 iconos SVG/EPS pero yo no necesito tantos, sumando los frameworks, lenguajes base y tecnologías que se utilizarán y he enseñado llego a 109, por lo tanto, actualizamos nuestro **gitignore** para excluir todos excepto los que nos interesan, quedando así el apartado de iconos del gitignore:
 
 ```bash
 # Excluir todos los SVG y EPS para luego elegir manualmente los que quiero.
@@ -434,7 +449,7 @@ En el encabezado **fuentes** de este documento dejo el enlace a la libreria grat
 # Mobile
 !src/assets/icons/android/*
 
-# Exlcuimos todos los EPS porque no los usare.
+# Excluimos todos los EPS porque no los usaré.
 *.eps
 ```
 # **Paso N.º10 - Crear los datos (lenguajes) de la SPA**
@@ -460,22 +475,100 @@ export const languages: Language[] = [
     // El resto de lenguajes...
 ]
 ```
+
+# **Paso N.º11 - Crear el componente LanguageCard**
+
+Ahora que tenemos los datos de los lenguajes, necesitamos un componente reutilizable para mostrar cada tarjeta de lenguaje en el grid de la página principal. Creamos el archivo **LanguageCard.tsx** en el directorio **src > components**:
+
+```tsx
+import { Link } from 'react-router-dom';
+import type { Language } from '../types';
+
+interface LanguageCardProps {
+    language: Language;
+}
+
+function LanguageCard({ language }: LanguageCardProps) {
+    return (
+        <Link 
+            to={language.path}
+            className="block bg-white rounded-lg shadow-md p-6 hover:shadow-xl transition-all duration-300 border border-gray-200 hover:border-evergreen group"
+        >
+            <div className="text-center">
+                <div className="flex justify-center mb-4">
+                    <img 
+                        src={language.icon} 
+                        alt={`${language.name} icon`}
+                        className="w-16 h-16 object-contain group-hover:scale-110 transition-transform duration-300"
+                    />
+                </div>
+                <h3 className="text-2xl font-bold text-evergreen mb-2">
+                    {language.name}
+                </h3>
+                <p className="text-slate-grey text-sm leading-relaxed">
+                    {language.description}
+                </p>
+            </div>
+        </Link>
+    );
+}
+
+export default LanguageCard;
+```
+
+Este componente recibe un objeto `Language` como prop y renderiza una tarjeta clickeable que navega a la página del lenguaje correspondiente usando `<Link>` de React Router DOM.
+
+# **Paso N.º12 - Implementar el grid en HomePage**
+
+Ahora actualizamos **HomePage.tsx** para mostrar todas las tarjetas de lenguajes en un grid responsive:
+
+```tsx
+import { languages } from '../data/languages';
+import LanguageCard from '../components/LanguageCard';
+
+function HomePage() {
+    return (
+        <div className="bg-lavender p-8">
+            <div className="container mx-auto">
+                <h1 className="text-4xl font-bold text-center m-8 text-evergreen">
+                    Portal de clases particulares de Agustín
+                </h1>
+                <p className="text-center m-8 text-slate-grey text-lg mb-12">
+                    ¡Bienvenido! Elige el tema en el que estás interesado.
+                </p>
+                
+                {/* Grid de lenguajes - Responsive */}
+                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
+                    {languages.map((language) => (
+                        <LanguageCard key={language.id} language={language} />
+                    ))}
+                </div>
+            </div>
+        </div>
+    );
+}
+
+export default HomePage;
+```
+
+El grid es responsive: 1 columna en móvil, 2 en tablet, 3 en desktop y 4 en pantallas grandes.
+
 # **Preguntas comunes que yo mismo me hice**
 
-### **¿Como pruebo el código que estoy haciendo?**
+### **¿Cómo pruebo el código que estoy haciendo?**
 
-Existen varias formas, la mejor (para mi) es correr en modo desarrollo (**dev mode**) el proyecto lo que me permite correrlo en localhost, para ello ejecutamos el siguiente comando desde la raiz del proyecto:
+Existen varias formas, la mejor (para mí) es correr en modo desarrollo (**dev mode**) el proyecto lo que me permite correrlo en localhost, para ello ejecutamos el siguiente comando desde la raíz del proyecto:
 
 ```bash
 npm run dev
 ```
 
-¿Que tiene de especial el modo **dev**? Son principlamente dos, los cuales nos ayudan mucho durante el desarrollo y son los siguientes:
+¿Qué tiene de especial el modo **dev**? Son principalmente dos, los cuales nos ayudan mucho durante el desarrollo y son los siguientes:
 
-- **Hot Module Replacement (HMR):** Todos los cambios que realize en el proyecto se muestran automaticamente en la pagina sin necesidad de recargar.
+- **Hot Module Replacement (HMR):** Todos los cambios que realice en el proyecto se muestran automáticamente en la página sin necesidad de recargar.
 - **Console errors:** Todos los errores que haya en compilación o en el código aparecen en (ambos) el propio navegador web a través de la consola y en el terminal donde se ejecuta el comando.
 
-**NOTA SUPER IMPORTANTE:** Como yo despliego desde **Github pages** tengo que modificar la **URL** base del proyecto, para desarrollo local eso me da problemas así que modifique el **vite.config.ts** para que detecte el modo **dev** y utilice una ruta diferente en ese escenario, quedando de la siguiente forma:
+**NOTA SUPER IMPORTANTE:** Como yo despliego desde **Github Pages** tengo que modificar la **URL** base del proyecto, para desarrollo local eso me da problemas así que modifiqué el **vite.config.ts** para que detecte el modo **dev** y utilice una ruta diferente en ese escenario, quedando de la siguiente forma:
 
 ```ts
 import { defineConfig } from 'vite'
@@ -515,7 +608,7 @@ export default defineConfig({
 | `hover:{class}` | Aplica estilos cuando el cursor está sobre el elemento. | `hover:text-fawn`, `hover:underline` |
 | `transition-{property}` | Transición suave de propiedades. | `transition-colors`, `transition-all` |
 | `rounded-{size}` | Bordes redondeados. | `rounded-lg`, `rounded-full` |
-| `ignorar esto`| Es lo que utilizo para copiar y pegar la siguiente linea| `curioso, ¿no?`|
+| `flex-grow` | Hace que el elemento crezca para ocupar el espacio disponible en un contenedor flex. | `flex-grow` |
 
 
 # **Fuentes**
@@ -526,9 +619,8 @@ export default defineConfig({
 - [**Tailwind CSS - Instalación**](https://tailwindcss.com/docs/installation): Documentación oficial a modo de guía sobre cómo instalar y utilizar **Tailwind CSS**.
 - [**Tutoriales Markdown**](https://www.markdowntutorial.com/es/): Guía/tutoriales con teoría y práctica sobre cómo usar **Markdown**.
 - [**Recomendación de estructura para proyectos react N.º1**](https://dev.to/shubhadip_bhowmik/best-folder-structure-for-react-complex-projects-432p): Recomendación de organización y creación de directorios para proyectos con **React** de **dev.to**.
-- [**Recomendación de estructura para proyectos react N.º2**](https://javascript.plainenglish.io/react-project-folder-structure-that-actually-scales-2025-6dbd5f41767f): Recomendación de organización y creacios de directorios para proyecto con **React** de **javascript.plainenglish.io**
+- [**Recomendación de estructura para proyectos react N.º2**](https://javascript.plainenglish.io/react-project-folder-structure-that-actually-scales-2025-6dbd5f41767f): Recomendación de organización y creación de directorios para proyecto con **React** de **javascript.plainenglish.io**
 - [**Sandbox de TailWind**](https://play.tailwindcss.com): Sitio web oficial de TailWind para practicar que hacen sus diferentes clases y aprender a usarlo.
 - [**Tailwind Cheat Sheet**](https://nerdcave.com/tailwind-cheat-sheet): Guía fácil y rápida de clases de Tailwind, su sintaxis y que hace cada una.
 - [**Generador de paletas de colores CSS**](https://coolors.co): Generador aleatorio de paletas de colores que use hasta conseguir una paleta que me gustase.
-- [**Repositorio gratuito de iconos SVG**](https://devicon.dev): Maravillosa libreria open-source con iconos especialemnte enfocados en desarrollo de software, programación, etc.
-- [**Ignorar esta linea**](): Es la que copio-pego para agregar más enlaces.
+- [**Repositorio gratuito de iconos SVG**](https://devicon.dev): Maravillosa librería open-source con iconos especialmente enfocados en desarrollo de software, programación, etc.
