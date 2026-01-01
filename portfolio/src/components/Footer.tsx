@@ -15,7 +15,10 @@ function Footer() {
     return (
         <footer className="bg-evergreen text-lavender p-4">
             <div className="container mx-auto text-center font-bold">
-                Pie de pagina de prueba
+                <div className="flex flex-col md:flex-row justify-between">
+                    <p>© 2025 - Portal de clases particulares de Agustín</p>
+                    <p>Hola</p>
+                </div>
             </div>
         </footer>
     );
