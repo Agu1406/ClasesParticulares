@@ -5,6 +5,7 @@ import Centuria from "./centuria.js";
  * Clase Legion
  * Representa una legión romana con sus centurias, velites y caballería
  */
+
 class Legion {
   #_numero;
   #_legatus;
@@ -13,18 +14,14 @@ class Legion {
   #_velites = new Set(); // Conjunto de centurias tipo velite
   #_equite; // Centuria tipo equite (máximo una por legión)
 
-  static #MAX_NUMERO = 30; // Número máximo de legión
-  static #TIPO_CENTURIA = "centurio"; // Tipo de centuria normal
-  static #TIPO_VELITE = "velite"; // Tipo de centuria velite
-  static #TIPO_EQUITE = "equite"; // Tipo de centuria equite
-  static #MAX_CENTURIAS = 10; // Máximo de centurias por legión
+  // Tamaño minimno y maximo de una legión.
+  static #MIN_NUMERO = 1;
+  static #MAX_NUMERO = 30;
+  static #TIPO_CENTURIA = "centurio";
+  static #TIPO_VELITE = "velite";
+  static #TIPO_EQUITE = "equite";
+  static #MAX_CENTURIAS = 10;
 
-  /**
-   * Constructor de la clase Legion
-   * @param {Number} numero - Número de la legión (entre 1 y 30)
-   * @param {String} legatus - Nombre del legado/senador al mando
-   * @param {String} comentarioHistorico - Comentario histórico sobre la legión
-   */
   constructor(numero, legatus, comentarioHistorico) {
     this.numero = numero;
     this.legatus = legatus;
@@ -35,40 +32,57 @@ class Legion {
     SETTERS
   **********/
 
-  /**
-   * Setter para el número de la legión
-   * @param {Number} nuevoNumero - Nuevo número (entre 1 y 30)
-   */
+  // Comprobar que sea un número positivo entero y entre 1 y 30
   set numero(nuevoNumero) {
-    if (!Number.isInteger(nuevoNumero) || nuevoNumero < 1 || nuevoNumero > Legion.#MAX_NUMERO) {
-      throw `El número de legión debe ser un entero entre 1 y ${Legion.#MAX_NUMERO}. Valor proporcionado: ${nuevoNumero}`;
+    if (
+      isNaN(nuevoNumero) ||
+      !Number.isInteger(nuevoNumero) ||
+      nuevoNumero < Legion.#MIN_NUMERO ||
+      nuevoNumero > Legion.#MAX_NUMERO
+    ) {
+      throw `El número debe ser un entero entre ${Legion.#MIN_NUMERO} y ${
+        Legion.#MAX_NUMERO
+      }`;
     }
     this.#_numero = nuevoNumero;
   }
 
-  /**
-   * Setter para el legado
-   * @param {String} nuevoLegatus - Nuevo nombre del legado
-   */
+  //Comprobamos que no sea una cadena y no esté vacía
   set legatus(nuevoLegatus) {
     if (typeof nuevoLegatus !== "string" || nuevoLegatus.trim() === "") {
-      throw "El nombre del legado no puede estar vacío";
+      throw "El legatus debe ser un string y no debe estar vacío";
     }
     this.#_legatus = nuevoLegatus;
   }
 
-  /**
-   * Setter para el comentario histórico
-   * @param {String} nuevoComentario - Nuevo comentario histórico
-   */
-  set comentarioHistorico(nuevoComentario) {
-    this.#_comentarioHistorico = nuevoComentario;
+  //Comprobamos que no sea una cadena y no esté vacía
+  set comentarioHistorico(nuevoComentarioHistorico) {
+    if (
+      typeof nuevoComentarioHistorico !== "string" ||
+      nuevoComentarioHistorico.trim() === ""
+    ) {
+      throw "El comentario Historico debe ser un string y no debe estar vacío";
+    }
+    this.#_comentarioHistorico = nuevoComentarioHistorico;
+  }
+
+  //Método asignar centurión
+  set equite(centuria) {
+    //Verificamos si hay un centurión jefe
+    if (
+      !(centuria instanceof Centuria) ||
+      centuria.tipo !== Legion.#TIPO_EQUITE
+    ) {
+      throw "Parece ser equite hace falta ser una centuria";
+    }
+
+    // Define un equite, si ya existia uno previamente lo remplaza con el nuevo.
+    this.#_equite = centuria;
   }
 
   /***********
     GETTERS
   **********/
-
   get numero() {
     return this.#_numero;
   }
@@ -86,7 +100,7 @@ class Legion {
   }
 
   get velites() {
-    return this.#_velites;
+    return [...this.#_velites]; // lo convertimos en array para mostrarlo
   }
 
   get equite() {
@@ -94,156 +108,136 @@ class Legion {
   }
 
   /***********
-    MÉTODOS
+    RESTO METODOS
   **********/
 
-  /**
-   * Añade una centuria normal al array de centurias
-   * @param {Centuria} centuria - Centuria a añadir (debe ser tipo centurio)
-   * @returns {Boolean} - true si se añadió, false si falló
-   */
+  //Método para añadir una centuria
   addCenturia(centuria) {
-    let resultado = false;
-    // Verificamos que sea una instancia de Centuria
-    if (!(centuria instanceof Centuria)) {
-      return resultado;
+    let esCenturia = false;
+    //Verificamos si lo que se agrega es una centuria y es del tipo centruio
+    if (
+      centuria instanceof Centuria &&
+      centuria.tipo === Legion.#TIPO_CENTURIA &&
+      this.#_centurias.length < Legion.#MAX_CENTURIAS
+    ) {
+      this.#_centurias.push(centuria);
+      esCenturia = true;
     }
-    // Verificamos que sea tipo centurio (normal)
-    if (centuria.tipo !== Legion.#TIPO_CENTURIA) {
-      return resultado;
-    }
-    // Verificamos que no se haya alcanzado el máximo
-    if (this.#_centurias.length >= Legion.#MAX_CENTURIAS) {
-      return resultado;
-    }
-    // Añadimos la centuria
-    this.#_centurias.push(centuria);
-    resultado = true;
-    return resultado;
+    return esCenturia;
   }
 
-  /**
-   * Elimina una centuria normal por su código
-   * @param {Number} codigo_centuria - Código de la centuria a eliminar
-   * @returns {Boolean} - true si se eliminó, false si no se encontró
-   */
+  //Método para eliminar una centuria
   delCenturia(codigo_centuria) {
-    let resultado = false;
-    let indice = -1;
-    // Buscamos la centuria por su código
-    for (let i = 0; i < this.#_centurias.length; i++) {
-      if (this.#_centurias[i].codigo === codigo_centuria) {
-        indice = i;
-        resultado = true;
-        break;
+    let esCenturia = false;
+    // Comprobamos que es un numero, integer y mayor que 0
+    if (
+      !isNaN(codigo_centuria) &&
+      Number.isInteger(codigo_centuria) &&
+      codigo_centuria > 0
+    ) {
+      //Recoreremos el array de centurias
+      for (let i = 0; i < this.#_centurias.length; i++) {
+        if (this.#_centurias[i].codigo === codigo_centuria) {
+          //Si encontramos el código se elemina la centuria
+          this.#_centurias.splice(i, 1);
+          esCenturia = true;
+        }
       }
     }
-    // Si la encontramos, la eliminamos
-    if (resultado) {
-      this.#_centurias.splice(indice, 1);
-    }
-    return resultado;
+    return esCenturia;
   }
 
-  /**
-   * Añade una centuria velite al conjunto de velites
-   * @param {Centuria} velite - Centuria velite a añadir
-   * @returns {Boolean} - true si se añadió, false si falló
-   */
+  //Método para añadir un velites
   addVelite(velite) {
-    let resultado = false;
-    // Verificamos que sea una instancia de Centuria
-    if (!(velite instanceof Centuria)) {
-      return resultado;
-    }
-    // Verificamos que sea tipo velite
-    if (velite.tipo !== Legion.#TIPO_VELITE) {
-      return resultado;
-    }
-    // Verificamos que no se haya alcanzado el máximo (mitad de centurias normales)
+    let esVelite = false;
     let maxVelites = Math.floor(this.#_centurias.length / 2);
-    if (this.#_velites.size >= maxVelites) {
-      return resultado;
+    //Verificamos si lo que se agrega es una centturia y es del tipo velite
+    if (
+      velite instanceof Centuria &&
+      velite.tipo === Legion.#TIPO_VELITE &&
+      this.#_velites.size < maxVelites
+    ) {
+      this.#_velites.add(velite);
+      esVelite = true;
     }
-    // Añadimos el velite
-    this.#_velites.add(velite);
-    resultado = true;
-    return resultado;
+    return esVelite;
   }
 
-  /**
-   * Elimina una centuria velite por su código
-   * @param {Number} codigo_centuria - Código de la centuria velite a eliminar
-   * @returns {Boolean} - true si se eliminó, false si no se encontró
-   */
+  //Método para eliminar una velite
   delVelite(codigo_centuria) {
-    let resultado = false;
-    for (let velite of this.#_velites) {
-      if (velite.codigo === codigo_centuria) {
-        this.#_velites.delete(velite);
-        resultado = true;
-        break;
+    let esCenturia = false;
+    // Comprobamos que es un numero, integer y mayor que 0
+    if (
+      !isNaN(codigo_centuria) &&
+      Number.isInteger(codigo_centuria) &&
+      codigo_centuria > 0
+    ) {
+      //Recoreremos el array de centurias
+      for (let velite of this.#_velites) {
+        if (velite.codigo === codigo_centuria) {
+          //Si encontramos el código se elemina la centuria
+          this.#_velites.delete(velite);
+          esCenturia = true;
+        }
       }
     }
-    return resultado;
+    return esCenturia;
   }
 
-  /**
-   * Setter para asignar una centuria equite (caballería) a la legión
-   * Solo puede haber una, y al asignar se elimina la anterior
-   * @param {Centuria} equite - Centuria equite a asignar
-   */
-  set equite(equite) {
-    // Verificamos que sea una instancia de Centuria
-    if (!(equite instanceof Centuria)) {
-      throw "El objeto debe ser una instancia de Centuria";
-    }
-    // Verificamos que sea tipo equite
-    if (equite.tipo !== Legion.#TIPO_EQUITE) {
-      throw "La centuria debe ser de tipo equite";
-    }
-    // Asignamos (reemplaza la anterior si existe)
-    this.#_equite = equite;
-  }
-
-  /**
-   * Método toString que muestra todos los atributos de la legión
-   * @returns {String} - Representación en cadena de la legión
-   */
   toString() {
-    let resultado = "Legión Romana\n";
-    resultado += `Número: ${this.#_numero}\n`;
-    resultado += `Legado: ${this.#_legatus}\n`;
-    resultado += `Comentario Histórico: ${this.#_comentarioHistorico}\n`;
-    resultado += `Centurias Normales: ${this.#_centurias.length}\n`;
-    
+    let informacionLegion = "";
+
+    informacionLegion += "¡Legion romana! <br>";
+    informacionLegion += `Número: ${this.#_numero}<br>`;
+    informacionLegion += `Legatus: ${this.#_legatus}<br>`;
+    informacionLegion += `Comentario historico: ${
+      this.#_comentarioHistorico
+    }<br>`;
+
+    /**************************************************************************
+     Si hay centurias, añado su información, si no, mensaje de que no hay.
+    **************************************************************************/
+    informacionLegion += `Centurias: ${this.#_centurias.length}<br>`;
     if (this.#_centurias.length === 0) {
-      resultado += "No hay centurias normales asignadas\n";
+      informacionLegion += "¡No hay centurias normales asignadas!";
     } else {
       for (let i = 0; i < this.#_centurias.length; i++) {
-        resultado += `Centuria ${i + 1}:\n${this.#_centurias[i].toString()}\n`;
+        // Encabezado que me dica cual de las centurias estoy viendo la información.
+        informacionLegion += `Centuria N.º${i + 1}: <br>`;
+        // Imprimo/muestro la información de esa "X" centuria usando el toString heredado.
+        informacionLegion += `${this.#_centurias[i].toString()}<br>`;
       }
     }
-    
-    resultado += `Velites: ${this.#_velites.size}\n`;
+
+    /**************************************************************************
+     Si hay velites, añado su información, si no, mensaje de que no hay.
+    **************************************************************************/
+    informacionLegion += `Velites: ${this.#_velites.size}<br>`;
     if (this.#_velites.size === 0) {
-      resultado += "No hay velites asignados\n";
+      informacionLegion += "¡No hay velites asignadas!";
     } else {
+      // Variable utilizada para los encabezados.
       let contador = 1;
+
       for (let velite of this.#_velites) {
-        resultado += `Velite ${contador}:\n${velite.toString()}\n`;
+        // Encabezado que me dica cual de las velites estoy viendo la información.
+        informacionLegion += `Velite N.º${contador}: <br>`;
+        // Imprimo/muestro la información de esa "X" centuria usando el toString heredado.
+        informacionLegion += `${velite.toString()}<br>`;
+        // Incremento la variable usada para los encabezados.
         contador++;
       }
     }
-    
-    resultado += "Caballería (Equite):\n";
+    /**************************************************************************
+     Si hay equite, añado su información, si no, mensaje de que no hay.
+    **************************************************************************/
+    informacionLegion += `Equite: <br>`;
     if (this.#_equite) {
-      resultado += `${this.#_equite.toString()}\n`;
+      informacionLegion += `${this.#_equite.toString()} <br>`;
     } else {
-      resultado += "No hay caballería asignada\n";
+      informacionLegion += `No hay caballería de elite asignada a esta legión.`;
     }
-    
-    return resultado;
+    return informacionLegion;
   }
 }
 
