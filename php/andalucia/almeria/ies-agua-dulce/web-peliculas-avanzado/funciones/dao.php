@@ -194,13 +194,6 @@ function obtenerCriticaCompleta(PDO $pdo, $idPelicula)
 
     return $criticas;
 }
-
-/**************************************************************
-FUNCIÓN PARA ELIMINAR LA CRITICA DE UNA PELICULA
- **************************************************************/
-
-
-
 /**************************************************************
 FUNCIÓN PARA CONFIRMAR SI UN USUARIO YA HA VOTADO UNA PELÍCULA
  **************************************************************/

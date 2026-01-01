@@ -11,6 +11,7 @@ $conexion = conectarDB();
 //Variables auxiliares
 $errores = []; //Array para mostrar errores
 $criticas = []; // array para guardar las críticas
+$idNombreGeneros = []; // array para mapear id de género a nombre
 
 //Comprobamos si existe conexión. 
 if ($conexion === false) {
@@ -41,6 +42,13 @@ if ($conexion === false) {
             if (empty($pelicula)) {
                 $errores[] = "La película no ha sido localizada";
             } else {
+                //Cargamos los géneros para mapear ID a nombre
+                $generos = listadoPorGeneros($conexion);
+                if ($generos !== false) {
+                    foreach ($generos as $g) {
+                        $idNombreGeneros[$g['id']] = $g['nombre'];
+                    }
+                }
                 //Si la película existe obtenemos las críticas
                 $criticas = obtenerCriticaCompleta($conexion, $idPelicula);
 
@@ -70,12 +78,11 @@ if ($conexion === false) {
     </p>
 
     <h2>Lista de votos y críticas</h2>
-    <h2>Datos de la película</h2>
-
     <div>
         <?php
         // Mostramos errores si existen
         if (!empty($errores)) {
+            echo " <h2>Errores</h2>";
             echo "<ul>";
             foreach ($errores as $error) {
                 echo "<li>" . htmlspecialchars($error) . "</li>";
@@ -83,9 +90,10 @@ if ($conexion === false) {
             echo "</ul>";
             exit; // Salimos si hay errores
         } else {
+            echo " <h2>Datos de la película</h2>";
             // Mostramos los datos de la película
             echo "<p><b>Título:</b> " . htmlspecialchars($pelicula['titulo']) . "</p>";
-            echo "<p><b>Género:</b> " . htmlspecialchars($pelicula['genero']) . "</p>";
+            echo "<p><b>Género:</b> " . htmlspecialchars($idNombreGeneros[$pelicula['genero']] ?? 'Desconocido') . "</p>";
             echo "<p><b>Director:</b> " . htmlspecialchars($pelicula['direccion']) . "</p>";
             echo "<p><b>Duración:</b> " . htmlspecialchars($pelicula['duracion']) . " minutos</p>";
             echo "<p><b>Año:</b> " . htmlspecialchars($pelicula['anio']) . "</p>";
