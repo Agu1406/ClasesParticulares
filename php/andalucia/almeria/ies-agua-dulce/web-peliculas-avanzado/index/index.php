@@ -53,12 +53,20 @@ if ($conexion === false) {
             <meta charset="UTF-8">
             <meta name="viewport" content="width=device-width, initial-scale=1.0">
             <title>Lista de películas</title>
+            <style>
+                img {
+                    width: 200px;
+                    height: auto;
+                    display: block;
+                    margin-bottom: 10px;
+                }
+            </style>
         </head>
 
         <body>
             <H1>DWES 03. AUTOR: RAFAEL MORONES BURGOS.</H1>
             <?php if (isset($_SESSION["id"])): ?>
-                <p>Has inicicado sesión, <a href="../login/cerrarsesion.php">¿Deseas cerrar sesión?</a></p>
+                <p>Has iniciado sesión, <a href="../login/cerrarsesion.php">¿Deseas cerrar sesión?</a></p>
             <?php else: ?>
                 <p>No has iniciado sesión, <a href="../login/form-login.php">¿Deseas iniciar sesión?</a></p>
             <?php endif; ?>
@@ -69,7 +77,7 @@ if ($conexion === false) {
             <form action="../preferencias/preferencia_generos.php" method="POST">
                 <?php foreach ($generos as $genero): ?>
                     <div>
-                        <input type="checkbox" name="generos[]" value="<?= $genero['id'] ?>">
+                        <input type="checkbox" name="generos[]" value="<?= $genero['id'] ?>" <?= (isset($generosSeleccionados) && in_array($genero['id'], $generosSeleccionados)) ? 'checked' : '' ?>>
                         <b><?= htmlspecialchars($genero['nombre']) ?>:</b>
                         (<?= htmlspecialchars($genero['descripcion']) ?>)
                     </div>

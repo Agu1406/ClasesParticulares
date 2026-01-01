@@ -15,7 +15,7 @@ if (isset($_SESSION["voto_en_curso"])) {
     $voto = $_SESSION["voto_en_curso"];
     $idPelicula = $voto['id_pelicula'];
 
-// CASO 2: Viene del formulario por POST (no hay votación en curso)
+    // CASO 2: Viene del formulario por POST (no hay votación en curso)
 } elseif ($_SERVER['REQUEST_METHOD'] === 'POST' && !empty($_POST)) {
     $idPelicula = filter_input(INPUT_POST, 'id_pelicula', FILTER_VALIDATE_INT);
     $valoracion = filter_input(INPUT_POST, 'valoracion', FILTER_VALIDATE_INT);
@@ -46,7 +46,6 @@ if (isset($_SESSION["voto_en_curso"])) {
     ];
     $voto = $_SESSION['voto_en_curso'];
     unset($_SESSION['voto_form']);
-
 } else {
     // Acceso directo sin datos
     $errores[] = "No hay ninguna votación en curso. Por favor, inicie la votación desde el listado de películas.";
@@ -59,7 +58,7 @@ if (empty($errores) && isset($voto)) {
     } else {
         // Verificar si ya votó esta película
         $yaVoto = consultarVoto($conexion, $_SESSION['id'], $voto['id_pelicula']);
-        
+
         if ($yaVoto === true) {
             // Si ya votó, descartamos la información de sesión
             unset($_SESSION['voto_en_curso']);
@@ -85,11 +84,13 @@ if (empty($errores) && isset($voto)) {
 ?>
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=100%, initial-scale=1.0">
     <title>Confirme la valoración</title>
 </head>
+
 <body>
     <h1>DWES 03. AUTOR: RAFAEL MORONES BURGOS.</h1>
 
@@ -101,10 +102,10 @@ if (empty($errores) && isset($voto)) {
         </ul>
         <p><a href="form-nuevo-voto.php">Volver al formulario de voto</a></p>
         <p><a href="../index/index.php">Volver al listado de películas</a></p>
-    
+
     <?php else: ?>
         <h1>Confirme la valoración</h1>
-        
+
         <?php if ($pelicula !== null): ?>
             <h2>Datos de la película</h2>
             <div>
@@ -123,7 +124,7 @@ if (empty($errores) && isset($voto)) {
             <label for="comentario">Comentario:</label><br>
             <textarea id="comentario" rows="4" cols="50" readonly><?= htmlspecialchars($voto['comentario']) ?></textarea>
         </div>
-        
+
         <form action="votar.php" method="POST">
             <input type="checkbox" name="confirmar" value="1"> Haz clic aquí para confirmar que desea enviar esta valoración y comentario.
             <br>
@@ -137,4 +138,5 @@ if (empty($errores) && isset($voto)) {
         </form>
     <?php endif; ?>
 </body>
+
 </html>

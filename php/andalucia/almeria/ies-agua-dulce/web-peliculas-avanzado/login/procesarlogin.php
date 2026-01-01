@@ -52,13 +52,16 @@ if ($_SERVER['REQUEST_METHOD'] !== 'POST' || !isset($_POST['entrar'])) {
 ?>
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
     <meta charset="UTF-8">
-    <title>Resultado de login</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Resultado de la operación de login</title>
 </head>
+
 <body>
     <h1>DWES 03. AUTOR: RAFAEL MORONES BURGOS.</h1>
-    
+
     <?php if (!empty($errores)): ?>
         <h2>Se han producido los siguientes errores:</h2>
         <ul>
@@ -72,4 +75,5 @@ if ($_SERVER['REQUEST_METHOD'] !== 'POST' || !isset($_POST['entrar'])) {
         <p><a href="../index/index.php">Ir al listado de películas</a></p>
     <?php endif; ?>
 </body>
+
 </html>
