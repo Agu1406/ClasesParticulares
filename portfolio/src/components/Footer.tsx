@@ -15,7 +15,15 @@ function Footer() {
     return (
         <footer className="bg-evergreen text-lavender p-4">
             <div className="container mx-auto text-center font-bold">
-                Pie de pagina de prueba
+                 {/* Diseño pensado primero en movil y a partir de tamaños medianos ("md") en escritorio. */}
+                <div className="flex flex-col md:flex-row justify-between items-center">
+                    <p>© 2025 - Portal de clases particulares</p>
+                    <div className="flex space-x-6">
+                        <a href="https://github.com/Agu1406/ClasesParticulares" target="_blank">GitHub</a>
+                        <a href="https://agu1406.github.io/ClasesParticulares" target="_blank">GitHub Pages</a>
+                        <a href="https://www.linkedin.com/in/agustin6041/" target="_blank">LinkedIn</a>
+                    </div>
+                </div>
             </div>
         </footer>
     );
