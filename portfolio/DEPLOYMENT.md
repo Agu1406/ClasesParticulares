@@ -17,21 +17,21 @@
 - [X] Configurar el routing de la aplicación en **App.tsx**.
 - [X] Crear el componente **Header.tsx** con navegación usando **\<Link>** de **React Router DOM**.
 - [X] Crear el componente **Footer.tsx**.
+- [X] Crear el componente **LanguageCard.tsx** para mostrar tarjetas de lenguajes.
 - [X] Configurar layout flex en **index.html** (body con flex flex-col).
 - [X] Configurar layout flex en **App.tsx** (main con flex-grow).
 
 ## **Páginas**
 - [X] Crear **HomePage.tsx** (estructura básica).
+- [X] Implementar grid de lenguajes en **HomePage.tsx** (usando LanguageCard).
 - [X] Crear **JavaPage.tsx** (página de ejemplo).
 
 ## **Funcionalidad principal**
-- [ ] Crear componente **LanguageCard.tsx** para mostrar tarjetas de lenguajes.
-- [ ] Implementar grid de lenguajes en **HomePage.tsx** (usando LanguageCard).
 - [ ] Mejorar **Footer.tsx** (agregar enlaces a GitHub, GitHub Pages, etc.).
 - [ ] Crear páginas individuales para cada lenguaje (Python, C, C++, PHP, etc.).
 
 ## **MVP (Mínimo Producto Viable)**
-- [ ] Completar MVP: HomePage con grid funcional de todos los lenguajes.
+- [X] Completar MVP: HomePage con grid funcional de todos los lenguajes.
 - [ ] Probar navegación entre páginas.
 - [ ] Verificar responsive design en diferentes tamaños de pantalla.
 
@@ -324,14 +324,14 @@ Es la vista por defecto con un pequeño contador que muestra el logo de **React*
 ```tsx
 // Importamos todos los componentes de react-router-dom
 import { BrowserRouter, Routes, Route } from "react-router-dom";
-// Importamos las paginas que hemos creado para la demo.
+// Importamos las páginas que hemos creado para la demo.
 import HomePage from "./pages/HomePage";
 import JavaPage from "./pages/JavaPage";
 // Importamos el componente de navegación
 import Header from "./components/Header";
 
-// Creamos la función "App" encargada de manejar toda la logica de redireccionamiento.
-function App () {
+// Creamos la función "App" encargada de manejar toda la lógica de redireccionamiento.
+function App() {
   return (
     // Activamos el enrutamiento (routing) de la aplicación.
     <BrowserRouter>
@@ -387,10 +387,11 @@ export default Header;
 **NOTA:** Es importante usar `<Link to>` en lugar de `<a href>` para evitar recargas completas de la página y mantener la navegación fluida de la SPA.
 # **Paso N.º9 - Agregar los iconos necesarios para los datos**
 
-Este paso en teoría debería ser el N.º10 y viceversa, el N.º10 debería ser el N.º9, pero me dije a mí mismo, al definir los datos de los lenguajes necesitas la URL de las imágenes/iconos que usarás para representarlos, así que, ¿Por qué dejar para mañana lo que puedes hacer hoy?.
+Este paso en teoría debería ser el N.º10 y viceversa, el N.º10 debería ser el N.º9, pero me dije a mí mismo, **al definir los datos de los lenguajes necesitas la URL de las imágenes/iconos que usarás para representarlos**, así que, **¿Por qué dejar para mañana lo que puedes hacer hoy?**.
 
 Para ello, desde **src** navegamos hasta **assets** y creamos ahí el directorio **icons** donde subiremos (de preferencia SVG) los iconos que representarán los lenguajes que imparto en clases.
 
+<<<<<<< HEAD
 En el encabezado **fuentes** de este documento dejo el enlace a la librería gratuita de **SVG** que yo he utilizado para bajarme los iconos, la única pega es que trae 2019 iconos SVG/EPS pero yo no necesito tantos, sumando los frameworks, lenguajes base y tecnologías que se utilizan y he enseñado llego a 109, por lo tanto, actualizamos nuestro **.gitignore** para excluir todos excepto los que nos interesan, quedando así el apartado de iconos del .gitignore:
 
 ```bash
@@ -588,6 +589,40 @@ export default LanguageCard;
 
 Este componente recibe un objeto `Language` como prop y renderiza una tarjeta clickeable que navega a la página del lenguaje correspondiente usando `Link` de React Router DOM.
 
+# **Paso N.º13 - Implementar el grid en HomePage**
+
+Ahora actualizamos **HomePage.tsx** para mostrar todas las tarjetas de lenguajes en un grid responsive:
+
+```tsx
+import { languages } from '../data/languages';
+import LanguageCard from '../components/LanguageCard';
+
+function HomePage() {
+    return (
+        <div className="bg-lavender p-8">
+            <div className="container mx-auto">
+                <h1 className="text-4xl font-bold text-center m-8 text-evergreen">
+                    Portal de clases particulares de Agustín
+                </h1>
+                <p className="text-center m-8 text-slate-grey text-lg mb-12">
+                    ¡Bienvenido! Elige el tema en el que estás interesado.
+                </p>
+                
+                {/* Grid de lenguajes - Responsive */}
+                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
+                    {languages.map((language) => (
+                        <LanguageCard key={language.id} language={language} />
+                    ))}
+                </div>
+            </div>
+        </div>
+    );
+}
+
+export default HomePage;
+```
+
+El grid es responsive: 1 columna en móvil, 2 en tablet, 3 en desktop y 4 en pantallas grandes.
 
 # **Preguntas comunes que yo mismo me hice**
 
@@ -644,7 +679,7 @@ export default defineConfig({
 | `hover:{class}` | Aplica estilos cuando el cursor está sobre el elemento. | `hover:text-fawn`, `hover:underline` |
 | `transition-{property}` | Transición suave de propiedades. | `transition-colors`, `transition-all` |
 | `rounded-{size}` | Bordes redondeados. | `rounded-lg`, `rounded-full` |
-| `ignorar esto`| Es lo que utilizo para copiar y pegar la siguiente linea| `curioso, ¿no?`|
+| `flex-grow` | Hace que el elemento crezca para ocupar el espacio disponible en un contenedor flex. | `flex-grow` |
 
 
 # **Fuentes**
