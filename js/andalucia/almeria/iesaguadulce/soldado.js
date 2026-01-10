@@ -36,10 +36,9 @@ export default class Soldado {
     // Comprobar que sea un número positivo entero
     //comprobamos que sea superior a 12 y menor a 85
     if (
-      isNaN(nuevaEdad) ||
+      !Number.isInteger(nuevaEdad) ||
       nuevaEdad < Soldado.#MIN_EDAD ||
-      nuevaEdad > Soldado.#MAX_EDAD ||
-      !Number.isInteger(nuevaEdad)
+      nuevaEdad > Soldado.#MAX_EDAD
     ) {
       throw "La edad no es válida.Debe ser superior a 12 e inferior a 85";
     } else this.#_edad = nuevaEdad;
@@ -99,11 +98,11 @@ export default class Soldado {
   }
 
   /***********
-    FUNCIONES
+    MÉTODOS
   **********/
 
   /**
-   * Función "toString" personalizada que imprime la información de un saldo
+   * Método "toString" personalizado que imprime la información de un soldado
    * y todos sus atributos.
    */
   toString() {
