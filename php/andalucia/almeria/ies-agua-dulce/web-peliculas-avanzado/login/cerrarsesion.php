@@ -8,7 +8,7 @@ $sesion = $_SESSION['id'] ?? null;
 // Si existe una sesión, eliminamos los datos del usuario autenticado
 if ($sesion) {
     unset($_SESSION['id']);
-    unset($_SESSION['ultimo_acceso']);
+    unset($_SESSION['lastlogin']);
 }
 ?>
 <!DOCTYPE html>
@@ -23,15 +23,14 @@ if ($sesion) {
 <body>
     <h1>DWES 03. AUTOR: RAFAEL MORONES BURGOS.</h1>
     <h1>Cierre de sesión</h1>
+    <a href="../login/form-login.php">Iniciar sesión.</a>
+
 
     <?php if (!$sesion): ?>
         <h2>No había ninguna sesión iniciada</h2>
     <?php else: ?>
         <h2>Sesión cerrada correctamente</h2>
     <?php endif; ?>
-    
-    <br>
-    <a href="../index/index.php">Volver al listado de películas</a>
 </body>
 
 </html>

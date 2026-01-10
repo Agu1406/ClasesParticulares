@@ -1,171 +1,142 @@
 <?php
-// Incluimos el control de acceso al área privada
-require_once 'accesoareaprivada.php';
+require_once "accesoareaprivada.php";
+require_once "../funciones/dao.php";
+require_once "../funciones/dbconn.php";
 
-// Cargamos las funciones necesarias
-require_once '../funciones/dao.php';
-
-// Iniciamos la sesión (ya iniciada en accesoareaprivada.php, pero por seguridad)
-session_start();
-
-// Creamos la conexión
-$conexion = conectarDB();
-
-// Array para errores
 $errores = [];
+$conexion = conectarDB();
+$voto = null;
+$pelicula = null;
+$idNombreGeneros = [];
+$idPelicula = null;
 
-// Verificamos si hay datos de votación en la sesión o si vienen del formulario
-if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['id_pelicula'])) {
-    // Validamos el id de la película
+// CASO 1: Ya hay votación en curso (a medias)
+if (isset($_SESSION["voto_en_curso"])) {
+    $voto = $_SESSION["voto_en_curso"];
+    $idPelicula = $voto['id_pelicula'];
+
+    // CASO 2: Viene del formulario por POST (no hay votación en curso)
+} elseif ($_SERVER['REQUEST_METHOD'] === 'POST' && !empty($_POST)) {
     $idPelicula = filter_input(INPUT_POST, 'id_pelicula', FILTER_VALIDATE_INT);
     $valoracion = filter_input(INPUT_POST, 'valoracion', FILTER_VALIDATE_INT);
-    $comentario = filter_input(INPUT_POST, 'comentario', FILTER_SANITIZE_SPECIAL_CHARS);
-    
-    if ($idPelicula === false || $idPelicula === null || $idPelicula < 1) {
-        $errores[] = "El id de la película no es válido.";
-    } elseif ($valoracion === false || $valoracion === null || $valoracion < 1 || $valoracion > 5) {
-        $errores[] = "La valoración debe ser un número entre 1 y 5.";
-    } elseif ($comentario === false || $comentario === null || trim($comentario) === '') {
-        $errores[] = "El comentario no puede estar vacío.";
+    $comentario = trim(filter_input(INPUT_POST, 'comentario', FILTER_SANITIZE_SPECIAL_CHARS) ?? '');
+
+    // Validaciones
+    if (!$idPelicula) $errores[] = "El id de la película no es válido";
+    if (!$valoracion || $valoracion < 1 || $valoracion > 5) $errores[] = "La valoración debe de estar entre 1 y 5";
+    if (empty($comentario)) $errores[] = "El comentario no puede estar vacío";
+
+    // Si hay errores, guardamos datos para repintar form-nuevo-voto.php
+    if (!empty($errores)) {
+        $_SESSION['voto_form'] = [
+            'id_pelicula' => $idPelicula ?? "",
+            'valoracion' => $valoracion ?? "",
+            'comentario' => $comentario ?? "",
+            'errores' => $errores
+        ];
+        header('Location: form-nuevo-voto.php');
+        exit();
+    }
+
+    // Si no hay errores, guardamos la votación en curso
+    $_SESSION['voto_en_curso'] = [
+        'id_pelicula' => $idPelicula,
+        'valoracion' => $valoracion,
+        'comentario' => $comentario
+    ];
+    $voto = $_SESSION['voto_en_curso'];
+    unset($_SESSION['voto_form']);
+} else {
+    // Acceso directo sin datos
+    $errores[] = "No hay ninguna votación en curso. Por favor, inicie la votación desde el listado de películas.";
+}
+
+// Si tenemos votación, verificamos si el usuario ya votó esta película
+if (empty($errores) && isset($voto)) {
+    if ($conexion === false) {
+        $errores[] = "No ha sido posible establecer una conexión con la base de datos.";
     } else {
-        // Verificamos que la conexión es válida
-        if ($conexion === false) {
-            $errores[] = "No ha sido posible establecer una conexión con la base de datos.";
+        // Verificar si ya votó esta película
+        $yaVoto = consultarVoto($conexion, $_SESSION['id'], $voto['id_pelicula']);
+
+        if ($yaVoto === true) {
+            // Si ya votó, descartamos la información de sesión
+            unset($_SESSION['voto_en_curso']);
+            $errores[] = "Ya has votado esta película previamente. No puedes votar de nuevo.";
+        } elseif ($yaVoto === null) {
+            $errores[] = "Error al comprobar si ya has votado esta película.";
         } else {
-            // Verificamos si el usuario ya votó esta película
-            $idUsuario = $_SESSION['id'];
-            $yaVoto = usuarioYaVoto($conexion, $idUsuario, $idPelicula);
-            
-            if ($yaVoto) {
-                // Si ya votó, descartamos la información de sesión
-                unset($_SESSION['voto_en_curso']);
-                $errores[] = "Ya ha votado esta película previamente.";
+            // No ha votado, cargamos datos de la película
+            $pelicula = obtenerPeliculaPorID($conexion, $voto['id_pelicula']);
+            if (empty($pelicula)) {
+                $errores[] = "No hemos podido encontrar la película";
             } else {
-                // Almacenamos la información en la sesión
-                $_SESSION['voto_en_curso'] = [
-                    'pelicula_id' => $idPelicula,
-                    'valoracion' => $valoracion,
-                    'comentario' => trim($comentario)
-                ];
+                $generos = listadoPorGeneros($conexion);
+                if ($generos) {
+                    foreach ($generos as $g) {
+                        $idNombreGeneros[$g['id']] = $g['nombre'];
+                    }
+                }
             }
         }
     }
 }
-
-// Si hay errores o no hay datos en sesión, redirigimos
-if (!empty($errores) || !isset($_SESSION['voto_en_curso'])) {
-    if (!empty($errores)) {
-        // Mostramos errores
-        ?>
-        <!DOCTYPE html>
-        <html lang="es">
-        <head>
-            <meta charset="UTF-8">
-            <meta name="viewport" content="width=100%, initial-scale=1.0">
-            <title>Error en la votación</title>
-        </head>
-        <body>
-            <H1>DWES 03. AUTOR: RAFAEL MORONES BURGOS.</H1>
-            <h2>Se han producido los siguientes errores:</h2>
-            <ul>
-                <?php foreach ($errores as $error): ?>
-                    <li><?= htmlspecialchars($error) ?></li>
-                <?php endforeach; ?>
-            </ul>
-            <a href="../index/index.php">Volver al listado de películas</a>
-        </body>
-        </html>
-        <?php
-        exit;
-    } else {
-        // No hay datos en sesión, redirigimos al formulario
-        header("Location: form-nuevo-voto.php");
-        exit;
-    }
-}
-
-// Obtenemos los datos de la votación en curso
-$votoEnCurso = $_SESSION['voto_en_curso'];
-$idPelicula = $votoEnCurso['pelicula_id'];
-
-// Obtenemos los datos de la película
-$pelicula = obtenerPeliculaPorId($conexion, $idPelicula);
-
-if ($pelicula === false || empty($pelicula)) {
-    // Si la película no existe, limpiamos la sesión y redirigimos
-    unset($_SESSION['voto_en_curso']);
-    header("Location: ../index/index.php");
-    exit;
-}
-
-// Verificamos nuevamente que el usuario no haya votado (por si acaso)
-$idUsuario = $_SESSION['id'];
-$yaVoto = usuarioYaVoto($conexion, $idUsuario, $idPelicula);
-
-if ($yaVoto) {
-    // Si ya votó, descartamos la información de sesión
-    unset($_SESSION['voto_en_curso']);
-    ?>
-    <!DOCTYPE html>
-    <html lang="es">
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=100%, initial-scale=1.0">
-        <title>Error en la votación</title>
-    </head>
-    <body>
-        <H1>DWES 03. AUTOR: RAFAEL MORONES BURGOS.</H1>
-        <h2>Error</h2>
-        <p>Ya ha votado esta película previamente.</p>
-        <a href="../index/index.php">Volver al listado de películas</a>
-    </body>
-    </html>
-    <?php
-    exit;
-}
 ?>
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=100%, initial-scale=1.0">
     <title>Confirme la valoración</title>
 </head>
+
 <body>
-    <H1>DWES 03. AUTOR: RAFAEL MORONES BURGOS.</H1>
-    <h1>Confirme la valoración</h1>
-   
-    <H2>Datos de la película</H2>
-    <div>
-        <strong>Título:</strong> <?= htmlspecialchars($pelicula['titulo']) ?><br>
-        <strong>Género:</strong> <?= htmlspecialchars($pelicula['nombre_genero'] ?? 'Sin género') ?><br>
-        <strong>Director:</strong> <?= htmlspecialchars($pelicula['direccion']) ?><br>
-        <strong>Duración:</strong> <?= htmlspecialchars($pelicula['duracion']) ?> minutos<br>
-        <strong>Año:</strong> <?= htmlspecialchars($pelicula['anio']) ?><br>
-    </div>
-    <hr>
-    <h2>Por favor, confirme su valoración y comentario</h2> 
-    <div>
-        <strong>Valoración:</strong> <?= htmlspecialchars($votoEnCurso['valoracion']) ?><br>
-        <strong>Comentario:</strong> <?= htmlspecialchars($votoEnCurso['comentario']) ?><br>
-    </div>
-    <form action="votar.php" method="POST">
+    <h1>DWES 03. AUTOR: RAFAEL MORONES BURGOS.</h1>
+
+    <?php if (!empty($errores)): ?>
+        <ul>
+            <?php foreach ($errores as $e): ?>
+                <li><?= htmlspecialchars($e) ?></li>
+            <?php endforeach; ?>
+        </ul>
+        <p><a href="form-nuevo-voto.php">Volver al formulario de voto</a></p>
+        <p><a href="../index/index.php">Volver al listado de películas</a></p>
+
+    <?php else: ?>
+        <h1>Confirme la valoración</h1>
+
+        <?php if ($pelicula !== null): ?>
+            <h2>Datos de la película</h2>
+            <div>
+                <strong>Título:</strong> <?= htmlspecialchars($pelicula['titulo']) ?><br>
+                <strong>Genero:</strong> <?= htmlspecialchars($idNombreGeneros[$pelicula['genero']] ?? '') ?><br>
+                <strong>Director:</strong> <?= htmlspecialchars($pelicula['direccion']) ?><br>
+                <strong>Duración:</strong> <?= htmlspecialchars($pelicula['duracion']) ?> minutos<br>
+                <strong>Año:</strong> <?= htmlspecialchars($pelicula['anio']) ?><br><br>
+            </div>
+            <hr>
+        <?php endif; ?>
+
+        <h2>Por favor, confirme su valoración y comentario</h2>
         <div>
-            <input type="checkbox" name="confirmar" value="1" id="confirmar" required> 
-            <label for="confirmar">Haz clic aquí para confirmar que desea enviar esta valoración y comentario.</label>
+            <strong>Valoración:</strong> <?= htmlspecialchars($voto['valoracion']) ?><br>
+            <label for="comentario">Comentario:</label><br>
+            <textarea id="comentario" rows="4" cols="50" readonly><?= htmlspecialchars($voto['comentario']) ?></textarea>
         </div>
-        <div>
-            <input type="checkbox" name="declaracion" value="1" id="declaracion" required> 
-            <label for="declaracion">Declaro que mi valoración y crítica se ajustan a las normas de la comunidad 
-            y soy consciente de que cualquier incumplimiento puede conllevar la eliminación de mi cuenta.</label>
-        </div>
-        <div>
+
+        <form action="votar.php" method="POST">
+            <input type="checkbox" name="confirmar" value="1"> Haz clic aquí para confirmar que desea enviar esta valoración y comentario.
+            <br>
+            <input type="checkbox" name="declaracion" value="1"> Declaro que mi valoración y crítica se ajustan a las normas de la comunidad
+            y soy consciente de que cualquier incumplimiento puede conllevar la eliminación de mi cuenta.
+            <br>
             <input type="submit" value="Confirmar voto y comentario">
-        </div>
-    </form> 
-    <form action="descartarvoto.php" method="POST">
-        <input type="submit" value="Descartar voto y comentario">
-    </form>
-    <a href="../index/index.php">Volver al listado de películas</a>
+        </form>
+        <form action="descartarvoto.php" method="POST">
+            <input type="submit" value="Descartar voto y comentario">
+        </form>
+    <?php endif; ?>
 </body>
+
 </html>

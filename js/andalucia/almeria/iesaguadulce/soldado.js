@@ -1,110 +1,120 @@
-/**
- * Clase Soldado
- * Representa un soldado romano con sus características básicas
- */
-class Soldado {
+export default class Soldado {
   #_nombre;
   #_edad;
   #_tipo;
   #_provincia;
 
-  static #TIPOS_VALIDOS = ["centurio", "velite", "equite"]; // Array inmutable de tipos permitidos
+  static #TIPOS_VALIDOS = ["centurio", "velite", "equite"];
+  static #MAX_EDAD = 84;
+  static #MIN_EDAD = 13;
 
-  /**
-   * Constructor de la clase Soldado
-   * @param {String} nombre - Nombre del soldado (mínimo 5 caracteres)
-   * @param {Number} edad - Edad del soldado (entre 12 y 85 años)
-   * @param {String} tipo - Tipo de soldado (centurio, velite o equite)
-   */
+  //Implementamos el constructor de la clase
   constructor(nombre, edad, tipo) {
-    this.nombre = nombre;
-    this.edad = edad;
-    this.tipo = tipo;
-    this.provincia = ""; // Inicializamos vacío
+    this.nombre = nombre; //Validamos con los setters
+    this.edad = edad; //Validamos con los setters
+    this.tipo = tipo; //Validamos con los setters
+    this.#_provincia = ""; //Lo incializamos vacío
   }
 
   /***********
     SETTERS
   **********/
-
-  /**
-   * Setter para el nombre del soldado
-   * @param {String} nuevoNombre - Nuevo nombre (mínimo 5 caracteres)
-   */
   set nombre(nuevoNombre) {
-    if (typeof nuevoNombre !== "string" || nuevoNombre.length < 5) {
-      throw `El nombre debe tener al menos 5 caracteres. Nombre proporcionado: ${nuevoNombre}`;
-    }
-    this.#_nombre = nuevoNombre;
+    //El nombre tiene que ser un String, que no esté vacío y mínimo 5 caracteres
+    if (
+      typeof nuevoNombre !== "string" ||
+      nuevoNombre.trim() === "" ||
+      nuevoNombre.trim().length < 5
+    ) {
+      //si no se cumple se lanza una excepción.
+      throw "El nombre debe tener como mínimo 5 caracteres y no debe estar vacio";
+      //Si se cumple establecemos el nombre
+    } else this.#_nombre = nuevoNombre;
   }
 
-  /**
-   * Setter para la edad del soldado
-   * @param {Number} nuevaEdad - Nueva edad (entre 12 y 85 años)
-   */
   set edad(nuevaEdad) {
-    if (!Number.isInteger(nuevaEdad) || nuevaEdad <= 12 || nuevaEdad >= 85) {
-      throw `El soldado ${this.#_nombre || "sin nombre"} tiene ${nuevaEdad} años. La edad debe ser un número entero mayor de 12 e inferior a 85.`;
-    }
-    this.#_edad = nuevaEdad;
+    // Comprobar que sea un número positivo entero
+    //comprobamos que sea superior a 12 y menor a 85
+    if (
+      isNaN(nuevaEdad) ||
+      nuevaEdad < Soldado.#MIN_EDAD ||
+      nuevaEdad > Soldado.#MAX_EDAD ||
+      !Number.isInteger(nuevaEdad)
+    ) {
+      throw "La edad no es válida.Debe ser superior a 12 e inferior a 85";
+    } else this.#_edad = nuevaEdad;
   }
 
-  /**
-   * Setter para el tipo de soldado
-   * @param {String} nuevoTipo - Nuevo tipo (centurio, velite o equite)
-   */
   set tipo(nuevoTipo) {
+    // Si el soldado tiene "X" tipo que no existe dentro de los tipos validos, error.
     if (!Soldado.#TIPOS_VALIDOS.includes(nuevoTipo)) {
-      throw `El tipo debe ser uno de: ${Soldado.#TIPOS_VALIDOS.join(", ")}. Tipo proporcionado: ${nuevoTipo}`;
+      throw `El tipo no es valido, debe ser uno de los siguientes: ${Soldado.#TIPOS_VALIDOS.join(
+        ", "
+      )}`;
     }
+
     this.#_tipo = nuevoTipo;
   }
 
-  /**
-   * Setter para la provincia de origen
-   * @param {String} nuevaProvincia - Nueva provincia
-   */
   set provincia(nuevaProvincia) {
+    //Validamos que sea un string y que no esté vacío
+    if (typeof nuevaProvincia !== "string" || nuevaProvincia.trim() === "") {
+      throw "La provincia debe ser un string y no debe estar vacío";
+    }
     this.#_provincia = nuevaProvincia;
   }
 
-  /***********
-    GETTERS
-  **********/
+  /**********************
+    GETTERS DEL OBJETO
+  ***********************/
+  get edad() {
+    return this.#_edad;
+  }
 
   get nombre() {
     return this.#_nombre;
   }
 
-  get edad() {
-    return this.#_edad;
-  }
-
   get tipo() {
     return this.#_tipo;
   }
-
   get provincia() {
     return this.#_provincia;
   }
 
+  /**********************
+    GETTERS DE LA CLASE
+  ***********************/
+
+  static get edadMaxima() {
+    return Soldado.#MAX_EDAD;
+  }
+
+  static get edadMinima() {
+    return Soldado.#MIN_EDAD;
+  }
+
+  static get tiposValidos() {
+    return Soldado.#TIPOS_VALIDOS;
+  }
+
   /***********
-    MÉTODOS
+    FUNCIONES
   **********/
 
   /**
-   * Método toString que muestra todos los atributos del soldado
-   * @returns {String} - Representación en cadena del soldado
+   * Función "toString" personalizada que imprime la información de un saldo
+   * y todos sus atributos.
    */
   toString() {
-    let resultado = "Soldado Romano\n";
-    resultado += `Nombre: ${this.#_nombre}\n`;
-    resultado += `Edad: ${this.#_edad} años\n`;
-    resultado += `Tipo: ${this.#_tipo}\n`;
-    resultado += `Provincia: ${this.#_provincia || "No asignada"}\n`;
-    return resultado;
+    let informacionSoldado = "";
+    informacionSoldado += `<img src="https://www.publicdomainpictures.net/pictures/730000/nahled/roman-man-1759551028I7P.png"/>`;
+    informacionSoldado += "¡Información del soldado! <br>";
+    informacionSoldado += `Nombre: ${this.#_nombre}<br>`;
+    informacionSoldado += `Edad: ${this.#_edad}<br>`;
+    informacionSoldado += `Tipo: ${this.#_tipo}<br>`;
+    informacionSoldado += `Provincia: ${this.#_provincia}<br>`;
+
+    return informacionSoldado;
   }
 }
-
-export default Soldado;
-

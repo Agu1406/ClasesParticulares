@@ -50,7 +50,6 @@ function obtenerGenerosPreferidosDeCookies()
 
     //Comprobamos si existe en el array $_COOKIES
     if (!isset($_COOKIE[$nombreCookie]) || !isset($_COOKIE[$hashCookie])) {
-        echo ("Las cookies con preferencias de géneros no existen o no son válidas");
         $generos = false;
 
         //En el caso de que ambas existan
@@ -65,8 +64,10 @@ function obtenerGenerosPreferidosDeCookies()
             //Destruimos la cookies
             forzarEliminacionCookies();
             $generos = false;
-        } //En caso contrario devolvemos la cookie generos deserializada
-        $generos = unserialize($datos);
+        } else {
+            //En caso contrario devolvemos la cookie generos deserializada
+            $generos = unserialize($datos);
+        }
     }
     return $generos;
 }
