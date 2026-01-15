@@ -1,9 +1,9 @@
-package general.strings;
+package general.buclesycondicionales;
 
 /**
- * Ejercicio 11: Contar caracteres en un string
- * Crea un programa que cuente la cantidad de caracteres en una palabra/string
- * tomando en cuenta los espacios en blanco y sin tomarlos en cuenta
+ * Ejercicio 6: Condicional switch
+ * Crea una variable numérica del 1 al 5 y usa un switch para mostrar un mensaje diferente
+ * según el valor de la variable
  * 
  * @author Agustín. A. Marquez. Piña
  * @since 14/06/2025
@@ -11,8 +11,10 @@ package general.strings;
  * @see <a href="https://github.com/Agu1406/ClasesParticulares">Repositorio GitHub</a>
  * @see <a href="https://agu1406.github.io/ClasesParticulares">GitHub Pages</a>
  */
-public class Ejercicio11_ContarCaracteres {
+public class Ejercicio6_Switch {
     public static void main(String[] args) {
         
     }
 }
+
+

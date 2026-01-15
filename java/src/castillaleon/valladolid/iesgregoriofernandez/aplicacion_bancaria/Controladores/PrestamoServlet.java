@@ -12,7 +12,7 @@ import java.io.IOException;
 import java.time.LocalDate;
 import java.util.UUID;
 
-import CastillaLeon.Valladolid.IESGregorioFernandez.aplicacion_bancaria.Modelos.Prestamo;
+import castillaleon.valladolid.iesgregoriofernandez.aplicacion_bancaria.Modelos.Prestamo;
 
 /**
  * Servlet implementation class PrestamoServlet
