@@ -1,4 +1,4 @@
-package madrid.iescanaveral.ejercicios;
+package madrid.iescanaveral.ejercicios.convocatoria2022;
 
 /**
  * Ejercicio 10: Dado el siguiente fragmento de código, indica cuál de las siguientes afirmaciones 

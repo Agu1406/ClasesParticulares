@@ -1,4 +1,4 @@
-package org.example;
+package andalucia.sevilla.iesvelazquez.barberomultihilo;
 
 import java.util.Random;
 

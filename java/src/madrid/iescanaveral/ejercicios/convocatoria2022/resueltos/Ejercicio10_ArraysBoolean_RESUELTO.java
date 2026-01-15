@@ -1,4 +1,4 @@
-package madrid.iescanaveral.ejercicios.resueltos;
+package madrid.iescanaveral.ejercicios.convocatoria2022.resueltos;
 
 /**
  * Ejercicio 10: Dado el siguiente fragmento de código, indica cuál es correcta - RESUELTO

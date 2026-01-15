@@ -1,4 +1,4 @@
-package madrid.iescanaveral.ejercicios;
+package madrid.iescanaveral.ejercicios.convocatoria2022;
 
 /**
  * Ejercicio 16: Dado el siguiente fragmento de código, indicar cuál de las siguientes afirmaciones es correcta.
@@ -12,7 +12,7 @@ package madrid.iescanaveral.ejercicios;
  * @see <a href="https://agu1406.github.io/ClasesParticulares">GitHub Pages</a>
  */
 public class Ejercicio16_HerenciaPolimorfismo {
-    // Clase Persona
+    /* Clase Persona
     static class Persona {
         private int edad;
         
@@ -51,4 +51,5 @@ public class Ejercicio16_HerenciaPolimorfismo {
         p.pasarCurso();  // ¿Compila?
         System.out.print(p.darEdad());
     }
+        */
 }

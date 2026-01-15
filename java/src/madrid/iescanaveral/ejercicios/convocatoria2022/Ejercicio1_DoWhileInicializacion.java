@@ -1,4 +1,4 @@
-package madrid.iescanaveral.ejercicios;
+package madrid.iescanaveral.ejercicios.convocatoria2022;
 
 /**
  * Ejercicio 1: ¿Qué se imprime cuando se compila y ejecuta el siguiente programa?
@@ -13,10 +13,12 @@ package madrid.iescanaveral.ejercicios;
  */
 public class Ejercicio1_DoWhileInicializacion {
     public static void main(String[] args) {
+        /*
         int i;
         do {
             i++;
         } while (i < 0);
         System.out.println(i);
+        */
     }
 }

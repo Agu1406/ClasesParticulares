@@ -1,4 +1,4 @@
-package madrid.uax.sistema_grafo_arista;
+package madrid.uax.estructuradatos.sistema_grafo_arista;
 public class Nodo {
     private String nombre;
 

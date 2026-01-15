@@ -1,4 +1,4 @@
-package castillaleon.valladolid.iesgregoriofernandez.aplicacion_ecommerce.controladores;
+package castillaleon.valladolid.iesgregoriofernandez.aplicacion_ecommerce.Controladores;
 
 import jakarta.servlet.ServletException;
 import jakarta.servlet.annotation.WebServlet;

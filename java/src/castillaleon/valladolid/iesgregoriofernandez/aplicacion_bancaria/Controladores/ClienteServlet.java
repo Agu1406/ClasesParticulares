@@ -1,10 +1,10 @@
-package castillaleon.valladolid.iesgregoriofernandez.aplicacion_bancaria.controladores;
+package castillaleon.valladolid.iesgregoriofernandez.aplicacion_bancaria.Controladores;
 
-import jakarta.servlet.*;
-import jakarta.servlet.annotation.WebServlet;
-import jakarta.servlet.http.*;
+import javax.servlet.*;
+import javax.servlet.annotation.WebServlet;
+import javax.servlet.http.*;
 import java.io.IOException;
-import CastillaLeon.Valladolid.IESGregorioFernandez.aplicacion_bancaria.Modelos.Cliente;
+import castillaleon.valladolid.iesgregoriofernandez.aplicacion_bancaria.Modelos.Cliente;
 
 /**
  * Servlet implementation class ClienteServlet

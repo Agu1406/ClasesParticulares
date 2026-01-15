@@ -1,4 +1,4 @@
-package madrid.iescanaveral.ejercicios.resueltos;
+package madrid.iescanaveral.ejercicios.convocatoria2022.resueltos;
 
 /**
  * Ejercicio 11: ¿Qué ocurrirá al compilar y ejecutar el siguiente código? - RESUELTO

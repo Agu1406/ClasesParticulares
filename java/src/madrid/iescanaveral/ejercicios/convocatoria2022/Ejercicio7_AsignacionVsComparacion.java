@@ -1,4 +1,4 @@
-package madrid.iescanaveral.ejercicios;
+package madrid.iescanaveral.ejercicios.convocatoria2022;
 
 /**
  * Ejercicio 7: ¿Cuál es la salida del siguiente código?
@@ -15,6 +15,7 @@ public class Ejercicio7_AsignacionVsComparacion {
     static boolean check;
     
     public static void main(String[] args) {
+        /*
         int i;
         if (check == true) {
             i = 1;
@@ -27,5 +28,6 @@ public class Ejercicio7_AsignacionVsComparacion {
             i = i + 4;
         }
         System.out.println(i);
+        */
     }
 }

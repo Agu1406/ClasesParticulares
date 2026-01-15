@@ -1,4 +1,4 @@
-package madrid.uax.sistema_juego_ajedrez.ejercicio1;
+package madrid.uax.tecnicasprogramacion.sistema_juego_ajedrez.ejercicio1;
 
 public class PruebaPila {
     public static void main(String[] args) {

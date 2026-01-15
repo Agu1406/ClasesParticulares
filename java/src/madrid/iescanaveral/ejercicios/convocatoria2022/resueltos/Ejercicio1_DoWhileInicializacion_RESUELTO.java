@@ -1,4 +1,4 @@
-package madrid.iescanaveral.ejercicios.resueltos;
+package madrid.iescanaveral.ejercicios.convocatoria2022.resueltos;
 
 /**
  * Ejercicio 1: ¿Qué se imprime cuando se compila y ejecuta el siguiente programa? - RESUELTO

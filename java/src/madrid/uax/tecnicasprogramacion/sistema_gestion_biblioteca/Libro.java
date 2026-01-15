@@ -1,4 +1,4 @@
-package madrid.uax.sistema_gestion_biblioteca;
+package madrid.uax.tecnicasprogramacion.sistema_gestion_biblioteca;
 
 public abstract class Libro implements Imprimible {
     private String titulo;

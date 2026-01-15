@@ -1,4 +1,4 @@
-package madrid.uax.sistema_gestion_banco;
+package madrid.uax.tecnicasprogramacion.sistema_gestion_banco;
 
 /**
  * Esta excepión (error) ocurre cuando el usuario intenta

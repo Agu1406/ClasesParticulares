@@ -1,4 +1,4 @@
-package castillaleon.valladolid.iesgregoriofernandez.aplicacion_bancaria.modelos;
+package castillaleon.valladolid.iesgregoriofernandez.aplicacion_bancaria.Modelos;
 
 public class Cuenta {
 	private String ISBN;
