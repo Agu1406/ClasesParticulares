@@ -1,9 +1,8 @@
-package general.strings;
+package general.ejerciciosconocidos;
 
 /**
- * Ejercicio 11: Contar caracteres en un string
- * Crea un programa que cuente la cantidad de caracteres en una palabra/string
- * tomando en cuenta los espacios en blanco y sin tomarlos en cuenta
+ * Ejercicio 8: A partir del siguiente array {2, 3, 4, 7, 8} obtener otro donde
+ * la primera posición se multiplique por 10, la segunda por 100, la tercera por 1000 etc...
  * 
  * @author Agustín. A. Marquez. Piña
  * @since 14/06/2025
@@ -11,8 +10,9 @@ package general.strings;
  * @see <a href="https://github.com/Agu1406/ClasesParticulares">Repositorio GitHub</a>
  * @see <a href="https://agu1406.github.io/ClasesParticulares">GitHub Pages</a>
  */
-public class Ejercicio11_ContarCaracteres {
+public class Ejercicio8_Arrays_MultiplicarPorPotencia10 {
     public static void main(String[] args) {
         
     }
 }
+

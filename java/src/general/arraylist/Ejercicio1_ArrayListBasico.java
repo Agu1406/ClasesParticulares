@@ -1,9 +1,11 @@
-package general.strings;
+package general.arraylist;
+
+import java.util.ArrayList;
 
 /**
- * Ejercicio 11: Contar caracteres en un string
- * Crea un programa que cuente la cantidad de caracteres en una palabra/string
- * tomando en cuenta los espacios en blanco y sin tomarlos en cuenta
+ * Ejercicio 1: ArrayList básico
+ * Crea un ArrayList de números enteros, agrega 5 números usando el método add,
+ * y muestra todos los valores usando un bucle for
  * 
  * @author Agustín. A. Marquez. Piña
  * @since 14/06/2025
@@ -11,8 +13,10 @@ package general.strings;
  * @see <a href="https://github.com/Agu1406/ClasesParticulares">Repositorio GitHub</a>
  * @see <a href="https://agu1406.github.io/ClasesParticulares">GitHub Pages</a>
  */
-public class Ejercicio11_ContarCaracteres {
+public class Ejercicio1_ArrayListBasico {
     public static void main(String[] args) {
         
     }
 }
+
+

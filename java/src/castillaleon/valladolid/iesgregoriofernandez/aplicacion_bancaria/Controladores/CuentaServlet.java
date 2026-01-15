@@ -10,8 +10,8 @@ import jakarta.servlet.http.HttpSession;
 
 import java.io.IOException;
 
-import CastillaLeon.Valladolid.IESGregorioFernandez.aplicacion_bancaria.Modelos.Cliente;
-import CastillaLeon.Valladolid.IESGregorioFernandez.aplicacion_bancaria.Modelos.Cuenta;
+import castillaleon.valladolid.iesgregoriofernandez.aplicacion_bancaria.Modelos.Cliente;
+import castillaleon.valladolid.iesgregoriofernandez.aplicacion_bancaria.Modelos.Cuenta;
 
 /**
  * Servlet implementation class CuentaServlet
