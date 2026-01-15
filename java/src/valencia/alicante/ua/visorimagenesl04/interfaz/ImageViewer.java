@@ -1,9 +1,9 @@
 package valencia.alicante.ua.visorimagenesl04.interfaz;
 
 
-import Valencia.Alicante.UA.visorImagenesL04.filtros.*;
-import Valencia.Alicante.UA.visorImagenesL04.imagen.ImageFileManager;
-import Valencia.Alicante.UA.visorImagenesL04.imagen.OFImage;
+import valencia.alicante.ua.visorimagenesl04.filtros.*;
+import valencia.alicante.ua.visorimagenesl04.imagen.ImageFileManager;
+import valencia.alicante.ua.visorimagenesl04.imagen.OFImage;
 
 import javax.swing.*;
 import javax.swing.border.EmptyBorder;

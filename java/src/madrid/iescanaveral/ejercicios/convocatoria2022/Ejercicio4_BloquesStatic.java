@@ -1,4 +1,4 @@
-package madrid.iescanaveral.ejercicios;
+package madrid.iescanaveral.ejercicios.convocatoria2022;
 
 /**
  * Ejercicio 4: Dado el siguiente código, ¿es correcto o presenta errores en tiempo de compilación o ejecución?

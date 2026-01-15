@@ -1,4 +1,4 @@
-package madrid.iescanaveral.ejercicios.resueltos;
+package madrid.iescanaveral.ejercicios.convocatoria2022.resueltos;
 
 /**
  * Ejercicio 13: Dada el siguiente código, indicar la salida - RESUELTO

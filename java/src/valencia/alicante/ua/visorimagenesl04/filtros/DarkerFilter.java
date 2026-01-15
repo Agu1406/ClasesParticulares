@@ -1,7 +1,7 @@
 package valencia.alicante.ua.visorimagenesl04.filtros;
 
 
-import Valencia.Alicante.UA.visorImagenesL04.imagen.OFImage;
+import valencia.alicante.ua.visorimagenesl04.imagen.OFImage;
 
 /**
  * An image filter to make the image a bit darker.

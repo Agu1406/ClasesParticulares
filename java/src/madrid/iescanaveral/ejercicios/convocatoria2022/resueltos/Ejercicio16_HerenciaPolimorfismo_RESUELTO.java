@@ -1,4 +1,4 @@
-package madrid.iescanaveral.ejercicios.resueltos;
+package madrid.iescanaveral.ejercicios.convocatoria2022.resueltos;
 
 /**
  * Ejercicio 16: Dado el siguiente fragmento de código, indicar cuál es correcta - RESUELTO

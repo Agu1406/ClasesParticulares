@@ -1,4 +1,4 @@
-package madrid.iescanaveral.ejercicios;
+package madrid.iescanaveral.ejercicios.convocatoria2022;
 
 /**
  * Ejercicio 3: ¿Cuál es la salida del siguiente programa?

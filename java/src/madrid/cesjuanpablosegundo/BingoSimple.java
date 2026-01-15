@@ -1,4 +1,4 @@
-package PracticasT4.Bingo;
+package madrid.cesjuanpablosegundo;
 
 /**
  * Practica que simula un juego de bingo con Arrays de una dimensión y
@@ -8,7 +8,7 @@ package PracticasT4.Bingo;
  * @author Billy
  * @since 18/11/2025
  */
-public class Bingo {
+public class BingoSimple {
     public static void main(String[] args) {
         /*
          * Representación "grafica" del Array que acabamos de crear.

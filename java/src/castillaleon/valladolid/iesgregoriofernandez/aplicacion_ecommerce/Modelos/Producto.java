@@ -1,4 +1,4 @@
-package castillaleon.valladolid.iesgregoriofernandez.aplicacion_ecommerce.modelos;
+package castillaleon.valladolid.iesgregoriofernandez.aplicacion_ecommerce.Modelos;
 
 // Clase que representa un producto en la tienda
 public class Producto {

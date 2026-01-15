@@ -1,4 +1,4 @@
-package castillaleon.valladolid.iesgregoriofernandez.aplicacion_bancaria.controladores;
+package castillaleon.valladolid.iesgregoriofernandez.aplicacion_bancaria.Controladores;
 
 import jakarta.servlet.RequestDispatcher;
 import jakarta.servlet.ServletException;

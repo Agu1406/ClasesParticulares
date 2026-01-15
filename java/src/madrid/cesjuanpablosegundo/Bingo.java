@@ -1,3 +1,5 @@
+package madrid.cesjuanpablosegundo;
+
 import java.util.Random;
 
 /**

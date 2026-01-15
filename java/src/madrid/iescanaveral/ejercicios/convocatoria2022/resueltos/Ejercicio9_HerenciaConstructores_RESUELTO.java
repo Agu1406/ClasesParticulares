@@ -1,4 +1,4 @@
-package madrid.iescanaveral.ejercicios.resueltos;
+package madrid.iescanaveral.ejercicios.convocatoria2022.resueltos;
 
 /**
  * Ejercicio 9: ¿Cuál es la salida al siguiente programa? - RESUELTO

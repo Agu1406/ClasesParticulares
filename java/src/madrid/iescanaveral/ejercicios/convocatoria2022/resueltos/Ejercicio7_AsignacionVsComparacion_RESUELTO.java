@@ -1,4 +1,4 @@
-package madrid.iescanaveral.ejercicios.resueltos;
+package madrid.iescanaveral.ejercicios.convocatoria2022.resueltos;
 
 /**
  * Ejercicio 7: ¿Cuál es la salida del siguiente código? - RESUELTO
