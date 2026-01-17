@@ -1,4 +1,4 @@
-package madrid.uax.sistema_gestion_empleado;
+package madrid.uax.tecnicasprogramacion.sistema_gestion_empleado;
 
 /**
  * Interfaz para calcular el salario de un empleado.

@@ -1,4 +1,4 @@
-package madrid.uax.sistema_grafo_arista;
+package madrid.uax.estructuradatos.sistema_grafo_arista;
 public class Arista {
     private Nodo v1;
     private Nodo v2;

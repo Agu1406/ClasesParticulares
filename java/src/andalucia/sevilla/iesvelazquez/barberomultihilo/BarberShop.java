@@ -1,4 +1,4 @@
-package org.example;
+package andalucia.sevilla.iesvelazquez.barberomultihilo;
 
 /**
  * Clase monitor que coordina la sincronización entre el barbero y los clientes.

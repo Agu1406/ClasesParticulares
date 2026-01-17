@@ -1,4 +1,4 @@
-package madrid.uax.sistema_juego_ajedrez.ejercicio3;
+package madrid.uax.tecnicasprogramacion.sistema_juego_ajedrez.ejercicio3;
 
 import java.util.LinkedList;
 

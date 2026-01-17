@@ -1,8 +1,8 @@
-package madrid.uax.sistema_juego_ajedrez;
+package madrid.uax.tecnicasprogramacion.sistema_juego_ajedrez;
 
-import Madrid.UAX.sistema_juego_ajedrez.ejercicio3.PartidaAjedrez;
-import Madrid.UAX.sistema_juego_ajedrez.ejercicio3.Peon;
-import Madrid.UAX.sistema_juego_ajedrez.ejercicio3.Pieza;
+import madrid.uax.tecnicasprogramacion.sistema_juego_ajedrez.ejercicio3.PartidaAjedrez;
+import madrid.uax.tecnicasprogramacion.sistema_juego_ajedrez.ejercicio3.Peon;
+import madrid.uax.tecnicasprogramacion.sistema_juego_ajedrez.ejercicio3.Pieza;
 
 import java.util.Scanner;
 

@@ -1,7 +1,7 @@
 package valencia.alicante.ua.visorimagenesl04.filtros;
 
 
-import Valencia.Alicante.UA.visorImagenesL04.imagen.OFImage;
+import valencia.alicante.ua.visorimagenesl04.imagen.OFImage;
 
 /**
  * Filter is an abstract superclass for all image filters in this

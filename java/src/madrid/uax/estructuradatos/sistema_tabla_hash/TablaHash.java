@@ -1,4 +1,4 @@
-package madrid.uax.sistema_tabla_hash;
+package madrid.uax.estructuradatos.sistema_tabla_hash;
 import java.util.HashMap;
 import java.util.Map;
 
