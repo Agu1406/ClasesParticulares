@@ -1,4 +1,4 @@
-package madrid.uax.sistema_gestion_banco;
+package madrid.uax.tecnicasprogramacion.sistema_gestion_banco;
 
 public class CuentaBancaria {
     // ATRBITUOS DE LA CLASE //

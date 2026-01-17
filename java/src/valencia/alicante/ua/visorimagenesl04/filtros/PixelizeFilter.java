@@ -1,6 +1,6 @@
 package valencia.alicante.ua.visorimagenesl04.filtros;
 
-import Valencia.Alicante.UA.visorImagenesL04.imagen.OFImage;
+import valencia.alicante.ua.visorimagenesl04.imagen.OFImage;
 
 import java.awt.*;
 

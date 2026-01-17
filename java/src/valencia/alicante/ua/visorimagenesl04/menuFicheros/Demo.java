@@ -1,7 +1,7 @@
 package valencia.alicante.ua.visorimagenesl04.menuFicheros;
 
 
-import Valencia.Alicante.UA.visorImagenesL04.interfaz.ImageViewer;
+import valencia.alicante.ua.visorimagenesl04.interfaz.ImageViewer;
 
 public class Demo {
     public static void main(String[] args) {

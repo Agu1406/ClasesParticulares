@@ -1,4 +1,10 @@
-package feedback_final;
+package madrid.uax.estructuradatos.feedback_final_estructura_datos;
+
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.Map;
+import java.util.Objects;
+import java.util.TreeSet;
 
 /**
  * Soluciones al Feedback Final de Estructura de Datos

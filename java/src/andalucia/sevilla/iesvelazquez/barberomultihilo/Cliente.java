@@ -1,4 +1,4 @@
-package org.example;
+package andalucia.sevilla.iesvelazquez.barberomultihilo;
 
 /**
  * Clase que representa a un cliente. Implementa Runnable para poder ejecutarse en un hilo.

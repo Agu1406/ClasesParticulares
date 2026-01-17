@@ -1,4 +1,4 @@
-package castillaleon.valladolid.iesgregoriofernandez.aplicacion_ecommerce.controladores;
+package castillaleon.valladolid.iesgregoriofernandez.aplicacion_ecommerce.Controladores;
 
 import jakarta.servlet.ServletException;
 import jakarta.servlet.annotation.WebServlet;
@@ -10,14 +10,14 @@ import jakarta.servlet.http.HttpSession;
 import jakarta.servlet.ServletContextEvent;
 import jakarta.servlet.ServletContextListener;
 import jakarta.servlet.FilterChain;
-import CastillaLeon.Valladolid.IESGregorioFernandez.aplicacion_ecommerce.Modelos.Producto;
+import castillaleon.valladolid.iesgregoriofernandez.aplicacion_ecommerce.Modelos.Producto;
 
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 
 // Servlet que maneja las peticiones de la aplicación
-@WebServlet("/CastillaLeon.Valladolid.IESGregorioFernandez.aplicacion_ecommerce.Controladores.ServletController")
+@WebServlet("/ServletController")
 public class ServletController extends HttpServlet implements ServletContextListener {
 
     // Método que se ejecuta al iniciar la aplicación
