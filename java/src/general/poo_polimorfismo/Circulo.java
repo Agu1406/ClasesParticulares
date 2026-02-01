@@ -1,8 +1,12 @@
-package general.strings;
+package general.poo_polimorfismo;
 
 /**
- * Ejercicio 2: Longitud de un string
- * Crea un string y muestra su longitud por pantalla usando la función length()
+ * Subclase Circulo que hereda de Figura.
+ *
+ * Debe tener:
+ *  - atributo radio
+ *  - constructor con radio
+ *  - implementación de calcularArea()
  * 
  * @author Agustín. A. Marquez. Piña
  * @since 14/06/2025
@@ -10,8 +14,9 @@ package general.strings;
  * @see <a href="https://github.com/Agu1406/ClasesParticulares">Repositorio GitHub</a>
  * @see <a href="https://agu1406.github.io/ClasesParticulares">GitHub Pages</a>
  */
-public class Ejercicio2_LongitudString {
-    public static void main(String[] args) {
-        
-    }
+public class Circulo extends Figura {
+
+    // TODO: Implementar atributo radio, constructor y función calcularArea()
+
 }
+
