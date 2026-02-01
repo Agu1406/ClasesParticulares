@@ -1,8 +1,9 @@
-package general.strings;
+package general.poo_herencia;
 
 /**
- * Ejercicio 2: Longitud de un string
- * Crea un string y muestra su longitud por pantalla usando la función length()
+ * Subclase Gato que hereda de Animal.
+ *
+ * Debe sobrescribir la función hacerSonido() para imprimir algo como "Miau".
  * 
  * @author Agustín. A. Marquez. Piña
  * @since 14/06/2025
@@ -10,8 +11,9 @@ package general.strings;
  * @see <a href="https://github.com/Agu1406/ClasesParticulares">Repositorio GitHub</a>
  * @see <a href="https://agu1406.github.io/ClasesParticulares">GitHub Pages</a>
  */
-public class Ejercicio2_LongitudString {
-    public static void main(String[] args) {
-        
-    }
+public class Gato extends Animal {
+
+    // TODO: Crear constructor que llame a super(nombre) y sobrescribir la función hacerSonido()
+
 }
+

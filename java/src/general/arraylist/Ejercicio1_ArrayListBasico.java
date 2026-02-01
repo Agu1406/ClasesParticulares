@@ -4,7 +4,7 @@ import java.util.ArrayList;
 
 /**
  * Ejercicio 1: ArrayList básico
- * Crea un ArrayList de números enteros, agrega 5 números usando el método add,
+ * Crea un ArrayList de números enteros, agrega 5 números usando la función add,
  * y muestra todos los valores usando un bucle for
  * 
  * @author Agustín. A. Marquez. Piña

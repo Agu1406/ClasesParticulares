@@ -3,7 +3,7 @@ package general.funciones;
 /**
  * Ejercicio 1: Función sin parámetros que retorna void
  * Crea una función llamada mostrarMensaje que muestre "Hola, esta es mi primera función"
- * y llámala desde el método main
+ * y llámala desde la función main
  * 
  * @author Agustín. A. Marquez. Piña
  * @since 14/06/2025
