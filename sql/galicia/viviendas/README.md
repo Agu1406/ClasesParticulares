@@ -2,7 +2,7 @@
 
 Este material está diseñado para aprender SQL desde cero usando la base de datos de viviendas. Cada consulta está en un archivo separado con explicaciones detalladas.
 
-## 📋 Índice
+## Índice
 
 1. [Estructura de la Base de Datos](#estructura-de-la-base-de-datos)
 2. [Diagrama Entidad-Relación](#diagrama-entidad-relación)
@@ -14,7 +14,7 @@ Este material está diseñado para aprender SQL desde cero usando la base de dat
 
 ---
 
-## 🗄️ Estructura de la Base de Datos
+## Estructura de la Base de Datos
 
 La base de datos `viviendas` está compuesta por 4 tablas principales:
 
@@ -72,7 +72,7 @@ Tabla de relación que conecta personas con viviendas (tabla intermedia).
 
 ---
 
-## 📊 Diagrama Entidad-Relación
+## Diagrama Entidad-Relación
 
 ```
 ┌─────────────────────────────────────────────────────────────────┐
@@ -145,7 +145,7 @@ Tabla de relación que conecta personas con viviendas (tabla intermedia).
 
 ---
 
-## 📚 Conceptos Fundamentales de SQL
+## Conceptos Fundamentales de SQL
 
 ### SELECT - Consultar Datos
 
@@ -246,11 +246,11 @@ SELECT DISTINCT nombre_zona FROM viviendas;
 
 ---
 
-## 🔗 Tipos de JOIN - Explicación Visual con Diagramas de Venn
+## Tipos de JOIN - Explicación Visual con Diagramas de Venn
 
 Los JOINs permiten combinar datos de múltiples tablas relacionadas. La mejor forma de entenderlos es visualizándolos como **círculos superpuestos** (diagramas de Venn).
 
-### 📊 Concepto Base: Dos Círculos Superpuestos
+### Concepto Base: Dos Círculos Superpuestos
 
 Imagina que tienes dos tablas representadas como dos círculos:
 
@@ -280,7 +280,7 @@ Cuando las tablas tienen datos relacionados, los círculos se superponen:
 
 ---
 
-### 1️⃣ INNER JOIN - Solo la Intersección
+### 1. INNER JOIN - Solo la Intersección
 
 **¿Qué hace?** Devuelve **SOLO** las filas donde hay coincidencia en ambas tablas.
 
@@ -338,15 +338,15 @@ INNER JOIN habitar h ON p.dni = h.dni;
 | Juan | Gil | 10004 | 1987-10-30 |
 
 **Observaciones:**
-- ✅ **Incluye:** Marcos, Carlos y Juan (tienen coincidencias en ambas tablas)
-- ❌ **Excluye:** Rodrigo (no tiene registro en `habitar`)
-- ⚠️ **Nota:** Juan aparece 2 veces porque habita 2 viviendas diferentes
+- **Incluye:** Marcos, Carlos y Juan (tienen coincidencias en ambas tablas)
+- **Excluye:** Rodrigo (no tiene registro en `habitar`)
+- **Nota:** Juan aparece 2 veces porque habita 2 viviendas diferentes
 
 **Cuándo usar:** Cuando solo necesitas datos que existen en ambas tablas.
 
 ---
 
-### 2️⃣ LEFT JOIN - Todo el Círculo Izquierdo + Intersección
+### 2. LEFT JOIN - Todo el Círculo Izquierdo + Intersección
 
 **¿Qué hace?** Devuelve **TODAS** las filas de la tabla izquierda (A) y las coincidencias de la tabla derecha (B). Si no hay coincidencia, las columnas de B serán NULL.
 
@@ -407,16 +407,16 @@ LEFT JOIN habitar h ON p.dni = h.dni;
 | Juan | Gil | 10004 | 1987-10-30 |
 
 **Observaciones:**
-- ✅ **Incluye:** TODAS las personas de la tabla izquierda
-- ✅ **Incluye:** Rodrigo aparece aunque no tenga vivienda (valores NULL)
-- ✅ **Incluye:** Marcos, Carlos y Juan con sus datos de vivienda
-- ⚠️ **Nota:** Juan aparece 2 veces porque habita 2 viviendas
+- **Incluye:** TODAS las personas de la tabla izquierda
+- **Incluye:** Rodrigo aparece aunque no tenga vivienda (valores NULL)
+- **Incluye:** Marcos, Carlos y Juan con sus datos de vivienda
+- **Nota:** Juan aparece 2 veces porque habita 2 viviendas
 
 **Cuándo usar:** Cuando necesitas todos los registros de la tabla izquierda, incluso si no tienen coincidencias.
 
 ---
 
-### 3️⃣ RIGHT JOIN - Todo el Círculo Derecho + Intersección
+### 3. RIGHT JOIN - Todo el Círculo Derecho + Intersección
 
 **¿Qué hace?** Devuelve **TODAS** las filas de la tabla derecha (B) y las coincidencias de la tabla izquierda (A). Si no hay coincidencia, las columnas de A serán NULL.
 
@@ -478,10 +478,10 @@ RIGHT JOIN zonas z ON v.nombre_zona = z.nombre_zona;
 | Sector Oeste | Al west | **NULL** | **NULL** |
 
 **Observaciones:**
-- ✅ **Incluye:** TODAS las zonas de la tabla derecha
-- ✅ **Incluye:** Sector Este y Sector Oeste aparecen aunque no tengan viviendas (valores NULL)
-- ✅ **Incluye:** Centro aparece 2 veces porque tiene 2 viviendas
-- ❌ **Excluye:** Solo se muestran viviendas que coinciden con zonas
+- **Incluye:** TODAS las zonas de la tabla derecha
+- **Incluye:** Sector Este y Sector Oeste aparecen aunque no tengan viviendas (valores NULL)
+- **Incluye:** Centro aparece 2 veces porque tiene 2 viviendas
+- **Excluye:** Solo se muestran viviendas que coinciden con zonas
 
 **Nota importante:** RIGHT JOIN es menos común. Muchos desarrolladores prefieren usar LEFT JOIN cambiando el orden de las tablas:
 
@@ -494,7 +494,7 @@ LEFT JOIN viviendas v ON z.nombre_zona = v.nombre_zona;
 
 ---
 
-### 4️⃣ FULL OUTER JOIN - Ambos Círculos Completos
+### 4. FULL OUTER JOIN - Ambos Círculos Completos
 
 **¿Qué hace?** Devuelve **TODAS** las filas de ambas tablas. Si no hay coincidencia, las columnas de la otra tabla serán NULL.
 
@@ -559,14 +559,14 @@ RIGHT JOIN habitar h ON p.dni = h.dni;
 | **NULL** | **NULL** | 40000 | 1985-12-11 |
 
 **Observaciones:**
-- ✅ **Incluye:** TODAS las personas (incluso sin vivienda)
-- ✅ **Incluye:** TODOS los registros de habitar (incluso sin persona)
-- ✅ **Incluye:** La persona con DNI 50123456Z aparece aunque no esté en la tabla `personas` (valores NULL)
-- ⚠️ **Nota:** En este caso, el último registro muestra una vivienda habitada por alguien que no está en la tabla `personas` (posible inconsistencia de datos)
+- **Incluye:** TODAS las personas (incluso sin vivienda)
+- **Incluye:** TODOS los registros de habitar (incluso sin persona)
+- **Incluye:** La persona con DNI 50123456Z aparece aunque no esté en la tabla `personas` (valores NULL)
+- **Nota:** En este caso, el último registro muestra una vivienda habitada por alguien que no está en la tabla `personas` (posible inconsistencia de datos)
 
 ---
 
-### 🔄 SELF JOIN - Un Círculo Consigo Mismo
+### SELF JOIN - Un Círculo Consigo Mismo
 
 **¿Qué hace?** Una tabla se une consigo misma. Se usa para comparar filas dentro de la misma tabla.
 
@@ -628,16 +628,16 @@ LEFT JOIN personas padre ON hijo.dni_padre = padre.dni;
 | Elena | Hernandez | Mario | Lopez B |
 
 **Observaciones:**
-- ✅ **Incluye:** Todas las personas (hijos)
-- ✅ **Incluye:** Relaciones padre-hijo cuando existen
-- ✅ **Incluye:** NULL para personas sin padre registrado (Rodrigo y Marcos)
-- 🔗 **Relación:** Carlos y Juan son hijos de Rodrigo; Mario es hijo de Marcos; Elena es hija de Mario
+- **Incluye:** Todas las personas (hijos)
+- **Incluye:** Relaciones padre-hijo cuando existen
+- **Incluye:** NULL para personas sin padre registrado (Rodrigo y Marcos)
+- **Relación:** Carlos y Juan son hijos de Rodrigo; Mario es hijo de Marcos; Elena es hija de Mario
 
 **Cuándo usar:** Para relaciones jerárquicas dentro de la misma tabla (padres-hijos, empleados-jefes, etc.).
 
 ---
 
-### 📊 Comparación Visual Completa
+### Comparación Visual Completa
 
 ```
 INNER JOIN:                    LEFT JOIN:                    RIGHT JOIN:
@@ -645,24 +645,24 @@ INNER JOIN:                    LEFT JOIN:                    RIGHT JOIN:
  ╱    A    ╲   ╱    B    ╲    ╱  LEFT JOIN ╲   ╱    B    ╲    ╱    A    ╲   ╱ RIGHT JOIN ╲
 │           │ │           │   │  (A completo)│ │           │   │           │ │ (B completo)│
 │    ╔═══╗  │ │  ╔═══╗    │   │              │ │           │   │           │ │             │
-│    ║ ✓ ║  │ │  ║ ✓ ║    │   │    ╔═════════╗═══════╗    │   │    ╔═══════╗═════════════╗
-│    ╚═══╝  │ │  ╚═══╝    │   │    ║    ✓    ║   ✓   ║    │   │    ║   ✓   ║      ✓      ║
+│    ║ + ║  │ │  ║ + ║    │   │    ╔═════════╗═══════╗    │   │    ╔═══════╗═════════════╗
+│    ╚═══╝  │ │  ╚═══╝    │   │    ║    +    ║   +   ║    │   │    ║   +   ║      +      ║
 │           │ │           │   │    ╚═════════╝═══════╝    │   │    ╚═══════╝═════════════╝
  ╲         ╱   ╲         ╱     ╲              ╱   ╲         ╱     ╲         ╱   ╲             ╱
   ╰───────╯     ╰───────╯       ╰═══════════╯     ╰───────╯       ╰───────╯     ╰═══════════╯
-     ✗              ✗                ✓              ✗                ✗              ✓
+     -              -                +              -                -              +
 
 Solo intersección          A completo +              B completo +
                            intersección             intersección
 ```
 
 **Leyenda:**
-- ✓ = Incluido en el resultado (área sombreada)
-- ✗ = Excluido del resultado (área no sombreada)
+- + = Incluido en el resultado (área sombreada)
+- - = Excluido del resultado (área no sombreada)
 
 ---
 
-### 🎯 Resumen Rápido
+### Resumen Rápido
 
 | Tipo de JOIN | ¿Qué incluye? | Diagrama de Venn |
 |--------------|---------------|-------------------|
@@ -673,7 +673,7 @@ Solo intersección          A completo +              B completo +
 
 ---
 
-### 💡 Consejos para Recordar
+### Consejos para Recordar
 
 1. **INNER JOIN = "Solo lo que coincide"**
    - Como una intersección de carreteras: solo donde se cruzan
@@ -692,7 +692,7 @@ Solo intersección          A completo +              B completo +
 
 ---
 
-### 🔍 Comparación Rápida: INNER vs LEFT JOIN
+### Comparación Rápida: INNER vs LEFT JOIN
 
 **Tabla `personas` (izquierda):**
 | dni | nombre | apellidos |
@@ -740,7 +740,7 @@ LEFT JOIN habitar h ON p.dni = h.dni;
 
 ---
 
-## 📅 Funciones de Fecha
+## Funciones de Fecha
 
 MySQL proporciona varias funciones para trabajar con fechas.
 
@@ -830,7 +830,7 @@ SELECT DATE_FORMAT('1987-10-30', '%Y-%m-%d');  -- Devuelve: 1987-10-30
 
 ---
 
-## 🔢 Funciones de Agregación
+## Funciones de Agregación
 
 Las funciones de agregación realizan cálculos sobre un conjunto de filas.
 
@@ -886,7 +886,7 @@ GROUP BY nombre_zona;
 
 ---
 
-## 📝 Orden de Ejecución de las Consultas
+## Orden de Ejecución de las Consultas
 
 Cuando MySQL ejecuta una consulta, sigue este orden:
 
@@ -921,7 +921,7 @@ ORDER BY p.nombre;
 
 ---
 
-## 📖 Glosario de Términos
+## Glosario de Términos
 
 ### Base de Datos (Database)
 Colección organizada de datos estructurados que se almacenan y acceden electrónicamente.
@@ -961,7 +961,7 @@ Sistema de Gestión de Bases de Datos (Relacionales). Software que gestiona base
 
 ---
 
-## 🎯 Consejos para Aprender
+## Consejos para Aprender
 
 1. **Empieza simple:** Comienza con consultas básicas (SELECT, WHERE) antes de JOINs complejos.
 
@@ -981,7 +981,23 @@ Sistema de Gestión de Bases de Datos (Relacionales). Software que gestiona base
 
 ---
 
-## 📁 Archivos de Consultas
+## Formato estándar de las consultas
+
+Cada archivo usa comentarios multilínea `/* */` y un tono cercano:
+
+```
+/* CONSULTA N: Título
+   Explicación breve, en lenguaje natural */
+USE viviendas;
+/* La consulta */
+SELECT ...
+/* Qué deberías ver */
+/* Ideas para practicar más */
+```
+
+---
+
+## Archivos de Consultas
 
 Cada consulta está en un archivo separado:
 
@@ -1008,7 +1024,7 @@ Cada consulta está en un archivo separado:
 
 ---
 
-## 🚀 Cómo Usar Este Material
+## Cómo Usar Este Material
 
 1. **Preparación:**
    - Asegúrate de tener MySQL instalado
@@ -1031,5 +1047,5 @@ Cada consulta está en un archivo separado:
 
 ---
 
-¡Buena suerte con tu aprendizaje de SQL! 🎓
+Buena suerte con tu aprendizaje de SQL.
 
