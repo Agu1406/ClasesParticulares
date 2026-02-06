@@ -1,4 +1,4 @@
-package andalucia.sevilla.iesvelazquez.tallermecanico;
+package andalucia.sevilla.iesvelazquez.DAM2.tallermecanicomultihilo;
 
 /**
  * Monitor que coordina la sincronización entre el mecánico y los coches.
