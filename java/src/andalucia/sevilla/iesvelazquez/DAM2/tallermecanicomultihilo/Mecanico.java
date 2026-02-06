@@ -1,4 +1,4 @@
-package andalucia.sevilla.iesvelazquez.tallermecanico;
+package andalucia.sevilla.iesvelazquez.DAM2.tallermecanicomultihilo;
 
 /**
  * Representa al mecánico. Duerme cuando no hay coches y repara cuando llegan.

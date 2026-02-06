@@ -1,4 +1,4 @@
-package andalucia.sevilla.iesvelazquez.tallermecanico;
+package andalucia.sevilla.iesvelazquez.DAM2.tallermecanicomultihilo;
 
 /**
  * Representa un coche. Intenta entrar al taller y espera su turno para ser reparado.
