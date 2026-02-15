@@ -1,6 +1,6 @@
 # Notas y matices
 
-El contenido de esta guía esta fuertemente inspirado en dos cosas, la primera, el temario de Java que aprendí durante mi curso de **DAW 2023/2025** en el **IES Arquitecto Ventura Rodriguez**, instituto publico de Boadilla del Monte, Madrid, España y segundo en el **RoadMap** de Java que se puede ver y encontrar en https://roadmap.sh/java 
+El contenido de esta guía esta fuertemente inspirado en dos cosas, la primera, el temario de Java que aprendí durante mi curso de **DAW 2023/2025** en el **IES Arquitecto Ventura Rodriguez**, instituto publico de Boadilla del Monte, Madrid, España y segundo en el **RoadMap** de Java que se puede ver y encontrar en [**RoadMap de Java**](https://roadmap.sh/java) 
 
 # Indice de contenido
 
@@ -20,7 +20,7 @@ El contenido de esta guía esta fuertemente inspirado en dos cosas, la primera, 
 
 # Conceptos básicos
 
-Los lenguajes de programación no se aprenden de la noche a la mañana y Java no es la excepción, antes de llamarnos profesionales tenemos que comprender los conceptos básicos, las terminologías, convenciones de nomenclatura y otros aspectos basícos que nos permitan entender mejor el lenguaje, es por eso que he dividido el contenido de aprendizaje usando guías ofiiclaes como https://roadmap.sh/java para definir el contenido de está guía.
+Los lenguajes de programación no se aprenden de la noche a la mañana y Java no es la excepción, antes de llamarnos profesionales tenemos que comprender los conceptos básicos, las terminologías, convenciones de nomenclatura y otros aspectos basícos que nos permitan entender mejor el lenguaje, es por eso que he dividido el contenido de aprendizaje basandome en diferentes guías y temarios oficiales de centros públicos y privados de España.
 
 ## Ciclo de vida de un programa
 
