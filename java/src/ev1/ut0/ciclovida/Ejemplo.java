@@ -1,5 +1,5 @@
 // La linea llamada "package" podeís ignorarla por completo, mucho más adelante se explica.
-package conceptosbasicos.ciclovidaprograma;
+package ev1.ut0.ciclovida;
 
 /**
  * En el README hablo sobre esto, el nombre de nuestro archivo es
@@ -13,7 +13,7 @@ package conceptosbasicos.ciclovidaprograma;
  * cual podemos ejecutar en cualquier ordenador que tenga isntalado
  * Java.
  */
-public class EjemploPrograma {
+public class Ejemplo {
     public static void main(String[] args) {
 
     }

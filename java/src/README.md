@@ -1,128 +1,392 @@
+<!-- Etiquetas de estilo personales para el README. -->
+<style>
+    h1, h2, h3 {
+        text-align: center;
+        border: 5px solid grey;
+        padding: 20px
+    }
+
+    h4 {
+        text-align: center;
+        font-size: 16px;
+    }
+    p {
+        text-indent: 20px;
+        text-align: justify;
+    }
+
+    table {
+        border: 1px solid white;
+        margin-left: auto;
+        margin-right: auto;
+        margin-bottom: 10%;
+        margin-top: 10%;
+    }
+    th, td {
+        border: 1px solid white;
+        text-align: center;
+    }
+</style>
 # Notas y matices
 
-El contenido de esta guía esta fuertemente inspirado en dos cosas, la primera, el temario de Java que aprendí durante mi curso de **DAW 2023/2025** en el **IES Arquitecto Ventura Rodriguez**, instituto publico de Boadilla del Monte, Madrid, España y segundo en el **RoadMap** de Java que se puede ver y encontrar en [**RoadMap de Java**](https://roadmap.sh/java) 
+El contenido de esta guía está fuertemente inspirado en dos cosas, la primera, el temario de Java que aprendí durante mi curso de **DAW 2023/2025** en el **IES Arquitecto Ventura Rodríguez**, instituto público de Boadilla del Monte, Madrid, España y segundo en el **RoadMap** de Java que se puede ver y encontrar en [**RoadMap de Java**](https://roadmap.sh/java).
+
+#### La organización del directorio de aprendizaje de Java es la siguiente:
+
+```bash
+src/
+├── ev1/
+│   └── ut0/
+│       ├── ciclovidaprograma/
+│       │   └── EjemploPrograma.java
+│       └── sintaxisbasica/
+│           ├── ProgramaUno.java
+│           ├── ProgramaDos.java
+│           └── ProgramaTres.java
+├── ev2/   # (planificado)
+├── ev3/   # (planificado)
+└── README.md
+```
 
 # Indice de contenido
 
-1. [**Conceptos básicos**](#conceptos-básicos)
-    * [**Ciclo de vida de un programa**](#ciclo-de-vida-de-un-programa)
-    * [**Sintaxis básica**](#sintaxis-básica)
-    * [**Tipos de datos**](#tipos-de-datos)
-    * [**Variables y alcances**](#variables-y-alcances)
-    * [**Tipo fundición**](#tipo-fundición)
-    * [**Cuerdas y métodos**](#cuerdas-y-métodos)
-    * [**Operaciones matemáticas**](#operaciones-matemáticas)
-    * [**Matrices**](#matrices)
-    * [**Condicionales**](#condicionales)
+* **Primera evaluación (EV1)**
+    + **Contenido de la unidad teórica 0 (UT0)**
+        1. [**Conceptos básicos**](#conceptos-básicos)
+        2. [**Ciclo de vida de un programa**](#ciclo-de-vida-de-un-programa)
+        3. [**Sintaxis básica**](#sintaxis-básica)
+        4. [**Tipos de datos**](#tipos-de-datos)
+    * [**Casteo de tipos**](#casteo-de-tipos)
     * [**Bucles**](#bucles)
+    * [**Condicionales**](#condicionales)
+    * [**Strings y funciones**](#strings-y-funciones)
+    * [**Operaciones matemáticas**](#operaciones-matemáticas)
+    * [**Arrays**](#arrays)
     * [**Conceptos básicos de la POO**](#conceptos-básicos-de-la-poo)
-2. [****]()
+* [****]()
+* [****]()
 
-# Conceptos básicos
+| [**Siguiente**](#primera-evaluación-ev1) | [**Indice**](#indice-de-contenido) | [**Anterior**](#indice-de-contenido)  |
+|-------------------------------------------|-------------------------------------------|-------------------------------------------|
 
-Los lenguajes de programación no se aprenden de la noche a la mañana y Java no es la excepción, antes de llamarnos profesionales tenemos que comprender los conceptos básicos, las terminologías, convenciones de nomenclatura y otros aspectos basícos que nos permitan entender mejor el lenguaje, es por eso que he dividido el contenido de aprendizaje basandome en diferentes guías y temarios oficiales de centros públicos y privados de España.
+# **Primera evaluación (EV1)**
 
-## Ciclo de vida de un programa
+En la primera evaluación aprenderemos a introducirnos en Java como lenguaje de programación, aprenderemos a escribir nuestras primeras líneas de código, cómo imprimir mensajes en nuestros programas. Posteriormente, aprenderemos las estructuras de control de un programa (bucles, condicionales), el uso de funciones, el uso de `String`, `StringBuilder`, `Character`, `Integer`, `Math`, `Double`, etc. y, finalmente, una breve introducción a la programación orientada a objetos **(POO)**. El [**indice de contenido**](#indice-de-contenido) nos ayudará a desplazarnos durante toda nuestra etapa de aprendizaje a través de los diferentes niveles del curso.
 
-La mayoría de las personas están familiarizadas de una forma u otra con los distintos formatos que tienen los archivos, documentos y/o programas que usamos en el día a día, por ejemplo, todos sabemos que un **.pdf** es un archivo que tiene texto, imagenes e información en el, otros formatos conocidos por ejemplo son los de Microsoft Word que son los archivos **.docx** o los **.txt** que son de texto básico.
+| [**Siguiente**](#conceptos-básicos) | [**Indice**](#indice-de-contenido) | [**Anterior**](#indice-de-contenido)  |
+|-------------------------------------------|-------------------------------------------|-------------------------------------------|
 
-Todos los archivos de **Java** terminan en el formato **.java**, estos son los archivos editables, es decir, se pueden abrir y/o modificar desde programas de edición de código/texto como **IntelliJ**, **VSCode**, **Eclipse**, **NetBeans** e incluso **NotePad++**.
+## Conceptos básicos
 
-Cuando ejecutamos el **Kit de desarrollo de Java (JDK)** este "programa" o "software" lee el código y si no tiene errores, lo "compila", es decir, convierte el código en algo realmente ejecutable y/o usable, el encargado de esta misión es el **compilador de java (javac)**, estos archivos ejecutables pasan a llevar el mismo nombre que tenían originalmente pero su extensión deja de ser **.java** y pasa a ser **.class**, los cuales son ejecutables con la maquina virtual de Java.
+Los lenguajes de programación se pueden comparar a los lenguajes humanos, aprender uno nuevo toma tiempo y esfuerzo pero a la vez da unos resultados muy satisfactorios.
 
-Todo esto es la explicación resumida de lo que ocurre detrás de nuestros entornos de desarrollo cuando escribimos y ejecutamos/probamos código, es muy bueno saberlo, aunque conozco programadores que han llegado muy lejos sin entender nada de esto.
+**Java** es un lenguaje de `alto nivel`, es decir, es más cercano al lenguaje humano que al lenguaje de las máquinas, por lo tanto, más fácil de aprender. Es un lenguaje orientado a objetos, ejecutable en casi cualquier sistema siempre que se instale Java en él. **No es el más simple para escribir tu primera línea de código**, pero sí es uno de los más sólidos y estructurados para construir aplicaciones reales.
 
-## Sintaxis básica
+| [**Siguiente**](#ciclo-de-vida-de-un-programa) | [**Indice**](#indice-de-contenido) | [**Anterior**](#primera-evaluación-ev1)  |
+|-------------------------------------------|-------------------------------------------|-------------------------------------------|
 
-Mi profesor de Java, la persona que me enseño a amar el lenguaje, **Jaime Martin Garcia Cuerca** siempre me decía "A veces cuando aprendemos algo nuevo no hace falta entender completamente todo lo que hacemos, lo importante es ir entiendo poco a poco lo que podamos y dejar aquello que no sin preocuparnos hasta que sea entendible", yo pienso exactamente igual, por ejemlos, en las primeras etapas de nuestro aprendizaje vamos a leer mucho las siguientes 4 lineas de código:
+### Ciclo de vida de un programa
+
+#### **¿Quien lee y ejecuta el código?**
+
+Existen dos cosas muy importantes en el uso y desarrollo de aplicaciones **Java**, las cuales son:
+
+* **JVM (Java Virtual Machine):** Es una "máquina virtual" que lee el código Java y lo traduce a nuestros ordenadores para que puedan ejecutarlo, la mayoría de usuarios a nivel mundial lo instalan sin saberlo porque cientos de aplicaciones funcionan con él. Yo, por ejemplo, mucho antes de siquiera saber qué era **Java** lo instalé para poder jugar **Minecraft**. Sin **JVM** nada que esté diseñado y/o creado con **Java** sería ejecutable en nuestros ordenadores.
+
+* **JDK (Java Development Kit):** Esto es algo que en cambio solo instalamos las personas que diseñamos y creamos programas en **Java**, es decir, de ahora en adelante, tú y yo. Incluye tres cosas muy importantes: el `compilador`, que es el encargado de leer nuestro código y, en caso de no encontrar errores, convertirlo en programas que la **JVM** pueda ejecutar; los `depuradores`, que leen el código y nos avisan si hay errores y/o nos permiten identificar exactamente dónde están y cuáles son si es que los hay; y las `librerías`, que son todas las herramientas que ya incluye **Java** de forma nativa. Por ejemplo, si queremos hacer una calculadora no es necesario hacerla desde cero, **Java** ya incluye muchas "piezas" preconstruidas en esas librerías que facilitan el trabajo.
+
+Existe también el **Java Runtime Environment (JRE)** que es lo mismo que **JVM** pero incluye las bibliotecas necesarias para ejecutar un programa concreto, hoy en día por ejemplo `Minecraft` cuando se instala incluye su propio **JRE** con lo justo y necesario para ejecutar el juego, no incluye nada más que no sea necesario.
+
+#### **Etapas del ciclo de vida de un programa Java**
+
+Normalmente con el tiempo y algo de curiosidad por parte de nosotros mismos queda mucho más clara la diferencia entre **JVM**, **JRE** y **JDK**, hablemos ahora del ciclo de vida de nuestros programas (una vez que empecemos a hacerlos de forma recurrente).
+
+1. **Edición (código fuente):** Esta parte es aquella de la que tendremos el control al 100%, se refiere a nosotros escribiendo código (líneas y líneas del mismo) en archivos con la extensión `.java`, por ejemplo **MiPrimerPrograma.java**. 
+2. **Compilación:** Aquí nosotros no hacemos nada, normalmente programas como **Eclipse**, **NetBeans**, **VSCode** e **IntelliJ** (los más usados) traen un botón llamado `compilar` que por sí solo usará el **JDK** que tengamos instalado para ello.  
+3. **Carga:** Si en el proceso de `compilar` nuestro programa no se detectan errores de ningún tipo, si intentamos ejecutar/probar nuestro código la **JVM** o el **JRE** usarán los archivos compilados para ello, cargándolos dentro de la `máquina virtual de Java`.
+4. **Verificación:** Ya cargados dentro de la `máquina virtual de Java` esta se encargará de revisar que no haya datos corruptos, violaciones de seguridad, no es lo mismo que compilar, compilar busca errores "ortográficos" (de sintaxis), aquí se buscan errores de diseño o de seguridad.
+5. **Ejecución:** Superada todas las fases anteriores la **JVM** traduce el código a `bits` que nuestro ordenador puede ejecutar y hace que nuestro programa arranque.
+
+Por ejemplo, si seguimos la siguiente ruta dentro de este proyecto `src > ev1 > ut0 > ciclovidaprograma` podremos encontrar dos archivos, uno es el `.java` donde he escrito un par de líneas de código que luego de **editar, compilar y cargar** se ha convertido en un `.class` que puede ser ejecutado usando el **JRE** para que nuestro ordenador lo entienda.
+
+```bash
+# Ruta de los archivos mencionados.
+src/
+└── ev1/
+    └── ut0/
+        └── ciclovidaprograma/
+            ├── Ejemplo.java
+            └── Ejemplo.class
+
+```
+| [**Siguiente**](#sintaxis-básica) | [**Indice**](#indice-de-contenido) | [**Anterior**](#conceptos-básicos)  |
+|-------------------------------------------|-------------------------------------------|-------------------------------------------|
+
+### Sintaxis básica
+
+#### **Nuestro primer programa en Java**
+
+Mi profesor de Java, la persona que me enseñó a amar el lenguaje, **Jaime Martín García Cuerca** siempre me decía: "No hay que frustrarnos intentando entender todo desde el principio, se puede avanzar en algo nuevo sin entender del todo cómo funciona".
+
+Por ahora vamos a aprender de memoria cómo escribir las siguientes 4 líneas de código que serán las líneas mínimas necesarias para que (por ahora) nuestros programas funcionen y sean ejecutables.
 
 ```java
-public class NombreDelPrograma {
+public class NombreDelPrograma { // Línea 1
+    public static void main (String [] args) { // Línea 2
+    } // Línea 3
+} // Línea 4
+```
+
+Los únicos aspectos que nos van a importar por ahora son que ahí donde dice `NombreDelPrograma` tiene que ir exactamente el mismo nombre con mayúsculas y minúsculas del archivo `.java` al que pertenece. Puedes abrir el archivo `Programa1.java` que se encuentra en `src > ev1 > ut0 > sintaxisbasica`.
+
+#### **Nuestro primer "Hola mundo" en Java**
+
+Existe una tradición muy común en el mundo del desarrollo la cual es, al aprender cualquier lenguaje, lo primero que suelen hacer las personas es **imprimir un mensaje** usando código con las palabras `¡Hola mundo!`, para ello nosotros vamos a darle a Java esa orden, esa instrucción, que él ejecutara permitiendonos imprimir ese mensaje y todos los que queramos, puedes abrir el archivo `Programa2.java` el cual tiene más o menos el siguiente contenido.
+
+```java
+public class Programa2 {
     public static void main (String [] args) {
+        // Aquí le doy la instrucción de imprimir "¡Hola mundo!".
+        System.out.println("¡Hola mundo!");
 
+        // Una vez más, en otra línea diferente, le doy otra instrucción.
+        System.out.println("¡Mi nombre es Agustín!");
     }
 }
 ```
 
-Ahora, hay cosas sencillas, por ejemplo, **"NombreDelPrograma"**, es bastante intuitivo, si nuestro archivo se llama **NombreDelPrograma.java**, el código tiene que reflejar el mismo nombre, pero las otras palabras como `public`, `class`, `static`, `void`, `main`, `String`, etc, no tienen sentido ahora, pero poco a poco, según avancemos iran adquiriendo sentido hasta que un día podamos entender todo lo que significan. 
+Cuando usamos `System.out.println();` el mensaje/texto/información que deseamos imprimir tiene que ir dentro del paréntesis y entre comillas dobles o simples, las de nuestra preferencia. Puede ser cualquier cosa, yo elegí por tradición el **"¡Hola mundo!"** y mi nombre. Las instrucciones en Java **siempre terminan con un punto y coma (";")**, si no, no funcionan.
 
-Es de hecho aquí donde aprendemos a usar tres cosas muy importantes, el **System.out.println();** para imprimir mensajes/información en nuestro programa y aprendemos a usar **Scanner** y/o **BufferedReader** para introducir mensajes/información en nuestro programa.
+| [**Siguiente**](#comentarios-en-java) | [**Indice**](#indice-de-contenido) | [**Anterior**](#ciclo-de-vida-de-un-programa)  |
+|-------------------------------------------|-------------------------------------------|-------------------------------------------|
+
+### Comentarios en Java
+
+Cuando escribimos código en cualquier lenguaje de programación es normal que olvidemos que hacen o no ciertas palabras, lineas de código, archivos, etc, por eso **existen los comentarios en lenguajes de programación**, nos permiten escribir cosas para nosotros mismos y otras personas que lean nuestro código de forma que expliquen como funcionan las cosas que hacemos, existen varios tipos, vamos a explicarlos:
+
+#### **Comentarios de una línea**
+
+Estos comentarios están pensados para tener un tamaño máximo de una línea, por lo que sirven para explicar algo muy puntual y brevemente. Para usarlos escribimos una barra inclinada doble seguida de nuestro comentario/explicación, **ejemplo:**
 
 ```java
-public class EjemploDeLasTresCosas {
-    public static void main(String[] args) {
-        // ✅ Esta linea siempre es necesaria para activar el Scanner en el programa.
-        Scanner teclado = new Scanner(System.in);
-        // ✅ Usamos el System.out.println para imprimir mensajes/información.
-        System.out.println("¿Cual es tú nombre? ");
-        // ✅ Usamos el Scanner para introducir/meter información dentro del programa.
-        teclado.nextLine();
-
-        // ✅ Esta linea siempre es necesaria para activar el BufferedReader.
-        BufferedReader lector = new BufferedReader(new InputStreamReader(System.in));
-        // ✅ Usamos el System.out.println para imprimir mensajes/información.
-        System.out.println("¿Que día es hoy?");
-        // ✅ Usamos el BufferedReader para introducir información dentro del programa.
-        lector.readLine();
+// Este es un comentario de Java.
+public class Ejemplo {
+    // Se pueden poner en cualquier lugar siempre que ocupen su propia línea.
+    public static void main (String [] args) {
+    // Por ejemplo, aquí te explico que esto es lo que imprime un mensaje.
+    System.out.println("¡Hola otra vez!"); // También pueden ir delante de las cosas.
     }
 }
-
+// Pero no pueden ir detrás, si no, no funcionan.
 ```
-## Comentarios en Java
 
-Normalmente nuestros archivos/programas editables de código Java se pueden dividir en dos partes, el código y los comentarios.
+#### **Comentarios multilínea**
 
-Los comentarios son "notas" o "apuntes" o "información" que podemos escribír en nuestro código que explican como funciona o que hace pero que no afectan en nada al funcionamiento, ejemplo:
+Los comentarios **multilínea** existen porque no todo se puede explicar con una sola línea y a veces necesitamos esa libertad de escribir sin límites todo lo que necesitemos para recordarnos a nosotros mismos y a otras personas lo que hace o no hace nuestro código. Estos comentarios empiezan con una barra inclinada seguida de un asterisco **(" / * ")** y terminan con un asterisco y una barra inclinada **(" * / ")**, mira el siguiente **ejemplo**:
 
 ```java
-/**
- * Esto es un ejemplo de comentarios, marcamos el inicio y el fin de ellos usando
- * un slash seguido de dos asterícos ("/**") para marcar el inicio, luego,
- * cada linea de información empieza con un asterisco y cuando ya no 
- * necesitamos escribír nada más finalizamos con otro slash seguido 
- * de un solo asterísco ("* /"), estos comentarios sirven para dejar
- * por escrito información, explicaciones o notas que nos ayuden a
- * entender mejor el código. 
+public class Ejemplo {
+    public static void main (String [] args) {
+        /* <-- AQUÍ EMPIEZA EL COMENTARIO.
+
+        Yo puedo crear todo el espacio que quiera entre la marca que indica el
+        inicio del comentario y la marca que indica el fin del mismo y escribir
+        todo lo que quiera, fundamental para dar grandes explicaciones o para,
+        por ejemplo, dejarnos notas a nosotros mismos, muchas veces cuando yo
+        estoy haciendo cosas para no olvidar qué era lo siguiente que tenía que
+        hacer me dejo comentarios explicándome a mí mismo qué falta por hacer.
+
+        AQUÍ TERMINA EL COMENTARIO. -->*/
+
+        // Otro mensaje para ti.
+        System.out.println("¡Hola por tercera vez!");
+    }
+}
+```
+
+#### **Comentarios de JavaDoc**
+
+Luego existe el último tipo de comentario el cual es el más profesional siempre y cuando se use correctamente, el **JavaDoc** es un tipo de comentario que permite, con un par de clicks y botones crear una especie de **PDF** que muestra todos los archivos de nuestro proyecto usando estos comentarios para explicar la utilidad completa de un archivo **Java** completo, suele ir por ejemplo al principio de una clase y tiene que explicarla al 100%, esto suele incluir también la versión del archivo (si tiene versiones), la fecha en la que fue creado y/o el autor, entre otras cosas, este es más complejo y para los fines educativos de este curso lo aprenderemos a usar más adelante.
+
+Estos comentarios empiezan con una barra inclinada seguida de dos asteriscos `("/**")` y terminan con un asterisco y una barra inclinada `("*/")`, además cada línea entre la marca de inicio y de fin lleva un asterisco al principio `("*")`, aquí tienes un **ejemplo:**
+
+```java
+/**  <-- INICIO DEL COMENTARIO JAVADOC.
+ * 
+ * Clase Ejemplo utilizada para explicarle a mis alumnos los distintos tipos
+ * de comentarios que existen, explicando de forma teórica y práctica los
+ * comentarios de una línea, multilínea y los de JavaDoc.
+ * 
+ * @Since 14/06/2025
+ * @Author Agustín Antonio Marquez Piña
+ * @Version 1.0
+ * 
+ * LA LINEA DE ABAJO ES EL FIN DEL COMENTARIO JAVADOC.
  */
-public class EjemploComentarios {
+public class Ejemplo {
     /*
-    Otro tipo de comentario más fácil de hacer pero que a mi en lo personal me
-    agrada menos es este, empieza con un slash seguido de un asterísco ("/*")
-    y termina con un astericos seguido de un slash ("* /"), de la misma forma
-    que el ejemplo anterior, puedo escribír todo lo que quiera sin afectar el
-    funcionamiento de nuestros programas.
+    El de arriba más profesional explica todo el código completo del archivo,
+    este en cambio lo uso más para apuntes y notas personales o para recordar
+    o explicar cosas.
     */
     public static void main (String [] args) {
-        // Finalmente, los comentarios de una sola linea que empiezan con ("//").
-        // Sirven para escribir una sola linea a la vez de información y son
-        // utiles si solo queremos escribír una linea, aquí por ejemplo ya llevo
-        // varias lineas por lo que pierde sentido y es mejor usar cualquiera de
-        // las dos opciones anteriores a está.
+        // Y este para explicaciones muy sencillas.
+        System.out.println("¡Cuarto saludo del día!");
     }
 }
 ```
 
-## Tipos de datos
+#### **Conclusión**
 
-## Variables y alcances
+Yo, particularmente, dejo muchos comentarios en todo lo que hago, me he dado cuenta que muchos alumnos repasan las clasas dadas juntos y los comentarios aportan breves explicaciones que les ayudan a recordar el porque de las cosas, espera verlos muchos si sigues dando clases conmigo.
 
-## Tipo fundición
+| [**Siguiente**](#tipos-de-datos) | [**Indice**](#indice-de-contenido) | [**Anterior**](#comentarios-en-java)  |
+|-------------------------------------------|-------------------------------------------|-------------------------------------------|
+### Tipos de datos
 
-## Cuerdas y métodos
+En la vida real cuando desayunamos el café suele ir en un vaso o en una taza por ejemplo y la tostada con tomate y aceite en un plato, ¿cierto? es como que **cada cosa tiene su lugar**, lo mismo pasa con los lenguajes de programación.
 
-## Operaciones matemáticas
+**Java** es un lenguaje "especial", si por ejemplo estamos usando números **Java** quiere que los guardes en unos contenedores especiales para números **(como si los números fueron café y esos contenedores fueran tazas)**, en cambio, si usamos por ejemplo palabras, estás tienen su propio contenedor diferente al de los números **(como si las palabras fueran las tostada y sus contenedores los platos)**.
 
-## Matrices
+Esto se conoce como `lenguaje tipado` porque cada tipo de dato/información que nuestro programa use necesita ser guardado en un lugar dentro de nuestro programa que sea especialmente hecho para ese tipo de dato, ahora, en **Java** existen principalmente dos tipos de datos, los `datos primitivos` y los `datos avanzados`, vamos a ver más de ellos.
 
-## Condicionales
+Cuando escribimos en una linea un dato y su valor debe seguir la siguiente sintaxis:
 
-## Bucles
+```java
+public class Ejemplo {
+    public static void main (String [] args) {
+        // Ejemplo de sintaxis
+        tipo nombre = valor
+        tipo nombre = valor;
 
-## Conceptos básicos de la POO
+        // Ejemplo para guardar mi número favorito.
+        int miNumeroFavorito = 14;
 
-# Programación orientada a objetos
+        // Ejemplo para guardar mi letra favorita.
+        char miLetraFavorita = 'A';
+    }
+}
+```
 
-## Conceptos básicos de la POO
+No puedo guardar un `número entero` dentro de un **char** porque **char** es especial solo para letras/carácteres y viceversa, no puedo guardar una `letra/caracter` en un **int** porque **int** es especial para números enteros, **cada cosa tiene su lugar.**
 
-## Conceptos avanzados de la POO
+#### **Datos primitivos**
+
+Son las formas más básicas de los datos. Entre ellas podemos encontrar **números enteros**, **números decimales**, **símbolos/caracteres** e incluso un tipo muy especial que solo puede ser **verdadero** o **falso**. Podemos leer más sobre esto en el sitio web en inglés de [**Jenkov Java variables**](https://jenkov.com/tutorials/java/variables.html), sin embargo, aquí puedes verlos de forma resumida, explicados con comentarios sobre qué es cada uno en el siguiente **ejemplo:**
+
+```java
+public class DatosPrimitivos {
+    public static void main (String [] args) {
+        // byte: número entero muy pequeño (de -128 a 127)
+        byte unByte = 42;
+
+        // short: número entero pequeño (de -32.768 a 32.767)
+        short unShort = 32000;
+
+        // char: un solo símbolo/carácter (letra, número, signo, etc.)
+        char unChar = 'A';
+
+        // int: número entero “normal” (de -2.147.483.648 a 2.147.483.647)
+        int unInt = 123456;
+
+        // long: número entero muy grande (de -9.223.372.036.854.775.808 a 9.223.372.036.854.775.807)
+        long unLong = 123456789L;
+
+        // float: número decimal de precisión sencilla (lleva una “f” al final)
+        float unFloat = 3.14f;
+
+        // double: número decimal de doble precisión (el más usado para decimales)
+        double unDouble = 3.1415926535;
+
+        // boolean: solo puede ser true (verdadero) o false (falso)
+        boolean unBoolean = true;
+    }
+}
+```
+
+En otros tiempo era muy importante elegir con pinzas el tipo de variable porque antes había ordenadores con menos cantidades de RAM y espacio de almacenamiento muy bajo, **hoy en día** recomiendo para aprender a usar **java** relativamente rapido usar `int` siempre para los números entero y `double` para los números decimales, así es más facil de recordar y aprender.
+
+#### **Datos avanzados**
+
+Si nos fijamos **todos los datos primitivos** tienen su nombre de tipo escrito completamente en minúsculas `(int, byte, char, double, float, etc)`. Los datos **avanzados** tienen siempre la primera letra de sus nombre en maýuscula.
+
+La diferencia entre estos datos y los primitivos es, primero, que **ocupan más espacio de memoria** y lo segundo es que ofrecen **carácteristicas avanzadas** que los primitivos no tienen, pero de momento no vamos a necesitarlos, sin embargo, igual que antes, aquí te dejo un **ejemplo:**
+
+```java
+public class Ejemplo {
+    public static void main (String [] args) {
+        // Byte: “envoltorio” (wrapper) de byte, rango: -128 a 127
+        Byte       myByte   = 42;
+
+        // Short: “envoltorio” de short, rango: -32.768 a 32.767
+        Short      myShort  = 32_000;
+
+        // Character: “envoltorio” de char (un único símbolo/caracter)
+        Character  myChar   = 'A';
+
+        // Integer: “envoltorio” de int (muy usado), rango: -2.147.483.648 a 2.147.483.647
+        Integer    myInt    = 123_456;
+
+        // Long: “envoltorio” de long, rango: -9.223.372.036.854.775.808 a 9.223.372.036.854.775.807
+        Long       myLong   = 123_456_789L;
+
+        // Float: “envoltorio” de float
+        Float      myFloat  = 3.14f;
+
+        // Double: “envoltorio” de double
+        Double     myDouble = 3.1415926535;
+
+        // String: tipo de dato avanzado para cadenas de texto
+        String     myString = "Hola, soy un texto";
+    }
+}
+```
+
+**Llegara el día y el momento** en el que, de forma muy casual, usemos estás variables avanzadas **(variables objeto)** y probemos sus carácteristicas que las diferencian de las primitivas, pero hasta entonces, nos quedamos con lo fácil y sencillo.
+
+| [**Siguiente**](#variables-y-alcances) | [**Indice**](#indice-de-contenido) | [**Anterior**](#comentarios-en-java)  |
+|-------------------------------------------|-------------------------------------------|-------------------------------------------|
+
+### Casteo de tipos
+
+| [**Siguiente**](#bucles) | [**Indice**](#indice-de-contenido) | [**Anterior**](#tipos-de-datos)  |
+|-------------------------------------------|-------------------------------------------|-------------------------------------------|
+
+### Bucles
+
+| [**Siguiente**](#condicionales) | [**Indice**](#indice-de-contenido) | [**Anterior**](#casteo-de-tipos)  |
+|-------------------------------------------|-------------------------------------------|-------------------------------------------|
+
+### Condicionales
+
+| [**Siguiente**](#strings-y-funciones) | [**Indice**](#indice-de-contenido) | [**Anterior**](#bucles)  |
+|-------------------------------------------|-------------------------------------------|-------------------------------------------|
+
+### Strings y funciones
+
+| [**Siguiente**](#operaciones-matemáticas) | [**Indice**](#indice-de-contenido) | [**Anterior**](#condicionales)  |
+|-------------------------------------------|-------------------------------------------|-------------------------------------------|
+
+### Operaciones matemáticas
+
+| [**Siguiente**](#arrays) | [**Indice**](#indice-de-contenido) | [**Anterior**](#strings-y-funciones)  |
+|-------------------------------------------|-------------------------------------------|-------------------------------------------|
+
+### Arrays
+
+| [**Siguiente**](#conceptos-básicos-de-la-poo) | [**Indice**](#indice-de-contenido) | [**Anterior**](#operaciones-matemáticas)  |
+|-------------------------------------------|-------------------------------------------|-------------------------------------------|
+
+### Conceptos básicos de la POO
+
+| [**Siguiente**](#segunda-evaluación-ev2) | [**Indice**](#indice-de-contenido) | [**Anterior**](#bucles)  |
+|-------------------------------------------|-------------------------------------------|-------------------------------------------|
+
+# **Segunda evaluación (EV2)**
+
+## Programación orientada a objetos
+
+### Conceptos básicos de la POO
+
+### Conceptos avanzados de la POO
 

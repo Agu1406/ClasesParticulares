@@ -1,5 +1,5 @@
 // La linea llamada "package" podeís ignorarla por completo, mucho más adelante se explica.
-package conceptosbasicos.sintaxisbasica;
+package ev1.ut0.sintaxisbasica;
 
 /**
  * De la misma forma que la RAE (Real Academia Española) nos dictamina
@@ -24,7 +24,7 @@ package conceptosbasicos.sintaxisbasica;
  * 
  * Leido esto, pasa al siguiente archivo llamado "ProgramaDos.java".
  */
-public class ProgramaUno {
+public class Programa1 {
     public static void main(String[] args) {
 
     }
