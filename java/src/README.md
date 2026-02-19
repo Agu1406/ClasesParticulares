@@ -37,12 +37,17 @@ El contenido de esta guía está fuertemente inspirado en dos cosas, la primera,
 src/
 ├── ev1/
 │   └── ut0/
-│       ├── ciclovidaprograma/
-│       │   └── EjemploPrograma.java
-│       └── sintaxisbasica/
-│           ├── ProgramaUno.java
-│           ├── ProgramaDos.java
-│           └── ProgramaTres.java
+│       ├── ciclovida/
+│       │   └── Ejemplo.java
+│       ├── sintaxisbasica/
+│       │   ├── Programa1.java
+│       │   └── Programa2.java
+│       ├── tipodatos/
+│       │   ├── DatosPrimitivos.java
+│       │   └── DatosAvanzados.java
+│       └── casteotipos/
+│           ├── CasteoTipos.java
+│           └── CasteoTiposPrimitivos.java
 ├── ev2/   # (planificado)
 ├── ev3/   # (planificado)
 └── README.md
@@ -63,8 +68,8 @@ src/
     * [**Operaciones matemáticas**](#operaciones-matemáticas)
     * [**Arrays**](#arrays)
     * [**Conceptos básicos de la POO**](#conceptos-básicos-de-la-poo)
-* [****]()
-* [****]()
+* [**Segunda evaluación (EV2)**]()
+* [**Tercera evaluación (EV3)**]()
 
 | [**Siguiente**](#primera-evaluación-ev1) | [**Indice**](#indice-de-contenido) | [**Anterior**](#indice-de-contenido)  |
 |-------------------------------------------|-------------------------------------------|-------------------------------------------|
@@ -72,6 +77,8 @@ src/
 # **Primera evaluación (EV1)**
 
 En la primera evaluación aprenderemos a introducirnos en Java como lenguaje de programación, aprenderemos a escribir nuestras primeras líneas de código, cómo imprimir mensajes en nuestros programas. Posteriormente, aprenderemos las estructuras de control de un programa (bucles, condicionales), el uso de funciones, el uso de `String`, `StringBuilder`, `Character`, `Integer`, `Math`, `Double`, etc. y, finalmente, una breve introducción a la programación orientada a objetos **(POO)**. El [**indice de contenido**](#indice-de-contenido) nos ayudará a desplazarnos durante toda nuestra etapa de aprendizaje a través de los diferentes niveles del curso.
+
+Siempre que quieras ver el código real asociado a las explicaciones de esta evaluación, podrás encontrarlo en la carpeta `src/ev1` y sus subcarpetas.
 
 | [**Siguiente**](#conceptos-básicos) | [**Indice**](#indice-de-contenido) | [**Anterior**](#indice-de-contenido)  |
 |-------------------------------------------|-------------------------------------------|-------------------------------------------|
@@ -81,6 +88,8 @@ En la primera evaluación aprenderemos a introducirnos en Java como lenguaje de 
 Los lenguajes de programación se pueden comparar a los lenguajes humanos, aprender uno nuevo toma tiempo y esfuerzo pero a la vez da unos resultados muy satisfactorios.
 
 **Java** es un lenguaje de `alto nivel`, es decir, es más cercano al lenguaje humano que al lenguaje de las máquinas, por lo tanto, más fácil de aprender. Es un lenguaje orientado a objetos, ejecutable en casi cualquier sistema siempre que se instale Java en él. **No es el más simple para escribir tu primera línea de código**, pero sí es uno de los más sólidos y estructurados para construir aplicaciones reales.
+
+Cuando avances con estos conceptos, te recomiendo ir revisando también los ejemplos prácticos de código que irán apareciendo en `src/ev1`.
 
 | [**Siguiente**](#ciclo-de-vida-de-un-programa) | [**Indice**](#indice-de-contenido) | [**Anterior**](#primera-evaluación-ev1)  |
 |-------------------------------------------|-------------------------------------------|-------------------------------------------|
@@ -107,14 +116,17 @@ Normalmente con el tiempo y algo de curiosidad por parte de nosotros mismos qued
 4. **Verificación:** Ya cargados dentro de la `máquina virtual de Java` esta se encargará de revisar que no haya datos corruptos, violaciones de seguridad, no es lo mismo que compilar, compilar busca errores "ortográficos" (de sintaxis), aquí se buscan errores de diseño o de seguridad.
 5. **Ejecución:** Superada todas las fases anteriores la **JVM** traduce el código a `bits` que nuestro ordenador puede ejecutar y hace que nuestro programa arranque.
 
-Por ejemplo, si seguimos la siguiente ruta dentro de este proyecto `src > ev1 > ut0 > ciclovidaprograma` podremos encontrar dos archivos, uno es el `.java` donde he escrito un par de líneas de código que luego de **editar, compilar y cargar** se ha convertido en un `.class` que puede ser ejecutado usando el **JRE** para que nuestro ordenador lo entienda.
+Por ejemplo, si seguimos la siguiente ruta dentro de este proyecto `src > ev1 > ut0 > ciclovida` podremos encontrar dos archivos, uno es el `.java` donde he escrito un par de líneas de código que luego de **editar, compilar y cargar** se ha convertido en un `.class` que puede ser ejecutado usando el **JRE** para que nuestro ordenador lo entienda.
+
+
+Mientras lees esta sección, es muy buena idea abrir y ejecutar esos archivos en la ruta `src/ev1/ut0/ciclovida` para ver el ciclo completo en acción.
 
 ```bash
 # Ruta de los archivos mencionados.
 src/
 └── ev1/
     └── ut0/
-        └── ciclovidaprograma/
+        └── ciclovida/
             ├── Ejemplo.java
             └── Ejemplo.class
 
@@ -156,6 +168,18 @@ public class Programa2 {
 ```
 
 Cuando usamos `System.out.println();` el mensaje/texto/información que deseamos imprimir tiene que ir dentro del paréntesis y entre comillas dobles o simples, las de nuestra preferencia. Puede ser cualquier cosa, yo elegí por tradición el **"¡Hola mundo!"** y mi nombre. Las instrucciones en Java **siempre terminan con un punto y coma (";")**, si no, no funcionan.
+
+Para practicar esta lección, abre y modifica los archivos `Programa1.java` y `Programa2.java` que encontrarás en la carpeta `src/ev1/ut0/sintaxisbasica`.
+
+```bash
+# Ruta de los archivos asociados a esta lección.
+src/
+└── ev1/
+    └── ut0/
+        └── sintaxisbasica/
+            ├── Programa1.java
+            └── Programa2.java
+```
 
 | [**Siguiente**](#comentarios-en-java) | [**Indice**](#indice-de-contenido) | [**Anterior**](#ciclo-de-vida-de-un-programa)  |
 |-------------------------------------------|-------------------------------------------|-------------------------------------------|
@@ -240,6 +264,8 @@ public class Ejemplo {
 
 Yo, particularmente, dejo muchos comentarios en todo lo que hago, me he dado cuenta que muchos alumnos repasan las clasas dadas juntos y los comentarios aportan breves explicaciones que les ayudan a recordar el porque de las cosas, espera verlos muchos si sigues dando clases conmigo.
 
+Cuando quieras practicar estos tipos de comentario, crea tus propios archivos en `src/ev1/ut0` o revisa los ejemplos que iré añadiendo en esa misma carpeta.
+
 | [**Siguiente**](#tipos-de-datos) | [**Indice**](#indice-de-contenido) | [**Anterior**](#comentarios-en-java)  |
 |-------------------------------------------|-------------------------------------------|-------------------------------------------|
 ### Tipos de datos
@@ -306,6 +332,18 @@ public class DatosPrimitivos {
 
 En otros tiempo era muy importante elegir con pinzas el tipo de variable porque antes había ordenadores con menos cantidades de RAM y espacio de almacenamiento muy bajo, **hoy en día** recomiendo para aprender a usar **java** relativamente rapido usar `int` siempre para los números entero y `double` para los números decimales, así es más facil de recordar y aprender.
 
+En el proyecto tienes un archivo real llamado `DatosPrimitivos.java` en la carpeta `src/ev1/ut0/tipodatos` donde puedes probar y modificar estos ejemplos de tipos primitivos.
+
+```bash
+# Ruta de los archivos asociados a esta lección.
+src/
+└── ev1/
+    └── ut0/
+        └── tipodatos/
+            ├── DatosPrimitivos.java
+            └── DatosAvanzados.java
+```
+
 #### **Datos avanzados**
 
 Si nos fijamos **todos los datos primitivos** tienen su nombre de tipo escrito completamente en minúsculas `(int, byte, char, double, float, etc)`. Los datos **avanzados** tienen siempre la primera letra de sus nombre en maýuscula.
@@ -344,10 +382,84 @@ public class Ejemplo {
 
 **Llegara el día y el momento** en el que, de forma muy casual, usemos estás variables avanzadas **(variables objeto)** y probemos sus carácteristicas que las diferencian de las primitivas, pero hasta entonces, nos quedamos con lo fácil y sencillo.
 
+Más adelante, cuando trabajemos con datos avanzados en ejercicios reales, los ejemplos de código estarán también organizados dentro de `src/ev1` y, en evaluaciones posteriores, en `src/ev2` y `src/ev3`.
+
 | [**Siguiente**](#variables-y-alcances) | [**Indice**](#indice-de-contenido) | [**Anterior**](#comentarios-en-java)  |
 |-------------------------------------------|-------------------------------------------|-------------------------------------------|
 
 ### Casteo de tipos
+
+`Casteo` es la palabra tecnica y elegante para referirnos al proceso de convertir una "X" variable de un tipo a otro, por ejemplo, si quiero convertir el valor de un número decimal como **PI** (3,1416) a un número entero sacrificando los decimales en el proceso o viceversa, convertir un número entero como **"14"** en un número decimal agregando ceros (14,00).
+
+**Java** permite hacer esto siempre que la conversión sea coherente, por ejemplo, no puedo convertir la palabra `Aguacate` en un número, pero si puedo convertir una letra o carácter individual por si solo en un número **(su valor en la tabla ASCII)**.
+
+Este proceso lo tenemos que separar en dos partes, las cuales son la `conversión de tipos primitivos` y la `conversión de tipos avanzados`, porque aunque el objetivo es el mismo, **la sintaxis es diferente**.
+
+#### **Conversión de tipos primitivos**
+
+Recordemos de puntos anteriores que los **datos primitivos** se escriben completamente en minúscula, entre ellos podemos recordar algunos como `int, double, float, char, byte` aunque los que yo uso siempre para dar clases son `int` y `double` por que son más faciles de usar y recordar.
+
+El proceso de conversión requiere crear una variable donde guardar el valor convertido y, por supuesto, un valor inicial que convertir, ejemplo, convertir un número entero en un decimal, **ejemplo:**
+
+```java
+public class Ejemplo {
+    public static void main (String [] args) {
+        // Variable original del tipo "int" que quiero convertir.
+        int valorOriginal = 14;
+        // Variable "recipiente" donde guardare el valor convertido.
+        double valorConvertido;
+    }
+}
+```
+
+Ahora que ya tengo las dos variables, aquella con el valor original y aquella donde guardare el valor una vez ya convertido, sigue el proceso de conversión que implica utilizar, entre parentesis, el tipo al que deseo convertir la variable original, **ejemplo:**
+
+```java
+public class Ejemplo {
+    public static void main (String [] args) {
+        int valorOriginal = 14;
+        double valorConvertido;
+
+        // ✅ al usar "(double)" entre parentesis convierto el valor de "int" a "double".
+        valorConvertido = (double) valorOriginal;
+    }
+}
+```
+
+El proceso funciona igual en otros escenarios, **por ejemplo** si deseo convertir **PI** y sus primeros 4 decimales en un número entero **Java** lo hará sin problemas, ignorando completamente la existencia de los decimales y quedandose solo con el número entero de **PI**, **ejemplo:**
+
+```java
+public class Ejemplo {
+    public static void main (String [] args) {
+        // Valor original de PI con sus primeros cuatro decimales.
+        double valorPIOriginal = 3.1416;
+        // Variable recipiente para guardar PI convertido en entero.
+        int valorPIConvertido;
+
+        // Proceso de conversión de PI de un tipo a otro.
+        valorPIConvertido = (int) valorPIOriginal;
+
+        // Imprimimos ambos, el valor original y el valor convertido.
+        System.out.println("Valor de PI original:" + valorPIOriginal); // 3.1416
+        System.out.println("Valor de PI convertido: " + valorPIConvertido); // 3
+    }
+}
+```
+
+**Hay que tomar en cuenta** que en el proceso de convertir algo de un tipo a otro el valor original no se pierde, si no que más bien se crea una "copia" del valor original pero en el nuevo formato deseado.
+
+En el código del proyecto encontrarás ejemplos prácticos de estas conversiones en la carpeta `src/ev1/ut0/casteotipos`, por ejemplo en los archivos `CasteoTipos.java` y `CasteoTiposPrimitivos.java`.
+
+```bash
+# Ruta de los archivos asociados a esta lección.
+src/
+└── ev1/
+    └── ut0/
+        └── casteotipos/
+            ├── CasteoTipos.java
+            └── CasteoTiposPrimitivos.java
+```
+#### **Conversión de tipos avanzados**
 
 | [**Siguiente**](#bucles) | [**Indice**](#indice-de-contenido) | [**Anterior**](#tipos-de-datos)  |
 |-------------------------------------------|-------------------------------------------|-------------------------------------------|
@@ -389,4 +501,6 @@ public class Ejemplo {
 ### Conceptos básicos de la POO
 
 ### Conceptos avanzados de la POO
+
+Cuando lleguemos a esta evaluación, los ejercicios y proyectos correspondientes se organizarán en la carpeta `src/ev2` del proyecto. De la misma forma, el contenido de la tercera evaluación se guardará en `src/ev3`.
 
