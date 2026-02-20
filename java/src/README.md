@@ -42,6 +42,8 @@ src/
 │       ├── sintaxisbasica/
 │       │   ├── Programa1.java
 │       │   └── Programa2.java
+│       ├── comentarios/
+│       │   └── Comentarios.java
 │       ├── tipodatos/
 │       │   ├── DatosPrimitivos.java
 │       │   └── DatosAvanzados.java
@@ -264,7 +266,16 @@ public class Ejemplo {
 
 Yo, particularmente, dejo muchos comentarios en todo lo que hago, me he dado cuenta que muchos alumnos repasan las clasas dadas juntos y los comentarios aportan breves explicaciones que les ayudan a recordar el porque de las cosas, espera verlos muchos si sigues dando clases conmigo.
 
-Cuando quieras practicar estos tipos de comentario, crea tus propios archivos en `src/ev1/ut0` o revisa los ejemplos que iré añadiendo en esa misma carpeta.
+Cuando quieras practicar estos tipos de comentario, abre y modifica el archivo `Comentarios.java` en la carpeta `src/ev1/ut0/comentarios`, donde verás ejemplos de comentarios de una línea, multilínea y JavaDoc.
+
+```bash
+# Ruta de los archivos asociados a esta lección.
+src/
+└── ev1/
+    └── ut0/
+        └── comentarios/
+            └── Comentarios.java
+```
 
 | [**Siguiente**](#tipos-de-datos) | [**Indice**](#indice-de-contenido) | [**Anterior**](#comentarios-en-java)  |
 |-------------------------------------------|-------------------------------------------|-------------------------------------------|
@@ -382,7 +393,17 @@ public class Ejemplo {
 
 **Llegara el día y el momento** en el que, de forma muy casual, usemos estás variables avanzadas **(variables objeto)** y probemos sus carácteristicas que las diferencian de las primitivas, pero hasta entonces, nos quedamos con lo fácil y sencillo.
 
-Más adelante, cuando trabajemos con datos avanzados en ejercicios reales, los ejemplos de código estarán también organizados dentro de `src/ev1` y, en evaluaciones posteriores, en `src/ev2` y `src/ev3`.
+Puedes consultar en el proyecto el archivo `DatosAvanzados.java` en la ruta `src/ev1/ut0/tiposdatos/`para aprender más sobre ellos, probarlos y/o modificarlos.
+
+```bash
+# Ruta de los archivos asociados a esta lección.
+src/
+└── ev1/
+    └── ut0/
+        └── tipodatos/
+            ├── DatosPrimitivos.java
+            └── DatosAvanzados.java
+```
 
 | [**Siguiente**](#variables-y-alcances) | [**Indice**](#indice-de-contenido) | [**Anterior**](#comentarios-en-java)  |
 |-------------------------------------------|-------------------------------------------|-------------------------------------------|
