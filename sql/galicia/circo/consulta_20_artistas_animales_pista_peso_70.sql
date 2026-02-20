@@ -18,14 +18,17 @@ USE circo;
 SELECT 
     ar.nombre,
     ar.apellidos,
-    a.nombre_animal,
+    a.nombre_animal, ✅
     a.tipo,
     a.peso,
     p.Nombre_pista,
     p.Aforo
 FROM artistas ar
+-- Artista animal se conecta con artistas
 INNER JOIN artista_animal aa ON ar.Nif = aa.nif
+-- Animnales se conecta con artista_animal
 INNER JOIN animales a ON aa.nombre = a.nombre_animal
+-- Pistas se conectan con animales
 LEFT JOIN pistas p ON a.nombre_pista = p.Nombre_pista
 WHERE a.peso > 70
 ORDER BY ar.apellidos, ar.nombre;

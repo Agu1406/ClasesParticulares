@@ -1,319 +1,423 @@
+<!-- Etiquetas de estilo personales para el README. -->
 <style>
-    /* Justificar todo el texto del documento. */
-    * {
+    h1, h2, h3 {
+        text-align: center;
+        border: 5px solid grey;
+        padding: 20px
+    }
+
+    h4 {
+        text-align: center;
+        font-size: 16px;
+    }
+    p {
+        text-indent: 20px;
         text-align: justify;
     }
-    /* Centrar todos los encabezados. */
-    h1, h2, h3, h4 {
-        text-align: center;
-    }
-    /* Centrar el contenido dentro de las celdas */
-    table th, table td {
-        text-align: center;
-    }
 
+    table {
+        border: 1px solid white;
+        margin-left: auto;
+        margin-right: auto;
+        margin-bottom: 10%;
+        margin-top: 10%;
+    }
+    th, td {
+        border: 1px solid white;
+        text-align: center;
+    }
 </style>
 
-# Clase de repaso general
+# Guía de Consultas SQL - Base de Datos Viviendas
 
-## Índice de los apuntes
+Este material está diseñado para aprender SQL desde cero usando la base de datos de viviendas. Cada consulta está en un archivo separado con explicaciones detalladas.
 
-1. [Estructura de una base de datos](#estructura-de-la-base-de-datos)
-2. [Diagramas de entidad relación (ER)](#diagramas-de-entidad-relacion)
-3. [Conceptos fundamentales de SQL](#conceptos-fundamentales-de-sql)
-4. [Tipos de JOIN](#tipos-de-joins)
-5. [Funciones de fecha (YEAR)](#años-year-en-mysql)
-6. [ORDER BY](#ordenar-resultados-de-consultas-en-sql-con-order-by)
-7. [GROUP BY](#group-by-en-sql)
-8. [HAVING](#having-en-sql)
-9. [Fuentes e información](#fuentes-e-información)
+**Alcance del material:** Esta guía se centra en **consultas (SELECT)**. La modificación de datos (INSERT, UPDATE, DELETE) se trata en otro bloque.
 
-## **Estructura de la base de datos.**
+## Índice
 
-La base de datos `viviendas` es una base de datos compuesta por cuatro tablas, su objetivo es relacionar las **personas** que **habitan** una o varias **viviendas** que pertenecen a diferentes **zonas.**
+* [**Estructura de la Base de Datos**](#estructura-de-la-base-de-datos)
+    + 1. [**Tabla: personas**](#tabla-personas)
+    + 2. [**Tabla: viviendas**](#tabla-viviendas)
+    + 3. [**Tabla: zonas**](#tabla-zonas)
+    + 4. [**Tabla: habitar**](#tabla-habitar)
+* [**Diagrama Entidad-Relación**](#diagrama-entidad-relación)
+    + 1. [**Explicación del Diagrama**](#explicación-del-diagrama)
+    + 2. [**Símbolos del Diagrama**](#símbolos-del-diagrama)
+* [**Conceptos Fundamentales de SQL**](#conceptos-fundamentales-de-sql)
+    + 1. [**SELECT - Consultar Datos**](#select---consultar-datos)
+    + 2. [**WHERE - Filtrar Resultados**](#where---filtrar-resultados)
+    + 3. [**LIKE - Búsqueda de Patrones**](#like---búsqueda-de-patrones)
+    + 4. [**ORDER BY - Ordenar Resultados**](#order-by---ordenar-resultados)
+    + 5. [**DISTINCT - Eliminar Duplicados**](#distinct---eliminar-duplicados)
+    + 6. [**NULL en las consultas**](#null-en-las-consultas)
+* [**Tipos de JOIN**](#tipos-de-join---explicación-visual-con-diagramas-de-venn)
+    + 1. [**Concepto base: dos círculos superpuestos**](#concepto-base-dos-círculos-superpuestos)
+    + 2. [**INNER JOIN - Solo la intersección**](#inner-join---solo-la-intersección)
+    + 3. [**LEFT JOIN - Todo el círculo izquierdo + intersección**](#left-join---todo-el-círculo-izquierdo--intersección)
+    + 4. [**RIGHT JOIN - Todo el círculo derecho + intersección**](#right-join---todo-el-círculo-derecho--intersección)
+    + 5. [**FULL OUTER JOIN - Ambos círculos completos**](#full-outer-join---ambos-círculos-completos)
+    + 6. [**SELF JOIN - Un círculo consigo mismo**](#self-join---un-círculo-consigo-mismo)
+    + 7. [**Comparación visual completa**](#comparación-visual-completa)
+    + 8. [**Resumen rápido**](#resumen-rápido)
+    + 9. [**Consejos para recordar**](#consejos-para-recordar)
+    + 10. [**Comparación rápida: INNER vs LEFT JOIN**](#comparación-rápida-inner-vs-left-join)
+* [**Funciones de Fecha**](#funciones-de-fecha)
+    + 1. [**Funciones Básicas**](#funciones-básicas)
+    + 2. [**Extraer Partes de una Fecha**](#extraer-partes-de-una-fecha)
+    + 3. [**Calcular Diferencias de Tiempo**](#calcular-diferencias-de-tiempo)
+    + 4. [**Formatear Fechas**](#formatear-fechas)
+* [**Funciones de Agregación**](#funciones-de-agregación)
+    + 1. [**COUNT() - Contar**](#count---contar)
+    + 2. [**SUM() - Sumar**](#sum---sumar)
+    + 3. [**AVG() - Promedio**](#avg---promedio)
+    + 4. [**MAX() / MIN() - Máximo / Mínimo**](#max--min---máximo--mínimo)
+    + 5. [**GROUP BY - Agrupar Resultados**](#group-by---agrupar-resultados)
+    + 6. [**HAVING - Filtrar grupos**](#having---filtrar-grupos)
+* [**Orden de Ejecución de las Consultas**](#orden-de-ejecución-de-las-consultas)
+* [**Glosario de Términos**](#glosario-de-términos)
+    + 1. [**Base de Datos (Database)**](#base-de-datos-database)
+    + 2. [**Tabla (Table)**](#tabla-table)
+    + 3. [**Registro / Fila (Row / Record)**](#registro--fila-row--record)
+    + 4. [**Campo / Columna (Field / Column)**](#campo--columna-field--column)
+    + 5. [**Clave Primaria (Primary Key - PK)**](#clave-primaria-primary-key---pk)
+    + 6. [**Clave Foránea (Foreign Key - FK)**](#clave-foránea-foreign-key---fk)
+    + 7. [**Relación**](#relación)
+    + 8. [**JOIN**](#join)
+    + 9. [**Alias**](#alias)
+    + 10. [**NULL**](#null)
+    + 11. [**Consulta (Query)**](#consulta-query)
+    + 12. [**SGBD / SGBDR**](#sgbd--sgbdr)
+* [**Consejos para Aprender**](#consejos-para-aprender)
+* [**Archivos de Consultas**](#archivos-de-consultas)
+* [**Cómo Usar Este Material**](#cómo-usar-este-material)
+    + 1. [**Ruta de lectura sugerida**](#ruta-de-lectura-sugerida)
+    + 2. [**Ejecutar el script de la base de datos**](#ejecutar-el-script-de-la-base-de-datos)
+    + 3. [**Pasos generales**](#pasos-generales)
 
-### **Tabla `personas`**
+| [Anterior](#guía-de-consultas-sql---base-de-datos-viviendas) | [Índice](#índice) | [Siguiente](#estructura-de-la-base-de-datos) |
+|---|---|---|
+
+---
+
+## Estructura de la Base de Datos
+
+La base de datos `viviendas` está compuesta por 4 tablas principales:
+
+### Tabla: `personas`
+
+Almacena información de las personas registradas.
 
 | Columna | Tipo | Descripción |
 |---------|------|-------------|
-|**dni**|**CHAR(10)**| Sirve para guardar el DNI de las personas de la tabla. |
-|**nombre**|**CHAR(20)**| Sirve para guardar el DNI de las personas de la tabla. |
-|**apellidos**|**CHAR(20)**| Sirve para guardar el DNI de las personas de la tabla. |
-|**dni_padre**|**CHAR(10)**| Sirve para guardar el DNI de las personas de la tabla. |
+| `dni` | CHAR(10) | **Clave Primaria** - Identificador único de la persona |
+| `nombre` | CHAR(20) | Nombre de la persona |
+| `apellidos` | CHAR(20) | Apellidos de la persona |
+| `dni_padre` | CHAR(10) | **Clave Foránea** - DNI del padre (puede ser NULL) |
 
-### **Tipos de variables SQL y sus modificadores**
+**Relaciones:**
+- `dni_padre` referencia a `personas.dni` (relación consigo misma - auto-referencia)
 
-#### **Tipos de variables**
+### Tabla: `viviendas`
 
-**CHAR** viene de la palabra en inglés **CHARACTER** que significa carácter, en **SQL** cuando queremos guardar letras, palabras, texto, parrafos, etc, usamos el **tipo de variable CHAR**, cuando le decimos a **SQL** que lo que queremos guardar es carácteres (CHAR) también tenemos que decirle el tamaño maximo del texto que va a guardar.
+Almacena información de las viviendas.
 
-Al nosotros decirle a **SQL** que usaremos una varible del tipo **CHAR(10)** estamos indicando en el parentesis que el tamaño maximo de letras/números que podremos escribir ahí es de 10 carácteres, ejemplos:
+| Columna | Tipo | Descripción |
+|---------|------|-------------|
+| `cod_vivienda` | CHAR(10) | **Clave Primaria** - Código único de la vivienda |
+| `calle` | CHAR(20) | Nombre de la calle |
+| `numero` | CHAR(10) | Número de la dirección |
+| `piso` | CHAR(10) | Piso de la vivienda |
+| `puerta` | CHAR(10) | Puerta/letra de la vivienda |
+| `metros` | DOUBLE | Metros cuadrados de la vivienda |
+| `fecha_construccion` | DATETIME(6) | Fecha de construcción |
+| `nombre_zona` | CHAR(20) | **Clave Foránea** - Nombre de la zona |
 
-- `12345ABCDE` (10 carácteres) - **¿Funcionaria?** Sí, tiene exactamente 10 carácteres.
-- `12345ABCD` (9 carácteres) - **¿Funcionaria?** Sí, tiene 9 carácteres y el maximo que puedo tener son 10, mientras no me pase, todo ok.
-- `1A` **¿Funcionaria?** Sí, no tienen ingún sentido, no existen **DNI** de dos letras/números, pero no excede el limite que son 10 carácteres.
-- `12345ABCDEF` (11 carácteres) - **¿Funcionaria?** No funcionaria, basta con exceder 1 solo carácter el tamaño y ya no funciona.
+**Relaciones:**
+- `nombre_zona` referencia a `zonas.nombre_zona`
 
-#### **Tipos de modificadores**
+### Tabla: `zonas`
 
-- `NOT NULL` - Cuando queremos que un dato sea obligatorio para formar parte de una tabla usamos **NOT NULL**, por ejemplo, al abrir una cuenta en el banco hay ciertos datos que son obligatorios aunque yo no lo quiera, mi **DNI**, mi **nombre completo** y mi **fecha de nacimiento**, en la tabla de viviendas es obligatorio que todas las personas se den de alta con su **DNI**.
+Almacena información de las zonas geográficas.
 
-- `DEFAULT NULL` - Al contrario que con **NOT NULL** es aquella información que no es obligatoria, por ejemplo, en **viviendas** es obligatorio darte de alta con tú **DNI**, pero eres un tio raro y no quieres que nadie sepa cual es tú nombre ni cual es tú apellido, entonces **DEFAULT NULL** pone por defecto un **NULL** en aquellos campos que esten vacios, si yo me doy de alta con el DNI 1234ABCDE y no digo mi nombre mis apellido en la base de datos habrá algo parecido a lo siguiente:
+| Columna | Tipo | Descripción |
+|---------|------|-------------|
+| `nombre_zona` | CHAR(20) | **Clave Primaria** - Nombre único de la zona |
+| `descripcion` | CHAR(30) | Descripción de la zona |
 
-| DNI | Apellidos | Nombre |
-|-----|-----------|--------|
-|**1234ABCDE**|**NULL**| **NULL** |
-|**4321SDFGH**|**Piña**| **Agustín** |
-|**4567ASDFG**|**NULL**| **Mary** |
+### Tabla: `habitar`
 
-- `PRIMARY KEY` - En la vida real existen docenas, si no, quizás miles de personas con el mismo nombre, la misma fecha de nacimiento, la misma edad que tú y que yo, mi nombre es **Agustín Antonio Marquez Piña**, naci el **14/06/2000** y mi edad son **26 años**, buscando en intener puedes conseguír solo en España aprox. 12.374 personas con el mismo nombre, fecha de cumpleaños y edad, entonces, **¿Que hacé el banco para saber si la cuenta es mía o es de ellos?** necesitan usar un dato (un trozo de información) que sea unico y solamente mio, que nadie más tenga uno igual, por ejemplo, el **DNI**, un código unico, irrepetible, que te acompaña desde que naces y mucho después de la muerte.
+Tabla de relación que conecta personas con viviendas (tabla intermedia).
 
-- `FOREIGN KEY` - Yo trabajo en **COSTCO**, la empresa tiene una base de datos con una tabla llamada **empleados**, cuando alguien de la empresa, por ejemplo, **RRHH** necesita revisar mi expediente para ver si estoy loquito o estoy cuerdo, ellos pueden usar dos cosas para obtener mi información, el **DNI** (un código unico que solamente tengo yo en el mundo) o mi **Código de empleado**, que es un código unico e irrpetible que la empresa me da a mi por ser empleado, ambas cosas cumplen el mismo rol, pero una de ellas es más importante para la empresa que la otra.
+| Columna | Tipo | Descripción |
+|---------|------|-------------|
+| `dni` | CHAR(10) | **Clave Foránea** - DNI de la persona |
+| `cod_vivienda` | CHAR(10) | **Clave Foránea** - Código de la vivienda |
+| `fecha_inicio` | DATETIME(6) | Fecha en que la persona comenzó a habitar |
 
-Lo normal es que las empresas usen los **códigos de empleado** como **primary key**, a través de esos códigos pueden consultar información de sus empleados, pero a veces, por ejemplo, cuando un empleado es demasiado nuevo y aún no tiene código de empleado, podemos usar algo alternativo para conseguír su información, eso es una **foreign key**, es una "clave alternativa".
+**Relaciones:**
+- `dni` referencia a `personas.dni`
+- `cod_vivienda` referencia a `viviendas.cod_vivienda`
+- **Clave Primaria Compuesta:** (`dni`, `cod_vivienda`)
 
-#### **EJEMPLO DE TABLA FICTICIA**
+| [Anterior](#índice) | [Índice](#índice) | [Siguiente](#diagrama-entidad-relación) |
+|---|---|---|
 
-| DNI | Apellidos | Nombre | DNI_padre |
-|-----|-----------|--------|-----------|
-|**1234ABCDE**|**NULL**| **NULL** ||
-|**4321SDFGH**|**Piña**| **Agustín** | **56475SADA** |
-|**4321SDFGH**|**Piña**| **Agustína** | **56475SADA** |
-|**4567ASDFG**|**NULL**| **Mary** ||
-|**56475SADA**|**Marquez**| **Francisco** ||
+---
 
-#### **EJEMPLO DE PSEUDO-CONSULTA**
+## Diagrama Entidad-Relación
+
+```
+┌─────────────────────────────────────────────────────────────────┐
+│                    BASE DE DATOS: VIVIENDAS                     │
+└─────────────────────────────────────────────────────────────────┘
+
+┌──────────────┐
+│   PERSONAS  │
+├──────────────┤
+│ PK dni       │◄─────┐
+│ nombre       │      │
+│ apellidos    │      │
+│ FK dni_padre │──────┘ (auto-referencia)
+└──────┬───────┘
+       │
+       │ 1
+       │
+       │ N
+       │
+┌──────▼──────────┐
+│     HABITAR     │
+├─────────────────┤
+│ PK,FK dni       │
+│ PK,FK           │
+│   cod_vivienda  │
+│ fecha_inicio    │
+└──────┬──────────┘
+       │
+       │ N
+       │
+       │ 1
+       │
+┌──────▼──────────┐         ┌──────────────┐
+│   VIVIENDAS     │         │    ZONAS     │
+├─────────────────┤         ├──────────────┤
+│ PK cod_vivienda │         │ PK nombre_   │
+│ calle           │         │    zona      │
+│ numero          │         │ descripcion  │
+│ piso            │         └──────▲───────┘
+│ puerta          │                │
+│ metros          │                │
+│ fecha_          │                │
+│   construccion  │                │
+│ FK nombre_zona  │────────────────┘
+└─────────────────┘
+```
+
+### Explicación del Diagrama
+1. **Relación Personas-Habitar-Viviendas:**
+   - Una persona puede habitar múltiples viviendas (relación N:M)
+   - Una vivienda puede ser habitada por múltiples personas (relación N:M)
+   - La tabla `habitar` es una **tabla intermedia** que resuelve esta relación muchos-a-muchos
+
+2. **Relación Viviendas-Zonas:**
+   - Una vivienda pertenece a una zona (relación N:1)
+   - Una zona puede tener múltiples viviendas (relación 1:N)
+
+3. **Auto-referencia en Personas:**
+   - Una persona puede tener un padre registrado (relación 1:N)
+   - Una persona puede ser padre de múltiples personas (relación 1:N)
+
+### Símbolos del Diagrama- **PK**: Clave Primaria (Primary Key)
+- **FK**: Clave Foránea (Foreign Key)
+- **1**: Uno
+- **N**: Muchos
+- **─**: Relación
+- **◄─**: Dirección de la relación
+
+| [Anterior](#estructura-de-la-base-de-datos) | [Índice](#índice) | [Siguiente](#conceptos-fundamentales-de-sql) |
+|---|---|---|
+
+---
+
+## Conceptos Fundamentales de SQL
+
+### SELECT - Consultar Datos
+La sentencia `SELECT` se usa para consultar datos de una o más tablas.
 
 ```sql
-SELECT Apellidos FROM Personas WHERE DNI_padre = 56475SADA;
+SELECT columna1, columna2
+FROM tabla
+WHERE condicion;
 ```
 
-#### **EJEMPLO DE LA RESPUESTA DE LA PSEUDO-CONSULTA**
-
-| DNI | Apellidos | Nombre | DNI_padre |
-|-----|-----------|--------|-----------|
-|**4321SDFGH**|**Piña**| **Agustín** | **56475SADA** |
-|**4321SDFGH**|**Piña**| **Agustína** | **56475SADA** |
-
-## **Diagramas de entidad relacion**
-
-```
-┌───────────────────┐
-|   PERSONAS        |
-├───────────────────┤
-|   (PK) DNI        | => 1234ABCD   => 12354HFD => 34737FHD
-|   nombre          | => Agustín    => Bárbara  => Vanessa
-|   apellidos       | => Piña       => Piña     => Vidal
-| (FK) DNI_padre    | => NULL       => NULL     => NULL
-└──────┬────────────┘
-       |
-       |    1 (Una persona puede habitar como minímo una vivienda).
-       |    N (Una persona puede habitar comno maximno maximo varias viviendas).
-       |
-┌───────▼────────────┐
-│     HABITAR        │
-├────────────────────┤
-│ PK,FK dni          │ => 1234ABCD   => 12354HFD => 34737FHD => 1234ABCD
-│ PK,FK              │ => CODV2025   => CODV2025 => CODV2025 => COVD2024
-│ cod_vivienda       │ => 14/06/00   => 02/11/95 => 07/14/03 => NULL
-│ fecha_inicio       │ 
-└───────▲────────────┘
-        |
-        | N (Las viviendas pueden ser habitadas por maximo varias persona).
-        | 1 (Las viviendas pueden ser habitadas por minímo una persona).
-        |
-┌───────┴───────────┐
-│     VIVIENDAS     │
-├───────────────────┤
-│ PK cod_vivienda   │ => COD2025
-│ calle             │ => Avenida Coruña
-│ numero            │ => 58
-│ piso              │ => 2
-│ etc...            │ => E
-└───────┬───────────┘
-        |
-        |
-        |
-┌───────┴───────────┐
-│     ZONAS         │
-├───────────────────┤
-│ PK nombre_zona    │
-│ descripción       │ 
-└───────────────────┘
-```
-
-## **Conceptos fundamentales de SQL**
-
-### **SELECT - Consultar/leer/ver datos**
-
-¿Para que se usa **SELECT**? Cuando deseamos ver/obtener la información de algo sin modificarla, borrarla ni editarla, por ejemplo, si quiero ver el nombre de una persona y nada más, solo verlo, usaría **SELECT.**
-
-Vamos a usar de ejemplo la tabla real que tenemos en **viviendas** llamada **personas**:
-
-| DNI | Apellidos | Nombre | DNI_padre |
-|-----|-----------|--------|-----------|
-|**1234ABCDE**|**NULL**| **NULL** | **NULL** |
-|**4321SDFGH**|**Piña**| **Agustín** | **56475SADA** |
-|**4321SDFGH**|**Piña**| **Agustína** | **56475SADA** |
-|**4567ASDFG**|**NULL**| **Mary** | **NULL** |
-|**56475SADA**|**Marquez**| **Francisco** | **NULL** |
-
-Cuando usamos **SELECT** tengo que decirle que columnas quiero ver, de que tabla (**"WHERE"**) quiero verlas y si necesito filtrarlas basandome en alguna condición (**"FROM"**), ejemplo: 
-
+**Ejemplo:**
 ```sql
-SELECT columna1, columna2 FROM tabla WHERE condicion;
+SELECT nombre, apellidos
+FROM personas
+WHERE nombre = 'Juan';
 ```
 
-#### **Ejemplo: ver nombres y apellidos de todas las personas**
-
-```sql
-SELECT Nombre, Apellidos FROM personas;
-```
-
-**Resultado:**
-
-| Apellidos | Nombre |
-|-----------|--------|
-| NULL | NULL |
-| Piña | Agustín |
-| Piña | Agustína |
-| NULL | Mary |
-| Marquez | Francisco |
-
-#### **Ejemplo: nombres que empiecen por la letra A**
-
-`A%` = cualquier texto que **empiece** con "A". El `%` va al final.
-
-```sql
-SELECT Nombre, Apellidos FROM personas WHERE nombre LIKE 'A%';
-```
-
-**Resultado:**
-
-| Apellidos | Nombre |
-|-----------|--------|
-| Piña | Agustín |
-| Piña | Agustína |
-
-#### **Ejemplo: nombres que terminen con la letra Y**
-
-`%Y` = cualquier texto que **termine** con "Y". El `%` va al principio.
-
-```sql
-SELECT Nombre, Apellidos FROM personas WHERE nombre LIKE '%Y';
-```
-
-**Resultado:**
-
-| Apellidos | Nombre |
-|-----------|--------|
-| NULL | Mary |
-
-#### **Ejemplo: ver todos los datos de una tabla**
-
-El asterisco (`*`) significa "todo" — muestra todas las columnas sin filtrar.
-
-```sql
-SELECT * FROM personas;
-```
-
-**Resultado:**
-
-| DNI | Apellidos | Nombre | DNI_padre |
-|-----|-----------|--------|-----------|
-| 1234ABCDE | NULL | NULL | NULL |
-| 4321SDFGH | Piña | Agustín | 56475SADA |
-| 4321SDFGH | Piña | Agustína | 56475SADA |
-| 4567ASDFG | NULL | Mary | NULL |
-| 56475SADA | Marquez | Francisco | NULL |
-
-### **WHERE - Filtrado de resultados.**
-
-Con **SELECT** podemos elegir todos los datos de una tabla pero cuando necesitamos recudir los datos a unos pocos usando filtros (ejemplo, solo aquellas viviendas que tengan más de 30 metros cuadrados, solo aquellas viviendas que estén en la zona centro de la ciudad, solo aquellas personas cuyo nombre sea Juan, etc) tenemos que usar **WHERE** que, usando una simbología informatica (simbolos) permite filtrar resultados, está simbología se explica a continuación:
+### WHERE - Filtrar Resultados
+`WHERE` se usa para filtrar filas que cumplen una condición específica.
 
 **Operadores de comparación:**
+- `=` : Igual a
+- `<>` o `!=` : Diferente de
+- `<` : Menor que
+- `>` : Mayor que
+- `<=` : Menor o igual que
+- `>=` : Mayor o igual que
 
-- "=": Cuando necesito que dos cosas sean exactamente iguales, ejemplo, busca el nombre de la persona cuyo DNI es el siguiente... `SELECT nombre FROM personas WHERE DNI = 1234AVCDE;`.
-- "!=": Cuando necesito ver todos los resultados que no coincidan, ejemplo, busca viviendas que no esten en la zona centro... `SELECT * FROM vivienda WHERE nombre_zona != "Centro";`.
-- ">": Filtro que uso cuando necesito que el valor de "X" campo sea mayor a un número que yo le de, ejemplo, necesito ver solo las viviendas que tengan más de 70 metros de superficie... `SELECT * FROM viviendas WHERE metros > 70;`
-- "<": Filtro que uso cuando necesito que el valor de "X" campo sea menor a un número que yo le de, ejemplo, necesito ver solo las viviendas que tengan menos de 100 metros de superficie... `SELECT * FROM viviendas WHERE metros < 100;`
-- ">=": Filtro que uso cuando necesito que el valor de "X" campo sea mayor o igual a un número que yo le de, ejemplo, necesito ver solo las viviendas que tengan más de 70 metros o 70 metros exactos de superficie  ... `SELECT * FROM viviendas WHERE metros >= 70;`
-- "<=": Filtro que uso cuando necesito que el valor de "X" campo sea menor o igual a un número que yo le de, ejemplo, necesito ver solo las viviendas que tengan menos de 100 metros o 100 metros exactos de superficie... `SELECT * FROM viviendas WHERE metros <= 100;`
+**Operadores lógicos:**
+- `AND` : Ambas condiciones deben cumplirse
+- `OR` : Al menos una condición debe cumplirse
+- `NOT` : Niega una condición
 
-**Operadores logicos:**
-
-- "AND" - Filtro que uso cuando necesito que se cumplan todas las condiciones, por ejemplo, quiero ver toda la información de los pisos que cumplan con las siguientes dos condiciones, superficie de más de 70 metros pero de menos de 100... `SELECT * FROM viviendas WHERE metros >= 70 AND metros <= 100;`
-- "OR" - Filtro que uso cuando quiero que se cumpla al menos una de las condiciones, si son todas o no son todas, no pasa nada, pero al menos una, ejemplo, necesito ver de la tabla de personas todos los nombres y apellidos de las personas cuyo nombre empiecen con la letra "A" o terminen con la letra "Y"... `SELECT nombre, apellidos FROM personas WHERE nombre LIKE "A%" OR nombre LIKE "%Y";`.
-- "NOT" - Filtro que uso cuando solo quiero ver resultados que no cumplan con el filtro, por ejemplo, quiero ver pisos que **NO** estén en la zona centro ni el sector norte... `SELECT * FROM viviendas WHERE nombre_zona NOT "centro" OR NOT "sector norte`
-- "IN" - Filtro que uso cuando quiero agrupar diferentes condiciones en una sola, ejemplo, quiero ver solamente aquellas viviendas que esten en mis zonas favoritas, el centro o el sector norte... `SELECT * FROM viviendas WHERE nombre_zona IN ("Centro", "Sector Norte", "Este");`
-- "BETWEEN" - Filtro que uso cuando quiera seleccionar un valor entre dos números dados (un rango), ejemplo, ver todos los pisos cuya superficie (metros) este entre 70 y 100 (ambos incluidos)... `SELECT * FROM viviendas WHERE metros BETWEEN 70 AND 100;`
-
-### **LIKE - Buscar/filtrar usando patrones**
-
-A veces necesitamos buscar datos que coincidan parcial o completamente con ciertos patrones, por ejemplo, necesitamos ver todos los empleados cuyo apellido sea "Piña" porque hoy es el día internacional de la piña y les vamos a regalar un zumo de piña y una tarta de piña, entonces podría hacer la siguiente consulta:
-
+**Ejemplos:**
 ```sql
-SELECT * FROM personas WHERE apellidos LIKE "%piña%";
+-- Múltiples condiciones con AND
+SELECT * FROM viviendas
+WHERE nombre_zona = 'Centro' AND metros > 80;
+
+-- Rango de valores con BETWEEN
+SELECT * FROM viviendas
+WHERE metros BETWEEN 70 AND 90;
+
+-- Múltiples valores con IN
+SELECT * FROM viviendas
+WHERE nombre_zona IN ('Centro', 'Sector Norte');
 ```
 
-Esta consulta va a mostrar a todas las personas cuyos apellidos contengan la palabra "piña", da igual si al principio, al final, en medio o mezclado, ejemplo de personas que aparecerían:
+### LIKE - Búsqueda de Patrones
+`LIKE` se usa para buscar patrones en texto usando comodines.
 
-- Agustín Marquéz Piña (le dieron zumo y tarta).
-- Antonio Piña Gonzale (le dieron zumo y tarta).
-- Miguel Popiña Guzman (le dieron zumo y tarta).
+**Comodines:**
+- `%` : Cualquier secuencia de caracteres (0 o más)
+- `_` : Un solo carácter
 
-### **ORDER BY - Ordenar los resultados obtenidos en una consulta**
+**Ejemplos:**
+```sql
+-- Apellidos que comienzan con 'L'
+SELECT * FROM personas WHERE apellidos LIKE 'L%';
 
-A veces obtenemos resultados en las consultas, por ejemplo, una lista de empleados y sus sueldos y queremos organizar la lista, por ejemplo, en orden alfabetico o en orden de mayor a menor salario o vivecersa, eso es lo que hace **ORDER BY**, se usan con los siguientes argumentos:
+-- Nombres que terminan con 'o'
+SELECT * FROM personas WHERE nombre LIKE '%o';
 
-- `ORDER BY... ASC`: **ASC** ordena los resultados de una consulta de forma **ascendente**, si son palabras de la `A` a la `Z` y si son números del `menor` al `mayor`, **ejemplo:** `SELECT * FROM personas ORDER BY apellidos ASC;` organizaría todas las personas por orden alfabetico de sus apellidos.
-- `ORDER BY... DESC`: **DESC** hace exactamente lo mismo pero al revés, si son palabras, de la `Z` a la `A` y si son números del `mayor` al `menor`, **ejemplo:** ``SELECT * FROM viviendas ORDER BY metros DESC;` organizaría todas las viviendas empezando por las de mayor cantidad de metros hasta la que tenga menos.
-- `USAR AMBOS AL MISMO TIEMPO`: Esto es más complejo de entender, hay ciertos escenarios donde queremos organizar la información en base a dos cosas, por ejemplo, queremos ver la viviendas en orden alfabetico según la zona donde están y a la vez que en esas zonas se organice de mayor a menor cantidad de metros, **ejemplo:** `SELECT * FROM viviendas ORDER BY nombre_zona ASC, metros DESC;`.
+-- Apellidos que contienen 'ez'
+SELECT * FROM personas WHERE apellidos LIKE '%ez%';
+```
 
-#### **TABLA SIN ORDER BY**
+### ORDER BY - Ordenar Resultados
+`ORDER BY` ordena los resultados de una consulta.
 
-| cod_vivienda | calle | numero | piso | puerta | metros | fecha | zona |
-|--------------|-------|--------|------|--------|--------|-------|------|
-| 12345ABCD | Mery      | 10    | 1 | C | 250   | 14/06/2000 | Centro   |
-| 77890QWER	| Sol       | 22    | 3 | B | 95    | 03/11/2015 | Norte    |
-| 99887LMNO	| Olmo	    | 5     | 2	| A	| 80	| 19/02/2018 |	Oeste   |
-| 44556ZXCV	| Prado	    | 18	| 4	| D	| 120	| 27/09/2010 |	Centro  |
-| 66221ASDF	| Mar       | 7     | 1	| B	| 60	| 08/01/2020 |	Este    |
-| 33445HJKL	| Sierra    | 30	| 5	| A	| 140	| 12/12/2005 |	Norte   |
-| 55119BNMQ	| Luna	    | 14	| 2	| C	| 90	| 21/05/2012 |	Sur     |
-| 88990RTYU	| Roble	    | 3     | 0	| A	| 70	| 01/07/2019 |	Oeste   |
-| 77654POIU	| Levante	| 25	| 6	| B	| 110	| 16/03/2008 |	Este    |
-| 11223VCXZ |	Alameda	| 40	| 3	| D	| 100	| 10/10/2016 |	Sur     |
+- `ASC` : Orden ascendente (predeterminado)
+- `DESC` : Orden descendente
 
-#### **TABLA CON ORDER BY COMBINADO**
+**Ejemplos:**
+```sql
+-- Ordenar por apellidos (A-Z)
+SELECT * FROM personas ORDER BY apellidos ASC;
 
-| cod_vivienda | calle | numero | piso | puerta | metros | fecha | zona |
-|--------------|-------|--------|------|--------|--------|-------|------|
-| 12345ABCD | Mery      | 10    | 1 | C | 250   | 14/06/2000 | Centro   |
-| 44556ZXCV	| Prado	    | 18	| 4	| D	| 120	| 27/09/2010 | Centro   |
-| 77654POIU	| Levante	| 25	| 6	| B	| 110	| 16/03/2008 | Este     |
-| 66221ASDF	| Mar       | 7     | 1	| B	| 60	| 08/01/2020 | Este     |
-| 33445HJKL	| Sierra    | 30	| 5	| A	| 140	| 12/12/2005 | Norte    |
-| 77890QWER	| Sol       | 22    | 3 | B | 95    | 03/11/2015 | Norte    |
-| 99887LMNO	| Olmo	    | 5     | 2	| A	| 80	| 19/02/2018 | Oeste    |
-| 88990RTYU	| Roble	    | 3     | 0	| A	| 70	| 01/07/2019 | Oeste    |
-| 11223VCXZ |	Alameda	| 40	| 3	| D	| 100	| 10/10/2016 | Sur      |
-| 55119BNMQ	| Luna	    | 14	| 2	| C	| 90	| 21/05/2012 | Sur      |
+-- Ordenar por metros (de mayor a menor)
+SELECT * FROM viviendas ORDER BY metros DESC;
 
-## **Tipos de JOINS**
+-- Ordenar por múltiples columnas
+SELECT * FROM viviendas
+ORDER BY nombre_zona ASC, metros DESC;
+```
 
-Cuando tenemos una base de datos muy grande o muy compleja, donde hay muchos datos relacionados pero almacenados en diferetentas tablas usamos los **JOINS** para "unir" esas tablas de forma temporalmente y consultar más facilmente los datos, hay una forma muy común de aprender a usarlos que es usando **diagramas de Venn**, pero pintar esas cosas en digital es muy dificíl, así que usaremos tablas.
+### DISTINCT - Eliminar Duplicados
+`DISTINCT` elimina filas duplicadas del resultado.
 
-### **INNER JOIN - Solo la intersección de datos**
+```sql
+SELECT DISTINCT nombre_zona FROM viviendas;
+```
 
-**Tabla `personas` (izquierda)**
+### NULL en las consultas
+En SQL, `NULL` significa "valor desconocido o ausente". No es lo mismo que cero ni que una cadena vacía. Para filtrar por NULL debes usar `IS NULL` o `IS NOT NULL` (no se usa `= NULL`).
+
+**Ejemplos:**
+```sql
+-- Personas que NO tienen padre registrado (dni_padre es NULL)
+SELECT nombre, apellidos FROM personas WHERE dni_padre IS NULL;
+
+-- Personas que SÍ tienen padre registrado
+SELECT nombre, apellidos FROM personas WHERE dni_padre IS NOT NULL;
+```
+
+**Regla:** En condiciones, `columna = NULL` no funciona; siempre usa `columna IS NULL` o `columna IS NOT NULL`.
+
+| [Anterior](#diagrama-entidad-relación) | [Índice](#índice) | [Siguiente](#tipos-de-join---explicación-visual-con-diagramas-de-venn) |
+|---|---|---|
+
+---
+
+## Tipos de JOIN - Explicación Visual con Diagramas de Venn
+
+Los JOINs permiten combinar datos de múltiples tablas relacionadas. La mejor forma de entenderlos es visualizándolos como **círculos superpuestos** (diagramas de Venn).
+
+### Concepto base: dos círculos superpuestos
+Imagina que tienes dos tablas representadas como dos círculos:
+
+```
+        Tabla A              Tabla B
+      ╭───────╮           ╭───────╮
+     ╱         ╲         ╱         ╲
+    │     A     │       │     B     │
+     ╲         ╱         ╲         ╱
+      ╰───────╯           ╰───────╯
+```
+
+Cuando las tablas tienen datos relacionados, los círculos se superponen:
+
+```
+      ╭───────╮     ╭───────╮
+     ╱    A    ╲   ╱    B    ╲
+    │           │ │           │
+    │    ╔═══╗  │ │  ╔═══╗    │
+    │    ║ ∩ ║  │ │  ║ ∩ ║    │  ← Intersección
+    │    ╚═══╝  │ │  ╚═══╝    │
+     ╲         ╱   ╲         ╱
+      ╰───────╯     ╰───────╯
+```
+
+**La zona de intersección** (donde se solapan los círculos) contiene los datos que están relacionados entre ambas tablas (donde hay coincidencias).
+
+---
+
+### INNER JOIN - Solo la intersección
+**¿Qué hace?** Devuelve **SOLO** las filas donde hay coincidencia en ambas tablas.
+
+**Diagrama de Venn:**
+```
+      ╭───────╮     ╭───────╮
+     ╱    A    ╲   ╱    B    ╲
+    │           │ │           │
+    │    ╔═══════╗═══════╗    │
+    │    ║ INNER ║ JOIN  ║    │  ← SOLO ESTA ZONA
+    │    ║ (solo ║       ║    │     (intersección)
+    │    ╚═══════╝═══════╝    │
+     ╲         ╱   ╲         ╱
+      ╰───────╯     ╰───────╯
+         ▲              ▲
+         └──────────────┘
+      Excluido      Excluido
+```
+
+**Explicación:**
+- Solo se incluyen los datos que están en **ambas tablas** (la intersección)
+- Los datos que solo están en A o solo en B se **excluyen**
+
+**Ejemplo con datos reales:**
+
+**Tabla `personas` (izquierda):**
 | dni | nombre | apellidos |
 |-----|--------|-----------|
-| 33456123A | Rodrigo   | Perez F       |
-| 33456789C | Marcos    | Rodriguez B   |
-| 34561232D | Carlos    | Duran         |
-| 50123456X | Juan      | Gil           |
-| 4347898D | Agustín | Piña |
+| 33456123A | Rodrigo | Perez F |
+| 33456789C | Marcos | Rodriguez B |
+| 34561232D | Carlos | Duran |
+| 50123456X | Juan | Gil |
+| 54589434R | Agustín | Piña |
 
 **Tabla `habitar` (derecha):**
 | dni | cod_vivienda | fecha_inicio |
@@ -321,13 +425,13 @@ Cuando tenemos una base de datos muy grande o muy compleja, donde hay muchos dat
 | 33456789C | 10003 | 1987-10-30 |
 | 34561232D | 30000 | 1990-12-12 |
 | 50123456X | 10003 | 2000-12-12 |
-| 50123456X | 10004 | 1987-10-30 | 
-
-Imagina que quiero consultar todos los nombres, apellidos, codigos de vivienda y fechas de inicio de las personas que aparezcan en ambas tablas, haría una consulta parecida a la siguiente:
+| 50123456X | 10004 | 1987-10-30 |
 
 **Consulta:**
 ```sql
-SELECT p.nombre, p.apellidos, h.cod_vivienda, h.fecha_inicio FROM personas p INNER JOIN habitar h ON p.dni = h.dni
+SELECT p.nombre, p.apellidos, h.cod_vivienda, h.fecha_inicio
+FROM personas p
+INNER JOIN habitar h ON p.dni = h.dni;
 ```
 
 **Resultado del INNER JOIN:**
@@ -338,23 +442,50 @@ SELECT p.nombre, p.apellidos, h.cod_vivienda, h.fecha_inicio FROM personas p INN
 | Juan | Gil | 10003 | 2000-12-12 |
 | Juan | Gil | 10004 | 1987-10-30 |
 
-**Observaciones del resultado:**
-- **¿Qué incluye?** Incluye a Marcos, Carlos y Juan porque aparecen en ambas tablas, en `personas` y en `habitar`.
-- **¿Qué excluye?** Excluye a Rodrigo y Agustín porque solo existen en la tabla de `personas` pero no aparecen en la tabla de `habitar`.
-- **¿Hay valores repetidos?** En este caso si, Juan aparece dos veces porque en la tabla de `habitar` parece que vive en dos viviendas aunque en `personas` solo aparece una vez. 
+**Observaciones:**
+- ✅ **Incluye:** Marcos, Carlos y Juan (tienen coincidencias en ambas tablas)
+- ❌ **Excluye:** Rodrigo (no tiene registro en `habitar`)
+- ⚠️ **Nota:** Juan aparece 2 veces porque habita 2 viviendas diferentes
 
-### **LEFT JOIN - Toda la tabla de la izquierda y la intersección de la derecha**
+**Cuándo usar:** Cuando solo necesitas datos que existen en ambas tablas.
 
-A diferencia de **INNER JOIN** cuando usamos **LEFT JOIN** todas las filas (información) de la tabla de la izquierda es visible y de la derecha solo la información que exista (coincidencia).11223VCXZ
+---
 
-**Tabla `personas` (izquierda)**
+### LEFT JOIN - Todo el círculo izquierdo + intersección
+**¿Qué hace?** Devuelve **TODAS** las filas de la tabla izquierda (A) y las coincidencias de la tabla derecha (B). Si no hay coincidencia, las columnas de B serán NULL.
+
+**Diagrama de Venn:**
+```
+      ╭═══════════════╮    ╭───────╮
+     ╱   LEFT JOIN    ╲   ╱    B    ╲
+    │   (A completo)   │ │           │
+    │                  │ │           │
+    │    ╔═════════════╗═══════╗     │
+    │    ║ Intersección║       ║     │
+    │    ╚═════════════╝═══════╝     │
+     ╲                 ╱    ╲        ╱
+      ╰═══════════════╯      ╰───────╯
+         ▲              ▲
+         │              └── Excluido
+         └── Incluido
+```
+
+**Explicación:**
+- Se incluyen **TODOS** los datos de la tabla A (izquierda)
+- También se incluyen los datos relacionados (intersección)
+- Los datos que solo están en B se **excluyen**
+- Si un dato de A no tiene coincidencia en B, las columnas de B serán NULL
+
+**Ejemplo con datos reales:**
+
+**Tabla `personas` (izquierda):**
 | dni | nombre | apellidos |
 |-----|--------|-----------|
-| 33456123A | Rodrigo   | Perez F       |
-| 33456789C | Marcos    | Rodriguez B   |
-| 34561232D | Carlos    | Duran         |
-| 50123456X | Juan      | Gil           |
-| 4347898D | Agustín    | Piña          |
+| 33456123A | Rodrigo | Perez F |
+| 33456789C | Marcos | Rodriguez B |
+| 34561232D | Carlos | Duran |
+| 50123456X | Juan | Gil |
+| 54954323R | Agustín | Piña |
 
 **Tabla `habitar` (derecha):**
 | dni | cod_vivienda | fecha_inicio |
@@ -362,31 +493,60 @@ A diferencia de **INNER JOIN** cuando usamos **LEFT JOIN** todas las filas (info
 | 33456789C | 10003 | 1987-10-30 |
 | 34561232D | 30000 | 1990-12-12 |
 | 50123456X | 10003 | 2000-12-12 |
-| 50123456X | 10004 | 1987-10-30 | 
+| 50123456X | 10004 | 1987-10-30 |
 
 **Consulta:**
 ```sql
-SELECT personas.nombre, personas.apellidos, habitar.cod_vivienda, habitar.fecha_inicio FROM personas LEFT JOIN habitar ON personas.dni = habitar.dni;
+SELECT p.nombre, p.apellidos, h.cod_vivienda, h.fecha_inicio
+FROM personas p
+LEFT JOIN habitar h ON p.dni = h.dni;
 ```
 
 **Resultado del LEFT JOIN:**
 | nombre | apellidos | cod_vivienda | fecha_inicio |
 |--------|-----------|--------------|--------------|
-| Rodrigo   | Perez F       | **NULL**  | **NULL**      |
-| Marcos    | Rodriguez B   | 10003     | 1987-10-30    |
-| Carlos    | Duran         | 30000     | 1990-12-12    |
-| Juan      | Gil           | 10003     | 2000-12-12    |
-| Juan      | Gil           | 10004     | 1987-10-30    |
-| Agustín   | Piña          | **NULL**  | **NULL**      |
+| Rodrigo | Perez F | **NULL** | **NULL** |
+| Marcos | Rodriguez B | 10003 | 1987-10-30 |
+| Carlos | Duran | 30000 | 1990-12-12 |
+| Juan | Gil | 10003 | 2000-12-12 |
+| Juan | Gil | 10004 | 1987-10-30 |
+| Agustín | Piña | **NULL** | **NULL** |
 
-**Observaciones del resultado:**
-- **¿Qué incluye?** Incluye a todas las personas, sin excepción porque vienen de la tabla de la izquierda (**LEFT**)
-- **¿Qué excluye?** Si hay personas que en la tabla de la derecha no tienen datos, no los excluye, pero esos datos que no existen los muestra en forma de **NULL**.
-- **¿Hay valores repetidos?** En este caso si, Juan aparece dos veces porque en la tabla de `habitar` parece que vive en dos viviendas aunque en `personas` solo aparece una vez. 
+**Observaciones:**
+- ✅ **Incluye:** TODAS las personas de la tabla izquierda
+- ✅ **Incluye:** Rodrigo aparece aunque no tenga vivienda (valores NULL)
+- ✅ **Incluye:** Marcos, Carlos y Juan con sus datos de vivienda
+- ⚠️ **Nota:** Juan aparece 2 veces porque habita 2 viviendas
 
-### **RIGHT JOIN - Toda la tabla de la derecha y la intersección de la izquierda**
+**Cuándo usar:** Cuando necesitas todos los registros de la tabla izquierda, incluso si no tienen coincidencias.
 
-Hace lo mismo que **LEFT JOIN** pero mostrando todos los datos de la tabla derecha y marcando como **NULL** aquellos que no existan a la izquierda.
+---
+
+### RIGHT JOIN - Todo el círculo derecho + intersección
+**¿Qué hace?** Devuelve **TODAS** las filas de la tabla derecha (B) y las coincidencias de la tabla izquierda (A). Si no hay coincidencia, las columnas de A serán NULL.
+
+**Diagrama de Venn:**
+```
+      ╭───────╮     ╭═══════════════╮
+     ╱    A    ╲   ╱   RIGHT JOIN   ╲
+    │           │ │   (B completo)   │
+    │           │ │                  │
+    │    ╔═══════╗═══════════════════╗
+    │    ║       ║ Intersección      ║
+    │    ╚═══════╝═══════════════════╝
+     ╲         ╱   ╲                  ╱
+      ╰───────╯     ╰═══════════════╯
+         ▲              ▲
+         └── Excluido   └── Incluido
+```
+
+**Explicación:**
+- Se incluyen **TODOS** los datos de la tabla B (derecha)
+- También se incluyen los datos relacionados (intersección)
+- Los datos que solo están en A se **excluyen**
+- Si un dato de B no tiene coincidencia en A, las columnas de A serán NULL
+
+**Ejemplo con datos reales:**
 
 **Tabla `viviendas` (izquierda):**
 | cod_vivienda | calle | nombre_zona |
@@ -407,7 +567,9 @@ Hace lo mismo que **LEFT JOIN** pero mostrando todos los datos de la tabla derec
 
 **Consulta:**
 ```sql
-SELECT zonas.nombre_zona, zonas.descripcion, viviendas.cod_vivienda, viviendas.calle FROM viviendas RIGHT JOIN zonas ON viviendas.nombre_zona = zonas.nombre_zona;
+SELECT z.nombre_zona, z.descripcion, v.cod_vivienda, v.calle
+FROM viviendas v
+RIGHT JOIN zonas z ON v.nombre_zona = z.nombre_zona;
 ```
 
 **Resultado del RIGHT JOIN:**
@@ -420,282 +582,590 @@ SELECT zonas.nombre_zona, zonas.descripcion, viviendas.cod_vivienda, viviendas.c
 | Sector Este | Al este | **NULL** | **NULL** |
 | Sector Oeste | Al west | **NULL** | **NULL** |
 
-**Observaciones del resultado:**
-- **¿Qué incluye?** Incluye todas las zonas incluso aunque no tengan viviendas porque zonas es la tabla de la derecha (**RIGHT**).
-- **¿Qué excluye?** Si hay zonas que no tienen viviendas los datos de viviendas aparecen como **NULL** porque no existen.
-- **¿Hay valores repetidos?** Si, Juan es terrateniente, tiene al menos dos viviendas siempre en todos lados.
+**Observaciones:**
+- ✅ **Incluye:** TODAS las zonas de la tabla derecha
+- ✅ **Incluye:** Sector Este y Sector Oeste aparecen aunque no tengan viviendas (valores NULL)
+- ✅ **Incluye:** Centro aparece 2 veces porque tiene 2 viviendas
+- ❌ **Excluye:** Solo se muestran viviendas que coinciden con zonas
 
-### **MULTIPLES JOINS - Usar varios JOINS al mismo tiempo***
+**Nota importante:** RIGHT JOIN es menos común. Muchos desarrolladores prefieren usar LEFT JOIN cambiando el orden de las tablas:
 
-A veces queremos unir más de dos tablas (tres, cuatro, cinco, etc), en esos escenarios existe algo llamado **FULL OUTER JOIN** pero no está disponible en **MySQL**, por eso en las empresas a nivel mundia se usan otros gestores de bases de datos (**PostgreSQL**, **MongoDB**, **NoSQL**), cuando lo usamos se ejecutan los joins uno detrás de otro (secuencialmente), ejeplo de sintaxis:
+```sql
+-- Equivalente con LEFT JOIN (más común)
+SELECT z.nombre_zona, z.descripcion, v.cod_vivienda, v.calle
+FROM zonas z
+LEFT JOIN viviendas v ON z.nombre_zona = v.nombre_zona;
+```
 
-**Tabla `personas`:**
+---
+
+### FULL OUTER JOIN - Ambos círculos completos
+**¿Qué hace?** Devuelve **TODAS** las filas de ambas tablas. Si no hay coincidencia, las columnas de la otra tabla serán NULL.
+
+**Diagrama de Venn:**
+```
+      ╭═══════════════╮     ╭═══════════════╮
+     ╱ FULL OUTER JOIN ╲   ╱ FULL OUTER JOIN ╲
+    │   (A completo)     │ │   (B completo)     │
+    │                    │ │                    │
+    │    ╔═══════════════╗═══════════════╗    │
+    │    ║ Intersección  ║               ║    │
+    │    ╚═══════════════╝═══════════════╝    │
+     ╲                    ╱   ╲                    ╱
+      ╰═══════════════╯     ╰═══════════════╯
+         ▲                      ▲
+         └── Incluido           └── Incluido
+```
+
+**Explicación:**
+- Se incluyen **TODOS** los datos de ambas tablas
+- Si un dato de A no tiene coincidencia en B, las columnas de B serán NULL
+- Si un dato de B no tiene coincidencia en A, las columnas de A serán NULL
+
+**Ejemplo con datos reales:**
+
+**Tabla `personas` (izquierda):**
 | dni | nombre | apellidos |
 |-----|--------|-----------|
+| 33456123A | Rodrigo | Perez F |
 | 33456789C | Marcos | Rodriguez B |
+| 34561232D | Carlos | Duran |
 | 50123456X | Juan | Gil |
 
-**Tabla `habitar`:**
+**Tabla `habitar` (derecha):**
 | dni | cod_vivienda | fecha_inicio |
 |-----|--------------|--------------|
 | 33456789C | 10003 | 1987-10-30 |
+| 34561232D | 30000 | 1990-12-12 |
 | 50123456X | 10003 | 2000-12-12 |
+| 50123456Z | 40000 | 1985-12-11 |
 
-**Tabla `viviendas`:**
-| cod_vivienda | calle | nombre_zona |
-|--------------|-------|-------------|
-| 10003 | Juan Florez | Centro |
+**Nota:** MySQL **NO soporta** FULL OUTER JOIN directamente. Se puede simular con UNION:
 
-**Tabla `zonas`:**
-| nombre_zona | descripcion |
-|-------------|-------------|
-| Centro | Zona central |
-
-**Sintaxis de ejemplo:**
+**Consulta (simulación en MySQL):**
 ```sql
-SELECT columnas... FROM tabla1
-JOIN tabla2 ON tabla1.dni = tabla2.dni
-JOIN tabla3 ON tabla2.nombre_zona = tabla3.condicion
-JOIN tabla4 ON tabla3.condicion = tabla4.condicion
+SELECT p.nombre, p.apellidos, h.cod_vivienda, h.fecha_inicio
+FROM personas p
+LEFT JOIN habitar h ON p.dni = h.dni
+UNION
+SELECT p.nombre, p.apellidos, h.cod_vivienda, h.fecha_inicio
+FROM personas p
+RIGHT JOIN habitar h ON p.dni = h.dni;
 ```
 
-**Consulta real de viviendas con múltiples JOINS:**
-```sql
-SELECT personas.nombre, personas.apellidos, viviendas.cod_vivienda AS 'codigo vivienda', viviendas.calle, zonas.descripcion
-FROM personas
-INNER JOIN habitar ON personas.dni = habitar.dni
-INNER JOIN viviendas ON habitar.cod_vivienda = viviendas.cod_vivienda
-INNER JOIN zonas ON viviendas.nombre_zona = zonas.nombre_zona;
+**Resultado del FULL OUTER JOIN (simulado):**
+| nombre | apellidos | cod_vivienda | fecha_inicio |
+|--------|-----------|--------------|--------------|
+| Rodrigo | Perez F | **NULL** | **NULL** |
+| Marcos | Rodriguez B | 10003 | 1987-10-30 |
+| Carlos | Duran | 30000 | 1990-12-12 |
+| Juan | Gil | 10003 | 2000-12-12 |
+| **NULL** | **NULL** | 40000 | 1985-12-11 |
+
+**Observaciones:**
+- ✅ **Incluye:** TODAS las personas (incluso sin vivienda)
+- ✅ **Incluye:** TODOS los registros de habitar (incluso sin persona)
+- ✅ **Incluye:** La persona con DNI 50123456Z aparece aunque no esté en la tabla `personas` (valores NULL)
+- ⚠️ **Nota:** En este caso, el último registro muestra una vivienda habitada por alguien que no está en la tabla `personas` (posible inconsistencia de datos)
+
+---
+
+### SELF JOIN - Un círculo consigo mismo
+**¿Qué hace?** Una tabla se une consigo misma. Se usa para comparar filas dentro de la misma tabla.
+
+**Diagrama conceptual:**
+```
+        Tabla Personas
+    ┌───────────────────┐
+    │                   │
+    │   Personas (hijo)  │
+    │                   │
+    └───────────────────┘
+              │
+              │ (dni_padre referencia)
+              ▼
+    ┌───────────────────┐
+    │                   │
+    │  Personas (padre) │
+    │                   │
+    └───────────────────┘
 ```
 
-**Resultado de la consulta:**
-| nombre | apellidos | codigo vivienda | calle | descripcion |
-|--------|-----------|--------------|-------|------------------|
-| Marcos | Rodriguez B | 10003 | Juan Florez | Zona central |
-| Juan | Gil | 10003 | Juan Florez | Zona central |
+**Ejemplo con datos reales:**
 
-## **Años (YEAR) en MySQL**
+**Tabla `personas` (vista como "hijo"):**
+| dni | nombre | apellidos | dni_padre |
+|-----|--------|-----------|-----------|
+| 33456123A | Rodrigo | Perez F | NULL |
+| 33456789C | Marcos | Rodriguez B | NULL |
+| 34561232D | Carlos | Duran | 33456123A |
+| 50123456X | Juan | Gil | 33456123A |
+| 50123456Z | Mario | Lopez B | 33456789C |
+| 50123457A | Elena | Hernandez | 50123456Z |
 
-En bases de datos **SQL** estás tienen la capacidad de guardar fechas, como en diferentes lugares del mundo se usan diferentes formatos, el creador de **SQL** es estado unidense, por eso, eligio guardar las fechas en todas las bases de datos **SQL** del mundo en el **formato YYYY/MM/DD**, si miramos la base de datos **viviendas.sql** y miramos la tabla de viviendas podremos apreciar un campo llamado **fecha de construcción**, con los siguientes valores:
-
-| ID | Calle / Edificio | Número | Piso | Letra | Metros² | Fecha | Sector |
-| :--- | :--- | :--- | :--- | :--- | :--- | :--- | :--- |
-| 10000 | Cernadas | 45 | 1 | A | 50 | 1987-10-25 | Sector Sur |
-| 10001 | Cernadas | 45 | 1 | B | 65 | 1987-10-25 | Sector Sur |
-| 10002 | Cernadas | 45 | 2 | A | 78 | 1987-10-25 | Sector Sur |
-| 10003 | Cernadas | 45 | 2 | B | 80 | 1987-10-25 | Sector Sur |
-| 10004 | Cernadas | 45 | 3 | A | 78 | 1987-10-25 | Sector Sur |
-| 10005 | Cernadas | 45 | 3 | B | 80 | 1987-10-25 | Sector Sur |
-| 20001 | Barcelona | 20 | 1 | B | 80 | 1984-10-22 | Sector Norte |
-| 20000 | Barcelona | 20 | 1 | A | 80 | 1974-10-22 | Sector Norte |
-| 50000 | Barcelona | 78 | 2 | C | 90 | 1990-10-10 | Sector Norte |
-| 30000 | Juan Florez | 35 | 1 | A | 90 | 1990-10-12 | Centro |
-| 30001 | Juan Florez | 35 | 1 | B | 88 | 1990-10-12 | Centro |
-| 40000 | Juan Florez | 40 | 1 | A | 61 | 1985-10-11 | Centro |
-
-Cuando guardamos por ejemplo el **ID** de las viviendas, usamos números enteros, eso es un tipo de variable llamado **integer**, cuando guardamos palabras o texto usamos un tipo de variable llamado **char**, por ejemplo con la calle, la letra, el sector, etc, las fechas ciertamente son números pero son especiales, son **fechas** y existe un tipo de variable usado solo para guardar fechas llamado **DATETIME**, si yo quiero consultar información sobre fechas, puedo elegir que quiero ver, si solo quiero ver el año de "X" fecha en la consulta puedo usar **YEAR**, si solo quiero ver el día o el mes de una fecha uso **DAY** o **MONTH**.
-
-### **¿Como usar "YEAR" al consultar fechas?**
-
-Imaginemos que queremos consultar en que año se construyeron las viviendas, pero no nos interesa ni el día ni la hora ni el mes, solo el año, entonces usamos **YEAR** como filtro de datos, mirad el siguiente ejemplo:
-
-**Sintaxis:**
-```sql
-SELECT * FROM tabla WHERE YEAR(fecha) < 2000;
-```
-
-**Ejemplo con viviendas:**
-```sql
-SELECT * FROM viviendas WHERE YEAR(fecha_construccion) < 1986;
-```
-
-**Resultado:**
-| ID | Calle / Edificio | Número | Piso | Letra | Metros² | Fecha | Sector |
-| :--- | :--- | :--- | :--- | :--- | :--- | :--- | :--- |
-| 20001 | Barcelona | 20 | 1 | B | 80 | 1984-10-22 | Sector Norte |
-| 40000 | Juan Florez | 40 | 1 | A | 61 | 1985-10-11 | Centro |
-
-
-## **Ordenar resultados de consultas en SQL con "ORDER BY"**
-
-Hasta ahora cuando hemos hecho las consultas no nos ha interesado ordenarlas de ninguna forma, pero en la vida real no suele ser así, por ejemplo, si yo consulto todas las viviendas de la capital de Galicia basandome en su fecha de construcción a mi no me gustaría que salga desordenado, probablemente me gustaría poder verlas de más antigua a más reciente o viceversa.
-
-Lo mismo pasa en una empresa, si queremos ver una lista de todos los empleados es probable que quiera ordenarla por orden alfabetico de los nombres o quizás de los apellidos, para eso, **SQL** tiene una función o carácteristica llamada **ORDER BY** que nos permite usar un campo de la tabla para ordenar los resultados.
-
-### **¿Como usar "ORDER BY" al consultar tablas?**
-
-Imagina que queremos consultar todas las viviendas y ordenarlas por el número de la calle donde están ubicadas, mira el siguiente ejemplo:
-
-**Sintaxis:**
-```sql
-SELECT * FROM tabla ORDER BY campo;
-```
-
-**Ejemplo: orden ascendente (menor a mayor)**
-```sql
-SELECT * FROM viviendas ORDER BY numero ASC;
-```
-
-**Resultado:**
-| ID | Calle / Edificio | Número | Piso | Letra | Metros² | Fecha | Sector |
-| :--- | :--- | :--- | :--- | :--- | :--- | :--- | :--- |
-| 20000 | Barcelona | 20 | 1 | A | 80 | 1974-10-22 | Sector Norte |
-| 20001 | Barcelona | 20 | 1 | B | 80 | 1984-10-22 | Sector Norte |
-| 30001 | Juan Florez | 35 | 1 | B | 88 | 1990-10-12 | Centro |
-| 30000 | Juan Florez | 35 | 1 | A | 90 | 1990-10-12 | Centro |
-| 40000 | Juan Florez | 40 | 1 | A | 61 | 1985-10-11 | Centro |
-| 10000 | Cernadas | 45 | 1 | A | 50 | 1987-10-25 | Sector Sur |
-| 10005 | Cernadas | 45 | 3 | B | 80 | 1987-10-25 | Sector Sur |
-| 10004 | Cernadas | 45 | 3 | A | 78 | 1987-10-25 | Sector Sur |
-| 10003 | Cernadas | 45 | 2 | B | 80 | 1987-10-25 | Sector Sur |
-| 10002 | Cernadas | 45 | 2 | A | 78 | 1987-10-25 | Sector Sur |
-| 10001 | Cernadas | 45 | 1 | B | 65 | 1987-10-25 | Sector Sur |
-| 50000 | Barcelona | 78 | 2 | C | 90 | 1990-10-10 | Sector Norte |
-
-**Ejemplo: orden descendente (mayor a menor)**
-
-*Nota: En el ejemplo anterior hay un error — debería ser `DESC` para descendente:*
-```sql
-SELECT * FROM viviendas ORDER BY numero DESC;
-```
-
-**Resultado:**
-| ID | Calle / Edificio | Número | Piso | Letra | Metros² | Fecha | Sector |
-| :--- | :--- | :--- | :--- | :--- | :--- | :--- | :--- |
-| 50000 | Barcelona | 78 | 2 | C | 90 | 1990-10-10 | Sector Norte |
-| 10000 | Cernadas | 45 | 1 | A | 50 | 1987-10-25 | Sector Sur |
-| 10005 | Cernadas | 45 | 3 | B | 80 | 1987-10-25 | Sector Sur |
-| 10004 | Cernadas | 45 | 3 | A | 78 | 1987-10-25 | Sector Sur |
-| 10003 | Cernadas | 45 | 2 | B | 80 | 1987-10-25 | Sector Sur |
-| 10002 | Cernadas | 45 | 2 | A | 78 | 1987-10-25 | Sector Sur |
-| 10001 | Cernadas | 45 | 1 | B | 65 | 1987-10-25 | Sector Sur |
-| 40000 | Juan Florez | 40 | 1 | A | 61 | 1985-10-11 | Centro |
-| 30000 | Juan Florez | 35 | 1 | A | 90 | 1990-10-12 | Centro |
-| 30001 | Juan Florez | 35 | 1 | B | 88 | 1990-10-12 | Centro |
-| 20001 | Barcelona | 20 | 1 | B | 80 | 1984-10-22 | Sector Norte |
-| 20000 | Barcelona | 20 | 1 | A | 80 | 1974-10-22 | Sector Norte |
-
-## **GROUP BY en SQL** 
-
-`GROUP BY` sirve para **agrupar** filas que tienen el mismo valor en una columna y obtener un **resumen** (contar, sumar, promediar, etc.).
-
-### **Ejemplo sencillo: cuántas viviendas hay por zona**
-
-Tabla `viviendas` (fragmento):
-
-| cod_vivienda | calle | nombre_zona |
-|--------------|-------|-------------|
-| 10000 | Cernadas | Sector Sur |
-| 10001 | Cernadas | Sector Sur |
-| 10002 | Cernadas | Sector Sur |
-| 20000 | Barcelona | Sector Norte |
-| 20001 | Barcelona | Sector Norte |
-| 30000 | Juan Florez | Centro |
-
-**Objetivo:** Saber cuántas viviendas hay en cada zona.
+**Tabla `personas` (vista como "padre" - misma tabla):**
+| dni | nombre | apellidos |
+|-----|--------|-----------|
+| 33456123A | Rodrigo | Perez F |
+| 33456789C | Marcos | Rodriguez B |
+| 50123456Z | Mario | Lopez B |
 
 **Consulta:**
+```sql
+SELECT hijo.nombre AS nombre_hijo,
+       hijo.apellidos AS apellidos_hijo,
+       padre.nombre AS nombre_padre,
+       padre.apellidos AS apellidos_padre
+FROM personas hijo
+LEFT JOIN personas padre ON hijo.dni_padre = padre.dni;
+```
+
+**Resultado del SELF JOIN:**
+| nombre_hijo | apellidos_hijo | nombre_padre | apellidos_padre |
+|-------------|----------------|--------------|-----------------|
+| Rodrigo | Perez F | **NULL** | **NULL** |
+| Marcos | Rodriguez B | **NULL** | **NULL** |
+| Carlos | Duran | Rodrigo | Perez F |
+| Juan | Gil | Rodrigo | Perez F |
+| Mario | Lopez B | Marcos | Rodriguez B |
+| Elena | Hernandez | Mario | Lopez B |
+
+**Observaciones:**
+- ✅ **Incluye:** Todas las personas (hijos)
+- ✅ **Incluye:** Relaciones padre-hijo cuando existen
+- ✅ **Incluye:** NULL para personas sin padre registrado (Rodrigo y Marcos)
+- 🔗 **Relación:** Carlos y Juan son hijos de Rodrigo; Mario es hijo de Marcos; Elena es hija de Mario
+
+**Cuándo usar:** Para relaciones jerárquicas dentro de la misma tabla (padres-hijos, empleados-jefes, etc.).
+
+---
+
+### Comparación visual completa
+```
+INNER JOIN:                    LEFT JOIN:                    RIGHT JOIN:
+  ╭───────╮     ╭───────╮      ╭═══════════╮     ╭───────╮      ╭───────╮     ╭═══════════╮
+ ╱    A    ╲   ╱    B    ╲    ╱  LEFT JOIN ╲   ╱    B    ╲    ╱    A    ╲   ╱ RIGHT JOIN ╲
+│           │ │           │   │  (A completo)│ │           │   │           │ │ (B completo)│
+│    ╔═══╗  │ │  ╔═══╗    │   │              │ │           │   │           │ │             │
+│    ║ ✓ ║  │ │  ║ ✓ ║    │   │    ╔═════════╗═══════╗    │   │    ╔═══════╗═════════════╗
+│    ╚═══╝  │ │  ╚═══╝    │   │    ║    ✓    ║   ✓   ║    │   │    ║   ✓   ║      ✓      ║
+│           │ │           │   │    ╚═════════╝═══════╝    │   │    ╚═══════╝═════════════╝
+ ╲         ╱   ╲         ╱     ╲              ╱   ╲         ╱     ╲         ╱   ╲             ╱
+  ╰───────╯     ╰───────╯       ╰═══════════╯     ╰───────╯       ╰───────╯     ╰═══════════╯
+     ✗              ✗                ✓              ✗                ✗              ✓
+
+Solo intersección          A completo +              B completo +
+                           intersección             intersección
+```
+
+**Leyenda:**
+- ✓ = Incluido en el resultado (área sombreada)
+- ✗ = Excluido del resultado (área no sombreada)
+
+---
+
+### Resumen rápido
+| Tipo de JOIN | ¿Qué incluye? | Diagrama de Venn |
+|--------------|---------------|-------------------|
+| **INNER JOIN** | Solo la intersección (datos en ambas tablas) | Solo el área superpuesta |
+| **LEFT JOIN** | Todo el círculo izquierdo + intersección | Círculo izquierdo completo |
+| **RIGHT JOIN** | Todo el círculo derecho + intersección | Círculo derecho completo |
+| **FULL OUTER JOIN** | Ambos círculos completos | Ambos círculos completos |
+
+---
+
+### Consejos para recordar
+1. **INNER JOIN = "Solo lo que coincide"**
+   - Como una intersección de carreteras: solo donde se cruzan
+
+2. **LEFT JOIN = "Todo lo de la izquierda"**
+   - Piensa: "Quiero ver TODAS las personas, aunque no tengan vivienda"
+
+3. **RIGHT JOIN = "Todo lo de la derecha"**
+   - Piensa: "Quiero ver TODAS las zonas, aunque no tengan viviendas"
+
+4. **La tabla "izquierda" es la que aparece después de FROM**
+   ```sql
+   FROM tabla_izquierda
+   LEFT JOIN tabla_derecha
+   ```
+
+---
+
+### Comparación rápida: INNER vs LEFT JOIN
+**Tabla `personas` (izquierda):**
+| dni | nombre | apellidos |
+|-----|--------|-----------|
+| 33456123A | Rodrigo | Perez F |
+| 33456789C | Marcos | Rodriguez B |
+| 34561232D | Carlos | Duran |
+| 50123456X | Juan | Gil |
+
+**Tabla `habitar` (derecha):**
+| dni | cod_vivienda | fecha_inicio |
+|-----|--------------|--------------|
+| 33456789C | 10003 | 1987-10-30 |
+| 34561232D | 30000 | 1990-12-12 |
+| 50123456X | 10003 | 2000-12-12 |
+
+**INNER JOIN:**
+```sql
+SELECT p.nombre, p.apellidos, h.cod_vivienda
+FROM personas p
+INNER JOIN habitar h ON p.dni = h.dni;
+```
+**Resultado:**
+| nombre | apellidos | cod_vivienda |
+|--------|-----------|--------------|
+| Marcos | Rodriguez B | 10003 |
+| Carlos | Duran | 30000 |
+| Juan | Gil | 10003 |
+
+**LEFT JOIN:**
+```sql
+SELECT p.nombre, p.apellidos, h.cod_vivienda
+FROM personas p
+LEFT JOIN habitar h ON p.dni = h.dni;
+```
+**Resultado:**
+| nombre | apellidos | cod_vivienda |
+|--------|-----------|--------------|
+| Rodrigo | Perez F | **NULL** |
+| Marcos | Rodriguez B | 10003 |
+| Carlos | Duran | 30000 |
+| Juan | Gil | 10003 |
+
+**Diferencia clave:** LEFT JOIN incluye a Rodrigo (sin vivienda), INNER JOIN lo excluye.
+
+| [Anterior](#tipos-de-join---explicación-visual-con-diagramas-de-venn) | [Índice](#índice) | [Siguiente](#funciones-de-fecha) |
+|---|---|---|
+
+---
+
+## Funciones de Fecha
+
+MySQL proporciona varias funciones para trabajar con fechas.
+
+### Funciones Básicas
+**CURDATE()** - Fecha actual
+```sql
+SELECT CURDATE();  -- Devuelve: 2024-01-15
+```
+
+**NOW()** - Fecha y hora actual
+```sql
+SELECT NOW();  -- Devuelve: 2024-01-15 14:30:00
+```
+
+### Extraer Partes de una Fecha
+**YEAR(fecha)** - Extrae el año
+```sql
+SELECT YEAR('1987-10-30');  -- Devuelve: 1987
+```
+
+**MONTH(fecha)** - Extrae el mes (1-12)
+```sql
+SELECT MONTH('1987-10-30');  -- Devuelve: 10
+```
+
+**DAY(fecha)** - Extrae el día (1-31)
+```sql
+SELECT DAY('1987-10-30');  -- Devuelve: 30
+```
+
+**Ejemplo práctico:**
+```sql
+SELECT nombre, fecha_inicio,
+       YEAR(fecha_inicio) AS año,
+       MONTH(fecha_inicio) AS mes,
+       DAY(fecha_inicio) AS dia
+FROM habitar;
+```
+
+### Calcular Diferencias de Tiempo
+**DATEDIFF(fecha1, fecha2)** - Diferencia en días
+```sql
+SELECT DATEDIFF(CURDATE(), '1987-10-30') AS dias_transcurridos;
+-- Devuelve el número de días entre las dos fechas
+```
+
+**TIMESTAMPDIFF(unit, fecha1, fecha2)** - Diferencia en la unidad especificada
+```sql
+-- Diferencia en años
+SELECT TIMESTAMPDIFF(YEAR, '1987-10-30', CURDATE()) AS años;
+
+-- Diferencia en meses
+SELECT TIMESTAMPDIFF(MONTH, '1987-10-30', CURDATE()) AS meses;
+
+-- Diferencia en días
+SELECT TIMESTAMPDIFF(DAY, '1987-10-30', CURDATE()) AS dias;
+```
+
+**Unidades disponibles:** YEAR, MONTH, DAY, HOUR, MINUTE, SECOND
+
+**Ejemplo práctico:**
+```sql
+SELECT nombre, apellidos,
+       DATEDIFF(CURDATE(), fecha_inicio) AS dias_habitando
+FROM personas p
+INNER JOIN habitar h ON p.dni = h.dni;
+```
+
+### Formatear Fechas
+**DATE_FORMAT(fecha, formato)** - Formatea una fecha
+```sql
+SELECT DATE_FORMAT('1987-10-30', '%d/%m/%Y');  -- Devuelve: 30/10/1987
+SELECT DATE_FORMAT('1987-10-30', '%Y-%m-%d');  -- Devuelve: 1987-10-30
+```
+
+**Formatos comunes:**
+- `%Y` : Año con 4 dígitos
+- `%y` : Año con 2 dígitos
+- `%m` : Mes (01-12)
+- `%d` : Día (01-31)
+- `%M` : Nombre del mes (January-December)
+- `%W` : Nombre del día de la semana
+
+| [Anterior](#funciones-de-fecha) | [Índice](#índice) | [Siguiente](#funciones-de-agregación) |
+|---|---|---|
+
+---
+
+## Funciones de Agregación
+
+Las funciones de agregación realizan cálculos sobre un conjunto de filas.
+
+### COUNT() - Contar
+```sql
+-- Contar todas las filas
+SELECT COUNT(*) FROM personas;
+
+-- Contar filas donde una columna no es NULL
+SELECT COUNT(nombre) FROM personas;
+
+-- Contar valores únicos
+SELECT COUNT(DISTINCT nombre_zona) FROM viviendas;
+```
+
+### SUM() - Sumar
+```sql
+SELECT SUM(metros) AS total_metros FROM viviendas;
+```
+
+### AVG() - Promedio
+```sql
+SELECT AVG(metros) AS promedio_metros FROM viviendas;
+```
+
+### MAX() / MIN() - Máximo / Mínimo
+```sql
+SELECT MAX(metros) AS metros_maximos FROM viviendas;
+SELECT MIN(metros) AS metros_minimos FROM viviendas;
+```
+
+### GROUP BY - Agrupar Resultados
+`GROUP BY` agrupa filas que tienen los mismos valores en columnas especificadas.
+
 ```sql
 SELECT nombre_zona, COUNT(*) AS total_viviendas
 FROM viviendas
 GROUP BY nombre_zona;
 ```
 
-**Resultado:**
+**Ejemplo:**
+```sql
+-- Promedio de metros por zona
+SELECT nombre_zona, AVG(metros) AS promedio_metros
+FROM viviendas
+GROUP BY nombre_zona;
+```
 
-| nombre_zona | total_viviendas |
-|-------------|-----------------|
-| Sector Sur | 3 |
-| Sector Norte | 2 |
-| Centro | 1 |
+### HAVING - Filtrar grupos
+`HAVING` filtra **grupos** después de que se aplica `GROUP BY`. Se diferencia de `WHERE`, que filtra **filas** antes de agrupar. Por tanto: `WHERE` no puede usar funciones de agregación; `HAVING` sí.
 
-`GROUP BY nombre_zona` agrupa todas las filas que tienen la misma zona. `COUNT(*)` cuenta cuántas filas hay en cada grupo.
-
-### **Regla importante**
-
-En el `SELECT` solo puedes poner:
-- Las columnas por las que agrupas (ej: `nombre_zona`).
-- Funciones de agregación: `COUNT(*)`, `SUM()`, `AVG()`, `MAX()`, `MIN()`.
-
-## **HAVING en SQL**
-
-`HAVING` filtra **grupos** después de que se han formado con `GROUP BY`. Es como un `WHERE`, pero aplicado a los resultados de las funciones de agregación.
-
-### **Ejemplo: zonas con más de 2 viviendas**
-
-Usando el mismo ejemplo anterior, ahora queremos ver **solo** las zonas que tienen más de 2 viviendas:
-
+**Ejemplo:** Zonas que tienen más de 1 vivienda.
 ```sql
 SELECT nombre_zona, COUNT(*) AS total_viviendas
 FROM viviendas
 GROUP BY nombre_zona
-HAVING COUNT(*) > 2;
-```
-
-**Resultado:**
-
-| nombre_zona | total_viviendas |
-|-------------|-----------------|
-| Sector Sur | 3 |
-
-Solo aparece Sector Sur porque es la única zona con más de 2 viviendas. Centro (1) y Sector Norte (2) se excluyen.
-
-### **Diferencia entre WHERE y HAVING**
-
-| | WHERE | HAVING |
-|---|-------|--------|
-| **Filtra** | Filas individuales | Grupos completos |
-| **Cuándo** | Antes del agrupamiento | Después del agrupamiento |
-| **Ejemplo** | `WHERE metros > 70` | `HAVING COUNT(*) > 2` |
-
-### **Más ejemplos con la base de datos `circo`**
-
-La base de datos del circo tiene tablas como `animales`, `atraccion_dia`, `artista_animal`, etc. (ver `galicia/circo/BDCirco.sql`).
-
-#### **Ejemplo 1: Cuántos animales hay de cada tipo (GROUP BY)**
-
-```sql
-USE circo;
-
-SELECT tipo, COUNT(*) AS cantidad
-FROM animales
-WHERE tipo IS NOT NULL
-GROUP BY tipo;
-```
-
-**Resultado (con los datos del circo):**
-
-| tipo | cantidad |
-|------|----------|
-| Cocodrilo | 1 |
-| León | 1 |
-| grillo | 1 |
-| Mono | 1 |
-| Jirafa | 2 |
-
-#### **Ejemplo 2: Tipos de animal con más de 1 ejemplar (GROUP BY + HAVING)**
-
-```sql
-USE circo;
-
-SELECT tipo, COUNT(*) AS cantidad
-FROM animales
-WHERE tipo IS NOT NULL
-GROUP BY tipo
 HAVING COUNT(*) > 1;
 ```
 
-**Resultado:**
+**Regla práctica:** Usa `WHERE` para filtrar filas; usa `HAVING` para filtrar resultados de agregación (por ejemplo "solo grupos con COUNT > 1").
 
-| tipo | cantidad |
-|------|----------|
-| Jirafa | 2 |
+| [Anterior](#funciones-de-agregación) | [Índice](#índice) | [Siguiente](#orden-de-ejecución-de-las-consultas) |
+|---|---|---|
 
-Solo Jirafa aparece porque es el único tipo con más de un animal (Princesa1 y Princesa2).
+---
 
-## **Fuentes e información**
+## Orden de Ejecución de las Consultas
 
-- [¿Qué es un diagrama entidad-relacion? Según lucidchart.](https://www.lucidchart.com/pages/es/que-es-un-diagrama-entidad-relacion)
-- [Modelo entidad relación (ER) explicado por KeepCoding.](https://keepcoding.io/blog/modelo-entidad-relacion/)
-- [Como hacer diagramas de entidad relación explicado por Miro.](https://miro.com/es/diagrama/como-hacer-diagrama-entidad-relacion/)
-- [Tipos de JOINS explicados con diagramass de Venn](https://adictosaltrabajo.com/2010/09/03/joinsgraficos/)
+Cuando MySQL ejecuta una consulta, sigue este orden:
+
+1. **FROM** - Identifica las tablas
+2. **JOIN** - Combina las tablas
+3. **WHERE** - Filtra las filas
+4. **GROUP BY** - Agrupa las filas
+5. **HAVING** - Filtra los grupos (ver [HAVING](#having---filtrar-grupos) en Funciones de Agregación)
+6. **SELECT** - Selecciona las columnas
+7. **DISTINCT** - Elimina duplicados
+8. **ORDER BY** - Ordena los resultados
+9. **LIMIT** - Limita el número de resultados (opcional; ver documentación de MySQL)
+
+**Ejemplo:**
+```sql
+SELECT DISTINCT p.nombre, COUNT(*)
+FROM personas p
+INNER JOIN habitar h ON p.dni = h.dni
+WHERE YEAR(h.fecha_inicio) > 1985
+GROUP BY p.nombre
+ORDER BY p.nombre;
+```
+
+**Orden de ejecución:**
+1. FROM personas p
+2. INNER JOIN habitar h
+3. WHERE YEAR(h.fecha_inicio) > 1985
+4. GROUP BY p.nombre
+5. SELECT p.nombre, COUNT(*)
+6. DISTINCT
+7. ORDER BY p.nombre
+
+| [Anterior](#orden-de-ejecución-de-las-consultas) | [Índice](#índice) | [Siguiente](#glosario-de-términos) |
+|---|---|---|
+
+---
+
+## Glosario de Términos
+
+### Base de Datos (Database)Colección organizada de datos estructurados que se almacenan y acceden electrónicamente.
+
+### Tabla (Table)Estructura que organiza datos en filas (registros) y columnas (campos).
+
+### Registro / Fila (Row / Record)Una fila individual en una tabla que representa un conjunto completo de datos.
+
+### Campo / Columna (Field / Column)Un atributo o propiedad de los datos en una tabla.
+
+### Clave Primaria (Primary Key - PK)Columna o conjunto de columnas que identifica de forma única cada fila en una tabla. No puede ser NULL.
+
+### Clave Foránea (Foreign Key - FK)Columna que referencia a la clave primaria de otra tabla. Establece una relación entre tablas.
+
+### RelaciónConexión entre dos tablas basada en claves primarias y foráneas.
+
+### JOINOperación que combina filas de dos o más tablas basándose en una condición de relación.
+
+### AliasNombre alternativo temporal para una tabla o columna. Se usa con `AS` o simplemente con un espacio.
+
+### NULLValor que representa la ausencia de datos. No es lo mismo que cero o cadena vacía.
+
+### Consulta (Query)Instrucción SQL que solicita datos de una base de datos.
+
+### SGBD / SGBDRSistema de Gestión de Bases de Datos (Relacionales). Software que gestiona bases de datos (MySQL, PostgreSQL, etc.).
+
+| [Anterior](#orden-de-ejecución-de-las-consultas) | [Índice](#índice) | [Siguiente](#consejos-para-aprender) |
+|---|---|---|
+
+---
+
+## Consejos para Aprender
+
+1. **Empieza simple:** Comienza con consultas básicas (SELECT, WHERE) antes de JOINs complejos.
+
+2. **Practica paso a paso:** 
+   - Primero ejecuta la consulta básica
+   - Luego agrega filtros (WHERE)
+   - Después agrega JOINs
+   - Finalmente agrega ordenamiento (ORDER BY)
+
+3. **Usa alias:** Los alias hacen las consultas más legibles, especialmente con múltiples tablas.
+
+4. **Verifica los resultados:** Siempre revisa que los resultados sean los esperados.
+
+5. **Experimenta:** Prueba variaciones de las consultas para entender mejor cómo funcionan.
+
+6. **Dibuja el diagrama:** Visualizar las relaciones entre tablas ayuda a entender las consultas.
+
+| [Anterior](#glosario-de-términos) | [Índice](#índice) | [Siguiente](#archivos-de-consultas) |
+|---|---|---|
+
+---
+
+## Archivos de Consultas
+
+Cada consulta está en un archivo separado:
+
+- `consulta_01_apellidos_por_L.sql` - LIKE y patrones
+- `consulta_02_viviendas_centro_metros.sql` - WHERE con múltiples condiciones
+- `consulta_03_viviendas_antes_1986.sql` - Funciones de fecha (YEAR)
+- `consulta_04_viviendas_sector_sur_ordenadas.sql` - ORDER BY
+- `consulta_05_viviendas_con_descripcion_zona.sql` - INNER JOIN básico
+- `consulta_06_personas_con_vivienda_LEFT_JOIN.sql` - LEFT JOIN
+- `consulta_07_viviendas_con_habitantes.sql` - Múltiples JOINs
+- `consulta_08_personas_con_padre.sql` - SELF JOIN
+- `consulta_09_personas_sector_norte.sql` - JOINs con WHERE
+- `consulta_10_zonas_con_viviendas.sql` - RIGHT JOIN
+- `consulta_11_personas_habitar_1985_1995.sql` - Rangos de fechas
+- `consulta_12_viviendas_mas_40_años.sql` - TIMESTAMPDIFF
+- `consulta_13_personas_mas_20_años_habitando.sql` - Cálculos de tiempo
+- `consulta_14_personas_30_octubre.sql` - DAY y MONTH
+- `consulta_15_personas_ordenadas_por_fecha.sql` - ORDER BY con fechas
+- `consulta_16_personas_viviendas_antes_1985.sql` - JOINs complejos
+- `consulta_17_dias_mario_lopez.sql` - DATEDIFF
+- `consulta_18_viviendas_padre_registrado.sql` - JOINs múltiples con SELF JOIN
+- `consulta_19_viviendas_personas_ordenadas_fecha.sql` - JOINs con ORDER BY
+- `consulta_20_contar_viviendas_habitadas.sql` - COUNT y funciones de agregación
+
+| [Anterior](#consejos-para-aprender) | [Índice](#índice) | [Siguiente](#cómo-usar-este-material) |
+|---|---|---|
+
+---
+
+## Cómo Usar Este Material
+
+### Ruta de lectura sugerida
+Para no abrumarte, sigue el material en bloques y practica las consultas asociadas a cada uno:
+
+| Bloque | Contenido del README | Consultas a practicar |
+|--------|----------------------|------------------------|
+| 1 | Estructura de la BD, Diagrama ER, Conceptos (SELECT, WHERE, LIKE, ORDER BY, DISTINCT, NULL) | 1 a 5 |
+| 2 | Tipos de JOIN (INNER, LEFT, RIGHT, SELF JOIN) | 6 a 10 |
+| 3 | Funciones de fecha | 11 a 15 |
+| 4 | Funciones de agregación y HAVING | 16 a 20 |
+
+Primera pasada: lee el Bloque 1 y haz las consultas 1-5. Segunda: Bloque 2 y consultas 6-10, y así sucesivamente. Puedes volver al README cuando necesites repasar un concepto.
+
+### Ejecutar el script de la base de datos
+Antes de practicar, crea la base de datos y carga los datos:
+
+- **Desde terminal (línea de comandos):** en la carpeta donde está `viviendas.sql`, ejecuta:
+  ```bash
+  mysql -u tu_usuario -p < viviendas.sql
+  ```
+  Te pedirá la contraseña. Si MySQL está en el PATH, puedes usar `mysql`. En algunos entornos el ejecutable se llama `mysql.exe`.
+
+- **Desde un cliente gráfico (MySQL Workbench, DBeaver, etc.):** abre el archivo `viviendas.sql` y ejecuta todo el script (Run / Ejecutar).
+
+Después de ejecutarlo, tendrás la base de datos `viviendas` con las tablas y datos listos para las consultas.
+
+### Pasos generales
+1. **Preparación:**
+   - Asegúrate de tener MySQL instalado
+   - Ejecuta el script `viviendas.sql` como se indica arriba
+
+2. **Estudiar:**
+   - Lee este README por bloques (ver ruta de lectura sugerida)
+   - Revisa el diagrama ER para entender las relaciones
+
+3. **Practicar:**
+   - Abre cada archivo de consulta en el orden indicado
+   - Lee las explicaciones
+   - Ejecuta la consulta
+   - Compara con el resultado esperado
+   - Prueba las variaciones sugeridas
+
+4. **Revisar:**
+   - Vuelve a este README cuando tengas dudas sobre conceptos
+   - Consulta los ejemplos cuando necesites recordar sintaxis
+
+| [Anterior](#archivos-de-consultas) | [Índice](#índice) | Siguiente — |
+|---|---|---|
