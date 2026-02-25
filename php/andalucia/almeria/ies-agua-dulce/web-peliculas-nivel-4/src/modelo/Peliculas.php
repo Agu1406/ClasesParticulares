@@ -7,8 +7,19 @@ namespace AAMP04\modelo;
 use AAMP04\servicios\DBResult;
 use PDO;
 
+/**
+ * Clase que encapsula las operaciones sobre el conjunto de películas (listar y comprobar existencia).
+ *
+ * @author Tu Nombre
+ */
 class Peliculas implements IListable
 {
+    /**
+     * Lista todas las películas de la base de datos.
+     *
+     * @param PDO $pdo Conexión PDO.
+     * @return DBResult|array Array de instancias de Pelicula o valor DBResult en error.
+     */
     public static function listar(PDO $pdo): DBResult|array
     {
         try {
@@ -37,6 +48,13 @@ class Peliculas implements IListable
         }
     }
 
+    /**
+     * Comprueba si existe una película con el id dado.
+     *
+     * @param PDO $pdo Conexión PDO.
+     * @param int $id Identificador de la película.
+     * @return DBResult|int 1 si existe, 0 si no, o DBResult::DB_EXCEPTION en error.
+     */
     public static function existe(PDO $pdo, int $id): DBResult|int
     {
         try {

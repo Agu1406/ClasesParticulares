@@ -6,39 +6,79 @@ namespace AAMP04\modelo;
 
 use AAMP04\servicios\DBResult;
 use PDO;
+use PDOException;
 
+/**
+ * Clase que encapsula las operaciones sobre el conjunto de géneros (listar y comprobar existencia).
+ *
+ * @author Tu Nombre
+ */
 class Generos implements IListable
 {
+    /**
+     * Lista todos los géneros de la base de datos.
+     *
+     * @param PDO $pdo Conexión PDO.
+     * @return DBResult|array Array de instancias de Genero o valor DBResult en error.
+     */
     public static function listar(PDO $pdo): DBResult|array
     {
+        $resultados = [];
+
         try {
-            $stmt = $pdo->query('SELECT id, nombre, descripcion FROM generos ORDER BY nombre');
-            $rows = $stmt->fetchAll(PDO::FETCH_ASSOC);
-            if ($rows === false) {
-                return DBResult::DB_EMPTYRESULT;
+            $sql = "SELECT id, nombre FROM generos";
+            $stmt = $pdo->prepare($sql);
+            if ($stmt->execute()) {
+                $filas = $stmt->fetchAll(PDO::FETCH_ASSOC);
+                if (empty($filas)) {
+                    $resultados = DBResult::DB_EMPTYRESULT;
+                } else {
+                    $generos = [];
+                    foreach ($filas as $fila) {
+                        $genero = new Genero();
+                        $genero->setId((int) $fila['id']);
+                        $genero->setNombre($fila['nombre']);
+                        $generos[] = $genero;
+                    }
+                    if (!empty($generos)) {
+                        $resultados = $generos;
+                    }
+                }
             }
-            $lista = [];
-            foreach ($rows as $row) {
-                $g = new Genero();
-                $g->setId((int) $row['id']);
-                $g->setNombre($row['nombre']);
-                $lista[] = $g;
-            }
-            return $lista;
-        } catch (\Throwable) {
-            return DBResult::DB_EXCEPTION;
+        } catch (PDOException $e) {
+            $resultados = DBResult::DB_EXCEPTION;
         }
+
+        return $resultados;
     }
 
+    /**
+     * Comprueba si existe un género por su ID.
+     *
+     * @param PDO $pdo Conexión PDO.
+     * @param int $id Identificador del género.
+     * @return DBResult|int 1 si existe, 0 si no, o DBResult::DB_EXCEPTION en error.
+     */
     public static function existe(PDO $pdo, int $id): DBResult|int
     {
+        $resultado = 0;
+
         try {
-            $stmt = $pdo->prepare('SELECT 1 FROM generos WHERE id = ?');
-            $stmt->execute([$id]);
-            $row = $stmt->fetch(PDO::FETCH_NUM);
-            return $row ? 1 : 0;
-        } catch (\Throwable) {
-            return DBResult::DB_EXCEPTION;
+            $sql = "SELECT id FROM generos WHERE id = :id";
+            $stmt = $pdo->prepare($sql);
+            $stmt->bindParam(':id', $id, PDO::PARAM_INT);
+            if ($stmt->execute()) {
+                $idObtenido = $stmt->fetchColumn();
+                if ($idObtenido > 0) {
+                    $resultado = 1;
+                } else {
+                    $resultado = 0;
+                }
+            }
+        } catch (PDOException $e) {
+            $resultado = DBResult::DB_EXCEPTION;
         }
+
+        return $resultado;
     }
 }

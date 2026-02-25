@@ -11,14 +11,24 @@ use AAMP04\servicios\DBResult;
 use PDO;
 
 /**
- * Controlador por defecto: listado de películas con ordenación (Título, Año, Duración; asc/desc).
- * Usa sesión para recordar último orden y preseleccionar el formulario.
+ * Controlador principal: listado de películas, alta y borrado con confirmación.
+ * Separa la lógica de negocio de la presentación; usa el modelo y Smarty para la salida.
+ *
+ * @author Tu Nombre
  */
 class Controlador
 {
     private const COLUMNAS_VALIDAS = ['titulo', 'anio', 'duracion'];
     private const ORDENES_VALIDOS = ['asc', 'desc'];
 
+    /**
+     * Muestra el listado de películas con ordenación (Título, Año, Duración; asc/desc).
+     * Usa sesión para recordar el último orden.
+     *
+     * @param PDO $pdo Conexión a la base de datos.
+     * @param \Smarty $smarty Instancia de Smarty para renderizar la vista.
+     * @return void
+     */
     public static function listado(PDO $pdo, \Smarty $smarty): void
     {
         if (session_status() === PHP_SESSION_NONE) {
@@ -66,7 +76,10 @@ class Controlador
     }
 
     /**
-     * Convierte array de Pelicula a array de arrays para la vista (sin exponer entidad).
+     * Convierte un array de Pelicula en array de arrays para la vista (sin exponer entidades).
+     *
+     * @param array $peliculas Lista de instancias de Pelicula.
+     * @return array Lista de arrays con id, titulo, genero, direccion, duracion, argumento, anio.
      */
     private static function peliculasToArray(array $peliculas): array
     {
@@ -86,7 +99,12 @@ class Controlador
     }
 
     /**
-     * Ordena array de Pelicula por columna y dirección (solo en memoria; no SQL).
+     * Ordena el array de Pelicula por columna y dirección (en memoria, sin SQL).
+     *
+     * @param array $peliculas Lista de Pelicula.
+     * @param string $columna Una de: titulo, anio, duracion.
+     * @param string $orden asc o desc.
+     * @return array El mismo array ordenado.
      */
     private static function ordenarPeliculas(array $peliculas, string $columna, string $orden): array
     {
@@ -120,6 +138,10 @@ class Controlador
 
     /**
      * Muestra el formulario para añadir una nueva película (GET ?accion=nueva_pelicula_form_AAMP).
+     *
+     * @param PDO $pdo Conexión a la base de datos.
+     * @param \Smarty $smarty Instancia de Smarty.
+     * @return void
      */
     public static function formNuevaPelicula(PDO $pdo, \Smarty $smarty): void
     {
@@ -143,7 +165,11 @@ class Controlador
 
     /**
      * Procesa el guardado de una nueva película (POST ?accion=nueva_pelicula_guardar_AAMP).
-     * Valida campos NOT NULL, tipos, año 1965–actual, duración 1–500, género existente, longitudes máximas.
+     * Valida campos obligatorios, tipos, año 1965–actual, duración 1–499, género existente y longitudes.
+     *
+     * @param PDO $pdo Conexión a la base de datos.
+     * @param \Smarty $smarty Instancia de Smarty.
+     * @return void
      */
     public static function guardarNuevaPelicula(PDO $pdo, \Smarty $smarty): void
     {
@@ -248,7 +274,11 @@ class Controlador
 
     /**
      * Muestra el formulario de confirmación para borrar una película (POST ?accion=borrar_pelicula_form_AAMP).
-     * Requiere id numérico y que la película exista.
+     * Comprueba que el id sea numérico y que la película exista.
+     *
+     * @param PDO $pdo Conexión a la base de datos.
+     * @param \Smarty $smarty Instancia de Smarty.
+     * @return void
      */
     public static function formBorrarPelicula(PDO $pdo, \Smarty $smarty): void
     {
@@ -290,7 +320,11 @@ class Controlador
     }
 
     /**
-     * Ejecuta el borrado si el usuario marcó la casilla (POST ?accion=borrar_pelicula_confirmacion_AAMP).
+     * Ejecuta el borrado de la película si el usuario marcó la casilla de confirmación (POST ?accion=borrar_pelicula_confirmacion_AAMP).
+     *
+     * @param PDO $pdo Conexión a la base de datos.
+     * @param \Smarty $smarty Instancia de Smarty.
+     * @return void
      */
     public static function confirmarBorrarPelicula(PDO $pdo, \Smarty $smarty): void
     {
@@ -335,7 +369,11 @@ class Controlador
     }
 
     /**
-     * Muestra mensaje de error cuando la acción requiere POST y se ha recibido GET (u otro).
+     * Muestra mensaje de error cuando se accede por GET a una acción que requiere POST.
+     *
+     * @param \Smarty $smarty Instancia de Smarty.
+     * @param string $mensaje Texto del error a mostrar.
+     * @return void
      */
     public static function errorAccion(\Smarty $smarty, string $mensaje): void
     {
