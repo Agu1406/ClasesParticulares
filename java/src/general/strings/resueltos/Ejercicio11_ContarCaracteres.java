@@ -23,12 +23,12 @@ public class Ejercicio11_ContarCaracteres {
         System.out.println("Caracteres con espacios: " + caracteresConEspacios);
         
         // Contar caracteres SIN TOMAR EN CUENTA los espacios en blanco
-        // Método 1: Usando replace() para eliminar espacios y luego contar
+        // Forma 1: Usando replace() para eliminar espacios y luego contar
         String textoSinEspacios = texto.replace(" ", "");
         int caracteresSinEspacios = textoSinEspacios.length();
         System.out.println("Caracteres sin espacios: " + caracteresSinEspacios);
         
-        // Método 2: Contar espacios y restarlos del total
+        // Forma 2: Contar espacios y restarlos del total
         int cantidadEspacios = 0;
         for (int i = 0; i < texto.length(); i++) {
             if (texto.charAt(i) == ' ') {
@@ -36,17 +36,17 @@ public class Ejercicio11_ContarCaracteres {
             }
         }
         int caracteresSinEspacios2 = texto.length() - cantidadEspacios;
-        System.out.println("Caracteres sin espacios (método 2): " + caracteresSinEspacios2);
+        System.out.println("Caracteres sin espacios (forma 2): " + caracteresSinEspacios2);
         System.out.println("Cantidad de espacios encontrados: " + cantidadEspacios);
         
-        // Método 3: Contar solo caracteres que NO son espacios
+        // Forma 3: Contar solo caracteres que NO son espacios
         int contador = 0;
         for (int i = 0; i < texto.length(); i++) {
             if (texto.charAt(i) != ' ') {
                 contador++;
             }
         }
-        System.out.println("Caracteres sin espacios (método 3): " + contador);
+        System.out.println("Caracteres sin espacios (forma 3): " + contador);
         
         // Resumen
         System.out.println("\n--- Resumen ---");

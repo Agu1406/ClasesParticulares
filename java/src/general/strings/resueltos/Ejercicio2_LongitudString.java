@@ -2,7 +2,7 @@ package general.strings.resueltos;
 
 /**
  * Ejercicio 2: Longitud de un string
- * Crea un string y muestra su longitud por pantalla usando el método length()
+ * Crea un string y muestra su longitud por pantalla usando la función length()
  * 
  * @author Agustín. A. Marquez. Piña
  * @since 14/06/2025

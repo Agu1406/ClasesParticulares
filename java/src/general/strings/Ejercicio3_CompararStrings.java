@@ -2,7 +2,7 @@ package general.strings;
 
 /**
  * Ejercicio 3: Comparar strings
- * Crea dos strings y compáralos usando el método equals() para verificar si son iguales
+ * Crea dos strings y compáralos usando la función equals() para verificar si son iguales
  * 
  * @author Agustín. A. Marquez. Piña
  * @since 14/06/2025

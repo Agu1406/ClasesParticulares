@@ -7,7 +7,7 @@ import java.util.ArrayList;
  * Crea un ArrayList de números enteros y agrega 8 números.
  * Crea una función llamada eliminarMenores que reciba el ArrayList y un número como parámetros,
  * use un bucle while o for para eliminar todos los números menores que el número dado
- * usando el método remove, y muestra el ArrayList antes y después de eliminar
+ * usando la función remove, y muestra el ArrayList antes y después de eliminar
  * 
  * @author Agustín. A. Marquez. Piña
  * @since 14/06/2025

@@ -14,7 +14,7 @@ public class Ejercicio10_Arrays_ArrayCharAString_RESUELTO {
     public static void main(String[] args) {
         char[] array = {'P', 'a', 'l', 'a', 'b', 'r', 'a'};
         
-        // Método 1: Usando el constructor de String
+        // Forma 1: Usando el constructor de String
         String palabra = new String(array);
 
         System.out.print("Array de caracteres: ");
