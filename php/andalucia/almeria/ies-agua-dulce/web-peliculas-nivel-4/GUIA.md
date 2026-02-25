@@ -1,3 +1,32 @@
+<!-- Etiquetas de estilo personales para el README. -->
+<style>
+    h1, h2, h3 {
+        text-align: center;
+        border: 5px solid grey;
+        padding: 20px
+    }
+
+    h4 {
+        text-align: center;
+        font-size: 16px;
+    }
+    p {
+        text-indent: 20px;
+        text-align: justify;
+    }
+
+    table {
+        border: 1px solid white;
+        margin-left: auto;
+        margin-right: auto;
+        margin-bottom: 10%;
+        margin-top: 10%;
+    }
+    th, td {
+        border: 1px solid white;
+        text-align: center;
+    }
+</style>
 # GUÍA – Web películas nivel 4 (MVC)
 
 Registro paso a paso de lo realizado en el proyecto.  
