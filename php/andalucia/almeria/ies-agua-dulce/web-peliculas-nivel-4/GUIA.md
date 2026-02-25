@@ -72,6 +72,12 @@ Registro paso a paso de lo realizado en el proyecto.
 	- [3.7 – Clase Pelicula](#37--clase-pelicula-srcmodelopeliculaphp)
 	- [3.8 – Clase Peliculas](#38--clase-peliculas-srcmodelopeliculasphp)
 	- [Checklist Ejercicio 02 (respetando el orden)](#checklist-ejercicio-02-respetando-el-orden)
+- [PASO 4 – Ejercicio 03: Controladores y vistas (I)](#paso-4--ejercicio-03-controladores-y-vistas-i)
+	- [4.1 – Clase controladora (Controlador)](#41--clase-controladora-controlador)
+	- [4.2 – Enrutador (index.php)](#42--enrutador-indexphp)
+	- [4.3 – Plantilla listado.tpl](#43--plantilla-listadotpl)
+	- [4.4 – Configuración de BD](#44--configuración-de-bd)
+	- [Checklist Ejercicio 03](#checklist-ejercicio-03)
 
 ---
 
@@ -85,6 +91,7 @@ Tener un SQL válido para importar en MySQL (XAMPP) y crear las tablas y datos d
 
 ### Cambios realizados
 - **Corrección de sintaxis**: en la definición de la tabla `peliculas`, la línea final tenía `ENGINE = InnoDB:` (dos puntos). Se corrigió a `ENGINE = InnoDB;` (punto y coma) para que MySQL acepte la sentencia.
+- **Creación y uso de la base**: al inicio del script se añadió `CREATE DATABASE IF NOT EXISTS peliculas_nivel_4` y `USE peliculas_nivel_4` para evitar el error «#1046 - Base de datos no seleccionada» al ejecutar el SQL en phpMyAdmin sin seleccionar antes una base.
 
 ### Cómo importar en XAMPP
 1. Crear una base de datos en phpMyAdmin (por ejemplo `peliculas_nivel_4`).
@@ -436,9 +443,84 @@ Resumen: primero lo que no depende de nadie (**DBResult**, **EntidadIdentificabl
 - [ ] 8. `src/modelo/Peliculas.php` (listado).
 - [ ] En el Ejercicio 05 se añaden comentarios PHPDoc a las clases y métodos.
 
-| [Anterior](#checklist-ejercicio-01-resumen) | [Índice](#índice) | — |
+| [Anterior](#checklist-ejercicio-01-resumen) | [Índice](#índice) | [PASO 4 – Ejercicio 03](#paso-4--ejercicio-03-controladores-y-vistas-i) |
 |-----------|-------|------------|
 
 ---
 
-*(Los siguientes pasos — Ejercicio 03 controlador por defecto, vistas, etc. — se irán añadiendo aquí.)*
+## PASO 4 – Ejercicio 03: Controladores y vistas (I)
+
+Controlador por defecto: listado de películas con ordenación (Título, Año, Duración; ascendente/descendente). Sesión para recordar el último orden. Vídeo obligatorio: **videoAAMP_1.mp4** (o videoXYZ_1.mp4 con tus iniciales), máximo 30 s, MP4, con tu imagen en una esquina.
+
+### Reglas del controlador
+- Recibe por parámetro lo que necesita (PDO, Smarty); no crea la conexión ni el motor de plantillas.
+- No hace `echo` ni SQL: usa solo el modelo y Smarty para la salida.
+- Valida y sanea los datos recibidos por POST/GET (p. ej. con `filter_input` o clase Peticion).
+- Las clases se cargan por autoload PSR-4 (no `include`/`require` salvo configuración en `index.php`).
+
+### 4.1 – Clase controladora (Controlador)
+- **Namespace**: `AAMP04\controlador` (subespacio “controlador”). Ruta: `src/controlador/Controlador.php`.
+- **Método estático** para la acción por defecto, por ejemplo: `listado(PDO $pdo, Smarty $smarty): void`.
+- En esa acción: obtener películas con `Peliculas::listar($pdo)`; no ejecutar SQL en el controlador.
+- Ordenación: si llega POST con `columna` (titulo, anio, duracion) y `orden` (asc, desc), validar y ordenar en PHP (p. ej. `usort` sobre el array). Si no hay POST o es inválido, listar sin orden o usar último orden guardado en sesión.
+- Guardar en sesión el último `columna` y `orden` válidos para preseleccionar el formulario y aplicar el mismo orden al volver.
+- Pasar a Smarty: `peliculas` (array para la tabla), `columna_seleccionada`, `orden_seleccionado`, `error` (mensaje si falla la carga; asignar siempre, p. ej. `null` si no hay error) y `error_orden` (mensaje si el POST fue inválido; asignar siempre para evitar avisos de variable indefinida en la plantilla). Llamar a `$smarty->display('listado.tpl')`.
+
+### 4.2 – Enrutador (index.php)
+- En la raíz del proyecto: cargar `vendor/autoload.php`.
+- Cargar configuración de BD (p. ej. `require 'config_db.php'`) y crear PDO.
+- Crear instancia de Smarty; asignar directorios: plantillas (`plantillas/`), compilados (`tmp/compiled_templates`), caché (`tmp/smarty_cache`).
+- Invocar el controlador por defecto: `Controlador::listado($pdo, $smarty)`.
+- Ruta por defecto: la URL que corresponda a `index.php` (p. ej. `http://localhost/.../web-peliculas-nivel-4/index.php`).
+
+### 4.3 – Plantilla listado.tpl
+- En `plantillas/listado.tpl`: tabla con todos los datos de cada película (id, título, género, dirección, duración, argumento, año).
+- Formulario POST hacia la misma ruta (acción vacía o `index.php`) con:
+  - Select para columna: Título, Año, Duración (valores: titulo, anio, duracion).
+  - Select para orden: Ascendente, Descendente (valores: asc, desc).
+- Preseleccionar según `columna_seleccionada` y `orden_seleccionado`.
+- Mostrar `error_orden` si existe.
+
+### 4.4 – Configuración de BD
+- Archivo `config_db.php` (o similar) con DSN, usuario y contraseña de MySQL. Cargado solo desde `index.php` con `require`. Ajustar a tu base de datos (p. ej. `peliculas_nivel_4` en XAMPP).
+
+### Orden de realización (Ejercicio 03, paso a paso)
+1. Crear `config_db.php` en la raíz con DSN, usuario y contraseña de MySQL (base `peliculas_nivel_4`).
+2. Crear `src/controlador/Controlador.php`: namespace `AAMP04\controlador`, método estático `listado(PDO, Smarty)`, lógica de listado, validación POST, ordenación en PHP, sesión, asignación a Smarty y `display('listado.tpl')`.
+3. Crear `index.php` en la raíz: `require vendor/autoload.php`, `require config_db.php`, crear PDO y Smarty (templateDir, compileDir, cacheDir), llamar `Controlador::listado($pdo, $smarty)`.
+4. Crear `plantillas/listado.tpl`: tabla de películas (id, título, género, dirección, duración, argumento, año), formulario POST (columna + orden) con preselección y mensaje de error.
+5. Asegurar que existan las carpetas `tmp/compiled_templates` y `tmp/smarty_cache`.
+
+### Checklist Ejercicio 03
+- [ ] `src/controlador/Controlador.php` con método estático listado (ordenación y sesión).
+- [ ] `index.php`: autoload, PDO desde config, Smarty, llamada a `Controlador::listado`.
+- [ ] `plantillas/listado.tpl`: tabla de películas y formulario de orden con preselección.
+- [ ] Carpetas `tmp/compiled_templates` y `tmp/smarty_cache` creadas.
+- [ ] Vídeo **videoAAMP_1.mp4** (o videoXYZ_1.mp4) mostrando la funcionalidad.
+
+### Cómo probar la aplicación ahora
+- **Requisitos**: Base de datos `peliculas_nivel_4` creada e importado `peliculas_nivel_4.sql` (PASO 1). PHP en PATH, Composer y Smarty instalados (PASO 2). Modelo y controlador creados (PASO 3 y 4).
+- **Pasos**:
+  1. Ajustar `config_db.php`: comprobar `dbname=peliculas_nivel_4`, usuario (p. ej. `root`) y contraseña (vacía en XAMPP por defecto).
+  2. Crear las carpetas `tmp/compiled_templates` y `tmp/smarty_cache` si no existen.
+  3. Arrancar Apache y MySQL en XAMPP.
+  4. Abrir en el navegador la URL que corresponda a tu proyecto, por ejemplo:  
+     `http://localhost/clases-particulares/php/andalucia/almeria/ies-agua-dulce/web-peliculas-nivel-4/index.php`  
+     o, si tienes un virtual host o htdocs apuntando a la carpeta:  
+     `http://localhost/web-peliculas-nivel-4/index.php`
+  5. Debe mostrarse el listado de películas y el formulario para ordenar por Título, Año o Duración (asc/desc). Probar a cambiar el orden y volver a cargar la página para comprobar que se mantiene en sesión.
+
+### Sobre los enlaces del Índice y las tablas Anterior/Siguiente
+Los enlaces del Índice y de las tablas de navegación (Anterior, Índice, Siguiente) no siempre funcionan igual en todos los visores de Markdown porque **cada herramienta genera los anchors (ids) de los encabezados de forma distinta**:
+- **Guión en el título**: títulos con "–" (raya) pueden generar `#paso-1--preparar...` (doble guión) en unos y `#paso-1-preparar...` (simple) en otros; si el enlace usa uno y el visor genera el otro, falla.
+- **Acentos**: el encabezado "# Índice" puede quedar como `#índice` o como `#indice` según si el visor normaliza acentos; el enlace [Índice](#índice) falla donde se use `#indice`.
+- **Paréntesis y rutas**: encabezados como "### 3.1 – Enumerado DBResult (`src/servicios/DBResult.php`)" en unos sitios generan un id que incluye la ruta y en otros la omiten (solo `#31--enumerado-dbresult`). Los enlaces del índice que llevan la ruta en el anchor dejan de funcionar donde el visor la elimina.
+- **Espacios y caracteres especiales**: distintos visores convierten espacios en `-` y eliminan o conservan `:`, `/`, etc., de forma distinta.
+Por tanto, que algunos enlaces no funcionen suele deberse a que el **anchor que usamos en el enlace no coincide con el id que genera tu visor** (GitHub, Cursor, VS Code, etc.). No es un error del contenido de la GUIA; es una diferencia entre implementaciones de Markdown. Para unificar el comportamiento habría que adaptar todos los enlaces al formato concreto que use tu visor (por ejemplo, probando en el navegador o en la vista previa y copiando el id que se genera).
+
+| [Anterior](#checklist-ejercicio-02-respetando-el-orden) | [Índice](#índice) | — |
+|-----------|-------|------------|
+
+---
+
+*(Los siguientes pasos — Ejercicio 04 añadir/borrar película, etc. — se irán añadiendo aquí.)*

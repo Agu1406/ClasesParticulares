@@ -1,3 +1,7 @@
+-- Crear y usar la base de datos (evita el error "Base de datos no seleccionada")
+CREATE DATABASE IF NOT EXISTS `peliculas_nivel_4` CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;
+USE `peliculas_nivel_4`;
+
 CREATE TABLE IF NOT EXISTS `generos` (
  `id` INT NOT NULL AUTO_INCREMENT,
  `nombre` VARCHAR(45) NOT NULL,
