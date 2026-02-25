@@ -1,4 +1,4 @@
-package madrid.iescalderonbarca.ejercicios;
+package madrid.iescalderonbarca.ejercicios.cadenas;
 
 /**
  * Ejercicio 16: Realiza la función quitaCaracter que recibe dos parámetros, un String y un char.

@@ -1,4 +1,4 @@
-package madrid.iescalderonbarca.ejercicios;
+package madrid.iescalderonbarca.ejercicios.cadenas;
 
 /**
  * Ejercicio 17: Codifica la función ocultaVocales que recibe un String y lo devuelve cambiando

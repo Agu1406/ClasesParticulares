@@ -1,4 +1,4 @@
-package madrid.iescalderonbarca.ejercicios;
+package madrid.iescalderonbarca.ejercicios.cadenas;
 
 /**
  * Ejercicio 18: Escribe la función quitaTildes que recibe un String y lo devuelve cambiando todas

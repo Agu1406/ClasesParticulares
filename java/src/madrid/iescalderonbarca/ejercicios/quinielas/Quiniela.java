@@ -1,4 +1,4 @@
-package madrid.iescalderonbarca.ejercicios;
+package madrid.iescalderonbarca.ejercicios.quinielas;
 
 import java.util.Random;
 import java.util.Scanner;
@@ -258,7 +258,7 @@ public class Quiniela {
 //*************************************	
 	public static void main(String[] args) {
 	
-		// C�digo para probar los m�todos de la clase
+		// Cdigo para probar los mtodos de la clase
 		
 	} // Del main
 	
