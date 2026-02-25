@@ -1,16 +1,102 @@
+<!-- Etiquetas de estilo personales para el README. -->
+<style>
+    h1, h2, h3 {
+        text-align: center;
+        border: 5px solid grey;
+        padding: 20px
+    }
+
+    h4 {
+        text-align: center;
+        font-size: 16px;
+    }
+    p {
+        text-indent: 20px;
+        text-align: justify;
+    }
+
+    table {
+        border: 1px solid white;
+        margin-left: auto;
+        margin-right: auto;
+        margin-bottom: 10%;
+        margin-top: 10%;
+    }
+    th, td {
+        border: 1px solid white;
+        text-align: center;
+    }
+</style>
+
 # Guía de Consultas SQL - Base de Datos Viviendas
 
 Este material está diseñado para aprender SQL desde cero usando la base de datos de viviendas. Cada consulta está en un archivo separado con explicaciones detalladas.
 
+**Alcance del material:** Esta guía se centra en **consultas (SELECT)**. La modificación de datos (INSERT, UPDATE, DELETE) se trata en otro bloque.
+
 ## Índice
 
-1. [Estructura de la Base de Datos](#estructura-de-la-base-de-datos)
-2. [Diagrama Entidad-Relación](#diagrama-entidad-relación)
-3. [Conceptos Fundamentales de SQL](#conceptos-fundamentales-de-sql)
-4. [Tipos de JOIN](#tipos-de-join)
-5. [Funciones de Fecha](#funciones-de-fecha)
-6. [Orden de Ejecución de las Consultas](#orden-de-ejecución-de-las-consultas)
-7. [Glosario de Términos](#glosario-de-términos)
+* [**Estructura de la Base de Datos**](#estructura-de-la-base-de-datos)
+    + 1. [**Tabla: personas**](#tabla-personas)
+    + 2. [**Tabla: viviendas**](#tabla-viviendas)
+    + 3. [**Tabla: zonas**](#tabla-zonas)
+    + 4. [**Tabla: habitar**](#tabla-habitar)
+* [**Diagrama Entidad-Relación**](#diagrama-entidad-relación)
+    + 1. [**Explicación del Diagrama**](#explicación-del-diagrama)
+    + 2. [**Símbolos del Diagrama**](#símbolos-del-diagrama)
+* [**Conceptos Fundamentales de SQL**](#conceptos-fundamentales-de-sql)
+    + 1. [**SELECT - Consultar Datos**](#select---consultar-datos)
+    + 2. [**WHERE - Filtrar Resultados**](#where---filtrar-resultados)
+    + 3. [**LIKE - Búsqueda de Patrones**](#like---búsqueda-de-patrones)
+    + 4. [**ORDER BY - Ordenar Resultados**](#order-by---ordenar-resultados)
+    + 5. [**DISTINCT - Eliminar Duplicados**](#distinct---eliminar-duplicados)
+    + 6. [**NULL en las consultas**](#null-en-las-consultas)
+* [**Tipos de JOIN**](#tipos-de-join---explicación-visual-con-diagramas-de-venn)
+    + 1. [**Concepto base: dos círculos superpuestos**](#concepto-base-dos-círculos-superpuestos)
+    + 2. [**INNER JOIN - Solo la intersección**](#inner-join---solo-la-intersección)
+    + 3. [**LEFT JOIN - Todo el círculo izquierdo + intersección**](#left-join---todo-el-círculo-izquierdo--intersección)
+    + 4. [**RIGHT JOIN - Todo el círculo derecho + intersección**](#right-join---todo-el-círculo-derecho--intersección)
+    + 5. [**FULL OUTER JOIN - Ambos círculos completos**](#full-outer-join---ambos-círculos-completos)
+    + 6. [**SELF JOIN - Un círculo consigo mismo**](#self-join---un-círculo-consigo-mismo)
+    + 7. [**Comparación visual completa**](#comparación-visual-completa)
+    + 8. [**Resumen rápido**](#resumen-rápido)
+    + 9. [**Consejos para recordar**](#consejos-para-recordar)
+    + 10. [**Comparación rápida: INNER vs LEFT JOIN**](#comparación-rápida-inner-vs-left-join)
+* [**Funciones de Fecha**](#funciones-de-fecha)
+    + 1. [**Funciones Básicas**](#funciones-básicas)
+    + 2. [**Extraer Partes de una Fecha**](#extraer-partes-de-una-fecha)
+    + 3. [**Calcular Diferencias de Tiempo**](#calcular-diferencias-de-tiempo)
+    + 4. [**Formatear Fechas**](#formatear-fechas)
+* [**Funciones de Agregación**](#funciones-de-agregación)
+    + 1. [**COUNT() - Contar**](#count---contar)
+    + 2. [**SUM() - Sumar**](#sum---sumar)
+    + 3. [**AVG() - Promedio**](#avg---promedio)
+    + 4. [**MAX() / MIN() - Máximo / Mínimo**](#max--min---máximo--mínimo)
+    + 5. [**GROUP BY - Agrupar Resultados**](#group-by---agrupar-resultados)
+    + 6. [**HAVING - Filtrar grupos**](#having---filtrar-grupos)
+* [**Orden de Ejecución de las Consultas**](#orden-de-ejecución-de-las-consultas)
+* [**Glosario de Términos**](#glosario-de-términos)
+    + 1. [**Base de Datos (Database)**](#base-de-datos-database)
+    + 2. [**Tabla (Table)**](#tabla-table)
+    + 3. [**Registro / Fila (Row / Record)**](#registro--fila-row--record)
+    + 4. [**Campo / Columna (Field / Column)**](#campo--columna-field--column)
+    + 5. [**Clave Primaria (Primary Key - PK)**](#clave-primaria-primary-key---pk)
+    + 6. [**Clave Foránea (Foreign Key - FK)**](#clave-foránea-foreign-key---fk)
+    + 7. [**Relación**](#relación)
+    + 8. [**JOIN**](#join)
+    + 9. [**Alias**](#alias)
+    + 10. [**NULL**](#null)
+    + 11. [**Consulta (Query)**](#consulta-query)
+    + 12. [**SGBD / SGBDR**](#sgbd--sgbdr)
+* [**Consejos para Aprender**](#consejos-para-aprender)
+* [**Archivos de Consultas**](#archivos-de-consultas)
+* [**Cómo Usar Este Material**](#cómo-usar-este-material)
+    + 1. [**Ruta de lectura sugerida**](#ruta-de-lectura-sugerida)
+    + 2. [**Ejecutar el script de la base de datos**](#ejecutar-el-script-de-la-base-de-datos)
+    + 3. [**Pasos generales**](#pasos-generales)
+
+| [Anterior](#guía-de-consultas-sql---base-de-datos-viviendas) | [Índice](#índice) | [Siguiente](#estructura-de-la-base-de-datos) |
+|---|---|---|
 
 ---
 
@@ -19,6 +105,7 @@ Este material está diseñado para aprender SQL desde cero usando la base de dat
 La base de datos `viviendas` está compuesta por 4 tablas principales:
 
 ### Tabla: `personas`
+
 Almacena información de las personas registradas.
 
 | Columna | Tipo | Descripción |
@@ -32,6 +119,7 @@ Almacena información de las personas registradas.
 - `dni_padre` referencia a `personas.dni` (relación consigo misma - auto-referencia)
 
 ### Tabla: `viviendas`
+
 Almacena información de las viviendas.
 
 | Columna | Tipo | Descripción |
@@ -49,6 +137,7 @@ Almacena información de las viviendas.
 - `nombre_zona` referencia a `zonas.nombre_zona`
 
 ### Tabla: `zonas`
+
 Almacena información de las zonas geográficas.
 
 | Columna | Tipo | Descripción |
@@ -57,6 +146,7 @@ Almacena información de las zonas geográficas.
 | `descripcion` | CHAR(30) | Descripción de la zona |
 
 ### Tabla: `habitar`
+
 Tabla de relación que conecta personas con viviendas (tabla intermedia).
 
 | Columna | Tipo | Descripción |
@@ -69,6 +159,9 @@ Tabla de relación que conecta personas con viviendas (tabla intermedia).
 - `dni` referencia a `personas.dni`
 - `cod_vivienda` referencia a `viviendas.cod_vivienda`
 - **Clave Primaria Compuesta:** (`dni`, `cod_vivienda`)
+
+| [Anterior](#índice) | [Índice](#índice) | [Siguiente](#diagrama-entidad-relación) |
+|---|---|---|
 
 ---
 
@@ -120,8 +213,7 @@ Tabla de relación que conecta personas con viviendas (tabla intermedia).
 └─────────────────┘
 ```
 
-### Explicación del Diagrama:
-
+### Explicación del Diagrama
 1. **Relación Personas-Habitar-Viviendas:**
    - Una persona puede habitar múltiples viviendas (relación N:M)
    - Una vivienda puede ser habitada por múltiples personas (relación N:M)
@@ -135,20 +227,21 @@ Tabla de relación que conecta personas con viviendas (tabla intermedia).
    - Una persona puede tener un padre registrado (relación 1:N)
    - Una persona puede ser padre de múltiples personas (relación 1:N)
 
-### Símbolos del Diagrama:
-- **PK**: Clave Primaria (Primary Key)
+### Símbolos del Diagrama- **PK**: Clave Primaria (Primary Key)
 - **FK**: Clave Foránea (Foreign Key)
 - **1**: Uno
 - **N**: Muchos
 - **─**: Relación
 - **◄─**: Dirección de la relación
 
+| [Anterior](#estructura-de-la-base-de-datos) | [Índice](#índice) | [Siguiente](#conceptos-fundamentales-de-sql) |
+|---|---|---|
+
 ---
 
 ## Conceptos Fundamentales de SQL
 
 ### SELECT - Consultar Datos
-
 La sentencia `SELECT` se usa para consultar datos de una o más tablas.
 
 ```sql
@@ -165,7 +258,6 @@ WHERE nombre = 'Juan';
 ```
 
 ### WHERE - Filtrar Resultados
-
 `WHERE` se usa para filtrar filas que cumplen una condición específica.
 
 **Operadores de comparación:**
@@ -197,7 +289,6 @@ WHERE nombre_zona IN ('Centro', 'Sector Norte');
 ```
 
 ### LIKE - Búsqueda de Patrones
-
 `LIKE` se usa para buscar patrones en texto usando comodines.
 
 **Comodines:**
@@ -217,7 +308,6 @@ SELECT * FROM personas WHERE apellidos LIKE '%ez%';
 ```
 
 ### ORDER BY - Ordenar Resultados
-
 `ORDER BY` ordena los resultados de una consulta.
 
 - `ASC` : Orden ascendente (predeterminado)
@@ -237,12 +327,28 @@ ORDER BY nombre_zona ASC, metros DESC;
 ```
 
 ### DISTINCT - Eliminar Duplicados
-
 `DISTINCT` elimina filas duplicadas del resultado.
 
 ```sql
 SELECT DISTINCT nombre_zona FROM viviendas;
 ```
+
+### NULL en las consultas
+En SQL, `NULL` significa "valor desconocido o ausente". No es lo mismo que cero ni que una cadena vacía. Para filtrar por NULL debes usar `IS NULL` o `IS NOT NULL` (no se usa `= NULL`).
+
+**Ejemplos:**
+```sql
+-- Personas que NO tienen padre registrado (dni_padre es NULL)
+SELECT nombre, apellidos FROM personas WHERE dni_padre IS NULL;
+
+-- Personas que SÍ tienen padre registrado
+SELECT nombre, apellidos FROM personas WHERE dni_padre IS NOT NULL;
+```
+
+**Regla:** En condiciones, `columna = NULL` no funciona; siempre usa `columna IS NULL` o `columna IS NOT NULL`.
+
+| [Anterior](#diagrama-entidad-relación) | [Índice](#índice) | [Siguiente](#tipos-de-join---explicación-visual-con-diagramas-de-venn) |
+|---|---|---|
 
 ---
 
@@ -250,8 +356,7 @@ SELECT DISTINCT nombre_zona FROM viviendas;
 
 Los JOINs permiten combinar datos de múltiples tablas relacionadas. La mejor forma de entenderlos es visualizándolos como **círculos superpuestos** (diagramas de Venn).
 
-### Concepto Base: Dos Círculos Superpuestos
-
+### Concepto base: dos círculos superpuestos
 Imagina que tienes dos tablas representadas como dos círculos:
 
 ```
@@ -280,8 +385,7 @@ Cuando las tablas tienen datos relacionados, los círculos se superponen:
 
 ---
 
-### 1. INNER JOIN - Solo la Intersección
-
+### INNER JOIN - Solo la intersección
 **¿Qué hace?** Devuelve **SOLO** las filas donde hay coincidencia en ambas tablas.
 
 **Diagrama de Venn:**
@@ -313,6 +417,7 @@ Cuando las tablas tienen datos relacionados, los círculos se superponen:
 | 33456789C | Marcos | Rodriguez B |
 | 34561232D | Carlos | Duran |
 | 50123456X | Juan | Gil |
+| 54589434R | Agustín | Piña |
 
 **Tabla `habitar` (derecha):**
 | dni | cod_vivienda | fecha_inicio |
@@ -338,29 +443,28 @@ INNER JOIN habitar h ON p.dni = h.dni;
 | Juan | Gil | 10004 | 1987-10-30 |
 
 **Observaciones:**
-- **Incluye:** Marcos, Carlos y Juan (tienen coincidencias en ambas tablas)
-- **Excluye:** Rodrigo (no tiene registro en `habitar`)
-- **Nota:** Juan aparece 2 veces porque habita 2 viviendas diferentes
+- ✅ **Incluye:** Marcos, Carlos y Juan (tienen coincidencias en ambas tablas)
+- ❌ **Excluye:** Rodrigo (no tiene registro en `habitar`)
+- ⚠️ **Nota:** Juan aparece 2 veces porque habita 2 viviendas diferentes
 
 **Cuándo usar:** Cuando solo necesitas datos que existen en ambas tablas.
 
 ---
 
-### 2. LEFT JOIN - Todo el Círculo Izquierdo + Intersección
-
+### LEFT JOIN - Todo el círculo izquierdo + intersección
 **¿Qué hace?** Devuelve **TODAS** las filas de la tabla izquierda (A) y las coincidencias de la tabla derecha (B). Si no hay coincidencia, las columnas de B serán NULL.
 
 **Diagrama de Venn:**
 ```
-      ╭═══════════════╮     ╭───────╮
+      ╭═══════════════╮    ╭───────╮
      ╱   LEFT JOIN    ╲   ╱    B    ╲
     │   (A completo)   │ │           │
     │                  │ │           │
-    │    ╔═════════════╗═══════╗    │
-    │    ║ Intersección║       ║    │
-    │    ╚═════════════╝═══════╝    │
-     ╲                  ╱   ╲         ╱
-      ╰═══════════════╯     ╰───────╯
+    │    ╔═════════════╗═══════╗     │
+    │    ║ Intersección║       ║     │
+    │    ╚═════════════╝═══════╝     │
+     ╲                 ╱    ╲        ╱
+      ╰═══════════════╯      ╰───────╯
          ▲              ▲
          │              └── Excluido
          └── Incluido
@@ -381,6 +485,7 @@ INNER JOIN habitar h ON p.dni = h.dni;
 | 33456789C | Marcos | Rodriguez B |
 | 34561232D | Carlos | Duran |
 | 50123456X | Juan | Gil |
+| 54954323R | Agustín | Piña |
 
 **Tabla `habitar` (derecha):**
 | dni | cod_vivienda | fecha_inicio |
@@ -405,19 +510,19 @@ LEFT JOIN habitar h ON p.dni = h.dni;
 | Carlos | Duran | 30000 | 1990-12-12 |
 | Juan | Gil | 10003 | 2000-12-12 |
 | Juan | Gil | 10004 | 1987-10-30 |
+| Agustín | Piña | **NULL** | **NULL** |
 
 **Observaciones:**
-- **Incluye:** TODAS las personas de la tabla izquierda
-- **Incluye:** Rodrigo aparece aunque no tenga vivienda (valores NULL)
-- **Incluye:** Marcos, Carlos y Juan con sus datos de vivienda
-- **Nota:** Juan aparece 2 veces porque habita 2 viviendas
+- ✅ **Incluye:** TODAS las personas de la tabla izquierda
+- ✅ **Incluye:** Rodrigo aparece aunque no tenga vivienda (valores NULL)
+- ✅ **Incluye:** Marcos, Carlos y Juan con sus datos de vivienda
+- ⚠️ **Nota:** Juan aparece 2 veces porque habita 2 viviendas
 
 **Cuándo usar:** Cuando necesitas todos los registros de la tabla izquierda, incluso si no tienen coincidencias.
 
 ---
 
-### 3. RIGHT JOIN - Todo el Círculo Derecho + Intersección
-
+### RIGHT JOIN - Todo el círculo derecho + intersección
 **¿Qué hace?** Devuelve **TODAS** las filas de la tabla derecha (B) y las coincidencias de la tabla izquierda (A). Si no hay coincidencia, las columnas de A serán NULL.
 
 **Diagrama de Venn:**
@@ -478,10 +583,10 @@ RIGHT JOIN zonas z ON v.nombre_zona = z.nombre_zona;
 | Sector Oeste | Al west | **NULL** | **NULL** |
 
 **Observaciones:**
-- **Incluye:** TODAS las zonas de la tabla derecha
-- **Incluye:** Sector Este y Sector Oeste aparecen aunque no tengan viviendas (valores NULL)
-- **Incluye:** Centro aparece 2 veces porque tiene 2 viviendas
-- **Excluye:** Solo se muestran viviendas que coinciden con zonas
+- ✅ **Incluye:** TODAS las zonas de la tabla derecha
+- ✅ **Incluye:** Sector Este y Sector Oeste aparecen aunque no tengan viviendas (valores NULL)
+- ✅ **Incluye:** Centro aparece 2 veces porque tiene 2 viviendas
+- ❌ **Excluye:** Solo se muestran viviendas que coinciden con zonas
 
 **Nota importante:** RIGHT JOIN es menos común. Muchos desarrolladores prefieren usar LEFT JOIN cambiando el orden de las tablas:
 
@@ -494,8 +599,7 @@ LEFT JOIN viviendas v ON z.nombre_zona = v.nombre_zona;
 
 ---
 
-### 4. FULL OUTER JOIN - Ambos Círculos Completos
-
+### FULL OUTER JOIN - Ambos círculos completos
 **¿Qué hace?** Devuelve **TODAS** las filas de ambas tablas. Si no hay coincidencia, las columnas de la otra tabla serán NULL.
 
 **Diagrama de Venn:**
@@ -559,15 +663,14 @@ RIGHT JOIN habitar h ON p.dni = h.dni;
 | **NULL** | **NULL** | 40000 | 1985-12-11 |
 
 **Observaciones:**
-- **Incluye:** TODAS las personas (incluso sin vivienda)
-- **Incluye:** TODOS los registros de habitar (incluso sin persona)
-- **Incluye:** La persona con DNI 50123456Z aparece aunque no esté en la tabla `personas` (valores NULL)
-- **Nota:** En este caso, el último registro muestra una vivienda habitada por alguien que no está en la tabla `personas` (posible inconsistencia de datos)
+- ✅ **Incluye:** TODAS las personas (incluso sin vivienda)
+- ✅ **Incluye:** TODOS los registros de habitar (incluso sin persona)
+- ✅ **Incluye:** La persona con DNI 50123456Z aparece aunque no esté en la tabla `personas` (valores NULL)
+- ⚠️ **Nota:** En este caso, el último registro muestra una vivienda habitada por alguien que no está en la tabla `personas` (posible inconsistencia de datos)
 
 ---
 
-### SELF JOIN - Un Círculo Consigo Mismo
-
+### SELF JOIN - Un círculo consigo mismo
 **¿Qué hace?** Una tabla se une consigo misma. Se usa para comparar filas dentro de la misma tabla.
 
 **Diagrama conceptual:**
@@ -628,42 +731,40 @@ LEFT JOIN personas padre ON hijo.dni_padre = padre.dni;
 | Elena | Hernandez | Mario | Lopez B |
 
 **Observaciones:**
-- **Incluye:** Todas las personas (hijos)
-- **Incluye:** Relaciones padre-hijo cuando existen
-- **Incluye:** NULL para personas sin padre registrado (Rodrigo y Marcos)
-- **Relación:** Carlos y Juan son hijos de Rodrigo; Mario es hijo de Marcos; Elena es hija de Mario
+- ✅ **Incluye:** Todas las personas (hijos)
+- ✅ **Incluye:** Relaciones padre-hijo cuando existen
+- ✅ **Incluye:** NULL para personas sin padre registrado (Rodrigo y Marcos)
+- 🔗 **Relación:** Carlos y Juan son hijos de Rodrigo; Mario es hijo de Marcos; Elena es hija de Mario
 
 **Cuándo usar:** Para relaciones jerárquicas dentro de la misma tabla (padres-hijos, empleados-jefes, etc.).
 
 ---
 
-### Comparación Visual Completa
-
+### Comparación visual completa
 ```
 INNER JOIN:                    LEFT JOIN:                    RIGHT JOIN:
   ╭───────╮     ╭───────╮      ╭═══════════╮     ╭───────╮      ╭───────╮     ╭═══════════╮
  ╱    A    ╲   ╱    B    ╲    ╱  LEFT JOIN ╲   ╱    B    ╲    ╱    A    ╲   ╱ RIGHT JOIN ╲
 │           │ │           │   │  (A completo)│ │           │   │           │ │ (B completo)│
 │    ╔═══╗  │ │  ╔═══╗    │   │              │ │           │   │           │ │             │
-│    ║ + ║  │ │  ║ + ║    │   │    ╔═════════╗═══════╗    │   │    ╔═══════╗═════════════╗
-│    ╚═══╝  │ │  ╚═══╝    │   │    ║    +    ║   +   ║    │   │    ║   +   ║      +      ║
+│    ║ ✓ ║  │ │  ║ ✓ ║    │   │    ╔═════════╗═══════╗    │   │    ╔═══════╗═════════════╗
+│    ╚═══╝  │ │  ╚═══╝    │   │    ║    ✓    ║   ✓   ║    │   │    ║   ✓   ║      ✓      ║
 │           │ │           │   │    ╚═════════╝═══════╝    │   │    ╚═══════╝═════════════╝
  ╲         ╱   ╲         ╱     ╲              ╱   ╲         ╱     ╲         ╱   ╲             ╱
   ╰───────╯     ╰───────╯       ╰═══════════╯     ╰───────╯       ╰───────╯     ╰═══════════╯
-     -              -                +              -                -              +
+     ✗              ✗                ✓              ✗                ✗              ✓
 
 Solo intersección          A completo +              B completo +
                            intersección             intersección
 ```
 
 **Leyenda:**
-- + = Incluido en el resultado (área sombreada)
-- - = Excluido del resultado (área no sombreada)
+- ✓ = Incluido en el resultado (área sombreada)
+- ✗ = Excluido del resultado (área no sombreada)
 
 ---
 
-### Resumen Rápido
-
+### Resumen rápido
 | Tipo de JOIN | ¿Qué incluye? | Diagrama de Venn |
 |--------------|---------------|-------------------|
 | **INNER JOIN** | Solo la intersección (datos en ambas tablas) | Solo el área superpuesta |
@@ -673,8 +774,7 @@ Solo intersección          A completo +              B completo +
 
 ---
 
-### Consejos para Recordar
-
+### Consejos para recordar
 1. **INNER JOIN = "Solo lo que coincide"**
    - Como una intersección de carreteras: solo donde se cruzan
 
@@ -692,8 +792,7 @@ Solo intersección          A completo +              B completo +
 
 ---
 
-### Comparación Rápida: INNER vs LEFT JOIN
-
+### Comparación rápida: INNER vs LEFT JOIN
 **Tabla `personas` (izquierda):**
 | dni | nombre | apellidos |
 |-----|--------|-----------|
@@ -738,6 +837,9 @@ LEFT JOIN habitar h ON p.dni = h.dni;
 
 **Diferencia clave:** LEFT JOIN incluye a Rodrigo (sin vivienda), INNER JOIN lo excluye.
 
+| [Anterior](#tipos-de-join---explicación-visual-con-diagramas-de-venn) | [Índice](#índice) | [Siguiente](#funciones-de-fecha) |
+|---|---|---|
+
 ---
 
 ## Funciones de Fecha
@@ -745,7 +847,6 @@ LEFT JOIN habitar h ON p.dni = h.dni;
 MySQL proporciona varias funciones para trabajar con fechas.
 
 ### Funciones Básicas
-
 **CURDATE()** - Fecha actual
 ```sql
 SELECT CURDATE();  -- Devuelve: 2024-01-15
@@ -757,7 +858,6 @@ SELECT NOW();  -- Devuelve: 2024-01-15 14:30:00
 ```
 
 ### Extraer Partes de una Fecha
-
 **YEAR(fecha)** - Extrae el año
 ```sql
 SELECT YEAR('1987-10-30');  -- Devuelve: 1987
@@ -783,7 +883,6 @@ FROM habitar;
 ```
 
 ### Calcular Diferencias de Tiempo
-
 **DATEDIFF(fecha1, fecha2)** - Diferencia en días
 ```sql
 SELECT DATEDIFF(CURDATE(), '1987-10-30') AS dias_transcurridos;
@@ -813,7 +912,6 @@ INNER JOIN habitar h ON p.dni = h.dni;
 ```
 
 ### Formatear Fechas
-
 **DATE_FORMAT(fecha, formato)** - Formatea una fecha
 ```sql
 SELECT DATE_FORMAT('1987-10-30', '%d/%m/%Y');  -- Devuelve: 30/10/1987
@@ -828,6 +926,9 @@ SELECT DATE_FORMAT('1987-10-30', '%Y-%m-%d');  -- Devuelve: 1987-10-30
 - `%M` : Nombre del mes (January-December)
 - `%W` : Nombre del día de la semana
 
+| [Anterior](#funciones-de-fecha) | [Índice](#índice) | [Siguiente](#funciones-de-agregación) |
+|---|---|---|
+
 ---
 
 ## Funciones de Agregación
@@ -835,7 +936,6 @@ SELECT DATE_FORMAT('1987-10-30', '%Y-%m-%d');  -- Devuelve: 1987-10-30
 Las funciones de agregación realizan cálculos sobre un conjunto de filas.
 
 ### COUNT() - Contar
-
 ```sql
 -- Contar todas las filas
 SELECT COUNT(*) FROM personas;
@@ -848,26 +948,22 @@ SELECT COUNT(DISTINCT nombre_zona) FROM viviendas;
 ```
 
 ### SUM() - Sumar
-
 ```sql
 SELECT SUM(metros) AS total_metros FROM viviendas;
 ```
 
 ### AVG() - Promedio
-
 ```sql
 SELECT AVG(metros) AS promedio_metros FROM viviendas;
 ```
 
 ### MAX() / MIN() - Máximo / Mínimo
-
 ```sql
 SELECT MAX(metros) AS metros_maximos FROM viviendas;
 SELECT MIN(metros) AS metros_minimos FROM viviendas;
 ```
 
 ### GROUP BY - Agrupar Resultados
-
 `GROUP BY` agrupa filas que tienen los mismos valores en columnas especificadas.
 
 ```sql
@@ -884,6 +980,22 @@ FROM viviendas
 GROUP BY nombre_zona;
 ```
 
+### HAVING - Filtrar grupos
+`HAVING` filtra **grupos** después de que se aplica `GROUP BY`. Se diferencia de `WHERE`, que filtra **filas** antes de agrupar. Por tanto: `WHERE` no puede usar funciones de agregación; `HAVING` sí.
+
+**Ejemplo:** Zonas que tienen más de 1 vivienda.
+```sql
+SELECT nombre_zona, COUNT(*) AS total_viviendas
+FROM viviendas
+GROUP BY nombre_zona
+HAVING COUNT(*) > 1;
+```
+
+**Regla práctica:** Usa `WHERE` para filtrar filas; usa `HAVING` para filtrar resultados de agregación (por ejemplo "solo grupos con COUNT > 1").
+
+| [Anterior](#funciones-de-agregación) | [Índice](#índice) | [Siguiente](#orden-de-ejecución-de-las-consultas) |
+|---|---|---|
+
 ---
 
 ## Orden de Ejecución de las Consultas
@@ -894,11 +1006,11 @@ Cuando MySQL ejecuta una consulta, sigue este orden:
 2. **JOIN** - Combina las tablas
 3. **WHERE** - Filtra las filas
 4. **GROUP BY** - Agrupa las filas
-5. **HAVING** - Filtra los grupos (no usado en estas consultas)
+5. **HAVING** - Filtra los grupos (ver [HAVING](#having---filtrar-grupos) en Funciones de Agregación)
 6. **SELECT** - Selecciona las columnas
 7. **DISTINCT** - Elimina duplicados
 8. **ORDER BY** - Ordena los resultados
-9. **LIMIT** - Limita el número de resultados (no usado en estas consultas)
+9. **LIMIT** - Limita el número de resultados (opcional; ver documentación de MySQL)
 
 **Ejemplo:**
 ```sql
@@ -919,45 +1031,39 @@ ORDER BY p.nombre;
 6. DISTINCT
 7. ORDER BY p.nombre
 
+| [Anterior](#orden-de-ejecución-de-las-consultas) | [Índice](#índice) | [Siguiente](#glosario-de-términos) |
+|---|---|---|
+
 ---
 
 ## Glosario de Términos
 
-### Base de Datos (Database)
-Colección organizada de datos estructurados que se almacenan y acceden electrónicamente.
+### Base de Datos (Database)Colección organizada de datos estructurados que se almacenan y acceden electrónicamente.
 
-### Tabla (Table)
-Estructura que organiza datos en filas (registros) y columnas (campos).
+### Tabla (Table)Estructura que organiza datos en filas (registros) y columnas (campos).
 
-### Registro / Fila (Row / Record)
-Una fila individual en una tabla que representa un conjunto completo de datos.
+### Registro / Fila (Row / Record)Una fila individual en una tabla que representa un conjunto completo de datos.
 
-### Campo / Columna (Field / Column)
-Un atributo o propiedad de los datos en una tabla.
+### Campo / Columna (Field / Column)Un atributo o propiedad de los datos en una tabla.
 
-### Clave Primaria (Primary Key - PK)
-Columna o conjunto de columnas que identifica de forma única cada fila en una tabla. No puede ser NULL.
+### Clave Primaria (Primary Key - PK)Columna o conjunto de columnas que identifica de forma única cada fila en una tabla. No puede ser NULL.
 
-### Clave Foránea (Foreign Key - FK)
-Columna que referencia a la clave primaria de otra tabla. Establece una relación entre tablas.
+### Clave Foránea (Foreign Key - FK)Columna que referencia a la clave primaria de otra tabla. Establece una relación entre tablas.
 
-### Relación
-Conexión entre dos tablas basada en claves primarias y foráneas.
+### RelaciónConexión entre dos tablas basada en claves primarias y foráneas.
 
-### JOIN
-Operación que combina filas de dos o más tablas basándose en una condición de relación.
+### JOINOperación que combina filas de dos o más tablas basándose en una condición de relación.
 
-### Alias
-Nombre alternativo temporal para una tabla o columna. Se usa con `AS` o simplemente con un espacio.
+### AliasNombre alternativo temporal para una tabla o columna. Se usa con `AS` o simplemente con un espacio.
 
-### NULL
-Valor que representa la ausencia de datos. No es lo mismo que cero o cadena vacía.
+### NULLValor que representa la ausencia de datos. No es lo mismo que cero o cadena vacía.
 
-### Consulta (Query)
-Instrucción SQL que solicita datos de una base de datos.
+### Consulta (Query)Instrucción SQL que solicita datos de una base de datos.
 
-### SGBD / SGBDR
-Sistema de Gestión de Bases de Datos (Relacionales). Software que gestiona bases de datos (MySQL, PostgreSQL, etc.).
+### SGBD / SGBDRSistema de Gestión de Bases de Datos (Relacionales). Software que gestiona bases de datos (MySQL, PostgreSQL, etc.).
+
+| [Anterior](#orden-de-ejecución-de-las-consultas) | [Índice](#índice) | [Siguiente](#consejos-para-aprender) |
+|---|---|---|
 
 ---
 
@@ -979,21 +1085,8 @@ Sistema de Gestión de Bases de Datos (Relacionales). Software que gestiona base
 
 6. **Dibuja el diagrama:** Visualizar las relaciones entre tablas ayuda a entender las consultas.
 
----
-
-## Formato estándar de las consultas
-
-Cada archivo usa comentarios multilínea `/* */` y un tono cercano:
-
-```
-/* CONSULTA N: Título
-   Explicación breve, en lenguaje natural */
-USE viviendas;
-/* La consulta */
-SELECT ...
-/* Qué deberías ver */
-/* Ideas para practicar más */
-```
+| [Anterior](#glosario-de-términos) | [Índice](#índice) | [Siguiente](#archivos-de-consultas) |
+|---|---|---|
 
 ---
 
@@ -1022,20 +1115,49 @@ Cada consulta está en un archivo separado:
 - `consulta_19_viviendas_personas_ordenadas_fecha.sql` - JOINs con ORDER BY
 - `consulta_20_contar_viviendas_habitadas.sql` - COUNT y funciones de agregación
 
+| [Anterior](#consejos-para-aprender) | [Índice](#índice) | [Siguiente](#cómo-usar-este-material) |
+|---|---|---|
+
 ---
 
 ## Cómo Usar Este Material
 
+### Ruta de lectura sugerida
+Para no abrumarte, sigue el material en bloques y practica las consultas asociadas a cada uno:
+
+| Bloque | Contenido del README | Consultas a practicar |
+|--------|----------------------|------------------------|
+| 1 | Estructura de la BD, Diagrama ER, Conceptos (SELECT, WHERE, LIKE, ORDER BY, DISTINCT, NULL) | 1 a 5 |
+| 2 | Tipos de JOIN (INNER, LEFT, RIGHT, SELF JOIN) | 6 a 10 |
+| 3 | Funciones de fecha | 11 a 15 |
+| 4 | Funciones de agregación y HAVING | 16 a 20 |
+
+Primera pasada: lee el Bloque 1 y haz las consultas 1-5. Segunda: Bloque 2 y consultas 6-10, y así sucesivamente. Puedes volver al README cuando necesites repasar un concepto.
+
+### Ejecutar el script de la base de datos
+Antes de practicar, crea la base de datos y carga los datos:
+
+- **Desde terminal (línea de comandos):** en la carpeta donde está `viviendas.sql`, ejecuta:
+  ```bash
+  mysql -u tu_usuario -p < viviendas.sql
+  ```
+  Te pedirá la contraseña. Si MySQL está en el PATH, puedes usar `mysql`. En algunos entornos el ejecutable se llama `mysql.exe`.
+
+- **Desde un cliente gráfico (MySQL Workbench, DBeaver, etc.):** abre el archivo `viviendas.sql` y ejecuta todo el script (Run / Ejecutar).
+
+Después de ejecutarlo, tendrás la base de datos `viviendas` con las tablas y datos listos para las consultas.
+
+### Pasos generales
 1. **Preparación:**
    - Asegúrate de tener MySQL instalado
-   - Ejecuta el script `viviendas.sql` para crear la base de datos
+   - Ejecuta el script `viviendas.sql` como se indica arriba
 
 2. **Estudiar:**
-   - Lee este README para entender los conceptos
+   - Lee este README por bloques (ver ruta de lectura sugerida)
    - Revisa el diagrama ER para entender las relaciones
 
 3. **Practicar:**
-   - Abre cada archivo de consulta en orden
+   - Abre cada archivo de consulta en el orden indicado
    - Lee las explicaciones
    - Ejecuta la consulta
    - Compara con el resultado esperado
@@ -1045,7 +1167,5 @@ Cada consulta está en un archivo separado:
    - Vuelve a este README cuando tengas dudas sobre conceptos
    - Consulta los ejemplos cuando necesites recordar sintaxis
 
----
-
-Buena suerte con tu aprendizaje de SQL.
-
+| [Anterior](#archivos-de-consultas) | [Índice](#índice) | Siguiente — |
+|---|---|---|
