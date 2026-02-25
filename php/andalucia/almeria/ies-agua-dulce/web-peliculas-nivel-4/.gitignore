@@ -1,0 +1,11 @@
+# Dependencias de Composer (se generan con composer install)
+vendor/
+
+# Caché y compilados de Smarty (opcional; si quieres versionar tmp/, quita estas líneas)
+# tmp/compiled_templates/
+# tmp/smarty_cache/
+
+# Configuración local (base de datos, etc.)
+.env
+.env.local
+*.local.php
