@@ -1,0 +1,20 @@
+{
+    "name": "aamp/web-peliculas-nivel-4",
+    "description": "Practica de dificultad nivel 4 del IES Agua Dulce (Almeria)",
+    "type": "project",
+    "license": "unlicense",
+    "autoload": {
+        "psr-4": {
+            "AAMP04\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "Agu1406"
+        }
+    ],
+    "minimum-stability": "stable",
+    "require": {
+        "smarty/smarty": "^4.4"
+    }
+}
