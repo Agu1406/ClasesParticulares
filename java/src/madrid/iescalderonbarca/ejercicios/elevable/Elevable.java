@@ -1,3 +1,5 @@
+package madrid.iescalderonbarca.ejercicios.elevable;
+
 /**
  * Autor: NOMBRE_DEL_ALUMNO
  * Curso: 1º Bachillerato / Programación
@@ -30,4 +32,3 @@ public interface Elevable {
     // TODO: Añade métodos de comunicación con el exterior:
     //       iniciar y finalizar comunicación externa.
 }
-

@@ -1,3 +1,5 @@
+package madrid.iescalderonbarca.ejercicios.resueltos;
+
 /**
  * Autor: NOMBRE_DEL_ALUMNO
  * Curso: 1º Bachillerato / Programación

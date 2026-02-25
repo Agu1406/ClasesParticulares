@@ -1,4 +1,4 @@
-package madrid.iescalderonbarca.ejercicios;
+package madrid.iescalderonbarca.ejercicios.quinielas;
 
 import java.util.Scanner;
 

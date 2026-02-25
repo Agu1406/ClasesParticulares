@@ -1,4 +1,4 @@
-package madrid.iescalderonbarca.ejercicios;
+package madrid.iescalderonbarca.ejercicios.cadenas;
 
 /**
  * Ejercicio 20: Realiza la función escaleraCadena que recibe un String y devuelve otro en el que
