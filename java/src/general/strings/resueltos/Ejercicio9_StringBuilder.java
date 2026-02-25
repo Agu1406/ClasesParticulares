@@ -2,7 +2,7 @@ package general.strings.resueltos;
 
 /**
  * Ejercicio 9: Usar StringBuilder
- * Crea un StringBuilder y usa los métodos append() para añadir varios strings,
+ * Crea un StringBuilder y usa las funciones append() para añadir varios strings,
  * luego convierte el resultado a String usando toString()
  * 
  * @author Agustín. A. Marquez. Piña

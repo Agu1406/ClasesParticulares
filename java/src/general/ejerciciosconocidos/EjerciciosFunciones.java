@@ -4,7 +4,7 @@ import java.util.Scanner;
 
 /**
  * Clase con ejercicios de funciones para practicar
- * Contiene 16 funciones diferentes y un método main para probarlas todas
+ * Contiene 16 funciones diferentes y una función main para probarlas todas
  * 
  * @author Agustín. A. Marquez. Piña
  * @since 14/06/2025
@@ -222,7 +222,7 @@ public class EjerciciosFunciones {
     }
     
     /**
-     * Método main para probar todas las funciones
+     * Función main para probar todas las funciones
      */
     public static void main(String[] args) {
         System.out.println("=== PRUEBAS DE FUNCIONES ===\n");
