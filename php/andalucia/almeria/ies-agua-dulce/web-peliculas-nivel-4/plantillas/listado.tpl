@@ -15,6 +15,8 @@
 <body>
     <h1>Listado de películas</h1>
 
+    <p><a href="?accion=nueva_pelicula_form_AAMP">Añadir película</a></p>
+
     {if $error}
         <p class="error">{$error}</p>
     {/if}
@@ -50,6 +52,7 @@
                 <th>Duración</th>
                 <th>Argumento</th>
                 <th>Año</th>
+                <th>Acciones</th>
             </tr>
         </thead>
         <tbody>
@@ -62,6 +65,13 @@
                 <td>{$p.duracion}</td>
                 <td>{$p.argumento|escape}</td>
                 <td>{$p.anio}</td>
+                <td>
+                    <form method="post" action="" style="display:inline;">
+                        <input type="hidden" name="accion" value="borrar_pelicula_form_AAMP">
+                        <input type="hidden" name="id" value="{$p.id}">
+                        <button type="submit">Borrar</button>
+                    </form>
+                </td>
             </tr>
             {/foreach}
         </tbody>

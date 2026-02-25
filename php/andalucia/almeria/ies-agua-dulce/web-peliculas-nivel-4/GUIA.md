@@ -78,6 +78,12 @@ Registro paso a paso de lo realizado en el proyecto.
 	- [4.3 – Plantilla listado.tpl](#43--plantilla-listadotpl)
 	- [4.4 – Configuración de BD](#44--configuración-de-bd)
 	- [Checklist Ejercicio 03](#checklist-ejercicio-03)
+- [PASO 5 – Ejercicio 04: Controladores y vistas (II)](#paso-5--ejercicio-04-controladores-y-vistas-ii)
+	- [5.1 – Enrutador y rutas](#51--enrutador-y-rutas)
+	- [5.2 – Alta de película (formulario y guardar)](#52--alta-de-película-formulario-y-guardar)
+	- [5.3 – Borrado con confirmación](#53--borrado-con-confirmación)
+	- [5.4 – Plantillas y listado](#54--plantillas-y-listado)
+	- [Checklist Ejercicio 04](#checklist-ejercicio-04)
 
 ---
 
@@ -518,9 +524,56 @@ Los enlaces del Índice y de las tablas de navegación (Anterior, Índice, Sigui
 - **Espacios y caracteres especiales**: distintos visores convierten espacios en `-` y eliminan o conservan `:`, `/`, etc., de forma distinta.
 Por tanto, que algunos enlaces no funcionen suele deberse a que el **anchor que usamos en el enlace no coincide con el id que genera tu visor** (GitHub, Cursor, VS Code, etc.). No es un error del contenido de la GUIA; es una diferencia entre implementaciones de Markdown. Para unificar el comportamiento habría que adaptar todos los enlaces al formato concreto que use tu visor (por ejemplo, probando en el navegador o en la vista previa y copiando el id que se genera).
 
-| [Anterior](#checklist-ejercicio-02-respetando-el-orden) | [Índice](#índice) | — |
+| [Anterior](#checklist-ejercicio-02-respetando-el-orden) | [Índice](#índice) | [PASO 5 – Ejercicio 04](#paso-5--ejercicio-04-controladores-y-vistas-ii) |
 |-----------|-------|------------|
 
 ---
 
-*(Los siguientes pasos — Ejercicio 04 añadir/borrar película, etc. — se irán añadiendo aquí.)*
+## PASO 5 – Ejercicio 04: Controladores y vistas (II)
+
+En este ejercicio se añaden las acciones **añadir película** y **borrar película (con confirmación)**. Criterios RA 5: separar presentación de lógica de negocio, uso de mecanismos/frameworks para esa separación y patrones POO. Vídeos obligatorios: **videoAAMP_2.mp4** (añadir película) y **videoAAMP_3.mp4** (borrar película con confirmación), máximo 30 s cada uno, MP4, con tu imagen en una esquina.
+
+### 5.1 – Enrutador y rutas
+
+- **index.php**: en lugar de invocar solo `listado`, se obtiene el parámetro `accion` (desde POST si viene en el cuerpo, si no desde GET, para soportar formularios que envían POST a `?accion=...`).
+- Rutas implementadas (XYZ = AAMP en este proyecto):
+  - **Por defecto** (sin acción o acción desconocida): `Controlador::listado($pdo, $smarty)`.
+  - **GET** `?accion=nueva_pelicula_form_AAMP`: formulario para añadir película → `Controlador::formNuevaPelicula($pdo, $smarty)`.
+  - **POST** a `?accion=nueva_pelicula_guardar_AAMP`: guardar nueva película → `Controlador::guardarNuevaPelicula($pdo, $smarty)`. Si la petición no es POST, se llama a `Controlador::errorAccion($smarty, mensaje)`.
+  - **POST** a `?accion=borrar_pelicula_form_AAMP`: mostrar formulario de confirmación de borrado → `Controlador::formBorrarPelicula($pdo, $smarty)`. Si no es POST → `errorAccion`.
+  - **POST** a `?accion=borrar_pelicula_confirmacion_AAMP`: ejecutar borrado si el usuario confirmó → `Controlador::confirmarBorrarPelicula($pdo, $smarty)`. Si no es POST → `errorAccion`.
+
+### 5.2 – Alta de película (formulario y guardar)
+
+- **formNuevaPelicula(PDO, Smarty)**: carga géneros con `Generos::listar($pdo)`, pasa a la plantilla `generos`, `error` (si falla la carga), `datos` (vacío) y `errores` (vacío). Muestra `nueva_pelicula_form.tpl`.
+- **guardarNuevaPelicula(PDO, Smarty)**:
+  - Lee y sanea POST: titulo, genero, direccion, duracion, argumento, anio.
+  - Validaciones: todos los campos obligatorios (tabla NOT NULL); título ≤ 60; género existente (`Generos::existe`); dirección ≤ 100; duración entero entre 1 y 499 (tabla CHECK &lt; 500); argumento ≤ 255 (TINYTEXT); año entre 1965 y año actual.
+  - Si hay errores: reasignar `generos`, `errores`, `datos` (valores enviados) y volver a mostrar `nueva_pelicula_form.tpl`.
+  - Si todo correcto: crear instancia de `Pelicula`, asignar atributos, llamar `$p->guardar($pdo)`. Mostrar `nueva_pelicula_resultado.tpl` con `id_creado` o `error_guardar`.
+
+### 5.3 – Borrado con confirmación
+
+- **formBorrarPelicula(PDO, Smarty)**: recibe `id` por POST. Comprueba que sea numérico y que la película exista (`Peliculas::existe`). Si no existe o id inválido: mensaje de error en plantilla. Si existe: rescatar película (`Pelicula::rescatar`) y mostrar `borrar_pelicula_confirmar.tpl` con datos de la película (id, título). El formulario de confirmación tiene un **checkbox** “Confirmo que deseo borrar…” (sin atributo `required`) y envía POST a `?accion=borrar_pelicula_confirmacion_AAMP` con `id` (hidden) y `confirmacion=1` si se marca.
+- **confirmarBorrarPelicula(PDO, Smarty)**: recibe `id` y `confirmacion` por POST. Si la casilla no está marcada (`confirmacion !== 1`): mensaje de error. Si `id` no es numérico o la película no existe: mensaje apropiado. Si todo correcto: `Pelicula::borrar($pdo, $id)` y mostrar `borrar_pelicula_resultado.tpl` con éxito o error.
+- **errorAccion(Smarty, string)**: asigna `error_accion` y muestra `error_accion.tpl` (para cuando se accede por GET a una acción que requiere POST).
+
+### 5.4 – Plantillas y listado
+
+- **nueva_pelicula_form.tpl**: formulario con campos titulo, genero (select con `generos`), direccion, duracion, argumento, anio. Action POST a `?accion=nueva_pelicula_guardar_AAMP`. Mostrar `errores` por campo y rellenar `datos` si existen.
+- **nueva_pelicula_resultado.tpl**: mensaje de éxito con `id_creado` o mensaje `error_guardar`.
+- **borrar_pelicula_confirmar.tpl**: si hay `error`, mostrarlo; si hay `pelicula`, formulario de confirmación con checkbox (sin `required`) y hidden `id`, POST a `?accion=borrar_pelicula_confirmacion_AAMP`.
+- **borrar_pelicula_resultado.tpl**: mensaje de éxito o `error`.
+- **error_accion.tpl**: muestra `error_accion`.
+- **listado.tpl**: enlace “Añadir película” a `?accion=nueva_pelicula_form_AAMP`. En cada fila de la tabla, formulario POST con `accion=borrar_pelicula_form_AAMP` e `id` (hidden) y botón “Borrar”.
+
+### Checklist Ejercicio 04
+
+- [ ] Enrutador: lectura de `accion` (POST o GET), dispatch a listado, formNuevaPelicula, guardarNuevaPelicula, formBorrarPelicula, confirmarBorrarPelicula, errorAccion según ruta y método HTTP.
+- [ ] Controlador: formNuevaPelicula, guardarNuevaPelicula (validación y uso del modelo), formBorrarPelicula, confirmarBorrarPelicula, errorAccion.
+- [ ] Plantillas: nueva_pelicula_form.tpl, nueva_pelicula_resultado.tpl, borrar_pelicula_confirmar.tpl, borrar_pelicula_resultado.tpl, error_accion.tpl.
+- [ ] Listado: enlace “Añadir película” y botón/form “Borrar” por película (POST a borrar_pelicula_form_AAMP).
+- [ ] Vídeos **videoAAMP_2.mp4** (añadir película) y **videoAAMP_3.mp4** (borrar con confirmación).
+
+| [Anterior](#checklist-ejercicio-03) | [Índice](#índice) | — |
+|-----------|-------|------------|
