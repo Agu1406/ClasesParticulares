@@ -4,6 +4,12 @@ declare(strict_types=1);
 
 namespace AAMP04\servicios;
 
+/**
+ * Enumerado con los posibles resultados de error de las operaciones de base de datos.
+ * Las clases del modelo devuelven uno de estos casos o un valor normal (p. ej. filas afectadas).
+ *
+ * @author Tu Nombre
+ */
 enum DBResult: int
 {
     case DB_EXCEPTION = -1;

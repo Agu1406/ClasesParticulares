@@ -27,42 +27,42 @@
         text-align: center;
     }
 </style>
-# GUÍA – Web películas nivel 4 (MVC)
+# GUIA – Web peliculas nivel 4 (MVC)
 
 Registro paso a paso de lo realizado en el proyecto.  
 **Convención**: en el enunciado "XYZ" son las **iniciales del alumno** (ej. AAMP). Se sustituye XYZ por tus iniciales en el **namespace** (ej. AAMP04). Para carpetas usamos **por defecto** `src` (clases) y `plantillas` (Smarty); solo si el enunciado exige "srcxyz" o "plantillasxyz" literal se usa src+iniciales (ej. srcaamp) y plantillas+iniciales (ej. plantillasaamp).
 
 ---
 
-# Índice
+# Indice
 
 - [PASO 1 – Preparar el script de base de datos](#paso-1--preparar-el-script-de-base-de-datos)
 	- [Objetivo](#objetivo)
 	- [Archivo](#archivo)
 	- [Cambios realizados](#cambios-realizados)
-	- [Cómo importar en XAMPP](#cómo-importar-en-xampp)
+	- [Como importar en XAMPP](#como-importar-en-xampp)
 	- [Estructura resultante](#estructura-resultante)
 - [PASO 2 – Ejercicio 01: Proyecto con Composer y Smarty](#paso-2--ejercicio-01-proyecto-con-composer-y-smarty)
 	- [2.1 – Instalar Composer](#21--instalar-composer)
 	- [2.2 – Inicializar el proyecto con Composer](#22--inicializar-el-proyecto-con-composer)
 	- [2.3 – Namespace y directorio de clases (XYZ04 / src por defecto)](#23--namespace-y-directorio-de-clases-xyz04--src-por-defecto)
-	- [2.4 – Añadir Smarty 4.4.1](#24--añadir-smarty-441)
+	- [2.4 – Anadir Smarty 4.4.1](#24--anadir-smarty-441)
 	- [2.5 – Directorios para plantillas y cache de Smarty](#25--directorios-para-plantillas-y-cache-de-smarty)
-	- [2.6 – Recomendación: clase de prueba, plantillas y prueba1.php (opcional)](#26--recomendación-clase-de-prueba-plantillas-y-prueba1php-opcional)
+	- [2.6 – Recomendacion: clase de prueba, plantillas y prueba1.php (opcional)](#26--recomendacion-clase-de-prueba-plantillas-y-prueba1php-opcional)
 	- [2.7 – .gitignore (no subir vendor ni cientos de archivos)](#27--gitignore-no-subir-vendor-ni-cientos-de-archivos)
 - [Preguntas frecuentes (FAQ)](#preguntas-frecuentes-faq)
 	- [Composer y PHP](#composer-y-php)
 	- [Nombre del paquete (composer init)](#nombre-del-paquete-composer-init)
 	- [Minimum Stability](#minimum-stability)
 	- [Package Type](#package-type)
-	- [Directorio de clases: ¿src o src + iniciales?](#directorio-de-clases-src-o-src--iniciales)
+	- [Directorio de clases: src o src + iniciales](#directorio-de-clases-src-o-src--iniciales)
 	- [PSR-4 y "Do you confirm generation?"](#psr-4-y-do-you-confirm-generation)
-	- [Git: ¿Por qué 476 archivos para commit? ¿Hace falta .gitignore?](#git-por-qué-476-archivos-para-commit-hace-falta-gitignore)
+	- [Git: Por que 476 archivos para commit? Hace falta .gitignore?](#git-por-que-476-archivos-para-commit-hace-falta-gitignore)
 - [Checklist Ejercicio 01 (resumen)](#checklist-ejercicio-01-resumen)
 - [PASO 3 – Ejercicio 02: Modelo (MVC)](#paso-3--ejercicio-02-modelo-mvc)
 	- [Reglas importantes](#reglas-importantes)
 	- [Estructura de namespaces y carpetas](#estructura-de-namespaces-y-carpetas)
-	- [Orden de creación de los archivos (y por qué)](#orden-de-creación-de-los-archivos-y-por-qué)
+	- [Orden de creacion de los archivos (y por que)](#orden-de-creacion-de-los-archivos-y-por-que)
 	- [3.1 – Enumerado DBResult](#31--enumerado-dbresult-srcserviciosdbresultphp)
 	- [3.2 – Clase abstracta EntidadIdentificable](#32--clase-abstracta-entidadidentificable-srcmodeloentidadidentificablephp)
 	- [3.3 – Interfaz IGuardable](#33--interfaz-iguardable-srcmodeloiguardablephp)
@@ -76,14 +76,18 @@ Registro paso a paso de lo realizado en el proyecto.
 	- [4.1 – Clase controladora (Controlador)](#41--clase-controladora-controlador)
 	- [4.2 – Enrutador (index.php)](#42--enrutador-indexphp)
 	- [4.3 – Plantilla listado.tpl](#43--plantilla-listadotpl)
-	- [4.4 – Configuración de BD](#44--configuración-de-bd)
+	- [4.4 – Configuracion de BD](#44--configuracion-de-bd)
 	- [Checklist Ejercicio 03](#checklist-ejercicio-03)
 - [PASO 5 – Ejercicio 04: Controladores y vistas (II)](#paso-5--ejercicio-04-controladores-y-vistas-ii)
 	- [5.1 – Enrutador y rutas](#51--enrutador-y-rutas)
-	- [5.2 – Alta de película (formulario y guardar)](#52--alta-de-película-formulario-y-guardar)
-	- [5.3 – Borrado con confirmación](#53--borrado-con-confirmación)
+	- [5.2 – Alta de pelicula (formulario y guardar)](#52--alta-de-pelicula-formulario-y-guardar)
+	- [5.3 – Borrado con confirmacion](#53--borrado-con-confirmacion)
 	- [5.4 – Plantillas y listado](#54--plantillas-y-listado)
 	- [Checklist Ejercicio 04](#checklist-ejercicio-04)
+- [PASO 6 – Ejercicio 05: Documentacion y prueba](#paso-6--ejercicio-05-documentacion-y-prueba)
+	- [6.1 – Probar el modelo (Opcion 01)](#61--probar-el-modelo-opcion-01)
+	- [6.2 – Documentar con PHPDoc](#62--documentar-con-phpdoc)
+	- [Checklist Ejercicio 05](#checklist-ejercicio-05)
 
 ---
 
@@ -99,7 +103,7 @@ Tener un SQL válido para importar en MySQL (XAMPP) y crear las tablas y datos d
 - **Corrección de sintaxis**: en la definición de la tabla `peliculas`, la línea final tenía `ENGINE = InnoDB:` (dos puntos). Se corrigió a `ENGINE = InnoDB;` (punto y coma) para que MySQL acepte la sentencia.
 - **Creación y uso de la base**: al inicio del script se añadió `CREATE DATABASE IF NOT EXISTS peliculas_nivel_4` y `USE peliculas_nivel_4` para evitar el error «#1046 - Base de datos no seleccionada» al ejecutar el SQL en phpMyAdmin sin seleccionar antes una base.
 
-### Cómo importar en XAMPP
+### Como importar en XAMPP
 1. Crear una base de datos en phpMyAdmin (por ejemplo `peliculas_nivel_4`).
 2. Seleccionar esa base de datos.
 3. Ir a “Importar” y elegir el archivo `peliculas_nivel_4.sql`.
@@ -110,7 +114,7 @@ Tener un SQL válido para importar en MySQL (XAMPP) y crear las tablas y datos d
 - Tabla `peliculas`: id, titulo, genero (FK a generos), direccion, duracion, argumento, anio.
 - Datos de ejemplo: 6 géneros y 18 películas.
 
-| [Anterior](#índice) | [Índice](#índice) | [Siguiente](#paso-2--ejercicio-01-proyecto-con-composer-y-smarty) |
+| [Anterior](#indice) | [Indice](#indice) | [Siguiente](#paso-2--ejercicio-01-proyecto-con-composer-y-smarty) |
 |-----------|-------|------------|
 
 ---
@@ -160,7 +164,7 @@ En este paso se configura el proyecto con Composer, namespace **AAMP04**, autolo
 - **Carpeta de clases**: usamos **src** por defecto. (Si el enunciado exige "srcxyz", usa src+iniciales, ej. srcaamp.)
 - Crear la carpeta **src** dentro de `web-peliculas-nivel-4` (si no existe).
 - En `composer.json`, dejar el autoload así (namespace **TUS_INICIALES04**, carpeta **src**):
-  ```json
+  ```php
   "autoload": {
       "psr-4": {
           "AAMP04\\": "src/"
@@ -176,7 +180,7 @@ En este paso se configura el proyecto con Composer, namespace **AAMP04**, autolo
 3) `composer dump-autoload`.  
 4) `composer require smarty/smarty:4.4.1`.
 
-### 2.4 – Añadir Smarty 4.4.1
+### 2.4 – Anadir Smarty 4.4.1
 - En la raíz del proyecto ejecutar:  
   `composer require smarty/smarty:4.4.1`
 - Composer descargará Smarty y actualizará `composer.json` y `composer.lock`, y creará/actualizará la carpeta `vendor/`.
@@ -188,19 +192,116 @@ En este paso se configura el proyecto con Composer, namespace **AAMP04**, autolo
   - **tmp/compiled_templates** (plantillas compiladas)
   - **tmp/smarty_cache** (caché de Smarty)
 
-### 2.6 – Recomendación: clase de prueba, plantillas y prueba1.php (opcional)
+### 2.6 – Recomendacion: clase de prueba, plantillas y prueba1.php (opcional)
 - Crear una clase de prueba en **src/** con namespace `AAMP04` (o el tuyo), con constructor y al menos dos métodos de instancia.
 - Crear dos plantillas en **plantillas/**: una con formulario y otra para mostrar resultados.
 - Crear `prueba1.php` en la raíz que cargue `vendor/autoload.php`, use la clase de prueba y Smarty, y muestre el formulario o el resultado según corresponda.
 - La URL será la que corresponda a tu instalación, por ejemplo:  
   `http://localhost/.../web-peliculas-nivel-4/prueba1.php`
 
+**Ejemplo de código:**
+
+1. Clase de prueba en **src/Saludador.php** (namespace AAMP04, constructor y dos métodos):
+
+```php
+<?php
+
+declare(strict_types=1);
+
+namespace AAMP04;
+
+class Saludador
+{
+    public function __construct(
+        private string $nombre = ''
+    ) {
+    }
+
+    public function getNombre(): string
+    {
+        return $this->nombre;
+    }
+
+    public function getMensaje(): string
+    {
+        if ($this->nombre === '') {
+            return 'Hola, no has dicho tu nombre.';
+        }
+        return 'Hola, ' . htmlspecialchars($this->nombre) . '.';
+    }
+}
+```
+
+2. Plantilla del formulario **plantillas/prueba1_formulario.tpl**:
+
+```php
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Prueba 1 – Formulario</title>
+</head>
+<body>
+    <h1>Prueba Smarty y clase</h1>
+    <form method="post" action="prueba1.php">
+        <label for="nombre">Tu nombre:</label>
+        <input type="text" name="nombre" id="nombre" value="">
+        <button type="submit">Enviar</button>
+    </form>
+</body>
+</html>
+```
+
+3. Plantilla del resultado **plantillas/prueba1_resultado.tpl**:
+
+```php
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Prueba 1 – Resultado</title>
+</head>
+<body>
+    <h1>Prueba Smarty y clase</h1>
+    <p>{$mensaje|escape}</p>
+    <p><a href="prueba1.php">Volver al formulario</a></p>
+</body>
+</html>
+```
+
+4. Script **prueba1.php** en la raíz del proyecto:
+
+```php
+<?php
+
+declare(strict_types=1);
+
+require_once __DIR__ . '/vendor/autoload.php';
+
+$baseDir = __DIR__;
+$smarty = new Smarty();
+$smarty->setTemplateDir($baseDir . '/plantillas');
+$smarty->setCompileDir($baseDir . '/tmp/compiled_templates');
+$smarty->setCacheDir($baseDir . '/tmp/smarty_cache');
+
+$nombre = trim((string) ($_POST['nombre'] ?? ''));
+if ($nombre !== '') {
+    $saludador = new \AAMP04\Saludador($nombre);
+    $smarty->assign('mensaje', $saludador->getMensaje());
+    $smarty->display('prueba1_resultado.tpl');
+} else {
+    $smarty->display('prueba1_formulario.tpl');
+}
+```
+
+Con esto, al abrir `prueba1.php` se muestra el formulario; al enviar el nombre por POST se muestra el mensaje de la clase. Sustituye `AAMP04` por tu namespace si es distinto.
+
 ### 2.7 – .gitignore (no subir vendor ni cientos de archivos)
 
 Tras `composer require`, aparece la carpeta **vendor/** con cientos de archivos. **No se deben commitear**: se regeneran con `composer install` a partir de `composer.json` y `composer.lock`.
 
 - Crear en la raíz del proyecto (`web-peliculas-nivel-4`) un archivo **.gitignore** con al menos:
-  ```
+  ```php
   # Dependencias de Composer (se generan con composer install)
   vendor/
 
@@ -213,7 +314,7 @@ Tras `composer require`, aparece la carpeta **vendor/** con cientos de archivos.
 - **No se suben**: `vendor/`, y opcionalmente `.env` si guardas ahí credenciales.
 - Si ya habías añadido `vendor/` al commit: `git reset HEAD -- vendor/` (o `git reset HEAD -- .` y luego `git add .`) y vuelve a hacer `git status`; deberían desaparecer los cientos de archivos.
 
-| [Anterior](#paso-1--preparar-el-script-de-base-de-datos) | [Índice](#índice) | [Siguiente](#preguntas-frecuentes-faq) |
+| [Anterior](#paso-1--preparar-el-script-de-base-de-datos) | [Indice](#indice) | [Siguiente](#preguntas-frecuentes-faq) |
 |-----------|-------|------------|
 
 ---
@@ -251,7 +352,7 @@ R: **stable**. Con eso solo se instalan versiones estables. Para esta práctica 
 **P: ¿Qué pongo en "Package Type"?**  
 R: **project**. Es una aplicación web, no una librería. Escribe: `project`.
 
-### Directorio de clases: ¿src o src + iniciales?
+### Directorio de clases: src o src + iniciales
 
 **P: ¿Uso "src" o "srcaamp" (src + iniciales)? ¿Y "plantillas" o "plantillasaamp"?**  
 R: En esta guía usamos **por defecto**:
@@ -268,12 +369,12 @@ R: Responde **yes** a "Do you confirm generation?". Luego:
 3. Ejecuta `composer dump-autoload`.  
 Así el autoload queda correcto sin repetir `composer init`.
 
-### Git: ¿Por qué 476 archivos para commit? ¿Hace falta .gitignore?
+### Git: Por que 476 archivos para commit? Hace falta .gitignore?
 
 **P: Al hacer git status salen cientos de archivos (p. ej. 476). ¿Hace falta un .gitignore?**  
 R: **Sí.** La carpeta **vendor/** no debe subirse al repositorio: son dependencias que se generan con `composer install`. Crea un archivo **.gitignore** en la raíz del proyecto con la línea `vendor/` (y opcionalmente `.env`). Así Git ignorará esos archivos. Sí debes commitear **composer.json** y **composer.lock** para que quien clone el repo pueda ejecutar `composer install` y obtener el mismo `vendor/`. Ver apartado 2.7.
 
-| [Anterior](#paso-2--ejercicio-01-proyecto-con-composer-y-smarty) | [Índice](#índice) | [Siguiente](#checklist-ejercicio-01-resumen) |
+| [Anterior](#paso-2--ejercicio-01-proyecto-con-composer-y-smarty) | [Indice](#indice) | [Siguiente](#checklist-ejercicio-01-resumen) |
 |-----------|-------|------------|
 
 ---
@@ -289,7 +390,7 @@ R: **Sí.** La carpeta **vendor/** no debe subirse al repositorio: son dependenc
 - [ ] Archivo **.gitignore** con `vendor/` (y opcionalmente `.env`)  
 - [ ] (Opcional) Clase de prueba en src/, plantillas, prueba1.php  
 
-| [Anterior](#preguntas-frecuentes-faq) | [Índice](#índice) | [Siguiente](#paso-3--ejercicio-02-modelo-mvc) |
+| [Anterior](#preguntas-frecuentes-faq) | [Indice](#indice) | [Siguiente](#paso-3--ejercicio-02-modelo-mvc) |
 |-----------|-------|------------|
 
 ---
@@ -311,7 +412,7 @@ El modelo da soporte a los datos de la aplicación. **Solo en las clases del mod
 
 ---
 
-### Orden de creación de los archivos (y por qué)
+### Orden de creacion de los archivos (y por que)
 
 Hay que crear los archivos en un orden que respete las **dependencias**: no puedes implementar una clase que use `DBResult` o `EntidadIdentificable` si aún no existen. El orden que se sigue es:
 
@@ -449,7 +550,7 @@ Resumen: primero lo que no depende de nadie (**DBResult**, **EntidadIdentificabl
 - [ ] 8. `src/modelo/Peliculas.php` (listado).
 - [ ] En el Ejercicio 05 se añaden comentarios PHPDoc a las clases y métodos.
 
-| [Anterior](#checklist-ejercicio-01-resumen) | [Índice](#índice) | [PASO 4 – Ejercicio 03](#paso-4--ejercicio-03-controladores-y-vistas-i) |
+| [Anterior](#checklist-ejercicio-01-resumen) | [Indice](#indice) | [PASO 4 – Ejercicio 03](#paso-4--ejercicio-03-controladores-y-vistas-i) |
 |-----------|-------|------------|
 
 ---
@@ -487,7 +588,7 @@ Controlador por defecto: listado de películas con ordenación (Título, Año, D
 - Preseleccionar según `columna_seleccionada` y `orden_seleccionado`.
 - Mostrar `error_orden` si existe.
 
-### 4.4 – Configuración de BD
+### 4.4 – Configuracion de BD
 - Archivo `config_db.php` (o similar) con DSN, usuario y contraseña de MySQL. Cargado solo desde `index.php` con `require`. Ajustar a tu base de datos (p. ej. `peliculas_nivel_4` en XAMPP).
 
 ### Orden de realización (Ejercicio 03, paso a paso)
@@ -504,7 +605,7 @@ Controlador por defecto: listado de películas con ordenación (Título, Año, D
 - [ ] Carpetas `tmp/compiled_templates` y `tmp/smarty_cache` creadas.
 - [ ] Vídeo **videoAAMP_1.mp4** (o videoXYZ_1.mp4) mostrando la funcionalidad.
 
-### Cómo probar la aplicación ahora
+### Como probar la aplicacion ahora
 - **Requisitos**: Base de datos `peliculas_nivel_4` creada e importado `peliculas_nivel_4.sql` (PASO 1). PHP en PATH, Composer y Smarty instalados (PASO 2). Modelo y controlador creados (PASO 3 y 4).
 - **Pasos**:
   1. Ajustar `config_db.php`: comprobar `dbname=peliculas_nivel_4`, usuario (p. ej. `root`) y contraseña (vacía en XAMPP por defecto).
@@ -516,15 +617,15 @@ Controlador por defecto: listado de películas con ordenación (Título, Año, D
      `http://localhost/web-peliculas-nivel-4/index.php`
   5. Debe mostrarse el listado de películas y el formulario para ordenar por Título, Año o Duración (asc/desc). Probar a cambiar el orden y volver a cargar la página para comprobar que se mantiene en sesión.
 
-### Sobre los enlaces del Índice y las tablas Anterior/Siguiente
-Los enlaces del Índice y de las tablas de navegación (Anterior, Índice, Siguiente) no siempre funcionan igual en todos los visores de Markdown porque **cada herramienta genera los anchors (ids) de los encabezados de forma distinta**:
+### Sobre los enlaces del Indice y las tablas Anterior/Siguiente
+Los enlaces del Indice y de las tablas de navegacion (Anterior, Indice, Siguiente) no siempre funcionan igual en todos los visores de Markdown porque **cada herramienta genera los anchors (ids) de los encabezados de forma distinta**:
 - **Guión en el título**: títulos con "–" (raya) pueden generar `#paso-1--preparar...` (doble guión) en unos y `#paso-1-preparar...` (simple) en otros; si el enlace usa uno y el visor genera el otro, falla.
-- **Acentos**: el encabezado "# Índice" puede quedar como `#índice` o como `#indice` según si el visor normaliza acentos; el enlace [Índice](#índice) falla donde se use `#indice`.
-- **Paréntesis y rutas**: encabezados como "### 3.1 – Enumerado DBResult (`src/servicios/DBResult.php`)" en unos sitios generan un id que incluye la ruta y en otros la omiten (solo `#31--enumerado-dbresult`). Los enlaces del índice que llevan la ruta en el anchor dejan de funcionar donde el visor la elimina.
+- **Acentos**: si los encabezados usan acentos, los anchors pueden variar entre visores; en esta guia los encabezados y enlaces evitan acentos para unificar el comportamiento.
+- **Paréntesis y rutas**: encabezados como "### 3.1 – Enumerado DBResult (`src/servicios/DBResult.php`)" en unos sitios generan un id que incluye la ruta y en otros la omiten (solo `#31--enumerado-dbresult`). Los enlaces del indice que llevan la ruta en el anchor dejan de funcionar donde el visor la elimina.
 - **Espacios y caracteres especiales**: distintos visores convierten espacios en `-` y eliminan o conservan `:`, `/`, etc., de forma distinta.
 Por tanto, que algunos enlaces no funcionen suele deberse a que el **anchor que usamos en el enlace no coincide con el id que genera tu visor** (GitHub, Cursor, VS Code, etc.). No es un error del contenido de la GUIA; es una diferencia entre implementaciones de Markdown. Para unificar el comportamiento habría que adaptar todos los enlaces al formato concreto que use tu visor (por ejemplo, probando en el navegador o en la vista previa y copiando el id que se genera).
 
-| [Anterior](#checklist-ejercicio-02-respetando-el-orden) | [Índice](#índice) | [PASO 5 – Ejercicio 04](#paso-5--ejercicio-04-controladores-y-vistas-ii) |
+| [Anterior](#checklist-ejercicio-02-respetando-el-orden) | [Indice](#indice) | [PASO 5 – Ejercicio 04](#paso-5--ejercicio-04-controladores-y-vistas-ii) |
 |-----------|-------|------------|
 
 ---
@@ -575,5 +676,47 @@ En este ejercicio se añaden las acciones **añadir película** y **borrar pelí
 - [ ] Listado: enlace “Añadir película” y botón/form “Borrar” por película (POST a borrar_pelicula_form_AAMP).
 - [ ] Vídeos **videoAAMP_2.mp4** (añadir película) y **videoAAMP_3.mp4** (borrar con confirmación).
 
-| [Anterior](#checklist-ejercicio-03) | [Índice](#índice) | — |
+| [Anterior](#checklist-ejercicio-03) | [Indice](#indice) | [PASO 6 – Ejercicio 05](#paso-6--ejercicio-05-documentacion-y-prueba) |
+|-----------|-------|------------|
+
+---
+
+## PASO 6 – Ejercicio 05: Documentacion y prueba
+
+En este ejercicio se documenta y se prueba la aplicación: script de prueba del modelo (Opción 01) y comentarios PHPDoc en modelo y controlador.
+
+### 6.1 – Probar el modelo (Opcion 01)
+
+- **Archivo**: `prueba_modelo.php` en la raíz del proyecto (accesible vía `http://localhost/.../web-peliculas-nivel-4/prueba_modelo.php`; el enunciado menciona `dwes04`, en este proyecto la ruta es la de la carpeta `web-peliculas-nivel-4`).
+- **Carga**: usa `vendor/autoload.php` y `config_db.php`; crea PDO igual que `index.php`.
+- **Comprueba**:
+  - **Genero**: `setId`/`getId`, `setNombre`/`getNombre`.
+  - **Generos::listar**: devuelve array (no DBResult de error).
+  - **Generos::existe**: id existente devuelve 1, id inexistente 0.
+  - **Pelicula**: todos los get/set (titulo, genero, direccion, duracion, argumento, anio).
+  - **Peliculas::listar** y **Peliculas::existe** (id existente / inexistente).
+  - **Pelicula::guardar** (INSERT): nueva película, guardar, comprobar que devuelve filas y que `getId()` tiene valor.
+  - **Pelicula::rescatar**: recuperar la película creada y comprobar datos.
+  - **Pelicula::guardar** (UPDATE): cambiar título, guardar, rescatar de nuevo y comprobar el cambio.
+  - **Pelicula::borrar**: borrar la película de prueba; comprobar que **Peliculas::existe** devuelve 0 y **Pelicula::rescatar** devuelve `DB_EMPTYRESULT`.
+- La salida es HTML con lista de pruebas y ✓/✗ (correcto/fallo).
+
+**Opción 02 (investigación autónoma)**: instalar PHPUnit con Composer como dependencia de desarrollo e implementar tests que verifiquen las clases del modelo.
+
+### 6.2 – Documentar con PHPDoc
+
+- **Clases del modelo y del controlador**: añadir comentarios PHPDoc a nivel de clase (descripción y `@author Tu Nombre`) y a nivel de método (`@param`, `@return` según corresponda).
+- **Archivos documentados**:
+  - `src/servicios/DBResult.php`: descripción del enumerado.
+  - `src/modelo/EntidadIdentificable.php`, `IGuardable.php`, `IListable.php`, `Genero.php`, `Generos.php`, `Pelicula.php`, `Peliculas.php`: clase y métodos públicos (y los estáticos de listado/existencia/guardar/rescatar/borrar).
+  - `src/controlador/Controlador.php`: clase y todos los métodos (listado, formNuevaPelicula, guardarNuevaPelicula, formBorrarPelicula, confirmarBorrarPelicula, errorAccion, y los privados auxiliares).
+- **Formato**: como en el enunciado: bloque `/** ... */` con descripción y, en métodos, `@param tipo $nombre Descripción` y `@return tipo Descripción`.
+
+### Checklist Ejercicio 05
+
+- [ ] `prueba_modelo.php` creado; carga con autoload y config; verifica listar, existe, get/set de Genero y Pelicula, guardar (INSERT/UPDATE), rescatar y borrar.
+- [ ] PHPDoc en todas las clases del modelo (DBResult, EntidadIdentificable, IGuardable, IListable, Genero, Generos, Pelicula, Peliculas).
+- [ ] PHPDoc en la clase Controlador y en todos sus métodos.
+
+| [Anterior](#checklist-ejercicio-04) | [Indice](#indice) | — |
 |-----------|-------|------------|
