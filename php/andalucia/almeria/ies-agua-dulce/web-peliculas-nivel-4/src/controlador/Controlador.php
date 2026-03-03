@@ -42,6 +42,14 @@ class Controlador
             $peliculas = [];
         }
 
+        $generosPorId = [];
+        $listaGeneros = Generos::listar($pdo);
+        if (is_array($listaGeneros)) {
+            foreach ($listaGeneros as $g) {
+                $generosPorId[$g->getId()] = $g->getNombre();
+            }
+        }
+
         $columna = null;
         $orden = null;
         $errorOrden = null;
@@ -68,6 +76,7 @@ class Controlador
         }
 
         $smarty->assign('peliculas', self::peliculasToArray($peliculas));
+        $smarty->assign('generos', $generosPorId);
         $smarty->assign('columna_seleccionada', $columna);
         $smarty->assign('orden_seleccionado', $orden);
         $smarty->assign('error', $error);
