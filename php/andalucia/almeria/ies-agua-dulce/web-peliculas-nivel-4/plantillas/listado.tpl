@@ -60,7 +60,7 @@
             <tr>
                 <td>{$p.id}</td>
                 <td>{$p.titulo|escape}</td>
-                <td>{$p.genero}</td>
+                <td>{if isset($generos[$p.genero])}{$generos[$p.genero]|escape}{else}—{/if} ({$p.genero})</td>
                 <td>{$p.direccion|escape}</td>
                 <td>{$p.duracion}</td>
                 <td>{$p.argumento|escape}</td>
