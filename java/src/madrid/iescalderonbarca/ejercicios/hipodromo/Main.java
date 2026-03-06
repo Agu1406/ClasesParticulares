@@ -11,7 +11,7 @@ public class Main {
     public static void main(String[] args) {
         Scanner teclado = new Scanner(System.in);
         Random azar = new Random();
-
+o 
         Caballo[] establo = new Caballo[5];
         establo[0] = new Caballo("Rocinante", 1);
         establo[1] = new Caballo("Babieca", 2);
