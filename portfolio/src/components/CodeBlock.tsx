@@ -37,7 +37,10 @@ function CodeBlock({ code, language = "java" }: CodeBlockProps) {
                 </button>
             </div>
             {/* Bloque de código con scroll horizontal si es largo */}
-            <pre className="bg-slate-800 text-slate-100 p-4 rounded-lg overflow-x-auto shadow-xl font-mono text-sm">
+            <pre
+                className="bg-slate-800 text-slate-100 p-4 rounded-lg overflow-x-auto shadow-xl font-mono text-sm"
+                data-language={language}
+            >
                 <code>{code}</code>
             </pre>
         </div>

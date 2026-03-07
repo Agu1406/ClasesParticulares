@@ -14,6 +14,8 @@
  */
 
 import { useParams, Link } from "react-router-dom";
+import ReactMarkdown from "react-markdown";
+import remarkGfm from "remark-gfm";
 import { getLessonById, getLessonsByLanguage } from "../data/lessons";
 import CodeBlock from "../components/CodeBlock";
 
@@ -68,7 +70,7 @@ function LessonPage() {
                     ))}
                 </div>
 
-                {/* Secciones de teoría y código */}
+                {/* Secciones de teoría (contenido en Markdown desde content/lessons) */}
                 <div className="space-y-8">
                     {lesson.content.sections.map((section, index) => (
                         <section key={index} className="space-y-4">
@@ -80,15 +82,36 @@ function LessonPage() {
                                 )}
                                 {section.title}
                             </h2>
-                            <p className="text-slate-grey text-sm">
-                                {section.content}
-                            </p>
-                            {section.code && (
-                                <CodeBlock
-                                    code={section.code}
-                                    language={section.codeLanguage ?? "java"}
-                                />
-                            )}
+                            <div className="text-slate-grey text-sm prose prose-sm max-w-none prose-p:text-slate-grey prose-pre:bg-slate-800 prose-pre:shadow-xl">
+                                <ReactMarkdown
+                                    remarkPlugins={[remarkGfm]}
+                                    components={{
+                                        code({ node, className, children, ...props }) {
+                                            const isBlock = Boolean(className?.startsWith("language-"));
+                                            if (!isBlock) {
+                                                return (
+                                                    <code
+                                                        className="bg-slate-200 px-1 rounded font-mono text-sm"
+                                                        {...props}
+                                                    >
+                                                        {children}
+                                                    </code>
+                                                );
+                                            }
+                                            const lang =
+                                                (className ?? "").replace(/^language-/, "") || "java";
+                                            return (
+                                                <CodeBlock
+                                                    code={String(children).replace(/\n$/, "")}
+                                                    language={lang}
+                                                />
+                                            );
+                                        },
+                                    }}
+                                >
+                                    {section.content}
+                                </ReactMarkdown>
+                            </div>
                         </section>
                     ))}
                 </div>
