@@ -47,15 +47,22 @@ src/
 │       ├── tipodatos/
 │       │   ├── DatosPrimitivos.java
 │       │   └── DatosAvanzados.java
-│       └── casteotipos/
-│           └── CasteoTiposPrimitivos.java
+│       ├── casteotipos/
+│       │   └── CasteoTiposPrimitivos.java
+│       ├── bucles/                    # (planificado)
+│       ├── condicionales/             # (planificado)
+│       ├── stringsyfunciones/         # (planificado)
+│       ├── operacionesmatematicas/    # (planificado)
+│       ├── arrays/                    # (planificado)
+│       └── conceptosbasicospoo/       # (planificado)
 ├── ev2/   # (planificado)
 ├── ev3/   # (planificado)
 └── README.md
 ```
 
 # Indice de contenido
-
+// Iterator
+// Volcar ficheros (INPUT/OUTPUT)
 * **Primera evaluación (EV1)**
     + **Contenido de la unidad teórica 0 (UT0)**
         1. [**Conceptos básicos**](#conceptos-básicos)
