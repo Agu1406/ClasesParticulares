@@ -25,42 +25,36 @@ use AAMP04\modelo\Peliculas;
 use AAMP04\servicios\DBResult;
 
 $tests = [];
-$ok = function (string $nombre) use (&$tests) {
-    $tests[] = ['nombre' => $nombre, 'ok' => true];
-};
-$fail = function (string $nombre, string $mensaje) use (&$tests) {
-    $tests[] = ['nombre' => $nombre, 'ok' => false, 'mensaje' => $mensaje];
-};
 
 // --- Genero: get/set ---
 $g = new Genero();
 $g->setId(1);
 $g->setNombre('drama');
 if ($g->getId() === 1 && $g->getNombre() === 'drama') {
-    $ok('Genero: setId/getId y setNombre/getNombre');
+    $tests[] = ['nombre' => 'Genero: setId/getId y setNombre/getNombre', 'ok' => true];
 } else {
-    $fail('Genero: setId/getId y setNombre/getNombre', 'Valores no coinciden');
+    $tests[] = ['nombre' => 'Genero: setId/getId y setNombre/getNombre', 'ok' => false, 'mensaje' => 'Valores no coinciden'];
 }
 
 // --- Generos::listar ---
 $listaGeneros = Generos::listar($pdo);
 if ($listaGeneros instanceof DBResult) {
-    $fail('Generos::listar', 'Devolvió DBResult en lugar de array');
+    $tests[] = ['nombre' => 'Generos::listar', 'ok' => false, 'mensaje' => 'Devolvió DBResult en lugar de array'];
 } elseif (!is_array($listaGeneros)) {
-    $fail('Generos::listar', 'No devolvió array');
+    $tests[] = ['nombre' => 'Generos::listar', 'ok' => false, 'mensaje' => 'No devolvió array'];
 } else {
-    $ok('Generos::listar devuelve array de ' . count($listaGeneros) . ' género(s)');
+    $tests[] = ['nombre' => 'Generos::listar devuelve array de ' . count($listaGeneros) . ' género(s)', 'ok' => true];
 }
 
 // --- Generos::existe ---
 $existe1 = Generos::existe($pdo, 1);
 $existeFake = Generos::existe($pdo, 99999);
 if ($existe1 === DBResult::DB_EXCEPTION || $existeFake === DBResult::DB_EXCEPTION) {
-    $fail('Generos::existe', 'Excepción de BD');
+    $tests[] = ['nombre' => 'Generos::existe', 'ok' => false, 'mensaje' => 'Excepción de BD'];
 } elseif ($existe1 === 1 && $existeFake === 0) {
-    $ok('Generos::existe(id existente)=1, existe(id inexistente)=0');
+    $tests[] = ['nombre' => 'Generos::existe(id existente)=1, existe(id inexistente)=0', 'ok' => true];
 } else {
-    $fail('Generos::existe', "existe(1)=$existe1, existe(99999)=$existeFake");
+    $tests[] = ['nombre' => 'Generos::existe', 'ok' => false, 'mensaje' => "existe(1)=$existe1, existe(99999)=$existeFake"];
 }
 
 // --- Pelicula: get/set ---
@@ -74,19 +68,19 @@ $p->setAnio(2000);
 $igual = $p->getTitulo() === 'Título' && $p->getGenero() === 1 && $p->getDireccion() === 'Director'
     && $p->getDuracion() === 90 && $p->getArgumento() === 'Argumento' && $p->getAnio() === 2000;
 if ($igual) {
-    $ok('Pelicula: todos los set/get');
+    $tests[] = ['nombre' => 'Pelicula: todos los set/get', 'ok' => true];
 } else {
-    $fail('Pelicula: set/get', 'Algún valor no coincide');
+    $tests[] = ['nombre' => 'Pelicula: set/get', 'ok' => false, 'mensaje' => 'Algún valor no coincide'];
 }
 
 // --- Peliculas::listar ---
 $listaPeliculas = Peliculas::listar($pdo);
 if ($listaPeliculas instanceof DBResult) {
-    $fail('Peliculas::listar', 'Devolvió DBResult');
+    $tests[] = ['nombre' => 'Peliculas::listar', 'ok' => false, 'mensaje' => 'Devolvió DBResult'];
 } elseif (!is_array($listaPeliculas)) {
-    $fail('Peliculas::listar', 'No devolvió array');
+    $tests[] = ['nombre' => 'Peliculas::listar', 'ok' => false, 'mensaje' => 'No devolvió array'];
 } else {
-    $ok('Peliculas::listar devuelve array de ' . count($listaPeliculas) . ' película(s)');
+    $tests[] = ['nombre' => 'Peliculas::listar devuelve array de ' . count($listaPeliculas) . ' película(s)', 'ok' => true];
 }
 
 // --- Peliculas::existe ---
@@ -97,13 +91,13 @@ if (is_array($listaPeliculas) && count($listaPeliculas) > 0) {
 $existeP = $primerId !== null ? Peliculas::existe($pdo, $primerId) : 0;
 $existePFalse = Peliculas::existe($pdo, 99999999);
 if ($existeP === DBResult::DB_EXCEPTION || $existePFalse === DBResult::DB_EXCEPTION) {
-    $fail('Peliculas::existe', 'Excepción de BD');
+    $tests[] = ['nombre' => 'Peliculas::existe', 'ok' => false, 'mensaje' => 'Excepción de BD'];
 } elseif ($primerId === null) {
-    $ok('Peliculas::existe (sin películas para probar id existente)');
+    $tests[] = ['nombre' => 'Peliculas::existe (sin películas para probar id existente)', 'ok' => true];
 } elseif ($existeP === 1 && $existePFalse === 0) {
-    $ok('Peliculas::existe(id existente)=1, existe(id inexistente)=0');
+    $tests[] = ['nombre' => 'Peliculas::existe(id existente)=1, existe(id inexistente)=0', 'ok' => true];
 } else {
-    $fail('Peliculas::existe', "existe($primerId)=$existeP, existe(99999999)=$existePFalse");
+    $tests[] = ['nombre' => 'Peliculas::existe', 'ok' => false, 'mensaje' => "existe($primerId)=$existeP, existe(99999999)=$existePFalse"];
 }
 
 // --- Pelicula: guardar (INSERT), rescatar, guardar (UPDATE), borrar ---
@@ -119,11 +113,11 @@ $resGuardar = $nueva->guardar($pdo);
 
 $idCreado = null;
 if ($resGuardar === DBResult::DB_EXCEPTION || $resGuardar === DBResult::DB_NOCOLS_AFFECTED) {
-    $fail('Pelicula::guardar (INSERT)', 'No se insertó: ' . (is_int($resGuardar) ? '' : 'error BD'));
+    $tests[] = ['nombre' => 'Pelicula::guardar (INSERT)', 'ok' => false, 'mensaje' => 'No se insertó: ' . (is_int($resGuardar) ? '' : 'error BD')];
 } elseif ($nueva->getId() === null) {
-    $fail('Pelicula::guardar (INSERT)', 'lastInsertId no asignado a la entidad');
+    $tests[] = ['nombre' => 'Pelicula::guardar (INSERT)', 'ok' => false, 'mensaje' => 'lastInsertId no asignado a la entidad'];
 } else {
-    $ok('Pelicula::guardar (INSERT) y getId tras insert');
+    $tests[] = ['nombre' => 'Pelicula::guardar (INSERT) y getId tras insert', 'ok' => true];
     $idCreado = $nueva->getId();
 }
 
@@ -132,14 +126,14 @@ if ($idCreado !== null) {
     $rescatada = Pelicula::rescatar($pdo, $idCreado);
 }
 if ($rescatada === null) {
-    $fail('Pelicula::rescatar', 'No se ejecutó (falló INSERT previo)');
+    $tests[] = ['nombre' => 'Pelicula::rescatar', 'ok' => false, 'mensaje' => 'No se ejecutó (falló INSERT previo)'];
 } elseif ($rescatada instanceof DBResult) {
-    $fail('Pelicula::rescatar', 'No se rescató la película recién creada');
+    $tests[] = ['nombre' => 'Pelicula::rescatar', 'ok' => false, 'mensaje' => 'No se rescató la película recién creada'];
 } else {
     if ($rescatada->getTitulo() === $tituloPrueba && $rescatada->getId() === $idCreado) {
-        $ok('Pelicula::rescatar devuelve entidad con datos correctos');
+        $tests[] = ['nombre' => 'Pelicula::rescatar devuelve entidad con datos correctos', 'ok' => true];
     } else {
-        $fail('Pelicula::rescatar', 'Datos no coinciden');
+        $tests[] = ['nombre' => 'Pelicula::rescatar', 'ok' => false, 'mensaje' => 'Datos no coinciden'];
     }
 }
 
@@ -148,13 +142,13 @@ if ($idCreado !== null && $rescatada instanceof Pelicula) {
     $rescatada->setTitulo($tituloPrueba . ' actualizado');
     $resUpdate = $rescatada->guardar($pdo);
     if ($resUpdate === DBResult::DB_EXCEPTION || $resUpdate === DBResult::DB_OPNOTFULFILLED) {
-        $fail('Pelicula::guardar (UPDATE)', 'No se actualizó');
+        $tests[] = ['nombre' => 'Pelicula::guardar (UPDATE)', 'ok' => false, 'mensaje' => 'No se actualizó'];
     } else {
         $otra = Pelicula::rescatar($pdo, $idCreado);
         if ($otra instanceof Pelicula && $otra->getTitulo() === $tituloPrueba . ' actualizado') {
-            $ok('Pelicula::guardar (UPDATE) y rescatar comprueba el cambio');
+            $tests[] = ['nombre' => 'Pelicula::guardar (UPDATE) y rescatar comprueba el cambio', 'ok' => true];
         } else {
-            $fail('Pelicula::guardar (UPDATE)', 'Rescatar no devolvió el título actualizado');
+            $tests[] = ['nombre' => 'Pelicula::guardar (UPDATE)', 'ok' => false, 'mensaje' => 'Rescatar no devolvió el título actualizado'];
         }
     }
 }
@@ -163,22 +157,22 @@ if ($idCreado !== null && $rescatada instanceof Pelicula) {
 if ($idCreado !== null) {
     $resBorrar = Pelicula::borrar($pdo, $idCreado);
     if ($resBorrar === DBResult::DB_EXCEPTION) {
-        $fail('Pelicula::borrar', 'Excepción de BD');
+        $tests[] = ['nombre' => 'Pelicula::borrar', 'ok' => false, 'mensaje' => 'Excepción de BD'];
     } elseif ($resBorrar !== 1) {
-        $fail('Pelicula::borrar', "rowCount=$resBorrar, se esperaba 1");
+        $tests[] = ['nombre' => 'Pelicula::borrar', 'ok' => false, 'mensaje' => "rowCount=$resBorrar, se esperaba 1"];
     } else {
-        $ok('Pelicula::borrar elimina el registro');
+        $tests[] = ['nombre' => 'Pelicula::borrar elimina el registro', 'ok' => true];
     }
 
     $existeTrasBorrar = Peliculas::existe($pdo, $idCreado);
     $rescatarTrasBorrar = Pelicula::rescatar($pdo, $idCreado);
     if ($existeTrasBorrar === 0 && $rescatarTrasBorrar === DBResult::DB_EMPTYRESULT) {
-        $ok('Peliculas::existe y Pelicula::rescatar tras borrado devuelven 0 y DB_EMPTYRESULT');
+        $tests[] = ['nombre' => 'Peliculas::existe y Pelicula::rescatar tras borrado devuelven 0 y DB_EMPTYRESULT', 'ok' => true];
     } else {
-        $fail('Tras borrado', "existe=$existeTrasBorrar, rescatar=" . ($rescatarTrasBorrar instanceof DBResult ? 'OK' : 'entidad'));
+        $tests[] = ['nombre' => 'Tras borrado', 'ok' => false, 'mensaje' => "existe=$existeTrasBorrar, rescatar=" . ($rescatarTrasBorrar instanceof DBResult ? 'OK' : 'entidad')];
     }
 } else {
-    $fail('Pelicula::borrar / tras borrado', 'No se ejecutó (no hubo id creado)');
+    $tests[] = ['nombre' => 'Pelicula::borrar / tras borrado', 'ok' => false, 'mensaje' => 'No se ejecutó (no hubo id creado)'];
 }
 
 // --- Salida HTML ---

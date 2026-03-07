@@ -1,0 +1,89 @@
+package madrid.iescalderonbarca.ejercicios.hipodromo;
+
+import java.util.Random;
+import java.util.Scanner;
+
+public class Main {
+
+    private static final int META = 700;
+    private static final int[] METROS = { 50, 60, 70, 80 };
+
+    public static void main(String[] args) {
+        Scanner teclado = new Scanner(System.in);
+        Random azar = new Random();
+o 
+        Caballo[] establo = new Caballo[5];
+        establo[0] = new Caballo("Rocinante", 1);
+        establo[1] = new Caballo("Babieca", 2);
+        establo[2] = new Caballo("Rufio", 3);
+        establo[3] = new Caballo("Alvaro", 4);
+        establo[4] = new Caballo("Rosado", 5);
+
+        int apuesta = 0;
+        while (apuesta < 1 || apuesta > 5) {
+            System.out.println("¿Por cuál caballo vas a apostar? Indica su dorsal (1-5):");
+            apuesta = teclado.nextInt();
+            if (apuesta < 1 || apuesta > 5) System.out.println("Error. Introduce un número del 1 al 5.");
+        }
+        System.out.println("¡Gracias por apostar! La carrera empieza pronto...");
+
+        System.out.println("\nCOMIENZA LA CARRERA\nPosición en la carrera de los caballos de primero al último");
+        for (Caballo caballoActual : establo) caballoActual.imprimirInformacion();
+        System.out.println("Pulse ENTER para continuar");
+        teclado.nextLine();
+        teclado.nextLine();
+
+        Caballo ganador = null;
+        while (ganador == null) {
+            String[] mensajesCaidaEsteTramo = new String[5];
+            int cuantasCaidasEsteTramo = 0;
+
+            for (Caballo caballoActual : establo) {
+                if (caballoActual.isCaballoCaido()) continue;
+                if (azar.nextInt(15) + 1 == 1) {
+                    caballoActual.caerse();
+                    mensajesCaidaEsteTramo[cuantasCaidasEsteTramo++] = caballoActual.getNombre() + " con el dorsal " + caballoActual.getPosicion();
+                } else {
+                    caballoActual.correr(METROS[azar.nextInt(4)]);
+                }
+            }
+
+            for (Caballo caballoActual : establo) {
+                if (!caballoActual.isCaballoCaido() && caballoActual.getDistanciaRecorrida() >= META) {
+                    ganador = caballoActual;
+                    break;
+                }
+            }
+            if (ganador == null) {
+                int cuantosSiguenEnPie = 0;
+                for (Caballo caballoActual : establo) if (!caballoActual.isCaballoCaido()) cuantosSiguenEnPie++;
+                if (cuantosSiguenEnPie == 0) {
+                    System.out.println("\nFIN DE LA CARRERA\nTodos los caballos se han caído. No hay ganador.");
+                    teclado.close();
+                    return;
+                }
+            }
+
+            System.out.println("\nPosición en la carrera de los caballos de primero al último");
+            for (int indiceCaida = 0; indiceCaida < cuantasCaidasEsteTramo; indiceCaida++)
+                System.out.println("ATENCIÓN CAÍDA: " + mensajesCaidaEsteTramo[indiceCaida] + " se ha caído.");
+            int mayorDistanciaRecorrida = 0;
+            for (Caballo caballoActual : establo)
+                if (!caballoActual.isCaballoCaido() && caballoActual.getDistanciaRecorrida() > mayorDistanciaRecorrida)
+                    mayorDistanciaRecorrida = caballoActual.getDistanciaRecorrida();
+            for (int metros = mayorDistanciaRecorrida; metros >= 0; metros--)
+                for (Caballo caballoActual : establo)
+                    if (!caballoActual.isCaballoCaido() && caballoActual.getDistanciaRecorrida() == metros)
+                        caballoActual.imprimirInformacion();
+
+            if (ganador != null) {
+                System.out.println("\nFIN DE LA CARRERA\nEl ganador es " + ganador.getNombre() + " con el dorsal " + ganador.getPosicion());
+                System.out.println(ganador.getPosicion() == apuesta ? "¡Enhorabuena, ha ganado su apuesta!" : "Lo sentimos, no ha ganado su apuesta. Vuelva a intentarlo.");
+                break;
+            }
+            System.out.println("Pulse ENTER para continuar");
+            teclado.nextLine();
+        }
+        teclado.close();
+    }
+}
