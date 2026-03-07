@@ -27,12 +27,22 @@
 - [X] Crear **JavaPage.tsx** (página de ejemplo).
 
 ## **Funcionalidad principal**
-- [ ] Mejorar **Footer.tsx** (agregar enlaces a GitHub, GitHub Pages, etc.).
+- [X] Mejorar **Footer.tsx** (enlaces a GitHub, GitHub Pages, copyright, créditos técnicos).
 - [ ] Crear páginas individuales para cada lenguaje (Python, C, C++, PHP, etc.).
+
+## **Sistema de lecciones (Java y reutilizable)**
+- [X] Crear interfaz **Lesson** en **types/index.ts** (con opcional `completed` en ejercicios).
+- [X] Crear **data/lessons.ts** con lecciones de ejemplo y helpers (getLessonsByLanguage, getLessonById).
+- [X] Crear **LessonCard.tsx** (tarjeta por lección que enlaza a /lesson/:lessonId).
+- [X] Crear **LessonsGrid.tsx** (grid reutilizable de lecciones para JavaPage y futuras páginas de lenguajes).
+- [X] Crear **CodeBlock.tsx** (bloque de código con botón Copiar para LessonPage).
+- [X] Crear **LessonPage.tsx** (página reutilizable para cualquier lección; barra de progreso, secciones, ejercicios, PDF, navegación).
+- [X] Actualizar **JavaPage.tsx** para usar LessonsGrid y getLessonsByLanguage("java").
+- [X] Añadir ruta **/lesson/:lessonId** en **App.tsx** y enlace a Material Icons en **index.html**.
 
 ## **MVP (Mínimo Producto Viable)**
 - [X] Completar MVP: HomePage con grid funcional de todos los lenguajes.
-- [ ] Probar navegación entre páginas.
+- [X] Navegación completa: Inicio → Java → Lecciones → Lección individual (y Volver / Siguiente).
 - [ ] Verificar responsive design en diferentes tamaños de pantalla.
 
 # **Paso N.º1 - Inicializar REACT + VITE**
@@ -623,6 +633,49 @@ export default HomePage;
 ```
 
 El grid es responsive: 1 columna en móvil, 2 en tablet, 3 en desktop y 4 en pantallas grandes.
+
+# **Paso N.º14 - Sistema de lecciones (Java y reutilizable)**
+
+Se implementó un sistema de lecciones reutilizable para que cualquier lenguaje (Java primero, luego Python, etc.) pueda mostrar un índice de lecciones y una página de lección individual sin duplicar código.
+
+**Resumen de lo creado:**
+
+1. **types/index.ts**  
+   - La interfaz **Lesson** ya existía; se añadió el campo opcional `completed?: boolean` en cada ejercicio para marcar si está completado (solo UI).
+
+2. **data/lessons.ts**  
+   - Array **lessons** con todas las lecciones (por ahora 2 de Java: java-1, java-2).  
+   - **getLessonsByLanguage(languageId)**: devuelve las lecciones de un lenguaje, ordenadas por `part`.  
+   - **getLessonById(lessonId)**: devuelve una lección por su ID (para la ruta `/lesson/:lessonId`).
+
+3. **components/LessonCard.tsx**  
+   - Tarjeta que muestra parte/total, título y descripción de una lección.  
+   - Enlaza a `/lesson/{lesson.id}` con `<Link>`.
+
+4. **components/LessonsGrid.tsx**  
+   - Grid responsive (1/2/3 columnas) que renderiza una `LessonCard` por cada lección.  
+   - Si no hay lecciones, muestra "No hay lecciones disponibles aún."  
+   - Reutilizable en JavaPage, PythonPage, etc.
+
+5. **components/CodeBlock.tsx**  
+   - Muestra un bloque de código con fondo oscuro y botón "Copiar" (hover).  
+   - Usado en **LessonPage** para cada sección que tenga `code`.
+
+6. **pages/LessonPage.tsx**  
+   - Página única para cualquier lección. Usa `useParams()` para leer `lessonId` y `getLessonById(lessonId)`.  
+   - Si no existe la lección: mensaje y enlace "Volver a las lecciones de Java".  
+   - Si existe: cabecera (part/total, título, descripción), barra de progreso, secciones de teoría + CodeBlock, bloque de ejercicios (con icono check/uncheck si tienen `completed`), enlace al PDF si existe, y pie con "Volver" y "Siguiente lección" (o "Última lección").
+
+7. **pages/JavaPage.tsx**  
+   - Actualizado para usar `getLessonsByLanguage("java")` y el componente **LessonsGrid** en lugar del contenido estático.
+
+8. **App.tsx**  
+   - Nueva ruta: `<Route path="/lesson/:lessonId" element={<LessonPage />} />`.
+
+9. **index.html**  
+   - Enlace a **Material Icons** (Google Fonts) para los iconos de secciones en LessonPage (terminal, data_object, etc.).
+
+Con esto, la navegación queda: **Inicio** → **Java** (grid de lecciones) → **Lección** (ej. java-1) → Volver / Siguiente lección. El mismo patrón sirve para otros lenguajes añadiendo datos en **lessons.ts** y una página índice que use **LessonsGrid**.
 
 # **Preguntas comunes que yo mismo me hice**
 

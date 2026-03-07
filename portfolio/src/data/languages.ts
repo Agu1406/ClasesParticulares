@@ -124,4 +124,15 @@ export const languages: Language[] = [
         description: "Interfaces gráficas de escritorio, FXML, controladores, aplicaciones con Gradle",
         path: "/javafx"
     }
-]
+];
+
+/**
+ * Obtiene un lenguaje por su ID. Se usa en LanguagePage para mostrar
+ * el nombre y la descripción del lenguaje en la página índice de lecciones.
+ *
+ * @param id - ID del lenguaje (ej: "java", "python").
+ * @returns El lenguaje encontrado o undefined si no existe.
+ */
+export function getLanguageById(id: string): Language | undefined {
+    return languages.find((lang) => lang.id === id);
+}

@@ -106,6 +106,7 @@ export interface Lesson {
         exercises: Array<{
             id: string; // Ejemplos, "ejercicio1, ejercicio2, etc"
             title: string; // Titulo del objetivo del ejercicio.
+            completed?: boolean; // Opcional: indica si el ejercicio está marcado como completado (solo UI).
         }>
         // Finalmente (opcional) las URL's de descarga de los documentos de ejercicios.
         pdfUrl?: string;

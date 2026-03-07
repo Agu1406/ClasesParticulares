@@ -7,7 +7,8 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
  * aplicación (SPA) pueda llamarlas/invocarlas cuano sea necesario.
  */
 import HomePage from "./pages/HomePage";
-import JavaPage from "./pages/JavaPage";
+import LessonPage from "./pages/LessonPage";
+import LanguagePage from "./pages/LanguagePage";
 import Header from "./components/Header";
 import Footer from "./components/Footer";
 /**
@@ -35,10 +36,12 @@ function App() {
       <main className="flex-grow">
       {/* Dentro de BrowserRouter indicamos las rutas que existen.*/}
       <Routes>
-        {/* Tenemos que definarlas una por una indicando la URL y que elemento tiene que carga la SPA si coincide con esa ruta, este primer ejemplo, si el usuario accede a la URL www.misitio.com/ entonces React carga el componente (page) llamado HomePage.tsx*/}
-        <Route path="/" element={<HomePage />}></Route>
-        {/* Ahora otro ejemplo, si la URL es "/java" carga el componente (page) JavaPage.tsx*/}
-        <Route path="/java" element={<JavaPage />}></Route>
+        {/* Ruta raíz: página de inicio con grid de lenguajes. */}
+        <Route path="/" element={<HomePage />} />
+        {/* Ruta dinámica para lecciones: /lesson/java-1, /lesson/java-2, etc. */}
+        <Route path="/lesson/:lessonId" element={<LessonPage />} />
+        {/* Ruta dinámica por lenguaje: /java, /python, /c, etc. Una sola LanguagePage para todos. */}
+        <Route path="/:languageId" element={<LanguagePage />} />
       </Routes>
       </main>
       {/* Aquí se carga y renderiza Footer.tsx */}
