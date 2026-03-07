@@ -68,6 +68,13 @@ function RoadmapSection({ languageId, lessons }: RoadmapSectionProps) {
                     </a>
                     , de cero hasta nivel sólido. Sigue las fases en orden.
                 </p>
+                {languageId === "java" && (
+                    <p className="text-slate-grey text-sm mb-4">
+                        El temario de Java sigue la guía <strong>Notas y matices</strong> del proyecto (
+                        <code className="bg-evergreen/10 px-1 rounded">java/src/README.md</code>
+                        ), inspirada en el temario DAW y en roadmap.sh/java.
+                    </p>
+                )}
                 {roadmapUrl && (
                     <a
                         href={roadmapUrl}

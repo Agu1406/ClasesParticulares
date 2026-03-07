@@ -1,98 +1,101 @@
 /**
  * Datos de todas las lecciones disponibles por lenguaje.
  *
- * Cada lección pertenece a un lenguaje (languageId) y contiene secciones de teoría,
- * ejemplos de código, ejercicios y opcionalmente un enlace a PDF.
- *
- * Se usan IDs en formato string (ej: "java-1") para URLs legibles y evitar colisiones.
- * Las funciones getLessonsByLanguage y getLessonById permiten filtrar y buscar lecciones.
+ * Las lecciones de Java siguen la guía "Notas y matices" (java/src/README.md):
+ * EV1 UT0 — Conceptos básicos, ciclo de vida, sintaxis, comentarios, tipos, casteo,
+ * bucles, condicionales, strings y funciones, operaciones matemáticas, arrays, POO.
  *
  * @author Agustín. A. Marquez. Piña
  * @since 1.0.0
  * @see https://github.com/Agu1406/ClasesParticulares Repositorio GitHub
- * @see https://agu1406.github.io/ClasesParticulares GitHub Pages
+ * @see java/src/README.md Guía de Java del proyecto
  */
 
 import type { Lesson } from "../types";
+import {
+    javaDocUrl,
+    javaUscDocUrl,
+    javaExercisesTreeUrl,
+} from "./javaRepo";
 
 /** Listado de todas las lecciones de la plataforma (todos los lenguajes). */
 export const lessons: Lesson[] = [
     {
         id: "java-1",
         languageId: "java",
-        title: "Introducción a Java",
+        title: "Conceptos básicos y ciclo de vida del programa",
         description:
-            "Java es un lenguaje de programación orientado a objetos, multiplataforma. En esta lección verás tu primer programa y los tipos de datos básicos.",
+            "Java como lenguaje de alto nivel, orientado a objetos. Quién lee y ejecuta el código: JVM, JDK, JRE. Las etapas: edición, compilación, carga, verificación, ejecución.",
         part: 1,
         totalParts: 11,
         roadmapPhase: "fundamentos",
         content: {
             sections: [
                 {
-                    title: "Tu primer programa",
-                    icon: "terminal",
+                    title: "Conceptos básicos",
+                    icon: "menu_book",
                     content:
-                        "Todo programa en Java comienza con una clase y un método main. Aquí tienes el clásico «Hola mundo».",
-                    code: `public class Main {
-    public static void main(String[] args) {
-        System.out.println("Hello, World!");
-    }
-}`,
-                    codeLanguage: "java",
+                        "Los lenguajes de programación se pueden comparar a los lenguajes humanos. Java es un lenguaje de alto nivel, más cercano al humano que al de las máquinas. Es orientado a objetos y ejecutable en casi cualquier sistema con Java instalado. No es el más simple para la primera línea de código, pero sí uno de los más sólidos para construir aplicaciones reales.",
                 },
                 {
-                    title: "Variables y tipos",
-                    icon: "data_object",
+                    title: "¿Quién lee y ejecuta el código?",
                     content:
-                        "Java es estáticamente tipado: debes declarar el tipo de cada variable antes de usarla.",
-                    code: `int age = 25;
-double price = 19.99;
-String name = "Agustin";
-boolean isStudent = true;`,
-                    codeLanguage: "java",
+                        "JVM (Java Virtual Machine): traduce el código Java para que el ordenador lo ejecute; la mayoría de usuarios la tienen instalada. JDK (Java Development Kit): lo instalan quienes desarrollan en Java; incluye el compilador, depuradores y librerías. JRE (Java Runtime Environment): JVM más las bibliotecas necesarias para ejecutar un programa concreto.",
+                },
+                {
+                    title: "Etapas del ciclo de vida",
+                    content:
+                        "1) Edición: escribimos código en archivos .java. 2) Compilación: el JDK (desde el IDE) convierte el código en algo que la JVM pueda ejecutar. 3) Carga: la JVM carga los archivos compilados. 4) Verificación: la JVM revisa seguridad y coherencia. 5) Ejecución: la JVM traduce a bits y el programa arranca. En el proyecto puedes ver el ciclo en acción en src/ev1/ut0/ciclovida (Ejemplo.java y Ejemplo.class).",
                 },
             ],
             exercises: [
                 {
                     id: "ex1",
-                    title: "Crea una clase llamada 'Profile' e imprime tu nombre.",
-                    completed: true,
-                },
-                {
-                    id: "ex2",
-                    title: "Declara tres variables de tipos distintos e imprímelas.",
+                    title: "Abre y ejecuta Ejemplo.java en src/ev1/ut0/ciclovida y observa el .class generado.",
                     completed: false,
                 },
             ],
-            pdfUrl: "/exercises/java-1.pdf",
         },
     },
     {
         id: "java-2",
         languageId: "java",
-        title: "Variables y tipos de datos",
+        title: "Sintaxis básica",
         description:
-            "Profundizamos en los tipos primitivos, Strings y convenciones de nombres. Es la base para el resto del curso.",
+            "Las 4 líneas mínimas para un programa ejecutable. El primer «Hola mundo» y System.out.println. El nombre de la clase debe coincidir con el del archivo .java.",
         part: 2,
         totalParts: 11,
         roadmapPhase: "fundamentos",
         content: {
             sections: [
                 {
-                    title: "Tipos primitivos",
+                    title: "Nuestro primer programa en Java",
+                    icon: "terminal",
                     content:
-                        "Los tipos primitivos en Java son: byte, short, int, long, float, double, char y boolean. Cada uno tiene un rango de valores definido.",
-                    code: `int count = 100;
-long bigNumber = 1_000_000L;
-double pi = 3.14159;
-char grade = 'A';`,
+                        "Por ahora aprendemos de memoria las 4 líneas mínimas necesarias para que nuestros programas sean ejecutables. Donde dice NombreDelPrograma tiene que ir exactamente el mismo nombre (con mayúsculas y minúsculas) del archivo .java. Puedes abrir Programa1.java en src/ev1/ut0/sintaxisbasica.",
+                    code: `public class NombreDelPrograma { // Línea 1
+    public static void main (String [] args) { // Línea 2
+    } // Línea 3
+} // Línea 4`,
+                    codeLanguage: "java",
+                },
+                {
+                    title: "Nuestro primer «Hola mundo»",
+                    content:
+                        "Con System.out.println() imprimimos mensajes. El texto va entre paréntesis y entre comillas dobles o simples. Las instrucciones en Java siempre terminan con punto y coma (;). Modifica Programa1.java y Programa2.java en src/ev1/ut0/sintaxisbasica para practicar.",
+                    code: `public class Programa2 {
+    public static void main (String [] args) {
+        System.out.println("¡Hola mundo!");
+        System.out.println("¡Mi nombre es Agustín!");
+    }
+}`,
                     codeLanguage: "java",
                 },
             ],
             exercises: [
                 {
                     id: "ex1",
-                    title: "Declara variables de cada tipo primitivo y asígnales un valor.",
+                    title: "Crea una clase con tu nombre e imprime «Hola mundo» y tu nombre en líneas distintas.",
                     completed: false,
                 },
             ],
@@ -101,12 +104,210 @@ char grade = 'A';`,
     {
         id: "java-3",
         languageId: "java",
-        title: "Condicionales: if y switch",
+        title: "Comentarios en Java",
         description:
-            "Aprende a tomar decisiones en tu programa con if, else y switch. Esencial para cualquier flujo de control.",
+            "Comentarios de una línea (//), multilínea (/* */) y JavaDoc (/** */). Sirven para explicar el código a nosotros y a quien lo lea.",
         part: 3,
         totalParts: 11,
         roadmapPhase: "fundamentos",
+        content: {
+            sections: [
+                {
+                    title: "Comentarios de una línea",
+                    icon: "comment",
+                    content:
+                        "Se escriben con doble barra seguida del comentario. Sirven para explicar algo puntual en una sola línea. Pueden ir en su propia línea o detrás de una instrucción.",
+                    code: `// Este es un comentario de Java.
+public class Ejemplo {
+    public static void main (String [] args) {
+        System.out.println("¡Hola!"); // También detrás de la instrucción.
+    }
+}`,
+                    codeLanguage: "java",
+                },
+                {
+                    title: "Comentarios multilínea",
+                    content:
+                        "Empiezan con /* y terminan con */. Permiten escribir varias líneas de explicación. Útiles para notas largas o recordatorios.",
+                    code: `/* AQUÍ EMPIEZA EL COMENTARIO.
+   Puedo escribir todo lo que quiera hasta
+   indicar el fin con --> */
+System.out.println("¡Hola por tercera vez!");`,
+                    codeLanguage: "java",
+                },
+                {
+                    title: "Comentarios JavaDoc",
+                    content:
+                        "Empiezan con /** y terminan con */. Cada línea lleva un asterisco al inicio. Son los más profesionales: permiten generar documentación (PDF) del proyecto. Suelen incluir @Since, @Author, @Version. Lo veremos con más detalle más adelante.",
+                    code: `/**
+ * Clase Ejemplo para explicar los tipos de comentarios.
+ * @Since 14/06/2025
+ * @Author Agustín Antonio Márquez Piña
+ * @Version 1.0
+ */
+public class Ejemplo { }`,
+                    codeLanguage: "java",
+                },
+            ],
+            exercises: [
+                {
+                    id: "ex1",
+                    title: "Abre y modifica Comentarios.java en src/ev1/ut0/comentarios y practica los tres tipos.",
+                    completed: false,
+                },
+            ],
+        },
+    },
+    {
+        id: "java-4",
+        languageId: "java",
+        title: "Tipos de datos",
+        description:
+            "Java es un lenguaje tipado: cada dato tiene su contenedor. Datos primitivos (int, double, char, boolean...) y datos avanzados (Integer, String...).",
+        part: 4,
+        totalParts: 11,
+        roadmapPhase: "fundamentos",
+        content: {
+            sections: [
+                {
+                    title: "Sintaxis: tipo nombre = valor",
+                    content:
+                        "Cada tipo de dato se guarda en una variable de ese tipo. No se puede guardar un entero en un char ni una letra en un int. Cada cosa tiene su lugar.",
+                    code: `int miNumeroFavorito = 14;
+char miLetraFavorita = 'A';`,
+                    codeLanguage: "java",
+                },
+                {
+                    title: "Datos primitivos",
+                    icon: "data_object",
+                    content:
+                        "Las formas más básicas: enteros (byte, short, int, long), decimales (float, double), carácter (char), lógico (boolean). Para aprender rápido se recomienda usar int para enteros y double para decimales. Puedes probar en DatosPrimitivos.java (src/ev1/ut0/tipodatos).",
+                    code: `byte unByte = 42;
+int unInt = 123456;
+long unLong = 123456789L;
+float unFloat = 3.14f;
+double unDouble = 3.1415926535;
+char unChar = 'A';
+boolean unBoolean = true;`,
+                    codeLanguage: "java",
+                },
+                {
+                    title: "Datos avanzados",
+                    content:
+                        "Tienen la primera letra en mayúscula (Integer, Double, String...). Ocupan más memoria y ofrecen características avanzadas. String es el tipo para cadenas de texto. Los veremos en ejercicios más adelante.",
+                    code: `Integer myInt = 123_456;
+String myString = "Hola, soy un texto";`,
+                    codeLanguage: "java",
+                },
+            ],
+            exercises: [
+                {
+                    id: "ex1",
+                    title: "Declara variables de tipos primitivos y asígnales valor; prueba en DatosPrimitivos.java.",
+                    completed: false,
+                },
+            ],
+            pdfUrl: javaUscDocUrl("2ClasesTiposDatos.pdf"),
+        },
+    },
+    {
+        id: "java-5",
+        languageId: "java",
+        title: "Casteo de tipos",
+        description:
+            "Convertir una variable de un tipo a otro: por ejemplo, un double a int (perdiendo decimales) o un int a double. La sintaxis es (tipo) variable.",
+        part: 5,
+        totalParts: 11,
+        roadmapPhase: "fundamentos",
+        content: {
+            sections: [
+                {
+                    title: "Conversión de tipos primitivos",
+                    icon: "swap_horiz",
+                    content:
+                        "Necesitamos una variable «recipiente» del tipo destino. Entre paréntesis indicamos el tipo al que queremos convertir. El valor original no se pierde; se crea una copia en el nuevo formato. Ejemplos en CasteoTiposPrimitivos.java (src/ev1/ut0/casteotipos).",
+                    code: `int valorOriginal = 14;
+double valorConvertido = (double) valorOriginal;
+
+double valorPIOriginal = 3.1416;
+int valorPIConvertido = (int) valorPIOriginal;
+System.out.println(valorPIConvertido); // 3`,
+                    codeLanguage: "java",
+                },
+            ],
+            exercises: [
+                {
+                    id: "ex1",
+                    title: "Convierte un double a int y un int a double; imprime ambos valores.",
+                    completed: false,
+                },
+            ],
+        },
+    },
+    {
+        id: "java-6",
+        languageId: "java",
+        title: "Bucles",
+        description:
+            "Repetir acciones sin copiar código: for, while y do-while. La base de la iteración en Java (según guía java/src/README.md).",
+        part: 6,
+        totalParts: 11,
+        roadmapPhase: "estructuras",
+        content: {
+            sections: [
+                {
+                    title: "Bucle for",
+                    icon: "loop",
+                    content:
+                        "El bucle for se usa cuando sabes cuántas veces quieres repetir. Tiene inicialización, condición e incremento.",
+                    code: `for (int i = 0; i < 5; i++) {
+    System.out.println("Iteración: " + i);
+}`,
+                    codeLanguage: "java",
+                },
+                {
+                    title: "while y do-while",
+                    content:
+                        "while evalúa la condición antes de ejecutar; do-while ejecuta al menos una vez y luego evalúa.",
+                    code: `int j = 0;
+while (j < 3) {
+    System.out.println("j = " + j);
+    j++;
+}
+
+int k = 0;
+do {
+    System.out.println("k = " + k);
+    k++;
+} while (k < 3);`,
+                    codeLanguage: "java",
+                },
+            ],
+            exercises: [
+                {
+                    id: "ex1",
+                    title: "Imprime los primeros 10 números pares usando un for.",
+                    completed: false,
+                },
+                {
+                    id: "ex2",
+                    title: "Ejercicios de bucles y condicionales en el repositorio (código para practicar).",
+                    completed: false,
+                    fileUrl: javaExercisesTreeUrl("buclesycondicionales"),
+                },
+            ],
+            pdfUrl: javaDocUrl("Ejercicios con funciones.pdf"),
+        },
+    },
+    {
+        id: "java-7",
+        languageId: "java",
+        title: "Condicionales",
+        description:
+            "Tomar decisiones en el programa con if, else y switch. Esencial para cualquier flujo de control (guía java/src/README.md).",
+        part: 7,
+        totalParts: 11,
+        roadmapPhase: "estructuras",
         content: {
             sections: [
                 {
@@ -122,6 +323,18 @@ if (edad >= 18) {
 }`,
                     codeLanguage: "java",
                 },
+                {
+                    title: "switch",
+                    content:
+                        "switch permite elegir entre varias opciones según el valor de una variable (entero, String o enum).",
+                    code: `int opcion = 2;
+switch (opcion) {
+    case 1: System.out.println("Uno"); break;
+    case 2: System.out.println("Dos"); break;
+    default: System.out.println("Otro");
+}`,
+                    codeLanguage: "java",
+                },
             ],
             exercises: [
                 {
@@ -129,66 +342,48 @@ if (edad >= 18) {
                     title: "Escribe un programa que indique si un número es par o impar.",
                     completed: false,
                 },
+                {
+                    id: "ex2",
+                    title: "Más ejercicios de bucles y condicionales en el repositorio.",
+                    completed: false,
+                    fileUrl: javaExercisesTreeUrl("buclesycondicionales"),
+                },
             ],
+            pdfUrl: javaDocUrl("Ejercicios con funciones.pdf"),
         },
     },
     {
-        id: "java-4",
+        id: "java-8",
         languageId: "java",
-        title: "Bucles: for y while",
+        title: "Strings y funciones",
         description:
-            "Repetir acciones sin copiar código: for, while y do-while. La base de la iteración en Java.",
-        part: 4,
+            "Trabajar con cadenas de texto (String) y definir métodos: parámetros, retorno y reutilización de código (guía java/src/README.md).",
+        part: 8,
         totalParts: 11,
-        roadmapPhase: "fundamentos",
+        roadmapPhase: "estructuras",
         content: {
             sections: [
                 {
-                    title: "Bucle for",
+                    title: "String: longitud, concatenación, comparación",
+                    icon: "text_fields",
                     content:
-                        "El bucle for se usa cuando sabes cuántas veces quieres repetir. Tiene inicialización, condición e incremento.",
-                    code: `for (int i = 0; i < 5; i++) {
-    System.out.println("Iteración: " + i);
-}`,
+                        "String tiene length(), concat() o el operador +. Para comparar contenido usa equals(); == compara referencias.",
+                    code: `String a = "Hola";
+String b = " mundo";
+System.out.println(a + b);
+System.out.println(a.length());
+System.out.println(a.equals("Hola"));`,
                     codeLanguage: "java",
                 },
-            ],
-            exercises: [
                 {
-                    id: "ex1",
-                    title: "Imprime los primeros 10 números pares usando un for.",
-                    completed: false,
-                },
-            ],
-        },
-    },
-    {
-        id: "java-5",
-        languageId: "java",
-        title: "Métodos",
-        description:
-            "Los métodos permiten agrupar código reutilizable. Aprende a declararlos, usar parámetros y valores de retorno.",
-        part: 5,
-        totalParts: 11,
-        roadmapPhase: "fundamentos",
-        content: {
-            sections: [
-                {
-                    title: "Declaración de métodos",
-                    icon: "code",
+                    title: "Métodos: declaración y uso",
                     content:
-                        "Un método tiene un nombre, parámetros (opcionales) y un tipo de retorno. void indica que no devuelve nada.",
+                        "Un método tiene nombre, parámetros (opcionales) y tipo de retorno. void indica que no devuelve nada.",
                     code: `public static void saludar() {
     System.out.println("Hola");
 }
-
 public static int sumar(int a, int b) {
     return a + b;
-}
-
-public static void main(String[] args) {
-    saludar();
-    System.out.println(sumar(3, 5));
 }`,
                     codeLanguage: "java",
                 },
@@ -196,25 +391,130 @@ public static void main(String[] args) {
             exercises: [
                 {
                     id: "ex1",
-                    title: "Crea un método que reciba dos números y devuelva el mayor.",
+                    title: "Crea un método que reciba un String y devuelva su longitud; prueba con varios textos.",
                     completed: false,
                 },
+                {
+                    id: "ex2",
+                    title: "Ejercicios de strings (código para practicar).",
+                    completed: false,
+                    fileUrl: javaExercisesTreeUrl("strings"),
+                },
+                {
+                    id: "ex3",
+                    title: "Soluciones resueltas de ejercicios de strings.",
+                    completed: false,
+                    solutionUrl: javaExercisesTreeUrl("strings/resueltos"),
+                },
             ],
+            pdfUrl: javaDocUrl("String referencia breve.pdf"),
         },
     },
     {
-        id: "java-6",
+        id: "java-9",
         languageId: "java",
-        title: "Clases y objetos",
+        title: "Operaciones matemáticas",
         description:
-            "Entra en la programación orientada a objetos: define clases como plantillas y crea objetos a partir de ellas.",
-        part: 6,
+            "Operadores aritméticos (+, -, *, /, %) y la clase Math para potencias, raíz, redondeo y números aleatorios (guía java/src/README.md).",
+        part: 9,
+        totalParts: 11,
+        roadmapPhase: "estructuras",
+        content: {
+            sections: [
+                {
+                    title: "Operadores y clase Math",
+                    icon: "calculate",
+                    content:
+                        "Además de +, -, *, / y % (resto), la clase Math ofrece Math.pow(), Math.sqrt(), Math.round(), Math.random(), etc.",
+                    code: `int a = 10, b = 3;
+System.out.println(a / b);
+System.out.println(a % b);
+System.out.println(Math.pow(2, 3));
+System.out.println(Math.sqrt(9));
+System.out.println(Math.round(3.7));`,
+                    codeLanguage: "java",
+                },
+            ],
+            exercises: [
+                {
+                    id: "ex1",
+                    title: "Escribe un método que reciba dos números y devuelva el mayor; luego prueba con Math.max().",
+                    completed: false,
+                },
+                {
+                    id: "ex2",
+                    title: "Ejercicios de funciones en el repositorio.",
+                    completed: false,
+                    fileUrl: javaExercisesTreeUrl("funciones"),
+                },
+            ],
+            pdfUrl: javaDocUrl("Ejercicios con funciones.pdf"),
+        },
+    },
+    {
+        id: "java-10",
+        languageId: "java",
+        title: "Arrays",
+        description:
+            "Colecciones de elementos del mismo tipo: declaración, índice desde 0, longitud y recorrido (guía java/src/README.md).",
+        part: 10,
+        totalParts: 11,
+        roadmapPhase: "estructuras",
+        content: {
+            sections: [
+                {
+                    title: "Declaración y uso de arrays",
+                    icon: "list",
+                    content:
+                        "Se declaran con tipo[] nombre; se crean con new tipo[tamaño]. El índice va de 0 a length - 1. Puedes usar for o for-each para recorrerlos.",
+                    code: `int[] numeros = new int[] { 10, 20, 30 };
+System.out.println(numeros.length);
+System.out.println(numeros[1]);
+
+for (int i = 0; i < numeros.length; i++) {
+    System.out.println(numeros[i]);
+}
+for (int n : numeros) {
+    System.out.println(n);
+}`,
+                    codeLanguage: "java",
+                },
+            ],
+            exercises: [
+                {
+                    id: "ex1",
+                    title: "Crea un array de 5 números, asígnales valor y calcula su suma.",
+                    completed: false,
+                },
+                {
+                    id: "ex2",
+                    title: "Ejercicios de arrays (código para practicar).",
+                    completed: false,
+                    fileUrl: javaExercisesTreeUrl("arrays"),
+                },
+                {
+                    id: "ex3",
+                    title: "Soluciones resueltas de ejercicios de arrays.",
+                    completed: false,
+                    solutionUrl: javaExercisesTreeUrl("arrays/resueltos"),
+                },
+            ],
+            pdfUrl: javaDocUrl("Ejercicios Arrays 1.pdf"),
+        },
+    },
+    {
+        id: "java-11",
+        languageId: "java",
+        title: "Conceptos básicos de la POO",
+        description:
+            "Clases como plantillas, objetos como instancias. Atributos y métodos. Constructores y encapsulación (guía java/src/README.md).",
+        part: 11,
         totalParts: 11,
         roadmapPhase: "poo",
         content: {
             sections: [
                 {
-                    title: "Primera clase",
+                    title: "Clase y objeto",
                     icon: "data_object",
                     content:
                         "Una clase agrupa atributos (datos) y métodos (comportamiento). Con new creas instancias (objetos).",
@@ -227,39 +527,16 @@ public static void main(String[] args) {
     }
 }
 
-// En main u otra clase:
 Persona p = new Persona();
 p.nombre = "Ana";
 p.edad = 25;
 p.presentarse();`,
                     codeLanguage: "java",
                 },
-            ],
-            exercises: [
                 {
-                    id: "ex1",
-                    title: "Define una clase Coche con marca y año; crea dos coches e imprime sus datos.",
-                    completed: false,
-                },
-            ],
-        },
-    },
-    {
-        id: "java-7",
-        languageId: "java",
-        title: "Constructores y encapsulación",
-        description:
-            "Los constructores inicializan el objeto. La encapsulación protege los datos con private y accesos con getters y setters.",
-        part: 7,
-        totalParts: 11,
-        roadmapPhase: "poo",
-        content: {
-            sections: [
-                {
-                    title: "Constructor y private",
-                    icon: "lock",
+                    title: "Constructor y encapsulación",
                     content:
-                        "El constructor tiene el mismo nombre que la clase. Los atributos private solo se modifican desde dentro o mediante getters/setters.",
+                        "El constructor tiene el mismo nombre que la clase. Los atributos private se acceden mediante getters y setters.",
                     code: `public class Cuenta {
     private double saldo;
 
@@ -267,10 +544,7 @@ p.presentarse();`,
         saldo = saldoInicial;
     }
 
-    public double getSaldo() {
-        return saldo;
-    }
-
+    public double getSaldo() { return saldo; }
     public void depositar(double cantidad) {
         if (cantidad > 0) saldo += cantidad;
     }
@@ -281,186 +555,23 @@ p.presentarse();`,
             exercises: [
                 {
                     id: "ex1",
-                    title: "Añade a Cuenta un método retirar(double) que reste solo si hay saldo suficiente.",
+                    title: "Define una clase Coche con marca y año; crea dos coches e imprime sus datos.",
                     completed: false,
                 },
-            ],
-        },
-    },
-    {
-        id: "java-8",
-        languageId: "java",
-        title: "Herencia básica",
-        description:
-            "Una clase puede heredar de otra con extends, reutilizando atributos y métodos y pudiendo sobrescribirlos.",
-        part: 8,
-        totalParts: 11,
-        roadmapPhase: "poo",
-        content: {
-            sections: [
                 {
-                    title: "extends y super",
-                    icon: "account_tree",
-                    content:
-                        "La subclase hereda todo lo público/protegido de la superclase. super() llama al constructor del padre; @Override indica que redefines un método.",
-                    code: `public class Animal {
-    protected String nombre;
-    public Animal(String nombre) { this.nombre = nombre; }
-    public void hablar() { System.out.println(nombre + " hace un sonido"); }
-}
-
-public class Perro extends Animal {
-    public Perro(String nombre) { super(nombre); }
-    @Override
-    public void hablar() { System.out.println(nombre + " dice: Guau"); }
-}`,
-                    codeLanguage: "java",
-                },
-            ],
-            exercises: [
-                {
-                    id: "ex1",
-                    title: "Crea una clase Gato que extienda Animal y sobrescriba hablar().",
+                    id: "ex2",
+                    title: "Ejercicios de POO básico (clases, objetos, constructores).",
                     completed: false,
-                },
-            ],
-        },
-    },
-    {
-        id: "java-9",
-        languageId: "java",
-        title: "Excepciones",
-        description:
-            "Maneja errores en tiempo de ejecución con try-catch. Aprende a lanzar y capturar excepciones para que tu programa no se caiga.",
-        part: 9,
-        totalParts: 11,
-        roadmapPhase: "core",
-        content: {
-            sections: [
-                {
-                    title: "try, catch y finally",
-                    icon: "warning",
-                    content:
-                        "El código que puede fallar va en try. Si se lanza una excepción, se ejecuta catch. finally se ejecuta siempre (para cerrar recursos, etc.).",
-                    code: `try {
-    int a = 10, b = 0;
-    int c = a / b;
-} catch (ArithmeticException e) {
-    System.out.println("Error: " + e.getMessage());
-} finally {
-    System.out.println("Bloque finally");
-}`,
-                    codeLanguage: "java",
+                    fileUrl: javaExercisesTreeUrl("poo_basico"),
                 },
                 {
-                    title: "Lanzar excepciones",
-                    content:
-                        "Puedes lanzar una excepción con throw. Los métodos que lanzan excepciones comprobadas deben declararlo con throws.",
-                    code: `public static int dividir(int a, int b) throws ArithmeticException {
-    if (b == 0) throw new ArithmeticException("División por cero");
-    return a / b;
-}`,
-                    codeLanguage: "java",
-                },
-            ],
-            exercises: [
-                {
-                    id: "ex1",
-                    title: "Escribe un método que lea un número de una cadena; captura NumberFormatException si no es válido.",
+                    id: "ex3",
+                    title: "Soluciones resueltas de POO básico.",
                     completed: false,
+                    solutionUrl: javaExercisesTreeUrl("poo_basico/resueltos"),
                 },
             ],
-        },
-    },
-    {
-        id: "java-10",
-        languageId: "java",
-        title: "Colecciones: List y Set",
-        description:
-            "ArrayList y HashSet permiten guardar muchos elementos de forma dinámica. La base del framework de colecciones de Java.",
-        part: 10,
-        totalParts: 11,
-        roadmapPhase: "core",
-        content: {
-            sections: [
-                {
-                    title: "ArrayList",
-                    icon: "list",
-                    content:
-                        "ArrayList es una lista ordenada que permite duplicados. Añades con add(), accedes con get(índice) y el tamaño es size().",
-                    code: `import java.util.ArrayList;
-
-ArrayList<String> nombres = new ArrayList<>();
-nombres.add("Ana");
-nombres.add("Luis");
-nombres.add("Ana");
-System.out.println(nombres.size());
-System.out.println(nombres.get(1));
-for (String n : nombres) System.out.println(n);`,
-                    codeLanguage: "java",
-                },
-                {
-                    title: "HashSet",
-                    content:
-                        "HashSet es un conjunto: no hay orden y no permite duplicados. Útil cuando solo te importa si un elemento está o no.",
-                    code: `import java.util.HashSet;
-
-HashSet<Integer> numeros = new HashSet<>();
-numeros.add(5);
-numeros.add(5);
-numeros.add(10);
-System.out.println(numeros.size());
-System.out.println(numeros.contains(5));`,
-                    codeLanguage: "java",
-                },
-            ],
-            exercises: [
-                {
-                    id: "ex1",
-                    title: "Crea un ArrayList de números, añade varios (algunos repetidos) y recórrelo imprimiendo solo los pares.",
-                    completed: false,
-                },
-            ],
-        },
-    },
-    {
-        id: "java-11",
-        languageId: "java",
-        title: "Entrada y salida básica",
-        description:
-            "Leer desde teclado con Scanner y escribir en ficheros con FileWriter. Lo mínimo para programas que interactúan con el usuario o con archivos.",
-        part: 11,
-        totalParts: 11,
-        roadmapPhase: "core",
-        content: {
-            sections: [
-                {
-                    title: "Scanner y FileWriter",
-                    icon: "input",
-                    content:
-                        "Scanner permite leer desde System.in (teclado) o desde un archivo. FileWriter escribe texto en un fichero. Cierra los recursos con close() o try-with-resources.",
-                    code: `import java.util.Scanner;
-import java.io.FileWriter;
-import java.io.IOException;
-
-Scanner sc = new Scanner(System.in);
-System.out.print("Nombre: ");
-String nombre = sc.nextLine();
-sc.close();
-
-try (FileWriter fw = new FileWriter("saludo.txt")) {
-    fw.write("Hola, " + nombre);
-}`,
-                    codeLanguage: "java",
-                },
-            ],
-            exercises: [
-                {
-                    id: "ex1",
-                    title: "Pide al usuario dos números, escribe su suma en un fichero resultado.txt.",
-                    completed: false,
-                },
-            ],
+            pdfUrl: javaDocUrl("L02-Clases y Objetos.pdf"),
         },
     },
 ];

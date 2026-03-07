@@ -1,12 +1,12 @@
 /**
  * Fases de los roadmaps por lenguaje. Sirve para agrupar lecciones en una
- * ruta de aprendizaje alineada con roadmap.sh (https://roadmap.sh).
+ * ruta de aprendizaje.
  *
- * Orden típico Java (roadmap.sh): Fundamentos → POO → Core Java (collections,
- * excepciones, I/O, concurrencia) → temas avanzados.
+ * Java sigue la guía java/src/README.md (EV1 UT0): fundamentos → estructuras
+ * (bucles, condicionales, strings, arrays) → conceptos básicos POO.
  *
+ * @see java/src/README.md Guía "Notas y matices" del proyecto
  * @see https://roadmap.sh/java
- * @see https://roadmap.sh
  */
 
 export interface RoadmapPhase {
@@ -15,11 +15,11 @@ export interface RoadmapPhase {
     order: number;
 }
 
-/** Fases definidas para Java (alineadas con roadmap.sh). */
+/** Fases definidas para Java (siguen la guía java/src/README.md — EV1 UT0). */
 const JAVA_PHASES: RoadmapPhase[] = [
-    { id: "fundamentos", label: "Fase 1: Fundamentos", order: 1 },
-    { id: "poo", label: "Fase 2: Programación orientada a objetos", order: 2 },
-    { id: "core", label: "Fase 3: Core Java", order: 3 },
+    { id: "fundamentos", label: "EV1 UT0: Conceptos, sintaxis y tipos", order: 1 },
+    { id: "estructuras", label: "EV1 UT0: Bucles, condicionales, strings y arrays", order: 2 },
+    { id: "poo", label: "EV1: Conceptos básicos de la POO", order: 3 },
 ];
 
 const PHASES_BY_LANGUAGE: Record<string, RoadmapPhase[]> = {

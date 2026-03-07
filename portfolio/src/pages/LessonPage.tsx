@@ -102,26 +102,60 @@ function LessonPage() {
                         {lesson.content.exercises.map((exercise) => (
                             <div
                                 key={exercise.id}
-                                className="flex items-start gap-3 bg-white/50 p-3 rounded-xl"
+                                className="flex flex-col gap-2 bg-white/50 p-3 rounded-xl"
                             >
-                                <span
-                                    className={`material-icons text-sm mt-1 ${
-                                        exercise.completed
-                                            ? "text-green-500"
-                                            : "text-slate-300"
-                                    }`}
-                                >
-                                    {exercise.completed
-                                        ? "check_circle"
-                                        : "radio_button_unchecked"}
-                                </span>
-                                <p className="text-sm">{exercise.title}</p>
+                                <div className="flex items-start gap-3">
+                                    <span
+                                        className={`material-icons text-sm mt-1 shrink-0 ${
+                                            exercise.completed
+                                                ? "text-green-500"
+                                                : "text-slate-300"
+                                        }`}
+                                    >
+                                        {exercise.completed
+                                            ? "check_circle"
+                                            : "radio_button_unchecked"}
+                                    </span>
+                                    <p className="text-sm">{exercise.title}</p>
+                                </div>
+                                {(exercise.fileUrl || exercise.solutionUrl) && (
+                                    <div className="flex flex-wrap gap-2 pl-8">
+                                        {exercise.fileUrl && (
+                                            <a
+                                                href={exercise.fileUrl}
+                                                target="_blank"
+                                                rel="noopener noreferrer"
+                                                className="inline-flex items-center gap-1 text-xs font-medium text-evergreen hover:text-fawn hover:underline"
+                                            >
+                                                <span className="material-icons text-sm">
+                                                    code
+                                                </span>
+                                                Ver código en el repositorio
+                                            </a>
+                                        )}
+                                        {exercise.solutionUrl && (
+                                            <a
+                                                href={exercise.solutionUrl}
+                                                target="_blank"
+                                                rel="noopener noreferrer"
+                                                className="inline-flex items-center gap-1 text-xs font-medium text-evergreen hover:text-fawn hover:underline"
+                                            >
+                                                <span className="material-icons text-sm">
+                                                    check_circle
+                                                </span>
+                                                Ver solución resuelta
+                                            </a>
+                                        )}
+                                    </div>
+                                )}
                             </div>
                         ))}
                     </div>
                     {lesson.content.pdfUrl && (
                         <a
                             href={lesson.content.pdfUrl}
+                            target="_blank"
+                            rel="noopener noreferrer"
                             className="flex items-center justify-between w-full bg-evergreen text-lavender py-4 px-6 rounded-2xl font-semibold shadow-lg hover:bg-evergreen-dark transition-colors mt-4"
                         >
                             <div className="flex items-center gap-3">

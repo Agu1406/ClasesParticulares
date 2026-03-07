@@ -109,6 +109,10 @@ export interface Lesson {
             id: string; // Ejemplos, "ejercicio1, ejercicio2, etc"
             title: string; // Titulo del objetivo del ejercicio.
             completed?: boolean; // Opcional: indica si el ejercicio está marcado como completado (solo UI).
+            /** Enlace al enunciado o carpeta de código en el repositorio (ej. GitHub tree). */
+            fileUrl?: string;
+            /** Enlace a la carpeta o archivo de la solución resuelta en el repositorio. */
+            solutionUrl?: string;
         }>
         // Finalmente (opcional) las URL's de descarga de los documentos de ejercicios.
         pdfUrl?: string;
