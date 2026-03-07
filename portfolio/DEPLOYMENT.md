@@ -24,21 +24,21 @@
 ## **Páginas**
 - [X] Crear **HomePage.tsx** (estructura básica).
 - [X] Implementar grid de lenguajes en **HomePage.tsx** (usando LanguageCard).
-- [X] Crear **JavaPage.tsx** (página de ejemplo).
+- [X] Página índice por lenguaje: **LanguagePage.tsx** reutilizable para /java, /python, /c, etc. (sustituye a JavaPage).
 
 ## **Funcionalidad principal**
 - [X] Mejorar **Footer.tsx** (enlaces a GitHub, GitHub Pages, copyright, créditos técnicos).
-- [ ] Crear páginas individuales para cada lenguaje (Python, C, C++, PHP, etc.).
+- [X] Una sola **LanguagePage** para todos los lenguajes (ruta /:languageId); no hace falta una página por lenguaje.
 
 ## **Sistema de lecciones (Java y reutilizable)**
 - [X] Crear interfaz **Lesson** en **types/index.ts** (con opcional `completed` en ejercicios).
-- [X] Crear **data/lessons.ts** con lecciones de ejemplo y helpers (getLessonsByLanguage, getLessonById).
+- [X] Crear **data/lessons.ts** con lecciones (4 de Java: java-1 a java-4) y helpers (getLessonsByLanguage, getLessonById).
 - [X] Crear **LessonCard.tsx** (tarjeta por lección que enlaza a /lesson/:lessonId).
-- [X] Crear **LessonsGrid.tsx** (grid reutilizable de lecciones para JavaPage y futuras páginas de lenguajes).
+- [X] Crear **LessonsGrid.tsx** (grid reutilizable de lecciones usado por LanguagePage).
 - [X] Crear **CodeBlock.tsx** (bloque de código con botón Copiar para LessonPage).
 - [X] Crear **LessonPage.tsx** (página reutilizable para cualquier lección; barra de progreso, secciones, ejercicios, PDF, navegación).
-- [X] Actualizar **JavaPage.tsx** para usar LessonsGrid y getLessonsByLanguage("java").
-- [X] Añadir ruta **/lesson/:lessonId** en **App.tsx** y enlace a Material Icons en **index.html**.
+- [X] Crear **LanguagePage.tsx** y **getLanguageById** en **data/languages.ts**; ruta **/:languageId** en **App.tsx**.
+- [X] Añadir ruta **/lesson/:lessonId** y enlace a Material Icons en **index.html**.
 
 ## **MVP (Mínimo Producto Viable)**
 - [X] Completar MVP: HomePage con grid funcional de todos los lenguajes.
@@ -666,8 +666,7 @@ Se implementó un sistema de lecciones reutilizable para que cualquier lenguaje 
    - Si no existe la lección: mensaje y enlace "Volver a las lecciones de Java".  
    - Si existe: cabecera (part/total, título, descripción), barra de progreso, secciones de teoría + CodeBlock, bloque de ejercicios (con icono check/uncheck si tienen `completed`), enlace al PDF si existe, y pie con "Volver" y "Siguiente lección" (o "Última lección").
 
-7. **pages/JavaPage.tsx**  
-   - Actualizado para usar `getLessonsByLanguage("java")` y el componente **LessonsGrid** en lugar del contenido estático.
+7. **pages/LanguagePage.tsx** (sustituye a JavaPage; ver Paso N.º15).
 
 8. **App.tsx**  
    - Nueva ruta: `<Route path="/lesson/:lessonId" element={<LessonPage />} />`.
@@ -676,6 +675,36 @@ Se implementó un sistema de lecciones reutilizable para que cualquier lenguaje 
    - Enlace a **Material Icons** (Google Fonts) para los iconos de secciones en LessonPage (terminal, data_object, etc.).
 
 Con esto, la navegación queda: **Inicio** → **Java** (grid de lecciones) → **Lección** (ej. java-1) → Volver / Siguiente lección. El mismo patrón sirve para otros lenguajes añadiendo datos en **lessons.ts** y una página índice que use **LessonsGrid**.
+
+# **Paso N.º15 - Página genérica por lenguaje (LanguagePage) y más lecciones**
+
+Para no tener una página distinta por cada lenguaje (JavaPage, PythonPage, etc.), se creó una sola **LanguagePage** que usa la ruta dinámica **/:languageId** (ej. /java, /python, /c). Así, los 13 lenguajes del grid de inicio llevan cada uno a su página de lecciones sin crear 13 archivos.
+
+**Cambios realizados:**
+
+1. **data/languages.ts**  
+   - Nueva función **getLanguageById(id)**: devuelve el lenguaje con ese `id` o `undefined`. La usa LanguagePage para mostrar nombre y descripción.
+
+2. **pages/LanguagePage.tsx** (nuevo)  
+   - Lee **languageId** de la URL con `useParams`.  
+   - Obtiene el lenguaje con `getLanguageById(languageId)` y las lecciones con `getLessonsByLanguage(languageId)`.  
+   - Si el lenguaje no existe: mensaje "Lenguaje no encontrado" y enlace a inicio.  
+   - Si existe: título "Clases particulares de {nombre}", descripción del lenguaje y **LessonsGrid**. Si no hay lecciones para ese lenguaje, el grid muestra "No hay lecciones disponibles aún."
+
+3. **App.tsx**  
+   - Se eliminó la ruta fija `/java` y el uso de JavaPage.  
+   - Se añadió **Route path="/:languageId"** con **LanguagePage**. El orden de rutas es: `/`, `/lesson/:lessonId`, `/:languageId` para que /lesson/java-1 no coincida con /:languageId.
+
+4. **pages/JavaPage.tsx**  
+   - Eliminado; su lógica queda cubierta por LanguagePage cuando languageId es "java".
+
+5. **data/lessons.ts**  
+   - Añadidas dos lecciones más de Java: **java-3** (Condicionales: if y switch) y **java-4** (Bucles: for y while). Quedan 4 lecciones de Java para probar el flujo "Siguiente lección".
+
+6. **LessonPage.tsx**  
+   - En "Lección no encontrada", el enlace "Volver a las lecciones" apunta a `/${languageId}` deduciendo languageId del lessonId (ej. java-1 → /java).
+
+Resultado: desde **Inicio** se puede clicar en cualquier lenguaje (Java, Python, C, etc.) y se abre la misma estructura (título, descripción, grid de lecciones). Solo Java tiene lecciones por ahora; el resto muestra "No hay lecciones disponibles aún." Añadir contenido para otro lenguaje es solo agregar objetos en **lessons.ts** con el mismo **languageId**.
 
 # **Preguntas comunes que yo mismo me hice**
 
