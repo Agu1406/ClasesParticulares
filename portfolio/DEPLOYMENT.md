@@ -32,13 +32,20 @@
 
 ## **Sistema de lecciones (Java y reutilizable)**
 - [X] Crear interfaz **Lesson** en **types/index.ts** (con opcional `completed` en ejercicios).
-- [X] Crear **data/lessons.ts** con lecciones (4 de Java: java-1 a java-4) y helpers (getLessonsByLanguage, getLessonById).
+- [X] Crear **data/lessons.ts** con lecciones (8 de Java: java-1 a java-8, Fundamentos + POO) y helpers (getLessonsByLanguage, getLessonById).
 - [X] Crear **LessonCard.tsx** (tarjeta por lección que enlaza a /lesson/:lessonId).
 - [X] Crear **LessonsGrid.tsx** (grid reutilizable de lecciones usado por LanguagePage).
 - [X] Crear **CodeBlock.tsx** (bloque de código con botón Copiar para LessonPage).
 - [X] Crear **LessonPage.tsx** (página reutilizable para cualquier lección; barra de progreso, secciones, ejercicios, PDF, navegación).
 - [X] Crear **LanguagePage.tsx** y **getLanguageById** en **data/languages.ts**; ruta **/:languageId** en **App.tsx**.
 - [X] Añadir ruta **/lesson/:lessonId** y enlace a Material Icons en **index.html**.
+
+## **Alineación con roadmap.sh**
+- [X] Añadir **roadmapPhase** opcional a la interfaz **Lesson** (types/index.ts).
+- [X] Crear **data/roadmapPhases.ts** con fases por lenguaje (Java: Fundamentos, POO, Core Java).
+- [X] Asignar **roadmapPhase** a lecciones Java: 1–5 fundamentos, 6–8 POO (clases, constructores, herencia).
+- [X] Crear **RoadmapSection.tsx**: agrupa lecciones por fase, enlace a roadmap.sh y texto "Ruta de aprendizaje inspirada en roadmap.sh".
+- [X] Integrar **RoadmapSection** en **LanguagePage** (solo se muestra si el lenguaje tiene fases y lecciones con fase).
 
 ## **MVP (Mínimo Producto Viable)**
 - [X] Completar MVP: HomePage con grid funcional de todos los lenguajes.
@@ -706,6 +713,31 @@ Para no tener una página distinta por cada lenguaje (JavaPage, PythonPage, etc.
 
 Resultado: desde **Inicio** se puede clicar en cualquier lenguaje (Java, Python, C, etc.) y se abre la misma estructura (título, descripción, grid de lecciones). Solo Java tiene lecciones por ahora; el resto muestra "No hay lecciones disponibles aún." Añadir contenido para otro lenguaje es solo agregar objetos en **lessons.ts** con el mismo **languageId**.
 
+# **Paso N.º16 - Alineación con roadmap.sh**
+
+El portal sigue una **ruta de aprendizaje** inspirada en [roadmap.sh](https://roadmap.sh), para llevar al alumno de cero al nivel que proponen sus roadmaps (por lenguaje o rol). No se pueden "leer" los mapas visuales de roadmap.sh de forma automática (son diagramas interactivos en su web), pero sí su estructura por fases: **Fundamentos → POO → Core** para Java, etc.
+
+**Qué se hizo:**
+
+1. **types/index.ts**  
+   - En la interfaz **Lesson** se añadió el campo opcional **roadmapPhase** (string), por ejemplo `"fundamentos"`, `"poo"`, `"core"`.
+
+2. **data/roadmapPhases.ts** (nuevo)  
+   - Define las **fases ordenadas** por lenguaje (por ahora Java: Fase 1 Fundamentos, Fase 2 POO, Fase 3 Core Java).  
+   - Funciones: **getOrderedPhasesForLanguage(languageId)** y **getPhaseLabel(phaseId)**.
+
+3. **data/lessons.ts**  
+   - A cada lección de Java (java-1 a java-4) se le asignó **roadmapPhase: "fundamentos"**. Las futuras lecciones de POO llevarán `"poo"` y las de Core Java `"core"`.
+
+4. **components/RoadmapSection.tsx** (nuevo)  
+   - Agrupa las lecciones por **roadmapPhase** y las muestra por fases en la página del lenguaje.  
+   - Incluye el texto "Ruta de aprendizaje inspirada en roadmap.sh" y un enlace a la web de roadmap.sh (y al roadmap concreto del lenguaje cuando exista, ej. [roadmap.sh/java](https://roadmap.sh/java)).
+
+5. **LanguagePage**  
+   - Se integra **RoadmapSection** encima del grid de lecciones. Solo se muestra si el lenguaje tiene fases definidas y hay al menos una lección con **roadmapPhase**.
+
+Así, en **/java** el usuario ve primero la ruta por fases (con enlace a roadmap.sh) y luego el grid de lecciones. Para otros lenguajes se puede repetir el mismo patrón añadiendo fases en **roadmapPhases.ts** y **roadmapPhase** en las lecciones.
+
 # **Preguntas comunes que yo mismo me hice**
 
 ### **¿Cómo pruebo el código que estoy haciendo?**
@@ -766,6 +798,7 @@ export default defineConfig({
 
 # **Fuentes**
 
+- [**roadmap.sh**](https://roadmap.sh): Roadmaps y rutas de aprendizaje por lenguaje y rol (Java, Python, Frontend, Backend, etc.). La ruta de aprendizaje del portal está alineada con su estructura.
 - [**Guía oficial de Vite**](https://es.vite.dev/guide): Guía oficial de **Vite** donde podemos apreciar conceptos básicos del mismo, la creación/inicialización de un proyecto, etc.
 - [**NPMJS**](https://www.npmjs.com): Guía de paquetes/dependencias más utilizadas/descargadas en entornos de **JavaScript/TypeScript**.
 - [**React Router DOM**](https://www.npmjs.com/package/react-router-dom): Dependencia que permite un redireccionamiento (**routing**) del lado cliente de nuestra aplicación.

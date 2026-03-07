@@ -19,6 +19,7 @@ import { useParams, Link } from "react-router-dom";
 import { getLanguageById } from "../data/languages";
 import { getLessonsByLanguage } from "../data/lessons";
 import LessonsGrid from "../components/LessonsGrid";
+import RoadmapSection from "../components/RoadmapSection";
 
 function LanguagePage() {
     const { languageId } = useParams<{ languageId: string }>();
@@ -46,9 +47,17 @@ function LanguagePage() {
                 <h1 className="text-2xl sm:text-3xl md:text-4xl font-bold text-center m-4 md:m-8 text-evergreen">
                     Clases particulares de {language.name}
                 </h1>
-                <p className="text-center m-4 md:m-8 text-slate-grey text-base md:text-lg mb-8 md:mb-12">
+                <p className="text-center m-4 md:m-8 text-slate-grey text-base md:text-lg mb-2">
                     {language.description}
                 </p>
+                {lessons.length > 0 && (
+                    <p className="text-center text-slate-grey text-sm mb-8 md:mb-12">
+                        {lessons.length} lección{lessons.length !== 1 ? "es" : ""} · de cero a nivel sólido
+                    </p>
+                )}
+                {lessons.length === 0 && <div className="mb-8 md:mb-12" />}
+                {/* Ruta de aprendizaje por fases (alineada con roadmap.sh) cuando exista. */}
+                <RoadmapSection languageId={language.id} lessons={lessons} />
                 <LessonsGrid lessons={lessons} />
             </div>
         </div>

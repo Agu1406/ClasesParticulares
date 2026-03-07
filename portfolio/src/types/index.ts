@@ -80,6 +80,8 @@ export interface Lesson {
     description: string; // Descripción de la lección, ejemplo "Aquí aprendemores esto, aquello y lo otro."
     part: number; // Las lecciones son finitas, está indica cual es, si la primera, segunda, ultima, etc.
     totalParts: number; // Indicador de cuantas lecciones hay disponibles del lenguaje.
+    /** Fase del roadmap (ej. "fundamentos", "poo", "core"). Alinea con roadmap.sh para una ruta de aprendizaje clara. */
+    roadmapPhase?: string;
     /**
      * Aquí viene una de las cosas más complejas (hasta ahora) que he tenido que diseñar porque la IA
      * me recomendaba cosas muy raras y complejas o viceversa, cosas nada escalables.
