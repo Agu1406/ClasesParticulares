@@ -24,7 +24,8 @@ export const lessons: Lesson[] = [
         description:
             "Java es un lenguaje de programación orientado a objetos, multiplataforma. En esta lección verás tu primer programa y los tipos de datos básicos.",
         part: 1,
-        totalParts: 12,
+        totalParts: 8,
+        roadmapPhase: "fundamentos",
         content: {
             sections: [
                 {
@@ -73,7 +74,8 @@ boolean isStudent = true;`,
         description:
             "Profundizamos en los tipos primitivos, Strings y convenciones de nombres. Es la base para el resto del curso.",
         part: 2,
-        totalParts: 12,
+        totalParts: 8,
+        roadmapPhase: "fundamentos",
         content: {
             sections: [
                 {
@@ -103,7 +105,8 @@ char grade = 'A';`,
         description:
             "Aprende a tomar decisiones en tu programa con if, else y switch. Esencial para cualquier flujo de control.",
         part: 3,
-        totalParts: 12,
+        totalParts: 8,
+        roadmapPhase: "fundamentos",
         content: {
             sections: [
                 {
@@ -136,7 +139,8 @@ if (edad >= 18) {
         description:
             "Repetir acciones sin copiar código: for, while y do-while. La base de la iteración en Java.",
         part: 4,
-        totalParts: 12,
+        totalParts: 8,
+        roadmapPhase: "fundamentos",
         content: {
             sections: [
                 {
@@ -153,6 +157,170 @@ if (edad >= 18) {
                 {
                     id: "ex1",
                     title: "Imprime los primeros 10 números pares usando un for.",
+                    completed: false,
+                },
+            ],
+        },
+    },
+    {
+        id: "java-5",
+        languageId: "java",
+        title: "Métodos",
+        description:
+            "Los métodos permiten agrupar código reutilizable. Aprende a declararlos, usar parámetros y valores de retorno.",
+        part: 5,
+        totalParts: 8,
+        roadmapPhase: "fundamentos",
+        content: {
+            sections: [
+                {
+                    title: "Declaración de métodos",
+                    icon: "code",
+                    content:
+                        "Un método tiene un nombre, parámetros (opcionales) y un tipo de retorno. void indica que no devuelve nada.",
+                    code: `public static void saludar() {
+    System.out.println("Hola");
+}
+
+public static int sumar(int a, int b) {
+    return a + b;
+}
+
+public static void main(String[] args) {
+    saludar();
+    System.out.println(sumar(3, 5));
+}`,
+                    codeLanguage: "java",
+                },
+            ],
+            exercises: [
+                {
+                    id: "ex1",
+                    title: "Crea un método que reciba dos números y devuelva el mayor.",
+                    completed: false,
+                },
+            ],
+        },
+    },
+    {
+        id: "java-6",
+        languageId: "java",
+        title: "Clases y objetos",
+        description:
+            "Entra en la programación orientada a objetos: define clases como plantillas y crea objetos a partir de ellas.",
+        part: 6,
+        totalParts: 8,
+        roadmapPhase: "poo",
+        content: {
+            sections: [
+                {
+                    title: "Primera clase",
+                    icon: "data_object",
+                    content:
+                        "Una clase agrupa atributos (datos) y métodos (comportamiento). Con new creas instancias (objetos).",
+                    code: `public class Persona {
+    String nombre;
+    int edad;
+
+    public void presentarse() {
+        System.out.println("Soy " + nombre + ", tengo " + edad + " años.");
+    }
+}
+
+// En main u otra clase:
+Persona p = new Persona();
+p.nombre = "Ana";
+p.edad = 25;
+p.presentarse();`,
+                    codeLanguage: "java",
+                },
+            ],
+            exercises: [
+                {
+                    id: "ex1",
+                    title: "Define una clase Coche con marca y año; crea dos coches e imprime sus datos.",
+                    completed: false,
+                },
+            ],
+        },
+    },
+    {
+        id: "java-7",
+        languageId: "java",
+        title: "Constructores y encapsulación",
+        description:
+            "Los constructores inicializan el objeto. La encapsulación protege los datos con private y accesos con getters y setters.",
+        part: 7,
+        totalParts: 8,
+        roadmapPhase: "poo",
+        content: {
+            sections: [
+                {
+                    title: "Constructor y private",
+                    icon: "lock",
+                    content:
+                        "El constructor tiene el mismo nombre que la clase. Los atributos private solo se modifican desde dentro o mediante getters/setters.",
+                    code: `public class Cuenta {
+    private double saldo;
+
+    public Cuenta(double saldoInicial) {
+        saldo = saldoInicial;
+    }
+
+    public double getSaldo() {
+        return saldo;
+    }
+
+    public void depositar(double cantidad) {
+        if (cantidad > 0) saldo += cantidad;
+    }
+}`,
+                    codeLanguage: "java",
+                },
+            ],
+            exercises: [
+                {
+                    id: "ex1",
+                    title: "Añade a Cuenta un método retirar(double) que reste solo si hay saldo suficiente.",
+                    completed: false,
+                },
+            ],
+        },
+    },
+    {
+        id: "java-8",
+        languageId: "java",
+        title: "Herencia básica",
+        description:
+            "Una clase puede heredar de otra con extends, reutilizando atributos y métodos y pudiendo sobrescribirlos.",
+        part: 8,
+        totalParts: 8,
+        roadmapPhase: "poo",
+        content: {
+            sections: [
+                {
+                    title: "extends y super",
+                    icon: "account_tree",
+                    content:
+                        "La subclase hereda todo lo público/protegido de la superclase. super() llama al constructor del padre; @Override indica que redefines un método.",
+                    code: `public class Animal {
+    protected String nombre;
+    public Animal(String nombre) { this.nombre = nombre; }
+    public void hablar() { System.out.println(nombre + " hace un sonido"); }
+}
+
+public class Perro extends Animal {
+    public Perro(String nombre) { super(nombre); }
+    @Override
+    public void hablar() { System.out.println(nombre + " dice: Guau"); }
+}`,
+                    codeLanguage: "java",
+                },
+            ],
+            exercises: [
+                {
+                    id: "ex1",
+                    title: "Crea una clase Gato que extienda Animal y sobrescriba hablar().",
                     completed: false,
                 },
             ],
