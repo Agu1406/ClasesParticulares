@@ -1,24 +1,33 @@
 /**
- * Componente de la página dedicada a Java.
- * Renderiza la página específica para el contenido de Java,
- * incluyendo ejercicios, proyectos y material educativo relacionado.
- * 
+ * Página índice de Java. Muestra todas las lecciones disponibles de Java
+ * en un grid reutilizable (LessonsGrid). Cada tarjeta (LessonCard) enlaza
+ * a la página de la lección (/lesson/java-1, etc.). Los datos vienen de
+ * getLessonsByLanguage("java") en data/lessons.ts.
+ *
  * @author Agustín. A. Marquez. Piña
  * @since 1.0.0
- * 
  * @see https://github.com/Agu1406/ClasesParticulares Repositorio GitHub
  * @see https://agu1406.github.io/ClasesParticulares GitHub Pages
  */
+
+import { getLessonsByLanguage } from "../data/lessons";
+import LessonsGrid from "../components/LessonsGrid";
+
 function JavaPage() {
-    // La función invocada devuelve código cargable/leible.
+    const javaLessons = getLessonsByLanguage("java");
+
     return (
-        <div className="min-h-screen bg-lavender p-8">
-            <h1 className="text-4xl font-bold text-center m-8 text-evergreen">
-                Clases particulares de Java y contenido
-            </h1>
-            <p className="text-center m-8 text-slate-grey text-lg">
-                ¡Has elegido mi lenguaje favorito! Ahora, sientete libre de explorar el contenido disponible.
-            </p>
+        <div className="bg-lavender p-8">
+            <div className="container mx-auto">
+                <h1 className="text-4xl font-bold text-center m-8 text-evergreen">
+                    Clases particulares de Java
+                </h1>
+                <p className="text-center m-8 text-slate-grey text-lg mb-12">
+                    ¡Has elegido mi lenguaje favorito! Elige una lección para comenzar.
+                </p>
+                {/* Grid de lecciones: componente reutilizable para no duplicar código en otras páginas de lenguajes. */}
+                <LessonsGrid lessons={javaLessons} />
+            </div>
         </div>
     );
 }

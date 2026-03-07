@@ -1,15 +1,13 @@
 /**
- * Componente de navegación que proporciona una barra de navegación
- * para la aplicación SPA. Este componente utiliza React Router DOM para crear
- * enlaces de navegación que cambian la URL sin recargar la página completa.
- * Es similar a una barra de navegación tradicional pero optimizada para SPAs.
- * 
+ * Pie de página global de la SPA. Muestra copyright, descripción breve,
+ * enlaces a GitHub y GitHub Pages, y créditos técnicos (React, TypeScript, Tailwind).
+ * Usa las mismas clases de color que el Header (bg-evergreen, text-lavender) para
+ * consistencia visual. mt-auto asegura que quede abajo cuando el contenido no llena la pantalla.
+ *
  * @author Agustín. A. Marquez. Piña
  * @since 1.0.0
- * 
  * @see https://github.com/Agu1406/ClasesParticulares Repositorio GitHub
  * @see https://agu1406.github.io/ClasesParticulares GitHub Pages
- * 
  */
 function Footer() {
     return (
