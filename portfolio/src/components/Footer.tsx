@@ -11,13 +11,13 @@
  */
 function Footer() {
     return (
-        <footer className="bg-evergreen text-lavender mt-auto py-6">
-            <div className="container mx-auto px-4">
+        <footer className="bg-evergreen text-lavender mt-auto py-4 md:py-6">
+            <div className="container mx-auto px-4 sm:px-6">
                 <div className="flex flex-col md:flex-row justify-between items-center">
-                    {/* Información de copyright */}
+                    {/* Información de copyright: el año se actualiza solo (sin backend). */}
                     <div className="mb-4 md:mb-0">
                         <p className="text-sm">
-                            © 2025 Portal de Clases Particulares de Agustín
+                            © {new Date().getFullYear()} Portal de Clases Particulares de Agustín
                         </p>
                         <p className="text-xs text-lavender/80 mt-1">
                             Material educativo y ejercicios de programación
