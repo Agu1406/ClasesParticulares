@@ -27,7 +27,7 @@ function LanguagePage() {
 
     if (!language) {
         return (
-            <div className="bg-lavender p-8">
+            <div className="bg-lavender p-4 sm:p-6 md:p-8">
                 <div className="container mx-auto text-center">
                     <h1 className="text-2xl font-bold text-evergreen mb-4">
                         Lenguaje no encontrado
@@ -41,12 +41,12 @@ function LanguagePage() {
     }
 
     return (
-        <div className="bg-lavender p-8">
+        <div className="bg-lavender p-4 sm:p-6 md:p-8">
             <div className="container mx-auto">
-                <h1 className="text-4xl font-bold text-center m-8 text-evergreen">
+                <h1 className="text-2xl sm:text-3xl md:text-4xl font-bold text-center m-4 md:m-8 text-evergreen">
                     Clases particulares de {language.name}
                 </h1>
-                <p className="text-center m-8 text-slate-grey text-lg mb-12">
+                <p className="text-center m-4 md:m-8 text-slate-grey text-base md:text-lg mb-8 md:mb-12">
                     {language.description}
                 </p>
                 <LessonsGrid lessons={lessons} />

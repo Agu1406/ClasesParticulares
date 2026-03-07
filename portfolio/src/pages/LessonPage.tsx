@@ -24,7 +24,7 @@ function LessonPage() {
     if (!lesson) {
         const backLanguageId = lessonId?.includes("-") ? lessonId.split("-")[0] : "java";
         return (
-            <div className="bg-lavender p-8">
+            <div className="bg-lavender p-4 sm:p-6 md:p-8">
                 <div className="container mx-auto text-center">
                     <h1 className="text-2xl font-bold text-evergreen mb-4">
                         Lección no encontrada
@@ -41,14 +41,14 @@ function LessonPage() {
     const nextLesson = languageLessons.find((l) => l.part === lesson.part + 1);
 
     return (
-        <div className="bg-lavender p-8">
+        <div className="bg-lavender p-4 sm:p-6 md:p-8">
             <div className="container mx-auto max-w-3xl">
                 {/* Cabecera: parte/total, título, descripción */}
-                <div className="mb-8">
+                <div className="mb-6 md:mb-8">
                     <span className="text-xs font-bold uppercase tracking-wider text-scarlet">
                         Part {lesson.part} of {lesson.totalParts}
                     </span>
-                    <h1 className="text-3xl font-bold text-evergreen mt-2">
+                    <h1 className="text-2xl sm:text-3xl font-bold text-evergreen mt-2">
                         {lesson.title}
                     </h1>
                     <p className="text-slate-grey mt-4 leading-relaxed">
@@ -94,7 +94,7 @@ function LessonPage() {
                 </div>
 
                 {/* Bloque de ejercicios y PDF */}
-                <section className="bg-evergreen/5 p-6 rounded-3xl border border-evergreen/10 mt-8">
+                <section className="bg-evergreen/5 p-4 sm:p-6 rounded-3xl border border-evergreen/10 mt-6 md:mt-8">
                     <h2 className="text-xl font-bold mb-4">
                         Ejercicios de la lección
                     </h2>
