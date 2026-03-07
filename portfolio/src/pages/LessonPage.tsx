@@ -22,17 +22,15 @@ function LessonPage() {
     const lesson = lessonId ? getLessonById(lessonId) : null;
 
     if (!lesson) {
+        const backLanguageId = lessonId?.includes("-") ? lessonId.split("-")[0] : "java";
         return (
             <div className="bg-lavender p-8">
                 <div className="container mx-auto text-center">
                     <h1 className="text-2xl font-bold text-evergreen mb-4">
                         Lección no encontrada
                     </h1>
-                    <Link
-                        to="/java"
-                        className="text-fawn hover:underline"
-                    >
-                        Volver a las lecciones de Java
+                    <Link to={`/${backLanguageId}`} className="text-fawn hover:underline">
+                        Volver a las lecciones
                     </Link>
                 </div>
             </div>
