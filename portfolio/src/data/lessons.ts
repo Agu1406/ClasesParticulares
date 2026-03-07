@@ -24,7 +24,7 @@ export const lessons: Lesson[] = [
         description:
             "Java es un lenguaje de programación orientado a objetos, multiplataforma. En esta lección verás tu primer programa y los tipos de datos básicos.",
         part: 1,
-        totalParts: 8,
+        totalParts: 11,
         roadmapPhase: "fundamentos",
         content: {
             sections: [
@@ -74,7 +74,7 @@ boolean isStudent = true;`,
         description:
             "Profundizamos en los tipos primitivos, Strings y convenciones de nombres. Es la base para el resto del curso.",
         part: 2,
-        totalParts: 8,
+        totalParts: 11,
         roadmapPhase: "fundamentos",
         content: {
             sections: [
@@ -105,7 +105,7 @@ char grade = 'A';`,
         description:
             "Aprende a tomar decisiones en tu programa con if, else y switch. Esencial para cualquier flujo de control.",
         part: 3,
-        totalParts: 8,
+        totalParts: 11,
         roadmapPhase: "fundamentos",
         content: {
             sections: [
@@ -139,7 +139,7 @@ if (edad >= 18) {
         description:
             "Repetir acciones sin copiar código: for, while y do-while. La base de la iteración en Java.",
         part: 4,
-        totalParts: 8,
+        totalParts: 11,
         roadmapPhase: "fundamentos",
         content: {
             sections: [
@@ -169,7 +169,7 @@ if (edad >= 18) {
         description:
             "Los métodos permiten agrupar código reutilizable. Aprende a declararlos, usar parámetros y valores de retorno.",
         part: 5,
-        totalParts: 8,
+        totalParts: 11,
         roadmapPhase: "fundamentos",
         content: {
             sections: [
@@ -209,7 +209,7 @@ public static void main(String[] args) {
         description:
             "Entra en la programación orientada a objetos: define clases como plantillas y crea objetos a partir de ellas.",
         part: 6,
-        totalParts: 8,
+        totalParts: 11,
         roadmapPhase: "poo",
         content: {
             sections: [
@@ -251,7 +251,7 @@ p.presentarse();`,
         description:
             "Los constructores inicializan el objeto. La encapsulación protege los datos con private y accesos con getters y setters.",
         part: 7,
-        totalParts: 8,
+        totalParts: 11,
         roadmapPhase: "poo",
         content: {
             sections: [
@@ -294,7 +294,7 @@ p.presentarse();`,
         description:
             "Una clase puede heredar de otra con extends, reutilizando atributos y métodos y pudiendo sobrescribirlos.",
         part: 8,
-        totalParts: 8,
+        totalParts: 11,
         roadmapPhase: "poo",
         content: {
             sections: [
@@ -321,6 +321,143 @@ public class Perro extends Animal {
                 {
                     id: "ex1",
                     title: "Crea una clase Gato que extienda Animal y sobrescriba hablar().",
+                    completed: false,
+                },
+            ],
+        },
+    },
+    {
+        id: "java-9",
+        languageId: "java",
+        title: "Excepciones",
+        description:
+            "Maneja errores en tiempo de ejecución con try-catch. Aprende a lanzar y capturar excepciones para que tu programa no se caiga.",
+        part: 9,
+        totalParts: 11,
+        roadmapPhase: "core",
+        content: {
+            sections: [
+                {
+                    title: "try, catch y finally",
+                    icon: "warning",
+                    content:
+                        "El código que puede fallar va en try. Si se lanza una excepción, se ejecuta catch. finally se ejecuta siempre (para cerrar recursos, etc.).",
+                    code: `try {
+    int a = 10, b = 0;
+    int c = a / b;
+} catch (ArithmeticException e) {
+    System.out.println("Error: " + e.getMessage());
+} finally {
+    System.out.println("Bloque finally");
+}`,
+                    codeLanguage: "java",
+                },
+                {
+                    title: "Lanzar excepciones",
+                    content:
+                        "Puedes lanzar una excepción con throw. Los métodos que lanzan excepciones comprobadas deben declararlo con throws.",
+                    code: `public static int dividir(int a, int b) throws ArithmeticException {
+    if (b == 0) throw new ArithmeticException("División por cero");
+    return a / b;
+}`,
+                    codeLanguage: "java",
+                },
+            ],
+            exercises: [
+                {
+                    id: "ex1",
+                    title: "Escribe un método que lea un número de una cadena; captura NumberFormatException si no es válido.",
+                    completed: false,
+                },
+            ],
+        },
+    },
+    {
+        id: "java-10",
+        languageId: "java",
+        title: "Colecciones: List y Set",
+        description:
+            "ArrayList y HashSet permiten guardar muchos elementos de forma dinámica. La base del framework de colecciones de Java.",
+        part: 10,
+        totalParts: 11,
+        roadmapPhase: "core",
+        content: {
+            sections: [
+                {
+                    title: "ArrayList",
+                    icon: "list",
+                    content:
+                        "ArrayList es una lista ordenada que permite duplicados. Añades con add(), accedes con get(índice) y el tamaño es size().",
+                    code: `import java.util.ArrayList;
+
+ArrayList<String> nombres = new ArrayList<>();
+nombres.add("Ana");
+nombres.add("Luis");
+nombres.add("Ana");
+System.out.println(nombres.size());
+System.out.println(nombres.get(1));
+for (String n : nombres) System.out.println(n);`,
+                    codeLanguage: "java",
+                },
+                {
+                    title: "HashSet",
+                    content:
+                        "HashSet es un conjunto: no hay orden y no permite duplicados. Útil cuando solo te importa si un elemento está o no.",
+                    code: `import java.util.HashSet;
+
+HashSet<Integer> numeros = new HashSet<>();
+numeros.add(5);
+numeros.add(5);
+numeros.add(10);
+System.out.println(numeros.size());
+System.out.println(numeros.contains(5));`,
+                    codeLanguage: "java",
+                },
+            ],
+            exercises: [
+                {
+                    id: "ex1",
+                    title: "Crea un ArrayList de números, añade varios (algunos repetidos) y recórrelo imprimiendo solo los pares.",
+                    completed: false,
+                },
+            ],
+        },
+    },
+    {
+        id: "java-11",
+        languageId: "java",
+        title: "Entrada y salida básica",
+        description:
+            "Leer desde teclado con Scanner y escribir en ficheros con FileWriter. Lo mínimo para programas que interactúan con el usuario o con archivos.",
+        part: 11,
+        totalParts: 11,
+        roadmapPhase: "core",
+        content: {
+            sections: [
+                {
+                    title: "Scanner y FileWriter",
+                    icon: "input",
+                    content:
+                        "Scanner permite leer desde System.in (teclado) o desde un archivo. FileWriter escribe texto en un fichero. Cierra los recursos con close() o try-with-resources.",
+                    code: `import java.util.Scanner;
+import java.io.FileWriter;
+import java.io.IOException;
+
+Scanner sc = new Scanner(System.in);
+System.out.print("Nombre: ");
+String nombre = sc.nextLine();
+sc.close();
+
+try (FileWriter fw = new FileWriter("saludo.txt")) {
+    fw.write("Hola, " + nombre);
+}`,
+                    codeLanguage: "java",
+                },
+            ],
+            exercises: [
+                {
+                    id: "ex1",
+                    title: "Pide al usuario dos números, escribe su suma en un fichero resultado.txt.",
                     completed: false,
                 },
             ],

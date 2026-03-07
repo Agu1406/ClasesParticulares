@@ -32,7 +32,7 @@
 
 ## **Sistema de lecciones (Java y reutilizable)**
 - [X] Crear interfaz **Lesson** en **types/index.ts** (con opcional `completed` en ejercicios).
-- [X] Crear **data/lessons.ts** con lecciones (8 de Java: java-1 a java-8, Fundamentos + POO) y helpers (getLessonsByLanguage, getLessonById).
+- [X] Crear **data/lessons.ts** con lecciones (11 de Java: Fundamentos, POO y Core Java) y helpers (getLessonsByLanguage, getLessonById).
 - [X] Crear **LessonCard.tsx** (tarjeta por lección que enlaza a /lesson/:lessonId).
 - [X] Crear **LessonsGrid.tsx** (grid reutilizable de lecciones usado por LanguagePage).
 - [X] Crear **CodeBlock.tsx** (bloque de código con botón Copiar para LessonPage).
@@ -43,7 +43,7 @@
 ## **Alineación con roadmap.sh**
 - [X] Añadir **roadmapPhase** opcional a la interfaz **Lesson** (types/index.ts).
 - [X] Crear **data/roadmapPhases.ts** con fases por lenguaje (Java: Fundamentos, POO, Core Java).
-- [X] Asignar **roadmapPhase** a lecciones Java: 1–5 fundamentos, 6–8 POO (clases, constructores, herencia).
+- [X] Asignar **roadmapPhase** a lecciones Java: 1–5 fundamentos, 6–8 POO, 9–11 core (excepciones, colecciones, I/O).
 - [X] Crear **RoadmapSection.tsx**: agrupa lecciones por fase, enlace a roadmap.sh y texto "Ruta de aprendizaje inspirada en roadmap.sh".
 - [X] Integrar **RoadmapSection** en **LanguagePage** (solo se muestra si el lenguaje tiene fases y lecciones con fase).
 
