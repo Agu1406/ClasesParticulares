@@ -36,25 +36,23 @@ El contenido de esta guía está fuertemente inspirado en dos cosas, la primera,
 ```bash
 src/
 ├── ev1/
-│   └── ut0/
-│       ├── ciclovida/
-│       │   └── Ejemplo.java
-│       ├── sintaxisbasica/
-│       │   ├── Programa1.java
-│       │   └── Programa2.java
-│       ├── comentarios/
-│       │   └── Comentarios.java
-│       ├── tipodatos/
-│       │   ├── DatosPrimitivos.java
-│       │   └── DatosAvanzados.java
-│       ├── casteotipos/
-│       │   └── CasteoTiposPrimitivos.java
-│       ├── bucles/                    # (planificado)
-│       ├── condicionales/             # (planificado)
-│       ├── stringsyfunciones/         # (planificado)
-│       ├── operacionesmatematicas/    # (planificado)
-│       ├── arrays/                    # (planificado)
-│       └── conceptosbasicospoo/       # (planificado)
+│   ├── ut0/
+│   │   ├── ciclovida/
+│   │   │   └── Ejemplo.java
+│   │   ├── sintaxisbasica/
+│   │   │   ├── Programa1.java
+│   │   │   └── Programa2.java
+│   │   ├── comentarios/
+│   │   │   └── Comentarios.java
+│   │   ├── tipodatos/
+│   │   │   ├── DatosPrimitivos.java
+│   │   │   └── DatosAvanzados.java
+│   │   └── casteotipos/
+│   │       └── CasteoTiposPrimitivos.java
+│   ├── ut1/                # (planificado) bucles, condicionales
+│   ├── ut2/                # (planificado) strings y funciones, operaciones matemáticas
+│   ├── ut3/                # (planificado) arrays
+│   └── ut4/                # (planificado) introducción básica a la POO
 ├── ev2/   # (planificado)
 ├── ev3/   # (planificado)
 └── README.md
