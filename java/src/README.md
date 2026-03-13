@@ -36,7 +36,7 @@ El contenido de esta guía está fuertemente inspirado en dos cosas, la primera,
 ```bash
 src/
 ├── ev1/
-│   ├── ut0/
+│   ├── ut0/                          # Unidad teórica 0: fundamentos de Java
 │   │   ├── ciclovida/
 │   │   │   └── Ejemplo.java
 │   │   ├── sintaxisbasica/
@@ -49,12 +49,12 @@ src/
 │   │   │   └── DatosAvanzados.java
 │   │   └── casteotipos/
 │   │       └── CasteoTiposPrimitivos.java
-│   ├── ut1/                # (planificado) bucles, condicionales
-│   ├── ut2/                # (planificado) strings y funciones, operaciones matemáticas
-│   ├── ut3/                # (planificado) arrays
-│   └── ut4/                # (planificado) introducción básica a la POO
-├── ev2/   # (planificado)
-├── ev3/   # (planificado)
+│   ├── ut1/                          # Unidad teórica 1: bucles y condicionales
+│   ├── ut2/                          # Unidad teórica 2: strings, funciones y operaciones matemáticas
+│   ├── ut3/                          # Unidad teórica 3: arrays
+│   └── ut4/                          # Unidad teórica 4: introducción básica a la POO
+├── ev2/                              # Segunda evaluación (POO y proyectos)
+├── ev3/                              # Tercera evaluación (contenidos avanzados)
 └── README.md
 ```
 

@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Test Programación - Pruebas Libres 2021</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <main class="contenedor">
+      <h1>Tests de Programación - Pruebas Libres</h1>
+      <p class="descripcion">
+        Elige qué examen quieres practicar y responde a todas las preguntas tipo test.
+      </p>
+
+      <section class="selector-examen">
+        <label for="selector-examen">Selecciona un examen:</label>
+        <select id="selector-examen">
+          <option value="programacion2021">Programación - Pruebas libres 2021</option>
+          <option value="programacion2022">Programación - Pruebas libres 2022</option>
+        </select>
+        <button id="boton-cargar-examen">Cargar examen</button>
+      </section>
+
+      <section id="zona-preguntas">
+        <!-- Las preguntas se generan desde el archivo script.js -->
+      </section>
+
+      <section id="zona-resultados" class="oculto">
+        <h2>Resultado</h2>
+        <p id="texto-resultado"></p>
+      </section>
+
+      <button id="boton-corrector">Corregir test</button>
+    </main>
+
+    <!-- Datos de exámenes -->
+    <script src="data/programacion2021.js"></script>
+    <script src="data/programacion2022.js"></script>
+    <!-- Lógica genérica -->
+    <script src="script.js"></script>
+  </body>
+</html>
+

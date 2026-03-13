@@ -1,0 +1,136 @@
+* {
+  box-sizing: border-box;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  background: #0f172a;
+  color: #e5e7eb;
+}
+
+.contenedor {
+  max-width: 900px;
+  margin: 2rem auto;
+  padding: 2rem;
+  background: #020617;
+  border-radius: 12px;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
+}
+
+h1 {
+  margin-top: 0;
+  text-align: center;
+  color: #38bdf8;
+}
+
+.descripcion {
+  text-align: center;
+  margin-bottom: 1.5rem;
+  color: #cbd5f5;
+}
+
+.selector-examen {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 2rem;
+}
+
+.selector-examen label {
+  font-weight: 600;
+}
+
+.selector-examen select {
+  padding: 0.4rem 0.6rem;
+  border-radius: 6px;
+  border: 1px solid #1f2937;
+  background: #020617;
+  color: #e5e7eb;
+}
+
+.selector-examen button {
+  padding: 0.45rem 0.9rem;
+  border-radius: 999px;
+  border: none;
+  background: #38bdf8;
+  color: #020617;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.selector-examen button:hover {
+  background: #0ea5e9;
+}
+
+.pregunta {
+  margin-bottom: 1.5rem;
+  padding: 1rem 1.25rem;
+  border-radius: 8px;
+  background: #020617;
+  border: 1px solid #1f2937;
+}
+
+.pregunta h2 {
+  font-size: 1rem;
+  margin-top: 0;
+  margin-bottom: 0.75rem;
+}
+
+.opcion {
+  display: block;
+  margin-bottom: 0.35rem;
+  cursor: pointer;
+}
+
+.opcion input {
+  margin-right: 0.4rem;
+}
+
+#boton-corrector {
+  display: block;
+  margin: 2rem auto 0;
+  padding: 0.75rem 1.5rem;
+  border: none;
+  border-radius: 999px;
+  background: linear-gradient(90deg, #22c55e, #0ea5e9);
+  color: #020617;
+  font-weight: 600;
+  font-size: 1rem;
+  cursor: pointer;
+  box-shadow: 0 10px 20px rgba(34, 197, 94, 0.4);
+}
+
+#boton-corrector:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 14px 28px rgba(34, 197, 94, 0.6);
+}
+
+#zona-resultados {
+  margin-top: 2rem;
+  padding: 1rem 1.25rem;
+  border-radius: 8px;
+  background: #020617;
+  border: 1px solid #1f2937;
+}
+
+.oculto {
+  display: none;
+}
+
+.feedback {
+  margin-top: 0.5rem;
+  font-size: 0.9rem;
+}
+
+.feedback-correcto {
+  color: #22c55e;
+}
+
+.feedback-incorrecto {
+  color: #f97316;
+}
+
