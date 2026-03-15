@@ -10,11 +10,22 @@
  */
 import MyButton from './MyButton';
 
-export default function MyAPP () {
+export default function MyAPP() {
     return (
         <>
             <h1>Mi primera aplicación</h1>
+            {/**
+             * El componente "MyButton" se importa desde un archivo TSX diferente y
+             * se renderiza aquí, es como usar "legos" para construir nuestras
+             * aplicaciones. 
+             */}
             <MyButton />
+            {/**
+             * Una de las peculiaridades de REACT es que algunas etiquetas clasicas
+             * de HTML como el salto de linea ("<br>") si se tienen que cerrar si
+             * se usan en componentes REACT.
+             */}
+            <br />
         </>
     );
 }
