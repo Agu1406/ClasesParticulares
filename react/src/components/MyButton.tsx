@@ -4,8 +4,10 @@
  * @see https://es.react.dev/learn 
  * @returns Botón de ejemplo.
  */
+import './styles.css';
+
 export default function MyButton () {
     return (
-        <button>Soy un botón</button>
+        <button className="boton-tutorial">Soy un botón</button>
     );
 }
