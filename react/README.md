@@ -1,3 +1,13 @@
+# Instalación de REACT + Vite
+
+Lo cierto es que si leemos la documentación oficial de **React** recomiendan instalarlo siempre acompañado de un framework incluso aunque lo estemos aprendiendo desde cero ya que esp nos facilitara la continuidad en la curva de aprendizaje. en mi **TFG** use **REACT** con **VITE** asi que hice exactamente la misma instalación aquí.
+
+Abre el directorio de tú preferencia para la instalación (el mio se llama `react`) y ejecuta el siguiente comando desde una termina abierta en ese directorio:
+
+```bash
+npm create vite@latest .
+```
+
 # React + TypeScript + Vite
 
 This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
