@@ -11,7 +11,16 @@ function App() {
 
   return (
     <>
+      {/**
+       * Aquí cargo / renderizo el componente principal de mi aplicación donde
+       * convergen y se unen todas las piezas que componen la vista principal.
+       */}
       <MyApp />
+      
+      {/**
+       * Lo de aquí para abajo es lo que viene por defecto con la instalación de
+       * REACT con VITE.
+       */}
       <section id="center">
         <div className="hero">
           <img src={heroImg} className="base" width="170" height="179" alt="" />
