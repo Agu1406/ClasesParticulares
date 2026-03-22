@@ -6,7 +6,7 @@
  */
 import './styles.css';
 
-export default function MyButton () {
+export default function MyButton() {
     return (
         <button className="boton-tutorial">Soy un botón</button>
     );

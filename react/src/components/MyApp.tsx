@@ -8,6 +8,7 @@
  * @see https://es.react.dev/learn 
  * @returns Botón de ejemplo.
  */
+import type { ReactElement } from 'react';
 import MyButton from './MyButton';
 
 /**
@@ -19,38 +20,65 @@ import MyButton from './MyButton';
 const user = {
     name: "Agustín Antonio Márquez Piña",
     imgURL: "https://avatars.githubusercontent.com/u/158044061?v=4",
-    imgSize: "90" 
+    imgSize: "90"
 };
+
+import AdminPanel from './AdminPanel';
+import LoginForm from './LoginForm';
+
+/**
+ * React puede cargar según que condiciones unos componentes u otros dependiendo
+ * del valor / estado de dichas condiciones, por ejemplo, dependiendo de si un
+ * booleano es "true" o "false" podemos mostrar una cosa u otra.
+ */
+let content: ReactElement;
+
+// TODO: Hacer que el primer botón que diseñamos previamente cambie el estado de esto.
+let isLoggedIn = false;
+
+if (isLoggedIn) {
+    content = <AdminPanel />
+} else {
+    content = <LoginForm />
+}
 
 export default function MyAPP() {
     return (
         <>
             <h1>¡Aprendiendo React desde cero!</h1>
             <br />
+
             {/**
              * Inserto mi nombre desde la constante con los datos del usuario que
              * he creado previamente.
              */}
             <h2>Mi nombre es {user.name}</h2>
+
             {/**
              * De la misma forma todos los datos de la imagen los puedo obtener de
              * la constante "user", la ruta de la imagen (src), el ancho y alto de
              * la imagén e incluso general el "alt" combinando un String con el
              * nombre de usuario.
              */}
-            <img 
-                src={user.imgURL} 
-                alt={"Imagen de perfil de " + user.name} 
+            <img
+                src={user.imgURL}
+                alt={"Imagen de perfil de " + user.name}
                 width={user.imgSize}
                 height={user.imgSize}
-                />
+            />
             <br />
+
             {/**
              * El componente "MyButton" se importa desde un archivo TSX diferente y
              * se renderiza aquí, es como usar "legos" para construir nuestras
              * aplicaciones. 
              */}
             <MyButton />
+
+
+            <div>
+                {content}
+            </div>
             {/**
              * Una de las peculiaridades de REACT es que algunas etiquetas clasicas
              * de HTML como el salto de linea ("<br>") si se tienen que cerrar si
