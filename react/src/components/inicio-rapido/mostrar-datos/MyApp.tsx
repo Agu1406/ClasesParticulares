@@ -40,9 +40,11 @@ export default function MyAPP() {
              */}
             <img 
                 src={user.imgURL} 
-                alt={"Imagen de perfil de " + user.name} 
-                width={user.imgSize}
-                height={user.imgSize}
+                alt={"Imagen de perfil de " + user.name}
+                style={{
+                    width: user.imgSize,
+                    height: user.imgSize
+                }}
                 />
             <br />
             {/**

@@ -18,6 +18,27 @@ npm install
 npm run dev
 ```
 
+## Cómo aprender
+
+Para aprender desde cero, la guía oficial **[Aprender React](https://es.react.dev/learn)** es el punto de partida recomendado: está en español, es gratuita y se actualiza con la documentación de React.
+
+El contenido se organiza en dos bloques principales:
+
+**Introducción**
+
+- Inicio rápido
+- Instalación
+- Configuración
+
+**Aprender React**
+
+- Describir la UI
+- Añadir interactividad
+- Gestión del estado
+- Puertas de escape
+
+Puedes seguir los capítulos en orden o saltar a un tema concreto cuando lo necesites.
+
 ## Estructura del proyecto
 
 Una duda habitual es cómo organizar las carpetas. Hay muchas formas; una muy apoyada por la comunidad es la siguiente (referencia [Bulletproof React](https://github.com/alan2207/bulletproof-react/blob/master/docs/project-structure.md)):
