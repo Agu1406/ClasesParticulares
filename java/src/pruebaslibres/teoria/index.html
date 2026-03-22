@@ -2,7 +2,7 @@
 <html lang="es">
   <head>
     <meta charset="UTF-8" />
-    <title>Test Programación - Pruebas Libres 2021</title>
+    <title>Tests de Programación - Pruebas Libres</title>
     <link rel="stylesheet" href="styles.css" />
   </head>
   <body>
@@ -10,19 +10,23 @@
       <h1>Tests de Programación - Pruebas Libres</h1>
       <p class="descripcion">
         Elige qué examen quieres practicar y responde a todas las preguntas tipo test.
+        Los PDFs originales están en <code>src/pruebaslibres/Pruebas_libres_20XX.pdf</code>.
       </p>
 
       <section class="selector-examen">
         <label for="selector-examen">Selecciona un examen:</label>
         <select id="selector-examen">
-          <option value="programacion2021">Programación - Pruebas libres 2021</option>
-          <option value="programacion2022">Programación - Pruebas libres 2022</option>
+          <option value="programacion2021">Programación - Pruebas libres 2021 (40 preguntas)</option>
+          <option value="programacion2022">Programación - Pruebas libres 2022 (40 preguntas)</option>
+          <option value="programacion2023">Programación - Pruebas libres 2023 (40 preguntas)</option>
+          <option value="programacion2024">Programación - Pruebas libres 2024 (provisional = 2023 hasta OCR/transcripción)</option>
+          <option value="programacion2025">Programación - Pruebas libres 2025 DAW (40 preguntas)</option>
         </select>
         <button id="boton-cargar-examen">Cargar examen</button>
       </section>
 
       <section id="zona-preguntas">
-        <!-- Las preguntas se generan desde el archivo script.js -->
+        <!-- Las preguntas se generan desde script.js -->
       </section>
 
       <section id="zona-resultados" class="oculto">
@@ -33,11 +37,12 @@
       <button id="boton-corrector">Corregir test</button>
     </main>
 
-    <!-- Datos de exámenes -->
+    <!-- Datos de exámenes (orden: del más antiguo al más reciente) -->
     <script src="data/programacion2021.js"></script>
     <script src="data/programacion2022.js"></script>
-    <!-- Lógica genérica -->
+    <script src="data/programacion2023.js"></script>
+    <script src="data/programacion2024.js"></script>
+    <script src="data/programacion2025.js"></script>
     <script src="script.js"></script>
   </body>
 </html>
-
