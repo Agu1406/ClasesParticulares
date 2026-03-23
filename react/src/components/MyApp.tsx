@@ -45,21 +45,31 @@ if (isLoggedIn) {
 export default function MyAPP() {
     return (
         <>
-            <h1>¡Aprendiendo React desde cero!</h1>
+            <h1>¡Aprendiendo React desde cero! - Incio e introducción</h1>
             <br />
 
             {/**
-             * Inserto mi nombre desde la constante con los datos del usuario que
-             * he creado previamente.
+             * CREAR Y ANIDAR COMPONENTES.
+             * 
+             * El componente "MyButton" se importa desde un archivo TSX diferente y
+             * se renderiza aquí, es como usar "legos" para construir nuestras
+             * aplicaciones. 
              */}
-            <h2>Mi nombre es {user.name}</h2>
+            <h2>Crear componentes </h2>
+            <MyButton />
+            <br />
 
             {/**
+             * MOSTRAR DATOS.
+             * 
+             * Inserto mi nombre desde la constante con los datos del usuario que
+             * he creado previamente.
+             * 
              * De la misma forma todos los datos de la imagen los puedo obtener de
              * la constante "user", la ruta de la imagen (src), el ancho y alto de
              * la imagén e incluso general el "alt" combinando un String con el
-             * nombre de usuario.
-             */}
+             * nombre de usuario.             */}
+            <h2>Mi nombre es {user.name}</h2>
             <img
                 src={user.imgURL}
                 alt={"Imagen de perfil de " + user.name}
@@ -69,21 +79,14 @@ export default function MyAPP() {
             <br />
 
             {/**
-             * El componente "MyButton" se importa desde un archivo TSX diferente y
-             * se renderiza aquí, es como usar "legos" para construir nuestras
-             * aplicaciones. 
+             * RENDERIZADO CONDICIONAL.
+             * 
+             * Podemos cargar un contenido u otro dependiendo de una condición, por
+             * ejemplo, un booleano, mira la creación de la variable content.
              */}
-            <MyButton />
-
-
             <div>
                 {content}
             </div>
-            {/**
-             * Una de las peculiaridades de REACT es que algunas etiquetas clasicas
-             * de HTML como el salto de linea ("<br>") si se tienen que cerrar si
-             * se usan en componentes REACT.
-             */}
             <br />
         </>
     );
