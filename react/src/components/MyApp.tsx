@@ -38,6 +38,10 @@ const user = {
  * React puede cargar según que condiciones unos componentes u otros dependiendo
  * del valor / estado de dichas condiciones, por ejemplo, dependiendo de si un
  * booleano es "true" o "false" podemos mostrar una cosa u otra.
+ * 
+ * También se puede usar el operador "?" directamente en JSX / TSX para el
+ * condicionado de contenido, para ello busca y observa la demostración de
+ * esta sección en el TSX de MyApp.
  */
 import type { ReactElement } from 'react';
 import AdminPanel from './AdminPanel';
@@ -52,6 +56,12 @@ if (isLoggedIn) {
 } else {
     content = <LoginForm />;
 }
+
+/**
+ * RENDERIZADO DE LISTAS.
+ * 
+ * Pa
+ */
 
 /**
  * Con los Snippets puedo evitar usar cada 5 minutos los escapes de HTML
@@ -170,6 +180,17 @@ export default function MyAPP() {
 
             {/**
              * RENDERIZADO CONDICIONAL.
+             * 
+             * Aquí se pueden apreciar las tres variadades las cuales son:
+             * 
+             * - Usando if-else fuera de la función que devuelvo el elemento MyApp.
+             * - Directamente sobre el TSX / JSX usando el operador "?".
+             * - Directamente sobre el TSX / JSX usando la sintaxis "&&".
+             * 
+             * Usando "?" tiene que haber dos respuestas siempre, aunque sean vacias,
+             * una para el "true" y otra para el "false".
+             * 
+             * Con "&&" podemos omitir el "else" para ser directos solo con el "true".
              */}
             <h2 className="learn-title">Renderizado condicional</h2>
             <p className="learn-info">
@@ -180,7 +201,24 @@ export default function MyAPP() {
             <pre className="learn-code">
                 <code>{conditionalSnippet}</code>
             </pre>
-            <div>{content}</div>
+            <div className='react-learn'>
+                {content}
+                <br />
+                {/**
+                 * Aquí por ejemplo usamos las llaves de "escape" para escribir dentro del TSX
+                 * el condicional con el operador "?".
+                 */
+                    isLoggedIn ? (<h3>¡Has iniciado sesión!</h3>) : (<h3>¡No has iniciado sesión!</h3>)
+                }
+                <br />
+                {/**
+                 * Por ultimo, en esos escenarios podemos usar el operador logico "&&" en aquellos
+                 * escenarios donde no hace falta un "else" y solo la carga de "X" elementos si la
+                 * condición es "true".
+                 */
+                    isLoggedIn && <h3>¡Bienvenido user.name!</h3>
+                }
+            </div>
 
             {/**
              * RENDERIZADO DE LISTAS.
