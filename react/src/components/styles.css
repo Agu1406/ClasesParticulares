@@ -30,3 +30,9 @@
     border: 1px solid white;
     border-radius: 10px;
 }
+
+/* Los snippets en template literals conservan saltos de línea */
+.learn-code code {
+    white-space: pre;
+    font-family: ui-monospace, monospace;
+}

@@ -8,11 +8,19 @@
  * @see https://es.react.dev/learn
  * @returns Botón de ejemplo.
  */
-import type { ReactElement } from 'react';
-import './styles.css';
+/**
+ * CREAR Y ANIDAR COMPONENTES.
+ */
 import MyButton from './MyButton';
 
 /**
+ * AÑADIR ESTILOS. 
+ */
+import './styles.css';
+
+/**
+ * MOSTRAR DATOS.
+ * 
  * React puede leer datos de diversas fuentes, entre ellas, por ejemplo, JSON
  * o directamente desde una API o backend, ahora aprenderemos a mostrar datos
  * en los componentes provinientes de otras fuentes, vamos a simular un JSON
@@ -24,17 +32,19 @@ const user = {
     imgSize: '90',
 };
 
-import AdminPanel from './AdminPanel';
-import LoginForm from './LoginForm';
-
 /**
+ * RENDERIZADO CONDICIONAL.
+ * 
  * React puede cargar según que condiciones unos componentes u otros dependiendo
  * del valor / estado de dichas condiciones, por ejemplo, dependiendo de si un
  * booleano es "true" o "false" podemos mostrar una cosa u otra.
  */
+import type { ReactElement } from 'react';
+import AdminPanel from './AdminPanel';
+import LoginForm from './LoginForm';
+
 let content: ReactElement;
 
-// TODO: Hacer que el primer botón que diseñamos previamente cambie el estado de esto.
 const isLoggedIn = false;
 
 if (isLoggedIn) {
@@ -43,11 +53,16 @@ if (isLoggedIn) {
     content = <LoginForm />;
 }
 
+/**
+ * Con los Snippets puedo evitar usar cada 5 minutos los escapes de HTML
+ * para simbolos y carácteres especiales como &gt; y &lt; o &#123; y &#125;
+ * 
+ * Paso directamente las cadenas de "código" como Strings de la misma forma
+ * que aprendí a estás alturas ya a "mostrar datos".
+ */
 const myButtonSnippet = `export default function MyButton() {
   return (
-    <div className="react-learn">
-      <button type="button">Soy un botón</button>
-    </div>
+    <button>Soy un botón</button>
   );
 }`;
 
@@ -171,6 +186,14 @@ export default function MyAPP() {
              * RENDERIZADO DE LISTAS.
              */}
             <h2 className="learn-title">Renderizado de listas</h2>
+            <p className="learn-info">
+                React nos enseña que a través de bucles for y la función map podremos utilizar arreglos de datos para
+                mostrarlos en forma de lista en nuestros componentes (o mostrar los propios componentes en forma de lista,
+                veamos el siguiente ejemplo con un conjunto de datos de frutas y/o vegetales:
+            </p>
+            <pre className="learn-code">
+                <code></code>
+            </pre>
         </main>
     );
 }
