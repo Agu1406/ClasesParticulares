@@ -9,10 +9,15 @@ const user = {
 export default function AdminPanel() {
     return (
         <>
-            <div className='admin-panel'>
+            <div className="react-learn">
                 <h2>Panel ficticio de administración de usuario</h2>
                 <br />
-                <img src={user.imgURL} alt={'Imagén de perfil de: ' + user.name} width={user.imgSize} height={user.imgSize} />
+                <img
+                    src={user.imgURL}
+                    alt={'Imagén de perfil de: ' + user.name}
+                    width={user.imgSize}
+                    height={user.imgSize}
+                />
                 <h2>Usuario: {user.name}</h2>
             </div>
         </>

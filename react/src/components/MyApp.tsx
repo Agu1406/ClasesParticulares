@@ -1,14 +1,15 @@
 /**
  * Aprendizaje de REACT desde cero siguiendo los ejemplos y tutoriales encontrados
  * en el sitio web oficial de REACT.
- * 
+ *
  * La unica diferencia es que a diferencia del tutorial / ejemplo proporcionado por
  * el sitio web yo aprendí directamente a importar componentes desde diferentes
  * archivos, la sintaxis es import NombreLocal from StringConLaRuta.
- * @see https://es.react.dev/learn 
+ * @see https://es.react.dev/learn
  * @returns Botón de ejemplo.
  */
 import type { ReactElement } from 'react';
+import './styles.css';
 import MyButton from './MyButton';
 
 /**
@@ -18,9 +19,9 @@ import MyButton from './MyButton';
  * con datos ficticios de un usuario.
  */
 const user = {
-    name: "Agustín Antonio Márquez Piña",
-    imgURL: "https://avatars.githubusercontent.com/u/158044061?v=4",
-    imgSize: "90"
+    name: 'Agustín Antonio Márquez Piña',
+    imgURL: 'https://avatars.githubusercontent.com/u/158044061?v=4',
+    imgSize: '90',
 };
 
 import AdminPanel from './AdminPanel';
@@ -34,60 +35,142 @@ import LoginForm from './LoginForm';
 let content: ReactElement;
 
 // TODO: Hacer que el primer botón que diseñamos previamente cambie el estado de esto.
-let isLoggedIn = false;
+const isLoggedIn = false;
 
 if (isLoggedIn) {
-    content = <AdminPanel />
+    content = <AdminPanel />;
 } else {
-    content = <LoginForm />
+    content = <LoginForm />;
 }
+
+const myButtonSnippet = `export default function MyButton() {
+  return (
+    <div className="react-learn">
+      <button type="button">Soy un botón</button>
+    </div>
+  );
+}`;
+
+const imgSnippet = `<img src={user.imgURL}
+  alt={"Imagen de perfil de " + user.name}
+  width={user.imgSize}
+  height={user.imgSize} />`;
+
+const conditionalSnippet = `let isLoggedIn = false;
+
+if (isLoggedIn) {
+  content = <AdminPanel />;
+} else {
+  content = <LoginForm />;
+}`;
 
 export default function MyAPP() {
     return (
-        <>
-            <h1>¡Aprendiendo React desde cero! - Incio e introducción</h1>
-            <br />
+        <main>
+            {/**
+             * INICIO E INTRODUCCIÓN A REACT
+             */}
+            <h2 className="learn-title">Inicio e introducción a REACT</h2>
+            <p className="learn-info">
+                A través del sitio oficial de react, especificamente{' '}
+                <a href="https://es.react.dev/learn">learn react</a> estare aprendiendo las nociones basicas del
+                ecosistema para posteriormente añadir el mismo a mi repertorio de tecnologías, lenguajes, frameworks y
+                herramientas en mis servicios de profesor de clases particulares.
+            </p>
 
             {/**
              * CREAR Y ANIDAR COMPONENTES.
-             * 
-             * El componente "MyButton" se importa desde un archivo TSX diferente y
-             * se renderiza aquí, es como usar "legos" para construir nuestras
-             * aplicaciones. 
              */}
-            <h2>Crear componentes </h2>
+            <h2 className="learn-title">Crear y anidar componentes</h2>
+            <p className="learn-info">
+                La pagina que puedes ver en este preciso momento es la combinación de varios componentes, desde App.tsx se
+                cargan, por ejemplo, MyApp.tsx y MyButton.tsx en el directorio llamado &quot;components&quot; los cuales
+                se renderizan justo después de este parrafo, ejemplo:
+            </p>
+            <pre className="learn-code">
+                <code>{myButtonSnippet}</code>
+            </pre>
             <MyButton />
-            <br />
+
+            {/**
+             * ESCRIBIR MARCADO JSX.
+             */}
+            <h2 className="learn-title">Escribir en marcado JSX</h2>
+            <p className="learn-info">
+                Se puede utilizar dos formatos para la escritura de código en React los cuales son los archivos
+                &quot;.jsx&quot; (JavaScript) y los archivos &quot;.tsx&quot; (TypeScript), sus principales diferencias
+                son:
+            </p>
+            <ul className="learn-info">
+                <li>
+                    &quot;.jsx&quot;: JavaScript, React con JSX, No tiene tipado estático; el chequeo de tipos depende de
+                    linters o herramientas externas.
+                </li>
+                <li>
+                    &quot;.tsx&quot;: TypeScript, React con JSX, Incluye tipado estático de TypeScript, lo que permite
+                    detectar errores de tipos en tiempo de compilación.
+                </li>
+            </ul>
+
+            {/**
+             * AÑADIR ESTILOS (IMPORTARLOS)
+             */}
+            <h2 className="learn-title">Añadir estilos (importar)</h2>
+            <p className="learn-info">
+                Desde react existen varias formas de añadir estilos a nuestro componentes y elementos, la mejor de ellas a
+                mi criterio es crear hojas de estilo CSS e importar las mismas con la siguiente sintaxis (misma usada en
+                el componente MyApp.tsx que permite que todos estos elementos tengan estilos):
+            </p>
+            <pre className="learn-code">
+                <code>import &apos;./styles.css&apos;;</code>
+            </pre>
 
             {/**
              * MOSTRAR DATOS.
-             * 
-             * Inserto mi nombre desde la constante con los datos del usuario que
-             * he creado previamente.
-             * 
-             * De la misma forma todos los datos de la imagen los puedo obtener de
-             * la constante "user", la ruta de la imagen (src), el ancho y alto de
-             * la imagén e incluso general el "alt" combinando un String con el
-             * nombre de usuario.             */}
-            <h2>Mi nombre es {user.name}</h2>
-            <img
-                src={user.imgURL}
-                alt={"Imagen de perfil de " + user.name}
-                width={user.imgSize}
-                height={user.imgSize}
-            />
-            <br />
+             */}
+            <h2 className="learn-title">Mostrar datos</h2>
+            <p className="learn-info">
+                Los datos mostrados a continuación se cargan dinamicamente usando las llaves de escape de react para
+                cargar los mismos desde, en este caso, una constante o fuente de datos procedente de otro sitio, ejemplo
+                son <code>&lt;h2&gt;Mi nombre es &#123;user.name&#125;&lt;/h2&gt;</code>{' '}
+                permitirian renderizar dinamicamente el nombre de un usuario proviniento de una variable llamada
+                &quot;user&quot;.
+            </p>
+            <p className="learn-info">
+                Lo mismo pasa con la imagen donde controlamos la fuente de la misma (src) así como sus dimensiones
+                permitiendo la carga dinamica de dichos valores, ejemplo:
+            </p>
+            <pre className="learn-code">
+                <code>{imgSnippet}</code>
+            </pre>
+            <div className="react-learn">
+                <h2>Mi nombre es {user.name}</h2>
+                <img
+                    src={user.imgURL}
+                    alt={'Imagen de perfil de ' + user.name}
+                    width={user.imgSize}
+                    height={user.imgSize}
+                />
+            </div>
 
             {/**
              * RENDERIZADO CONDICIONAL.
-             * 
-             * Podemos cargar un contenido u otro dependiendo de una condición, por
-             * ejemplo, un booleano, mira la creación de la variable content.
              */}
-            <div>
-                {content}
-            </div>
-            <br />
-        </>
+            <h2 className="learn-title">Renderizado condicional</h2>
+            <p className="learn-info">
+                A partir de nuestro entendimiento de que es posible el renderizado dinamico de datos desde variables en
+                react podemos hacer lo mismo con la carga de un contenido u otro basandonos, por ejemplo, en un booleano,
+                como es el siguiente ejemplo:
+            </p>
+            <pre className="learn-code">
+                <code>{conditionalSnippet}</code>
+            </pre>
+            <div>{content}</div>
+
+            {/**
+             * RENDERIZADO DE LISTAS.
+             */}
+            <h2 className="learn-title">Renderizado de listas</h2>
+        </main>
     );
 }

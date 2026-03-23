@@ -1,25 +1,32 @@
-.boton-tutorial {
-    /*
-    El display block obliga al elemento a ocupar el 100% del ancho disponible,
-    ahora, usando margin auto el elemento solo será visible en el espacio que
-    realmente ocupe dejado a los lados un "vacio", es la forma junior de poder
-    centrar elementos.
-    */
+/**
+ * Un solo contenedor para bloques del tutorial: centrado + padding vertical 2rem.
+ * Las imágenes dentro se centran sin clase extra.
+ */
+.react-learn {
     display: block;
-    margin: 0 auto;
+    margin-inline: auto;
+    padding-block: 2rem;
 }
 
-img {
+.learn-title {
     display: block;
-    margin: 0 auto;
+    border: 1px solid white;
+    font-weight: bold;
+    text-decoration: underline;
+    padding: 1rem 10px;
 }
 
-.login-form {
+.learn-info {
+    color: white;
     display: block;
-    margin: 0 auto;
+    margin: 10px;
+    padding-block: 1rem;
 }
 
-.admin-panel {
-    display: block;
-    margin: 0 auto;
+.learn-code {
+    margin: 1rem 1rem;
+    padding: 1rem 1rem;
+    background: rgba(0, 0, 0, 0.35);
+    border: 1px solid white;
+    border-radius: 10px;
 }

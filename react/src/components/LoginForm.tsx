@@ -7,7 +7,7 @@ import './styles.css';
 export default function LoginForm() {
     return (
         <>
-            <div className='login-form'>
+            <div className="react-learn">
                 <form action="">
                     <label htmlFor="user">Usuario: </label>
                     <input type="text" id="user" name="user" />
