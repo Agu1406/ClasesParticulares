@@ -8,7 +8,7 @@ import './styles.css';
 
 export default function MyButton() {
     return (
-        <div className="react-learn">
+        <div className="learn-react">
             <button type="button">Soy un botón</button>
         </div>
     );

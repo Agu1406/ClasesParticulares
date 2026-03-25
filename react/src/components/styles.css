@@ -2,7 +2,7 @@
  * Un solo contenedor para bloques del tutorial: centrado + padding vertical 2rem.
  * Las imágenes dentro se centran sin clase extra.
  */
-.react-learn {
+.learn-react {
     display: block;
     margin-inline: auto;
     padding-block: 2rem;

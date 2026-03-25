@@ -60,8 +60,22 @@ if (isLoggedIn) {
 /**
  * RENDERIZADO DE LISTAS.
  * 
- * Pa
+ * Para cargar / mostrar listas en react dependemos de bucles "for" y de
+ * la función "map()" para manejar los arreglos de datos, lo vamos a
+ * probar con el siguiente arreglo de datos.
  */
+const products = [
+    { title: "Col", id: 1 },
+    { title: "Ajo", id: 2 },
+    { title: "Uva", id: 3 },
+];
+
+// Mapeamos todos los productos en forma de elementos "<li>" usando su ID.
+const listItems = products.map(product => (
+    <li key={product.id}>
+        {product.title}
+    </li>
+));
 
 /**
  * Con los Snippets puedo evitar usar cada 5 minutos los escapes de HTML
@@ -70,24 +84,41 @@ if (isLoggedIn) {
  * Paso directamente las cadenas de "código" como Strings de la misma forma
  * que aprendí a estás alturas ya a "mostrar datos".
  */
-const myButtonSnippet = `export default function MyButton() {
-  return (
-    <button>Soy un botón</button>
-  );
-}`;
+const myButtonSnippet = `
+    export default function MyButton() {
+        return (
+        <button>Soy un botón</button>
+        );
+    }`;
 
-const imgSnippet = `<img src={user.imgURL}
-  alt={"Imagen de perfil de " + user.name}
-  width={user.imgSize}
-  height={user.imgSize} />`;
+const imgSnippet = `
+    <img src={user.imgURL}
+    alt={"Imagen de perfil de " + user.name}
+    width={user.imgSize}
+    height={user.imgSize} />`;
 
-const conditionalSnippet = `let isLoggedIn = false;
+const conditionalSnippet = `
+    let isLoggedIn = false;
 
-if (isLoggedIn) {
-  content = <AdminPanel />;
-} else {
-  content = <LoginForm />;
-}`;
+    if (isLoggedIn) {
+        content = <AdminPanel />;
+    } else {
+        content = <LoginForm />;
+    }`;
+
+const listSnippet = `
+const products = [
+    { title: "Col", id: 1 },
+    { title: "Ajo", id: 2 },
+    { title: "Uva", id: 3 },
+];
+
+const listItems = products.map(product => (
+    <li key={product.id}>
+        {product.title}
+    </li>
+));
+`
 
 export default function MyAPP() {
     return (
@@ -168,7 +199,7 @@ export default function MyAPP() {
             <pre className="learn-code">
                 <code>{imgSnippet}</code>
             </pre>
-            <div className="react-learn">
+            <div className="learn-react">
                 <h2>Mi nombre es {user.name}</h2>
                 <img
                     src={user.imgURL}
@@ -201,7 +232,7 @@ export default function MyAPP() {
             <pre className="learn-code">
                 <code>{conditionalSnippet}</code>
             </pre>
-            <div className='react-learn'>
+            <div className="learn-react">
                 {content}
                 <br />
                 {/**
@@ -230,8 +261,15 @@ export default function MyAPP() {
                 veamos el siguiente ejemplo con un conjunto de datos de frutas y/o vegetales:
             </p>
             <pre className="learn-code">
-                <code></code>
+                <code>
+                    {listSnippet}
+                </code>
             </pre>
+            <div className="learn-react">
+                <ul className='learn-info'>
+                    {listItems}
+                </ul>
+            </div>
         </main>
     );
 }

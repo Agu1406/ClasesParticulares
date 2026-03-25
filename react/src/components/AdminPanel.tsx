@@ -9,7 +9,7 @@ const user = {
 export default function AdminPanel() {
     return (
         <>
-            <div className="react-learn">
+            <div className="learn-react">
                 <h2>Panel ficticio de administración de usuario</h2>
                 <br />
                 <img
