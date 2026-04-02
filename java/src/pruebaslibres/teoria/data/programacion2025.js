@@ -154,12 +154,12 @@ window.bancoExamenes.programacion2025 = [
     "enunciado": "¿Qué hace el método Class.getDeclaredMethods()?",
     "opciones": [
       "Devuelve todos los métodos públicos de la clase, incluidos los heredados.",
-      "Devuelve todos los métodos de la clase, incluidos los privados.",
+      "Devuelve solo los métodos privados de la clase.",
       "Devuelve los métodos de la clase, pero solo los estáticos.",
-      "Devuelve todos los métodos de la clase, excluyendo los heredados."
+      "Devuelve todos los métodos declarados en la clase (incluidos private), excluyendo los heredados."
     ],
     "correcta": 3,
-    "explicacion": "getDeclaredMethods() devuelve métodos declarados en esa clase, no los heredados."
+    "explicacion": "getDeclaredMethods() devuelve exactamente los métodos declarados en esa clase (public/protected/package/private), y no incluye heredados."
   },
   {
     "numero": 14,
@@ -302,8 +302,8 @@ window.bancoExamenes.programacion2025 = [
       "IOException",
       "AccessDeniedException"
     ],
-    "correcta": 2,
-    "explicacion": "Suele manifestarse como IOException (p. ej. acceso denegado al abrir/escribir)."
+    "correcta": 0,
+    "explicacion": "Al abrir FileOutputStream sobre archivo no escribible suele lanzarse FileNotFoundException (subclase de IOException)."
   },
   {
     "numero": 26,
@@ -482,7 +482,7 @@ window.bancoExamenes.programacion2025 = [
       "Los constructores de la clase padre se heredan automáticamente en las subclases.",
       "Una subclase puede heredar un atributo default de la clase padre, pero solo si se encuentra en el mismo paquete."
     ],
-    "correcta": 0,
-    "explicacion": "Los miembros private existen en la subclase como parte del objeto pero no son accesibles directamente."
+    "correcta": 3,
+    "explicacion": "Los miembros package-private (default) solo son heredables/accesibles dentro del mismo paquete; los constructores no se heredan y protected sí puede sobreescribirse."
   }
 ];

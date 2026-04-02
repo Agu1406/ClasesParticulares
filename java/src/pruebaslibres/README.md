@@ -58,7 +58,9 @@ Desde `teoria/data/`:
 ## Práctica en Java
 
 - **`practica/2021/`**: ejercicios enlazados con el temario del examen 2021 (`sin_resolver` / `resueltos`).
-- **Años 2022–2025**: puedes replicar la misma estructura de carpetas (`practica/2022/`, …) cuando quieras plantear ejercicios a partir de cada PDF.
+- **`practica/coleccion/`**: colección transversal basada en 2021-2025, con pares `sin_resolver` y `resueltos` para estudio guiado.
+- **`practica/2023/`**, **`practica/2024/`** y **`practica/2025/`**: ejercicios por año con pares `sin_resolver` / `resueltos`.
+- **`practica/2022/`**: carpeta disponible para seguir ampliando ejercicios por año.
 
 ## Nota sobre `file://` y módulos
 

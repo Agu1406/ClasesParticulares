@@ -2,42 +2,70 @@
 <html lang="es">
   <head>
     <meta charset="UTF-8" />
-    <title>Tests de Programación - Pruebas Libres</title>
-    <link rel="stylesheet" href="styles.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Tests de Programacion - Pruebas Libres</title>
+    <script src="https://cdn.tailwindcss.com"></script>
   </head>
-  <body>
-    <main class="contenedor">
-      <h1>Tests de Programación - Pruebas Libres</h1>
-      <p class="descripcion">
-        Elige qué examen quieres practicar y responde a todas las preguntas tipo test.
-        Los PDFs originales están en <code>src/pruebaslibres/Pruebas_libres_20XX.pdf</code>.
-      </p>
+  <body class="min-h-screen bg-slate-100 text-slate-900">
+    <main class="mx-auto max-w-5xl px-4 py-8 md:px-6">
+      <header class="mb-6 rounded-2xl bg-white p-6 shadow-sm ring-1 ring-slate-200">
+        <h1 class="text-2xl font-bold tracking-tight text-slate-900 md:text-3xl">
+          Tests de Programacion - Pruebas Libres
+        </h1>
+        <p class="mt-2 text-sm text-slate-600 md:text-base">
+          Elige el examen, responde y corrige al final. PDFs en
+          <code class="rounded bg-slate-100 px-1.5 py-0.5 text-slate-800">src/pruebaslibres/Pruebas_libres_20XX.pdf</code>.
+        </p>
+      </header>
 
-      <section class="selector-examen">
-        <label for="selector-examen">Selecciona un examen:</label>
-        <select id="selector-examen">
-          <option value="programacion2021">Programación - Pruebas libres 2021 (40 preguntas)</option>
-          <option value="programacion2022">Programación - Pruebas libres 2022 (40 preguntas)</option>
-          <option value="programacion2023">Programación - Pruebas libres 2023 (40 preguntas)</option>
-          <option value="programacion2024">Programación - Pruebas libres 2024 (provisional = 2023 hasta OCR/transcripción)</option>
-          <option value="programacion2025">Programación - Pruebas libres 2025 DAW (40 preguntas)</option>
-        </select>
-        <button id="boton-cargar-examen">Cargar examen</button>
+      <section class="mb-6 rounded-2xl bg-white p-5 shadow-sm ring-1 ring-slate-200">
+        <div class="flex flex-col gap-3 md:flex-row md:items-end">
+          <div class="flex-1">
+            <label for="selector-examen" class="mb-1 block text-sm font-semibold text-slate-700">
+              Selecciona un examen
+            </label>
+            <select
+              id="selector-examen"
+              class="w-full rounded-xl border border-slate-300 bg-white px-3 py-2 text-sm text-slate-900 outline-none transition focus:border-sky-500 focus:ring-2 focus:ring-sky-200"
+            >
+              <option value="programacion2021">Programacion - Pruebas libres 2021 (40 preguntas)</option>
+              <option value="programacion2022">Programacion - Pruebas libres 2022 (40 preguntas)</option>
+              <option value="programacion2023">Programacion - Pruebas libres 2023 (40 preguntas)</option>
+              <option value="programacion2024">
+                Programacion - Pruebas libres 2024 (provisional = 2023 hasta OCR/transcripcion)
+              </option>
+              <option value="programacion2025">Programacion - Pruebas libres 2025 DAW (40 preguntas)</option>
+            </select>
+          </div>
+          <button
+            id="boton-cargar-examen"
+            class="inline-flex h-10 items-center justify-center rounded-xl bg-sky-600 px-4 text-sm font-semibold text-white transition hover:bg-sky-700 focus:outline-none focus:ring-2 focus:ring-sky-300"
+          >
+            Cargar examen
+          </button>
+        </div>
       </section>
 
-      <section id="zona-preguntas">
+      <section id="zona-preguntas" class="space-y-4">
         <!-- Las preguntas se generan desde script.js -->
       </section>
 
-      <section id="zona-resultados" class="oculto">
-        <h2>Resultado</h2>
-        <p id="texto-resultado"></p>
+      <section id="zona-resultados" class="hidden mt-6 rounded-2xl border border-emerald-200 bg-emerald-50 p-4">
+        <h2 class="text-lg font-semibold text-emerald-900">Resultado</h2>
+        <p id="texto-resultado" class="mt-1 text-sm text-emerald-800 md:text-base"></p>
       </section>
 
-      <button id="boton-corrector">Corregir test</button>
+      <div class="mt-6 flex justify-center">
+        <button
+          id="boton-corrector"
+          class="inline-flex h-11 items-center justify-center rounded-xl bg-emerald-600 px-6 text-sm font-semibold text-white transition hover:bg-emerald-700 focus:outline-none focus:ring-2 focus:ring-emerald-300"
+        >
+          Corregir test
+        </button>
+      </div>
     </main>
 
-    <!-- Datos de exámenes (orden: del más antiguo al más reciente) -->
+    <!-- Datos de examenes (orden: del mas antiguo al mas reciente) -->
     <script src="data/programacion2021.js"></script>
     <script src="data/programacion2022.js"></script>
     <script src="data/programacion2023.js"></script>

@@ -1,19 +1,85 @@
 // Lógica del test. Los bancos de preguntas vienen de data/programacionYYYY.js (window.bancoExamenes).
 
 const bancoExamenes = window.bancoExamenes || {};
+const STORAGE_KEY_ESTADO = "pruebaslibres_estado_test";
 
 // Examen actualmente cargado (array de preguntas) y su identificador.
 let preguntasActuales = [];
 let idExamenActual = null;
+let ordenPreguntasActual = [];
+
+function barajarArray(lista) {
+  const copia = [...lista];
+  for (let i = copia.length - 1; i > 0; i--) {
+    const j = Math.floor(Math.random() * (i + 1));
+    [copia[i], copia[j]] = [copia[j], copia[i]];
+  }
+  return copia;
+}
+
+function guardarEstado() {
+  if (!idExamenActual) {
+    return;
+  }
+  const respuestas = {};
+  preguntasActuales.forEach((pregunta) => {
+    const seleccion = document.querySelector(
+      `input[name="pregunta-${pregunta.numero}"]:checked`
+    );
+    if (seleccion) {
+      respuestas[pregunta.numero] = parseInt(seleccion.value, 10);
+    }
+  });
+  const estado = {
+    idExamen: idExamenActual,
+    orden: ordenPreguntasActual,
+    respuestas,
+  };
+  localStorage.setItem(STORAGE_KEY_ESTADO, JSON.stringify(estado));
+}
+
+function restaurarEstado() {
+  const crudo = localStorage.getItem(STORAGE_KEY_ESTADO);
+  if (!crudo) {
+    return false;
+  }
+  try {
+    const estado = JSON.parse(crudo);
+    if (!estado || !estado.idExamen || !bancoExamenes[estado.idExamen]) {
+      return false;
+    }
+    const selectorExamen = document.getElementById("selector-examen");
+    selectorExamen.value = estado.idExamen;
+    cargarPreguntas(estado.idExamen, estado.orden);
+
+    const respuestas = estado.respuestas || {};
+    Object.entries(respuestas).forEach(([numeroPregunta, indice]) => {
+      const radio = document.querySelector(
+        `input[name="pregunta-${numeroPregunta}"][value="${indice}"]`
+      );
+      if (radio) {
+        radio.checked = true;
+        manejarRespuestaInmediata(parseInt(numeroPregunta, 10), indice);
+      }
+    });
+    return true;
+  } catch (_error) {
+    return false;
+  }
+}
 
 function crearPregunta(pregunta) {
   const contenedor = document.createElement("article");
-  contenedor.className = "pregunta";
+  contenedor.className =
+    "rounded-2xl border border-slate-200 bg-white p-5 shadow-sm";
 
   const titulo = document.createElement("h2");
+  titulo.className = "text-base font-semibold text-slate-900 md:text-lg";
   titulo.textContent = `Pregunta ${pregunta.numero}`;
 
   const texto = document.createElement("pre");
+  texto.className =
+    "mt-3 overflow-x-auto whitespace-pre-wrap rounded-xl bg-slate-50 p-3 text-sm leading-6 text-slate-700";
   texto.textContent = pregunta.enunciado;
 
   contenedor.appendChild(titulo);
@@ -21,25 +87,32 @@ function crearPregunta(pregunta) {
 
   pregunta.opciones.forEach((opcion, indice) => {
     const etiqueta = document.createElement("label");
-    etiqueta.className = "opcion";
+    etiqueta.className =
+      "mt-3 flex cursor-pointer items-start gap-3 rounded-xl border border-slate-200 bg-slate-50 p-3 transition hover:border-sky-300 hover:bg-sky-50";
 
     const radio = document.createElement("input");
     radio.type = "radio";
     radio.name = `pregunta-${pregunta.numero}`;
     radio.value = indice;
+    radio.className = "mt-1 h-4 w-4 border-slate-300 text-sky-600 focus:ring-sky-400";
+
+    const textoOpcion = document.createElement("span");
+    textoOpcion.className = "text-sm leading-6 text-slate-800";
+    textoOpcion.textContent = opcion;
 
     radio.addEventListener("change", () => {
       manejarRespuestaInmediata(pregunta.numero, indice);
+      guardarEstado();
     });
 
     etiqueta.appendChild(radio);
-    etiqueta.appendChild(document.createTextNode(opcion));
+    etiqueta.appendChild(textoOpcion);
     contenedor.appendChild(etiqueta);
   });
 
   const parrafoFeedback = document.createElement("p");
   parrafoFeedback.id = `feedback-${pregunta.numero}`;
-  parrafoFeedback.className = "feedback";
+  parrafoFeedback.className = "mt-3 text-sm leading-6";
   contenedor.appendChild(parrafoFeedback);
 
   return contenedor;
@@ -65,7 +138,8 @@ function manejarRespuestaInmediata(numeroPregunta, indiceElegido) {
   if (sinClave) {
     parrafoFeedback.textContent =
       "Sin corrección automática (pregunta con clave null). " + textoBase;
-    parrafoFeedback.classList.remove("feedback-incorrecto", "feedback-correcto");
+    parrafoFeedback.classList.remove("text-emerald-700", "text-rose-700");
+    parrafoFeedback.classList.add("text-amber-700");
     return;
   }
 
@@ -73,27 +147,43 @@ function manejarRespuestaInmediata(numeroPregunta, indiceElegido) {
 
   if (respuestaEsCorrecta) {
     parrafoFeedback.textContent = "Correcto. " + textoBase;
-    parrafoFeedback.classList.remove("feedback-incorrecto");
-    parrafoFeedback.classList.add("feedback-correcto");
+    parrafoFeedback.classList.remove("text-rose-700", "text-amber-700");
+    parrafoFeedback.classList.add("text-emerald-700");
   } else {
     parrafoFeedback.textContent = "Incorrecto. " + textoBase;
-    parrafoFeedback.classList.remove("feedback-correcto");
-    parrafoFeedback.classList.add("feedback-incorrecto");
+    parrafoFeedback.classList.remove("text-emerald-700", "text-amber-700");
+    parrafoFeedback.classList.add("text-rose-700");
   }
 }
 
-function cargarPreguntas(idExamen) {
+function cargarPreguntas(idExamen, ordenForzado = null) {
   idExamenActual = idExamen;
-  preguntasActuales = bancoExamenes[idExamen] || [];
+  const base = bancoExamenes[idExamen] || [];
+
+  if (Array.isArray(ordenForzado) && ordenForzado.length > 0) {
+    const porNumero = new Map(base.map((pregunta) => [pregunta.numero, pregunta]));
+    const ordenadas = ordenForzado
+      .map((numero) => porNumero.get(numero))
+      .filter(Boolean);
+    const restantes = base.filter(
+      (pregunta) => !ordenForzado.includes(pregunta.numero)
+    );
+    preguntasActuales = [...ordenadas, ...restantes];
+  } else {
+    preguntasActuales = barajarArray(base);
+  }
+
+  ordenPreguntasActual = preguntasActuales.map((pregunta) => pregunta.numero);
   const zonaPreguntas = document.getElementById("zona-preguntas");
   zonaPreguntas.innerHTML = "";
   const zonaResultados = document.getElementById("zona-resultados");
-  zonaResultados.classList.add("oculto");
+  zonaResultados.classList.add("hidden");
 
   preguntasActuales.forEach((pregunta) => {
     const nodoPregunta = crearPregunta(pregunta);
     zonaPreguntas.appendChild(nodoPregunta);
   });
+  guardarEstado();
 }
 
 function corregirTest() {
@@ -119,7 +209,7 @@ function corregirTest() {
 
   const zonaResultados = document.getElementById("zona-resultados");
   const textoResultado = document.getElementById("texto-resultado");
-  zonaResultados.classList.remove("oculto");
+  zonaResultados.classList.remove("hidden");
 
   const totalCalificadas = preguntasActuales.length - sinClave;
   let msg = `Has acertado ${aciertos} de ${totalCalificadas} preguntas con clave de corrección.`;
@@ -140,5 +230,10 @@ document.addEventListener("DOMContentLoaded", () => {
   });
 
   botonCorrector.addEventListener("click", corregirTest);
+
+  const restaurado = restaurarEstado();
+  if (!restaurado) {
+    cargarPreguntas(selectorExamen.value);
+  }
 });
 
