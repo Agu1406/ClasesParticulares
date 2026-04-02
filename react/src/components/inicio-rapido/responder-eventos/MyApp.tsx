@@ -78,6 +78,14 @@ const listItems = products.map(product => (
 ));
 
 /**
+ * RESPONDER A EVENTOS.
+ * 
+ * Esto es algo que se controla directamente desde aquellos componentes que
+ * encuentran necesario realizar dichas acciones, por ejemplo, durante un
+ * click, mira MyButton para entender mejor como funciona.
+ */
+
+/**
  * Con los Snippets puedo evitar usar cada 5 minutos los escapes de HTML
  * para simbolos y carácteres especiales como &gt; y &lt; o &#123; y &#125;
  * 
