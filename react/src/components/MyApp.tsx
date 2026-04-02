@@ -11,12 +11,15 @@
 /**
  * CREAR Y ANIDAR COMPONENTES.
  */
+import { useState } from 'react';
 import MyButton from './MyButton';
 
 /**
  * AÑADIR ESTILOS. 
  */
 import './styles.css';
+import AdminPanel from './AdminPanel';
+import LoginForm from './LoginForm';
 
 /**
  * MOSTRAR DATOS.
@@ -43,7 +46,13 @@ const user = {
  * condicionado de contenido, para ello busca y observa la demostración de
  * esta sección en el TSX de MyApp.
  */
-import type { ReactElement } from 'react';
+
+/*
+
+Modificado luego de alcanzar el punto ACTUALIZAR PAGINA donde apredenmos a usar
+el hook "useState".
+
+import type { ReactElement} from 'react';
 import AdminPanel from './AdminPanel';
 import LoginForm from './LoginForm';
 
@@ -56,6 +65,7 @@ if (isLoggedIn) {
 } else {
     content = <LoginForm />;
 }
+    */
 
 /**
  * RENDERIZADO DE LISTAS.
@@ -83,6 +93,22 @@ const listItems = products.map(product => (
  * Esto es algo que se controla directamente desde aquellos componentes que
  * encuentran necesario realizar dichas acciones, por ejemplo, durante un
  * click, mira MyButton para entender mejor como funciona.
+ */
+
+/**
+ * ACTUALIZAR LA PAGINA.
+ * 
+ * Aquí vemos algo SUPER IMPORTANTE de React y es "useState" que nos permite
+ * modificar el estado de los elementos ya renderizados en nuestras paginas,
+ * es decir, actualizar como se ven y/o comportan.
+ * 
+ * En este ejemplo asociamos el "useState" a dos variables, una es la que
+ * cambiara de valor/estado como tal cuando interactuemos con ella, la otra
+ * es la función encargada de modificar dicho estado.
+ * 
+ * Para visualizar esto debes prestar atención a los componentes "MyButton",
+ * "LoginForm" y "AdminPanel" ya que lo correcto es que el "useState" se use
+ * directamente en aquellos componentes que necesitan interactividad.
  */
 
 /**
@@ -130,6 +156,8 @@ const listItems = products.map(product => (
 `
 
 export default function MyAPP() {
+    const [isLoggedIn, setIsLoggedIn] = useState(false);
+
     return (
         <main>
             {/**
@@ -242,7 +270,14 @@ export default function MyAPP() {
                 <code>{conditionalSnippet}</code>
             </pre>
             <div className="learn-react">
-                {content}
+                {/*
+                Ahora que alcanzamos el punto ACTUALIZAR PAGINA y aprendemos a usar el
+                "useState" sustituimos esto.
+                
+                content
+                */
+                    isLoggedIn ? <AdminPanel onLogin={() => setIsLoggedIn(false)}/> : <LoginForm onLogin={() => setIsLoggedIn(true)}/>
+                }
                 <br />
                 {/**
                  * Aquí por ejemplo usamos las llaves de "escape" para escribir dentro del TSX
@@ -256,7 +291,7 @@ export default function MyAPP() {
                  * escenarios donde no hace falta un "else" y solo la carga de "X" elementos si la
                  * condición es "true".
                  */
-                    isLoggedIn && <h3>¡Bienvenido user.name!</h3>
+                    isLoggedIn && <h3>¡Bienvenido!</h3>
                 }
             </div>
 

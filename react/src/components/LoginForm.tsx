@@ -2,9 +2,14 @@
  * 
  * @returns Formulario de inicio de sesión ficticio para aprender react.
  */
+import { useState } from 'react';
 import './styles.css';
 
-export default function LoginForm() {
+// Creamos una propiedad llamada "onLogin" que es una función sin return.
+type Props = { onLogin: () => void};
+
+// La función necesita como argumento la propiedad, cuyo valor define MyApp.
+export default function LoginForm({onLogin}: Props) {
     return (
         <>
             <div className="learn-react">
@@ -15,7 +20,9 @@ export default function LoginForm() {
                     <label htmlFor="password">Contraseña: </label>
                     <input type="text" name="password" id="password" />
                     <br />
-                    <button type="submit">¡Iniciar sesión!</button>
+                    <button type="button" onClick={onLogin}>
+                        ¡Iniciar sesión!
+                        </button>
                 </form>
             </div>
         </>

@@ -6,7 +6,11 @@ const user = {
     imgSize: "90"
 };
 
-export default function AdminPanel() {
+// Creamos una propiedad llamada "onLogin" que es una función sin return.
+type Props = { onLogin: () => void};
+
+// La función necesita como argumento la propiedad, cuyo valor define MyApp.
+export default function AdminPanel({onLogin}: Props) {
     return (
         <>
             <div className="learn-react">
@@ -19,6 +23,9 @@ export default function AdminPanel() {
                     height={user.imgSize}
                 />
                 <h2>Usuario: {user.name}</h2>
+                <button type="button" onClick={onLogin}>
+                    ¡Cerrar sesión!
+                </button>
             </div>
         </>
     );
