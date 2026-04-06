@@ -153,7 +153,23 @@ const listItems = products.map(product => (
         {product.title}
     </li>
 ));
-`
+`;
+
+const eventSnippet = `
+export default function MyButton() {
+    function handleClick () {
+        alert("¡Haz hecho click en el botón");
+    }
+
+    return (
+        <div className="learn-react">
+            <button type="button" onClick={handleClick}>
+                Soy un botón
+                </button>
+        </div>
+    );
+}
+`;
 
 export default function MyAPP() {
     const [isLoggedIn, setIsLoggedIn] = useState(false);
@@ -313,6 +329,26 @@ export default function MyAPP() {
                 <ul className='learn-info'>
                     {listItems}
                 </ul>
+            </div>
+
+            {/**
+             * RESPONDER A EVENTOS.
+             */}
+            <h2 className="learn-title">Responder a eventos</h2>
+            <p className="learn-info">
+                El siguiente paso involucra responder / manejar eventos que ocurren o son
+                invocados desde nuestros componentes, para ello podemos crear directamente
+                en los componentes funciones que en caso de ocurrir ciertos eventos, por
+                ejemplo un "click" se ejecuten cambiando el estado y/o comportamiento de
+                nuestros componentes, en el siguiente ejemplo creamos una función en el
+                ya existente componente "MyButton" y desde los atributos del botón la
+                llamamos en el caso de ocurrir un evento del tipo click:
+            </p>
+            <pre className="learn-code">
+                <code>{eventSnippet}</code>
+            </pre>
+            <div className="learn-react">
+                <MyButton />
             </div>
         </main>
     );
