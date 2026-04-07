@@ -153,7 +153,45 @@ const listItems = products.map(product => (
         {product.title}
     </li>
 ));
-`
+`;
+
+const eventSnippet = `
+export default function MyButton() {
+    function handleClick () {
+        alert("¡Haz hecho click en el botón");
+    }
+
+    return (
+        <div className="learn-react">
+            <button type="button" onClick={handleClick}>
+                Soy un botón
+                </button>
+        </div>
+    );
+}
+`;
+
+const updatePageSnippet = `
+import { useState } from 'react';
+
+export default function MyButton() {
+    const [count, setCount] = useState(0);
+
+    function handleClick() {
+        // ACTUALIZAR PAGINA.
+        setCount(count + 1);
+    }
+
+    return (
+        <div className="learn-react">
+            <button type="button" onClick={handleClick}>
+                Soy un botón
+            </button>
+            <p>Valor actual {count}</p>
+        </div>
+    );
+}
+`;
 
 export default function MyAPP() {
     const [isLoggedIn, setIsLoggedIn] = useState(false);
@@ -314,6 +352,49 @@ export default function MyAPP() {
                     {listItems}
                 </ul>
             </div>
+
+            {/**
+             * RESPONDER A EVENTOS.
+             */}
+            <h2 className="learn-title">Responder a eventos</h2>
+            <p className="learn-info">
+                El siguiente paso involucra responder / manejar eventos que ocurren o son
+                invocados desde nuestros componentes, para ello podemos crear directamente
+                en los componentes funciones que en caso de ocurrir ciertos eventos, por
+                ejemplo un "click" se ejecuten cambiando el estado y/o comportamiento de
+                nuestros componentes, en el siguiente ejemplo creamos una función en el
+                ya existente componente "MyButton" y desde los atributos del botón la
+                llamamos en el caso de ocurrir un evento del tipo click:
+            </p>
+            <pre className="learn-code">
+                <code>{eventSnippet}</code>
+            </pre>
+            <div className="learn-react">
+                <MyButton />
+            </div>
+
+            {/**
+             * ACTUALIZAR PAGINA.
+             */}
+             <h2 className="learn-title">Actualizar pagina</h2>
+             <p className="learn-info">
+                La mayoría de nuestros componentes no cambian de forma ni realizan acciones
+                una vez han sido renderizados, es decir, son estaticos, excepto cuando
+                queremos que sean interactivos, es entonces cuando debemos "empaparlos" en
+                interactividad, para ello aprenderemos a usar nuestro primer hook de react
+                el "useState" que permite modificar el estado actual de nuestros componentes
+                y por lo tanto de la pagina usando variables que determinan su comportamiento
+                o valor, en el ejemplo usando useState crearemos una función que almacena una
+                variable con el número de veces en las que le botón ha sido clickleado y una
+                función del tipo "set" que en cada click incrementara dicho contador:
+             </p>
+             <pre className="learn-code">
+                <code>{updatePageSnippet}</code>
+             </pre>
+             <div className="learn-react">
+                <MyButton />
+             </div>
+
         </main>
     );
 }
