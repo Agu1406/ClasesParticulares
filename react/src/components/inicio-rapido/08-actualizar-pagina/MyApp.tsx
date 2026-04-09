@@ -375,6 +375,13 @@ export default function MyAPP() {
 
             {/**
              * ACTUALIZAR PAGINA.
+             * 
+             * "Actualizar" se refiere a que nuestros componentes cambien la información que
+             * muestran o sus propiedades al detectar cambios, por ejemplo, podemos lograr
+             * que un botón muestre cuantas veces ha sido clickeado creando una variable que
+             * sirva de contador y actualizar ese componente (no la pagina completa) cada
+             * vez que se haga click en el botón para incrementar y mostrar el valor actual
+             * del mismo.
              */}
              <h2 className="learn-title">Actualizar pagina</h2>
              <p className="learn-info">
@@ -393,6 +400,20 @@ export default function MyAPP() {
              </pre>
              <div className="learn-react">
                 <MyButton />
+             </div>
+
+             {/**
+              * UTILIZACION DE HOOKS.
+              */}
+             <h2 className="learn-title"></h2>
+             <p className="learn-info">
+
+             </p>
+             <pre className="learn-code">
+                <code></code>
+             </pre>
+             <div className="learn-react">
+
              </div>
 
         </main>
