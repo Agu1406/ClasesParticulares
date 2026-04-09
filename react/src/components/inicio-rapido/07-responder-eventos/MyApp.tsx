@@ -306,6 +306,16 @@ export default function MyAPP() {
 
             {/**
              * RESPONDER A EVENTOS.
+             * 
+             * Si vienes de estudiar JavaScript a secas sabrás que existen diferentes tipos
+             * de eventos que se pueden detectar cuando el usuario interactua con nuestras
+             * aplicaciones, entre ellos, por ejemplo cuando se hace "click" en algún lugar
+             * como un componente.
+             * 
+             * Responder a los eventos nos permite definir que hará nuestra aplicación o el
+             * propio componente al detectar estos, en el siguiente ejemplo haremos que en
+             * caso de detectar un click se active un "alert" (pop-up) con un mensaje que
+             * avisa de la acción realizada (click). 
              */}
             <h2 className="learn-title">Responder a eventos</h2>
             <p className="learn-info">
