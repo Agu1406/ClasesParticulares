@@ -415,21 +415,6 @@ export default function MyAPP() {
              <div className="learn-react">
                 <MyButton />
              </div>
-
-             {/**
-              * UTILIZACION DE HOOKS.
-              */}
-             <h2 className="learn-title"></h2>
-             <p className="learn-info">
-
-             </p>
-             <pre className="learn-code">
-                <code></code>
-             </pre>
-             <div className="learn-react">
-
-             </div>
-
         </main>
     );
 }
