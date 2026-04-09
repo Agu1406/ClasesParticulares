@@ -112,7 +112,6 @@ const listItems = products.map(product => (
  */
 
 /**
-/**
  * Con los Snippets puedo evitar usar cada 5 minutos los escapes de HTML
  * para simbolos y carácteres especiales como &gt; y &lt; o &#123; y &#125;
  * 
@@ -398,25 +397,24 @@ export default function MyAPP() {
              * vez que se haga click en el botón para incrementar y mostrar el valor actual
              * del mismo.
              */}
-             <h2 className="learn-title">Actualizar pagina</h2>
-             <p className="learn-info">
-                La mayoría de nuestros componentes no cambian de forma ni realizan acciones
-                una vez han sido renderizados, es decir, son estaticos, excepto cuando
-                queremos que sean interactivos, es entonces cuando debemos "empaparlos" en
-                interactividad, para ello aprenderemos a usar nuestro primer hook de react
-                el "useState" que permite modificar el estado actual de nuestros componentes
-                y por lo tanto de la pagina usando variables que determinan su comportamiento
-                o valor, en el ejemplo usando useState crearemos una función que almacena una
-                variable con el número de veces en las que le botón ha sido clickleado y una
-                función del tipo "set" que en cada click incrementara dicho contador:
-             </p>
-             <pre className="learn-code">
-                <code>{updatePageSnippet}</code>
-             </pre>
-             <div className="learn-react">
-                <MyButton />
-             </div>
-
+            <h2 className="learn-title">Actualizar pagina</h2>
+            <p className="learn-info">
+            La mayoría de nuestros componentes no cambian de forma ni realizan acciones
+            una vez han sido renderizados, es decir, son estaticos, excepto cuando
+            queremos que sean interactivos, es entonces cuando debemos "empaparlos" en
+            interactividad, para ello aprenderemos a usar nuestro primer hook de react
+            el "useState" que permite modificar el estado actual de nuestros componentes
+            y por lo tanto de la pagina usando variables que determinan su comportamiento
+            o valor, en el ejemplo usando useState crearemos una función que almacena una
+            variable con el número de veces en las que le botón ha sido clickleado y una
+            función del tipo "set" que en cada click incrementara dicho contador:
+            </p>
+            <pre className="learn-code">
+            <code>{updatePageSnippet}</code>
+            </pre>
+            <div className="learn-react">
+            <MyButton />
+            </div>
         </main>
     );
 }
