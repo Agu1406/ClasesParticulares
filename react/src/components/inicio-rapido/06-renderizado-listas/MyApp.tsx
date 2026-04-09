@@ -251,8 +251,13 @@ export default function MyAPP() {
                 }
             </div>
 
+
             {/**
              * RENDERIZADO DE LISTAS.
+             * 
+             * La forma correcta de renderizar listas en react es iterando sobre una colección de elementos usando por
+             * ejemplo un mapa (map) usando el atributo "key" en cada elementos de la lista para que este asocaido a
+             * un ID diferente, esto se puede apreciar en la linea de declaración de "listItems".
              */}
             <h2 className="learn-title">Renderizado de listas</h2>
             <p className="learn-info">
