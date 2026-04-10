@@ -1,21 +1,49 @@
-/* Importado una vez desde App.tsx: contenedor raíz + clases compartidas del tutorial. */
+/* App.tsx + clases compartidas del tutorial (inicio rápido). */
 
 .app {
+  box-sizing: border-box;
+  width: 100%;
   min-height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
-/**
- * Un solo contenedor para bloques del tutorial: centrado + padding vertical 2rem.
- * Las imágenes dentro se centran sin clase extra.
- */
+.main {
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  width: 100%;
+  min-width: 0;
+}
+
+/* Evita que <pre> con código ancho rompa el flex del padre */
+.main > * {
+  min-width: 0;
+  width: 100%;
+}
+
+/* Demos vivos: columna centrada; el <form> ocupa el ancho útil y el texto queda alineado al inicio */
 .learn-react {
-  display: block;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.35rem;
   margin-inline: auto;
   padding-block: 2rem;
 }
 
+.learn-react > * {
+  max-width: 100%;
+  min-width: 0;
+}
+
+.learn-react > form {
+  align-self: stretch;
+  text-align: start;
+}
+
 .learn-title {
-  display: block;
   border: 1px solid white;
   font-weight: bold;
   text-decoration: underline;
@@ -23,47 +51,30 @@
 }
 
 .learn-info {
-  color: white;
-  display: block;
   margin: 10px;
   padding-block: 1rem;
 }
 
 .learn-code {
-  margin: 1rem 1rem;
-  padding: 1rem 1rem;
+  width: 100%;
+  margin-block: 1rem;
+  padding: 1rem;
   background: rgba(0, 0, 0, 0.35);
   border: 1px solid white;
   border-radius: 10px;
+  overflow-x: hidden;
 }
 
-/* Los snippets en template literals conservan saltos de línea */
 .learn-code code {
-  white-space: pre;
+  display: block;
+  white-space: pre-wrap;
+  overflow-wrap: anywhere;
 }
 
-/* Lecciones inicio-rapido: variantes antiguas del tutorial (antes de unificar en learn-react) */
 .boton-tutorial {
-  display: block;
-  margin: 0 auto;
+  display: inline-block;
 }
 
-.login-form {
-  display: block;
-  margin: 0 auto;
-}
-
-.admin-panel {
-  display: block;
-  margin: 0 auto;
-}
-
-.learn-react img {
-  display: block;
-  margin-inline: auto;
-}
-
-/* Agregador lección 10: separación entre capítulos del inicio rápido */
 .leccion-bloque {
   margin-block: 2.5rem;
   padding-block: 0.25rem;

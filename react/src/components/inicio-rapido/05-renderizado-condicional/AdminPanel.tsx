@@ -2,7 +2,7 @@
  * Primera aparición en el inicio rápido: panel ficticio que contrasta con el formulario
  * cuando el padre (`MyApp`) decide qué rama renderizar según una condición.
  *
- * El contenedor usa la clase `.admin-panel`, en paralelo a `LoginForm` que usa `.login-form`.
+ * Contenedor `.learn-react`, alineado con el formulario de la misma lección.
  * Es el mismo tipo de contenido de demostración que en el tutorial oficial (usuario + imagen).
  *
  * @see https://es.react.dev/learn
@@ -16,7 +16,7 @@ const user = {
 export default function AdminPanel() {
     return (
         <>
-            <div className="admin-panel">
+            <div className="learn-react">
                 <h2>Panel ficticio de administración de usuario</h2>
                 <br />
                 <img

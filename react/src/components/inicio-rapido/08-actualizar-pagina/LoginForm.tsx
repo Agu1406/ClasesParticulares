@@ -20,14 +20,24 @@ export default function LoginForm({ onContinueDemo }: Props) {
                         event.preventDefault();
                     }}
                 >
-                    <label htmlFor="demo-field-a">Campo A:</label>{' '}
-                    <input type="text" id="demo-field-a" name="demoA" autoComplete="off" />
+                    <label htmlFor="login-user-08">Usuario o correo:</label>{' '}
+                    <input
+                        type="text"
+                        id="login-user-08"
+                        name="demoUser"
+                        autoComplete="username"
+                    />
                     <br />
-                    <label htmlFor="demo-field-b">Campo B:</label>{' '}
-                    <input type="text" id="demo-field-b" name="demoB" autoComplete="off" />
+                    <label htmlFor="login-pass-08">Contraseña:</label>{' '}
+                    <input
+                        type="password"
+                        id="login-pass-08"
+                        name="demoPassword"
+                        autoComplete="off"
+                    />
                     <br />
                     <button type="button" onClick={onContinueDemo}>
-                        Continuar
+                        Entrar (demo)
                     </button>
                 </form>
             </div>
