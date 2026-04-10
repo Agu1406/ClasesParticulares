@@ -4,8 +4,6 @@
  *
  * @see https://es.react.dev/learn
  */
-import '../../styles.css';
-
 export default function MyButton() {
     /**
      * Función interna del componente: React pasa el evento; aquí solo mostramos el alert.

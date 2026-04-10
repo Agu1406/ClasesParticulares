@@ -6,8 +6,6 @@
  *
  * @see https://es.react.dev/learn
  */
-import '../../styles.css';
-
 export default function MyButton() {
     return (
         <div className="learn-react">

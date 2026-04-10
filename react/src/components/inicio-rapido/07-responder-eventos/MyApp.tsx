@@ -14,9 +14,8 @@
 import MyButton from "./MyButton";
 
 /**
- * AÑADIR ESTILOS.
+ * AÑADIR ESTILOS (hoja compartida: `src/App.css` importada desde `App.tsx`).
  */
-import '../../styles.css';
 
 /**
  * MOSTRAR DATOS.
@@ -205,7 +204,7 @@ export default function MyAPP() {
                 tengan estilos):
             </p>
             <pre className="learn-code">
-                <code>import &apos;./styles.css&apos;;</code>
+                <code>import &apos;./App.css&apos;;</code>
             </pre>
 
             {/**

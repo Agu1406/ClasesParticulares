@@ -7,8 +7,6 @@
  *
  * @see https://es.react.dev/learn
  */
-import '../../styles.css';
-
 const user = {
     name: 'Agustín Antonio Márquez Piña',
     imgURL: 'https://avatars.githubusercontent.com/u/158044061?v=4',

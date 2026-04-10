@@ -7,8 +7,6 @@
  *
  * @see https://es.react.dev/learn
  */
-import '../../styles.css';
-
 export default function LoginForm() {
     return (
         <>

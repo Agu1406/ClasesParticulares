@@ -4,8 +4,6 @@
  *
  * @see https://es.react.dev/learn
  */
-import '../../styles.css';
-
 type Props = { count: number; onClick: () => void };
 
 export default function MyButton2({ count, onClick }: Props) {

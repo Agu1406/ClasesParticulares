@@ -4,8 +4,6 @@
  *
  * @see https://es.react.dev/learn
  */
-import '../../styles.css';
-
 type Props = {
     onContinueDemo: () => void;
 };

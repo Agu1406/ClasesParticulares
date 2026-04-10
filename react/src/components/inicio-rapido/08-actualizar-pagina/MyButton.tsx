@@ -6,8 +6,6 @@
  *
  * @see https://es.react.dev/learn
  */
-import '../../styles.css';
-
 import { useState } from 'react';
 
 export default function MyButton() {
