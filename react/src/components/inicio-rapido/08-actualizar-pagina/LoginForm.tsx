@@ -2,7 +2,6 @@
  * 
  * @returns Formulario de inicio de sesión ficticio para aprender react.
  */
-import { useState } from 'react';
 import './styles.css';
 
 // Creamos una propiedad llamada "onLogin" que es una función sin return.
