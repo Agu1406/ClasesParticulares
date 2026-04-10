@@ -1,26 +1,24 @@
 /**
- * Aprendizaje de REACT desde cero siguiendo los ejemplos y tutoriales encontrados
- * en el sitio web oficial de REACT.
- * @see https://es.react.dev/learn 
- * @returns Botón de ejemplo.
+ * Primera aparición del patrón "responder a eventos": un click dispara un `alert`,
+ * sin estado local todavía (el contador con `useState` llega en la lección 08).
+ *
+ * @see https://es.react.dev/learn
  */
-import './styles.css';
+import '../../styles.css';
 
 export default function MyButton() {
     /**
-     * Esta es una función interna del componente que permite
-     * manejar el comportamiento de este botón en especifico
-     * si hacen click en el.
+     * Función interna del componente: React pasa el evento; aquí solo mostramos el alert.
      */
-    function handleClick () {
-        alert("¡Haz hecho click en el botón");
+    function handleClick() {
+        alert('¡Haz hecho click en el botón');
     }
 
     return (
         <div className="learn-react">
             <button type="button" onClick={handleClick}>
                 Soy un botón
-                </button>
+            </button>
         </div>
     );
 }

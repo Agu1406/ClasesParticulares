@@ -16,7 +16,7 @@ import MyButton from "./MyButton";
 /**
  * AÑADIR ESTILOS.
  */
-import "./styles.css";
+import '../../styles.css';
 
 /**
  * MOSTRAR DATOS.
@@ -271,9 +271,9 @@ export default function MyAPP() {
                      * el condicional con el operador "?".
                      */
                     isLoggedIn ? (
-                        <h3>¡Has iniciado sesión!</h3>
+                        <h3>Vista: panel de demostración</h3>
                     ) : (
-                        <h3>¡No has iniciado sesión!</h3>
+                        <h3>Vista: formulario de demostración</h3>
                     )
                 }
                 <br />
@@ -283,7 +283,7 @@ export default function MyAPP() {
                      * escenarios donde no hace falta un "else" y solo la carga de "X" elementos si la
                      * condición es "true".
                      */
-                    isLoggedIn && <h3>¡Bienvenido user.name!</h3>
+                    isLoggedIn && <h3>Hola, {user.name} (demo)</h3>
                 }
             </div>
 

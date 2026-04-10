@@ -1,10 +1,12 @@
 /**
- * Aprendizaje de REACT desde cero siguiendo los ejemplos y tutoriales encontrados
- * en el sitio web oficial de REACT.
- * @see https://es.react.dev/learn 
- * @returns Botón de ejemplo.
+ * Primera variante centrada en listas: mismo bloque visual `.learn-react` que el resto del
+ * tutorial, pero sin `onClick` todavía. El foco de la lección es `map()` y `key`, no el click.
+ *
+ * Las lecciones 07+ reutilizan este archivo mientras el marcado no cambie.
+ *
+ * @see https://es.react.dev/learn
  */
-import './styles.css';
+import '../../styles.css';
 
 export default function MyButton() {
     return (

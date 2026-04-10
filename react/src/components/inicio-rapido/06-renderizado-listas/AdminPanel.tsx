@@ -1,9 +1,15 @@
-import './styles.css';
+/**
+ * Primera aparición del panel ficticio con `.learn-react`, aún sin botón "volver"
+ * (no recibe props). Así se contrastan las dos vistas antes de cablear callbacks en el padre.
+ *
+ * @see https://es.react.dev/learn
+ */
+import '../../styles.css';
 
 const user = {
-    name: "Agustín Antonio Márquez Piña",
-    imgURL: "https://avatars.githubusercontent.com/u/158044061?v=4",
-    imgSize: "90"
+    name: 'Agustín Antonio Márquez Piña',
+    imgURL: 'https://avatars.githubusercontent.com/u/158044061?v=4',
+    imgSize: '90',
 };
 
 export default function AdminPanel() {

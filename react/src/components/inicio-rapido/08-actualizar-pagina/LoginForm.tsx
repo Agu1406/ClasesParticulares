@@ -1,27 +1,36 @@
 /**
- * 
- * @returns Formulario de inicio de sesión ficticio para aprender react.
+ * Primera aparición del formulario con prop `onContinueDemo`: el padre (`MyApp`) posee el
+ * estado que decide entre formulario y panel.
+ *
+ * @see https://es.react.dev/learn
  */
-import './styles.css';
+import '../../styles.css';
 
-// Creamos una propiedad llamada "onLogin" que es una función sin return.
-type Props = { onLogin: () => void};
+type Props = {
+    onContinueDemo: () => void;
+};
 
-// La función necesita como argumento la propiedad, cuyo valor define MyApp.
-export default function LoginForm({onLogin}: Props) {
+export default function LoginForm({ onContinueDemo }: Props) {
     return (
         <>
             <div className="learn-react">
-                <form action="">
-                    <label htmlFor="user">Usuario: </label>
-                    <input type="text" id="user" name="user" />
+                {/**
+                 * onSubmit + preventDefault: evita recarga si el usuario envía con Enter.
+                 */}
+                <form
+                    onSubmit={event => {
+                        event.preventDefault();
+                    }}
+                >
+                    <label htmlFor="demo-field-a">Campo A:</label>{' '}
+                    <input type="text" id="demo-field-a" name="demoA" autoComplete="off" />
                     <br />
-                    <label htmlFor="password">Contraseña: </label>
-                    <input type="text" name="password" id="password" />
+                    <label htmlFor="demo-field-b">Campo B:</label>{' '}
+                    <input type="text" id="demo-field-b" name="demoB" autoComplete="off" />
                     <br />
-                    <button type="button" onClick={onLogin}>
-                        ¡Iniciar sesión!
-                        </button>
+                    <button type="button" onClick={onContinueDemo}>
+                        Continuar
+                    </button>
                 </form>
             </div>
         </>

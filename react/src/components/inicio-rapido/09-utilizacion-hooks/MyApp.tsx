@@ -12,14 +12,14 @@
  * CREAR Y ANIDAR COMPONENTES.
  */
 // import { useState } from 'react';
-import MyButton from './MyButton';
+import MyButton from '../08-actualizar-pagina/MyButton';
 
 /**
  * AÑADIR ESTILOS. 
  */
-import './styles.css';
-import AdminPanel from './AdminPanel';
-import LoginForm from './LoginForm';
+import '../../styles.css';
+import AdminPanel from '../08-actualizar-pagina/AdminPanel';
+import LoginForm from '../08-actualizar-pagina/LoginForm';
 
 /**
  * MOSTRAR DATOS.
@@ -370,14 +370,14 @@ export default function MyAPP() {
                 
                 content
                 */
-                    isLoggedIn ? <AdminPanel onLogin={() => setIsLoggedIn(false)}/> : <LoginForm onLogin={() => setIsLoggedIn(true)}/>
+                    isLoggedIn ? <AdminPanel onBackToForm={() => setIsLoggedIn(false)}/> : <LoginForm onContinueDemo={() => setIsLoggedIn(true)}/>
                 }
                 <br />
                 {/**
                  * Aquí por ejemplo usamos las llaves de "escape" para escribir dentro del TSX
                  * el condicional con el operador "?".
                  */
-                    isLoggedIn ? (<h3>¡Has iniciado sesión!</h3>) : (<h3>¡No has iniciado sesión!</h3>)
+                    isLoggedIn ? (<h3>Vista: panel de demostración</h3>) : (<h3>Vista: formulario de demostración</h3>)
                 }
                 <br />
                 {/**
@@ -385,7 +385,7 @@ export default function MyAPP() {
                  * escenarios donde no hace falta un "else" y solo la carga de "X" elementos si la
                  * condición es "true".
                  */
-                    isLoggedIn && <h3>¡Bienvenido!</h3>
+                    isLoggedIn && <h3>Condición activa (demo)</h3>
                 }
             </div>
 

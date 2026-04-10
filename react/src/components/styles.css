@@ -35,3 +35,24 @@
 .learn-code code {
     white-space: pre;
 }
+
+/* Lecciones inicio-rapido: variantes antiguas del tutorial (antes de unificar en learn-react) */
+.boton-tutorial {
+    display: block;
+    margin: 0 auto;
+}
+
+.login-form {
+    display: block;
+    margin: 0 auto;
+}
+
+.admin-panel {
+    display: block;
+    margin: 0 auto;
+}
+
+.learn-react img {
+    display: block;
+    margin-inline: auto;
+}

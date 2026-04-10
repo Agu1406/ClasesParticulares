@@ -1,21 +1,14 @@
 /**
- * Aprendizaje de REACT desde cero siguiendo los ejemplos y tutoriales encontrados
- * en el sitio web oficial de REACT.
- * @see https://es.react.dev/learn 
- * @returns Botón de ejemplo.
+ * Primera aparición del botón controlado por el padre: recibe `count` y `onClick` por props,
+ * típico al elevar estado y repartir varios botones con el mismo hook en `MyApp`.
+ *
+ * @see https://es.react.dev/learn
  */
-import './styles.css';
+import '../../styles.css';
 
-/**
- * UTILIZACIÓN DE HOOKS.
- * 
- * Debemos pasar como argumento las propiedades que el padre que renderice estos
- * componentes usara para controlar con "useState" el estado del componente.
- */
-type Props = {count: number, onClick: () => void};
+type Props = { count: number; onClick: () => void };
 
-
-export default function MyButton({count, onClick}: Props) {
+export default function MyButton2({ count, onClick }: Props) {
     return (
         <div className="learn-react">
             <button type="button" onClick={onClick}>

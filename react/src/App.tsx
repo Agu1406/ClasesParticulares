@@ -1,4 +1,4 @@
-import MyApp from './components/MyApp'
+import MyApp from './components/inicio-rapido/09-utilizacion-hooks/MyApp'
 import './App.css'
 
 /**
