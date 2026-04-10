@@ -1,8 +1,8 @@
-import MyApp from './components/inicio-rapido/09-utilizacion-hooks/MyApp'
+import MyApp from './components/inicio-rapido/10-inicio-rapido-completo/MyApp'
 import './App.css'
 
 /**
- * Punto de entrada visual: solo el tutorial (Quick Start) montado en MyApp.
+ * Punto de entrada visual: inicio rápido completo (lecciones 03–09) vía carpeta 10.
  */
 export default function App() {
   return (

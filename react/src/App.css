@@ -62,3 +62,17 @@
   display: block;
   margin-inline: auto;
 }
+
+/* Agregador lección 10: separación entre capítulos del inicio rápido */
+.leccion-bloque {
+  margin-block: 2.5rem;
+  padding-block: 0.25rem;
+}
+
+.leccion-bloque-contenido {
+  margin-block-start: 0.75rem;
+}
+
+.inicio-rapido-completo .leccion-cuerpo {
+  margin-block-start: 0;
+}
