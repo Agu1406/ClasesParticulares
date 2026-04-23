@@ -1,9 +1,9 @@
-package general.bucles;
+package general.condicionales;
 
 /**
- * Ejercicio 8: Bucle while con condicional if-else
- * Usa un bucle while para contar del 1 al 15 y dentro del bucle un if-else para mostrar
- * "par" si el número es par o "impar" si es impar
+ * Ejercicio 3: Condicional switch
+ * Crea una variable numérica del 1 al 5 y usa un switch para mostrar un mensaje diferente
+ * según el valor de la variable
  * 
  * @author Agustín. A. Marquez. Piña
  * @since 14/06/2025
@@ -11,7 +11,7 @@ package general.bucles;
  * @see <a href="https://github.com/Agu1406/ClasesParticulares">Repositorio GitHub</a>
  * @see <a href="https://agu1406.github.io/ClasesParticulares">GitHub Pages</a>
  */
-public class Ejercicio8_WhileConIfElse {
+public class Ejercicio3_Switch {
     public static void main(String[] args) {
         
     }

@@ -1,7 +1,7 @@
-package general.bucles;
+package general.condicionales;
 
 /**
- * Ejercicio 5: Condicional if-else
+ * Ejercicio 2: Condicional if-else
  * Crea una variable numérica y usa if-else para mostrar un mensaje diferente
  * si el número es par o impar
  * 
@@ -11,7 +11,7 @@ package general.bucles;
  * @see <a href="https://github.com/Agu1406/ClasesParticulares">Repositorio GitHub</a>
  * @see <a href="https://agu1406.github.io/ClasesParticulares">GitHub Pages</a>
  */
-public class Ejercicio5_IfElse {
+public class Ejercicio2_IfElse {
     public static void main(String[] args) {
         
     }

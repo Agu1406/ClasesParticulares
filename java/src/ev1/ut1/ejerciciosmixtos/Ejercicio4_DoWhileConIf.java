@@ -1,9 +1,9 @@
-package general.bucles;
+package ev1.ut1.ejerciciosmixtos;
 
 /**
- * Ejercicio 6: Condicional switch
- * Crea una variable numérica del 1 al 5 y usa un switch para mostrar un mensaje diferente
- * según el valor de la variable
+ * Ejercicio 4: Bucle do-while con condicional if
+ * Usa un bucle do-while para sumar números del 1 al 10, pero dentro del bucle usa un if
+ * para sumar solo los números mayores que 5. Muestra el resultado final de la suma
  * 
  * @author Agustín. A. Marquez. Piña
  * @since 14/06/2025
@@ -11,7 +11,7 @@ package general.bucles;
  * @see <a href="https://github.com/Agu1406/ClasesParticulares">Repositorio GitHub</a>
  * @see <a href="https://agu1406.github.io/ClasesParticulares">GitHub Pages</a>
  */
-public class Ejercicio6_Switch {
+public class Ejercicio4_DoWhileConIf {
     public static void main(String[] args) {
         
     }
