@@ -1,8 +1,9 @@
-package general.buclesycondicionales;
+package general.bucles;
 
 /**
- * Ejercicio 3: Bucle do-while
- * Usa un bucle do-while para mostrar los números del 1 al 10 por pantalla
+ * Ejercicio 6: Condicional switch
+ * Crea una variable numérica del 1 al 5 y usa un switch para mostrar un mensaje diferente
+ * según el valor de la variable
  * 
  * @author Agustín. A. Marquez. Piña
  * @since 14/06/2025
@@ -10,10 +11,9 @@ package general.buclesycondicionales;
  * @see <a href="https://github.com/Agu1406/ClasesParticulares">Repositorio GitHub</a>
  * @see <a href="https://agu1406.github.io/ClasesParticulares">GitHub Pages</a>
  */
-public class Ejercicio3_BucleDoWhile {
+public class Ejercicio6_Switch {
     public static void main(String[] args) {
         
     }
 }
-
 

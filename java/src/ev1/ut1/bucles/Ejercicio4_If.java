@@ -1,8 +1,8 @@
-package general.buclesycondicionales;
+package general.bucles;
 
 /**
- * Ejercicio 7: Bucle for con condicional if
- * Usa un bucle for del 1 al 20 y dentro del bucle un if para mostrar solo los números pares
+ * Ejercicio 4: Condicional if
+ * Crea una variable numérica y usa un if para mostrar un mensaje si el número es mayor que 10
  * 
  * @author Agustín. A. Marquez. Piña
  * @since 14/06/2025
@@ -10,10 +10,9 @@ package general.buclesycondicionales;
  * @see <a href="https://github.com/Agu1406/ClasesParticulares">Repositorio GitHub</a>
  * @see <a href="https://agu1406.github.io/ClasesParticulares">GitHub Pages</a>
  */
-public class Ejercicio7_ForConIf {
+public class Ejercicio4_If {
     public static void main(String[] args) {
         
     }
 }
-
 

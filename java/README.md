@@ -457,7 +457,7 @@ Cuando escribimos en una linea un dato y su valor debe seguir la siguiente sinta
 public class Ejemplo {
     public static void main (String [] args) {
         // Ejemplo de sintaxis
-        tipo nombre = valor
+        tipo nombre = valor;
         tipo nombre = valor;
 
         // Ejemplo para guardar mi número favorito.

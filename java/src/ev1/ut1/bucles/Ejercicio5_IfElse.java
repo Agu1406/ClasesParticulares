@@ -1,8 +1,9 @@
-package general.buclesycondicionales;
+package general.bucles;
 
 /**
- * Ejercicio 4: Condicional if
- * Crea una variable numérica y usa un if para mostrar un mensaje si el número es mayor que 10
+ * Ejercicio 5: Condicional if-else
+ * Crea una variable numérica y usa if-else para mostrar un mensaje diferente
+ * si el número es par o impar
  * 
  * @author Agustín. A. Marquez. Piña
  * @since 14/06/2025
@@ -10,10 +11,9 @@ package general.buclesycondicionales;
  * @see <a href="https://github.com/Agu1406/ClasesParticulares">Repositorio GitHub</a>
  * @see <a href="https://agu1406.github.io/ClasesParticulares">GitHub Pages</a>
  */
-public class Ejercicio4_If {
+public class Ejercicio5_IfElse {
     public static void main(String[] args) {
         
     }
 }
-
 

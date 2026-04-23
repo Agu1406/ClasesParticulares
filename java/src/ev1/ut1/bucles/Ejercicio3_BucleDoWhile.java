@@ -1,8 +1,8 @@
-package general.buclesycondicionales;
+package general.bucles;
 
 /**
- * Ejercicio 1: Bucle for
- * Usa un bucle for para mostrar los números del 1 al 10 por pantalla
+ * Ejercicio 3: Bucle do-while
+ * Usa un bucle do-while para mostrar los números del 1 al 10 por pantalla
  * 
  * @author Agustín. A. Marquez. Piña
  * @since 14/06/2025
@@ -10,10 +10,9 @@ package general.buclesycondicionales;
  * @see <a href="https://github.com/Agu1406/ClasesParticulares">Repositorio GitHub</a>
  * @see <a href="https://agu1406.github.io/ClasesParticulares">GitHub Pages</a>
  */
-public class Ejercicio1_BucleFor {
+public class Ejercicio3_BucleDoWhile {
     public static void main(String[] args) {
         
     }
 }
-
 
