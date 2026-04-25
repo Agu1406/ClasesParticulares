@@ -28,13 +28,43 @@
               id="selector-examen"
               class="w-full rounded-xl border border-slate-300 bg-white px-3 py-2 text-sm text-slate-900 outline-none transition focus:border-sky-500 focus:ring-2 focus:ring-sky-200"
             >
-              <option value="programacion2021">Programacion - Pruebas libres 2021 (40 preguntas)</option>
-              <option value="programacion2022">Programacion - Pruebas libres 2022 (40 preguntas)</option>
-              <option value="programacion2023">Programacion - Pruebas libres 2023 (40 preguntas)</option>
-              <option value="programacion2024">
-                Programacion - Pruebas libres 2024 (provisional = 2023 hasta OCR/transcripcion)
-              </option>
-              <option value="programacion2025">Programacion - Pruebas libres 2025 DAW (40 preguntas)</option>
+              <optgroup label="Examenes oficiales por año">
+                <option value="programacion2021">Programacion - Pruebas libres 2021 (40 preguntas)</option>
+                <option value="programacion2022">Programacion - Pruebas libres 2022 (40 preguntas)</option>
+                <option value="programacion2023">Programacion - Pruebas libres 2023 (40 preguntas)</option>
+                <option value="programacion2024">
+                  Programacion - Pruebas libres 2024 (provisional = 2023 hasta OCR/transcripcion)
+                </option>
+                <option value="programacion2025">Programacion - Pruebas libres 2025 DAW (40 preguntas)</option>
+              </optgroup>
+              <optgroup label="Plan de 12 dias (mixto 2021-2025)">
+                <option value="planDia01_diagnostico">Dia 1 - Diagnostico (20 preguntas)</option>
+                <option value="planDia02_fundamentos">Dia 2 - Fundamentos y operadores (20 preguntas)</option>
+                <option value="planDia03_poo_static_valor">Dia 3 - POO, static y paso por valor (20 preguntas)</option>
+                <option value="planDia04_excepciones_ficheros">Dia 4 - Excepciones y ficheros (20 preguntas)</option>
+                <option value="planDia05_colecciones_interfaces">Dia 5 - Colecciones e interfaces (20 preguntas)</option>
+                <option value="planDia06_arrays_recursion_reflection">Dia 6 - Arrays, recursion y reflection (20 preguntas)</option>
+                <option value="planDia07_jdbc">Dia 7 - JDBC (20 preguntas)</option>
+                <option value="planDia08_streams_serializacion_json">Dia 8 - Streams, serializacion y JSON (20 preguntas)</option>
+                <option value="planDia09_orm_hibernate">Dia 9 - ORM e Hibernate (20 preguntas)</option>
+                <option value="planDia10_javafx_ui">Dia 10 - JavaFX e interfaz (20 preguntas)</option>
+                <option value="planDia11_simulacro1">Dia 11 - Simulacro 1 (20 preguntas)</option>
+                <option value="planDia12_simulacro2">Dia 12 - Simulacro 2 (20 preguntas)</option>
+              </optgroup>
+              <optgroup label="Plan de 12 dias B (progresivo y no repeticion)">
+                <option value="planB_dia01_diagnostico">B Dia 1 - Diagnostico facil (20 preguntas)</option>
+                <option value="planB_dia02_fundamentos">B Dia 2 - Fundamentos facil (20 preguntas)</option>
+                <option value="planB_dia03_poo_static_valor">B Dia 3 - POO/media (20 preguntas)</option>
+                <option value="planB_dia04_excepciones_ficheros">B Dia 4 - Excepciones/media (20 preguntas)</option>
+                <option value="planB_dia05_colecciones_interfaces">B Dia 5 - Colecciones/media (20 preguntas)</option>
+                <option value="planB_dia06_arrays_recursion_reflection">B Dia 6 - Arrays/media (20 preguntas)</option>
+                <option value="planB_dia07_jdbc">B Dia 7 - JDBC alta (20 preguntas)</option>
+                <option value="planB_dia08_streams_serializacion_json">B Dia 8 - Streams/JSON alta (20 preguntas)</option>
+                <option value="planB_dia09_orm_hibernate">B Dia 9 - ORM/Hibernate alta (20 preguntas)</option>
+                <option value="planB_dia10_javafx_ui">B Dia 10 - JavaFX alta (20 preguntas)</option>
+                <option value="planB_dia11_simulacro1">B Dia 11 - Simulacro 1 alta (20 preguntas)</option>
+                <option value="planB_dia12_simulacro2">B Dia 12 - Simulacro 2 alta (20 preguntas)</option>
+              </optgroup>
             </select>
           </div>
           <button
@@ -71,6 +101,7 @@
     <script src="data/programacion2023.js"></script>
     <script src="data/programacion2024.js"></script>
     <script src="data/programacion2025.js"></script>
+    <script src="data/plan12dias.js"></script>
     <script src="script.js"></script>
   </body>
 </html>

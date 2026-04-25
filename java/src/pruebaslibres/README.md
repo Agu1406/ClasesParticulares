@@ -24,6 +24,25 @@ En esta carpeta:
 2. Elige el año en el desplegable y pulsa **Cargar examen**.
 3. Responde y usa **Corregir test** para ver el resultado global.
 
+### Plan de 12 dias (nuevo)
+
+- En el selector del test ahora aparece el grupo **"Plan de 12 dias (mixto 2021-2025)"**.
+- Cada dia carga un test de **20 preguntas** generado desde los bancos oficiales (`programacion2021..2025`).
+- Archivo generador: `teoria/data/plan12dias.js`.
+- Las explicaciones incluyen el origen de cada pregunta (`[Origen: programacion20XX]`) para poder volver al examen base.
+- Nota: para dias con menos preguntas historicas especificas (por ejemplo ORM/Hibernate o JavaFX), el generador rellena con preguntas oficiales generales para mantener las 20.
+
+### Plan de 12 dias B (progresivo)
+
+- Disponible en el selector como **"Plan de 12 dias B (progresivo y no repeticion)"**.
+- Objetivo: minimizar repeticiones entre dias y subir dificultad gradualmente:
+  - Dias 1-2: facil
+  - Dias 3-6: media
+  - Dias 7-12: alta
+- Para evitar dias incompletos, si faltan preguntas de un tema se rellena con otras oficiales del mismo nivel aproximado.
+- Cada explicacion lleva prefijo de dificultad aproximada y origen, por ejemplo:
+  - `[Dificultad aprox: media] ... [Origen: programacion2023]`
+
 ### Estado de los bancos de preguntas
 
 | Año | Archivo de datos | Estado |
