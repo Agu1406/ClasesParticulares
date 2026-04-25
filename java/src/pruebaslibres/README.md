@@ -9,6 +9,7 @@ En esta carpeta:
 | Archivo | Uso |
 |--------|-----|
 | `Pruebas_libres_2021.pdf` … `Pruebas_libres_2025.pdf` | Enunciados originales del examen teórico |
+| `programacion_prueba_libre_23.pdf`, `programacion_prueba_libre_24.pdf`, `programacion_prueba_libre_25.pdf` | PDFs recientes usados para la ruta de preparación "real 23-24-25" |
 
 ## Auditoría de claves (respuestas correctas)
 
@@ -23,6 +24,16 @@ En esta carpeta:
 1. Abre en el navegador: `teoria/index.html` (doble clic o “Open with Live Server”).
 2. Elige el año en el desplegable y pulsa **Cargar examen**.
 3. Responde y usa **Corregir test** para ver el resultado global.
+
+### Ruta real 23-24-25 (nuevo)
+
+- En el selector aparece el grupo **"Ruta real 23-24-25 (nueva)"**.
+- Incluye:
+  - `rutaReal2023`, `rutaReal2024`, `rutaReal2025` (bases por año)
+  - `rutaRealSimulacroA/B/C` (simulacros mixtos de 40 preguntas)
+  - `rutaRealRA1..RA9` (bloques cortos por RA aproximado para entrenar por secciones)
+- Archivo generador: `teoria/data/rutaReal232425.js`.
+- Esta ruta se integra con las recomendaciones automáticas de práctica del test.
 
 ### Plan de 12 dias (nuevo)
 
@@ -80,6 +91,7 @@ Desde `teoria/data/`:
 - **`practica/coleccion/`**: colección transversal basada en 2021-2025, con pares `sin_resolver` y `resueltos` para estudio guiado.
 - **`practica/2023/`**, **`practica/2024/`** y **`practica/2025/`**: ejercicios por año con pares `sin_resolver` / `resueltos`.
 - **`practica/2022/`**: carpeta disponible para seguir ampliando ejercicios por año.
+- **`practica/ruta_real_232425/`**: ejercicios específicos para entrenar la ruta real 23-24-25 por bloques de examen.
 
 ## Nota sobre `file://` y módulos
 
