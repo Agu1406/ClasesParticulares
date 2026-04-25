@@ -48,6 +48,7 @@
   font-weight: bold;
   text-decoration: underline;
   padding: 1rem 10px;
+  text-align: center;
 }
 
 .learn-info {
@@ -86,4 +87,12 @@
 
 .inicio-rapido-completo .leccion-cuerpo {
   margin-block-start: 0;
+}
+
+.lesson {
+  text-align: center;
+  font-weight: bold;
+  border: 1px solid black;
+  background-color: white;
+  color: black;
 }
