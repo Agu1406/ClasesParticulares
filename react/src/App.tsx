@@ -6,12 +6,16 @@ import Square from "./components/tres-en-linea/Square"
 // Estilos globales de la app.
 import "./App.css"
 
+// Importar el fondo de Vanta.
+import VantaBackground from "./components/VantaBackground"
+
 /**
  * Punto de entrada visual: inicio rápido completo (lección 10: textos + componentes 01–09).
  */
 export default function App() {
   return (
     <div className="app">
+      <VantaBackground />
       <main className="main">
         <h1 className='lesson'>Aprendiendo REACT</h1>
         <h2 className='lesson'>Inicio rapido</h2>

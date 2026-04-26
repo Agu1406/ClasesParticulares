@@ -21,6 +21,15 @@
 .main > * {
   min-width: 0;
   width: 100%;
+  position: relative;
+  z-index: 1;
+}
+
+.vanta-background {
+  position: fixed;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
 }
 
 /* Demos vivos: columna centrada; el <form> ocupa el ancho útil y el texto queda alineado al inicio */
