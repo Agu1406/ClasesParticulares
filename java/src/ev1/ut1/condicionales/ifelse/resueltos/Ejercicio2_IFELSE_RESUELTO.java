@@ -1,8 +1,8 @@
-package ev1.ut1.ejerciciosmixtos;
+package general.condicionales;
 
 /**
- * Ejercicio 2: while con ifelse
- * Objetivo: Cuenta del 1 al 20 y muestra PAR/IMPAR con if-else.
+ * Ejercicio 2 (ifelse): Determinar si una edad es mayor o menor de edad
+ * Versión resuelta.
  *
  * @author Agustín. A. Marquez. Piña
  * @since 29/04/2026
@@ -10,13 +10,13 @@ package ev1.ut1.ejerciciosmixtos;
  * @see <a href="https://github.com/Agu1406/ClasesParticulares">Repositorio GitHub</a>
  * @see <a href="https://agu1406.github.io/ClasesParticulares">GitHub Pages</a>
  */
-public class Ejercicio2_WhileConIfElse {
+public class Ejercicio2_IFELSE_RESUELTO {
     public static void main(String[] args) {
-        // TODO: declara variables necesarias
-                int i = 1;
-                while (i <= 10) {
-                    // TODO: aplica condicional ifelse aquí
-                    i++;
+        int edad = 16;
+                if (edad >= 18) {
+                    System.out.println("Mayor de edad");
+                } else {
+                    System.out.println("Menor de edad");
                 }
     }
 }
