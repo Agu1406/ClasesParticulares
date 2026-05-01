@@ -5,28 +5,41 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Tests de Programacion - Pruebas Libres</title>
     <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+      #selector-examen {
+        color: #0f172a;
+        background: rgba(255, 255, 255, 0.95);
+      }
+
+      #selector-examen option,
+      #selector-examen optgroup {
+        color: #0f172a;
+        background: #ffffff;
+      }
+    </style>
   </head>
-  <body class="min-h-screen bg-slate-100 text-slate-900">
-    <main class="mx-auto max-w-5xl px-4 py-8 md:px-6">
-      <header class="mb-6 rounded-2xl bg-white p-6 shadow-sm ring-1 ring-slate-200">
-        <h1 class="text-2xl font-bold tracking-tight text-slate-900 md:text-3xl">
+  <body class="min-h-screen bg-slate-950 text-slate-100">
+    <div id="vanta-topology" class="fixed inset-0 -z-10"></div>
+    <main class="relative z-10 mx-auto max-w-5xl px-4 py-8 md:px-6">
+      <header class="mb-6 rounded-2xl border border-white/20 bg-white/10 p-6 shadow-xl shadow-black/20 backdrop-blur-md">
+        <h1 class="text-2xl font-bold tracking-tight text-white md:text-3xl">
           Tests de Programacion - Pruebas Libres
         </h1>
-        <p class="mt-2 text-sm text-slate-600 md:text-base">
+        <p class="mt-2 text-sm text-slate-200 md:text-base">
           Elige el examen, responde y corrige al final. PDFs en
-          <code class="rounded bg-slate-100 px-1.5 py-0.5 text-slate-800">src/pruebaslibres/Pruebas_libres_20XX.pdf</code>.
+          <code class="rounded bg-white/20 px-1.5 py-0.5 text-slate-100">src/pruebaslibres/Pruebas_libres_20XX.pdf</code>.
         </p>
       </header>
 
-      <section class="mb-6 rounded-2xl bg-white p-5 shadow-sm ring-1 ring-slate-200">
+      <section class="mb-6 rounded-2xl border border-white/20 bg-white/10 p-5 shadow-xl shadow-black/20 backdrop-blur-md">
         <div class="flex flex-col gap-3 md:flex-row md:items-end">
           <div class="flex-1">
-            <label for="selector-examen" class="mb-1 block text-sm font-semibold text-slate-700">
+            <label for="selector-examen" class="mb-1 block text-sm font-semibold text-slate-100">
               Selecciona un examen
             </label>
             <select
               id="selector-examen"
-              class="w-full rounded-xl border border-slate-300 bg-white px-3 py-2 text-sm text-slate-900 outline-none transition focus:border-sky-500 focus:ring-2 focus:ring-sky-200"
+              class="w-full rounded-xl border border-white/40 bg-white/95 px-3 py-2 text-sm text-slate-900 outline-none transition focus:border-lime-300 focus:ring-2 focus:ring-lime-200/40"
             >
               <optgroup label="Examenes oficiales por año">
                 <option value="programacion2021">Programacion - Pruebas libres 2021 (40 preguntas)</option>
@@ -37,52 +50,86 @@
                 </option>
                 <option value="programacion2025">Programacion - Pruebas libres 2025 DAW (40 preguntas)</option>
               </optgroup>
-              <optgroup label="Ruta real 23-24-25 (nueva)">
-                <option value="rutaReal2023">Ruta real - Base 2023 (40 preguntas)</option>
-                <option value="rutaReal2024">Ruta real - Base 2024 (40 preguntas)</option>
-                <option value="rutaReal2025">Ruta real - Base 2025 (40 preguntas)</option>
-                <option value="rutaRealSimulacroA">Ruta real - Simulacro A mixto (40 preguntas)</option>
-                <option value="rutaRealSimulacroB">Ruta real - Simulacro B mixto (40 preguntas)</option>
-                <option value="rutaRealSimulacroC">Ruta real - Simulacro C mixto (40 preguntas)</option>
-                <option value="rutaReal2023Bloque01">Ruta real 2023 - Q1-Q4</option>
-                <option value="rutaReal2023Bloque02">Ruta real 2023 - Q5-Q8</option>
-                <option value="rutaReal2023Bloque03">Ruta real 2023 - Q9-Q12</option>
-                <option value="rutaReal2023Bloque04">Ruta real 2023 - Q13-Q16</option>
-                <option value="rutaReal2023Bloque05">Ruta real 2023 - Q17-Q20</option>
-                <option value="rutaReal2023Bloque06">Ruta real 2023 - Q21-Q24</option>
-                <option value="rutaReal2023Bloque07">Ruta real 2023 - Q25-Q28</option>
-                <option value="rutaReal2023Bloque08">Ruta real 2023 - Q29-Q32</option>
-                <option value="rutaReal2023Bloque09">Ruta real 2023 - Q33-Q36</option>
-                <option value="rutaReal2023Bloque10">Ruta real 2023 - Q37-Q40</option>
-                <option value="rutaReal2024Bloque01">Ruta real 2024 - Q1-Q4</option>
-                <option value="rutaReal2024Bloque02">Ruta real 2024 - Q5-Q8</option>
-                <option value="rutaReal2024Bloque03">Ruta real 2024 - Q9-Q12</option>
-                <option value="rutaReal2024Bloque04">Ruta real 2024 - Q13-Q16</option>
-                <option value="rutaReal2024Bloque05">Ruta real 2024 - Q17-Q20</option>
-                <option value="rutaReal2024Bloque06">Ruta real 2024 - Q21-Q24</option>
-                <option value="rutaReal2024Bloque07">Ruta real 2024 - Q25-Q28</option>
-                <option value="rutaReal2024Bloque08">Ruta real 2024 - Q29-Q32</option>
-                <option value="rutaReal2024Bloque09">Ruta real 2024 - Q33-Q36</option>
-                <option value="rutaReal2024Bloque10">Ruta real 2024 - Q37-Q40</option>
-                <option value="rutaReal2025Bloque01">Ruta real 2025 - Q1-Q5</option>
-                <option value="rutaReal2025Bloque02">Ruta real 2025 - Q6-Q10</option>
-                <option value="rutaReal2025Bloque03">Ruta real 2025 - Q11-Q15</option>
-                <option value="rutaReal2025Bloque04">Ruta real 2025 - Q16-Q20</option>
-                <option value="rutaReal2025Bloque05">Ruta real 2025 - Q21-Q25</option>
-                <option value="rutaReal2025Bloque06">Ruta real 2025 - Q26-Q30</option>
-                <option value="rutaReal2025Bloque07">Ruta real 2025 - Q31-Q35</option>
-                <option value="rutaReal2025Bloque08">Ruta real 2025 - Q36-Q40</option>
-                <option value="rutaReal2025Bloque09">Ruta real 2025 - Q41-Q45</option>
-                <option value="rutaReal2025Bloque10">Ruta real 2025 - Q46-Q50</option>
-                <option value="rutaRealRA1">Ruta real - Bloque RA1 aprox (3 preguntas)</option>
-                <option value="rutaRealRA2">Ruta real - Bloque RA2 aprox (3 preguntas)</option>
-                <option value="rutaRealRA3">Ruta real - Bloque RA3 aprox (6 preguntas)</option>
-                <option value="rutaRealRA4">Ruta real - Bloque RA4 aprox (6 preguntas)</option>
-                <option value="rutaRealRA5">Ruta real - Bloque RA5 aprox (4 preguntas)</option>
-                <option value="rutaRealRA6">Ruta real - Bloque RA6 aprox (7 preguntas)</option>
-                <option value="rutaRealRA7">Ruta real - Bloque RA7 aprox (6 preguntas)</option>
-                <option value="rutaRealRA8">Ruta real - Bloque RA8 aprox (3 preguntas)</option>
-                <option value="rutaRealRA9">Ruta real - Bloque RA9 aprox (2 preguntas)</option>
+              <optgroup label="Test nuevos 23-24-25">
+                <option value="rutaReal2023">Test nuevos - Base 2023 (40 preguntas)</option>
+                <option value="rutaReal2024">Test nuevos - Base 2024 (40 preguntas)</option>
+                <option value="rutaReal2025">Test nuevos - Base 2025 (40 preguntas)</option>
+                <option value="rutaRealSimulacroA">Test nuevos - Simulacro A mixto (40 preguntas)</option>
+                <option value="rutaRealSimulacroB">Test nuevos - Simulacro B mixto (40 preguntas)</option>
+                <option value="rutaRealSimulacroC">Test nuevos - Simulacro C mixto (40 preguntas)</option>
+                <option value="rutaReal2023Bloque01">Test nuevos 2023 - Q1-Q4 (10 preguntas)</option>
+                <option value="rutaReal2023Bloque02">Test nuevos 2023 - Q5-Q8 (10 preguntas)</option>
+                <option value="rutaReal2023Bloque03">Test nuevos 2023 - Q9-Q12 (10 preguntas)</option>
+                <option value="rutaReal2023Bloque04">Test nuevos 2023 - Q13-Q16 (10 preguntas)</option>
+                <option value="rutaReal2023Bloque05">Test nuevos 2023 - Q17-Q20 (10 preguntas)</option>
+                <option value="rutaReal2023Bloque06">Test nuevos 2023 - Q21-Q24 (10 preguntas)</option>
+                <option value="rutaReal2023Bloque07">Test nuevos 2023 - Q25-Q28 (10 preguntas)</option>
+                <option value="rutaReal2023Bloque08">Test nuevos 2023 - Q29-Q32 (10 preguntas)</option>
+                <option value="rutaReal2023Bloque09">Test nuevos 2023 - Q33-Q36 (10 preguntas)</option>
+                <option value="rutaReal2023Bloque10">Test nuevos 2023 - Q37-Q40 (10 preguntas)</option>
+                <option value="rutaReal2024Bloque01">Test nuevos 2024 - Q1-Q4 (10 preguntas)</option>
+                <option value="rutaReal2024Bloque02">Test nuevos 2024 - Q5-Q8 (10 preguntas)</option>
+                <option value="rutaReal2024Bloque03">Test nuevos 2024 - Q9-Q12 (10 preguntas)</option>
+                <option value="rutaReal2024Bloque04">Test nuevos 2024 - Q13-Q16 (10 preguntas)</option>
+                <option value="rutaReal2024Bloque05">Test nuevos 2024 - Q17-Q20 (10 preguntas)</option>
+                <option value="rutaReal2024Bloque06">Test nuevos 2024 - Q21-Q24 (10 preguntas)</option>
+                <option value="rutaReal2024Bloque07">Test nuevos 2024 - Q25-Q28 (10 preguntas)</option>
+                <option value="rutaReal2024Bloque08">Test nuevos 2024 - Q29-Q32 (10 preguntas)</option>
+                <option value="rutaReal2024Bloque09">Test nuevos 2024 - Q33-Q36 (10 preguntas)</option>
+                <option value="rutaReal2024Bloque10">Test nuevos 2024 - Q37-Q40 (10 preguntas)</option>
+                <option value="rutaReal2025Bloque01">Test nuevos 2025 - Q1-Q5 (10 preguntas)</option>
+                <option value="rutaReal2025Bloque02">Test nuevos 2025 - Q6-Q10 (10 preguntas)</option>
+                <option value="rutaReal2025Bloque03">Test nuevos 2025 - Q11-Q15 (10 preguntas)</option>
+                <option value="rutaReal2025Bloque04">Test nuevos 2025 - Q16-Q20 (10 preguntas)</option>
+                <option value="rutaReal2025Bloque05">Test nuevos 2025 - Q21-Q25 (10 preguntas)</option>
+                <option value="rutaReal2025Bloque06">Test nuevos 2025 - Q26-Q30 (10 preguntas)</option>
+                <option value="rutaReal2025Bloque07">Test nuevos 2025 - Q31-Q35 (10 preguntas)</option>
+                <option value="rutaReal2025Bloque08">Test nuevos 2025 - Q36-Q40 (10 preguntas)</option>
+                <option value="rutaRealRA1">Test nuevos - Bloque RA1 aprox (10 preguntas)</option>
+                <option value="rutaRealRA2">Test nuevos - Bloque RA2 aprox (10 preguntas)</option>
+                <option value="rutaRealRA3">Test nuevos - Bloque RA3 aprox (10 preguntas)</option>
+                <option value="rutaRealRA4">Test nuevos - Bloque RA4 aprox (10 preguntas)</option>
+                <option value="rutaRealRA5">Test nuevos - Bloque RA5 aprox (10 preguntas)</option>
+                <option value="rutaRealRA6">Test nuevos - Bloque RA6 aprox (10 preguntas)</option>
+                <option value="rutaRealRA7">Test nuevos - Bloque RA7 aprox (10 preguntas)</option>
+                <option value="rutaRealRA8">Test nuevos - Bloque RA8 aprox (10 preguntas)</option>
+                <option value="rutaRealRA9">Test nuevos - Bloque RA9 aprox (10 preguntas)</option>
+              </optgroup>
+              <optgroup label="PDFs clave 23-24-25 (foco total)">
+                <option value="rutaReal2023">PDF 23 - Examen completo (40 preguntas)</option>
+                <option value="rutaReal2024">PDF 24 - Examen completo (40 preguntas)</option>
+                <option value="rutaReal2025">PDF 25 - Examen completo (40 preguntas)</option>
+                <option value="rutaReal2023Bloque01">PDF 23 - Bloque 01 (Q1-Q4) (10 preguntas)</option>
+                <option value="rutaReal2023Bloque02">PDF 23 - Bloque 02 (Q5-Q8) (10 preguntas)</option>
+                <option value="rutaReal2023Bloque03">PDF 23 - Bloque 03 (Q9-Q12) (10 preguntas)</option>
+                <option value="rutaReal2023Bloque04">PDF 23 - Bloque 04 (Q13-Q16) (10 preguntas)</option>
+                <option value="rutaReal2023Bloque05">PDF 23 - Bloque 05 (Q17-Q20) (10 preguntas)</option>
+                <option value="rutaReal2023Bloque06">PDF 23 - Bloque 06 (Q21-Q24) (10 preguntas)</option>
+                <option value="rutaReal2023Bloque07">PDF 23 - Bloque 07 (Q25-Q28) (10 preguntas)</option>
+                <option value="rutaReal2023Bloque08">PDF 23 - Bloque 08 (Q29-Q32) (10 preguntas)</option>
+                <option value="rutaReal2023Bloque09">PDF 23 - Bloque 09 (Q33-Q36) (10 preguntas)</option>
+                <option value="rutaReal2023Bloque10">PDF 23 - Bloque 10 (Q37-Q40) (10 preguntas)</option>
+                <option value="rutaReal2024Bloque01">PDF 24 - Bloque 01 (Q1-Q4) (10 preguntas)</option>
+                <option value="rutaReal2024Bloque02">PDF 24 - Bloque 02 (Q5-Q8) (10 preguntas)</option>
+                <option value="rutaReal2024Bloque03">PDF 24 - Bloque 03 (Q9-Q12) (10 preguntas)</option>
+                <option value="rutaReal2024Bloque04">PDF 24 - Bloque 04 (Q13-Q16) (10 preguntas)</option>
+                <option value="rutaReal2024Bloque05">PDF 24 - Bloque 05 (Q17-Q20) (10 preguntas)</option>
+                <option value="rutaReal2024Bloque06">PDF 24 - Bloque 06 (Q21-Q24) (10 preguntas)</option>
+                <option value="rutaReal2024Bloque07">PDF 24 - Bloque 07 (Q25-Q28) (10 preguntas)</option>
+                <option value="rutaReal2024Bloque08">PDF 24 - Bloque 08 (Q29-Q32) (10 preguntas)</option>
+                <option value="rutaReal2024Bloque09">PDF 24 - Bloque 09 (Q33-Q36) (10 preguntas)</option>
+                <option value="rutaReal2024Bloque10">PDF 24 - Bloque 10 (Q37-Q40) (10 preguntas)</option>
+                <option value="rutaReal2025Bloque01">PDF 25 - Bloque 01 (Q1-Q5) (10 preguntas)</option>
+                <option value="rutaReal2025Bloque02">PDF 25 - Bloque 02 (Q6-Q10) (10 preguntas)</option>
+                <option value="rutaReal2025Bloque03">PDF 25 - Bloque 03 (Q11-Q15) (10 preguntas)</option>
+                <option value="rutaReal2025Bloque04">PDF 25 - Bloque 04 (Q16-Q20) (10 preguntas)</option>
+                <option value="rutaReal2025Bloque05">PDF 25 - Bloque 05 (Q21-Q25) (10 preguntas)</option>
+                <option value="rutaReal2025Bloque06">PDF 25 - Bloque 06 (Q26-Q30) (10 preguntas)</option>
+                <option value="rutaReal2025Bloque07">PDF 25 - Bloque 07 (Q31-Q35) (10 preguntas)</option>
+                <option value="rutaReal2025Bloque08">PDF 25 - Bloque 08 (Q36-Q40) (10 preguntas)</option>
+                <option value="rutaRealSimulacroA">PDFs 23-24-25 - Simulacro A (40 preguntas)</option>
+                <option value="rutaRealSimulacroB">PDFs 23-24-25 - Simulacro B (40 preguntas)</option>
+                <option value="rutaRealSimulacroC">PDFs 23-24-25 - Simulacro C (40 preguntas)</option>
               </optgroup>
               <optgroup label="Plan de 12 dias (mixto 2021-2025)">
                 <option value="planDia01_diagnostico">Dia 1 - Diagnostico (20 preguntas)</option>
@@ -116,7 +163,7 @@
           </div>
           <button
             id="boton-cargar-examen"
-            class="inline-flex h-10 items-center justify-center rounded-xl bg-sky-600 px-4 text-sm font-semibold text-white transition hover:bg-sky-700 focus:outline-none focus:ring-2 focus:ring-sky-300"
+            class="inline-flex h-10 items-center justify-center rounded-xl border border-white/30 bg-white/20 px-4 text-sm font-semibold text-slate-100 transition hover:bg-white/30 focus:outline-none focus:ring-2 focus:ring-lime-200/50"
           >
             Cargar examen
           </button>
@@ -127,15 +174,15 @@
         <!-- Las preguntas se generan desde script.js -->
       </section>
 
-      <section id="zona-resultados" class="hidden mt-6 rounded-2xl border border-emerald-200 bg-emerald-50 p-4">
-        <h2 class="text-lg font-semibold text-emerald-900">Resultado</h2>
-        <p id="texto-resultado" class="mt-1 text-sm text-emerald-800 md:text-base"></p>
+      <section id="zona-resultados" class="hidden mt-6 rounded-2xl border border-emerald-200/40 bg-emerald-500/15 p-4 backdrop-blur-md">
+        <h2 class="text-lg font-semibold text-emerald-100">Resultado</h2>
+        <p id="texto-resultado" class="mt-1 text-sm text-emerald-50 md:text-base"></p>
       </section>
 
       <div class="mt-6 flex justify-center">
         <button
           id="boton-corrector"
-          class="inline-flex h-11 items-center justify-center rounded-xl bg-emerald-600 px-6 text-sm font-semibold text-white transition hover:bg-emerald-700 focus:outline-none focus:ring-2 focus:ring-emerald-300"
+          class="inline-flex h-11 items-center justify-center rounded-xl border border-white/30 bg-white/20 px-6 text-sm font-semibold text-slate-100 transition hover:bg-white/30 focus:outline-none focus:ring-2 focus:ring-lime-200/50"
         >
           Corregir test
         </button>
@@ -148,8 +195,25 @@
     <script src="data/programacion2023.js"></script>
     <script src="data/programacion2024.js"></script>
     <script src="data/programacion2025.js"></script>
+    <script src="data/preguntasOriginales.js"></script>
     <script src="data/plan12dias.js"></script>
     <script src="data/rutaReal232425.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.4.0/p5.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vanta@latest/dist/vanta.topology.min.js"></script>
+    <script>
+      VANTA.TOPOLOGY({
+        el: "#vanta-topology",
+        mouseControls: true,
+        touchControls: true,
+        gyroControls: false,
+        minHeight: 200.0,
+        minWidth: 200.0,
+        scale: 1.0,
+        scaleMobile: 1.0,
+        backgroundColor: 0x2222,
+        color: 0x89964e,
+      });
+    </script>
     <script src="script.js"></script>
   </body>
 </html>

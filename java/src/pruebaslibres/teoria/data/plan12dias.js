@@ -16,6 +16,11 @@
     .map((id) => ({ id, preguntas: bancoExamenes[id] || [] }))
     .filter((fuente) => Array.isArray(fuente.preguntas) && fuente.preguntas.length > 0);
 
+  const preguntasOriginales = (window.bancoOriginal && window.bancoOriginal.all) || [];
+  if (Array.isArray(preguntasOriginales) && preguntasOriginales.length > 0) {
+    fuentes.push({ id: "originalesRA", preguntas: preguntasOriginales });
+  }
+
   function normalizarTexto(texto) {
     return (texto || "")
       .normalize("NFD")
@@ -165,12 +170,13 @@
     bancoExamenes[config.id] = examen;
   }
 
-  function construirTestNoRepetir(config, usadasGlobales, todasDedupe) {
+  function construirTestNoRepetir(config, usadasGlobales, todasDedupe, historialKeys) {
     const tamano = config.size || 20;
     const nivel = config.difficulty || "media";
     const candidatosTematicos = ordenarPorDificultad(deduplicar(filtrarPool(config)), nivel);
     const seleccion = [];
     const usadasLocales = new Set();
+    const recientes = new Set((historialKeys || []).flatMap((set) => [...set]));
 
     function agregar(lista, permitirRepetidasGlobales) {
       for (const item of lista) {
@@ -182,21 +188,37 @@
       }
     }
 
-    // Version B: primero intenta sin repetir entre dias.
-    agregar(candidatosTematicos, false);
+    // Version B: evita repetición reciente (ultimos dias) siempre que sea posible.
+    agregar(
+      candidatosTematicos.filter((item) => !recientes.has(item.key)),
+      false
+    );
+
+    // Si faltan, permite tematicas no recientes aunque vengan de dias mas antiguos.
+    if (seleccion.length < tamano) {
+      agregar(candidatosTematicos, false);
+    }
 
     // Si no llega, completa con cualquier pregunta no usada de bancos oficiales.
     if (seleccion.length < tamano) {
       const rellenoNoUsadas = ordenarPorDificultad(
-        todasDedupe.filter((item) => !usadasGlobales.has(item.key)),
+        todasDedupe.filter((item) => !usadasGlobales.has(item.key) && !recientes.has(item.key)),
         nivel
       );
       agregar(rellenoNoUsadas, false);
     }
 
+    if (seleccion.length < tamano) {
+      const rellenoNoUsadasSinFiltroReciente = ordenarPorDificultad(
+        todasDedupe.filter((item) => !usadasGlobales.has(item.key)),
+        nivel
+      );
+      agregar(rellenoNoUsadasSinFiltroReciente, false);
+    }
+
     // Ultimo fallback: permitir repeticion minima para no dejar dias incompletos.
     if (seleccion.length < tamano) {
-      const rellenoConReuso = ordenarPorDificultad(todasDedupe, nivel);
+      const rellenoConReuso = ordenarByRecencia(ordenarPorDificultad(todasDedupe, nivel), recientes);
       agregar(rellenoConReuso, true);
     }
 
@@ -210,7 +232,19 @@
     });
 
     seleccion.slice(0, tamano).forEach((item) => usadasGlobales.add(item.key));
+    historialKeys.push(new Set(seleccion.slice(0, tamano).map((item) => item.key)));
+    if (historialKeys.length > 3) {
+      historialKeys.shift();
+    }
     bancoExamenes[config.id] = examen;
+  }
+
+  function ordenarByRecencia(lista, recientes) {
+    return [...lista].sort((a, b) => {
+      const ar = recientes.has(a.key) ? 1 : 0;
+      const br = recientes.has(b.key) ? 1 : 0;
+      return ar - br;
+    });
   }
 
   const plan = [
@@ -305,5 +339,8 @@
   );
 
   const usadasGlobalesB = new Set();
-  planB.forEach((config) => construirTestNoRepetir(config, usadasGlobalesB, todasDedupe));
+  const historialRecienteB = [];
+  planB.forEach((config) =>
+    construirTestNoRepetir(config, usadasGlobalesB, todasDedupe, historialRecienteB)
+  );
 })();

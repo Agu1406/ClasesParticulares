@@ -151,7 +151,7 @@ function crearBotonEnlace(texto, href) {
   enlace.rel = "noopener noreferrer";
   enlace.textContent = texto;
   enlace.className =
-    "inline-flex items-center rounded-lg border border-slate-300 bg-white px-2 py-1 text-xs text-slate-700 hover:bg-slate-50";
+    "inline-flex items-center rounded-lg border border-white/30 bg-white/20 px-2 py-1 text-xs text-slate-100 backdrop-blur-sm hover:bg-white/30";
   return enlace;
 }
 
@@ -178,10 +178,10 @@ function renderizarRecomendacionPractica(parrafoFeedback, ejercicios) {
   }
 
   const bloque = document.createElement("div");
-  bloque.className = "bloque-practica mt-2 space-y-2 text-xs";
+  bloque.className = "bloque-practica mt-2 space-y-2 text-xs text-slate-100";
 
   const titulo = document.createElement("p");
-  titulo.className = "font-semibold";
+  titulo.className = "font-semibold text-slate-100";
   titulo.textContent = "Practica recomendada:";
   bloque.appendChild(titulo);
 
@@ -193,13 +193,13 @@ function renderizarRecomendacionPractica(parrafoFeedback, ejercicios) {
     const tipo = document.createElement("span");
     tipo.className =
       index === 0
-        ? "rounded bg-sky-100 px-1.5 py-0.5 text-[11px] font-semibold text-sky-700"
-        : "rounded bg-amber-100 px-1.5 py-0.5 text-[11px] font-semibold text-amber-700";
+        ? "rounded border border-sky-200/50 bg-sky-400/20 px-1.5 py-0.5 text-[11px] font-semibold text-sky-100"
+        : "rounded border border-amber-200/50 bg-amber-400/20 px-1.5 py-0.5 text-[11px] font-semibold text-amber-100";
     tipo.textContent = index === 0 ? "Principal" : "Refuerzo";
     fila.appendChild(tipo);
 
     const nombre = document.createElement("span");
-    nombre.className = "text-slate-700";
+    nombre.className = "text-slate-100";
     nombre.textContent = ejercicio;
     fila.appendChild(nombre);
 
@@ -277,15 +277,15 @@ function restaurarEstado() {
 function crearPregunta(pregunta) {
   const contenedor = document.createElement("article");
   contenedor.className =
-    "rounded-2xl border border-slate-200 bg-white p-5 shadow-sm";
+    "rounded-2xl border border-white/20 bg-white/10 p-5 shadow-xl shadow-black/20 backdrop-blur-md";
 
   const titulo = document.createElement("h2");
-  titulo.className = "text-base font-semibold text-slate-900 md:text-lg";
+  titulo.className = "text-base font-semibold text-white md:text-lg";
   titulo.textContent = `Pregunta ${pregunta.numero}`;
 
   const texto = document.createElement("pre");
   texto.className =
-    "mt-3 overflow-x-auto whitespace-pre-wrap rounded-xl bg-slate-50 p-3 text-sm leading-6 text-slate-700";
+    "mt-3 overflow-x-auto whitespace-pre-wrap rounded-xl border border-white/20 bg-white/10 p-3 text-sm leading-6 text-slate-100 backdrop-blur-sm";
   texto.textContent = pregunta.enunciado;
 
   contenedor.appendChild(titulo);
@@ -294,16 +294,16 @@ function crearPregunta(pregunta) {
   pregunta.opciones.forEach((opcion, indice) => {
     const etiqueta = document.createElement("label");
     etiqueta.className =
-      "mt-3 flex cursor-pointer items-start gap-3 rounded-xl border border-slate-200 bg-slate-50 p-3 transition hover:border-sky-300 hover:bg-sky-50";
+      "mt-3 flex cursor-pointer items-start gap-3 rounded-xl border border-white/20 bg-white/10 p-3 transition hover:border-lime-200/70 hover:bg-white/20";
 
     const radio = document.createElement("input");
     radio.type = "radio";
     radio.name = `pregunta-${pregunta.numero}`;
     radio.value = indice;
-    radio.className = "mt-1 h-4 w-4 border-slate-300 text-sky-600 focus:ring-sky-400";
+    radio.className = "mt-1 h-4 w-4 border-white/40 bg-white/10 text-lime-300 focus:ring-lime-300";
 
     const textoOpcion = document.createElement("span");
-    textoOpcion.className = "text-sm leading-6 text-slate-800";
+    textoOpcion.className = "text-sm leading-6 text-slate-100";
     textoOpcion.textContent = opcion;
 
     radio.addEventListener("change", () => {
@@ -318,7 +318,7 @@ function crearPregunta(pregunta) {
 
   const parrafoFeedback = document.createElement("p");
   parrafoFeedback.id = `feedback-${pregunta.numero}`;
-  parrafoFeedback.className = "mt-3 text-sm leading-6";
+  parrafoFeedback.className = "mt-3 text-sm leading-6 text-slate-100";
   contenedor.appendChild(parrafoFeedback);
 
   return contenedor;
@@ -345,8 +345,8 @@ function manejarRespuestaInmediata(numeroPregunta, indiceElegido) {
   if (sinClave) {
     parrafoFeedback.textContent =
       "Sin corrección automática (pregunta con clave null). " + textoBase;
-    parrafoFeedback.classList.remove("text-emerald-700", "text-rose-700");
-    parrafoFeedback.classList.add("text-amber-700");
+    parrafoFeedback.classList.remove("text-emerald-200", "text-rose-200");
+    parrafoFeedback.classList.add("text-amber-200");
     renderizarRecomendacionPractica(parrafoFeedback, ejercicios);
     return;
   }
@@ -355,12 +355,12 @@ function manejarRespuestaInmediata(numeroPregunta, indiceElegido) {
 
   if (respuestaEsCorrecta) {
     parrafoFeedback.textContent = "Correcto. " + textoBase;
-    parrafoFeedback.classList.remove("text-rose-700", "text-amber-700");
-    parrafoFeedback.classList.add("text-emerald-700");
+    parrafoFeedback.classList.remove("text-rose-200", "text-amber-200");
+    parrafoFeedback.classList.add("text-emerald-200");
   } else {
     parrafoFeedback.textContent = "Incorrecto. " + textoBase;
-    parrafoFeedback.classList.remove("text-emerald-700", "text-amber-700");
-    parrafoFeedback.classList.add("text-rose-700");
+    parrafoFeedback.classList.remove("text-emerald-200", "text-amber-200");
+    parrafoFeedback.classList.add("text-rose-200");
   }
   renderizarRecomendacionPractica(parrafoFeedback, ejercicios);
 }
