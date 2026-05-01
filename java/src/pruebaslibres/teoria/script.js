@@ -282,13 +282,28 @@ function crearPregunta(pregunta) {
   const titulo = document.createElement("h2");
   titulo.className = "text-base font-semibold text-white md:text-lg";
   titulo.textContent = `Pregunta ${pregunta.numero}`;
+  contenedor.appendChild(titulo);
+
+  const origen = document.createElement("div");
+  origen.className = "mt-1";
+  const textoExplicacion = pregunta.explicacion || "";
+  let etiquetaOrigen = "Origen: Oficial";
+  let claseOrigen = "border-slate-200/50 bg-slate-400/20 text-slate-100";
+  if (textoExplicacion.includes("[Origen: Original")) {
+    etiquetaOrigen = "Origen: Original";
+    claseOrigen = "border-violet-200/50 bg-violet-400/20 text-violet-100";
+  } else if (textoExplicacion.includes("[Ruta real:")) {
+    etiquetaOrigen = "Origen: Ruta real";
+    claseOrigen = "border-sky-200/50 bg-sky-400/20 text-sky-100";
+  }
+  origen.innerHTML = `<span class="inline-flex items-center rounded-md border px-2 py-0.5 text-[11px] font-semibold ${claseOrigen}">${etiquetaOrigen}</span>`;
+  contenedor.appendChild(origen);
 
   const texto = document.createElement("pre");
   texto.className =
     "mt-3 overflow-x-auto whitespace-pre-wrap rounded-xl border border-white/20 bg-white/10 p-3 text-sm leading-6 text-slate-100 backdrop-blur-sm";
   texto.textContent = pregunta.enunciado;
 
-  contenedor.appendChild(titulo);
   contenedor.appendChild(texto);
 
   pregunta.opciones.forEach((opcion, indice) => {
