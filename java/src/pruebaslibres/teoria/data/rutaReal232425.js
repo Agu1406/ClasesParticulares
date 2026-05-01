@@ -49,6 +49,18 @@
     }));
   }
 
+  function crearBloquesPorRango(base, year, tamBloque) {
+    const total = (base || []).length;
+    let bloque = 1;
+    for (let desde = 0; desde < total; desde += tamBloque) {
+      const hasta = Math.min(desde + tamBloque, total);
+      const id = `rutaReal${year}Bloque${String(bloque).padStart(2, "0")}`;
+      const etiqueta = `${year} Q${desde + 1}-Q${hasta}`;
+      bancoExamenes[id] = crearSubtest(base, desde, hasta, etiqueta);
+      bloque++;
+    }
+  }
+
   const p23 = bancoExamenes.programacion2023 || [];
   const p24 = bancoExamenes.programacion2024 || [];
   const p25 = bancoExamenes.programacion2025 || [];
@@ -74,4 +86,9 @@
   bancoExamenes.rutaRealRA7 = crearSubtest(p25, 29, 35, "RA7 aprox");
   bancoExamenes.rutaRealRA8 = crearSubtest(p25, 35, 38, "RA8 aprox");
   bancoExamenes.rutaRealRA9 = crearSubtest(p25, 38, 40, "RA9 aprox");
+
+  // Bloques directos por rango de preguntas para estudio guiado.
+  crearBloquesPorRango(p23, "2023", 4); // 10 bloques de 4
+  crearBloquesPorRango(p24, "2024", 4); // 10 bloques de 4
+  crearBloquesPorRango(p25, "2025", 5); // 10 bloques de 5
 })();

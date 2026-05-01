@@ -113,7 +113,28 @@ function normalizarTexto(texto) {
     .toLowerCase();
 }
 
-function ejerciciosRecomendadosParaPregunta(pregunta) {
+function ejercicioBloqueRutaReal(idExamen, numeroPregunta) {
+  if (idExamen === "rutaReal2023") {
+    const bloque = Math.ceil(numeroPregunta / 4);
+    return `EjercicioPDF2023_Bloque${String(bloque).padStart(2, "0")}`;
+  }
+  if (idExamen === "rutaReal2024") {
+    const bloque = Math.ceil(numeroPregunta / 4);
+    return `EjercicioPDF2024_Bloque${String(bloque).padStart(2, "0")}`;
+  }
+  if (idExamen === "rutaReal2025") {
+    const bloque = Math.ceil(numeroPregunta / 5);
+    return `EjercicioPDF2025_Bloque${String(bloque).padStart(2, "0")}`;
+  }
+  return null;
+}
+
+function ejerciciosRecomendadosParaPregunta(pregunta, idExamen) {
+  const bloqueExacto = ejercicioBloqueRutaReal(idExamen, pregunta.numero);
+  if (bloqueExacto) {
+    return [bloqueExacto];
+  }
+
   const texto = normalizarTexto(`${pregunta.enunciado || ""} ${pregunta.explicacion || ""}`);
   for (const regla of PRACTICA_RECOMENDADA) {
     if (regla.keywords.some((keyword) => texto.includes(keyword))) {
@@ -134,6 +155,22 @@ function crearBotonEnlace(texto, href) {
   return enlace;
 }
 
+function rutasParaEjercicio(ejercicio) {
+  if (RUTAS_EJERCICIOS[ejercicio]) {
+    return RUTAS_EJERCICIOS[ejercicio];
+  }
+  const match = /^EjercicioPDF(2023|2024|2025)_Bloque(\d{2})$/.exec(ejercicio);
+  if (!match) {
+    return null;
+  }
+  const year = match[1];
+  const block = match[2];
+  return {
+    sinResolver: `../practica/ruta_real_232425/${year}/sin_resolver/EjercicioPDF${year}_Bloque${block}_SIN_RESOLVER.java`,
+    resuelto: `../practica/ruta_real_232425/${year}/resueltos/EjercicioPDF${year}_Bloque${block}_RESUELTO.java`,
+  };
+}
+
 function renderizarRecomendacionPractica(parrafoFeedback, ejercicios) {
   const bloquePrevio = parrafoFeedback.querySelector(".bloque-practica");
   if (bloquePrevio) {
@@ -149,7 +186,7 @@ function renderizarRecomendacionPractica(parrafoFeedback, ejercicios) {
   bloque.appendChild(titulo);
 
   ejercicios.forEach((ejercicio, index) => {
-    const rutas = RUTAS_EJERCICIOS[ejercicio];
+    const rutas = rutasParaEjercicio(ejercicio);
     const fila = document.createElement("div");
     fila.className = "flex flex-wrap items-center gap-2";
 
@@ -303,7 +340,7 @@ function manejarRespuestaInmediata(numeroPregunta, indiceElegido) {
   const sinClave =
     pregunta.correcta === null || pregunta.correcta === undefined;
   const textoBase = pregunta.explicacion || "";
-  const ejercicios = ejerciciosRecomendadosParaPregunta(pregunta);
+  const ejercicios = ejerciciosRecomendadosParaPregunta(pregunta, idExamenActual);
 
   if (sinClave) {
     parrafoFeedback.textContent =
