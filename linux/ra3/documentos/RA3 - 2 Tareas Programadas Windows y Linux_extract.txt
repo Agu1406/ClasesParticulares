@@ -1,0 +1,116 @@
+=== RA3 - 2 Tareas Programadas Windows y Linux.pdf (4 pages) ===
+
+--- Page 1 ---
+1. TEORÍA PARA EXPLICAR (adaptada a 1º SMR)
+✔ ¿Qué es una tarea programada?
+Una tarea programada  es una acción que el sistema operativo 
+ejecuta automáticamente en una fecha u horario determinado, sin 
+que el usuario tenga que hacer nada.
+Se utilizan para:
+Crear copias de seguridad
+Ejecutar scripts automáticamente
+Actualizar programas
+Limpiar archivos temporales
+Apagar o reiniciar equipos en horario
+✔ Diferencias entre Windows y Linux
+Sistem
+aHerramienta
+Windo
+wsProgramador de tareas (Task Scheduler), 
+interfaz gráfica
+Linuxcron y el archivo crontab (editor de texto)
+2. PARTE PRÁCTICA EN WINDOWS (GUI)
+Objetivo
+Crear una tarea que ejecute un programa automáticamente.
+✔ Práctica 1: Programar la apertura del Bloc de notas 
+cada minuto
+Pasos:
+1.Abrir Programador de tareas
+(Menú Inicio → busca "Programador de tareas")
+2.En el panel derecho → Crear tarea básica
+3.Nombre:
+Abrir Bloc de notas automáticamente
+4.Trigger (desencadenador): Diariamente
+
+--- Page 2 ---
+5.Hora: la actual + 1 minuto
+6.Acción: Iniciar un programa
+7.Programa:
+8.C:\Windows\System32\notepad.exe
+9.Finalizar y esperar a que se ejecute.
+Entrega que pueden enviar:
+Captura de la tarea creada
+Comprobación de que se abre automáticamente
+3. PARTE PRÁCTICA EN UBUNTU (cron)
+🎯 Objetivo
+Programar un script que escriba la fecha en un archivo cada minuto.
+✔ Teoría breve de cron
+cron permite ejecutar tareas en Linux usando un formato de 5 
+campos:
+* * * * *
+| | | | |
+| | | | └── Día de la semana (0-6)
+| | | └──── Mes (1-12)
+| | └────── Día del mes (1-31)
+| └──────── Hora (0-23)
+└────────── Minuto (0-59)
+✔ Para editar cron:
+crontab -e
+✔ Práctica 2: Crear un script y ejecutarlo cada minuto
+1. Crear un script
+En la carpeta Documentos del alumno:
+nano ~/Documentos/fecha.sh
+
+--- Page 3 ---
+Contenido:
+#!/bin/bash
+echo "La fecha actual es: $(date)" >> ~/Documentos/registro.txt
+Dar permisos de ejecución:
+chmod +x ~/Documentos/fecha.sh
+2. Añadir una tarea cron
+Abrir cron:
+crontab -e
+Añadir al final:
+* * * * * /home/usuario/Documentos/fecha.sh
+(Sustituir usuario por su nombre real)
+Guardar → esperar 2 minutos.
+✔ Comprobación:
+Abrir el archivo:
+cat ~/Documentos/registro.txt
+Deben aparecer nuevas líneas con la fecha cada minuto.
+4. PROPUESTA DE ENUNCIADO PARA TU AULA VIRTUAL
+Aquí tienes un texto listo para copiar/pegar:
+Actividad: Tareas Programadas en Windows y Linux (1º 
+SMR)
+Objetivo de la práctica
+Aprender qué son las tareas programadas en un sistema operativo y 
+configurar tareas automáticas tanto en Windows como en Ubuntu.
+ 1. Parte teórica
+Lee la explicación del profesor sobre:
+Qué es una tarea programada
+
+--- Page 4 ---
+Para qué se usan
+Diferencias entre Windows (Task Scheduler) y Linux (cron)
+Formato de un archivo crontab
+2. Práctica en Windows
+Crea una tarea programada  que abra el Bloc de notas 
+automáticamente.
+Requisitos:
+Debe iniciarse mediante una tarea básica
+Debe ejecutarse a una hora indicada
+Debe abrir el programa notepad.exe
+Entrega:
+Captura de la configuración de la tarea
+Captura del Bloc de notas abierto automáticamente
+3. Práctica en Ubuntu (cron)
+Configura una tarea automática usando cron.
+Requisitos:
+1.Crear un script fecha.sh que escriba la fecha en un archivo 
+registro.txt.
+2.Programar cron para ejecutarlo cada minuto.
+Entrega:
+Contenido del archivo crontab
+Captura del archivo registro.txt mostrando varias líneas 
+generadas automáticamente
+

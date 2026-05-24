@@ -1,0 +1,145 @@
+=== RA3 - Teoria.pdf (5 pages) ===
+
+--- Page 1 ---
+RA3.md 2026-01-26
+1 / 5RA3 – Configuración básica de sistemas operativos
+1. El sistema operativo
+Un sistema operativ o (SO)  es el software principal de un ordenador. Se encarga de:
+Gestionar el hardware (CPU, memoria, disco, dispositivos)
+Permitir la ejecución de programas
+Proporcionar una interfaz para que el usuario interactúe con el sistema
+Ejemplos de sistemas operativos:
+Windows
+GNU/Linux (Ubuntu, Mint, Debian…)
+macOS
+2. Interfaces de usuario
+Interfaz de usuario: forma en la que el usuario se comunica con el sistema operativo.
+2.1 Interfaz gráfica de usuario (GUI)
+Características:
+Uso de ventanas, iconos, menús y ratón
+Más intuitiva y visual
+Ideal para usuarios sin conocimientos técnicos avanzados
+Ejemplos:
+Escritorio de Windows
+Escritorio de Linux (GNOME, Cinnamon, KDE…)
+Ventajas:
+Fácil de usar
+Aprendizaje rápido
+Inconvenientes:
+Consume más recursos
+Menos flexible para tareas avanzadas
+2.2 Interfaz de línea de comandos (CLI)
+La CLI (Command Line Int erface)  permite interactuar con el sistema escribiendo comandos de texto.
+Ejemplos:
+
+--- Page 2 ---
+RA3.md 2026-01-26
+2 / 5Windows: CMD, P owerShell
+Linux: T erminal
+Ventajas:
+Muy potente
+Permite automatizar tareas
+Inconvenientes:
+Menos intuitiva
+Requiere aprender comandos
+Ejemplo en Linux:
+ls 
+cd Documentos  
+mkdir Proyectos  
+Ejemplo en Windows:
+dir 
+cd Documentos  
+mkdir Proyectos  
+3. Configuración del entorno personal
+El entorno per sonal  son las opciones que permiten adaptar el sistema operativo a las preferencias del
+usuario.
+Elementos configurables:
+Fondo de pantalla
+Tema (claro / oscuro)
+Idioma y región
+Fecha y hora
+Sonido y notificaciones
+Opciones de energía
+4. Sistemas de archivos
+El sistema de ar chivos es la forma en la que el sistema operativo organiza la información en el disco.
+4.1 Archivos y carpetas
+Archivo: conjunto de datos almacenados
+
+--- Page 3 ---
+RA3.md 2026-01-26
+3 / 5Carpeta: contenedor de archivos y otras carpetas
+Operaciones básicas:
+Crear
+Copiar
+Mover
+Renombrar
+Eliminar
+Ejemplo en Linux:
+mkdir Empresa  
+cp archivo.txt Empresa  
+mv archivo.txt Empresa  
+rm archivo.txt  
+Ejemplo en Windows:
+mkdir Empresa  
+copy archivo.txt Empresa  
+move archivo.txt Empresa  
+del archivo.txt  
+4.2 Rutas
+Ruta absoluta:
+Windows: C:\Usuarios\Alumno\Documentos
+Linux: /home/alumno/Documentos
+Ruta relativa: depende de la ubicación actual
+4.3 Permisos de archivos (Linux)
+Tipos de permisos:
+r: lectura
+w: escritura
+x: ejecución
+Ejemplo:
+ls -l archivo.txt  
+
+--- Page 4 ---
+RA3.md 2026-01-26
+4 / 5Cambiar permisos:
+chmod 755 script.sh  
+5. Instalación y desinstalación de software
+El sistema operativo permite instalar y eliminar programas.
+Ejemplo en Linux:
+sudo apt update  
+sudo apt install vlc  
+Ejemplo en Windows:
+winget install Google.Chrome  
+6. Actualización del sistema operativo
+Las actualizaciones corrigen errores y mejoran la seguridad del sistema.
+Ventajas:
+Mayor seguridad
+Mejor estabilidad
+Compatibilidad con nuevos programas
+7. Recuperación del sistema operativo
+Permite volver a un estado anterior cuando hay fallos.
+Ejemplos:
+Puntos de restauración en Windows
+Herramientas de recuperación en Linux
+8. Asistentes de configuración
+Facilitan la configuración de:
+Red
+Dispositivos
+
+--- Page 5 ---
+RA3.md 2026-01-26
+5 / 5Usuarios
+DHCP
+Asigna direcciones IP automáticamente
+9. Automatización de tareas
+La automatización permite ejecutar tareas sin intervención del usuario.
+Ejemplo de script en Linux:
+echo "Hola mundo" > saludo.txt  
+Ejemplo de tarea:
+Ejecutar un programa todos los días a las 8:00
+10. Importancia de la configuración básica
+Una correcta configuración permite:
+Trabajar de forma segura
+Reducir errores
+Facilitar el mantenimiento del sistema
+Estas tareas forman parte del trabajo de un
+técnico en sist emas micr oinfor máticos y r edes .
+

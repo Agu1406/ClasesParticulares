@@ -1,0 +1,183 @@
+=== RA3 - 1 EstructuraSO.pdf (10 pages) ===
+
+--- Page 1 ---
+¿Cómo se estructura un sistema 
+operativo?
+Un Sistema Operativo (SO) es el software fundamental que permite que el 
+hardware y las aplicaciones trabajen de forma coordinada. Actúa como 
+intermediario inteligente entre los componentes físicos del ordenador y los 
+programas que utilizamos a diario. Aunque su funcionamiento interno es 
+complejo, su arquitectura puede comprenderse mediante cuatro bloques 
+principales que exploraremos en esta presentación.
+
+--- Page 2 ---
+El núcleo o Kernel: el corazón del sistema
+El kernel es la parte más importante del sistema operativo, su componente 
+esencial que nunca deja de funcionar. Permanece siempre cargado en la memoria 
+RAM y actúa como capa intermedia entre el software y el hardware , traduciendo las 
+peticiones de los programas en instrucciones que los componentes físicos pueden 
+ejecutar.
+Su función principal es gestionar todos los recursos del ordenador de forma 
+eficiente y segura, asegurando que cada programa reciba lo que necesita sin 
+interferir con otros procesos activos.
+Gestión del hardware
+Control de CPU, RAM, discos y dispositivos conectadosControl de procesos
+Decide qué se ejecuta, cuándo y con qué prioridad
+Asignación de memoria
+Distribuye la RAM entre todos los programas activosProtección del sistema
+Coordina permisos y seguridad de acceso
+
+--- Page 3 ---
+Los controladores (Drivers): traduciendo lenguajes
+Los controladores o drivers son pequeños programas especializados que permiten la comunicación entre el sistema operativo y los 
+dispositivos de hardware. Funcionan como intérpretes o traductores que convierten las instrucciones genéricas del SO en comandos 
+específicos que cada dispositivo puede comprender y ejecutar.
+Sin drivers instalados, el hardware simplemente no funciona. Es como intentar hablar con alguien que no comprende tu idioma.
+Windows
+Instala la mayoría de drivers 
+automáticamente mediante Windows 
+Update, aunque algunos dispositivos 
+especializados requieren instalación 
+manual desde el fabricante.Linux
+Integra numerosos controladores 
+directamente en el kernel, ofreciendo 
+compatibilidad inmediata con muchos 
+dispositivos comunes sin instalación 
+adicional.Ejemplo práctico
+Cuando conectas una impresora nueva 
+y Windows instala automáticamente el 
+controlador, estás viendo un driver en 
+acción permitiendo la comunicación con 
+el dispositivo.
+
+--- Page 4 ---
+El sistema de archivos: organizando la información
+El sistema de archivos (File System) es el método 
+mediante el cual el sistema operativo organiza, 
+almacena y recupera archivos en discos duros, 
+memorias USB y otros dispositivos de almacenamiento. 
+Define la estructura lógica que convierte millones de 
+bits sin sentido en carpetas, documentos y programas 
+accesibles.
+Sin un sistema de archivos, un disco sería simplemente 
+un conjunto caótico de datos binarios imposible de 
+interpretar o utilizar de forma práctica.
+NTFS
+Sistema de archivos de Windows que permite permisos avanzados, FAT32 / exFAT
+Usados principalmente en pendrives y tarjetas SD por su EXT4
+El sistema de archivos estándar de Linux, optimizado para 
+
+--- Page 5 ---
+Gestión de procesos: la multitarea en acción
+Un proceso es simplemente un programa en ejecución. Cada vez que abres una aplicación, el sistema operativo crea un nuevo proceso para e lla. La gestión 
+de procesos es la función que permite que tu ordenador ejecute múltiples programas simultáneamente sin que unos bloqueen a ot ros.
+Crear procesos
+Inicia nuevos programas cuando el usuario lo solicita
+Planificar CPU
+Reparte el tiempo de procesador entre todos los procesos activos
+Aislar procesos
+Evita que un programa problemático afecte a los demás
+Finalizar procesos
+Cierra programas y libera los recursos que utilizaban
+Ejemplo práctico: Cuando tienes abiertos el navegador, un procesador de textos y música reproduciéndose simultáneamente, el sistema operativo 
+reparte rápidamente el tiempo de CPU entre estos procesos, creando la sensación de que todos funcionan al mismo tiempo.
+
+--- Page 6 ---
+Gestión de memoria: optimizando los recursos
+La gestión de memoria es una función crítica del sistema operativo que 
+decide cómo se utiliza la RAM del ordenador. El SO actúa como un 
+administrador inteligente que asigna espacios específicos de memoria a 
+cada programa, evitando conflictos y optimizando el rendimiento general del 
+sistema.
+Cuando la RAM física se agota, el sistema puede utilizar memoria virtual , 
+moviendo temporalmente datos menos usados al disco duro para liberar 
+espacio en la RAM para procesos más activos.
+01
+Asignación de memoria
+Determina qué programa usa qué porción específica de la RAM disponible02
+Memoria virtual
+Amplía la RAM efectiva usando espacio en disco cuando la memoria física es insuficiente
+03
+Liberación de recursos
+Recupera memoria de programas cerrados para reutilizarla con nuevos procesos04
+Protección de memoria
+Evita que procesos accedan a zonas de memoria de otros programas, previniendo errores y 
+mejorando la seguridad
+
+--- Page 7 ---
+La interfaz de usuario: GUI vs CLI
+La interfaz de usuario es la capa visible del sistema operativo, aquello con lo que interactuamos directamente. Es importante entender que la interfaz no es el sistema operativo en sí , sino 
+una capa superior que facilita la interacción humana con las funciones del kernel.
+1
+GUI (Interfaz Gráfica)
+Basada en ventanas, iconos y menús visuales. Intuitiva y amigable para usuarios sin 
+conocimientos técnicos. Ejemplos: Windows, escritorios de Linux (KDE, GNOME, XFCE), 
+macOS. Consume más recursos del sistema.2
+CLI (Línea de Comandos)
+Basada en texto y comandos escritos. Más eficiente para tareas repetitivas y 
+automatización. Ejemplos: CMD, PowerShell, Bash. Muy utilizada en servidores por ser 
+más ligera y permitir mayor control preciso.
+Los sistemas Linux destacan por su flexibilidad, permitiendo cambiar completamente la interfaz gráfica según las preferencias del usuario, manteniendo el mismo kernel subyacente.
+
+--- Page 8 ---
+Servicios y demonios: trabajando en segundo plano
+Los servicios (en Windows) o demonios (en Linux) son programas que funcionan continuamente en segundo plano, sin que el usuario los vea 
+directamente. Realizan tareas esenciales para el funcionamiento del sistema o proporcionan funcionalidades que otros programa s necesitan.
+En Linux, estos programas se identifican fácilmente porque sus nombres terminan en "d" (daemon): sshd, httpd, systemd...
+Cliente DHCP
+Solicita automáticamente una dirección IP al router cuando te conectas a 
+una red, sin intervención manual.
+Servicios de impresión
+Gestionan la cola de impresión y la comunicación con las impresoras 
+conectadas al sistema.
+Actualizaciones automáticas
+Verifican periódicamente si hay actualizaciones disponibles y las 
+descargan en segundo plano.
+Servidores web y bases de datos
+Apache, MySQL y otros servicios que permiten alojar sitios web y gestionar 
+información.
+
+--- Page 9 ---
+Arquitectura por capas del sistema operativo
+Para comprender mejor cómo se organiza un sistema operativo, podemos visualizarlo como una estructura de capas donde cada nivel proporciona servicios al nivel superior y 
+utiliza los servicios del nivel inferior. Esta arquitectura facilita el mantenimiento, la actualización y la seguridad del si stema.
+Aplicaciones del usuario
+Navegadores, procesadores de texto, juegos y demás programas que utilizamos directamente
+Utilidades y servicios del sistema
+Programas auxiliares que facilitan tareas de mantenimiento, configuración y gestión
+Controladores (Drivers)
+Software especializado que permite la comunicación con dispositivos hardware específicos
+Kernel (Núcleo)
+Gestiona recursos, memoria, procesos y proporciona servicios fundamentales del sistema
+Hardware
+Componentes físicos: procesador, memoria RAM, disco duro, tarjetas de red y 
+periféricos
+Cada capa tiene responsabilidades específicas y se comunica únicamente con las capas adyacentes, creando una arquitectura mod ular y mantenible.
+
+--- Page 10 ---
+Conceptos resumen
+Como futuros técnicos en Sistemas Microinformáticos y Redes, es fundamental que comprendáis estos conceptos esenciales sobre la estructura del sistema operativo:
+1
+El kernel es el corazón del SO
+Siempre en memoria, gestiona hardware, procesos 
+y recursos fundamentales2
+Los drivers conectan SO y hardware
+Sin controladores adecuados, los dispositivos no 
+pueden funcionar3
+Sistemas de archivos organizan datos
+NTFS para Windows, FAT32/exFAT para portabilidad, 
+EXT4 para Linux
+4
+Procesos, servicios y demonios
+Programas en ejecución que trabajan visible o 
+invisiblemente para el usuario5
+RAM y memoria virtual
+Gestión inteligente de memoria para optimizar 
+rendimiento del sistema6
+GUI vs CLI
+Interfaces gráficas para facilidad de uso, línea de 
+comandos para control y eficiencia
+7
+Arquitectura en capas
+Desde el hardware hasta las aplicaciones, cada nivel cumple funciones específicas
+

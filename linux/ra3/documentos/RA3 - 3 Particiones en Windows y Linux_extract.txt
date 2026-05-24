@@ -1,0 +1,240 @@
+=== RA3 - 3 Particiones en Windows y Linux.pdf (8 pages) ===
+
+--- Page 1 ---
+Manual Teórico -Práctico: Particiones en Windows y 
+Linux (MBR)  
+ 
+¿Qué es una partición?  
+Una partición  es una división lógica de un disco duro físico.  
+Aunque tengamos un solo disco , podemos dividirlo en varias partes 
+independientes para:  
+• Instalar sistemas operativos  
+• Separar sistema y datos  
+• Organizar información  
+• Hacer copias de seguridad más fácilmente  
+Ejemplo:  
+Disco físico: 500 GB  
+• Partición 1 → 150 GB → Windows  
+• Partición 2 → 100 GB → Ubuntu  
+• Partición 3 → 250 GB → Datos  
+Cada partición funciona como si fuera un disco independiente.  
+ 
+Estructura de particiones MBR  
+En este manual trabajaremos solo con MBR (Master Boot Record) . 
+• ¿Qué es MBR?  
+MBR es un sistema antiguo de organización del disco que:  
+• Permite un máximo de 4 particiones primarias  
+• Soporta discos de hasta 2 TB  
+• Guarda la información de arranque en el primer sector del disco  
+• Es compatible con BIOS tradicional  
+ 
+
+--- Page 2 ---
+Tipos de particiones en MBR  
+En un disco MBR existen tres tipos de particiones:  
+ 
+1. Partición primaria  
+• Puede contener un sistema operativo.  
+• Puede marcarse como activa (arrancable).  
+• Máximo 4 primarias por disco.  
+Ejemplo:  
+• C: (Windows)  
+• D: (Datos)  
+ 
+2. Partición extendida  
+• Solo puede haber una. 
+• No almacena datos directamente.  
+• Sirve como “contenedor” de particiones lógicas.  
+Se crea cuando necesitamos más de 4 particiones.  
+ 
+3. Partición lógica  
+• Se crean dentro de la partición extendida.  
+• Puede haber muchas.  
+• Se usan normalmente para datos o sistemas Linux.  
+Ejemplo práctico:  
+• Primaria 1 → Windows  
+• Primaria 2 → Datos  
+• Primaria 3 → Extendida  
+o Lógica 1 → Ubuntu  
+o Lógica 2 → /home  
+o Lógica 3 → swap  
+
+--- Page 3 ---
+Sistemas de archivos (MUY IMPORTANTE)  
+Una partición no sirve para nada si no tiene un sistema de archivos . 
+El sistema de archivos es el método que utiliza el sistema operativo para:  
+• Organizar los datos  
+• Guardar archivos  
+• Controlar permisos  
+• Gestionar el espacio libre  
+Es como el “idioma” que usa el sistema para entender el disco.  
+ 
+Sistemas de archivos más comunes (explicación profunda)  
+NTFS  
+Usado en sistemas modernos de  
+Microsoft Windows  
+como Windows 10 y Windows 11.  
+Características:  
+• Permite archivos muy grandes.  
+• Permite particiones grandes.  
+• Sistema de permisos avanzado.  
+• Compresión de archivos.  
+• Cifrado (EFS).  
+• Registro de cambios (journaling).  
+• Muy estable.  
+Ventajas:  
+✔ Seguro  
+✔ Fiable  
+✔ Compatible con Windows  
+Desventajas:  
+✖ Linux puede leerlo bien, pero no es su sistema nativo  
+ 
+
+--- Page 4 ---
+FAT32  
+Sistema antiguo pero muy compatible.  
+Características:  
+• Compatible con casi todos los sistemas (Windows, Linux, Mac).  
+• Muy usado en USB.  
+• No permite archivos mayores de 4 GB. 
+• Tamaño máximo de partición limitado.  
+Ventajas:  
+✔ Máxima compatibilidad  
+✔ Ideal para memorias USB peque ñas 
+Desventajas:  
+✖ No permite archivos grandes  
+✖ Sin sistema de permisos  
+✖ Sin journaling  
+ 
+exFAT  
+Evolución de FAT32.  
+Características:  
+• Permite archivos grandes.  
+• Muy usado en USB y discos externos.  
+• Compatible con Windows y Linux moderno.  
+Ventajas:  
+✔ Ideal para pendrives grandes  
+✔ Compatible entre sistemas  
+Desventajas:  
+✖ No tiene sistema avanzado de permisos  
+✖ No tiene journaling completo  
+ 
+ 
+
+--- Page 5 ---
+ext4  
+Sistema de archivos estándar en  
+Ubuntu.  
+Características:  
+• Muy rápido.  
+• Muy estable.  
+• Permite archivos y particiones muy grandes.  
+• Sistema de permisos avanzado.  
+• Journaling.  
+• Mejor rendimiento en Linux.  
+¿Qué es el journaling?  
+Es un sistema que guarda un “registro” antes de hacer cambios importantes.  
+Si el ordenador se apaga de forma brusca, puede recuperar la información.  
+swap (Linux)  
+No es exactamente un sistema de archivos normal.  
+Se usa como:  
+• Memoria virtual.  
+• Apoyo cuando la RAM se llena.  
+Puede ser:  
+• Una partición swap  
+• Un archivo swap  
+Ejemplo:  
+Si tenemos 4 GB de RAM, podemos crear 2 GB de swap.  
+Comparativa clara  
+Sistema  Permite archivos >4GB  Permisos  Journaling  Uso principal  
+NTFS  ✔ ✔ ✔ Windows  
+FAT32  ✖ ✖ ✖ USB pequeños  
+exFAT  ✔ ✖ Parcial  USB grandes  
+
+--- Page 6 ---
+Sistema  Permite archivos >4GB  Permisos  Journaling  Uso principal  
+ext4  ✔ ✔ ✔ Linux  
+swap  — — — Memoria virtual  
+Crear particiones en Windows (MBR)  
+En sistemas como Windows 10:  
+• Paso 1: Abrir Administrador de discos  
+1. Windows + R  
+2. Escribir:  
+diskmgmt.msc  
+ 
+• Paso 2: Reducir volumen  
+1. Botón derecho en C:  
+2. Reducir volumen  
+3. Elegir tamaño en MB  
+Se crea espacio no asignado . 
+ 
+• Paso 3: Crear nueva partición primaria  
+1. Botón derecho en espacio no asignado  
+2. Nuevo volumen simple  
+3. Elegir tamaño  
+4. Formato NTFS  
+5. Finalizar  
+  
+
+--- Page 7 ---
+Crear particiones en Ubuntu (MBR)  
+En Ubuntu:  
+• Método gráfico (Recomendado)  
+Abrir:  
+• Herramienta Discos  
+• O instalar GParted:  
+sudo apt install gparted  
+Ejecutar:  
+sudo gparted  
+Pasos:  
+1. Seleccionar disco  
+2. Reducir partición existente  
+3. Crear nueva partición lógica dentro de extendida  
+4. Elegir sistema ext4  
+5. Aplicar cambios  
+ 
+• Método por terminal (nivel medio)  
+Ver discos:  
+lsblk  
+Editar disco:  
+sudo fdisk /dev/sdb  
+Comandos:  
+• n → nueva partición  
+• p → primaria  
+• e → extendida  
+• w → guardar  
+Formatear:  
+sudo mkfs.ext4 /dev/sdb1  
+
+--- Page 8 ---
+Crear swap:  
+sudo mkswap /dev/sdb2  
+sudo swapon /dev/sdb2  
+Buenas prácticas  
+✔ Siempre hacer copia de seguridad  
+✔ Practicar en m áquinas virtuales  
+✔ Entender antes de modificar  
+✔ No borrar particiones del sistema  
+10. Ejercicios para el alumnado  
+1. ¿Cuántas particiones primarias permite MBR?  
+2. ¿Para qué sirve la partición extendida?  
+3. ¿Qué diferencia hay entre FAT32 y NTFS?  
+4. ¿Qué es el journaling?  
+5. Crea en una máquina virtual:  
+o Una partición NTFS de 20 GB  
+o Una partición lógica ext4 de 10 GB  
+ 
+Conclusión  
+Las particiones permiten organizar un disco físico en varias partes lógicas.  
+En sistemas MBR existen particiones primarias, extendidas y lógicas.  
+El sistema de archivos es fundamental para que el sistema operativo pueda 
+almacenar y gestionar la información correctamente.  
+Dominar este concepto es básico para cualquier técnico en Sistemas 
+Microinformáticos y Redes.  
+ 
+Crear particiones Windows:  
+https://www.youtube.com/watch?v=139DZMjm4yo  
+MBR: 4 particiones primarias o 3 p articiones primarias + 1 extendida  
+GPT: 5 particiones pri marias  
+ 
+
