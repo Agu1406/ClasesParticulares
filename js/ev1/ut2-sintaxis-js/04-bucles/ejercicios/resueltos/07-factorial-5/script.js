@@ -1,0 +1,14 @@
+/**
+ * Factorial 5
+ * @description 1*2*3*4*5.
+ * @author Agustín. A. Marquez. Piña
+ * @since 27/05/2026
+ * @level easy
+ * @see <a href="mailto:agu1406@outlook.es">agu1406@outlook.es</a>
+ * @see <a href="https://github.com/Agu1406/ClasesParticulares">Repositorio GitHub</a>
+ * @see <a href="https://www.agustinmarquez.dev">agustinmarquez.dev</a>
+ */
+
+let f = 1;
+for (let i = 1; i <= 5; i++) f *= i;
+console.log(f);

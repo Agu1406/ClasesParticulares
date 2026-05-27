@@ -1,0 +1,14 @@
+/**
+ * Documentar
+ * @description Función con comentario // que suma.
+ * @author Agustín. A. Marquez. Piña
+ * @since 27/05/2026
+ * @level easy
+ * @see <a href="mailto:agu1406@outlook.es">agu1406@outlook.es</a>
+ * @see <a href="https://github.com/Agu1406/ClasesParticulares">Repositorio GitHub</a>
+ * @see <a href="https://www.agustinmarquez.dev">agustinmarquez.dev</a>
+ */
+
+/** Suma dos números */
+function suma(a, b) { return a + b; }
+console.log(suma(2, 3));

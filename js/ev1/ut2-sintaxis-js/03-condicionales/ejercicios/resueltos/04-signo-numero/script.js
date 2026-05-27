@@ -1,0 +1,15 @@
+/**
+ * Signo
+ * @description n=-3 negativo/positivo/cero.
+ * @author Agustín. A. Marquez. Piña
+ * @since 27/05/2026
+ * @level easy
+ * @see <a href="mailto:agu1406@outlook.es">agu1406@outlook.es</a>
+ * @see <a href="https://github.com/Agu1406/ClasesParticulares">Repositorio GitHub</a>
+ * @see <a href="https://www.agustinmarquez.dev">agustinmarquez.dev</a>
+ */
+
+const n = -3;
+if (n > 0) console.log("+");
+else if (n < 0) console.log("-");
+else console.log("0");
