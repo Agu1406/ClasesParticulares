@@ -1,0 +1,14 @@
+/**
+ * URL de recursos
+ * @description Almacena en constantes una URL base y un path y concaténalos.
+ * @author Agustín. A. Marquez. Piña
+ * @since 27/05/2026
+ * @level easy
+ * @see <a href="mailto:agu1406@outlook.es">agu1406@outlook.es</a>
+ * @see <a href="https://github.com/Agu1406/ClasesParticulares">Repositorio GitHub</a>
+ * @see <a href="https://www.agustinmarquez.dev">agustinmarquez.dev</a>
+ */
+
+const base = "https://ejemplo.es";
+const path = "/api/alumnos";
+console.log(`${base}${path}`);
