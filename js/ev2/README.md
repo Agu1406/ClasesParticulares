@@ -30,12 +30,14 @@
 - Patrones básicos (factory, singleton introductorio)
 - POO aplicada a dominio del enunciado
 
-**Ejercicios en este repo:**
+**Ejercicios en este repo (ut5):**
 
 | Proyecto | Enunciado | Código |
 | --- | --- | --- |
-| Tocadiscos | [documentos/Ejercicio todadiscos musica.md](./por_centro/andalucia/almeria/documentos/Ejercicio%20todadiscos%20musica.md) | [iesaguadulce/ejercicio tocadiscos musica/](./por_centro/andalucia/almeria/iesaguadulce/ejercicio%20tocadiscos%20musica/) |
-| Ejército romano | [PDF en documentos/](./por_centro/andalucia/almeria/documentos/) | [iesaguadulce/ejercicio ejercito romano/](./por_centro/andalucia/almeria/iesaguadulce/ejercicio%20ejercito%20romano/) |
+| Tocadiscos (Almería) | [enunciado](./ut5-poo-colecciones/enunciados/tocadiscos--almeria-iesaguadulce.md) | [código](./ut5-poo-colecciones/almeria-iesaguadulce-tocadiscos/) |
+| Ejército romano (Almería) | — | [código](./ut5-poo-colecciones/almeria-iesaguadulce-ejercito-romano/) |
+| Arrays y cifrados (Madrid, Ventura Rodríguez) | — | [topic-3](./ut5-poo-colecciones/madrid-iesventurarodriguez-topic-3-arrays/) |
+| Funciones y POO (Madrid, Ventura Rodríguez) | — | [topic-4](./ut5-poo-colecciones/madrid-iesventurarodriguez-topic-4-funciones-poo/) |
 
 **Al terminar la UT:** proyecto POO con al menos 2 niveles de herencia o composición clara.
 
@@ -48,6 +50,8 @@
 - Prueba y documentación
 
 **Al terminar la UT:** formulario validado sin envío real o con envío simulado.
+
+**Material Ventura Rodríguez (Madrid):** [madrid-iesventurarodriguez-topic-5-eventos](./ut6-eventos-formularios/madrid-iesventurarodriguez-topic-5-eventos/).
 
 ## Entregables típicos (referencia)
 

@@ -21,8 +21,6 @@ js/
 │   ├── ut4-objetos-navegador/
 │   ├── ut5-poo-colecciones/
 │   ├── ut6-eventos-formularios/
-│   ├── por_centro/              # Ejercicios por CCAA / provincia / centro (como java/src/ev3/por_centro)
-│   │   └── andalucia/almeria/…
 │   └── README.md
 └── ev3/                         # 3.ª evaluación
     ├── ut7-dom/
@@ -30,7 +28,20 @@ js/
     └── README.md
 ```
 
-Cada carpeta `ut*` es un hueco para teoría genérica. Los proyectos **de un instituto concreto** van en `evN/por_centro/{comunidad}/{provincia}/{centro}/`, igual que en Java pero bajo la evaluación que toque (no hace falta esperar a ev3 si el ejercicio es de EV2).
+Cada carpeta `ut*` agrupa el temario genérico y, si aplica, proyectos de centro con nombre `{provincia}-{centro}-{tema}/` (ej. `almeria-iesaguadulce-tocadiscos`, `madrid-iesventurarodriguez-topic-2`).
+
+---
+
+## Dos o tres evaluaciones según el centro
+
+El **BOE** define 7 RA; el **centro** reparte en **2 o 3 trimestres** en la programación didáctica.
+
+| Modelo | Cuándo | En este repo |
+| --- | --- | --- |
+| **3 evaluaciones** | Muchos IES (mapa por defecto abajo) | `ev1` + `ev2` + `ev3` |
+| **2 evaluaciones** | Algunos centros en 2.º (ej. DWEC con 2 trimestres lectivos) | Mismo árbol: 1.º trimestre → `ev1`, 2.º trimestre → `ev2`+`ev3`; RA 7 puede quedar fuera o en recuperación |
+
+Material de referencia **2 trimestres** (IES Arquitecto Ventura Rodríguez, Madrid, curso 2024–25): topics 1–4 en 1.º trimestre, topics 5–6 + examen final en 2.º — ver carpetas `madrid-iesventurarodriguez-*` en `ev1`–`ev3`.
 
 ---
 
@@ -65,8 +76,8 @@ La repartición en **3 evaluaciones** reproduce el esquema habitual de FP (tres 
 
 **Ejercicios en el repo (EV2 / ut5):**
 
-- [Tocadiscos (POO, herencia, polimorfismo)](./ev2/por_centro/andalucia/almeria/documentos/Ejercicio%20todadiscos%20musica.md) — código en `ev2/por_centro/andalucia/almeria/iesaguadulce/ejercicio tocadiscos musica/`
-- [Ejército romano (POO)](./ev2/por_centro/andalucia/almeria/iesaguadulce/ejercicio%20ejercito%20romano/) — clases `Soldado`, `Centuria`, `Legion`
+- [Tocadiscos — enunciado](./ev2/ut5-poo-colecciones/enunciados/tocadiscos--almeria-iesaguadulce.md) — [código](./ev2/ut5-poo-colecciones/almeria-iesaguadulce-tocadiscos/)
+- [Ejército romano (POO)](./ev2/ut5-poo-colecciones/almeria-iesaguadulce-ejercito-romano/) — clases `Soldado`, `Centuria`, `Legion`
 
 #### EV3 — DOM dinámico y comunicación asíncrona
 
@@ -126,26 +137,22 @@ La lógica es la misma: **EV = trimestre académico**, **UT = bloque dentro del 
 
 ---
 
-## Convención `por_centro` (Andalucía, Madrid, …)
-
-En **Java**, el material de un instituto concreto está en `java/src/ev3/por_centro/{comunidad}/…/ {centro}/`.
-
-En **JS** se repite la idea, pero la carpeta `por_centro` cuelga de la **evaluación donde encaja el RA** (no todo en ev3):
+## Convención por centro (sin carpetas geográficas)
 
 | Capa | Ruta | Qué guarda |
 | --- | --- | --- |
 | Temario / UT genérica | `evN/utX-…/` | Apuntes reutilizables, ejercicios tipo |
-| Proyecto de un centro | `evN/por_centro/{ccaa}/{provincia}/{centro}/` | Código y enunciados de ese instituto |
-| Enunciados provinciales | `…/por_centro/…/{provincia}/documentos/` | PDF/MD compartidos en la provincia |
+| Proyecto o bloque de clase de un centro | `evN/utX-…/{provincia}-{centro}-{tema}/` | Código del instituto (ej. `madrid-iesventurarodriguez-topic-5-eventos`) |
+| Enunciados | `evN/utX-…/enunciados/{tema}--{provincia}-{centro}.ext` | PDF, MD o DOCX del enunciado |
 
-**PHP** en este repo usa solo geografía en la raíz (`php/andalucia/almeria/…`). **Java y JS** combinan **evaluación + geografía** para que sepas a la vez *cuándo* se da en DWEC y *de dónde* viene el ejercicio.
+**PHP** en este repo usa geografía en la raíz (`php/andalucia/…`). **Java y JS** usan **evaluación + nombre de centro** en la ruta.
 
 ---
 
 ## Próximos pasos en el repo
 
-- [ ] Apuntes y ejercicios en `ev1/ut1` … `ev3/ut8`
+- [ ] Ampliar apuntes genéricos en UT aún vacías (`ut3`, `ut4`, `ut8`, …)
 - [ ] Exámenes tipo por evaluación en `evN/docs/`
-- [ ] Ampliar material por centro en `evN/por_centro/andalucia/`, `…/madrid/`, etc.
+- [x] Material clase DWEC — IES Ventura Rodríguez (Madrid), 2 trimestres
 
 Guías detalladas por evaluación: [ev1/README.md](./ev1/README.md), [ev2/README.md](./ev2/README.md), [ev3/README.md](./ev3/README.md).

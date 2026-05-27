@@ -2,12 +2,13 @@
 
 **Evaluación:** EV2 · **RA:** 4
 
-## Ejercicios en el repo (por centro)
+## Ejercicios en el repo
 
-**Andalucía · Almería · IES Aguadulce** — ver [por_centro/README.md](../por_centro/README.md)
+| Centro | Proyecto | Ruta |
+| --- | --- | --- |
+| Almería · IES Aguadulce | Tocadiscos | [enunciado](./enunciados/tocadiscos--almeria-iesaguadulce.md) · [código](./almeria-iesaguadulce-tocadiscos/) |
+| Almería · IES Aguadulce | Ejército romano | [código](./almeria-iesaguadulce-ejercito-romano/) |
+| Madrid · IES Ventura Rodríguez | Arrays, strings (topic 3) | [madrid-iesventurarodriguez-topic-3-arrays](./madrid-iesventurarodriguez-topic-3-arrays/) |
+| Madrid · IES Ventura Rodríguez | Funciones, POO (topic 4) | [madrid-iesventurarodriguez-topic-4-funciones-poo](./madrid-iesventurarodriguez-topic-4-funciones-poo/) |
 
-- [Tocadiscos — enunciado](../por_centro/andalucia/almeria/documentos/Ejercicio%20todadiscos%20musica.md)
-- [Tocadiscos — código](../por_centro/andalucia/almeria/iesaguadulce/ejercicio%20tocadiscos%20musica/)
-- [Ejército romano — código](../por_centro/andalucia/almeria/iesaguadulce/ejercicio%20ejercito%20romano/)
-
-Ver [../README.md](../README.md#ut5-poo-colecciones-ra-4).
+Ver [../README.md](../README.md).

@@ -23,6 +23,13 @@
 
 **Al terminar la UT:** página que construya o modifique listas/tablas dinámicamente sin frameworks.
 
+**Material Ventura Rodríguez (Madrid, 2.º trimestre):**
+
+- [topic-6 — DOM](./ut7-dom/madrid-iesventurarodriguez-topic-6-dom/) — enlaces, `href`, marcado, párrafos
+- [examen final](./ut7-dom/madrid-iesventurarodriguez-examen-final/) — 3 ejercicios (Betis, DOM, etc.)
+
+En centros con solo 2 evaluaciones, este bloque cierra el módulo; **ut8** (fetch, APIs) puede no impartirse.
+
 ### ut8-async-frameworks (RA 7)
 
 - Sincronía vs asincronía; callback hell (contexto)

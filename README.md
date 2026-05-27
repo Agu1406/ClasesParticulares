@@ -91,8 +91,9 @@ La idea surgió este año (2025) después de más de un año impartiendo clases,
 - Estructura modular con recursos y layouts
 
 ### **js/**
-- Desarrollo con JavaScript (en desarrollo)
-- Preparado para ejercicios y proyectos JavaScript
+- **DWEC** (módulo 0612, 2.º DAW): temario BOE, mapa RA → evaluaciones (`ev1`–`ev3`) y unidades teóricas
+- DWEC por evaluaciones (`ev1`–`ev3`); ejercicios por centro con nombre (`almeria-iesaguadulce-tocadiscos`, `madrid-iesventurarodriguez-topic-*`, …)
+- Ver [js/README.md](js/README.md) y [BOE DWEC](js/BOE-2023-06-03-RD-405-modulo-0612-DWEC.md)
 
 ### **php/**
 - Desarrollo web con PHP organizado por regiones:
