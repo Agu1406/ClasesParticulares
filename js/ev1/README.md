@@ -52,9 +52,8 @@ Curso con **2 trimestres** de DWEC (2024–25). Bloques de clase importados desd
 
 | Carpeta | Tema en clase (topic) | UT |
 | --- | --- | --- |
-| [ut1/…/madrid-iesventurarodriguez-topic-1](./ut1-cliente-web/madrid-iesventurarodriguez-topic-1/) | Cliente web, HTML+JS, ejercicios 1.1–2.0 | ut1 |
+| [ut1/…/madrid-iesventurarodriguez-topic-1](./ut1-cliente-web/madrid-iesventurarodriguez-topic-1/) | Cliente web, HTML+JS, ejercicios 1.1–2.0 (sin CSS externo) | ut1 |
 | [ut2/…/madrid-iesventurarodriguez-topic-2](./ut2-sintaxis-js/madrid-iesventurarodriguez-topic-2/) | Variables, primitivos, operadores | ut2 |
-| [ut1/…/madrid-iesventurarodriguez-recursos](./ut1-cliente-web/madrid-iesventurarodriguez-recursos/) | CSS compartido de entregas | ut1 |
 
 ## Enlace al BOE
 
