@@ -46,14 +46,20 @@
 - Práctica RA 2: ejercicios de sintaxis (10–15 problemas)
 - Examen EV1: parte teórica RA 1–2 + práctica corta en navegador
 
-## Material de referencia — IES Arquitecto Ventura Rodríguez (Madrid)
+## Orden de estudio en cada UT (convención C)
 
-Curso con **2 trimestres** de DWEC (2024–25). Bloques de clase importados desde apuntes propios:
+1. Subtemas numerados `01-…` → `04-…` (o más): `teoria/` + `ejercicios/pendientes|resueltos/` (01–10).
+2. En el mismo subtema, `practicas/`: entregas reales de institutos (cualquier centro), tras dominar el bloque.
+3. Último bloque: `05-integracion`, `06-integracion`, etc. — repaso de toda la UT.
 
-| Carpeta | Tema en clase (topic) | UT |
-| --- | --- | --- |
-| [ut1/…/madrid-iesventurarodriguez-topic-1](./ut1-cliente-web/madrid-iesventurarodriguez-topic-1/) | Cliente web, HTML+JS, ejercicios 1.1–2.0 (sin CSS externo) | ut1 |
-| [ut2/…/madrid-iesventurarodriguez-topic-2](./ut2-sintaxis-js/madrid-iesventurarodriguez-topic-2/) | Variables, primitivos, operadores | ut2 |
+**UT1 — prácticas Ventura Rodríguez (Madrid, 2024–25):**
+
+| Ruta | Contenido |
+| --- | --- |
+| [02-scripts-en-html/practicas/](./ut1-cliente-web/02-scripts-en-html/practicas/) | Ejercicios 1.1, 1.2 y 2.0 |
+| [04-integracion-html-js/practicas/](./ut1-cliente-web/04-integracion-html-js/practicas/) | Ejemplo 1.0 (formulario + JS) |
+
+**Pendiente de integrar en subtemas:** [ut2/…/madrid-iesventurarodriguez-topic-2](./ut2-sintaxis-js/madrid-iesventurarodriguez-topic-2/) (sintaxis).
 
 ## Enlace al BOE
 

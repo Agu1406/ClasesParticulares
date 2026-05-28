@@ -28,7 +28,7 @@ js/
     └── README.md
 ```
 
-Cada carpeta `ut*` agrupa el temario genérico y, si aplica, proyectos de centro con nombre `{provincia}-{centro}-{tema}/` (ej. `almeria-iesaguadulce-tocadiscos`, `madrid-iesventurarodriguez-topic-2`).
+Cada `ut*` se recorre por subtemas numerados (`01-…`, `02-…`, …, `0N-integracion`). Dentro de cada subtema: `teoria/`, `ejercicios/` (01–10 genéricos) y `practicas/` (entregas de cualquier instituto).
 
 ---
 
@@ -137,15 +137,19 @@ La lógica es la misma: **EV = trimestre académico**, **UT = bloque dentro del 
 
 ---
 
-## Convención por centro (sin carpetas geográficas)
+## Convención de carpetas (temario + centros)
 
 | Capa | Ruta | Qué guarda |
 | --- | --- | --- |
-| Temario / UT genérica | `evN/utX-…/` | Apuntes reutilizables, ejercicios tipo |
-| Proyecto o bloque de clase de un centro | `evN/utX-…/{provincia}-{centro}-{tema}/` | Código del instituto (ej. `madrid-iesventurarodriguez-topic-5-eventos`) |
-| Enunciados | `evN/utX-…/enunciados/{tema}--{provincia}-{centro}.ext` | PDF, MD o DOCX del enunciado |
+| Subtema BOE | `evN/utX-…/01-tema/`, `02-…`, … | Bloque numerado del temario |
+| Teoría | `…/teoria/*.js` | Ejemplos ejecutables comentados (JSDoc) |
+| Ejercicios genéricos | `…/ejercicios/pendientes\|resueltos/01-…` | 10 + 10 por subtema (nivel fácil, progresivo) |
+| Prácticas de instituto | `…/practicas/{origen}-…/` | Entregas reales dentro del subtema que toca (ej. `ventura-ejercicio-1.2`) |
+| Integración UT | `…/05-integracion/` (o `06-`, según subtemas) | Último bloque: repaso de toda la UT |
+| Enunciados sueltos | `evN/utX-…/enunciados/{tema}--{provincia}-{centro}.ext` | PDF, MD o DOCX |
+| Proyectos grandes | `evN/utX-…/{provincia}-{centro}-{proyecto}/` | Solo si no encaja en un subtema (ej. tocadiscos) |
 
-**PHP** en este repo usa geografía en la raíz (`php/andalucia/…`). **Java y JS** usan **evaluación + nombre de centro** en la ruta.
+**PHP** usa geografía en la raíz (`php/andalucia/…`). **JS** prioriza **subtema numerado**; el material de centro va en `practicas/`, no como carpeta suelta al lado de `01-04`.
 
 ---
 

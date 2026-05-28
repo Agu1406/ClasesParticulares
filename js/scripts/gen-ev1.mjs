@@ -85,8 +85,9 @@ function writeSubtopic(utPath, subtopic) {
   writeExercises(dir, subtopic.exercises);
 }
 
-function writeIntegracion(utPath, exercises) {
-  const dir = path.join(utPath, "integracion-ut");
+/** @param {string} integracionDir ej. "05-integracion" (último bloque numerado de la UT) */
+function writeIntegracion(utPath, integracionDir, exercises) {
+  const dir = path.join(utPath, integracionDir);
   writeExercises(dir, exercises);
 }
 
@@ -184,7 +185,7 @@ writeSubtopic(ut1, {
   exercises: mkUt1Sub4(),
 });
 
-writeIntegracion(ut1, mkUt1Integracion());
+writeIntegracion(ut1, "05-integracion", mkUt1Integracion());
 
 // --- UT2 ---
 const ut2 = path.join(JS_ROOT, "ev1", "ut2-sintaxis-js");
@@ -306,7 +307,7 @@ console.log(precioConIva(100));`,
   exercises: mkUt2Sub5(),
 });
 
-writeIntegracion(ut2, mkUt2Integracion());
+writeIntegracion(ut2, "06-integracion", mkUt2Integracion());
 
 // --- UT3 ---
 const ut3 = path.join(JS_ROOT, "ev1", "ut3-objetos-intro");
@@ -365,7 +366,7 @@ writeSubtopic(ut3, {
   exercises: mkUt3Sub3(),
 });
 
-writeIntegracion(ut3, mkUt3Integracion());
+writeIntegracion(ut3, "04-integracion", mkUt3Integracion());
 
 console.log("EV1 generado correctamente.");
 
