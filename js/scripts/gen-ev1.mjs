@@ -85,9 +85,9 @@ function writeSubtopic(utPath, subtopic) {
   writeExercises(dir, subtopic.exercises);
 }
 
-/** @param {string} integracionDir ej. "05-integracion" (último bloque numerado de la UT) */
-function writeIntegracion(utPath, integracionDir, exercises) {
-  const dir = path.join(utPath, integracionDir);
+/** @param {string} repasoDir ej. "05-repaso" (último bloque numerado de la UT) */
+function writeRepaso(utPath, repasoDir, exercises) {
+  const dir = path.join(utPath, repasoDir);
   writeExercises(dir, exercises);
 }
 
@@ -171,7 +171,7 @@ console.log("Network: peticiones, estado HTTP, tiempos");`,
 });
 
 writeSubtopic(ut1, {
-  id: "04-integracion-html-js",
+  id: "04-dom",
   theory: [
     {
       file: "01-enlazar-js-al-dom.js",
@@ -185,7 +185,7 @@ writeSubtopic(ut1, {
   exercises: mkUt1Sub4(),
 });
 
-writeIntegracion(ut1, "05-integracion", mkUt1Integracion());
+writeRepaso(ut1, "05-repaso", mkUt1Integracion());
 
 // --- UT2 ---
 const ut2 = path.join(JS_ROOT, "ev1", "ut2-sintaxis-js");
@@ -307,7 +307,7 @@ console.log(precioConIva(100));`,
   exercises: mkUt2Sub5(),
 });
 
-writeIntegracion(ut2, "06-integracion", mkUt2Integracion());
+writeRepaso(ut2, "06-repaso", mkUt2Integracion());
 
 // --- UT3 ---
 const ut3 = path.join(JS_ROOT, "ev1", "ut3-objetos-intro");
@@ -366,7 +366,7 @@ writeSubtopic(ut3, {
   exercises: mkUt3Sub3(),
 });
 
-writeIntegracion(ut3, "04-integracion", mkUt3Integracion());
+writeRepaso(ut3, "04-repaso", mkUt3Integracion());
 
 console.log("EV1 generado correctamente.");
 

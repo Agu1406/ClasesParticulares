@@ -17,7 +17,7 @@
 - Modelo cliente / servidor y rol del navegador
 - Ejecución de scripts: interno, externo, defer/async
 - DevTools: consola, Elements, Network
-- Integración `<script>` + HTML
+- Primeros pasos con `document` y el DOM (`04-dom`; el DOM completo es EV3 / `ut7-dom`)
 - Herramientas: VS Code, extensiones, Live Server
 
 **Al terminar la UT:** explicar dónde se ejecuta el JS y demostrar uso básico de DevTools.
@@ -50,14 +50,14 @@
 
 1. Subtemas numerados `01-…` → `04-…` (o más): `teoria/` + `ejercicios/pendientes|resueltos/` (01–10).
 2. En el mismo subtema, `practicas/`: entregas reales de institutos (cualquier centro), tras dominar el bloque.
-3. Último bloque: `05-integracion`, `06-integracion`, etc. — repaso de toda la UT.
+3. Último bloque: `05-repaso`, `06-repaso`, etc. — repaso de toda la UT.
 
 **UT1 — prácticas Ventura Rodríguez (Madrid, 2024–25):**
 
 | Ruta | Contenido |
 | --- | --- |
 | [02-scripts-en-html/practicas/](./ut1-cliente-web/02-scripts-en-html/practicas/) | Ejercicios 1.1, 1.2 y 2.0 |
-| [04-integracion-html-js/practicas/](./ut1-cliente-web/04-integracion-html-js/practicas/) | Ejemplo 1.0 (formulario + JS) |
+| [04-dom/practicas/](./ut1-cliente-web/04-dom/practicas/) | Ejemplo 1.0 (formulario + JS) |
 
 **Pendiente de integrar en subtemas:** [ut2/…/madrid-iesventurarodriguez-topic-2](./ut2-sintaxis-js/madrid-iesventurarodriguez-topic-2/) (sintaxis).
 

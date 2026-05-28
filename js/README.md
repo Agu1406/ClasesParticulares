@@ -145,7 +145,7 @@ La lógica es la misma: **EV = trimestre académico**, **UT = bloque dentro del 
 | Teoría | `…/teoria/*.js` | Ejemplos ejecutables comentados (JSDoc) |
 | Ejercicios genéricos | `…/ejercicios/pendientes\|resueltos/01-…` | 10 + 10 por subtema (nivel fácil, progresivo) |
 | Prácticas de instituto | `…/practicas/{origen}-…/` | Entregas reales dentro del subtema que toca (ej. `ventura-ejercicio-1.2`) |
-| Integración UT | `…/05-integracion/` (o `06-`, según subtemas) | Último bloque: repaso de toda la UT |
+| Repaso UT | `…/05-repaso/` (o `06-repaso`, según subtemas) | Último bloque numerado: ejercicios que mezclan toda la UT |
 | Enunciados sueltos | `evN/utX-…/enunciados/{tema}--{provincia}-{centro}.ext` | PDF, MD o DOCX |
 | Proyectos grandes | `evN/utX-…/{provincia}-{centro}-{proyecto}/` | Solo si no encaja en un subtema (ej. tocadiscos) |
 
