@@ -76,8 +76,8 @@ La repartición en **3 evaluaciones** reproduce el esquema habitual de FP (tres 
 
 **Ejercicios en el repo (EV2 / ut5):**
 
-- [Tocadiscos — enunciado](./ev2/ut5-poo-colecciones/enunciados/tocadiscos--almeria-iesaguadulce.md) — [código](./ev2/ut5-poo-colecciones/almeria-iesaguadulce-tocadiscos/)
-- [Ejército romano (POO)](./ev2/ut5-poo-colecciones/almeria-iesaguadulce-ejercito-romano/) — clases `Soldado`, `Centuria`, `Legion`
+- [Tocadiscos — enunciado](./ev2/ut5-poo-colecciones/enunciados/tocadiscos--almeria-iesaguadulce.md) — [código](./ev2/ut5-poo-colecciones/03-objetos-y-clases/practicas/almeria-tocadiscos/)
+- [Ejército romano (POO)](./ev2/ut5-poo-colecciones/03-objetos-y-clases/practicas/almeria-ejercito-romano/) — clases `Soldado`, `Centuria`, `Legion`
 
 #### EV3 — DOM dinámico y comunicación asíncrona
 

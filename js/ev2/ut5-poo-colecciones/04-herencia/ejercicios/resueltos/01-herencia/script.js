@@ -1,0 +1,14 @@
+/**
+ * Herencia 1
+ * @description extends Empleado de Persona.
+ * @author Agustín. A. Marquez. Piña
+ * @since 27/05/2026
+ * @level easy
+ * @see <a href="mailto:agu1406@outlook.es">agu1406@outlook.es</a>
+ * @see <a href="https://github.com/Agu1406/ClasesParticulares">Repositorio GitHub</a>
+ * @see <a href="https://www.agustinmarquez.dev">agustinmarquez.dev</a>
+ */
+
+class Persona{constructor(n){this.n=n;}}
+class Empleado extends Persona{dept="IT";}
+console.log(new Empleado("Ana").dept);

@@ -17,7 +17,7 @@
 - Objeto `window`: tamaño, location, open/close
 - Objeto `document`: title, URL, write (uso controlado)
 - Diálogos: `alert`, `confirm`, `prompt`
-- `localStorage` / `sessionStorage` (sustituto moderno de cookies en práctica)
+- `localStorage` / `sessionStorage`
 - Depuración y documentación del código
 
 **Al terminar la UT:** mini-app que persista preferencias en `localStorage`.
@@ -26,18 +26,15 @@
 
 - Funciones: declaración, parámetros, return, arrow functions
 - Arrays: métodos, recorrido, `map`, `filter`, `reduce`
-- Clases ES6, herencia, `#` campos privados
-- Patrones básicos (factory, singleton introductorio)
+- Clases ES6, herencia, prototipos
 - POO aplicada a dominio del enunciado
 
-**Ejercicios en este repo (ut5):**
+**Proyectos de instituto (ut5):**
 
 | Proyecto | Enunciado | Código |
 | --- | --- | --- |
-| Tocadiscos (Almería) | [enunciado](./ut5-poo-colecciones/enunciados/tocadiscos--almeria-iesaguadulce.md) | [código](./ut5-poo-colecciones/almeria-iesaguadulce-tocadiscos/) |
-| Ejército romano (Almería) | — | [código](./ut5-poo-colecciones/almeria-iesaguadulce-ejercito-romano/) |
-| Arrays y cifrados (Madrid, Ventura Rodríguez) | — | [topic-3](./ut5-poo-colecciones/madrid-iesventurarodriguez-topic-3-arrays/) |
-| Funciones y POO (Madrid, Ventura Rodríguez) | — | [topic-4](./ut5-poo-colecciones/madrid-iesventurarodriguez-topic-4-funciones-poo/) |
+| Tocadiscos (Almería) | [enunciado](./ut5-poo-colecciones/enunciados/tocadiscos--almeria-iesaguadulce.md) | [práctica](./ut5-poo-colecciones/03-objetos-y-clases/practicas/almeria-tocadiscos/) |
+| Ejército romano (Almería) | — | [práctica](./ut5-poo-colecciones/03-objetos-y-clases/practicas/almeria-ejercito-romano/) |
 
 **Al terminar la UT:** proyecto POO con al menos 2 niveles de herencia o composición clara.
 
@@ -47,17 +44,32 @@
 - `addEventListener` vs atributos HTML
 - Formularios: `submit`, validación en cliente
 - Expresiones regulares para email, DNI, etc.
-- Prueba y documentación
 
 **Al terminar la UT:** formulario validado sin envío real o con envío simulado.
-
-**Material Ventura Rodríguez (Madrid):** [madrid-iesventurarodriguez-topic-5-eventos](./ut6-eventos-formularios/madrid-iesventurarodriguez-topic-5-eventos/).
 
 ## Entregables típicos (referencia)
 
 - Proyecto POO (ut5) — **40–50 %** de la nota de EV2 en muchos centros
 - Práctica eventos + formulario (ut6)
 - Examen: teoría RA 4–5 + corrección de código
+
+## Orden de estudio en cada UT (convención C)
+
+1. Subtemas numerados `01-…` → `04-…` (o más): `teoria/` + `ejercicios/pendientes|resueltos/` (01–10).
+2. En el mismo subtema, `practicas/`: entregas reales de institutos, tras dominar el bloque.
+3. Último bloque: `05-repaso` — repaso de toda la UT.
+
+## Estructura por UT (convención C)
+
+Cada UT sigue el mismo esquema que [EV1 / ut1](../ev1/ut1-cliente-web/): subtemas `01-…` → `05-repaso`, con `teoria/`, `ejercicios/` y `practicas/` solo si hay material de centro.
+
+| UT | Subtemas | Repaso | Prácticas de instituto |
+| --- | --- | --- | --- |
+| [ut4-objetos-navegador](./ut4-objetos-navegador/) | `01` window · `02` document · `03` diálogos · `04` storage | `05-repaso` | — (solo material genérico) |
+| [ut5-poo-colecciones](./ut5-poo-colecciones/) | `01` funciones · `02` arrays · `03` objetos/clases · `04` herencia | `05-repaso` | Ventura en `01`–`04`; Almería en `03` |
+| [ut6-eventos-formularios](./ut6-eventos-formularios/) | `01` modelo eventos · `02` listeners · `03` formularios · `04` regexp | `05-repaso` | Ventura en `01`–`02` |
+
+Regenerar ejercicios genéricos: `node js/scripts/gen-ev2.mjs` (usa `gen-dwec-lib.mjs`).
 
 ## Enlace al BOE
 
