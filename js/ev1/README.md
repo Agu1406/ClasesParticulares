@@ -52,14 +52,15 @@
 2. En el mismo subtema, `practicas/`: entregas reales de institutos (cualquier centro), tras dominar el bloque.
 3. Último bloque: `05-repaso`, `06-repaso`, etc. — repaso de toda la UT.
 
-**UT1 — prácticas Ventura Rodríguez (Madrid, 2024–25):**
+## Estructura por UT (convención C)
 
-| Ruta | Contenido |
-| --- | --- |
-| [02-scripts-en-html/practicas/](./ut1-cliente-web/02-scripts-en-html/practicas/) | Ejercicios 1.1, 1.2 y 2.0 |
-| [04-dom/practicas/](./ut1-cliente-web/04-dom/practicas/) | Ejemplo 1.0 (formulario + JS) |
+Cada UT sigue el mismo esquema que [ut1-cliente-web](./ut1-cliente-web/): subtemas `01-…` → `NN-repaso`, con `teoria/`, `ejercicios/` y `practicas/` solo si hay material de centro.
 
-**Pendiente de integrar en subtemas:** [ut2/…/madrid-iesventurarodriguez-topic-2](./ut2-sintaxis-js/madrid-iesventurarodriguez-topic-2/) (sintaxis).
+| UT | Subtemas | Repaso | Prácticas de instituto |
+| --- | --- | --- | --- |
+| [ut1-cliente-web](./ut1-cliente-web/) | `01` cliente · `02` scripts · `03` devtools · `04` dom | `05-repaso` | Ventura en `02`, `04` |
+| [ut2-sintaxis-js](./ut2-sintaxis-js/) | `01` variables · `02` operadores · `03` condicionales · `04` bucles · `05` estilo | `06-repaso` | Ventura en `01`–`04` |
+| [ut3-objetos-intro](./ut3-objetos-intro/) | `01` consola · `02` window/document · `03` errores | `04-repaso` | — (solo material genérico por ahora) |
 
 ## Enlace al BOE
 
