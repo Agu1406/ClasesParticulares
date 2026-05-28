@@ -41,7 +41,7 @@ El **BOE** define 7 RA; el **centro** reparte en **2 o 3 trimestres** en la prog
 | **3 evaluaciones** | Muchos IES (mapa por defecto abajo) | `ev1` + `ev2` + `ev3` |
 | **2 evaluaciones** | Algunos centros en 2.º (ej. DWEC con 2 trimestres lectivos) | Mismo árbol: 1.º trimestre → `ev1`, 2.º trimestre → `ev2`+`ev3`; RA 7 puede quedar fuera o en recuperación |
 
-Material de referencia **2 trimestres** (IES Arquitecto Ventura Rodríguez, Madrid, curso 2024–25): topics 1–4 en 1.º trimestre, topics 5–6 + examen final en 2.º — ver carpetas `madrid-iesventurarodriguez-*` en `ev1`–`ev3`.
+Material de referencia **2 trimestres** (IES Arquitecto Ventura Rodríguez, Madrid, curso 2024–25): topics 1–4 en 1.º trimestre (`ev1`–`ev2`, carpetas `practicas/ventura-*`), topics 5–6 + examen final en 2.º (`ev2`–`ev3`, mismas `practicas/`).
 
 ---
 
