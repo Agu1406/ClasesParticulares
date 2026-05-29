@@ -10,38 +10,42 @@ Inspirado en el temario de **DAW 2023/2025** y en el trabajo de profesores como 
 
 ---
 
-## Estructura actual del directorio `java/`
+## Estructura del directorio `java/` (convención C)
 
 ```bash
 java/
+├── BOE-2023-06-03-RD-405-modulo-0485-programacion.md
 ├── src/
-│   ├── ev1/         # Primera evaluación: fundamentos
-│   ├── ev2/         # Segunda evaluación: estructuras y POO intermedia
-│   ├── ev3/         # Tercera evaluación: POO avanzada, JDBC, proyectos
-│   └── pruebaslibres/  # Exámenes y prácticas de pruebas libres
-└── README.md        # Esta guía
+│   ├── ev1/            # RA1-RA3
+│   ├── ev2/            # RA4-RA6
+│   ├── ev3/            # RA7-RA9
+│   └── pruebaslibres/
+├── scripts/
+└── README.md
 ```
 
-Dentro de `src/` trabajas siempre con el mismo esquema por **evaluación** y **unidad teórica (UT)**:
+### Convención C aplicada en Java
+
+Cada UT sigue la estructura:
 
 ```bash
-src/
-├── ev1/
-│   ├── ut0/      # Fundamentos de Java (ciclo de vida, sintaxis básica, comentarios, tipos, casteo)
-│   ├── ut1/      # Bucles, condicionales, operadores
-│   ├── ut2/      # Strings, funciones, tipos envolventes, POO básica
-│   └── docs/     # PDFs de funciones, strings y prácticas/examenes de 1.ª evaluación
-├── ev2/
-│   ├── ut3/      # Arrays, ArrayList, clase Array y ejercicios conocidos
-│   └── docs/     # PDFs de ejercicios de arrays
-├── ev3/
-│   ├── ut5/          # POO media/avanzada, abstracción, herencia, polimorfismo, colecciones
-│   ├── ut6/          # JDBC, aplicaciones web (JEE), acceso a datos
-│   ├── ut7/          # Spring y otros contenidos avanzados (planificado)
-│   ├── por_centro/   # Material organizado por comunidad/centro (Madrid, Andalucía, etc.)
-│   └── docs/         # POO avanzada, estructuras de datos, JDBC/JEE, multihilo
-└── pruebaslibres/    # Teoría y práctica específicas de pruebas libres
+utX-.../
+├── 01-...
+│   ├── teoria/
+│   ├── ejercicios/
+│   │   ├── pendientes/
+│   │   └── resueltos/
+│   └── practicas/      # solo material real de centros
+├── 02-...
+├── ...
+└── NN-repaso/
 ```
+
+### Mapa RA -> EV (BOE módulo 0485 Programación)
+
+- **EV1**: RA1, RA2, RA3
+- **EV2**: RA4, RA5, RA6
+- **EV3**: RA7, RA8, RA9
 
 ### Resumen por evaluación
 
@@ -139,7 +143,7 @@ La guía detallada de la **EV1** (explicaciones largas de cada apartado) está e
 
 - **Email**: agu1406@outlook.es
 - **GitHub**: [Agu1406/ClasesParticulares](https://github.com/Agu1406/ClasesParticulares)
-- **GitHub Pages**: [agu1406.github.io/ClasesParticulares](https://agu1406.github.io/ClasesParticulares)
+- **Web**: [agustinmarquez.dev](https://www.agustinmarquez.dev)
 
 ---
 
