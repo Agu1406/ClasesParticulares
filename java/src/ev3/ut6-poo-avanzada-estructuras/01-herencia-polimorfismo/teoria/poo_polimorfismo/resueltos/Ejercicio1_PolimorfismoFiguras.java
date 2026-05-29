@@ -1,4 +1,4 @@
-package general.poo_polimorfismo.resueltos;
+﻿package general.poo_polimorfismo.resueltos;
 
 /**
  * Ejercicio 1: Polimorfismo con figuras (RESUELTO)
@@ -7,7 +7,7 @@ package general.poo_polimorfismo.resueltos;
  * @since 14/06/2025
  * @see <a href="mailto:agu1406@outlook.es">agu1406@outlook.es</a>
  * @see <a href="https://github.com/Agu1406/ClasesParticulares">Repositorio GitHub</a>
- * @see <a href="https://agu1406.github.io/ClasesParticulares">GitHub Pages</a>
+ * @see <a href="https://www.agustinmarquez.dev">Sitio web</a>
  */
 public class Ejercicio1_PolimorfismoFiguras {
 

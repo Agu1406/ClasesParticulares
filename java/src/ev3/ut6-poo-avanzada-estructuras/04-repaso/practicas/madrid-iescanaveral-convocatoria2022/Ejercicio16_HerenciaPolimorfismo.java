@@ -1,4 +1,4 @@
-package madrid.iescanaveral.ejercicios.convocatoria2022;
+﻿package madrid.iescanaveral.ejercicios.convocatoria2022;
 
 /**
  * Ejercicio 16: Dado el siguiente fragmento de código, indicar cuál de las siguientes afirmaciones es correcta.
@@ -9,7 +9,7 @@ package madrid.iescanaveral.ejercicios.convocatoria2022;
  * @since 14/01/2026
  * @see <a href="mailto:agu1406@outlook.es">agu1406@outlook.es</a>
  * @see <a href="https://github.com/Agu1406/ClasesParticulares">Repositorio GitHub</a>
- * @see <a href="https://agu1406.github.io/ClasesParticulares">GitHub Pages</a>
+ * @see <a href="https://www.agustinmarquez.dev">Sitio web</a>
  */
 public class Ejercicio16_HerenciaPolimorfismo {
     /* Clase Persona

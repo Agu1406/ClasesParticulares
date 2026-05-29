@@ -5,6 +5,29 @@ import java.sql.DriverManager;
 import java.sql.SQLException;
 import java.util.Properties;
 
+/**
+ * Conexion JDBC a la BD {@code Colegio} (XAMPP/MySQL + MySQL Connector/J).
+ * <p>
+ * Practica integradora IES Velazquez - sesion 6 del bloque {@code 01-jdbc} (RA9).
+ * Enunciado: {@code enunciados/acceso-datos-contenido--sevilla-iesvelazquez.pdf}.
+ * <p>
+ * Compilar (PowerShell, desde esta carpeta de practica):
+ * <pre>
+ * $JAR = "C:\libs\mysql-connector-j-8.0.33.jar"
+ * javac -encoding UTF-8 -d . -cp ".;$JAR" src\*.java
+ * java -cp ".;$JAR" andalucia.sevilla.iesvelazquez.colegiojdbc.src.ColegioSetup
+ * java -cp ".;$JAR" andalucia.sevilla.iesvelazquez.colegiojdbc.src.ColegioConnection
+ * java -cp ".;$JAR" andalucia.sevilla.iesvelazquez.colegiojdbc.src.ColegioDemo
+ * </pre>
+ * Orden: Setup (crea BD/tabla) &rarr; Connection (prueba) &rarr; Demo (CRUD).
+ * Alternativa SQL: {@code sql/colegio.sql} en phpMyAdmin.
+ *
+ * @author Agustín. A. Marquez. Piña
+ * @since 29/05/2026
+ * @see <a href="mailto:agu1406@outlook.es">agu1406@outlook.es</a>
+ * @see <a href="https://github.com/Agu1406/ClasesParticulares">Repositorio GitHub</a>
+ * @see <a href="https://www.agustinmarquez.dev">Sitio web</a>
+ */
 public class ColegioConnection {
 
     // Cambia estos valores según tu entorno local

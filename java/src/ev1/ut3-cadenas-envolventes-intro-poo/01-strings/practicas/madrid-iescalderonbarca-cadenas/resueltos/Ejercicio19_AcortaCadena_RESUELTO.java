@@ -1,4 +1,4 @@
-package madrid.iescalderonbarca.ejercicios.resueltos;
+﻿package madrid.iescalderonbarca.ejercicios.resueltos;
 
 /**
  * Ejercicio 19: Codifica la función acortaCadena que recibe un String y devuelve otro en el que
@@ -8,7 +8,7 @@ package madrid.iescalderonbarca.ejercicios.resueltos;
  * @since 14/01/2026
  * @see <a href="mailto:agu1406@outlook.es">agu1406@outlook.es</a>
  * @see <a href="https://github.com/Agu1406/ClasesParticulares">Repositorio GitHub</a>
- * @see <a href="https://agu1406.github.io/ClasesParticulares">GitHub Pages</a>
+ * @see <a href="https://www.agustinmarquez.dev">Sitio web</a>
  */
 public class Ejercicio19_AcortaCadena_RESUELTO {
     public static void main(String[] args) {

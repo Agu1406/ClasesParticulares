@@ -1,6 +1,15 @@
 package andalucia.sevilla.iesvelazquez.colegiojdbc.src;
 
-// Modelo simple (POJO) que representa un alumno
+/**
+ * POJO que representa un alumno (id, nombre, correo, telefono).
+ * {@code idAlumno} puede ser null antes del INSERT (AUTO_INCREMENT en MySQL).
+ *
+ * @author Agustín. A. Marquez. Piña
+ * @since 29/05/2026
+ * @see <a href="mailto:agu1406@outlook.es">agu1406@outlook.es</a>
+ * @see <a href="https://github.com/Agu1406/ClasesParticulares">Repositorio GitHub</a>
+ * @see <a href="https://www.agustinmarquez.dev">Sitio web</a>
+ */
 public class Alumno {
     private Integer idAlumno; // puede ser null antes de insertar (AUTO_INCREMENT)
     private String nombre;

@@ -1,4 +1,4 @@
-package madrid.iescalderonbarca.ejercicios.resueltos;
+﻿package madrid.iescalderonbarca.ejercicios.resueltos;
 
 /**
  * Ejercicio 16: Realiza la función quitaCaracter que recibe dos parámetros, un String y un char.
@@ -9,7 +9,7 @@ package madrid.iescalderonbarca.ejercicios.resueltos;
  * @since 14/01/2026
  * @see <a href="mailto:agu1406@outlook.es">agu1406@outlook.es</a>
  * @see <a href="https://github.com/Agu1406/ClasesParticulares">Repositorio GitHub</a>
- * @see <a href="https://agu1406.github.io/ClasesParticulares">GitHub Pages</a>
+ * @see <a href="https://www.agustinmarquez.dev">Sitio web</a>
  */
 public class Ejercicio16_QuitaCaracter_RESUELTO {
     public static void main(String[] args) {

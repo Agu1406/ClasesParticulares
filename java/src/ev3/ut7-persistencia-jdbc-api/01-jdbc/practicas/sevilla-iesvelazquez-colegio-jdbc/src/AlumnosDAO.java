@@ -4,7 +4,16 @@ import java.sql.*;
 import java.util.ArrayList;
 import java.util.List;
 
-// DAO con operaciones CRUD usando PreparedStatement y ResultSet
+/**
+ * DAO: operaciones CRUD con {@link java.sql.PreparedStatement} y {@link java.sql.ResultSet}.
+ * Incluye transaccion en {@link #insertarDosAlumnosEnTransaccion(Alumno, Alumno)}.
+ *
+ * @author Agustín. A. Marquez. Piña
+ * @since 29/05/2026
+ * @see <a href="mailto:agu1406@outlook.es">agu1406@outlook.es</a>
+ * @see <a href="https://github.com/Agu1406/ClasesParticulares">Repositorio GitHub</a>
+ * @see <a href="https://www.agustinmarquez.dev">Sitio web</a>
+ */
 public class AlumnosDAO {
 
     // Inserta un alumno y devuelve el ID generado

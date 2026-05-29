@@ -1,4 +1,4 @@
-package general.arrays.medio;
+﻿package general.arrays.medio;
 
 /**
  * Ejercicio 5: Array bidimensional con función
@@ -22,7 +22,7 @@ package general.arrays.medio;
  * @since 14/06/2025
  * @see <a href="mailto:agu1406@outlook.es">agu1406@outlook.es</a>
  * @see <a href="https://github.com/Agu1406/ClasesParticulares">Repositorio GitHub</a>
- * @see <a href="https://agu1406.github.io/ClasesParticulares">GitHub Pages</a>
+ * @see <a href="https://www.agustinmarquez.dev">Sitio web</a>
  */
 public class Ejercicio5_ArrayBidimensionalConFuncion {
     public static void main(String[] args) {

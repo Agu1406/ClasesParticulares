@@ -1,4 +1,4 @@
-package general.arrays.dificil;
+﻿package general.arrays.dificil;
 
 /**
  * Ejercicio 8 (difícil): Rotar una matriz cuadrada 90° a la derecha
@@ -38,7 +38,7 @@ package general.arrays.dificil;
  * @since 14/06/2025
  * @see <a href="mailto:agu1406@outlook.es">agu1406@outlook.es</a>
  * @see <a href="https://github.com/Agu1406/ClasesParticulares">Repositorio GitHub</a>
- * @see <a href="https://agu1406.github.io/ClasesParticulares">GitHub Pages</a>
+ * @see <a href="https://www.agustinmarquez.dev">Sitio web</a>
  */
 public class Ejercicio8_ArrayBidimensionalRotar90 {
     public static void main(String[] args) {

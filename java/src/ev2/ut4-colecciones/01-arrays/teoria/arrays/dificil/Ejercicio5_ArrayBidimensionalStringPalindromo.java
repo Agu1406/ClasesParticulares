@@ -1,4 +1,4 @@
-package general.arrays.dificil;
+﻿package general.arrays.dificil;
 
 /**
  * Ejercicio 5: Array bidimensional de Strings - Contar palabras que empiezan con vocal
@@ -31,7 +31,7 @@ package general.arrays.dificil;
  * @since 14/06/2025
  * @see <a href="mailto:agu1406@outlook.es">agu1406@outlook.es</a>
  * @see <a href="https://github.com/Agu1406/ClasesParticulares">Repositorio GitHub</a>
- * @see <a href="https://agu1406.github.io/ClasesParticulares">GitHub Pages</a>
+ * @see <a href="https://www.agustinmarquez.dev">Sitio web</a>
  */
 public class Ejercicio5_ArrayBidimensionalStringPalindromo {
     public static void main(String[] args) {

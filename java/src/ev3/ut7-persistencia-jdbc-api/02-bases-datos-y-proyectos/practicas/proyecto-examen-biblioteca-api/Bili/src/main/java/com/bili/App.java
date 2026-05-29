@@ -9,6 +9,24 @@ import com.bili.service.ClientService;
 import java.util.List;
 import java.util.Scanner;
 
+/**
+ * Bili Store - tienda de consola con SQLite (Java 17+, Maven).
+ * <p>
+ * Practica de login, roles CLIENTE/ADMIN, carrito e importacion desde API.
+ * <p>
+ * Ejecutar: {@code mvn compile exec:java} desde la carpeta del proyecto (pom.xml).
+ * Admin inicial: usuario {@code admin}, password {@code admin123}.
+ * <p>
+ * Cliente: ver datos, cambiar password, listar productos, carrito, total.
+ * Admin: CRUD usuarios, importar desde https://fakestoreapi.com/products (si tabla vacia),
+ * vaciar tablas carrito y productos.
+ *
+ * @author Agustín. A. Marquez. Piña
+ * @since 29/05/2026
+ * @see <a href="mailto:agu1406@outlook.es">agu1406@outlook.es</a>
+ * @see <a href="https://github.com/Agu1406/ClasesParticulares">Repositorio GitHub</a>
+ * @see <a href="https://www.agustinmarquez.dev">Sitio web</a>
+ */
 public class App {
     private static final Scanner SC = new Scanner(System.in);
     private static final AuthService AUTH_SERVICE = new AuthService();

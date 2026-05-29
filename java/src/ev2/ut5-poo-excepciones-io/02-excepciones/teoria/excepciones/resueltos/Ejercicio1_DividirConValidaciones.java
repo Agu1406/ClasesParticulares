@@ -1,4 +1,4 @@
-package general.excepciones.resueltos;
+﻿package general.excepciones.resueltos;
 
 /**
  * Práctica Excepciones 1 (resuelto)
@@ -13,7 +13,7 @@ package general.excepciones.resueltos;
  * @since 26/04/2026
  * @see <a href="mailto:agu1406@outlook.es">agu1406@outlook.es</a>
  * @see <a href="https://github.com/Agu1406/ClasesParticulares">Repositorio GitHub</a>
- * @see <a href="https://agu1406.github.io/ClasesParticulares">GitHub Pages</a>
+ * @see <a href="https://www.agustinmarquez.dev">Sitio web</a>
  */
 public class Ejercicio1_DividirConValidaciones {
 
