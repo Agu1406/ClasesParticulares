@@ -32,8 +32,9 @@ En `teoria/` del subtema solo van clases explicativas (`*Intro.java`, demos). Lo
 | `05-repaso` | `RepasoMixtoIntro` | `pendientes` / `resueltos` (mixtos UT2) |
 
 | `01-arrays` (UT4) | `ArraysIntro` | `facil`, `medio`, `dificil` (cada uno con `pendientes` y `resueltos`) |
+| `02-arraylist-y-mapas` (UT4) | `ArrayListIntro`, `MapasIntro` | `arraylist`, `mapas` (`pendientes` / `resueltos`) |
 
-Pendiente de mismo criterio: `02-arraylist-y-mapas` (`teoria/arraylist`), `01-operadores-y-basicos` (ejercicios en `teoria/basicos`).
+Pendiente de mismo criterio: `01-operadores-y-basicos` (ejercicios en `teoria/basicos`).
 
 ### practicas/ (centro + enunciado + solucion)
 

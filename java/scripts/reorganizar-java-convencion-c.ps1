@@ -75,8 +75,9 @@ Move-IfExists "$ut4/arrays/resueltos/facil" "$ut4/01-arrays/ejercicios/facil/res
 Move-IfExists "$ut4/arrays/resueltos/medio" "$ut4/01-arrays/ejercicios/medio/resueltos"
 Move-IfExists "$ut4/arrays/resueltos/dificil" "$ut4/01-arrays/ejercicios/dificil/resueltos"
 Move-IfExists "$ut4/clasearray" "$ut4/01-arrays/teoria/clasearray"
-Move-IfExists "$ut4/arraylist" "$ut4/02-arraylist-y-mapas/teoria/arraylist"
-Move-IfExists "$ut4/legacy_arraylist" "$ut4/02-arraylist-y-mapas/teoria/legacy_arraylist"
+# 02-arraylist-y-mapas: teoria = ArrayListIntro, MapasIntro; ejercicios = arraylist|mapas/pendientes|resueltos
+Move-IfExists "$ut4/arraylist" "$ut4/02-arraylist-y-mapas/ejercicios/arraylist/pendientes"
+Move-IfExists "$ut4/legacy_arraylist" "$ut4/02-arraylist-y-mapas/ejercicios/arraylist/pendientes/legacy_obsoleto"
 Move-IfExists "$ut4/madrid-cesjuanpablosegundo-ejercicios-colecciones" "$ut4/02-arraylist-y-mapas/practicas/madrid-cesjuanpablosegundo-ejercicios-colecciones"
 # Obsoleto: ejerciciosconocidos migrado a practicas/ por centro (ver README).
 # Move-IfExists "$ut4/ejerciciosconocidos" "$ut4/03-practica-integrada/ejercicios/pendientes/ejerciciosconocidos"
