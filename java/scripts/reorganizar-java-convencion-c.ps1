@@ -67,7 +67,13 @@ Move-IfExists "java/src/ev2/ut4" "java/src/ev2/ut5-poo-excepciones-io"
 
 $ut4 = "java/src/ev2/ut4-colecciones"
 Ensure-Subtopics $ut4 @("01-arrays", "02-arraylist-y-mapas", "03-practica-integrada", "04-repaso")
-Move-IfExists "$ut4/arrays" "$ut4/01-arrays/teoria/arrays"
+# 01-arrays: teoria = ArraysIntro; ejercicios = facil|medio|dificil/pendientes|resueltos
+Move-IfExists "$ut4/arrays/facil" "$ut4/01-arrays/ejercicios/facil/pendientes"
+Move-IfExists "$ut4/arrays/medio" "$ut4/01-arrays/ejercicios/medio/pendientes"
+Move-IfExists "$ut4/arrays/dificil" "$ut4/01-arrays/ejercicios/dificil/pendientes"
+Move-IfExists "$ut4/arrays/resueltos/facil" "$ut4/01-arrays/ejercicios/facil/resueltos"
+Move-IfExists "$ut4/arrays/resueltos/medio" "$ut4/01-arrays/ejercicios/medio/resueltos"
+Move-IfExists "$ut4/arrays/resueltos/dificil" "$ut4/01-arrays/ejercicios/dificil/resueltos"
 Move-IfExists "$ut4/clasearray" "$ut4/01-arrays/teoria/clasearray"
 Move-IfExists "$ut4/arraylist" "$ut4/02-arraylist-y-mapas/teoria/arraylist"
 Move-IfExists "$ut4/legacy_arraylist" "$ut4/02-arraylist-y-mapas/teoria/legacy_arraylist"
