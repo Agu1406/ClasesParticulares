@@ -29,6 +29,7 @@ En `teoria/` del subtema solo van clases explicativas (`*Intro.java`, demos). Lo
 | `04-metodos` | `MetodosIntro` | `pendientes` / `resueltos` (sin subcarpeta tema) |
 | `01-strings` (UT3) | `StringIntro` | `strings/resueltos` |
 | `02-excepciones`, `04-ficheros-io` (UT5) | `TryCatchFinallyIntro`, `FicherosIntro` | `trycatchfinally`, `ficheros` |
+| `05-repaso` | `RepasoMixtoIntro` | `pendientes` / `resueltos` (mixtos UT2) |
 
 Pendiente de mismo criterio (solo `resueltos` bajo `teoria/` legacy): `ut4` arrays/arraylist con `facil|medio|dificil`, `01-operadores-y-basicos` (ejercicios sueltos en `teoria/basicos`).
 

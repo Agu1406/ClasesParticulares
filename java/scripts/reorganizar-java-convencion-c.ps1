@@ -48,7 +48,7 @@ Move-IfExists "$ut2/buclesycondicionales" "$ut2/03-bucles/teoria"
 Move-IfExists "$ut2/funciones/sin_resolver" "$ut2/04-metodos/ejercicios/pendientes"
 Move-IfExists "$ut2/funciones/resueltos" "$ut2/04-metodos/ejercicios/resueltos"
 Move-IfExists "$ut2/funciones" "$ut2/04-metodos/ejercicios/pendientes"
-Move-IfExists "$ut2/ejerciciosmixtos" "$ut2/05-repaso/ejercicios/pendientes/ejerciciosmixtos"
+Move-IfExists "$ut2/ejerciciosmixtos" "$ut2/05-repaso/ejercicios/pendientes"
 Move-IfExists "$ut2/enunciados" "$ut2/enunciados"
 
 $ut3 = "java/src/ev1/ut3-cadenas-envolventes-intro-poo"
