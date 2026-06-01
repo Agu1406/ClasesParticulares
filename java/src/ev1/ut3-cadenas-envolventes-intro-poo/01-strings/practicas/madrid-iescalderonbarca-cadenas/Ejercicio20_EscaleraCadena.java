@@ -1,9 +1,12 @@
 ﻿package madrid.iescalderonbarca.ejercicios.cadenas;
 
 /**
- * Ejercicio 20: Realiza la función escaleraCadena que recibe un String y devuelve otro en el que
- * alterna los caracteres del parámetro entre mayúsculas y minúsculas.
- * 
+ * Práctica de cadenas Calderón — ejercicio 20 (bloque 16–20).
+ *
+ * <p><b>Objetivo de este ejercicio:</b> implementar {@code escaleraCadena} alternando mayúsculas y minúsculas.</p>
+ *
+ * <p>Enunciado del bloque en la carpeta de la práctica. Utiliza {@link String}.</p>
+ *
  * @author Agustín. A. Marquez. Piña
  * @since 14/01/2026
  * @see <a href="mailto:agu1406@outlook.es">agu1406@outlook.es</a>

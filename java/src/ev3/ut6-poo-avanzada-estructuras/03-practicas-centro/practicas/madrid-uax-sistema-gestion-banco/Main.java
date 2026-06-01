@@ -1,5 +1,25 @@
 package madrid.uax.tecnicasprogramacion.sistema_gestion_banco;
 
+/**
+ * Sistema de gestión bancaria (UAX).
+ *
+ * <p><b>Objetivo:</b> modelar cuentas bancarias con ingresos, retiros y control de saldo insuficiente.</p>
+ *
+ * <p>Para ello, el programa debe:</p>
+ * <ul>
+ *   <li>Crear cuentas con distintos saldos iniciales y operar sobre ellas.</li>
+ *   <li>Lanzar {@link SaldoInsufienteException} cuando no haya fondos.</li>
+ *   <li>Validar importes no válidos según el enunciado.</li>
+ * </ul>
+ *
+ * <p>Utiliza POO, excepciones personalizadas y aserciones.</p>
+ *
+ * @author Agustín. A. Marquez. Piña
+ * @since 29/05/2026
+ * @see <a href="mailto:agu1406@outlook.es">agu1406@outlook.es</a>
+ * @see <a href="https://github.com/Agu1406/ClasesParticulares">Repositorio GitHub</a>
+ * @see <a href="https://www.agustinmarquez.dev">Sitio web</a>
+ */
 public class Main {
     public static void main(String[] args) throws SaldoInsufienteException {
         // Creamos las dos cuentas de banco, una con saldo "0", otra con saldo "-1".

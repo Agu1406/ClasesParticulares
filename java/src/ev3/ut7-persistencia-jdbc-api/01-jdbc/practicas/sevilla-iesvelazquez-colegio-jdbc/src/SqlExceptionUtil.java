@@ -3,7 +3,10 @@ package andalucia.sevilla.iesvelazquez.colegiojdbc.src;
 import java.sql.SQLException;
 
 /**
- * Imprime cadena de {@link java.sql.SQLException}: mensaje, SQLState y ErrorCode (util para depurar JDBC).
+ * Utilidad para diagnosticar fallos JDBC.
+ *
+ * <p><b>Objetivo:</b> mostrar de forma legible la cadena de {@link SQLException} (mensaje,
+ * SQLState y código de error) cuando falle la conexión o una sentencia SQL.</p>
  *
  * @author Agustín. A. Marquez. Piña
  * @since 29/05/2026

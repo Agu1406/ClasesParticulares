@@ -1,7 +1,12 @@
 package andalucia.sevilla.iesvelazquez.colegiojdbc.src;
 
 /**
- * Conexion al servidor MySQL sin especificar base de datos (necesaria para {@code CREATE DATABASE}).
+ * Conexión al servidor MySQL sin seleccionar base de datos.
+ *
+ * <p><b>Objetivo:</b> permitir ejecutar {@code CREATE DATABASE} antes de que exista la BD
+ * {@code Colegio} ({@link ColegioSetup}).</p>
+ *
+ * <p>Reutiliza la configuración de {@link ColegioConnection} y el driver MySQL Connector/J.</p>
  *
  * @author Agustín. A. Marquez. Piña
  * @since 29/05/2026

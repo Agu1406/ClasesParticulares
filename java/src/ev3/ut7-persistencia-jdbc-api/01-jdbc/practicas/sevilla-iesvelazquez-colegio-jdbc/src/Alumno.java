@@ -1,8 +1,13 @@
 package andalucia.sevilla.iesvelazquez.colegiojdbc.src;
 
 /**
- * POJO que representa un alumno (id, nombre, correo, telefono).
- * {@code idAlumno} puede ser null antes del INSERT (AUTO_INCREMENT en MySQL).
+ * Modelo de dominio: un alumno del colegio.
+ *
+ * <p><b>Objetivo:</b> representar en memoria los datos que se guardan en la tabla {@code Alumnos}
+ * sin depender de la API JDBC en la capa de presentación o de negocio.</p>
+ *
+ * <p>Debe almacenar identificador, nombre, correo y teléfono; el id puede ser {@code null}
+ * antes del INSERT (clave autoincremental en MySQL).</p>
  *
  * @author Agustín. A. Marquez. Piña
  * @since 29/05/2026

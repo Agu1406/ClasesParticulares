@@ -3,10 +3,27 @@ import java.io.IOException;
 import java.io.InputStreamReader;
 
 /**
- * Ejercicio: Control de Habitantes en un Edificio
- * 
- * Se desea controlar el número de habitantes en un edificio de 6 pisos 
- * y 4 puertas por piso (A, B, C y D).
+ * Control de habitantes en un edificio (Colegio Salesiano, Salamanca).
+ *
+ * <p>Enunciado: {@code control-habitantes-edificio--salamanca-colegiosalesiano.pdf}
+ * (carpeta de la práctica).</p>
+ *
+ * <p><b>Objetivo:</b> registrar y consultar habitantes por piso y puerta mediante menú.</p>
+ *
+ * <p>Para ello, el programa debe:</p>
+ * <ul>
+ *   <li>Almacenar habitantes en una matriz 6×4 (pisos y puertas A–D).</li>
+ *   <li>Pedir datos iniciales y ofrecer opciones de consulta y modificación.</li>
+ *   <li>Mostrar totales y desgloses según el enunciado.</li>
+ * </ul>
+ *
+ * <p>Utiliza matrices bidimensionales, {@link java.io.BufferedReader} y menú por consola.</p>
+ *
+ * @author Agustín. A. Marquez. Piña
+ * @since 29/05/2026
+ * @see <a href="mailto:agu1406@outlook.es">agu1406@outlook.es</a>
+ * @see <a href="https://github.com/Agu1406/ClasesParticulares">Repositorio GitHub</a>
+ * @see <a href="https://www.agustinmarquez.dev">Sitio web</a>
  */
 public class ControlHabitantesEdificio {
     

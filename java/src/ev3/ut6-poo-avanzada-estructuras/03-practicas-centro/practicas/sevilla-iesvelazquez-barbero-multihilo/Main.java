@@ -3,8 +3,27 @@ package andalucia.sevilla.iesvelazquez.barberomultihilo;
 import java.util.Random;
 
 /**
- * Clase principal que ejecuta la simulación del barbero dormilón.
- * Crea una barbería con un barbero y múltiples clientes que llegan aleatoriamente.
+ * Simulación del problema del barbero dormilón (IES Velázquez).
+ *
+ * <p>Enunciado: {@code barbero-dormilon--sevilla-iesvelazquez.pdf} y
+ * {@code barbero-simulacro--sevilla-iesvelazquez.pdf} (carpeta de la práctica).</p>
+ *
+ * <p><b>Objetivo:</b> coordinar barbero y clientes con hilos, sala de espera limitada y exclusión mutua.</p>
+ *
+ * <p>Para ello, el programa debe:</p>
+ * <ul>
+ *   <li>Crear la barbería como monitor y lanzar el hilo del {@link Barbero}.</li>
+ *   <li>Generar clientes ({@link Cliente}) que compiten por las sillas disponibles.</li>
+ *   <li>Simular tiempos de servicio y llegadas aleatorias.</li>
+ * </ul>
+ *
+ * <p>Utiliza {@link Thread}, sincronización y {@link Random}.</p>
+ *
+ * @author Agustín. A. Marquez. Piña
+ * @since 29/05/2026
+ * @see <a href="mailto:agu1406@outlook.es">agu1406@outlook.es</a>
+ * @see <a href="https://github.com/Agu1406/ClasesParticulares">Repositorio GitHub</a>
+ * @see <a href="https://www.agustinmarquez.dev">Sitio web</a>
  */
 public class Main {
     // Cantidad maxima de sillas de espera en la barbería

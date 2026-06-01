@@ -6,21 +6,19 @@ import java.sql.SQLException;
 import java.util.Properties;
 
 /**
- * Conexion compartida para teoria y ejercicios JDBC (BD demo {@code JdbcTeoria}).
- * <p>
- * Antes de usar: ejecuta {@code sql/jdbc_teoria.sql} en phpMyAdmin y ajusta {@link #USER}
- * y {@link #PASSWORD} segun tu XAMPP.
+ * Conexión compartida para teoría y ejercicios JDBC (BD demo {@code JdbcTeoria}).
  *
- * <h2>Compilar y ejecutar (PowerShell, desde {@code teoria/_shared})</h2>
- * <pre>
- * $JAR = "C:\libs\mysql-connector-j-8.0.33.jar"
- * javac -encoding UTF-8 -d . JdbcTeoriaConnection.java
- * javac -encoding UTF-8 -d . -cp ".;$JAR" ..\02-conexion-driver\SandBox.java
- * java -cp ".;$JAR" ev3.ut7.jdbc.conexion.SandBox
- * </pre>
+ * <p><b>Objetivo:</b> centralizar la conexión a MySQL para los SandBoxes del bloque {@code 01-jdbc}.</p>
  *
- * Para el resto de SandBoxes, anade {@code -cp "$SHARED;$CP"} donde {@code SHARED} apunta
- * a esta carpeta compilada.
+ * <p>Para ello, esta clase debe:</p>
+ * <ul>
+ *   <li>Cargar el driver MySQL y abrir {@link Connection} contra {@code JdbcTeoria}.</li>
+ *   <li>Exponer host, puerto, usuario y contraseña configurables (XAMPP).</li>
+ *   <li>Reutilizarse desde los SandBoxes de conexión, SELECT, CRUD y transacciones.</li>
+ * </ul>
+ *
+ * <p>Utiliza <b>XAMPP</b>, <b>MySQL Connector/J</b> y {@link DriverManager}.
+ * Preparar la BD con {@code sql/jdbc_teoria.sql}. Ver {@link ev3.ut7.jdbc.entorno.EntornoXamppIntro}.</p>
  *
  * @see ev3.ut7.jdbc.entorno.EntornoXamppIntro
  *

@@ -1,9 +1,13 @@
 ﻿package madrid.iescalderonbarca.ejercicios.cadenas;
 
 /**
- * Ejercicio 19: Codifica la función acortaCadena que recibe un String y devuelve otro en el que
- * deja un carácter por cada tres, o fracción, del String inicial.
- * 
+ * Práctica de cadenas Calderón — ejercicio 19 (bloque 16–20).
+ *
+ * <p><b>Objetivo de este ejercicio:</b> implementar {@code acortaCadena}: conservar un carácter
+ * por cada tres (o fracción) del texto original.</p>
+ *
+ * <p>Enunciado del bloque en la carpeta de la práctica. Utiliza {@link String}.</p>
+ *
  * @author Agustín. A. Marquez. Piña
  * @since 14/01/2026
  * @see <a href="mailto:agu1406@outlook.es">agu1406@outlook.es</a>

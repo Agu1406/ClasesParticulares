@@ -6,19 +6,23 @@ import java.util.Comparator;
 import java.util.Scanner;
 
 /**
- * Ejercicio para aprender a usar ArrayList
- * 
- * Este programa simula una lista de compras donde puedes:
- * - Agregar productos
- * - Ver todos los productos
- * - Eliminar productos
- * - Buscar productos
- * 
- * ArrayList es una estructura de datos dinámica que crece automáticamente
- * a diferencia de los arrays normales que tienen un tamaño fijo.
- * 
- * @author Clases Particulares
- * @since 2025
+ * Lista de compras con {@link java.util.ArrayList} (CES Juan Pablo II).
+ *
+ * <p><b>Objetivo:</b> practicar colecciones dinámicas frente a arrays de tamaño fijo.</p>
+ *
+ * <p>Para ello, el programa debe:</p>
+ * <ul>
+ *   <li>Agregar, listar, eliminar y buscar productos en un {@link java.util.ArrayList}.</li>
+ *   <li>Ofrecer un menú por consola hasta que el usuario salga.</li>
+ * </ul>
+ *
+ * <p>Utiliza {@link java.util.ArrayList}, {@link Scanner} y ordenación con {@link Comparator}.</p>
+ *
+ * @author Agustín. A. Marquez. Piña
+ * @since 29/05/2026
+ * @see <a href="mailto:agu1406@outlook.es">agu1406@outlook.es</a>
+ * @see <a href="https://github.com/Agu1406/ClasesParticulares">Repositorio GitHub</a>
+ * @see <a href="https://www.agustinmarquez.dev">Sitio web</a>
  */
 public class EjercicioArrayList {
     

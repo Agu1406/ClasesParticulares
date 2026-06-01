@@ -3,6 +3,29 @@ package madrid.iescalderonbarca.ejercicios.hipodromo;
 import java.util.Random;
 import java.util.Scanner;
 
+/**
+ * Simulación de carrera de caballos con apuestas (IES Calderón Barca).
+ *
+ * <p>Enunciado: {@code hipodromo--madrid-iescalderonbarca.pdf} (carpeta de la práctica).</p>
+ *
+ * <p><b>Objetivo:</b> modelar una carrera con varios caballos, caídas aleatorias y apuesta del usuario.</p>
+ *
+ * <p>Para ello, el programa debe:</p>
+ * <ul>
+ *   <li>Representar cada caballo con {@link Caballo} (nombre, dorsal, distancia, estado).</li>
+ *   <li>Registrar la apuesta del jugador y avanzar la carrera por tramos hasta la meta.</li>
+ *   <li>Simular caídas y metros recorridos con {@link Random}.</li>
+ *   <li>Mostrar el ranking por distancia e indicar si la apuesta gana o pierde.</li>
+ * </ul>
+ *
+ * <p>Utiliza POO, {@link Scanner} y {@link Random}.</p>
+ *
+ * @author Agustín. A. Marquez. Piña
+ * @since 29/05/2026
+ * @see <a href="mailto:agu1406@outlook.es">agu1406@outlook.es</a>
+ * @see <a href="https://github.com/Agu1406/ClasesParticulares">Repositorio GitHub</a>
+ * @see <a href="https://www.agustinmarquez.dev">Sitio web</a>
+ */
 public class Main {
 
     private static final int META = 700;
@@ -11,7 +34,7 @@ public class Main {
     public static void main(String[] args) {
         Scanner teclado = new Scanner(System.in);
         Random azar = new Random();
-o 
+
         Caballo[] establo = new Caballo[5];
         establo[0] = new Caballo("Rocinante", 1);
         establo[1] = new Caballo("Babieca", 2);

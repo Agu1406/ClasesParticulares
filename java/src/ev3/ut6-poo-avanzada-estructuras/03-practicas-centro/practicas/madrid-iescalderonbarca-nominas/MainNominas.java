@@ -5,11 +5,28 @@ import java.util.List;
 import java.util.Scanner;
 
 /**
- * Práctica nóminas - Menú principal (VERSIÓN SIN RESOLVER).
+ * Gestión de nóminas de una empresa (IES Calderón Barca).
  *
- * El menú debe mostrar cuatro opciones (por ejemplo: alta, baja, sueldo, indemnización)
- * y repetirse indefinidamente. Usar polimorfismo (interfaz Cobros) para listar
- * sueldos e indemnizaciones.
+ * <p>Enunciado: {@code nominas--madrid-iescalderonbarca.pdf} y
+ * {@code practica-obligatoria-ra4--madrid-iescalderonbarca.pdf} (carpeta de la práctica).</p>
+ *
+ * <p><b>Objetivo:</b> administrar empleados de distintas categorías y calcular sueldos e indemnizaciones.</p>
+ *
+ * <p>Para ello, el programa debe:</p>
+ * <ul>
+ *   <li>Ofrecer un menú repetitivo: alta, baja, cálculo de sueldos e indemnizaciones.</li>
+ *   <li>Modelar empleados con herencia ({@link Empleado} y subclases).</li>
+ *   <li>Aplicar polimorfismo mediante la interfaz {@link Cobros}.</li>
+ *   <li>Persistir la lista de empleados en memoria durante la sesión.</li>
+ * </ul>
+ *
+ * <p>Utiliza POO (herencia, interfaces), {@link java.util.ArrayList} y {@link Scanner}.</p>
+ *
+ * @author Agustín. A. Marquez. Piña
+ * @since 29/05/2026
+ * @see <a href="mailto:agu1406@outlook.es">agu1406@outlook.es</a>
+ * @see <a href="https://github.com/Agu1406/ClasesParticulares">Repositorio GitHub</a>
+ * @see <a href="https://www.agustinmarquez.dev">Sitio web</a>
  */
 public class MainNominas {
 

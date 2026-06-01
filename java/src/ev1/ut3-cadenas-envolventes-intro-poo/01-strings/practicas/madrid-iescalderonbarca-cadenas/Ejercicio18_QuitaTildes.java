@@ -1,9 +1,12 @@
 ﻿package madrid.iescalderonbarca.ejercicios.cadenas;
 
 /**
- * Ejercicio 18: Escribe la función quitaTildes que recibe un String y lo devuelve cambiando todas
- * las vocales tildadas presentes en él por la misma sin acentuar.
- * 
+ * Práctica de cadenas Calderón — ejercicio 18 (bloque 16–20).
+ *
+ * <p><b>Objetivo de este ejercicio:</b> implementar {@code quitaTildes} para normalizar vocales acentuadas.</p>
+ *
+ * <p>Enunciado del bloque en la carpeta de la práctica. Utiliza {@link String}.</p>
+ *
  * @author Agustín. A. Marquez. Piña
  * @since 14/01/2026
  * @see <a href="mailto:agu1406@outlook.es">agu1406@outlook.es</a>

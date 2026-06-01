@@ -18,7 +18,23 @@ java/
     └── pruebaslibres/
 ```
 
-Convencion por UT: subtemas numerados con `teoria/`, `ejercicios/` (`facil|medio|dificil` + `resueltos/`) y `practicas/` (material de centros; PDF en `enunciados/`).
+Convencion por UT: subtemas numerados con `teoria/`, `ejercicios/` (`facil|medio|dificil` + `resueltos/`) y, cuando aplique, `practicas/` **dentro del subtema** (p. ej. `03-practicas-centro/practicas/`, `01-arrays/practicas/`), no solo en la raiz de la UT.
+
+### practicas/ (centro + enunciado + solucion)
+
+Cada practica de instituto/universidad es **una carpeta** con el PDF y el codigo juntos. **No** hay carpetas `docs/`, `enunciados/` ni similares solo para documentos.
+
+```
+practicas/
+└── madrid-iescalderonbarca-quinielas/
+    ├── quinielas--madrid-iescalderonbarca.pdf   ← enunciado en la raiz
+    ├── Quinielas.java                           ← pendiente (sin _RESUELTO)
+    └── resueltos/                               ← solucion (opcional)
+```
+
+- Nombre carpeta: `comunidad-centro-nombre-proyecto`
+- Nombre PDF: `nombre-proyecto--comunidad-centro.pdf`
+- Teoria de clase (sin entrega): PDF suelto en `teoria/` del subtema, no en `practicas/`
 
 ## JavaDoc (pie de clase)
 
@@ -33,6 +49,16 @@ Al final del bloque JavaDoc de cada clase, convencion habitual:
 ```
 
 El contenido didactico va antes de estas etiquetas; el resto en comentarios de linea o multilinea.
+
+### JavaDoc en practicas (estilo)
+
+En cada clase principal de una practica, documentar con **objetivo pedagogico**, no con comandos de compilacion:
+
+- Enunciado PDF en la misma carpeta (`nombre--centro.pdf`).
+- **Objetivo** de la practica o de la parte.
+- Lista de requisitos: «Para ello, el programa debe…».
+- **Utiliza** tecnologias (XAMPP, JDBC, hilos, etc.).
+- Pie `@author` / `@since` / enlaces al final.
 
 ## Indice por evaluacion
 
@@ -62,7 +88,6 @@ El contenido didactico va antes de estas etiquetas; el resto en comentarios de l
 ### Otros
 
 - `src/pruebaslibres/` - repaso y simulacros de examen
-- `src/ev*/docs/` - PDFs y enunciados de apoyo
 
 ## Requisitos habituales
 

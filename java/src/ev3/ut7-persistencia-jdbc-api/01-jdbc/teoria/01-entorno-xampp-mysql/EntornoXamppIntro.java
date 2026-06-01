@@ -36,9 +36,8 @@ package ev3.ut7.jdbc.entorno;
  *
  * <h2>5. MySQL Connector/J</h2>
  * Descarga: https://dev.mysql.com/downloads/connector/j/ (Platform Independent).
- * Guarda el jar, p. ej. {@code C:\libs\mysql-connector-j-8.0.33.jar}.
- * Compilar/ejecutar: {@code -cp ".;C:\libs\mysql-connector-j-8.0.33.jar"}.
- * Sin jar: {@code ClassNotFoundException: com.mysql.cj.jdbc.Driver}.
+ * Guarda el jar en el classpath del proyecto (p. ej. {@code mysql-connector-j-8.0.33.jar}).
+ * Sin driver: {@code ClassNotFoundException: com.mysql.cj.jdbc.Driver}.
  *
  * <h2>6. RA9 vs RA8</h2>
  * RA9 (este bloque): JDBC + MySQL relacional, CRUD, integridad.

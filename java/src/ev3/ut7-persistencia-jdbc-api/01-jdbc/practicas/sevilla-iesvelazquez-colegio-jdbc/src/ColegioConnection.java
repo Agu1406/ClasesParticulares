@@ -6,21 +6,25 @@ import java.sql.SQLException;
 import java.util.Properties;
 
 /**
- * Conexion JDBC a la BD {@code Colegio} (XAMPP/MySQL + MySQL Connector/J).
- * <p>
- * Practica integradora IES Velazquez - sesion 6 del bloque {@code 01-jdbc} (RA9).
- * Enunciado: {@code enunciados/acceso-datos-contenido--sevilla-iesvelazquez.pdf}.
- * <p>
- * Compilar (PowerShell, desde esta carpeta de practica):
- * <pre>
- * $JAR = "C:\libs\mysql-connector-j-8.0.33.jar"
- * javac -encoding UTF-8 -d . -cp ".;$JAR" src\*.java
- * java -cp ".;$JAR" andalucia.sevilla.iesvelazquez.colegiojdbc.src.ColegioSetup
- * java -cp ".;$JAR" andalucia.sevilla.iesvelazquez.colegiojdbc.src.ColegioConnection
- * java -cp ".;$JAR" andalucia.sevilla.iesvelazquez.colegiojdbc.src.ColegioDemo
- * </pre>
- * Orden: Setup (crea BD/tabla) &rarr; Connection (prueba) &rarr; Demo (CRUD).
- * Alternativa SQL: {@code sql/colegio.sql} en phpMyAdmin.
+ * Conexión JDBC a la base de datos {@code Colegio}.
+ *
+ * <p><b>Práctica integradora</b> IES Velázquez — bloque {@code 01-jdbc} (RA9).
+ * Enunciado: {@code acceso-datos-contenido--sevilla-iesvelazquez.pdf} (carpeta de la práctica).</p>
+ *
+ * <p><b>Objetivo de esta parte:</b> disponer de una conexión estable a MySQL para que el resto
+ * de la aplicación pueda leer y modificar datos de alumnos.</p>
+ *
+ * <p>Para ello, el programa debe:</p>
+ * <ul>
+ *   <li>Cargar el driver JDBC de MySQL y abrir un {@link Connection} con {@link DriverManager}.</li>
+ *   <li>Centralizar host, puerto, usuario, contraseña y nombre de la base de datos.</li>
+ *   <li>Construir la URL JDBC con los parámetros adecuados para MySQL 8+.</li>
+ *   <li>Comprobar que la conexión responde antes de ejecutar el CRUD ({@link ColegioDemo}).</li>
+ * </ul>
+ *
+ * <p>Utiliza <b>XAMPP</b> (MySQL), <b>MySQL Connector/J</b> en el classpath y la API JDBC
+ * ({@link java.sql.Connection}, {@link java.util.Properties}). La base y la tabla se crean con
+ * {@link ColegioSetup} o con {@code sql/colegio.sql}.</p>
  *
  * @author Agustín. A. Marquez. Piña
  * @since 29/05/2026

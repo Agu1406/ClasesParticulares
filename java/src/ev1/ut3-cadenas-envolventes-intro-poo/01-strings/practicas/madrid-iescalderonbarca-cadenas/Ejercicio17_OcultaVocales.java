@@ -1,9 +1,12 @@
 ﻿package madrid.iescalderonbarca.ejercicios.cadenas;
 
 /**
- * Ejercicio 17: Codifica la función ocultaVocales que recibe un String y lo devuelve cambiando
- * todas las vocales sin acentuar presentes en él por caracteres 'X'.
- * 
+ * Práctica de cadenas Calderón — ejercicio 17 (bloque 16–20).
+ *
+ * <p><b>Objetivo de este ejercicio:</b> codificar {@code ocultaVocales}: sustituir vocales sin acento por {@code X}.</p>
+ *
+ * <p>Enunciado del bloque en la carpeta de la práctica. Utiliza {@link String} y métodos estáticos.</p>
+ *
  * @author Agustín. A. Marquez. Piña
  * @since 14/01/2026
  * @see <a href="mailto:agu1406@outlook.es">agu1406@outlook.es</a>

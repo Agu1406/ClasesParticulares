@@ -4,9 +4,21 @@ import java.sql.SQLException;
 import java.util.List;
 
 /**
- * Demo CRUD completa: insertar, consultar, listar, actualizar, transaccion y eliminar.
- * <p>
- * Punto de entrada de la practica Colegio JDBC. Ejecutar despues de {@link ColegioSetup}.
+ * Demostración integrada del acceso a datos del colegio.
+ *
+ * <p><b>Objetivo de la práctica:</b> gestionar alumnos en MySQL desde Java aplicando JDBC
+ * de extremo a extremo (conexión, DDL, CRUD y transacciones).</p>
+ *
+ * <p>Para ello, el programa debe:</p>
+ * <ul>
+ *   <li>Insertar alumnos y recuperar el identificador generado por la base de datos.</li>
+ *   <li>Consultar un registro por id y listar todos los alumnos.</li>
+ *   <li>Actualizar datos y eliminar registros de forma controlada.</li>
+ *   <li>Demostrar una operación transaccional (varios inserts con commit o rollback).</li>
+ * </ul>
+ *
+ * <p>Utiliza {@link AlumnosDAO}, {@link ColegioConnection}, {@link Alumno} y MySQL Connector/J.
+ * Requiere haber ejecutado antes {@link ColegioSetup}.</p>
  *
  * @see AlumnosDAO
  * @see ColegioConnection

@@ -5,8 +5,19 @@ import java.sql.SQLException;
 import java.sql.Statement;
 
 /**
- * Crea la BD {@code Colegio} y la tabla {@code Alumnos} con {@link java.sql.Statement}.
- * Ejecutar una vez antes de {@link ColegioDemo}. Usa {@link ColegioFactoryForServer} para CREATE DATABASE.
+ * Preparación del esquema: base de datos {@code Colegio} y tabla {@code Alumnos}.
+ *
+ * <p><b>Objetivo:</b> dejar el entorno listo para persistir alumnos antes de probar el CRUD.</p>
+ *
+ * <p>Para ello, el programa debe:</p>
+ * <ul>
+ *   <li>Crear la base de datos {@code Colegio} si no existe (conexión al servidor sin BD).</li>
+ *   <li>Crear la tabla {@code Alumnos} con clave primaria autoincremental y restricciones del enunciado.</li>
+ *   <li>Ejecutar el DDL mediante {@link java.sql.Statement} y gestionar errores SQL.</li>
+ * </ul>
+ *
+ * <p>Utiliza {@link ColegioFactoryForServer}, {@link ColegioConnection} y MySQL en XAMPP.
+ * Ejecutar una sola vez antes de {@link ColegioDemo}.</p>
  *
  * @author Agustín. A. Marquez. Piña
  * @since 29/05/2026

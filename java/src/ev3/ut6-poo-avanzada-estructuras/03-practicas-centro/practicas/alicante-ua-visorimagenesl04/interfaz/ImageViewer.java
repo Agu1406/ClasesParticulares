@@ -15,13 +15,27 @@ import java.util.ArrayList;
 import java.util.List;
 
 /**
- * ImageViewer is the main class of the image viewer application. It builds and
- * displays the application GUI and initialises all other components.
- * 
- * To start the application, create an object of this class.
- * 
- * @author Michael Kölling and David J. Barnes.
+ * Visor de imágenes con filtros (UA Alicante, práctica L04).
+ *
+ * <p>Enunciado: PDFs {@code l02}–{@code l04} en la carpeta de la práctica.</p>
+ *
+ * <p><b>Objetivo:</b> cargar imágenes, aplicar filtros y mostrar la interfaz gráfica.</p>
+ *
+ * <p>Para ello, el programa debe:</p>
+ * <ul>
+ *   <li>Construir la GUI y gestionar ficheros de imagen ({@link OFImage}, {@link ImageFileManager}).</li>
+ *   <li>Aplicar filtros del paquete {@code filtros} sobre la imagen activa.</li>
+ * </ul>
+ *
+ * <p>Utiliza <b>Swing</b> (AWT), POO y el proyecto base de Kölling/Barnes.</p>
+ *
+ * @author Michael Kölling, David J. Barnes
+ * @author Agustín. A. Marquez. Piña
  * @version 3.1
+ * @since 29/05/2026
+ * @see <a href="mailto:agu1406@outlook.es">agu1406@outlook.es</a>
+ * @see <a href="https://github.com/Agu1406/ClasesParticulares">Repositorio GitHub</a>
+ * @see <a href="https://www.agustinmarquez.dev">Sitio web</a>
  */
 public class ImageViewer
 {

@@ -3,7 +3,26 @@ package andalucia.sevilla.iesvelazquez.DAM2.tallermecanicomultihilo;
 import java.util.Random;
 
 /**
- * Simulación del taller mecánico con un mecánico y varios coches.
+ * Simulación de taller mecánico con cola de coches (IES Velázquez).
+ *
+ * <p>Enunciado: {@code taller-mecanico--sevilla-iesvelazquez.pdf} (carpeta de la práctica).</p>
+ *
+ * <p><b>Objetivo:</b> coordinar un mecánico y varios coches con hilos y aparcamiento limitado.</p>
+ *
+ * <p>Para ello, el programa debe:</p>
+ * <ul>
+ *   <li>Modelar el taller ({@link TallerMecanico}) y el hilo del {@link Mecanico}.</li>
+ *   <li>Lanzar coches ({@link Coche}) que esperan o son atendidos según capacidad.</li>
+ *   <li>Simular tiempos de reparación y llegadas aleatorias.</li>
+ * </ul>
+ *
+ * <p>Utiliza {@link Thread}, sincronización y {@link Random}.</p>
+ *
+ * @author Agustín. A. Marquez. Piña
+ * @since 29/05/2026
+ * @see <a href="mailto:agu1406@outlook.es">agu1406@outlook.es</a>
+ * @see <a href="https://github.com/Agu1406/ClasesParticulares">Repositorio GitHub</a>
+ * @see <a href="https://www.agustinmarquez.dev">Sitio web</a>
  */
 public class Main {
     // Número máximo de coches que caben en el aparcamiento de espera

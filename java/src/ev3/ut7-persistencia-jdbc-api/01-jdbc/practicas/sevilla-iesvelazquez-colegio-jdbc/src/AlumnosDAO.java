@@ -5,8 +5,21 @@ import java.util.ArrayList;
 import java.util.List;
 
 /**
- * DAO: operaciones CRUD con {@link java.sql.PreparedStatement} y {@link java.sql.ResultSet}.
- * Incluye transaccion en {@link #insertarDosAlumnosEnTransaccion(Alumno, Alumno)}.
+ * Capa de acceso a datos para la tabla {@code Alumnos}.
+ *
+ * <p><b>Objetivo:</b> encapsular el CRUD y las transacciones para que la lógica de negocio
+ * no mezcle SQL con el flujo principal ({@link ColegioDemo}).</p>
+ *
+ * <p>Para ello, esta clase debe:</p>
+ * <ul>
+ *   <li>Insertar, buscar por id, listar, actualizar y borrar alumnos con sentencias parametrizadas.</li>
+ *   <li>Mapear filas de {@link java.sql.ResultSet} a objetos {@link Alumno}.</li>
+ *   <li>Gestionar conexiones con try-with-resources y propagar {@link java.sql.SQLException}.</li>
+ *   <li>Ofrecer un método que inserte dos alumnos en una misma transacción (commit/rollback).</li>
+ * </ul>
+ *
+ * <p>Utiliza {@link ColegioConnection}, {@link java.sql.PreparedStatement} y
+ * {@link java.sql.ResultSet}.</p>
  *
  * @author Agustín. A. Marquez. Piña
  * @since 29/05/2026

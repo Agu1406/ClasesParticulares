@@ -1,34 +1,32 @@
 package madrid.iescalderonbarca.ejercicios.elevable;
 
 /**
- * Autor: NOMBRE_DEL_ALUMNO
- * Curso: 1º Bachillerato / Programación
- * Fecha: AAAA-MM-DD
+ * Interfaz de un ascensor inteligente (IES Calderón Barca).
  *
- * Interfaz Elevable a completar por el alumno.
- * Añade las cabeceras de los métodos necesarios para un ascensor,
- * con sus parámetros y comentarios.
+ * <p>Enunciado: {@code elevable--madrid-iescalderonbarca.pdf} (carpeta de la práctica).
+ * Solución de referencia en {@code resueltos/Elevable_RESUELTO.java}.</p>
+ *
+ * <p><b>Objetivo:</b> definir el contrato de un ascensor: sensores, botoneras, maquinaria y seguridad.</p>
+ *
+ * <p>Para ello, la interfaz debe declarar métodos para:</p>
+ * <ul>
+ *   <li>Consultar planta actual, destino y estado de movimiento; detectar sobrepeso y puerta.</li>
+ *   <li>Abrir y cerrar puertas interiores y exteriores.</li>
+ *   <li>Controlar iluminación y modo de ahorro energético.</li>
+ *   <li>Gestionar botonera interior (pedir/cancelar plantas) y exterior (llamar/cancelar).</li>
+ *   <li>Arrancar motor, freno, nivelación y desplazamiento entre plantas.</li>
+ *   <li>Alarma, bloqueo y parada de emergencia; comunicación con el exterior.</li>
+ * </ul>
+ *
+ * <p>Utiliza interfaces Java y documentación JavaDoc en cada método.</p>
+ *
+ * @author Agustín. A. Marquez. Piña
+ * @since 29/05/2026
+ * @see <a href="mailto:agu1406@outlook.es">agu1406@outlook.es</a>
+ * @see <a href="https://github.com/Agu1406/ClasesParticulares">Repositorio GitHub</a>
+ * @see <a href="https://www.agustinmarquez.dev">Sitio web</a>
  */
 public interface Elevable {
 
-    // TODO: Añade métodos para:
-    // - Consultar planta actual, planta objetivo y si está en movimiento.
-    // - Detectar sobrepeso y presencia en la puerta.
-
-    // TODO: Añade métodos para abrir/cerrar puertas interiores y exteriores.
-
-    // TODO: Añade métodos para encender/apagar luces y controlar el modo de ahorro energético.
-
-    // TODO: Añade métodos para la botonera interior (pedir plantas, cancelar peticiones).
-
-    // TODO: Añade métodos para la botonera exterior (llamar al ascensor desde una planta, cancelar llamadas).
-
-    // TODO: Añade métodos para la maquinaria:
-    //       arrancar/detener motor, activar/desactivar freno, nivelar cabina, mover a una planta.
-
-    // TODO: Añade métodos de seguridad:
-    //       activar/desactivar alarma, bloqueo/desbloqueo, parada de emergencia.
-
-    // TODO: Añade métodos de comunicación con el exterior:
-    //       iniciar y finalizar comunicación externa.
+    // TODO: declarar los métodos del enunciado (ver lista anterior).
 }
