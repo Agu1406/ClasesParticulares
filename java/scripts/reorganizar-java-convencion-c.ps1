@@ -36,8 +36,11 @@ Ensure-Subtopics $ut2 @("01-operadores-y-basicos", "02-condicionales", "03-bucle
 Move-IfExists "$ut2/basicos" "$ut2/01-operadores-y-basicos/teoria/basicos"
 Move-IfExists "$ut2/operadores" "$ut2/01-operadores-y-basicos/teoria/operadores"
 Move-IfExists "$ut2/condicionales" "$ut2/02-condicionales/teoria/condicionales"
-Move-IfExists "$ut2/bucles" "$ut2/03-bucles/teoria/bucles"
-Move-IfExists "$ut2/buclesycondicionales" "$ut2/03-bucles/teoria/buclesycondicionales"
+# 03-bucles: teoria = clases explicativas (BucleForIntro, etc.); ejercicios = for|while|dowhile/pendientes|resueltos
+Move-IfExists "$ut2/bucles/for" "$ut2/03-bucles/ejercicios/for"
+Move-IfExists "$ut2/bucles/while" "$ut2/03-bucles/ejercicios/while"
+Move-IfExists "$ut2/bucles/dowhile" "$ut2/03-bucles/ejercicios/dowhile"
+Move-IfExists "$ut2/buclesycondicionales" "$ut2/03-bucles/teoria"
 Move-IfExists "$ut2/funciones" "$ut2/04-metodos/teoria/funciones"
 Move-IfExists "$ut2/ejerciciosmixtos" "$ut2/05-repaso/ejercicios/pendientes/ejerciciosmixtos"
 Move-IfExists "$ut2/enunciados" "$ut2/enunciados"

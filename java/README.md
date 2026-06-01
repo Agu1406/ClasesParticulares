@@ -18,7 +18,9 @@ java/
     └── pruebaslibres/
 ```
 
-Convencion por UT: subtemas numerados con `teoria/`, `ejercicios/` (`facil|medio|dificil` + `resueltos/`) y, cuando aplique, `practicas/` **dentro del subtema** (p. ej. `03-practicas-centro/practicas/`, `01-arrays/practicas/`), no solo en la raiz de la UT.
+Convencion por UT: subtemas numerados con `teoria/`, `ejercicios/` (`facil|medio|dificil` + `resueltos/`, o por tema como `for|while|dowhile` en `03-bucles`) y, cuando aplique, `practicas/` **dentro del subtema** (p. ej. `03-practicas-centro/practicas/`, `01-arrays/practicas/`), no solo en la raiz de la UT.
+
+En `03-bucles/teoria/` solo hay clases explicativas (`BucleForIntro`, etc.); los ejercicios viven en `03-bucles/ejercicios/{for,while,dowhile}/pendientes` y `resueltos`.
 
 ### practicas/ (centro + enunciado + solucion)
 
