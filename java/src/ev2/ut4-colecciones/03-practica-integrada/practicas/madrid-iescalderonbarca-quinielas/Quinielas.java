@@ -15,7 +15,7 @@ package madrid.iescalderonbarca.ejercicios.quinielas;
  *   <li>Registrar apuestas, comprobar aciertos y mostrar partidos de la jornada.</li>
  * </ul>
  *
- * <p>Utiliza arrays, {@link Scanner} y POO. Solución en {@code resueltos/Quinielas_RESUELTO.java}.</p>
+ * <p>Utiliza arrays, {@link Scanner} y POO. Solución en {@code Quinielas_RESUELTO.java}.</p>
  *
  * @author Agustín. A. Marquez. Piña
  * @since 29/05/2026

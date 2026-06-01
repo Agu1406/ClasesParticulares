@@ -4,7 +4,7 @@ package madrid.iescalderonbarca.ejercicios.elevable;
  * Interfaz de un ascensor inteligente (IES Calderón Barca).
  *
  * <p>Enunciado: {@code elevable--madrid-iescalderonbarca.pdf} (carpeta de la práctica).
- * Solución de referencia en {@code resueltos/Elevable_RESUELTO.java}.</p>
+ * Solución de referencia en {@code Elevable_RESUELTO.java}.</p>
  *
  * <p><b>Objetivo:</b> definir el contrato de un ascensor: sensores, botoneras, maquinaria y seguridad.</p>
  *

@@ -20,19 +20,31 @@ java/
 
 Convencion por UT: subtemas numerados con `teoria/`, `ejercicios/` (`facil|medio|dificil` + `resueltos/`, o por tema como `for|while|dowhile` en `03-bucles`) y, cuando aplique, `practicas/` **dentro del subtema** (p. ej. `03-practicas-centro/practicas/`, `01-arrays/practicas/`), no solo en la raiz de la UT.
 
-En `03-bucles/teoria/` solo hay clases explicativas (`BucleForIntro`, etc.); los ejercicios viven en `03-bucles/ejercicios/{for,while,dowhile}/pendientes` y `resueltos`.
+En `teoria/` del subtema solo van clases explicativas (`*Intro.java`, demos). Los ejercicios van en `ejercicios/{tema}/pendientes` y `resueltos` (antes `sin_resolver` bajo `teoria/`). Ejemplos ya aplicados:
+
+| Subtema | Teoria | Ejercicios |
+|---------|--------|------------|
+| `03-bucles` | `BucleForIntro`, … | `for`, `while`, `dowhile` |
+| `02-condicionales` | `IfIntro`, `SwitchIntro`, … | `if`, `ifelse`, `switch` |
+| `04-metodos` | `MetodosIntro` | `pendientes` / `resueltos` (sin subcarpeta tema) |
+| `01-strings` (UT3) | `StringIntro` | `strings/resueltos` |
+| `02-excepciones`, `04-ficheros-io` (UT5) | `TryCatchFinallyIntro`, `FicherosIntro` | `trycatchfinally`, `ficheros` |
+
+Pendiente de mismo criterio (solo `resueltos` bajo `teoria/` legacy): `ut4` arrays/arraylist con `facil|medio|dificil`, `01-operadores-y-basicos` (ejercicios sueltos en `teoria/basicos`).
 
 ### practicas/ (centro + enunciado + solucion)
 
-Cada practica de instituto/universidad es **una carpeta** con el PDF y el codigo juntos. **No** hay carpetas `docs/`, `enunciados/` ni similares solo para documentos.
+Cada practica de instituto/universidad es **una carpeta** (`comunidad-centro-tema`) con PDF/documento y codigo en la **misma raiz** (pendiente, `_RESUELTO`, varios `.java` si hace falta). **No** subcarpeta `resueltos/`, ni `docs/` ni `enunciados/` sueltos.
 
 ```
 practicas/
 └── madrid-iescalderonbarca-quinielas/
-    ├── quinielas--madrid-iescalderonbarca.pdf   ← enunciado en la raiz
-    ├── Quinielas.java                           ← pendiente (sin _RESUELTO)
-    └── resueltos/                               ← solucion (opcional)
+    ├── quinielas--madrid-iescalderonbarca.pdf
+    ├── Quinielas.java
+    └── Quinielas_RESUELTO.java
 ```
+
+En JavaDoc/comentarios puede decirse «funcion» (evita el marcador TODO del IDE sobre «metodo»); en rutas y nombres de clase use **metodos**, no `funciones` (PDFs originales del centro exceptuados).
 
 - Nombre carpeta: `comunidad-centro-nombre-proyecto`
 - Nombre PDF: `nombre-proyecto--comunidad-centro.pdf`

@@ -35,19 +35,25 @@ $ut2 = "java/src/ev1/ut2-control-flujo-metodos"
 Ensure-Subtopics $ut2 @("01-operadores-y-basicos", "02-condicionales", "03-bucles", "04-metodos", "05-repaso")
 Move-IfExists "$ut2/basicos" "$ut2/01-operadores-y-basicos/teoria/basicos"
 Move-IfExists "$ut2/operadores" "$ut2/01-operadores-y-basicos/teoria/operadores"
-Move-IfExists "$ut2/condicionales" "$ut2/02-condicionales/teoria/condicionales"
-# 03-bucles: teoria = clases explicativas (BucleForIntro, etc.); ejercicios = for|while|dowhile/pendientes|resueltos
+# 02-condicionales: teoria = *Intro; ejercicios = if|ifelse|switch/pendientes|resueltos
+Move-IfExists "$ut2/condicionales/if" "$ut2/02-condicionales/ejercicios/if"
+Move-IfExists "$ut2/condicionales/switch" "$ut2/02-condicionales/ejercicios/switch"
+Move-IfExists "$ut2/condicionales/ifelse" "$ut2/02-condicionales/ejercicios/ifelse"
+# 03-bucles: teoria = BucleForIntro, etc.; ejercicios = for|while|dowhile/pendientes|resueltos
 Move-IfExists "$ut2/bucles/for" "$ut2/03-bucles/ejercicios/for"
 Move-IfExists "$ut2/bucles/while" "$ut2/03-bucles/ejercicios/while"
 Move-IfExists "$ut2/bucles/dowhile" "$ut2/03-bucles/ejercicios/dowhile"
 Move-IfExists "$ut2/buclesycondicionales" "$ut2/03-bucles/teoria"
-Move-IfExists "$ut2/funciones" "$ut2/04-metodos/teoria/funciones"
+# 04-metodos: teoria = MetodosIntro; ejercicios = pendientes|resueltos (sin subcarpeta funciones)
+Move-IfExists "$ut2/funciones/sin_resolver" "$ut2/04-metodos/ejercicios/pendientes"
+Move-IfExists "$ut2/funciones/resueltos" "$ut2/04-metodos/ejercicios/resueltos"
+Move-IfExists "$ut2/funciones" "$ut2/04-metodos/ejercicios/pendientes"
 Move-IfExists "$ut2/ejerciciosmixtos" "$ut2/05-repaso/ejercicios/pendientes/ejerciciosmixtos"
 Move-IfExists "$ut2/enunciados" "$ut2/enunciados"
 
 $ut3 = "java/src/ev1/ut3-cadenas-envolventes-intro-poo"
 Ensure-Subtopics $ut3 @("01-strings", "02-envolventes", "03-utilidades-y-practica", "04-repaso")
-Move-IfExists "$ut3/strings" "$ut3/01-strings/teoria/strings"
+Move-IfExists "$ut3/strings" "$ut3/01-strings/ejercicios/strings"
 Move-IfExists "$ut3/madrid-iescalderonbarca-cadenas" "$ut3/01-strings/practicas/madrid-iescalderonbarca-cadenas"
 Move-IfExists "$ut3/envolventes" "$ut3/02-envolventes/teoria/envolventes"
 Move-IfExists "$ut3/adicionales" "$ut3/03-utilidades-y-practica/teoria/adicionales"
@@ -77,11 +83,11 @@ Move-IfExists "$ut4/enunciados" "$ut4/enunciados"
 $ut5 = "java/src/ev2/ut5-poo-excepciones-io"
 Ensure-Subtopics $ut5 @("01-poo-basica", "02-excepciones", "03-expresiones-fechas", "04-ficheros-io", "05-repaso")
 Move-IfExists "$ut5/poobasico" "$ut5/01-poo-basica/teoria/poobasico"
-Move-IfExists "$ut5/excepciones" "$ut5/02-excepciones/teoria/excepciones"
-Move-IfExists "$ut5/trycatchfinally" "$ut5/02-excepciones/teoria/trycatchfinally"
+Move-IfExists "$ut5/excepciones" "$ut5/02-excepciones/ejercicios/excepciones"
+Move-IfExists "$ut5/trycatchfinally" "$ut5/02-excepciones/ejercicios/trycatchfinally"
 Move-IfExists "$ut5/expresiones" "$ut5/03-expresiones-fechas/teoria/expresiones"
 Move-IfExists "$ut5/fechashoras" "$ut5/03-expresiones-fechas/teoria/fechashoras"
-Move-IfExists "$ut5/inputoutputficheros" "$ut5/04-ficheros-io/teoria/inputoutputficheros"
+Move-IfExists "$ut5/inputoutputficheros" "$ut5/04-ficheros-io/ejercicios/ficheros"
 
 # ----------------
 # EV3

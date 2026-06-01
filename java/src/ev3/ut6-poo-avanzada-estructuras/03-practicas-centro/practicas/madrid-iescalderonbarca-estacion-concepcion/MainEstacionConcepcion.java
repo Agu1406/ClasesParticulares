@@ -16,7 +16,7 @@ import java.util.Scanner;
  *   <li>Mostrar el estado de la estación ({@link EstacionConcepcion}).</li>
  * </ul>
  *
- * <p>Utiliza POO, {@link java.util.List} y {@link Scanner}. Solución en {@code resueltos/}.</p>
+ * <p>Utiliza POO, {@link java.util.List} y {@link Scanner}. Solución en {@code MainEstacionConcepcion_RESUELTO.java}.</p>
  *
  * @author Agustín. A. Marquez. Piña
  * @since 29/05/2026
