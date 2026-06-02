@@ -29,7 +29,7 @@ En `teoria/` del subtema solo van clases explicativas (`*Intro.java`, demos). Lo
 | `04-metodos` | `MetodosIntro` | `pendientes` / `resueltos` (sin subcarpeta tema) |
 | `01-strings` (UT3) | `StringIntro` | `pendientes` / `resueltos` |
 | `02-excepciones` (UT5) | `ExcepcionesIntro`, `TryCatchFinallyIntro` | `pendientes` / `resueltos` |
-| `04-ficheros-io` (UT5) | `FicherosIntro` | `ficheros` |
+| `04-ficheros-io` (UT5) | `FicherosIntro` | `pendientes` / `resueltos` |
 | `05-repaso` | `RepasoMixtoIntro` | `pendientes` / `resueltos` (mixtos UT2) |
 
 | `01-arrays` (UT4) | `ArraysIntro` | `facil`, `medio`, `dificil`; prácticas Calderón en `practicas/` |

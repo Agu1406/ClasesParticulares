@@ -6,7 +6,7 @@ package general.inputoutputficheros;
  * <p><b>Objetivo:</b> crear, leer y escribir archivos de texto con clases del paquete
  * {@code java.io} (p. ej. {@code File}, {@code FileWriter}, {@code BufferedReader}).</p>
  *
- * <p>Ejercicios en {@code ejercicios/ficheros/} (pendientes y resueltos).</p>
+ * <p>Ejercicios en {@code ejercicios/pendientes} y {@code ejercicios/resueltos}.</p>
  *
  * @author Agustín. A. Marquez. Piña
  * @since 29/05/2026

@@ -110,7 +110,12 @@ Move-IfExists "$ut5/excepciones" "$ut5/02-excepciones/ejercicios/resueltos/_lega
 Move-IfExists "$ut5/02-excepciones/ejercicios/excepciones" "$ut5/02-excepciones/ejercicios/resueltos/_legacy_excepciones_obsoleto"
 Move-IfExists "$ut5/expresiones" "$ut5/03-expresiones-fechas/teoria/expresiones"
 Move-IfExists "$ut5/fechashoras" "$ut5/03-expresiones-fechas/teoria/fechashoras"
-Move-IfExists "$ut5/inputoutputficheros" "$ut5/04-ficheros-io/ejercicios/ficheros"
+# 04-ficheros-io: teoria = FicherosIntro; ejercicios = pendientes|resueltos
+Move-IfExists "$ut5/inputoutputficheros/pendientes" "$ut5/04-ficheros-io/ejercicios/pendientes"
+Move-IfExists "$ut5/inputoutputficheros/resueltos" "$ut5/04-ficheros-io/ejercicios/resueltos"
+Move-IfExists "$ut5/inputoutputficheros" "$ut5/04-ficheros-io/ejercicios/pendientes"
+Move-IfExists "$ut5/04-ficheros-io/ejercicios/ficheros/pendientes" "$ut5/04-ficheros-io/ejercicios/pendientes"
+Move-IfExists "$ut5/04-ficheros-io/ejercicios/ficheros/resueltos" "$ut5/04-ficheros-io/ejercicios/resueltos"
 
 # ----------------
 # EV3
