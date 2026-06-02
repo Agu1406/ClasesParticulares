@@ -1,19 +1,22 @@
 package general.poobasico;
 
 /**
- * Teoría: introducción a la POO básica en Java.
+ * Teoría: índice del subtema POO básica (UT5).
  *
- * <p><b>Objetivo:</b> pasar de programación estructurada a clases y objetos:
- * atributos, métodos, constructores, encapsulamiento e {@code static}.</p>
+ * <p><b>Objetivo:</b> pasar de programación estructurada a clases y objetos. Cada bloque
+ * tiene su clase {@code *Intro} en {@code teoria/} y ejercicios en la carpeta homónima
+ * bajo {@code ejercicios/}.</p>
  *
- * <p>Bloques de ejercicios en {@code ejercicios/} (cada carpeta = concepto):</p>
- * <ul>
- *   <li>{@code clases}, {@code objetos}, {@code constructores}</li>
- *   <li>{@code encapsulamiento}, {@code metodos}, {@code estatico}, {@code instancias}</li>
- * </ul>
- *
- * <p>Demo ejecutable de varias clases: {@link general.poobasico.objetos.EjemploObjetosJuego}
- * (fuentes en esta carpeta {@code teoria/}).</p>
+ * <p>Orden sugerido:</p>
+ * <ol>
+ *   <li>{@link ClasesIntro} → {@code ejercicios/clases/}</li>
+ *   <li>{@link ObjetosIntro} → {@code ejercicios/objetos/} (demo: {@link general.poobasico.objetos.EjemploObjetosJuego})</li>
+ *   <li>{@link ConstructoresIntro} → {@code ejercicios/constructores/}</li>
+ *   <li>{@link MetodosIntro} → {@code ejercicios/metodos/}</li>
+ *   <li>{@link EncapsulamientoIntro} → {@code ejercicios/encapsulamiento/}</li>
+ *   <li>{@link InstanciasIntro} → {@code ejercicios/instancias/}</li>
+ *   <li>{@link EstaticoIntro} → {@code ejercicios/estatico/}</li>
+ * </ol>
  *
  * @author Agustín. A. Marquez. Piña
  * @since 02/06/2026
@@ -24,7 +27,7 @@ package general.poobasico;
 public class PooBasicaIntro {
 
     public static void main(String[] args) {
-        System.out.println("POO básica: clase = plantilla, objeto = instancia en memoria.");
-        System.out.println("Siguiente paso: ejercicios/clases, objetos, constructores, …");
+        System.out.println("POO básica — lee cada *Intro en teoria/ y practica en ejercicios/<concepto>/");
+        System.out.println("Empieza por: ClasesIntro → ObjetosIntro → ConstructoresIntro …");
     }
 }
