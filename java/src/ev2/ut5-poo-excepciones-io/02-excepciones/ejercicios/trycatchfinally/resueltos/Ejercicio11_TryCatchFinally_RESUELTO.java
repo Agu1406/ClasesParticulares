@@ -1,21 +1,23 @@
-﻿package general.excepciones.resueltos;
+package general.trycatchfinally;
 
 /**
- * Práctica Excepciones 1 (resuelto)
- * Diseña un programa que divide dos números.
- * 
- * El código contempla:
- * - Que el segundo número no sea cero
- * - Que el primer número no sea cero ni menor que cero
- * - Que el primer valor sea mayor que 100
- * 
+ * Ejercicio 11: División con validaciones y {@code throw}
+ * Versión resuelta.
+ *
+ * <p>El código contempla:</p>
+ * <ul>
+ *   <li>El segundo número no sea cero</li>
+ *   <li>El primer número no sea cero ni negativo</li>
+ *   <li>El primer valor sea mayor que 100</li>
+ * </ul>
+ *
  * @author Agustín. A. Marquez. Piña
  * @since 26/04/2026
  * @see <a href="mailto:agu1406@outlook.es">agu1406@outlook.es</a>
  * @see <a href="https://github.com/Agu1406/ClasesParticulares">Repositorio GitHub</a>
  * @see <a href="https://www.agustinmarquez.dev">Sitio web</a>
  */
-public class Ejercicio1_DividirConValidaciones {
+public class Ejercicio11_TryCatchFinally_RESUELTO {
 
     public static double dividirConReglas(int primerNumero, int segundoNumero) {
         if (segundoNumero == 0) {
@@ -46,4 +48,3 @@ public class Ejercicio1_DividirConValidaciones {
         }
     }
 }
-

@@ -28,7 +28,8 @@ En `teoria/` del subtema solo van clases explicativas (`*Intro.java`, demos). Lo
 | `02-condicionales` | `CondicionalesComparacionIntro` + `teoria/01-if` … `03-switch` | `01-if`, `02-ifelse`, `03-switch` |
 | `04-metodos` | `MetodosIntro` | `pendientes` / `resueltos` (sin subcarpeta tema) |
 | `01-strings` (UT3) | `StringIntro` | `pendientes` / `resueltos` |
-| `02-excepciones`, `04-ficheros-io` (UT5) | `TryCatchFinallyIntro`, `FicherosIntro` | `trycatchfinally`, `ficheros` |
+| `02-excepciones` (UT5) | `ExcepcionesIntro`, `TryCatchFinallyIntro` | `trycatchfinally` (1–11, pendientes/resueltos) |
+| `04-ficheros-io` (UT5) | `FicherosIntro` | `ficheros` |
 | `05-repaso` | `RepasoMixtoIntro` | `pendientes` / `resueltos` (mixtos UT2) |
 
 | `01-arrays` (UT4) | `ArraysIntro` | `facil`, `medio`, `dificil`; prácticas Calderón en `practicas/` |

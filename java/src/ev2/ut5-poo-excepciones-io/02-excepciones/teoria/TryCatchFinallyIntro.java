@@ -6,7 +6,8 @@ package general.trycatchfinally;
  * <p><b>Objetivo:</b> capturar errores en tiempo de ejecución sin detener todo el programa
  * y liberar recursos con {@code finally}.</p>
  *
- * <p>Ejercicios en {@code ejercicios/trycatchfinally/} (pendientes y resueltos).</p>
+ * <p>Índice del subtema: {@link ExcepcionesIntro}.
+ * Ejercicios en {@code ejercicios/trycatchfinally/} (pendientes y resueltos; ejercicio 11: división con reglas).</p>
  *
  * @author Agustín. A. Marquez. Piña
  * @since 29/05/2026

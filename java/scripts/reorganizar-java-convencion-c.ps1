@@ -100,8 +100,10 @@ $ut5 = "java/src/ev2/ut5-poo-excepciones-io"
 Ensure-Subtopics $ut5 @("01-poo-basica", "02-excepciones", "03-expresiones-fechas", "04-ficheros-io", "05-repaso")
 # 01-poo-basica: teoria = PooBasicaIntro + demos; ejercicios = clases|objetos|…/pendientes|resueltos
 Move-IfExists "$ut5/poobasico" "$ut5/01-poo-basica/ejercicios"
-Move-IfExists "$ut5/excepciones" "$ut5/02-excepciones/ejercicios/excepciones"
 Move-IfExists "$ut5/trycatchfinally" "$ut5/02-excepciones/ejercicios/trycatchfinally"
+# Legacy excepciones: unificar en trycatchfinally (ej. Ejercicio11_*); no mantener ejercicios/excepciones/
+Move-IfExists "$ut5/excepciones" "$ut5/02-excepciones/ejercicios/trycatchfinally/resueltos/_legacy_excepciones_obsoleto"
+Move-IfExists "$ut5/02-excepciones/ejercicios/excepciones" "$ut5/02-excepciones/ejercicios/trycatchfinally/resueltos/_legacy_excepciones_obsoleto"
 Move-IfExists "$ut5/expresiones" "$ut5/03-expresiones-fechas/teoria/expresiones"
 Move-IfExists "$ut5/fechashoras" "$ut5/03-expresiones-fechas/teoria/fechashoras"
 Move-IfExists "$ut5/inputoutputficheros" "$ut5/04-ficheros-io/ejercicios/ficheros"
