@@ -16,7 +16,7 @@ package general.poobasico;
  * Libro l = new Libro("Java");
  * }</pre>
  *
- * <p>Practica en {@code ejercicios/constructores/pendientes} y {@code resueltos}.</p>
+ * <p>Practica en {@code ejercicios/03-constructores/pendientes} y {@code resueltos}.</p>
  *
  * @author Agustín. A. Marquez. Piña
  * @since 02/06/2026

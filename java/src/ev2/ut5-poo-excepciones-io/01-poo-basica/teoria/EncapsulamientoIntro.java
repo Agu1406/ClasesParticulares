@@ -11,7 +11,7 @@ package general.poobasico;
  *   <li>{@code public} getters/setters — interfaz controlada hacia fuera.</li>
  * </ul>
  *
- * <p>Practica en {@code ejercicios/encapsulamiento/pendientes} y {@code resueltos}.</p>
+ * <p>Practica en {@code ejercicios/05-encapsulamiento/pendientes} y {@code resueltos}.</p>
  *
  * @author Agustín. A. Marquez. Piña
  * @since 02/06/2026

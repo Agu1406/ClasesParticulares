@@ -9,13 +9,13 @@ package general.poobasico;
  *
  * <p>Orden sugerido:</p>
  * <ol>
- *   <li>{@link ClasesIntro} → {@code ejercicios/clases/}</li>
- *   <li>{@link ObjetosIntro} → {@code ejercicios/objetos/} (demo: {@link general.poobasico.objetos.EjemploObjetosJuego})</li>
- *   <li>{@link ConstructoresIntro} → {@code ejercicios/constructores/}</li>
- *   <li>{@link MetodosIntro} → {@code ejercicios/metodos/}</li>
- *   <li>{@link EncapsulamientoIntro} → {@code ejercicios/encapsulamiento/}</li>
- *   <li>{@link InstanciasIntro} → {@code ejercicios/instancias/}</li>
- *   <li>{@link EstaticoIntro} → {@code ejercicios/estatico/}</li>
+ *   <li>{@link ClasesIntro} → {@code ejercicios/01-clases/}</li>
+ *   <li>{@link ObjetosIntro} → {@code ejercicios/02-objetos/} (demo: {@link general.poobasico.objetos.EjemploObjetosJuego})</li>
+ *   <li>{@link ConstructoresIntro} → {@code ejercicios/03-constructores/}</li>
+ *   <li>{@link MetodosIntro} → {@code ejercicios/04-metodos/}</li>
+ *   <li>{@link EncapsulamientoIntro} → {@code ejercicios/05-encapsulamiento/}</li>
+ *   <li>{@link InstanciasIntro} → {@code ejercicios/06-instancias/}</li>
+ *   <li>{@link EstaticoIntro} → {@code ejercicios/07-estatico/}</li>
  * </ol>
  *
  * @author Agustín. A. Marquez. Piña
@@ -27,7 +27,7 @@ package general.poobasico;
 public class PooBasicaIntro {
 
     public static void main(String[] args) {
-        System.out.println("POO básica — lee cada *Intro en teoria/ y practica en ejercicios/<concepto>/");
-        System.out.println("Empieza por: ClasesIntro → ObjetosIntro → ConstructoresIntro …");
+        System.out.println("POO básica — lee cada *Intro en teoria/ y practica en ejercicios/01-clases … 07-estatico");
+        System.out.println("Orden: 01-clases → 02-objetos → 03-constructores → 04-metodos → …");
     }
 }

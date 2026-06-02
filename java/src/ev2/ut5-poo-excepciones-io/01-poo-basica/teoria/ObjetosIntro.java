@@ -9,7 +9,7 @@ package general.poobasico;
  * <p>Demo ampliado con varias clases relacionadas:
  * {@link general.poobasico.objetos.EjemploObjetosJuego} (en esta carpeta {@code teoria/}).</p>
  *
- * <p>Practica en {@code ejercicios/objetos/pendientes} y {@code resueltos}.</p>
+ * <p>Practica en {@code ejercicios/02-objetos/pendientes} y {@code resueltos}.</p>
  *
  * @author Agustín. A. Marquez. Piña
  * @since 02/06/2026

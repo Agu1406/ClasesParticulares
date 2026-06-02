@@ -11,7 +11,7 @@ package general.poobasico;
  *   <li>Se accede con {@code NombreClase.atributo} o desde un objeto (menos claro).</li>
  * </ul>
  *
- * <p>Practica en {@code ejercicios/estatico/pendientes} y {@code resueltos}.</p>
+ * <p>Practica en {@code ejercicios/07-estatico/pendientes} y {@code resueltos}.</p>
  *
  * @author Agustín. A. Marquez. Piña
  * @since 02/06/2026

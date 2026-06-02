@@ -15,7 +15,7 @@ package general.poobasico;
  * c.marca = "Toyota";
  * }</pre>
  *
- * <p>Practica en {@code ejercicios/clases/pendientes} y {@code resueltos}.</p>
+ * <p>Practica en {@code ejercicios/01-clases/pendientes} y {@code resueltos}.</p>
  *
  * @author Agustín. A. Marquez. Piña
  * @since 02/06/2026

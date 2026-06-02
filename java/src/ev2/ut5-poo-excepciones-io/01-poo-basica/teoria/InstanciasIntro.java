@@ -6,7 +6,7 @@ package general.poobasico;
  * <p><b>Objetivo:</b> comprobar que cada objeto mantiene su propio estado: cambiar
  * un atributo en una instancia no afecta a otra de la misma clase.</p>
  *
- * <p>Practica en {@code ejercicios/instancias/pendientes} y {@code resueltos}.</p>
+ * <p>Practica en {@code ejercicios/06-instancias/pendientes} y {@code resueltos}.</p>
  *
  * @author Agustín. A. Marquez. Piña
  * @since 02/06/2026

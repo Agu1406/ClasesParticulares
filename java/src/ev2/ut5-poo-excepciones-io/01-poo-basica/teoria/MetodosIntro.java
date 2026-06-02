@@ -15,7 +15,7 @@ package general.poobasico;
  * }
  * }</pre>
  *
- * <p>Practica en {@code ejercicios/metodos/pendientes} y {@code resueltos}
+ * <p>Practica en {@code ejercicios/04-metodos/pendientes} y {@code resueltos}
  * (package de ejercicios: {@code general.poobasico.funciones}).</p>
  *
  * @author Agustín. A. Marquez. Piña
