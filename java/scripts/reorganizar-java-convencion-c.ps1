@@ -29,11 +29,11 @@ Move-IfExists "$ut1/ciclovida" "$ut1/01-entorno-jvm-jdk/teoria/ciclovida"
 Move-IfExists "$ut1/sintaxisbasica" "$ut1/01-entorno-jvm-jdk/teoria/sintaxisbasica"
 Move-IfExists "$ut1/tipodatos" "$ut1/02-tipos-variables-conversion/teoria/tipodatos"
 Move-IfExists "$ut1/casteotipos" "$ut1/02-tipos-variables-conversion/teoria/casteotipos"
-Move-IfExists "$ut1/comentarios" "$ut1/03-comentarios-estilo/teoria/comentarios"
+Move-IfExists "$ut1/comentarios" "$ut1/03-comentarios-estilo/teoria"
 
 $ut2 = "java/src/ev1/ut2-control-flujo-metodos"
-Ensure-Subtopics $ut2 @("01-operadores-y-basicos", "02-condicionales", "03-bucles", "04-metodos", "05-repaso")
-Move-IfExists "$ut2/basicos" "$ut2/01-operadores-y-basicos/teoria/basicos"
+Ensure-Subtopics $ut2 @("01-operadores-y-basicos", "02-condicionales", "03-bucles", "04-metodos", "05-repaso", "06-depuracion-aserciones")
+Move-IfExists "$ut2/basicos" "$ut2/01-operadores-y-basicos/ejercicios/pendientes"
 Move-IfExists "$ut2/operadores" "$ut2/01-operadores-y-basicos/teoria/operadores"
 # 02-condicionales: teoria = *Intro en 01-if|02-ifelse|03-switch; ejercicios paralelos
 Move-IfExists "$ut2/condicionales/if" "$ut2/02-condicionales/ejercicios/01-if"
@@ -73,7 +73,7 @@ Move-IfExists "java/src/ev2/ut3" "java/src/ev2/ut4-colecciones"
 Move-IfExists "java/src/ev2/ut4" "java/src/ev2/ut5-poo-excepciones-io"
 
 $ut4 = "java/src/ev2/ut4-colecciones"
-Ensure-Subtopics $ut4 @("01-arrays", "02-arraylist-y-mapas", "03-repaso")
+Ensure-Subtopics $ut4 @("01-arrays", "02-arraylist-y-mapas", "03-repaso", "04-avanzado-datos")
 # 01-arrays: teoria = ArraysIntro; ejercicios = facil|medio|dificil/pendientes|resueltos
 Move-IfExists "$ut4/arrays/facil" "$ut4/01-arrays/ejercicios/facil/pendientes"
 Move-IfExists "$ut4/arrays/medio" "$ut4/01-arrays/ejercicios/medio/pendientes"
@@ -97,7 +97,7 @@ Move-IfExists "$ut4/madrid-iescalderonbarca-generador-contrasenas" "$ut4/01-arra
 Move-IfExists "$ut4/enunciados" "$ut4/enunciados"
 
 $ut5 = "java/src/ev2/ut5-poo-excepciones-io"
-Ensure-Subtopics $ut5 @("01-poo-basica", "02-excepciones", "03-expresiones-fechas", "04-ficheros-io", "05-repaso")
+Ensure-Subtopics $ut5 @("01-poo-basica", "02-excepciones", "03-expresiones-fechas", "04-ficheros-io", "05-repaso", "06-gui-eventos-basico")
 # 01-poo-basica: teoria = PooBasicaIntro + demos; ejercicios = clases|objetos|…/pendientes|resueltos
 Move-IfExists "$ut5/poobasico" "$ut5/01-poo-basica/ejercicios"
 # 02-excepciones: teoria = ExcepcionesIntro + TryCatchFinallyIntro; ejercicios = pendientes|resueltos
@@ -125,7 +125,7 @@ Move-IfExists "java/src/ev3/ut6" "java/src/ev3/ut7-persistencia-jdbc-api"
 Move-IfExists "java/src/ev3/ut7" "java/src/ev3/ut8-frameworks-spring"
 
 $ut6 = "java/src/ev3/ut6-poo-avanzada-estructuras"
-Ensure-Subtopics $ut6 @("01-herencia-polimorfismo", "02-colecciones-estructuras", "03-practicas-centro", "04-repaso")
+Ensure-Subtopics $ut6 @("01-herencia-polimorfismo", "02-colecciones-estructuras", "03-concurrencia-multihilo", "04-repaso")
 Move-IfExists "$ut6/herencia" "$ut6/01-herencia-polimorfismo/teoria/herencia"
 Move-IfExists "$ut6/polimorfismo" "$ut6/01-herencia-polimorfismo/teoria/polimorfismo"
 Move-IfExists "$ut6/poo_herencia" "$ut6/01-herencia-polimorfismo/teoria/poo_herencia"
@@ -154,26 +154,36 @@ Move-IfExists "$ut6/madrid-iescanaveral-convocatoria2022" "$ut6/04-repaso/practi
 Move-IfExists "$ut6/madrid-cesjuanpablosegundo-ex-t5" "$ut6/04-repaso/practicas/madrid-cesjuanpablosegundo-ex-t5"
 Move-IfExists "$ut6/enunciados" "$ut6/enunciados"
 
-$centrosUt6 = @(
-  "alicante-ua-visorimagenesl04",
+# Reubicar prácticas por temática SIN crear UT de "prácticas-centro".
+Move-IfExists "$ut6/03-practicas-centro/practicas/sevilla-iesvelazquez-barbero-multihilo" "$ut6/03-concurrencia-multihilo/practicas/sevilla-iesvelazquez-barbero-multihilo"
+Move-IfExists "$ut6/03-practicas-centro/practicas/sevilla-iesvelazquez-taller-mecanico-multihilo" "$ut6/03-concurrencia-multihilo/practicas/sevilla-iesvelazquez-taller-mecanico-multihilo"
+
+$centrosUt6Poo = @(
   "madrid-iescalderonbarca-elevable",
+  "madrid-iescalderonbarca-estacion-concepcion",
   "madrid-iescalderonbarca-hipodromo",
   "madrid-iescalderonbarca-nominas",
+  "madrid-iescalderonbarca-practica1-2526",
+  "madrid-iescalderonbarca-practica2-2526",
   "madrid-uax-sistema-gestion-banco",
   "madrid-uax-sistema-gestion-biblioteca",
   "madrid-uax-sistema-gestion-empleado",
   "madrid-uax-sistema-juego-ajedrez",
   "salamanca-colegiosalesiano-control-habitantes-edificio",
-  "sevilla-iesvelazquez-alquiler",
-  "sevilla-iesvelazquez-barbero-multihilo",
-  "sevilla-iesvelazquez-taller-mecanico-multihilo"
+  "sevilla-iesvelazquez-alquiler"
 )
-foreach ($c in $centrosUt6) {
-  Move-IfExists "$ut6/$c" "$ut6/03-practicas-centro/practicas/$c"
+foreach ($c in $centrosUt6Poo) {
+  Move-IfExists "$ut6/03-practicas-centro/practicas/$c" "$ut6/01-herencia-polimorfismo/practicas/$c"
 }
 
+# GUI básica en EV2/UT5.
+Move-IfExists "$ut6/03-practicas-centro/practicas/alicante-ua-visorimagenesl04" "java/src/ev2/ut5-poo-excepciones-io/06-gui-eventos-basico/practicas/alicante-ua-visorimagenesl04"
+
+# Si existiera el examen ex-t7 en UT8 legacy, encajarlo en POO avanzada de UT6.
+Move-IfExists "java/src/ev3/ut8-frameworks-spring/02-practicas-centro/practicas/madrid-cesjuanpablosegundo-ex-t7" "$ut6/01-herencia-polimorfismo/practicas/madrid-cesjuanpablosegundo-ex-t7"
+
 $ut7 = "java/src/ev3/ut7-persistencia-jdbc-api"
-Ensure-Subtopics $ut7 @("01-jdbc", "02-bases-datos-y-proyectos", "03-poo-avanzado", "04-repaso")
+Ensure-Subtopics $ut7 @("01-jdbc", "02-bases-datos-y-proyectos", "03-poo-avanzado", "04-bdoo", "05-repaso")
 Move-IfExists "$ut7/jdbc" "$ut7/01-jdbc/teoria/jdbc"
 Move-IfExists "$ut7/sevilla-iesvelazquez-colegio-jdbc" "$ut7/01-jdbc/practicas/sevilla-iesvelazquez-colegio-jdbc"
 Move-IfExists "$ut7/proyecto-examen-biblioteca-api" "$ut7/02-bases-datos-y-proyectos/practicas/proyecto-examen-biblioteca-api"
@@ -186,9 +196,8 @@ Move-IfExists "$ut7/01-jdbc/ejercicios/resueltos/facil" "$ut7/01-jdbc/ejercicios
 Move-IfExists "$ut7/enunciados" "$ut7/enunciados"
 
 $ut8 = "java/src/ev3/ut8-frameworks-spring"
-Ensure-Subtopics $ut8 @("01-spring", "02-practicas-centro", "03-repaso")
+Ensure-Subtopics $ut8 @("01-spring", "02-repaso")
 Move-IfExists "$ut8/spring" "$ut8/01-spring/teoria/spring"
-Move-IfExists "$ut8/madrid-cesjuanpablosegundo-ex-t7" "$ut8/02-practicas-centro/practicas/madrid-cesjuanpablosegundo-ex-t7"
 Move-IfExists "$ut8/enunciados" "$ut8/enunciados"
 
 Write-Host "Reorganizacion Java completada."

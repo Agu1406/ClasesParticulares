@@ -16,7 +16,7 @@ package ev3.ut7.jdbc.entorno;
  *
  * <h2>2. phpMyAdmin</h2>
  * Con Apache + MySQL: http://localhost/phpmyadmin - usuario {@code root}, password vacia.
- * Desde ahi ejecuta el script {@code teoria/_shared/sql/jdbc_teoria.sql}.
+ * Desde ahi ejecuta tu script de inicializacion SQL para la BD de pruebas JDBC.
  *
  * <h2>3. Modelo relacional (repaso)</h2>
  * BD {@code JdbcTeoria}, tabla {@code libros}, filas = registros, columnas = campos,
@@ -57,7 +57,7 @@ package ev3.ut7.jdbc.entorno;
  * MySQL activo, phpMyAdmin OK, Connector/J descargado, script jdbc_teoria.sql ejecutado,
  * JDK instalado ({@code java -version}).
  *
- * @see ev3.ut7.jdbc.shared.JdbcTeoriaConnection
+ * @see ev3.ut7.jdbc.conexion.JdbcTeoriaConnection
  *
  * @author Agustín. A. Marquez. Piña
  * @since 29/05/2026

@@ -1,7 +1,5 @@
 package ev3.ut7.jdbc.conexion;
 
-import ev3.ut7.jdbc.shared.JdbcTeoriaConnection;
-
 import java.sql.Connection;
 import java.sql.DatabaseMetaData;
 import java.sql.SQLException;
@@ -10,7 +8,7 @@ import java.sql.SQLException;
  * Sesion 2 - Primera conexion JDBC y metadatos basicos (RA9 CE a, b).
  * <p>
  * Requisitos: XAMPP/MySQL activo, script jdbc_teoria.sql ejecutado, Connector/J en classpath.
- * Configura credenciales en {@link ev3.ut7.jdbc.shared.JdbcTeoriaConnection}.
+ * Configura credenciales en {@link ev3.ut7.jdbc.conexion.JdbcTeoriaConnection}.
  *
  * @see ev3.ut7.jdbc.entorno.EntornoXamppIntro
  *
@@ -58,7 +56,7 @@ public class SandBox {
     private static void ejemploErroresComunes() {
         System.out.println("3) ERRORES FRECUENTES (referencia)");
         System.out.println("- Communications link failure -> MySQL parado en XAMPP");
-        System.out.println("- Unknown database -> ejecuta teoria/_shared/sql/jdbc_teoria.sql");
+        System.out.println("- Unknown database -> ejecuta el script SQL de inicializacion de tu BD");
         System.out.println("- ClassNotFoundException driver -> falta el .jar en -cp");
         System.out.println("- Access denied -> revisa USER/PASSWORD en JdbcTeoriaConnection");
     }

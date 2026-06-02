@@ -14,11 +14,10 @@ java/
 └── src/
     ├── ev1/              RA1-RA3
     ├── ev2/              RA4-RA6
-    ├── ev3/              RA7-RA9
-    └── pruebaslibres/
+    └── ev3/              RA7-RA9
 ```
 
-Convencion por UT: subtemas numerados con `teoria/` (a veces `teoria/01-tema/` … en paralelo a `ejercicios/`), `ejercicios/` (`facil|medio|dificil` + `resueltos/`, o `01-for|02-while|03-dowhile` en `03-bucles`, etc.) y, cuando aplique, `practicas/` **dentro del subtema** (p. ej. `03-practicas-centro/practicas/`, `01-arrays/practicas/`), no solo en la raiz de la UT.
+Convencion por UT: subtemas numerados con `teoria/` (a veces `teoria/01-tema/` … en paralelo a `ejercicios/`), `ejercicios/` (`facil|medio|dificil` + `resueltos/`, o `01-for|02-while|03-dowhile` en `03-bucles`, etc.) y, cuando aplique, `practicas/` **dentro del subtema** (p. ej. `01-arrays/practicas/`, `02-colecciones-estructuras/practicas/`), no solo en la raiz de la UT.
 
 En `teoria/` del subtema solo van clases explicativas (`*Intro.java`, demos). Los ejercicios van en `ejercicios/{tema}/pendientes` y `resueltos` (antes `sin_resolver` bajo `teoria/`). Ejemplos ya aplicados:
 
@@ -27,28 +26,28 @@ En `teoria/` del subtema solo van clases explicativas (`*Intro.java`, demos). Lo
 | `03-bucles` | `BuclesComparacionIntro` + `teoria/01-for` … `03-dowhile` | `01-for`, `02-while`, `03-dowhile` |
 | `02-condicionales` | `CondicionalesComparacionIntro` + `teoria/01-if` … `03-switch` | `01-if`, `02-ifelse`, `03-switch` |
 | `04-metodos` | `MetodosIntro` | `pendientes` / `resueltos` (sin subcarpeta tema) |
+| `06-depuracion-aserciones` | `DepuracionAsercionesIntro` | `pendientes` / `resueltos` |
 | `01-strings` (UT3) | `StringIntro` | `pendientes` / `resueltos` |
 | `02-excepciones` (UT5) | `ExcepcionesIntro`, `TryCatchFinallyIntro` | `pendientes` / `resueltos` |
 | `04-ficheros-io` (UT5) | `FicherosIntro` | `pendientes` / `resueltos` |
+| `06-gui-eventos-basico` (UT5) | `GuiEventosIntro` | `pendientes` / `resueltos` |
 | `05-repaso` | `RepasoMixtoIntro` | `pendientes` / `resueltos` (mixtos UT2) |
 
 | `01-arrays` (UT4) | `ArraysIntro` | `facil`, `medio`, `dificil`; prácticas Calderón en `practicas/` |
 | `02-arraylist-y-mapas` (UT4) | `teoria/01-arraylist`, `02-mapas` | `01-arraylist`, `02-mapas` (`pendientes` / `resueltos`) |
+| `04-avanzado-datos` (UT4) | `GenericosRegexIntro` | `pendientes` / `resueltos` |
 | `03-repaso` (UT4) | — | Examen/repaso CES en `practicas/` |
 | `01-poo-basica` (UT5) | `PooBasicaIntro` + `teoria/01-clases` … `07-estatico` (paralelo a `ejercicios/`) | `01-clases` … `07-estatico` (`pendientes` / `resueltos`) |
 
 | `01-herencia-polimorfismo` (UT6) | `HerenciaPolimorfismoIntro` + `teoria/01-herencia` … `03-abstraccion` | `01-herencia` … `03-abstraccion` |
 | `02-colecciones-estructuras` (UT6) | `ColeccionesEstructurasIntro` | prácticas UAX en `practicas/` |
-| `03-practicas-centro` (UT6) | `PracticasCentroIntro` | solo `practicas/` |
+| `03-concurrencia-multihilo` (UT6) | — | prácticas de hilos en `practicas/` |
 | `04-repaso` (UT6) | `RepasoUt6Intro` | exámenes en `practicas/` |
 | `01-jdbc` (UT7) | `JdbcIntro` + `teoria/01-entorno` … `05-transacciones` | `pendientes` / `resueltos` |
 | `02-bases-datos-y-proyectos` (UT7) | `BasesDatosProyectosIntro` | proyectos en `practicas/` |
-| `03-poo-avanzado`, `04-repaso` (UT7) | `*Intro` (reservado) | — |
-| `01-spring`, `03-repaso` (UT8) | `*Intro` (reservado) | — |
-| `02-practicas-centro` (UT8) | `PracticasCentroIntro` | examen CES en `practicas/` |
-
-Pendiente de mismo criterio: `01-operadores-y-basicos` (ejercicios en `teoria/basicos`).
-
+| `04-bdoo` (UT7) | `BdooIntro` | demo guiada en `practicas/` |
+| `03-poo-avanzado`, `05-repaso` (UT7) | `*Intro` (reservado) | — |
+| `01-spring`, `02-repaso` (UT8) | `*Intro` (reservado) | — |
 ### practicas/ (centro + enunciado + solucion)
 
 Cada practica de instituto/universidad es **una carpeta** (`comunidad-centro-tema`) con PDF/documento y codigo en la **misma raiz** (pendiente, `_RESUELTO`, varios `.java` si hace falta). **No** subcarpeta `resueltos/`, ni `docs/` ni `enunciados/` sueltos.
@@ -114,11 +113,7 @@ En cada clase principal de una practica, documentar con **objetivo pedagogico**,
 |----|-----------|
 | `ut6-poo-avanzada-estructuras` | Herencia avanzada, multihilo, estructuras |
 | `ut7-persistencia-jdbc-api` | JDBC/MySQL (`01-jdbc`), proyectos BD (`02-bases-datos-y-proyectos`) |
-| `ut8-frameworks-spring` | Spring y practicas de centro |
-
-### Otros
-
-- `src/pruebaslibres/` - repaso y simulacros de examen
+| `ut8-frameworks-spring` | Spring |
 
 ## Requisitos habituales
 

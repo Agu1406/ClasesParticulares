@@ -1,6 +1,6 @@
 package ev3.ut7.jdbc.preparedstatement;
 
-import ev3.ut7.jdbc.shared.JdbcTeoriaConnection;
+import ev3.ut7.jdbc.conexion.JdbcTeoriaConnection;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;

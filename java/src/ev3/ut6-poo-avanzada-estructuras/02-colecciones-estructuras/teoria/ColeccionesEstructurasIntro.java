@@ -5,8 +5,8 @@ package general.coleccionesestructuras;
  *
  * <p><b>Objetivo:</b> estructuras avanzadas (grafos, tablas hash) en prácticas de centro.</p>
  *
- * <p>Ejercicios genéricos: pendiente de ampliar. Material principal en
- * {@code practicas/} (UAX: grafo, tabla hash, feedback estructuras).</p>
+ * <p>Ejercicios genéricos en {@code ejercicios/pendientes} y {@code ejercicios/resueltos}.
+ * Material principal en {@code practicas/} (UAX: grafo, tabla hash, feedback estructuras).</p>
  *
  * @author Agustín. A. Marquez. Piña
  * @since 02/06/2026
