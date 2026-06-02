@@ -34,7 +34,7 @@ En `teoria/` del subtema solo van clases explicativas (`*Intro.java`, demos). Lo
 | `01-arrays` (UT4) | `ArraysIntro` | `facil`, `medio`, `dificil`; prácticas Calderón en `practicas/` |
 | `02-arraylist-y-mapas` (UT4) | `ArrayListIntro`, `MapasIntro` | `pendientes` / `resueltos` |
 | `03-repaso` (UT4) | — | Examen/repaso CES en `practicas/` |
-| `01-poo-basica` (UT5) | `PooBasicaIntro` + `ClasesIntro`, … (1:1 con carpetas) | `01-clases` … `07-estatico` (`pendientes` / `resueltos`) |
+| `01-poo-basica` (UT5) | `PooBasicaIntro` + `teoria/01-clases` … `07-estatico` (paralelo a `ejercicios/`) | `01-clases` … `07-estatico` (`pendientes` / `resueltos`) |
 
 Pendiente de mismo criterio: `01-operadores-y-basicos` (ejercicios en `teoria/basicos`).
 

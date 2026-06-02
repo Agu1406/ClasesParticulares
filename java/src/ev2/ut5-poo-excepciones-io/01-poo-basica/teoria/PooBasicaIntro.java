@@ -4,8 +4,8 @@ package general.poobasico;
  * Teoría: índice del subtema POO básica (UT5).
  *
  * <p><b>Objetivo:</b> pasar de programación estructurada a clases y objetos. Cada bloque
- * tiene su clase {@code *Intro} en {@code teoria/} y ejercicios en la carpeta homónima
- * bajo {@code ejercicios/}.</p>
+ * tiene su {@code *Intro} en {@code teoria/NN-concepto/} y ejercicios en
+ * {@code ejercicios/NN-concepto/} (mismo número en ambos).</p>
  *
  * <p>Orden sugerido:</p>
  * <ol>

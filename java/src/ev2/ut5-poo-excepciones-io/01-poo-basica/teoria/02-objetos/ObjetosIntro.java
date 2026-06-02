@@ -7,7 +7,7 @@ package general.poobasico;
  * propios valores de atributo.</p>
  *
  * <p>Demo ampliado con varias clases relacionadas:
- * {@link general.poobasico.objetos.EjemploObjetosJuego} (en esta carpeta {@code teoria/}).</p>
+ * {@link general.poobasico.objetos.EjemploObjetosJuego} (en {@code teoria/02-objetos/}).</p>
  *
  * <p>Practica en {@code ejercicios/02-objetos/pendientes} y {@code resueltos}.</p>
  *
