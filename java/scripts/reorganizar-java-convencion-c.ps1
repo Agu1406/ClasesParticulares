@@ -131,7 +131,15 @@ Move-IfExists "$ut6/polimorfismo" "$ut6/01-herencia-polimorfismo/teoria/polimorf
 Move-IfExists "$ut6/poo_herencia" "$ut6/01-herencia-polimorfismo/teoria/poo_herencia"
 Move-IfExists "$ut6/poo_polimorfismo" "$ut6/01-herencia-polimorfismo/teoria/poo_polimorfismo"
 Move-IfExists "$ut6/poomedio" "$ut6/01-herencia-polimorfismo/teoria/poomedio"
-Move-IfExists "$ut6/poo_basico" "$ut6/01-herencia-polimorfismo/teoria/poo_basico"
+Move-IfExists "$ut6/poo_basico" "$ut6/01-herencia-polimorfismo/teoria/poo_basico_obsoleto"
+# 01-herencia-polimorfismo: teoria 01-herencia|02-polimorfismo|03-abstraccion; ejercicios paralelos; sin poo_basico
+Move-IfExists "$ut6/01-herencia-polimorfismo/teoria/poo_herencia/Animal.java" "$ut6/01-herencia-polimorfismo/teoria/01-herencia/"
+Move-IfExists "$ut6/01-herencia-polimorfismo/teoria/poo_herencia/Ejercicio1_HerenciaAnimal.java" "$ut6/01-herencia-polimorfismo/ejercicios/01-herencia/pendientes/Ejercicio1_HerenciaAnimal_SIN_RESOLVER.java"
+Move-IfExists "$ut6/01-herencia-polimorfismo/teoria/poo_herencia/resueltos/Ejercicio1_HerenciaAnimal.java" "$ut6/01-herencia-polimorfismo/ejercicios/01-herencia/resueltos/Ejercicio1_HerenciaAnimal_RESUELTO.java"
+Move-IfExists "$ut6/01-herencia-polimorfismo/teoria/poo_polimorfismo/Ejercicio1_PolimorfismoFiguras.java" "$ut6/01-herencia-polimorfismo/ejercicios/02-polimorfismo/pendientes/Ejercicio1_PolimorfismoFiguras_SIN_RESOLVER.java"
+Move-IfExists "$ut6/01-herencia-polimorfismo/teoria/poo_polimorfismo/resueltos/Ejercicio1_PolimorfismoFiguras.java" "$ut6/01-herencia-polimorfismo/ejercicios/02-polimorfismo/resueltos/Ejercicio1_PolimorfismoFiguras_RESUELTO.java"
+Move-IfExists "$ut6/01-herencia-polimorfismo/teoria/poo_abstraccion/Ejercicio1_AbstraccionCuenta.java" "$ut6/01-herencia-polimorfismo/ejercicios/03-abstraccion/pendientes/Ejercicio1_AbstraccionCuenta_SIN_RESOLVER.java"
+Move-IfExists "$ut6/01-herencia-polimorfismo/teoria/poo_abstraccion/resueltos/Ejercicio1_AbstraccionCuenta.java" "$ut6/01-herencia-polimorfismo/ejercicios/03-abstraccion/resueltos/Ejercicio1_AbstraccionCuenta_RESUELTO.java"
 Move-IfExists "$ut6/poo_abstraccion" "$ut6/01-herencia-polimorfismo/teoria/poo_abstraccion"
 Move-IfExists "$ut6/abstraccion" "$ut6/01-herencia-polimorfismo/teoria/abstraccion"
 Move-IfExists "$ut6/colecciones" "$ut6/02-colecciones-estructuras/teoria/colecciones"
@@ -172,6 +180,9 @@ Move-IfExists "$ut7/proyecto-examen-biblioteca-api" "$ut7/02-bases-datos-y-proye
 Move-IfExists "$ut7/valladolid-iesgregoriofernandez-aplicacion-bancaria" "$ut7/02-bases-datos-y-proyectos/practicas/valladolid-iesgregoriofernandez-aplicacion-bancaria"
 Move-IfExists "$ut7/valladolid-iesgregoriofernandez-aplicacion-ecommerce" "$ut7/02-bases-datos-y-proyectos/practicas/valladolid-iesgregoriofernandez-aplicacion-ecommerce"
 Move-IfExists "$ut7/pooavanzado" "$ut7/03-poo-avanzado/teoria/pooavanzado"
+# 01-jdbc: ejercicios pendientes|resueltos (sin facil/ duplicado)
+Move-IfExists "$ut7/01-jdbc/ejercicios/facil" "$ut7/01-jdbc/ejercicios/pendientes"
+Move-IfExists "$ut7/01-jdbc/ejercicios/resueltos/facil" "$ut7/01-jdbc/ejercicios/resueltos"
 Move-IfExists "$ut7/enunciados" "$ut7/enunciados"
 
 $ut8 = "java/src/ev3/ut8-frameworks-spring"

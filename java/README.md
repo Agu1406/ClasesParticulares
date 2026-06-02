@@ -37,6 +37,16 @@ En `teoria/` del subtema solo van clases explicativas (`*Intro.java`, demos). Lo
 | `03-repaso` (UT4) | — | Examen/repaso CES en `practicas/` |
 | `01-poo-basica` (UT5) | `PooBasicaIntro` + `teoria/01-clases` … `07-estatico` (paralelo a `ejercicios/`) | `01-clases` … `07-estatico` (`pendientes` / `resueltos`) |
 
+| `01-herencia-polimorfismo` (UT6) | `HerenciaPolimorfismoIntro` + `teoria/01-herencia` … `03-abstraccion` | `01-herencia` … `03-abstraccion` |
+| `02-colecciones-estructuras` (UT6) | `ColeccionesEstructurasIntro` | prácticas UAX en `practicas/` |
+| `03-practicas-centro` (UT6) | `PracticasCentroIntro` | solo `practicas/` |
+| `04-repaso` (UT6) | `RepasoUt6Intro` | exámenes en `practicas/` |
+| `01-jdbc` (UT7) | `JdbcIntro` + `teoria/01-entorno` … `05-transacciones` | `pendientes` / `resueltos` |
+| `02-bases-datos-y-proyectos` (UT7) | `BasesDatosProyectosIntro` | proyectos en `practicas/` |
+| `03-poo-avanzado`, `04-repaso` (UT7) | `*Intro` (reservado) | — |
+| `01-spring`, `03-repaso` (UT8) | `*Intro` (reservado) | — |
+| `02-practicas-centro` (UT8) | `PracticasCentroIntro` | examen CES en `practicas/` |
+
 Pendiente de mismo criterio: `01-operadores-y-basicos` (ejercicios en `teoria/basicos`).
 
 ### practicas/ (centro + enunciado + solucion)

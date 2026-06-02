@@ -45,7 +45,7 @@ package ev3.ut7.jdbc.entorno;
  *
  * <h2>7. Plan de 6 sesiones (01-jdbc)</h2>
  * <ol>
- *   <li>Esta clase - {@link EntornoXamppIntro}</li>
+ *   <li>Esta clase - {@link EntornoXamppIntro}; indice {@link ev3.ut7.jdbc.JdbcIntro}</li>
  *   <li>Conexion - {@code teoria/02-conexion-driver/SandBox.java}</li>
  *   <li>SELECT - {@code teoria/03-statement-select/SandBox.java}</li>
  *   <li>CRUD - {@code teoria/04-preparedstatement-crud/SandBox.java}</li>
