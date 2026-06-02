@@ -1,12 +1,12 @@
 package general.practicascentro;
 
 /**
- * Teoría: índice de prácticas de centro (UT6).
+ * Teoría: índice de prácticas de centro (UT9).
  *
- * <p><b>Objetivo:</b> proyectos integrados por instituto (POO avanzada, multihilo, interfaces).</p>
+ * <p><b>Objetivo:</b> proyectos integrados por centro (POO, GUI e hilos).</p>
  *
- * <p>Todo el material en {@code practicas/} — una carpeta plana por centro y proyecto.
- * No hay ejercicios genéricos en este subtema.</p>
+ * <p>El material está organizado por subtemas (p. ej. POO, GUI, concurrencia) y dentro
+ * de cada uno hay {@code practicas/} con una carpeta por práctica (con su enunciado y código).</p>
  *
  * @author Agustín. A. Marquez. Piña
  * @since 02/06/2026

@@ -1,10 +1,7 @@
-package ev3.ut8.spring;
-
 /**
  * Teoría: Spring Framework (UT8) — reservado.
  *
- * <p>Subtema planificado para IoC, beans y proyectos Spring. Práctica de examen en
- * {@code 02-practicas-centro/practicas/madrid-cesjuanpablosegundo-ex-t7/}.</p>
+ * <p>Subtema planificado para IoC, beans y proyectos Spring.</p>
  *
  * @author Agustín. A. Marquez. Piña
  * @since 02/06/2026
