@@ -1,4 +1,4 @@
-package ev2.ut4.poobasico.objetos;
+package general.poobasico.objetos;
 
 public class Jugador {
     /*

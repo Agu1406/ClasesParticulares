@@ -27,12 +27,14 @@ En `teoria/` del subtema solo van clases explicativas (`*Intro.java`, demos). Lo
 | `03-bucles` | `BucleForIntro`, … | `for`, `while`, `dowhile` |
 | `02-condicionales` | `IfIntro`, `SwitchIntro`, … | `if`, `ifelse`, `switch` |
 | `04-metodos` | `MetodosIntro` | `pendientes` / `resueltos` (sin subcarpeta tema) |
-| `01-strings` (UT3) | `StringIntro` | `strings/resueltos` |
+| `01-strings` (UT3) | `StringIntro` | `pendientes` / `resueltos` |
 | `02-excepciones`, `04-ficheros-io` (UT5) | `TryCatchFinallyIntro`, `FicherosIntro` | `trycatchfinally`, `ficheros` |
 | `05-repaso` | `RepasoMixtoIntro` | `pendientes` / `resueltos` (mixtos UT2) |
 
-| `01-arrays` (UT4) | `ArraysIntro` | `facil`, `medio`, `dificil` (cada uno con `pendientes` y `resueltos`) |
-| `02-arraylist-y-mapas` (UT4) | `ArrayListIntro`, `MapasIntro` | `arraylist`, `mapas` (`pendientes` / `resueltos`) |
+| `01-arrays` (UT4) | `ArraysIntro` | `facil`, `medio`, `dificil`; prácticas Calderón en `practicas/` |
+| `02-arraylist-y-mapas` (UT4) | `ArrayListIntro`, `MapasIntro` | `pendientes` / `resueltos` |
+| `03-repaso` (UT4) | — | Examen/repaso CES en `practicas/` |
+| `01-poo-basica` (UT5) | `PooBasicaIntro`, demos en `teoria/` | `clases`, `objetos`, `constructores`, … (`pendientes` / `resueltos`) |
 
 Pendiente de mismo criterio: `01-operadores-y-basicos` (ejercicios en `teoria/basicos`).
 
@@ -92,7 +94,7 @@ En cada clase principal de una practica, documentar con **objetivo pedagogico**,
 
 | UT | Contenido |
 |----|-----------|
-| `ut4-colecciones` | ArrayList, mapas, practicas integradas |
+| `ut4-colecciones` | Arrays, ArrayList, mapas; repaso/examen en `03-repaso` |
 | `ut5-poo-excepciones-io` | POO basica, excepciones, ficheros |
 
 ### EV3 - Avanzado y persistencia (RA7, RA8, RA9)

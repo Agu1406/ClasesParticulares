@@ -6,7 +6,7 @@ package general.strings;
  * <p><b>Objetivo:</b> trabajar con cadenas inmutables: crear, concatenar, medir longitud
  * y usar métodos habituales ({@code length}, {@code charAt}, {@code substring}, etc.).</p>
  *
- * <p>Ejercicios resueltos de referencia en {@code ejercicios/strings/resueltos/}.
+ * <p>Ejercicios en {@code ejercicios/pendientes} y {@code ejercicios/resueltos}.
  * Práctica de centro en {@code practicas/madrid-iescalderonbarca-cadenas/}.</p>
  *
  * @author Agustín. A. Marquez. Piña

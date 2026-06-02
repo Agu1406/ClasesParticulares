@@ -53,7 +53,8 @@ Move-IfExists "$ut2/enunciados" "$ut2/enunciados"
 
 $ut3 = "java/src/ev1/ut3-cadenas-envolventes-intro-poo"
 Ensure-Subtopics $ut3 @("01-strings", "02-envolventes", "03-utilidades-y-practica", "04-repaso")
-Move-IfExists "$ut3/strings" "$ut3/01-strings/ejercicios/strings"
+# 01-strings: teoria = StringIntro + PDFs en raiz; ejercicios = pendientes / resueltos
+Move-IfExists "$ut3/strings" "$ut3/01-strings/ejercicios/resueltos"
 Move-IfExists "$ut3/madrid-iescalderonbarca-cadenas" "$ut3/01-strings/practicas/madrid-iescalderonbarca-cadenas"
 Move-IfExists "$ut3/envolventes" "$ut3/02-envolventes/teoria/envolventes"
 Move-IfExists "$ut3/adicionales" "$ut3/03-utilidades-y-practica/teoria/adicionales"
@@ -66,7 +67,7 @@ Move-IfExists "java/src/ev2/ut3" "java/src/ev2/ut4-colecciones"
 Move-IfExists "java/src/ev2/ut4" "java/src/ev2/ut5-poo-excepciones-io"
 
 $ut4 = "java/src/ev2/ut4-colecciones"
-Ensure-Subtopics $ut4 @("01-arrays", "02-arraylist-y-mapas", "03-practica-integrada", "04-repaso")
+Ensure-Subtopics $ut4 @("01-arrays", "02-arraylist-y-mapas", "03-repaso")
 # 01-arrays: teoria = ArraysIntro; ejercicios = facil|medio|dificil/pendientes|resueltos
 Move-IfExists "$ut4/arrays/facil" "$ut4/01-arrays/ejercicios/facil/pendientes"
 Move-IfExists "$ut4/arrays/medio" "$ut4/01-arrays/ejercicios/medio/pendientes"
@@ -75,21 +76,22 @@ Move-IfExists "$ut4/arrays/resueltos/facil" "$ut4/01-arrays/ejercicios/facil/res
 Move-IfExists "$ut4/arrays/resueltos/medio" "$ut4/01-arrays/ejercicios/medio/resueltos"
 Move-IfExists "$ut4/arrays/resueltos/dificil" "$ut4/01-arrays/ejercicios/dificil/resueltos"
 Move-IfExists "$ut4/clasearray" "$ut4/01-arrays/teoria/clasearray"
-# 02-arraylist-y-mapas: teoria = ArrayListIntro, MapasIntro; ejercicios = arraylist|mapas/pendientes|resueltos
-Move-IfExists "$ut4/arraylist" "$ut4/02-arraylist-y-mapas/ejercicios/arraylist/pendientes"
-Move-IfExists "$ut4/legacy_arraylist" "$ut4/02-arraylist-y-mapas/ejercicios/arraylist/pendientes/legacy_obsoleto"
+# 02-arraylist-y-mapas: teoria = ArrayListIntro, MapasIntro; ejercicios = pendientes / resueltos
+Move-IfExists "$ut4/arraylist" "$ut4/02-arraylist-y-mapas/ejercicios/pendientes"
+Move-IfExists "$ut4/legacy_arraylist" "$ut4/02-arraylist-y-mapas/ejercicios/pendientes/legacy_obsoleto"
 Move-IfExists "$ut4/madrid-cesjuanpablosegundo-ejercicios-colecciones" "$ut4/02-arraylist-y-mapas/practicas/madrid-cesjuanpablosegundo-ejercicios-colecciones"
 # Obsoleto: ejerciciosconocidos migrado a practicas/ por centro (ver README).
-# Move-IfExists "$ut4/ejerciciosconocidos" "$ut4/03-practica-integrada/ejercicios/pendientes/ejerciciosconocidos"
-Move-IfExists "$ut4/ejemplos" "$ut4/03-practica-integrada/teoria/ejemplos"
-Move-IfExists "$ut4/madrid-cesjuanpablosegundo-examen1-evaluacion" "$ut4/04-repaso/practicas/madrid-cesjuanpablosegundo-examen1-evaluacion"
-Move-IfExists "$ut4/madrid-iescalderonbarca-nominas-al" "$ut4/03-practica-integrada/practicas/madrid-iescalderonbarca-nominas-al"
-Move-IfExists "$ut4/madrid-iescalderonbarca-quinielas" "$ut4/03-practica-integrada/practicas/madrid-iescalderonbarca-quinielas"
+Move-IfExists "$ut4/ejemplos" "$ut4/01-arrays/teoria/ejemplos"
+Move-IfExists "$ut4/madrid-cesjuanpablosegundo-examen1-evaluacion" "$ut4/03-repaso/practicas/madrid-cesjuanpablosegundo-examen1-evaluacion"
+Move-IfExists "$ut4/madrid-iescalderonbarca-quinielas" "$ut4/01-arrays/practicas/madrid-iescalderonbarca-quinielas"
+Move-IfExists "$ut4/madrid-iescalderonbarca-juego-ppt" "$ut4/01-arrays/practicas/madrid-iescalderonbarca-juego-ppt"
+Move-IfExists "$ut4/madrid-iescalderonbarca-generador-contrasenas" "$ut4/01-arrays/practicas/madrid-iescalderonbarca-generador-contrasenas"
 Move-IfExists "$ut4/enunciados" "$ut4/enunciados"
 
 $ut5 = "java/src/ev2/ut5-poo-excepciones-io"
 Ensure-Subtopics $ut5 @("01-poo-basica", "02-excepciones", "03-expresiones-fechas", "04-ficheros-io", "05-repaso")
-Move-IfExists "$ut5/poobasico" "$ut5/01-poo-basica/teoria/poobasico"
+# 01-poo-basica: teoria = PooBasicaIntro + demos; ejercicios = clases|objetos|…/pendientes|resueltos
+Move-IfExists "$ut5/poobasico" "$ut5/01-poo-basica/ejercicios"
 Move-IfExists "$ut5/excepciones" "$ut5/02-excepciones/ejercicios/excepciones"
 Move-IfExists "$ut5/trycatchfinally" "$ut5/02-excepciones/ejercicios/trycatchfinally"
 Move-IfExists "$ut5/expresiones" "$ut5/03-expresiones-fechas/teoria/expresiones"
