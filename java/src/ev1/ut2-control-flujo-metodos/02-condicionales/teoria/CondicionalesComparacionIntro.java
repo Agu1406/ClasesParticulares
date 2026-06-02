@@ -12,7 +12,8 @@ package general.condicionales;
  * </ul>
  *
  * <p>Demos: {@link IfIntro}, {@link IfElseIntro}, {@link SwitchIntro}.
- * Ejercicios: {@code ejercicios/if/}, {@code ejercicios/ifelse/}, {@code ejercicios/switch/}.</p>
+ * Ejercicios: {@code ejercicios/01-if/}, {@code ejercicios/02-ifelse/}, {@code ejercicios/03-switch/}.
+ * Demos en {@code teoria/01-if/} … {@code teoria/03-switch/}.</p>
  *
  * @author Agustín. A. Marquez. Piña
  * @since 29/05/2026

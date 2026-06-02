@@ -18,21 +18,21 @@ java/
     └── pruebaslibres/
 ```
 
-Convencion por UT: subtemas numerados con `teoria/`, `ejercicios/` (`facil|medio|dificil` + `resueltos/`, o por tema como `for|while|dowhile` en `03-bucles`) y, cuando aplique, `practicas/` **dentro del subtema** (p. ej. `03-practicas-centro/practicas/`, `01-arrays/practicas/`), no solo en la raiz de la UT.
+Convencion por UT: subtemas numerados con `teoria/` (a veces `teoria/01-tema/` … en paralelo a `ejercicios/`), `ejercicios/` (`facil|medio|dificil` + `resueltos/`, o `01-for|02-while|03-dowhile` en `03-bucles`, etc.) y, cuando aplique, `practicas/` **dentro del subtema** (p. ej. `03-practicas-centro/practicas/`, `01-arrays/practicas/`), no solo en la raiz de la UT.
 
 En `teoria/` del subtema solo van clases explicativas (`*Intro.java`, demos). Los ejercicios van en `ejercicios/{tema}/pendientes` y `resueltos` (antes `sin_resolver` bajo `teoria/`). Ejemplos ya aplicados:
 
 | Subtema | Teoria | Ejercicios |
 |---------|--------|------------|
-| `03-bucles` | `BucleForIntro`, … | `for`, `while`, `dowhile` |
-| `02-condicionales` | `IfIntro`, `SwitchIntro`, … | `if`, `ifelse`, `switch` |
+| `03-bucles` | `BuclesComparacionIntro` + `teoria/01-for` … `03-dowhile` | `01-for`, `02-while`, `03-dowhile` |
+| `02-condicionales` | `CondicionalesComparacionIntro` + `teoria/01-if` … `03-switch` | `01-if`, `02-ifelse`, `03-switch` |
 | `04-metodos` | `MetodosIntro` | `pendientes` / `resueltos` (sin subcarpeta tema) |
 | `01-strings` (UT3) | `StringIntro` | `pendientes` / `resueltos` |
 | `02-excepciones`, `04-ficheros-io` (UT5) | `TryCatchFinallyIntro`, `FicherosIntro` | `trycatchfinally`, `ficheros` |
 | `05-repaso` | `RepasoMixtoIntro` | `pendientes` / `resueltos` (mixtos UT2) |
 
 | `01-arrays` (UT4) | `ArraysIntro` | `facil`, `medio`, `dificil`; prácticas Calderón en `practicas/` |
-| `02-arraylist-y-mapas` (UT4) | `ArrayListIntro`, `MapasIntro` | `pendientes` / `resueltos` |
+| `02-arraylist-y-mapas` (UT4) | `teoria/01-arraylist`, `02-mapas` | `01-arraylist`, `02-mapas` (`pendientes` / `resueltos`) |
 | `03-repaso` (UT4) | — | Examen/repaso CES en `practicas/` |
 | `01-poo-basica` (UT5) | `PooBasicaIntro` + `teoria/01-clases` … `07-estatico` (paralelo a `ejercicios/`) | `01-clases` … `07-estatico` (`pendientes` / `resueltos`) |
 

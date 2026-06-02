@@ -19,7 +19,7 @@ package general.bucles;
  *   <li>Garantiza una ejecución mínima (menús, petición de datos al usuario).</li>
  * </ul>
  *
- * <p>Practica en {@code ejercicios/dowhile/} (pendientes y resueltos).</p>
+ * <p>Practica en {@code ejercicios/03-dowhile/} (pendientes y resueltos).</p>
  *
  * @author Agustín. A. Marquez. Piña
  * @since 02/06/2026

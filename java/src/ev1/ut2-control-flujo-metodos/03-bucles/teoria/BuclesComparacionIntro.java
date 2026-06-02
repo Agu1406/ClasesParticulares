@@ -14,8 +14,9 @@ package general.bucles;
  * <p>Control de flujo dentro del bucle: {@code break} (salir del bucle),
  * {@code continue} (saltar a la siguiente iteración).</p>
  *
- * <p>Ejercicios por tipo: {@code ejercicios/for/}, {@code ejercicios/while/},
- * {@code ejercicios/dowhile/}. Demos: {@link BucleForIntro}, {@link BucleWhileIntro},
+ * <p>Ejercicios por tipo: {@code ejercicios/01-for/}, {@code ejercicios/02-while/},
+ * {@code ejercicios/03-dowhile/}. Demos en {@code teoria/01-for/} … {@code teoria/03-dowhile/}:
+ * {@link BucleForIntro}, {@link BucleWhileIntro},
  * {@link BucleDoWhileIntro}.</p>
  *
  * @author Agustín. A. Marquez. Piña

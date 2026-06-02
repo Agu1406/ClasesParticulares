@@ -13,7 +13,7 @@ package general.condicionales;
  * }
  * }</pre>
  *
- * <p>Practica en {@code ejercicios/ifelse/} (pendientes y resueltos).</p>
+ * <p>Practica en {@code ejercicios/02-ifelse/} (pendientes y resueltos).</p>
  *
  * @author Agustín. A. Marquez. Piña
  * @since 29/05/2026

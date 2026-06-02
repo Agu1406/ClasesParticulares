@@ -22,7 +22,7 @@ package general.bucles;
  * </ul>
  *
  * <p>Útil cuando no sabes cuántas repeticiones harán falta (lectura hasta sentinel,
- * validación de menú, etc.). Practica en {@code ejercicios/while/}.</p>
+ * validación de menú, etc.). Practica en {@code ejercicios/02-while/} (pendientes y resueltos).</p>
  *
  * @author Agustín. A. Marquez. Piña
  * @since 02/06/2026

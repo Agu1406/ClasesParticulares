@@ -20,7 +20,8 @@ import java.util.ArrayList;
  *
  * <p>Recorrido: bucle {@code for} por índice o {@code for-each} sobre la lista.</p>
  *
- * <p>Ejercicios ArrayList en {@code ejercicios/pendientes} y {@code resueltos} (clases {@code Ejercicio*_ArrayList*}).</p>
+ * <p>Ejercicios ArrayList en {@code ejercicios/01-arraylist/pendientes} y {@code resueltos}
+ * (clases {@code Ejercicio*_ArrayList*}).</p>
  *
  * @author Agustín. A. Marquez. Piña
  * @since 29/05/2026

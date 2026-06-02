@@ -21,7 +21,7 @@ package general.bucles;
  * }</pre>
  *
  * <p>Ejemplos típicos: recorrer un rango de números, tablas de multiplicar, sumar acumuladores.
- * Practica en {@code ejercicios/for/} (pendientes y resueltos).</p>
+ * Practica en {@code ejercicios/01-for/} (pendientes y resueltos).</p>
  *
  * @author Agustín. A. Marquez. Piña
  * @since 02/06/2026

@@ -35,14 +35,20 @@ $ut2 = "java/src/ev1/ut2-control-flujo-metodos"
 Ensure-Subtopics $ut2 @("01-operadores-y-basicos", "02-condicionales", "03-bucles", "04-metodos", "05-repaso")
 Move-IfExists "$ut2/basicos" "$ut2/01-operadores-y-basicos/teoria/basicos"
 Move-IfExists "$ut2/operadores" "$ut2/01-operadores-y-basicos/teoria/operadores"
-# 02-condicionales: teoria = *Intro; ejercicios = if|ifelse|switch/pendientes|resueltos
-Move-IfExists "$ut2/condicionales/if" "$ut2/02-condicionales/ejercicios/if"
-Move-IfExists "$ut2/condicionales/switch" "$ut2/02-condicionales/ejercicios/switch"
-Move-IfExists "$ut2/condicionales/ifelse" "$ut2/02-condicionales/ejercicios/ifelse"
-# 03-bucles: teoria = BucleForIntro, etc.; ejercicios = for|while|dowhile/pendientes|resueltos
-Move-IfExists "$ut2/bucles/for" "$ut2/03-bucles/ejercicios/for"
-Move-IfExists "$ut2/bucles/while" "$ut2/03-bucles/ejercicios/while"
-Move-IfExists "$ut2/bucles/dowhile" "$ut2/03-bucles/ejercicios/dowhile"
+# 02-condicionales: teoria = *Intro en 01-if|02-ifelse|03-switch; ejercicios paralelos
+Move-IfExists "$ut2/condicionales/if" "$ut2/02-condicionales/ejercicios/01-if"
+Move-IfExists "$ut2/condicionales/switch" "$ut2/02-condicionales/ejercicios/03-switch"
+Move-IfExists "$ut2/condicionales/ifelse" "$ut2/02-condicionales/ejercicios/02-ifelse"
+Move-IfExists "$ut2/02-condicionales/ejercicios/if" "$ut2/02-condicionales/ejercicios/01-if"
+Move-IfExists "$ut2/02-condicionales/ejercicios/ifelse" "$ut2/02-condicionales/ejercicios/02-ifelse"
+Move-IfExists "$ut2/02-condicionales/ejercicios/switch" "$ut2/02-condicionales/ejercicios/03-switch"
+# 03-bucles: teoria = Bucle*Intro en 01-for|02-while|03-dowhile; ejercicios paralelos
+Move-IfExists "$ut2/bucles/for" "$ut2/03-bucles/ejercicios/01-for"
+Move-IfExists "$ut2/bucles/while" "$ut2/03-bucles/ejercicios/02-while"
+Move-IfExists "$ut2/bucles/dowhile" "$ut2/03-bucles/ejercicios/03-dowhile"
+Move-IfExists "$ut2/03-bucles/ejercicios/for" "$ut2/03-bucles/ejercicios/01-for"
+Move-IfExists "$ut2/03-bucles/ejercicios/while" "$ut2/03-bucles/ejercicios/02-while"
+Move-IfExists "$ut2/03-bucles/ejercicios/dowhile" "$ut2/03-bucles/ejercicios/03-dowhile"
 Move-IfExists "$ut2/buclesycondicionales" "$ut2/03-bucles/teoria"
 # 04-metodos: teoria = MetodosIntro; ejercicios = pendientes|resueltos (sin subcarpeta funciones)
 Move-IfExists "$ut2/funciones/sin_resolver" "$ut2/04-metodos/ejercicios/pendientes"
@@ -76,9 +82,11 @@ Move-IfExists "$ut4/arrays/resueltos/facil" "$ut4/01-arrays/ejercicios/facil/res
 Move-IfExists "$ut4/arrays/resueltos/medio" "$ut4/01-arrays/ejercicios/medio/resueltos"
 Move-IfExists "$ut4/arrays/resueltos/dificil" "$ut4/01-arrays/ejercicios/dificil/resueltos"
 Move-IfExists "$ut4/clasearray" "$ut4/01-arrays/teoria/clasearray"
-# 02-arraylist-y-mapas: teoria = ArrayListIntro, MapasIntro; ejercicios = pendientes / resueltos
-Move-IfExists "$ut4/arraylist" "$ut4/02-arraylist-y-mapas/ejercicios/pendientes"
-Move-IfExists "$ut4/legacy_arraylist" "$ut4/02-arraylist-y-mapas/ejercicios/pendientes/legacy_obsoleto"
+# 02-arraylist-y-mapas: teoria 01-arraylist|02-mapas; ejercicios 01-arraylist|02-mapas/pendientes|resueltos
+Move-IfExists "$ut4/arraylist" "$ut4/02-arraylist-y-mapas/ejercicios/01-arraylist/pendientes"
+Move-IfExists "$ut4/legacy_arraylist" "$ut4/02-arraylist-y-mapas/ejercicios/01-arraylist/pendientes/legacy_obsoleto"
+Move-IfExists "$ut4/02-arraylist-y-mapas/ejercicios/pendientes" "$ut4/02-arraylist-y-mapas/ejercicios/01-arraylist/pendientes"
+Move-IfExists "$ut4/02-arraylist-y-mapas/ejercicios/resueltos" "$ut4/02-arraylist-y-mapas/ejercicios/01-arraylist/resueltos"
 Move-IfExists "$ut4/madrid-cesjuanpablosegundo-ejercicios-colecciones" "$ut4/02-arraylist-y-mapas/practicas/madrid-cesjuanpablosegundo-ejercicios-colecciones"
 # Obsoleto: ejerciciosconocidos migrado a practicas/ por centro (ver README).
 Move-IfExists "$ut4/ejemplos" "$ut4/01-arrays/teoria/ejemplos"

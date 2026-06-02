@@ -11,7 +11,7 @@ package general.condicionales;
  * }
  * }</pre>
  *
- * <p>Practica en {@code ejercicios/if/} (pendientes y resueltos).</p>
+ * <p>Practica en {@code ejercicios/01-if/} (pendientes y resueltos).</p>
  *
  * @author Agustín. A. Marquez. Piña
  * @since 29/05/2026
