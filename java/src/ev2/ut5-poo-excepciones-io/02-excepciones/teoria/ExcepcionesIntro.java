@@ -7,8 +7,8 @@ package general.trycatchfinally;
  * {@code throw} y validaciones sin detener todo el programa.</p>
  *
  * <p>Teoría ejecutable: {@link TryCatchFinallyIntro}.
- * Ejercicios en {@code ejercicios/trycatchfinally/} ({@code pendientes} y {@code resueltos};
- * incluye división con reglas como ejercicio 11).</p>
+ * Ejercicios en {@code ejercicios/pendientes} y {@code ejercicios/resueltos}
+ * (1–11; el 11 practica división con reglas y {@code throw}).</p>
  *
  * @author Agustín. A. Marquez. Piña
  * @since 29/05/2026

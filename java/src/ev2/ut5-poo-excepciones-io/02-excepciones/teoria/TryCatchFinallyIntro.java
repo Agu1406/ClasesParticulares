@@ -7,7 +7,7 @@ package general.trycatchfinally;
  * y liberar recursos con {@code finally}.</p>
  *
  * <p>Índice del subtema: {@link ExcepcionesIntro}.
- * Ejercicios en {@code ejercicios/trycatchfinally/} (pendientes y resueltos; ejercicio 11: división con reglas).</p>
+ * Ejercicios en {@code ejercicios/pendientes} y {@code ejercicios/resueltos}.</p>
  *
  * @author Agustín. A. Marquez. Piña
  * @since 29/05/2026
