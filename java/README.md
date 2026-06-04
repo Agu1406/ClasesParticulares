@@ -10,62 +10,48 @@ Material de **Programacion (0485)** organizado por evaluaciones y unidades. Norm
 java/
 ├── BOE-2023-06-03-RD-405-modulo-0485-programacion.md
 ├── README.md
-└── src/
-    ├── ignorar/          # scripts locales (gitignore; mantenimiento)
-    ├── ev1/              RA1-RA3
-    ├── ev2/              RA4-RA6
-    └── ev3/              RA7-RA9
+└── src/                    # Sources Root en IntelliJ
+    ├── ev1/                RA1-RA3  (ut1, ut2, ut3)
+    ├── ev2/                RA4-RA6  (ut4, ut5, ut6)
+    └── ev3/                RA7-RA9  (ut7, ut8, ut9/pf/…)
 ```
 
-Convencion por UT: subtemas numerados con `teoria/` (a veces `teoria/01-tema/` … en paralelo a `ejercicios/`), `ejercicios/` (`facil|medio|dificil` + `resueltos/`, o `01-for|02-while|03-dowhile` en `03-bucles`, etc.) y, cuando aplique, `practicas/` **dentro del subtema** (p. ej. `01-arrays/practicas/`, `02-colecciones-estructuras/practicas/`), no solo en la raiz de la UT.
+### Convencion por subtema (EV1, EV2, EV3)
 
-En `teoria/` del subtema solo van clases explicativas (`*Intro.java`, demos). Los ejercicios van en `ejercicios/{tema}/pendientes` y `resueltos` (antes `sin_resolver` bajo `teoria/`). Ejemplos ya aplicados:
+Cada subtema (p. ej. `src/ev2/ut4/u01arrays/`, `src/ev3/ut9/pf/u01lambda/`) tiene **exactamente tres** carpetas. El subtema lleva prefijo de orden: `u01`, `u02`, … + nombre del tema.
 
-| Subtema | Teoria | Ejercicios |
-|---------|--------|------------|
-| `03-bucles` | `BuclesComparacionIntro` + `teoria/01-for` … `03-dowhile` | `01-for`, `02-while`, `03-dowhile` |
-| `02-condicionales` | `CondicionalesComparacionIntro` + `teoria/01-if` … `03-switch` | `01-if`, `02-ifelse`, `03-switch` |
-| `04-metodos` | `MetodosIntro` | `pendientes` / `resueltos` (sin subcarpeta tema) |
-| `06-depuracion-aserciones` | `DepuracionAsercionesIntro` | `pendientes` / `resueltos` |
-| `01-strings` (UT3) | `StringIntro` | `pendientes` / `resueltos` |
-| `02-excepciones` (UT5) | `ExcepcionesIntro`, `TryCatchFinallyIntro` | `pendientes` / `resueltos` |
-| `04-ficheros-io` (UT5) | `FicherosIntro` | `pendientes` / `resueltos` |
-| `06-gui-eventos-basico` (UT5) | `GuiEventosIntro` | `pendientes` / `resueltos` |
-| `05-repaso` | `RepasoMixtoIntro` | `pendientes` / `resueltos` (mixtos UT2) |
+| Carpeta | Contenido |
+|---------|-----------|
+| `teoria/` | Bloques en orden `u01/`, `u02/`, `u03/`… (orden didactico 01→02→03; prefijo `u` para paquetes Java validos) |
+| `ejercicios/` | Solo `pendientes/` y `resueltos/` con los mismos ejercicios pareados (`EjercicioNN_…_SIN_RESOLVER` / `_RESUELTO`) |
+| `practicas/` | Una carpeta por proyecto; PDF + version alumno + version resuelta en la misma raiz |
 
-| `01-arrays` (UT4) | `ArraysIntro` | `facil`, `medio`, `dificil`; prácticas Calderón en `practicas/` |
-| `02-arraylist-y-mapas` (UT4) | `teoria/01-arraylist`, `02-mapas` | `01-arraylist`, `02-mapas` (`pendientes` / `resueltos`) |
-| `04-avanzado-datos` (UT4) | `GenericosRegexIntro` | `pendientes` / `resueltos` |
-| `03-repaso` (UT4) | — | Examen/repaso CES en `practicas/` |
-| `01-poo-basica` (UT5) | `PooBasicaIntro` + `teoria/01-clases` … `07-estatico` (paralelo a `ejercicios/`) | `01-clases` … `07-estatico` (`pendientes` / `resueltos`) |
+El `package` de cada `.java` coincide con la ruta bajo `src/` (sin guiones en carpetas con codigo). Ejemplo:
 
-| `01-herencia-polimorfismo` (UT6) | `HerenciaPolimorfismoIntro` + `teoria/01-herencia` … `03-abstraccion` | `01-herencia` … `03-abstraccion` |
-| `02-colecciones-estructuras` (UT6) | `ColeccionesEstructurasIntro` | prácticas UAX en `practicas/` |
-| `03-concurrencia-multihilo` (UT6) | — | prácticas de hilos en `practicas/` |
-| `04-repaso` (UT6) | `RepasoUt6Intro` | exámenes en `practicas/` |
-| `01-jdbc` (UT7) | `JdbcIntro` + `teoria/01-entorno` … `05-transacciones` | `pendientes` / `resueltos` |
-| `02-bases-datos-y-proyectos` (UT7) | `BasesDatosProyectosIntro` | proyectos en `practicas/` |
-| `04-bdoo` (UT7) | `BdooIntro` | demo guiada en `practicas/` |
-| `03-poo-avanzado`, `05-repaso` (UT7) | `*Intro` (reservado) | — |
-| `01-spring`, `02-repaso` (UT8) | `*Intro` (reservado) | — |
-| `ut9-programacion-funcional-java` | `ProgramacionFuncionalIntro` + `01-lambda-y-sam` … `05-repaso` | PDF en `material/` |
+```java
+// src/ev2/ut4/u01arrays/ejercicios/pendientes/Ejercicio01_Arrays_SIN_RESOLVER.java
+package ev2.ut4.u01arrays.ejercicios.pendientes;
+```
+
 ### practicas/ (centro + enunciado + solucion)
-
-Cada practica de instituto/universidad es **una carpeta** (`comunidad-centro-tema`) con PDF/documento y codigo en la **misma raiz** (pendiente, `_RESUELTO`, varios `.java` si hace falta). **No** subcarpeta `resueltos/`, ni `docs/` ni `enunciados/` sueltos.
 
 ```
 practicas/
-└── madrid-iescalderonbarca-quinielas/
+└── madridiescalderonbarcaquinielas/
     ├── quinielas--madrid-iescalderonbarca.pdf
-    ├── Quinielas.java
+    ├── Quinielas_SIN_RESOLVER.java
     └── Quinielas_RESUELTO.java
 ```
 
-En JavaDoc/comentarios puede decirse «funcion» (evita el marcador TODO del IDE sobre «metodo»); en rutas y nombres de clase use **metodos**, no `funciones` (PDFs originales del centro exceptuados).
+- Carpeta de proyecto: identificador Java valido (sin guiones): `madridiescalderonbarcaquinielas`
+- PDF: puede llevar guiones (`proyecto--centro.pdf`)
+- Sin subcarpetas `sin_resolver/` ni `resueltos/` dentro del proyecto
 
-- Nombre carpeta: `comunidad-centro-nombre-proyecto`
-- Nombre PDF: `nombre-proyecto--comunidad-centro.pdf`
-- Teoria de clase (sin entrega): PDF suelto en `teoria/` del subtema, no en `practicas/`
+En JavaDoc puede decirse «funcion»; en rutas y nombres de clase use **metodos**, no `funciones`.
+
+### UT9 (programacion funcional)
+
+Ruta: `src/ev3/ut9/pf/` con subtemas `lambda`, `streams`, `optional`, `principios`, `repaso`. Misma convencion de tres carpetas. Practicas TPP: `practicas/valencianaepigtppsesion1` … `valencianaepigtppsesion5`. PDFs globales: `repaso/teoria/` (p. ej. `universidad/`).
 
 ## JavaDoc (pie de clase)
 
@@ -97,37 +83,37 @@ En cada clase principal de una practica, documentar con **objetivo pedagogico**,
 
 | UT | Contenido |
 |----|-----------|
-| `ut1-fundamentos-java` | JVM/JDK, sintaxis, tipos, casteo |
-| `ut2-control-flujo-metodos` | Bucles, condicionales, metodos |
-| `ut3-cadenas-envolventes-intro-poo` | String, envolventes, intro POO |
+| `ev1/ut1` | JVM/JDK, sintaxis, tipos, casteo |
+| `ev1/ut2` | Bucles, condicionales, metodos |
+| `ev1/ut3` | String, envolventes, intro POO |
 
 ### EV2 - POO y colecciones (RA4, RA5, RA6)
 
 | UT | Contenido |
 |----|-----------|
-| `ut4-colecciones` | Arrays, ArrayList, mapas; repaso/examen en `03-repaso` |
-| `ut5-poo-excepciones-io` | POO basica, excepciones, ficheros |
+| `ev2/ut4` | Arrays, ArrayList, mapas, repaso |
+| `ev2/ut5` | POO basica, excepciones, ficheros, GUI |
+| `ev2/ut6` | Herencia, colecciones, concurrencia |
 
 ### EV3 - Avanzado y persistencia (RA7, RA8, RA9)
 
 | UT | Contenido |
 |----|-----------|
-| `ut6-poo-avanzada-estructuras` | Herencia avanzada, multihilo, estructuras |
-| `ut7-persistencia-jdbc-api` | JDBC/MySQL (`01-jdbc`), proyectos BD (`02-bases-datos-y-proyectos`) |
-| `ut8-frameworks-spring` | Spring |
-| `ut9-programacion-funcional-java` | Lambda, Stream API, Optional, principios PF (ampliacion; refuerzo RA6 j) |
+| `ev3/ut7` | JDBC, BDD, repaso (codigo didactico plano) |
+| `ev3/ut8` | Spring |
+| `ev3/ut9/pf` | Lambda, Stream API, Optional, principios PF |
 
 ## Requisitos habituales
 
 - **JDK 8+** (mayoria de ejercicios)
-- **XAMPP/MySQL + Connector/J** - practicas JDBC (`ut7/01-jdbc`)
+- **XAMPP/MySQL + Connector/J** - practicas JDBC (`ev3/ut7/jdbc`)
 - **Maven** - algunos proyectos (p. ej. Bili Store)
 - **JavaFX / Tomcat** - proyectos concretos (ver JavaDoc del proyecto)
 
 ## Nomenclatura
 
 - Packages segun ruta; clases en PascalCase; metodos/variables en camelCase
-- Proyectos de centro: `comunidad-centro-nombre-proyecto`
+- Proyectos de centro: carpeta `comunidadcentronombreproyecto` (sin guiones); PDF con guiones permitidos
 
 ## Contacto
 

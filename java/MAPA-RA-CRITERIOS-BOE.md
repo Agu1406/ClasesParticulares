@@ -14,7 +14,7 @@ Convencion de estado:
 
 | Criterio | Estado | Evidencia repo |
 |---|---|---|
-| a) Bloques de un programa | C | `src/ev1/ut1-fundamentos-java/` |
+| a) Bloques de un programa | C | `src/ev1/ut1/` |
 | b) Proyectos de desarrollo | C | estructura por EV/UT/subtemas y practicas en `src/` |
 | c) Uso de IDE | P | implícito en flujo, no hay practica dedicada de entorno |
 | d) Tipos de variables | C | `ut1/02-tipos-variables-conversion` |
