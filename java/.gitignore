@@ -30,3 +30,6 @@ bin/
 
 ### Compilaciones
 *.class
+
+### Otros
+/ordenar
