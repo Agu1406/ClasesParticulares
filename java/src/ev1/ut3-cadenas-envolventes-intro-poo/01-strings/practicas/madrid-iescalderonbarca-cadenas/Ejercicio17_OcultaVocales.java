@@ -1,13 +1,13 @@
-﻿package madrid.iescalderonbarca.ejercicios.cadenas;
+package madrid.iescalderonbarca.ejercicios.cadenas;
 
 /**
- * Práctica de cadenas Calderón — ejercicio 17 (bloque 16–20).
+ * Practica de cadenas Calderon - ejercicio 17 (bloque 16-20).
  *
  * <p><b>Objetivo de este ejercicio:</b> codificar {@code ocultaVocales}: sustituir vocales sin acento por {@code X}.</p>
  *
- * <p>Enunciado del bloque en la carpeta de la práctica. Utiliza {@link String} y métodos estáticos.</p>
+ * <p>Enunciado del bloque en la carpeta de la practica. Utiliza {@link String} y metodos estaticos.</p>
  *
- * @author Agustín. A. Marquez. Piña
+ * @author Agustin. A. Marquez. Pina
  * @since 14/01/2026
  * @see <a href="mailto:agu1406@outlook.es">agu1406@outlook.es</a>
  * @see <a href="https://github.com/Agu1406/ClasesParticulares">Repositorio GitHub</a>
@@ -15,14 +15,14 @@
  */
 public class Ejercicio17_OcultaVocales {
     public static void main(String[] args) {
-        // TODO: Implementa la función ocultaVocales y pruébala aquí
+        // TODO: Implementa la funcion ocultaVocales y pruebala aqui
         // Ejemplo de uso:
         // String resultado = ocultaVocales("Hola mundo");
-        // System.out.println(resultado); // Debería imprimir "HXlX mXndX"
+        // System.out.println(resultado); // Deberia imprimir "HXlX mXndX"
     }
     
-    // TODO: Implementa la función ocultaVocales aquí
+    // TODO: Implementa la funcion ocultaVocales aqui
     // public static String ocultaVocales(String texto) {
-    //     // Tu código aquí
+    //     // Tu codigo aqui
     // }
 }

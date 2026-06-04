@@ -1,13 +1,13 @@
-﻿package general.arraylist;
+package general.arraylist;
 
 import java.util.ArrayList;
 
 /**
- * Ejercicio 2: ArrayList con función
- * Crea un ArrayList de textos y una función llamada mostrarLista
- * que reciba la lista como parámetro y muestre todos sus valores
+ * Ejercicio 2: ArrayList con funcion
+ * Crea un ArrayList de textos y una funcion llamada mostrarLista
+ * que reciba la lista como parametro y muestre todos sus valores
  * 
- * @author Agustín. A. Marquez. Piña
+ * @author Agustin. A. Marquez. Pina
  * @since 26/04/2026
  * @see <a href="mailto:agu1406@outlook.es">agu1406@outlook.es</a>
  * @see <a href="https://github.com/Agu1406/ClasesParticulares">Repositorio GitHub</a>

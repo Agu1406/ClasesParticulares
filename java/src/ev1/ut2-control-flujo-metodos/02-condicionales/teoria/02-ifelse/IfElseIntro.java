@@ -1,9 +1,9 @@
 package general.condicionales;
 
 /**
- * Teoría: {@code if-else} en Java.
+ * Teoria: {@code if-else} en Java.
  *
- * <p><b>Objetivo:</b> elegir entre dos caminos según una condición.</p>
+ * <p><b>Objetivo:</b> elegir entre dos caminos segun una condicion.</p>
  *
  * <pre>{@code
  * if (condicion) {
@@ -15,7 +15,7 @@ package general.condicionales;
  *
  * <p>Practica en {@code ejercicios/02-ifelse/} (pendientes y resueltos).</p>
  *
- * @author Agustín. A. Marquez. Piña
+ * @author Agustin. A. Marquez. Pina
  * @since 29/05/2026
  * @see <a href="mailto:agu1406@outlook.es">agu1406@outlook.es</a>
  * @see <a href="https://github.com/Agu1406/ClasesParticulares">Repositorio GitHub</a>

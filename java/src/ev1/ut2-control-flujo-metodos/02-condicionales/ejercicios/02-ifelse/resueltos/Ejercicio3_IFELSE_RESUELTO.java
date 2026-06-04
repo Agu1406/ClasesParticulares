@@ -1,10 +1,10 @@
-﻿package general.condicionales;
+package general.condicionales;
 
 /**
- * Ejercicio 3 (ifelse): Comparar dos números y mostrar cuál es mayor
- * Versión resuelta.
+ * Ejercicio 3 (ifelse): Comparar dos numeros y mostrar cual es mayor
+ * Version resuelta.
  *
- * @author Agustín. A. Marquez. Piña
+ * @author Agustin. A. Marquez. Pina
  * @since 29/04/2026
  * @see <a href="mailto:agu1406@outlook.es">agu1406@outlook.es</a>
  * @see <a href="https://github.com/Agu1406/ClasesParticulares">Repositorio GitHub</a>

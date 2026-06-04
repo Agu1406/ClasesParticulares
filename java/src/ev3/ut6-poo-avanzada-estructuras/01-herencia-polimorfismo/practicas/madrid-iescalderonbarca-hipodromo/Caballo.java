@@ -2,13 +2,13 @@ package madrid.iescalderonbarca.ejercicios.hipodromo;
 
 public class Caballo {
     /*
-     * Todos los caballos tienen nombre y dorsal (posición) dentro de una
+     * Todos los caballos tienen nombre y dorsal (posicion) dentro de una
      * carrera, ejemplo:
      *
-     *  Rosado con el número 5 (670m)
-     *  Babieca con el número 2 (660m)
-     *  Rufio con el número 3 (640m)
-     *  Rocinante con el número 1 (580m)
+     *  Rosado con el numero 5 (670m)
+     *  Babieca con el numero 2 (660m)
+     *  Rufio con el numero 3 (640m)
+     *  Rocinante con el numero 1 (580m)
      */
     public String nombre;
     public int posicion;
@@ -19,7 +19,7 @@ public class Caballo {
 
     /**
      * Constructor que permite crear objetos del tipo "Caballo" usando un
-     * nombre y un dorsal (posición).
+     * nombre y un dorsal (posicion).
      *
      * @param nombre (String) nombre del caballo.
      * @param posicion (int) dorsal del caballo.
@@ -55,7 +55,7 @@ public class Caballo {
      * OTRAS FUNCIONES ESENCIALES DE LA CLASE
      * ======================================================================*/
     /**
-     * Función que permite al caballo correr SOLO SI NO se ha caido, debemos
+     * Funcion que permite al caballo correr SOLO SI NO se ha caido, debemos
      * indicar la cantidad de metros que corrio.
      * @param metros (int) metros recorridos.
      */
@@ -66,7 +66,7 @@ public class Caballo {
     }
 
     /**
-     * Si un caballo usa la función "caerse" si booleano pasara de "false" a
+     * Si un caballo usa la funcion "caerse" si booleano pasara de "false" a
      * "true" indicando que se ha caido.
      */
     public void caerse () {
@@ -74,26 +74,26 @@ public class Caballo {
     }
 
     /**
-     * Función que crea un String con el nombre del caballo, su posición y la
+     * Funcion que crea un String con el nombre del caballo, su posicion y la
      * distancia que ha recorrido en la carrera, ejemplo:
      *
-     *  Rosado con el número 5 (670m)
-     *  Babieca con el número 2 (660m)
-     *  Rufio con el número 3 (640m)
-     *  Rocinante con el número 1 (580m)
+     *  Rosado con el numero 5 (670m)
+     *  Babieca con el numero 2 (660m)
+     *  Rufio con el numero 3 (640m)
+     *  Rocinante con el numero 1 (580m)
      */
     @Override
     public String toString() {
-        return nombre + " con el número " + posicion + " (" + distanciaRecorrida +")";
+        return nombre + " con el numero " + posicion + " (" + distanciaRecorrida +")";
     }
 
     /**
-     * Función que hace lo mismo que la función de toString pero sin crear un String,
+     * Funcion que hace lo mismo que la funcion de toString pero sin crear un String,
      * solo imprime y ya, ejemplo:
      *
-     *  Rosado con el número 5 (670m)
+     *  Rosado con el numero 5 (670m)
      */
     public void imprimirInformacion () {
-        System.out.println(nombre + " con el número " + posicion + " (" + distanciaRecorrida +"m)");
+        System.out.println(nombre + " con el numero " + posicion + " (" + distanciaRecorrida +"m)");
     }
 }

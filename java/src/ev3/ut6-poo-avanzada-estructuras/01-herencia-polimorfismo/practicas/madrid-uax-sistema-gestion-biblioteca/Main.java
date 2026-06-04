@@ -7,13 +7,13 @@ public class Main {
         // Crear biblioteca
         Biblioteca biblioteca = new Biblioteca("sistema_gestion_biblioteca.Biblioteca Central", 10, 5);
 
-        // Crear libros físicos
+        // Crear libros fisicos
         LibroFisico libroFisico1 = new LibroFisico("Don Quijote", "Miguel de Cervantes", "Bueno");
-        LibroFisico libroFisico2 = new LibroFisico("Cien años de soledad", "Gabriel García Márquez", "Excelente");
-        LibroFisico libroFisico3 = new LibroFisico("La Casa de los Espíritus", "Isabel Allende", "Regular");
+        LibroFisico libroFisico2 = new LibroFisico("Cien anos de soledad", "Gabriel Garcia Marquez", "Excelente");
+        LibroFisico libroFisico3 = new LibroFisico("La Casa de los Espiritus", "Isabel Allende", "Regular");
 
         // Crear libros digitales
-        LibroDigital libroDigital1 = new LibroDigital("El Principito", "Antoine de Saint-Exupéry", "PDF");
+        LibroDigital libroDigital1 = new LibroDigital("El Principito", "Antoine de Saint-Exupery", "PDF");
         LibroDigital libroDigital2 = new LibroDigital("1984", "George Orwell", "EPUB");
         LibroDigital libroDigital3 = new LibroDigital("Fahrenheit 451", "Ray Bradbury", "MOBI");
 
@@ -26,9 +26,9 @@ public class Main {
         biblioteca.agregarLibro(libroDigital3);
 
         // Crear usuarios
-        Usuario usuario1 = new Usuario("Juan Pérez");
-        Usuario usuario2 = new Usuario("María García");
-        Usuario usuario3 = new Usuario("Carlos López");
+        Usuario usuario1 = new Usuario("Juan Perez");
+        Usuario usuario2 = new Usuario("Maria Garcia");
+        Usuario usuario3 = new Usuario("Carlos Lopez");
 
         // Registrar usuarios
         biblioteca.agregarUsuario(usuario1);
@@ -44,7 +44,7 @@ public class Main {
             Date fecha3Inicio = new Date(113, 0, 2);   // 02/01/2013
             Date fecha3Fin = new Date(113, 0, 4);      // 04/01/2013
 
-            // Reservar libro físico
+            // Reservar libro fisico
             biblioteca.reservarLibro(usuario1, libroFisico1, fecha1Inicio, fecha1Fin);
 
             // Reservar libro digital
@@ -59,8 +59,8 @@ public class Main {
             System.out.println("Error en los datos: " + e.getMessage());
         }
 
-        // Mostrar información de la biblioteca
-        System.out.println("\n=== INFORMACIÓN DE LA BIBLIOTECA ===");
+        // Mostrar informacion de la biblioteca
+        System.out.println("\n=== INFORMACION DE LA BIBLIOTECA ===");
         biblioteca.imprimirCatalogo();
         System.out.println();
         biblioteca.mostrarReservasActivas();

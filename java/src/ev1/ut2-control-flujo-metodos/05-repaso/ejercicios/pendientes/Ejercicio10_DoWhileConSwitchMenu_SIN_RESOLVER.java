@@ -2,10 +2,10 @@ package general.repaso;
 
 /**
  * Ejercicio: do-while con switch
- * Objetivo: Simula menú con opciones 1..4 usando switch.
- * Versión sin resolver.
+ * Objetivo: Simula menu con opciones 1..4 usando switch.
+ * Version sin resolver.
  *
- * @author Agustín. A. Marquez. Piña
+ * @author Agustin. A. Marquez. Pina
  * @since 29/05/2026
  * @see <a href="mailto:agu1406@outlook.es">agu1406@outlook.es</a>
  * @see <a href="https://github.com/Agu1406/ClasesParticulares">Repositorio GitHub</a>

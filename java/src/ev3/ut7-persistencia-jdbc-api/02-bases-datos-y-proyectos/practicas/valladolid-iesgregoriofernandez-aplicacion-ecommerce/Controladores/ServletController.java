@@ -16,73 +16,73 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 
-// Servlet que maneja las peticiones de la aplicación
+// Servlet que maneja las peticiones de la aplicacion
 @WebServlet("/ServletController")
 public class ServletController extends HttpServlet implements ServletContextListener {
 
-    // Método que se ejecuta al iniciar la aplicación
+    // Metodo que se ejecuta al iniciar la aplicacion
     @Override
     public void contextInitialized(ServletContextEvent sce) {
         List<Producto> productos = new ArrayList<>();
-        // Agregar productos a la lista con referencia, descripción y precio
-        productos.add(new Producto("REF001", "Artículo 1", 1000)); // Precio en enteros
-        productos.add(new Producto("REF002", "Artículo 2", 1500));
-        productos.add(new Producto("REF003", "Artículo 3", 2000));
-        // Almacenar la lista de productos en el contexto de la aplicación
+        // Agregar productos a la lista con referencia, descripcion y precio
+        productos.add(new Producto("REF001", "Articulo 1", 1000)); // Precio en enteros
+        productos.add(new Producto("REF002", "Articulo 2", 1500));
+        productos.add(new Producto("REF003", "Articulo 3", 2000));
+        // Almacenar la lista de productos en el contexto de la aplicacion
         sce.getServletContext().setAttribute("productos", productos);
     }
 
-    // Método que maneja las peticiones POST
+    // Metodo que maneja las peticiones POST
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         String action = request.getParameter("action");
 
-        // Acción para ver la cesta de compra
+        // Accion para ver la cesta de compra
         if ("verCesta".equals(action)) {
             String[] productosSeleccionados = request.getParameterValues("productos");
             if (productosSeleccionados == null || productosSeleccionados.length == 0) {
-                request.setAttribute("mensaje", "No ha seleccionado ningún artículo.");
+                request.setAttribute("mensaje", "No ha seleccionado ningun articulo.");
                 request.getRequestDispatcher("compra.jsp").forward(request, response);
             } else {
                 // Almacenar los productos seleccionados en una cookie
                 Cookie cestaCookie = new Cookie("cesta", String.join(",", productosSeleccionados));
-                cestaCookie.setMaxAge(60 * 60 * 24 * 365); // 1 año
+                cestaCookie.setMaxAge(60 * 60 * 24 * 365); // 1 ano
                 response.addCookie(cestaCookie);
                 request.getRequestDispatcher("compra.jsp").forward(request, response);
             }
         }
-        // Acción para iniciar sesión
+        // Accion para iniciar sesion
         else if ("login".equals(action)) {
             String usuario = request.getParameter("usuario");
-            String contraseña = request.getParameter("contraseña");
+            String contrasena = request.getParameter("contrasena");
             HttpSession session = request.getSession();
 
-            if (usuario == null || usuario.isEmpty() || contraseña == null || contraseña.isEmpty()) {
+            if (usuario == null || usuario.isEmpty() || contrasena == null || contrasena.isEmpty()) {
                 request.setAttribute("error", "El nombre y el password son obligatorios.");
                 request.getRequestDispatcher("acceso.jsp").forward(request, response);
-            } else if ("admin".equals(usuario) && "admin".equals(contraseña)) {
+            } else if ("admin".equals(usuario) && "admin".equals(contrasena)) {
                 session.setAttribute("usuario", usuario);
                 request.getRequestDispatcher("mantenimiento.jsp").forward(request, response);
             } else {
-                request.setAttribute("error", "Sesión nula por credenciales inválidas.");
+                request.setAttribute("error", "Sesion nula por credenciales invalidas.");
                 request.getRequestDispatcher("acceso.jsp").forward(request, response);
             }
         }
-        // Acción para finalizar la compra
+        // Accion para finalizar la compra
         else if ("finalizarCompra".equals(action)) {
             Cookie cestaCookie = new Cookie("cesta", null);
             cestaCookie.setMaxAge(0); // Eliminar la cookie
             response.addCookie(cestaCookie);
             request.getRequestDispatcher("index.jsp").forward(request, response);
         }
-        // Acción para actualizar un producto
+        // Accion para actualizar un producto
         else if ("Actualizar".equals(action)) {
             String referencia = request.getParameter("referencia");
             String descripcion = request.getParameter("descripcion");
             String precioStr = request.getParameter("precio");
             double precio = Double.parseDouble(precioStr);
 
-            // Obtener la lista de productos del contexto de la aplicación
+            // Obtener la lista de productos del contexto de la aplicacion
             List<Producto> productos = (List<Producto>) getServletContext().getAttribute("productos");
             for (Producto producto : productos) {
                 if (producto.getReferencia().equals(referencia)) {
@@ -98,7 +98,7 @@ public class ServletController extends HttpServlet implements ServletContextList
         }
     }
 
-    // Método que maneja el filtro de autenticación
+    // Metodo que maneja el filtro de autenticacion
     protected void doFilter(HttpServletRequest request, HttpServletResponse response, FilterChain chain)
             throws IOException, ServletException {
         HttpSession session = request.getSession(false);

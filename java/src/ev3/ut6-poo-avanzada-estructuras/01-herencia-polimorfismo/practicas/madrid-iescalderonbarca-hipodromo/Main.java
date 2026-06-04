@@ -4,23 +4,23 @@ import java.util.Random;
 import java.util.Scanner;
 
 /**
- * Simulación de carrera de caballos con apuestas (IES Calderón Barca).
+ * Simulacion de carrera de caballos con apuestas (IES Calderon Barca).
  *
- * <p>Enunciado: {@code hipodromo--madrid-iescalderonbarca.pdf} (carpeta de la práctica).</p>
+ * <p>Enunciado: {@code hipodromo--madrid-iescalderonbarca.pdf} (carpeta de la practica).</p>
  *
- * <p><b>Objetivo:</b> modelar una carrera con varios caballos, caídas aleatorias y apuesta del usuario.</p>
+ * <p><b>Objetivo:</b> modelar una carrera con varios caballos, caidas aleatorias y apuesta del usuario.</p>
  *
  * <p>Para ello, el programa debe:</p>
  * <ul>
  *   <li>Representar cada caballo con {@link Caballo} (nombre, dorsal, distancia, estado).</li>
  *   <li>Registrar la apuesta del jugador y avanzar la carrera por tramos hasta la meta.</li>
- *   <li>Simular caídas y metros recorridos con {@link Random}.</li>
+ *   <li>Simular caidas y metros recorridos con {@link Random}.</li>
  *   <li>Mostrar el ranking por distancia e indicar si la apuesta gana o pierde.</li>
  * </ul>
  *
  * <p>Utiliza POO, {@link Scanner} y {@link Random}.</p>
  *
- * @author Agustín. A. Marquez. Piña
+ * @author Agustin. A. Marquez. Pina
  * @since 29/05/2026
  * @see <a href="mailto:agu1406@outlook.es">agu1406@outlook.es</a>
  * @see <a href="https://github.com/Agu1406/ClasesParticulares">Repositorio GitHub</a>
@@ -44,13 +44,13 @@ public class Main {
 
         int apuesta = 0;
         while (apuesta < 1 || apuesta > 5) {
-            System.out.println("¿Por cuál caballo vas a apostar? Indica su dorsal (1-5):");
+            System.out.println("?Por cual caballo vas a apostar? Indica su dorsal (1-5):");
             apuesta = teclado.nextInt();
-            if (apuesta < 1 || apuesta > 5) System.out.println("Error. Introduce un número del 1 al 5.");
+            if (apuesta < 1 || apuesta > 5) System.out.println("Error. Introduce un numero del 1 al 5.");
         }
-        System.out.println("¡Gracias por apostar! La carrera empieza pronto...");
+        System.out.println("!Gracias por apostar! La carrera empieza pronto...");
 
-        System.out.println("\nCOMIENZA LA CARRERA\nPosición en la carrera de los caballos de primero al último");
+        System.out.println("\nCOMIENZA LA CARRERA\nPosicion en la carrera de los caballos de primero al ultimo");
         for (Caballo caballoActual : establo) caballoActual.imprimirInformacion();
         System.out.println("Pulse ENTER para continuar");
         teclado.nextLine();
@@ -81,15 +81,15 @@ public class Main {
                 int cuantosSiguenEnPie = 0;
                 for (Caballo caballoActual : establo) if (!caballoActual.isCaballoCaido()) cuantosSiguenEnPie++;
                 if (cuantosSiguenEnPie == 0) {
-                    System.out.println("\nFIN DE LA CARRERA\nTodos los caballos se han caído. No hay ganador.");
+                    System.out.println("\nFIN DE LA CARRERA\nTodos los caballos se han caido. No hay ganador.");
                     teclado.close();
                     return;
                 }
             }
 
-            System.out.println("\nPosición en la carrera de los caballos de primero al último");
+            System.out.println("\nPosicion en la carrera de los caballos de primero al ultimo");
             for (int indiceCaida = 0; indiceCaida < cuantasCaidasEsteTramo; indiceCaida++)
-                System.out.println("ATENCIÓN CAÍDA: " + mensajesCaidaEsteTramo[indiceCaida] + " se ha caído.");
+                System.out.println("ATENCION CAIDA: " + mensajesCaidaEsteTramo[indiceCaida] + " se ha caido.");
             int mayorDistanciaRecorrida = 0;
             for (Caballo caballoActual : establo)
                 if (!caballoActual.isCaballoCaido() && caballoActual.getDistanciaRecorrida() > mayorDistanciaRecorrida)
@@ -101,7 +101,7 @@ public class Main {
 
             if (ganador != null) {
                 System.out.println("\nFIN DE LA CARRERA\nEl ganador es " + ganador.getNombre() + " con el dorsal " + ganador.getPosicion());
-                System.out.println(ganador.getPosicion() == apuesta ? "¡Enhorabuena, ha ganado su apuesta!" : "Lo sentimos, no ha ganado su apuesta. Vuelva a intentarlo.");
+                System.out.println(ganador.getPosicion() == apuesta ? "!Enhorabuena, ha ganado su apuesta!" : "Lo sentimos, no ha ganado su apuesta. Vuelva a intentarlo.");
                 break;
             }
             System.out.println("Pulse ENTER para continuar");

@@ -1,11 +1,11 @@
-﻿package madrid.iescalderonbarca.ejercicios.practica1;
+package madrid.iescalderonbarca.ejercicios.practica1;
 
 import java.util.Scanner;
 
 /**
- * Práctica 1: Programa que pinta figuras geométricas indicando sus dimensiones - RESUELTO
+ * Practica 1: Programa que pinta figuras geometricas indicando sus dimensiones - RESUELTO
  * 
- * @author Agustín. A. Marquez. Piña
+ * @author Agustin. A. Marquez. Pina
  * @since 14/06/2025
  * @see <a href="mailto:agu1406@outlook.es">agu1406@outlook.es</a>
  * @see <a href="https://github.com/Agu1406/ClasesParticulares">Repositorio GitHub</a>
@@ -22,15 +22,15 @@ public class Practica1_FigurasGeometricas_RESUELTO {
 
         while (mostrarMenu) {
             System.out.println("Figuras disponibles: ");
-            System.out.println("1 - Rectángulo.");
-            System.out.println("2 - Triángulo.");
+            System.out.println("1 - Rectangulo.");
+            System.out.println("2 - Triangulo.");
             System.out.println("3 - Rombo.");
-            System.out.println("Pulsa el número de la opción deseada: ");
+            System.out.println("Pulsa el numero de la opcion deseada: ");
 
             opcionMenu = teclado.nextInt();
 
             if (opcionMenu != 1 && opcionMenu != 2 && opcionMenu != 3) {
-                System.out.println("¡Error! Elige una de las opciones validas.");
+                System.out.println("!Error! Elige una de las opciones validas.");
             }
 
             if (opcionMenu == 1 || opcionMenu == 2 || opcionMenu == 3) {
@@ -53,7 +53,7 @@ public class Practica1_FigurasGeometricas_RESUELTO {
                     entradaValida = validarNumero(1, alturaRectangulo);
                 }
                 dibujarRectangulo(baseRectangulo, alturaRectangulo);
-                System.out.println("Rectángulo terminado");
+                System.out.println("Rectangulo terminado");
                 break;
             case 2:
                 entradaValida = false;
@@ -63,7 +63,7 @@ public class Practica1_FigurasGeometricas_RESUELTO {
                     entradaValida = validarNumero(2, baseTriangulo);
                 }
                 dibujarTriangulo(baseTriangulo);
-                System.out.println("Triángulo terminado");
+                System.out.println("Triangulo terminado");
                 break;
             case 3:
                 entradaValida = false;
@@ -76,7 +76,7 @@ public class Practica1_FigurasGeometricas_RESUELTO {
                 System.out.println("Rombo terminado");
                 break;
             default:
-                System.out.println("¡Error! Opción elegida no valida, intentelo de nuevo.");
+                System.out.println("!Error! Opcion elegida no valida, intentelo de nuevo.");
                 break;
         }
     }
@@ -173,11 +173,11 @@ public class Practica1_FigurasGeometricas_RESUELTO {
     public static boolean validarNumero(int opcionMenu, int numero) {
         if (opcionMenu == 1) {
             if (numero > 0) return true;
-            System.out.println("¡Error! El valor debe ser un entero positivo.");
+            System.out.println("!Error! El valor debe ser un entero positivo.");
             return false;
         } else if (opcionMenu == 2 || opcionMenu == 3) {
             if (numero > 0 && numero % 2 != 0) return true;
-            System.out.println("¡Error! Debe ser un número impar positivo.");
+            System.out.println("!Error! Debe ser un numero impar positivo.");
             return false;
         }
         return false;

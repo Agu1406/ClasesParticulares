@@ -14,7 +14,7 @@ public class LibroDigital extends Libro {
 
     @Override
     public void imprimir() {
-        System.out.printf("sistema_gestion_biblioteca.Libro Digital - Título: %s, Autor: %s, Formato: %s%n",
+        System.out.printf("sistema_gestion_biblioteca.Libro Digital - Titulo: %s, Autor: %s, Formato: %s%n",
             getTitulo(), getAutor(), formato);
     }
 } 

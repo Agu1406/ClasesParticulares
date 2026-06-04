@@ -1,5 +1,5 @@
 /**
- * Teoría: depuración con aserciones en Java (RA3.i).
+ * Teoria: depuracion con aserciones en Java (RA3.i).
  *
  * <p>Objetivo: detectar errores durante desarrollo con {@code assert}.</p>
  */

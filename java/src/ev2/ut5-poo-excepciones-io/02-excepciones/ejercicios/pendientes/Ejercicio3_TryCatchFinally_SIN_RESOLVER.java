@@ -1,10 +1,10 @@
-﻿package general.trycatchfinally;
+package general.trycatchfinally;
 
 /**
  * Ejercicio 3: Un solo catch: ArrayIndexOutOfBoundsException
- * Versión sin resolver.
+ * Version sin resolver.
  *
- * @author Agustín. A. Marquez. Piña
+ * @author Agustin. A. Marquez. Pina
  * @since 29/04/2026
  * @see <a href="mailto:agu1406@outlook.es">agu1406@outlook.es</a>
  * @see <a href="https://github.com/Agu1406/ClasesParticulares">Repositorio GitHub</a>
@@ -12,9 +12,9 @@
  */
 public class Ejercicio3_TryCatchFinally_SIN_RESOLVER {
     public static void main(String[] args) {
-        // TODO: coloca este código en un try:
+        // TODO: coloca este codigo en un try:
                 // int[] arr = {1,2,3}; System.out.println(arr[5]);
-                // TODO: añade UN solo catch para la excepción principal.
+                // TODO: anade UN solo catch para la excepcion principal.
                 // TODO: muestra un mensaje claro en el catch.
     }
 }

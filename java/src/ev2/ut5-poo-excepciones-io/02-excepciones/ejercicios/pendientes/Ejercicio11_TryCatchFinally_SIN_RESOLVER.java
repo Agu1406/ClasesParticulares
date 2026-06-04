@@ -1,17 +1,17 @@
 package general.trycatchfinally;
 
 /**
- * Ejercicio 11: División con validaciones y {@code throw}
- * Versión sin resolver.
+ * Ejercicio 11: Division con validaciones y {@code throw}
+ * Version sin resolver.
  *
- * <p>Diseña un programa que divide dos números. El código debe contemplar:</p>
+ * <p>Disena un programa que divide dos numeros. El codigo debe contemplar:</p>
  * <ul>
- *   <li>El segundo número no sea cero</li>
- *   <li>El primer número no sea cero ni negativo</li>
+ *   <li>El segundo numero no sea cero</li>
+ *   <li>El primer numero no sea cero ni negativo</li>
  *   <li>El primer valor sea mayor que 100</li>
  * </ul>
  *
- * @author Agustín. A. Marquez. Piña
+ * @author Agustin. A. Marquez. Pina
  * @since 29/05/2026
  * @see <a href="mailto:agu1406@outlook.es">agu1406@outlook.es</a>
  * @see <a href="https://github.com/Agu1406/ClasesParticulares">Repositorio GitHub</a>
@@ -23,9 +23,9 @@ public class Ejercicio11_TryCatchFinally_SIN_RESOLVER {
         int primerNumero = 150;
         int segundoNumero = 3;
 
-        // TODO: crea un método dividirConReglas(int, int) que lance IllegalArgumentException
+        // TODO: crea un metodo dividirConReglas(int, int) que lance IllegalArgumentException
         //       si no se cumplen las reglas del enunciado.
-        // TODO: en main, llama al método dentro de try-catch (IllegalArgumentException y Exception).
-        // TODO: añade finally con un mensaje de cierre del programa.
+        // TODO: en main, llama al metodo dentro de try-catch (IllegalArgumentException y Exception).
+        // TODO: anade finally con un mensaje de cierre del programa.
     }
 }

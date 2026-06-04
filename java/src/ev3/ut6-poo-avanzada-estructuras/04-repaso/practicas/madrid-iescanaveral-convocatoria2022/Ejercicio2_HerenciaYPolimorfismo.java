@@ -1,12 +1,12 @@
-﻿package madrid.iescanaveral.ejercicios.convocatoria2022;
+package madrid.iescanaveral.ejercicios.convocatoria2022;
 
 /**
- * Ejercicio 2: Si en Java la clase B hereda de la clase A y ejecutamos el siguiente código,
- * ¿cuál será la salida que se imprima?
+ * Ejercicio 2: Si en Java la clase B hereda de la clase A y ejecutamos el siguiente codigo,
+ * ?cual sera la salida que se imprima?
  * 
  * Analiza el comportamiento del polimorfismo y la herencia en Java.
  * 
- * @author Agustín. A. Marquez. Piña
+ * @author Agustin. A. Marquez. Pina
  * @since 14/01/2026
  * @see <a href="mailto:agu1406@outlook.es">agu1406@outlook.es</a>
  * @see <a href="https://github.com/Agu1406/ClasesParticulares">Repositorio GitHub</a>
@@ -15,15 +15,15 @@
 public class Ejercicio2_HerenciaYPolimorfismo {
     // Clase A (padre)
     static class A {
-        // Implementar según sea necesario
+        // Implementar segun sea necesario
     }
     
     // Clase B (hija) que hereda de A
     static class B extends A {
-        // Implementar según sea necesario
+        // Implementar segun sea necesario
     }
     
     public static void main(String[] args) {
-        // Implementar el código que se pregunta en el ejercicio
+        // Implementar el codigo que se pregunta en el ejercicio
     }
 }

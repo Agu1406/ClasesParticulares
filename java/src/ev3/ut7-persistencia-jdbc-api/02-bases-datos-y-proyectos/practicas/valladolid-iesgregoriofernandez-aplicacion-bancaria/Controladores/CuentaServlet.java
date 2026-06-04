@@ -35,7 +35,7 @@ public class CuentaServlet extends HttpServlet {
 			Double saldo = Double.parseDouble(request.getParameter("saldo"));
 			
 			if(!ISBN.matches("\\d{10}")) {
-				request.setAttribute("error", "Número de cuenta inválido");
+				request.setAttribute("error", "Numero de cuenta invalido");
 				RequestDispatcher dispatcher = request.getRequestDispatcher("Mensaje.jsp");
 				dispatcher.forward(request, response);
 			} else {

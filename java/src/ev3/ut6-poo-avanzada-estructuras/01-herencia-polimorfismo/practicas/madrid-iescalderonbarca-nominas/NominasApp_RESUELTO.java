@@ -1,4 +1,4 @@
-﻿package madrid.iescalderonbarca.ejercicios.nominas;
+package madrid.iescalderonbarca.ejercicios.nominas;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -6,13 +6,13 @@ import java.util.Random;
 import java.util.Scanner;
 
 /**
- * Práctica nóminas – VERSIÓN RESUELTA.
+ * Practica nominas - VERSION RESUELTA.
  *
- * Implementa la solución completa usando:
+ * Implementa la solucion completa usando:
  *  - Interfaz Cobros_RESUELTO con sueldo() e indemnizacion().
  *  - Clase abstracta Empleado_RESUELTO.
  *  - Subclases para cada tipo de empleado.
- *  - Uso de polimorfismo en un menú sencillo.
+ *  - Uso de polimorfismo en un menu sencillo.
  */
 public class NominasApp_RESUELTO {
 
@@ -25,21 +25,21 @@ public class NominasApp_RESUELTO {
         int opcion;
         do {
             mostrarMenu();
-            opcion = leerEntero("Elige una opción: ");
+            opcion = leerEntero("Elige una opcion: ");
             switch (opcion) {
                 case 1 -> altaEmpleado();
                 case 2 -> bajaEmpleado();
                 case 3 -> listarSueldos();
                 case 4 -> mostrarIndemnizaciones();
-                case 0 -> System.out.println("Saliendo de la aplicación de nóminas (versión resuelta)...");
-                default -> System.out.println("Opción no válida.");
+                case 0 -> System.out.println("Saliendo de la aplicacion de nominas (version resuelta)...");
+                default -> System.out.println("Opcion no valida.");
             }
         } while (opcion != 0);
     }
 
     private static void mostrarMenu() {
         System.out.println("=====================================");
-        System.out.println("      MENÚ PRÁCTICA NÓMINAS (OK)     ");
+        System.out.println("      MENU PRACTICA NOMINAS (OK)     ");
         System.out.println("=====================================");
         System.out.println("1. Dar de alta un empleado");
         System.out.println("2. Dar de baja un empleado");
@@ -52,10 +52,10 @@ public class NominasApp_RESUELTO {
     private static void altaEmpleado() {
         System.out.println("--- ALTA EMPLEADO ---");
         System.out.println("Tipos disponibles:");
-        System.out.println("1. Mozo de almacén");
-        System.out.println("2. Jefe de sección");
+        System.out.println("1. Mozo de almacen");
+        System.out.println("2. Jefe de seccion");
         System.out.println("3. Jefe de planta");
-        System.out.println("4. Personal de administración");
+        System.out.println("4. Personal de administracion");
         System.out.println("5. Directivo");
 
         int tipo = leerEntero("Elige tipo de empleado: ");
@@ -68,7 +68,7 @@ public class NominasApp_RESUELTO {
         String apellido2 = SC.nextLine().trim();
         System.out.print("DNI: ");
         String dni = SC.nextLine().trim();
-        int antiguedadDias = leerEntero("Antigüedad en días: ");
+        int antiguedadDias = leerEntero("Antiguedad en dias: ");
 
         Empleado_RESUELTO nuevo = switch (tipo) {
             case 1 -> new MozoAlmacen_RESUELTO(nombre, apellido1, apellido2, dni, antiguedadDias);
@@ -83,7 +83,7 @@ public class NominasApp_RESUELTO {
             EMPLEADOS.add(nuevo);
             System.out.println("Empleado dado de alta correctamente.\n");
         } else {
-            System.out.println("Tipo de empleado no válido, alta cancelada.\n");
+            System.out.println("Tipo de empleado no valido, alta cancelada.\n");
         }
     }
 
@@ -104,7 +104,7 @@ public class NominasApp_RESUELTO {
             EMPLEADOS.remove(encontrado);
             System.out.println("Empleado " + encontrado.getNombreCompleto() + " dado de baja.\n");
         } else {
-            System.out.println("No se encontró ningún empleado con ese DNI.\n");
+            System.out.println("No se encontro ningun empleado con ese DNI.\n");
         }
     }
 
@@ -116,7 +116,7 @@ public class NominasApp_RESUELTO {
         }
         for (Empleado_RESUELTO e : EMPLEADOS) {
             double sueldo = e.sueldo();
-            System.out.printf("%-30s (%s): %.2f €%n",
+            System.out.printf("%-30s (%s): %.2f ?%n",
                               e.getNombreCompleto(),
                               e.getClass().getSimpleName(),
                               sueldo);
@@ -125,14 +125,14 @@ public class NominasApp_RESUELTO {
     }
 
     private static void mostrarIndemnizaciones() {
-        System.out.println("--- INDEMNIZACIONES POR DESPIDO (TEÓRICAS) ---");
+        System.out.println("--- INDEMNIZACIONES POR DESPIDO (TEORICAS) ---");
         if (EMPLEADOS.isEmpty()) {
             System.out.println("No hay empleados dados de alta.\n");
             return;
         }
         for (Empleado_RESUELTO e : EMPLEADOS) {
             double ind = e.indemnizacion();
-            System.out.printf("%-30s (%s): %.2f €%n",
+            System.out.printf("%-30s (%s): %.2f ?%n",
                               e.getNombreCompleto(),
                               e.getClass().getSimpleName(),
                               ind);
@@ -143,16 +143,16 @@ public class NominasApp_RESUELTO {
     private static int leerEntero(String mensaje) {
         System.out.print(mensaje);
         while (!SC.hasNextInt()) {
-            System.out.print("Introduce un número entero válido: ");
+            System.out.print("Introduce un numero entero valido: ");
             SC.next();
         }
         int valor = SC.nextInt();
-        SC.nextLine(); // limpiar salto de línea pendiente
+        SC.nextLine(); // limpiar salto de linea pendiente
         return valor;
     }
 
     // ============================================================
-    //  CLASES / INTERFAZ DE LA SOLUCIÓN (NO PÚBLICAS)
+    //  CLASES / INTERFAZ DE LA SOLUCION (NO PUBLICAS)
     // ============================================================
 
     interface Cobros_RESUELTO {
@@ -161,7 +161,7 @@ public class NominasApp_RESUELTO {
     }
 
     /**
-     * Clase abstracta común a todos los empleados.
+     * Clase abstracta comun a todos los empleados.
      */
     static abstract class Empleado_RESUELTO implements Cobros_RESUELTO {
         protected String nombre;
@@ -202,12 +202,12 @@ public class NominasApp_RESUELTO {
         }
 
         /**
-         * Cada subclase define su porcentaje de revalorización anual.
+         * Cada subclase define su porcentaje de revalorizacion anual.
          */
         protected abstract double getPorcentajeRevalorizacionAnual();
 
         /**
-         * Salario bruto mensual actualizado por antigüedad.
+         * Salario bruto mensual actualizado por antiguedad.
          */
         protected double calcularSalarioBrutoActualizado() {
             int anios = getAniosAntiguedad();
@@ -216,7 +216,7 @@ public class NominasApp_RESUELTO {
         }
 
         /**
-         * Salario neto mensual sin extras (solo revalorización + retención).
+         * Salario neto mensual sin extras (solo revalorizacion + retencion).
          */
         protected double calcularSueldoNetoBaseSinExtras() {
             double bruto = calcularSalarioBrutoActualizado();
@@ -225,20 +225,20 @@ public class NominasApp_RESUELTO {
         }
 
         /**
-         * Indemnización común para todas las categorías.
+         * Indemnizacion comun para todas las categorias.
          */
         @Override
         public double indemnizacion() {
             int anios = getAniosAntiguedad();
             if (anios < 1) {
-                return 0.0; // menos de un año, sin indemnización
+                return 0.0; // menos de un ano, sin indemnizacion
             }
 
             double bruto = calcularSalarioBrutoActualizado();
             double salarioDiario = bruto / 30.0;
-            double indemnizacionPorAnio = salarioDiario * 20.0; // 20 días por año
+            double indemnizacionPorAnio = salarioDiario * 20.0; // 20 dias por ano
 
-            // Máximo un sueldo bruto por año (aquí 20 días < 30, así que no se supera).
+            // Maximo un sueldo bruto por ano (aqui 20 dias < 30, asi que no se supera).
             if (indemnizacionPorAnio > bruto) {
                 indemnizacionPorAnio = bruto;
             }
@@ -292,10 +292,10 @@ public class NominasApp_RESUELTO {
         @Override
         public double sueldo() {
             double netoBase = calcularSueldoNetoBaseSinExtras();
-            // Ventas de la sección generadas aleatoriamente
+            // Ventas de la seccion generadas aleatoriamente
             double ventas = generarVentasAleatorias();
             double comision = ventas * 0.12; // 12 %
-            return netoBase + comision; // comisiones sin retención
+            return netoBase + comision; // comisiones sin retencion
         }
     }
 
@@ -373,14 +373,14 @@ public class NominasApp_RESUELTO {
                 plus = brutoActualizado * 0.35; // 35 % de su salario bruto
             }
 
-            // El plus no está sujeto a retención, se suma al neto.
+            // El plus no esta sujeto a retencion, se suma al neto.
             return netoBase + plus;
         }
     }
 
-    // Método auxiliar para generar ventas aleatorias (sección/planta).
+    // Metodo auxiliar para generar ventas aleatorias (seccion/planta).
     private static double generarVentasAleatorias() {
-        // Por ejemplo, entre 0 y 100.000 €
+        // Por ejemplo, entre 0 y 100.000 ?
         return RANDOM.nextDouble() * 100_000.0;
     }
 }

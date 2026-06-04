@@ -1,4 +1,4 @@
-﻿package general.arrays.resueltos.medio;
+package general.arrays.resueltos.medio;
 
 /**
  * Ejercicio 10 (medio): Sumar una columna de una matriz
@@ -14,7 +14,7 @@
  * 
  * Suma columna 0: 15  /  columna 1: 18  /  columna 2: 21  /  columna 3: 24
  * 
- * @author Agustín. A. Marquez. Piña
+ * @author Agustin. A. Marquez. Pina
  * @since 14/06/2025
  * @see <a href="mailto:agu1406@outlook.es">agu1406@outlook.es</a>
  * @see <a href="https://github.com/Agu1406/ClasesParticulares">Repositorio GitHub</a>
@@ -25,7 +25,7 @@ public class Ejercicio10_ArraySumarColumna {
     /**
      * Suma todos los elementos de una columna concreta de la matriz.
      * @param matriz Matriz a recorrer
-     * @param columna Índice de la columna que queremos sumar
+     * @param columna Indice de la columna que queremos sumar
      * @return Suma de los elementos de esa columna
      */
     public static int sumarColumna(int[][] matriz, int columna) {

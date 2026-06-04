@@ -1,19 +1,19 @@
-﻿package general.arrays.resueltos.dificil;
+package general.arrays.resueltos.dificil;
 
 /**
- * Ejercicio 9 (difícil): Comprobar si una matriz cuadrada es simétrica
+ * Ejercicio 9 (dificil): Comprobar si una matriz cuadrada es simetrica
  * 
- * Una matriz es simétrica si matriz[i][j] == matriz[j][i] para todas
- * las posiciones. Basta con recorrer el triángulo superior y comparar
- * con su reflejo en el triángulo inferior.
+ * Una matriz es simetrica si matriz[i][j] == matriz[j][i] para todas
+ * las posiciones. Basta con recorrer el triangulo superior y comparar
+ * con su reflejo en el triangulo inferior.
  * 
- * Simétrica:                       No simétrica:
+ * Simetrica:                       No simetrica:
  *  [1][2][3][4]                     [1][2][3][4]
  *  [2][5][6][7]                     [2][5][6][7]
  *  [3][6][8][9]                     [9][6][8][9]
  *  [4][7][9][0]                     [4][7][9][0]
  * 
- * @author Agustín. A. Marquez. Piña
+ * @author Agustin. A. Marquez. Pina
  * @since 14/06/2025
  * @see <a href="mailto:agu1406@outlook.es">agu1406@outlook.es</a>
  * @see <a href="https://github.com/Agu1406/ClasesParticulares">Repositorio GitHub</a>
@@ -22,10 +22,10 @@
 public class Ejercicio9_ArrayBidimensionalSimetrica {
     
     /**
-     * Comprueba si una matriz cuadrada es simétrica respecto a su
+     * Comprueba si una matriz cuadrada es simetrica respecto a su
      * diagonal principal.
      * @param matriz Matriz cuadrada de entrada
-     * @return true si es simétrica, false en otro caso
+     * @return true si es simetrica, false en otro caso
      */
     public static boolean esSimetrica(int[][] matriz) {
         int tamano = matriz.length;
@@ -40,7 +40,7 @@ public class Ejercicio9_ArrayBidimensionalSimetrica {
     }
     
     /**
-     * Muestra una matriz por pantalla, una fila por línea.
+     * Muestra una matriz por pantalla, una fila por linea.
      * @param matriz Matriz a mostrar
      */
     public static void mostrar(int[][] matriz) {
@@ -69,10 +69,10 @@ public class Ejercicio9_ArrayBidimensionalSimetrica {
         
         System.out.println("Matriz 1:");
         mostrar(matrizSimetrica);
-        System.out.println("¿Es simétrica? " + esSimetrica(matrizSimetrica));
+        System.out.println("?Es simetrica? " + esSimetrica(matrizSimetrica));
         
         System.out.println("\nMatriz 2:");
         mostrar(matrizNoSimetrica);
-        System.out.println("¿Es simétrica? " + esSimetrica(matrizNoSimetrica));
+        System.out.println("?Es simetrica? " + esSimetrica(matrizNoSimetrica));
     }
 }

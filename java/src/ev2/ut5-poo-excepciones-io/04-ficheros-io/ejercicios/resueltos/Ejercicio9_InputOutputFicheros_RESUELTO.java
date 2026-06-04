@@ -1,4 +1,4 @@
-﻿package general.inputoutputficheros;
+package general.inputoutputficheros;
 
 import java.io.File;
 import java.io.FileInputStream;
@@ -7,9 +7,9 @@ import java.io.IOException;
 
 /**
  * Ejercicio 9: Validar existencia de JPG antes de copiar
- * Versión resuelta.
+ * Version resuelta.
  *
- * @author Agustín. A. Marquez. Piña
+ * @author Agustin. A. Marquez. Pina
  * @since 29/04/2026
  * @see <a href="mailto:agu1406@outlook.es">agu1406@outlook.es</a>
  * @see <a href="https://github.com/Agu1406/ClasesParticulares">Repositorio GitHub</a>

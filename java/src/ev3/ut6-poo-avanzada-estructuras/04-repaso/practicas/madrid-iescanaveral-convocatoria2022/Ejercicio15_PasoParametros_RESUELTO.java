@@ -1,11 +1,11 @@
-﻿package madrid.iescanaveral.ejercicios.convocatoria2022;
+package madrid.iescanaveral.ejercicios.convocatoria2022;
 
 /**
- * Ejercicio 15: Indicar cuál es la salida por consola - RESUELTO
+ * Ejercicio 15: Indicar cual es la salida por consola - RESUELTO
  * 
  * RESPUESTA: 1, 6
  * 
- * Explicación:
+ * Explicacion:
  * - arr = {1, 2, 3, 4}
  * - Se llama call_array(arr[0], arr) = call_array(1, arr)
  * - En call_array: i = 1 (copia del valor), arr es referencia al array original
@@ -14,7 +14,7 @@
  * - arr[0] sigue siendo 1, arr[1] ahora es 6
  * - Salida: "1,6"
  * 
- * @author Agustín. A. Marquez. Piña
+ * @author Agustin. A. Marquez. Pina
  * @since 14/01/2026
  * @see <a href="mailto:agu1406@outlook.es">agu1406@outlook.es</a>
  * @see <a href="https://github.com/Agu1406/ClasesParticulares">Repositorio GitHub</a>

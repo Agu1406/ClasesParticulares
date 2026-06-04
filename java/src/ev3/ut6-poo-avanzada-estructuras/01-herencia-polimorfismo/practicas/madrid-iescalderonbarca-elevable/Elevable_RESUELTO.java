@@ -1,11 +1,11 @@
-﻿package madrid.iescalderonbarca.ejercicios.elevable;
+package madrid.iescalderonbarca.ejercicios.elevable;
 
 /**
  * Autor: NOMBRE_DEL_ALUMNO
- * Curso: 1º Bachillerato / Programación
+ * Curso: 1? Bachillerato / Programacion
  * Fecha: AAAA-MM-DD
  *
- * Interfaz que define el comportamiento mínimo de un ascensor (Elevable).
+ * Interfaz que define el comportamiento minimo de un ascensor (Elevable).
  */
 public interface Elevable {
 
@@ -16,13 +16,13 @@ public interface Elevable {
     /**
      * Devuelve la planta actual en la que se encuentra la cabina.
      *
-     * @return número de planta actual.
+     * @return numero de planta actual.
      */
     int getPlantaActual();
 
     /**
-     * Devuelve la planta objetivo a la que se está desplazando el ascensor,
-     * o la misma planta actual si está parado.
+     * Devuelve la planta objetivo a la que se esta desplazando el ascensor,
+     * o la misma planta actual si esta parado.
      *
      * @return planta objetivo.
      */
@@ -31,12 +31,12 @@ public interface Elevable {
     /**
      * Indica si el ascensor se encuentra en movimiento.
      *
-     * @return true si está en movimiento, false en caso contrario.
+     * @return true si esta en movimiento, false en caso contrario.
      */
     boolean estaEnMovimiento();
 
     /**
-     * Indica si la cabina está sobrecargada según el detector de sobrepeso.
+     * Indica si la cabina esta sobrecargada segun el detector de sobrepeso.
      *
      * @return true si hay sobrepeso, false en caso contrario.
      */
@@ -82,7 +82,7 @@ public interface Elevable {
     void cerrarPuertaExterior(int planta);
 
     // =========================
-    // ILUMINACIÓN Y ENERGÍA
+    // ILUMINACION Y ENERGIA
     // =========================
 
     /**
@@ -96,13 +96,13 @@ public interface Elevable {
     void apagarLuzCabina();
 
     /**
-     * Activa un modo de ahorro energético (por ejemplo, apagando luces
+     * Activa un modo de ahorro energetico (por ejemplo, apagando luces
      * o deteniendo el ascensor en una planta neutra).
      */
     void activarModoAhorroEnergia();
 
     /**
-     * Desactiva el modo de ahorro energético y devuelve el ascensor
+     * Desactiva el modo de ahorro energetico y devuelve el ascensor
      * al funcionamiento normal.
      */
     void desactivarModoAhorroEnergia();
@@ -112,7 +112,7 @@ public interface Elevable {
     // =========================
 
     /**
-     * Registra la pulsación de un botón de planta en la botonera interior
+     * Registra la pulsacion de un boton de planta en la botonera interior
      * de la cabina.
      *
      * @param planta planta solicitada desde el interior.
@@ -121,7 +121,7 @@ public interface Elevable {
 
     /**
      * Cancela todas las peticiones de planta realizadas desde el interior.
-     * Útil en situaciones de emergencia o reinicio.
+     * Util en situaciones de emergencia o reinicio.
      */
     void cancelarPeticionesInteriores();
 
@@ -130,8 +130,8 @@ public interface Elevable {
     // =========================
 
     /**
-     * Registra la petición de llamada al ascensor desde una planta concreta
-     * indicando la dirección deseada (subir o bajar).
+     * Registra la peticion de llamada al ascensor desde una planta concreta
+     * indicando la direccion deseada (subir o bajar).
      *
      * @param planta    planta desde la que se llama al ascensor.
      * @param subirTrue true si se desea subir, false si se desea bajar.
@@ -157,7 +157,7 @@ public interface Elevable {
     void moverACiertaPlanta(int plantaDestino);
 
     /**
-     * Inicia el movimiento de la cabina en la dirección adecuada según
+     * Inicia el movimiento de la cabina en la direccion adecuada segun
      * la planta objetivo actual.
      */
     void iniciarMovimiento();
@@ -190,7 +190,7 @@ public interface Elevable {
     void detenerMotor();
 
     /**
-     * Ajusta finamente la posición de la cabina para que quede perfectamente
+     * Ajusta finamente la posicion de la cabina para que quede perfectamente
      * nivelada con el suelo de la planta (detector de nivel).
      */
     void nivelarCabinaEnPlanta();
@@ -216,29 +216,29 @@ public interface Elevable {
     void bloquearAscensor();
 
     /**
-     * Desbloquea el ascensor tras una revisión o incidencia,
+     * Desbloquea el ascensor tras una revision o incidencia,
      * permitiendo volver a usarlo con normalidad.
      */
     void desbloquearAscensor();
 
     /**
-     * Detiene el ascensor de inmediato ante una situación de emergencia,
+     * Detiene el ascensor de inmediato ante una situacion de emergencia,
      * activando los sistemas de seguridad necesarios.
      */
     void paradaDeEmergencia();
 
     // =========================
-    // COMUNICACIÓN CON EL EXTERIOR
+    // COMUNICACION CON EL EXTERIOR
     // =========================
 
     /**
-     * Inicia la comunicación con el exterior (por ejemplo, con el servicio
-     * técnico o con un centro de emergencias).
+     * Inicia la comunicacion con el exterior (por ejemplo, con el servicio
+     * tecnico o con un centro de emergencias).
      */
     void iniciarComunicacionExterna();
 
     /**
-     * Finaliza la comunicación con el exterior.
+     * Finaliza la comunicacion con el exterior.
      */
     void finalizarComunicacionExterna();
 }

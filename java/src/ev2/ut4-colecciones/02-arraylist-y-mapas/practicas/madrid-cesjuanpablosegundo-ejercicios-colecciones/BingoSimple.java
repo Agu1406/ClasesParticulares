@@ -1,8 +1,8 @@
 package madrid.cesjuanpablosegundo;
 
 /**
- * Practica que simula un juego de bingo con Arrays de una dimensión y
- * dos dimensiones, genera números aleatorios y tiene un espacio en el
+ * Practica que simula un juego de bingo con Arrays de una dimension y
+ * dos dimensiones, genera numeros aleatorios y tiene un espacio en el
  * medio con dos equis ("XX")
  *
  * @author Billy
@@ -11,7 +11,7 @@ package madrid.cesjuanpablosegundo;
 public class BingoSimple {
     public static void main(String[] args) {
         /*
-         * Representación "grafica" del Array que acabamos de crear.
+         * Representacion "grafica" del Array que acabamos de crear.
          *  0  1  2  3  4
          * [ ][ ][ ][ ][ ]
          * [ ][ ][ ][ ][ ]
@@ -21,7 +21,7 @@ public class BingoSimple {
          */
         int[][] numerosCarton = new int[5][5];
         /*
-         * Representación "grafica" del Array que acabamos de crear.
+         * Representacion "grafica" del Array que acabamos de crear.
          *   0  1   2   3    4
          * [""][""][""][""][""]
          * [""][""][""][""][""]
@@ -31,26 +31,26 @@ public class BingoSimple {
          */
         String[][] numerosTachados = new String[5][5];
         /*
-         * Creo un Array de una sola dimensión donde puedo ir guardando
-         * los números que ya he cantado a lo largo del juego.
+         * Creo un Array de una sola dimension donde puedo ir guardando
+         * los numeros que ya he cantado a lo largo del juego.
          */
         int[] numerosYaCantados = new int[75];
-        // El número "0" ya está cantado porque es el número del centro del cartón.
+        // El numero "0" ya esta cantado porque es el numero del centro del carton.
         numerosYaCantados[0] = 0;
 
-        // La posición del medio por defecto es "valida" con dos equis ("XX").
+        // La posicion del medio por defecto es "valida" con dos equis ("XX").
         numerosTachados[2][2] = "XX";
 
         // Mensaje de bienvenida al programa/juego del Bingo.
-        System.out.println("¡Bienvenido al bingo de Billy!");
+        System.out.println("!Bienvenido al bingo de Billy!");
 
-        // Función encargada de llenar el cartón de numeros aleatorios.
+        // Funcion encargada de llenar el carton de numeros aleatorios.
         llenarCartonDeNumeros(numerosCarton);
 
         // Mostrar el carton.
         mostrarCarton(numerosCarton, numerosTachados);
 
-        // Función encargada de cantar números aleatorios no repetidos del "1" al "75".
+        // Funcion encargada de cantar numeros aleatorios no repetidos del "1" al "75".
         cantarNumero(numerosYaCantados);
 
 
@@ -64,9 +64,9 @@ public class BingoSimple {
 
     private static void mostrarCarton(int[][] numerosCarton, String[][] numerosTachados) {
 
-        System.out.println("¡Cartón de Bingo!");
+        System.out.println("!Carton de Bingo!");
 
-        // Bucle que recorre una por una todas las columnas del cartón.
+        // Bucle que recorre una por una todas las columnas del carton.
         for (int columna = 0; columna < 5; columna++) {
             // Bucle que recorre una por una todas las filas de las columnas.
             for (int fila = 0; fila < 5; fila++) {
@@ -89,23 +89,23 @@ public class BingoSimple {
     }
 
     public static void cantarNumero(int[] numerosYaCantados) {
-        // Variable para guardar los números que voy cantando.
+        // Variable para guardar los numeros que voy cantando.
         int numeroAleatorio;
 
         boolean numeroCantado;
 
         do {
-            // El bucle nada más empezar cree que el número no ha sido cantado antes.
+            // El bucle nada mas empezar cree que el numero no ha sido cantado antes.
             numeroCantado = false;
 
-            // Creo un número aleatorio para cantarlo.
+            // Creo un numero aleatorio para cantarlo.
             numeroAleatorio = (int) (Math.random() * 75) + 1;
 
-            // Verifico si ese número ya fue cantado anteriormente.
+            // Verifico si ese numero ya fue cantado anteriormente.
             for (int posicion = 0; posicion < 75; posicion++) {
                 /*
-                 * Si encuentro ese número dentro del Array de números ya cantados
-                 * significa que no sirve, ya fue cantado, debo crear un número
+                 * Si encuentro ese numero dentro del Array de numeros ya cantados
+                 * significa que no sirve, ya fue cantado, debo crear un numero
                  * nuevo y volver a verificar.
                  */
                 if (numerosYaCantados[posicion] == numeroAleatorio) {
@@ -114,44 +114,44 @@ public class BingoSimple {
             }
         } while (numeroCantado);
 
-        // Canto el número mostrandolo en pantalla.
-        System.out.println("¡Numero " + numeroAleatorio + " !");
+        // Canto el numero mostrandolo en pantalla.
+        System.out.println("!Numero " + numeroAleatorio + " !");
     }
 
     private static void llenarCartonDeNumeros(int[][] numerosCarton) {
-        // Creamos una variable para guardar un número entero.
+        // Creamos una variable para guardar un numero entero.
         int numero;
 
-        // Variable booleana que me dice si un número esta repetido o no.
+        // Variable booleana que me dice si un numero esta repetido o no.
         boolean numeroRepetido;
 
-        // El primer bucle dice cual columna estamos llenado de números actualmente.
+        // El primer bucle dice cual columna estamos llenado de numeros actualmente.
         for (int columna = 0; columna < 5; columna++) {
 
-            // El segundo bucle llena todas las filas de esa columna de números.
+            // El segundo bucle llena todas las filas de esa columna de numeros.
             for (int fila = 0; fila < 5; fila++) {
 
-                // El número está repetido
+                // El numero esta repetido
                 numeroRepetido = true;
 
                 /*
-                 * Este bucle genera un número aleatorio, luego
-                 * revisa si ese número ya se ha usado anteriormente,
+                 * Este bucle genera un numero aleatorio, luego
+                 * revisa si ese numero ya se ha usado anteriormente,
                  * si se ha usado significa que esta repetido, entonces
-                 * crea un número nuevo diferente hasta que consiga un
-                 * número que no este repetido.
+                 * crea un numero nuevo diferente hasta que consiga un
+                 * numero que no este repetido.
                  */
-                do { // Do (haz) un número aleatorio...
+                do { // Do (haz) un numero aleatorio...
 
-                    // Creo un número aleatorio entre "1" y "75".
+                    // Creo un numero aleatorio entre "1" y "75".
                     numero = (int) (Math.random() * 75) + 1;
 
-                    // Función que devuelve "true" si el número esta repetido y "false" si no.
+                    // Funcion que devuelve "true" si el numero esta repetido y "false" si no.
                     numeroRepetido = verificarNumeroRepetido(numero, numerosCarton);
 
                 } while (numeroRepetido); // Si esta repetido, vuelve a empezar...
 
-                // Guardo el número aleatorio que acabo de crear en el carton.
+                // Guardo el numero aleatorio que acabo de crear en el carton.
                 numerosCarton[columna][fila] = numero;
 
             }
@@ -161,7 +161,7 @@ public class BingoSimple {
     }
 
     public static boolean verificarNumeroRepetido(int numero, int[][] numerosCarton) {
-        // El número no esta repetido hasta que se demuestre lo contrario.
+        // El numero no esta repetido hasta que se demuestre lo contrario.
         boolean repetido = false;
 
         // Reviso una por una todas las columnas
@@ -169,8 +169,8 @@ public class BingoSimple {
             // Reviso una por una todas las filas de las columnas.
             for (int fila = 0; fila < 5; fila++) {
                 /*
-                 * Si en cualquier posición del cartón consigo que el número
-                 * ya existe, está repetido.
+                 * Si en cualquier posicion del carton consigo que el numero
+                 * ya existe, esta repetido.
                  */
                 if (numerosCarton[columna][fila] == numero) {
                     repetido = true;
@@ -178,7 +178,7 @@ public class BingoSimple {
             }
         }
 
-        // Devuelve "false" si no encuentra el número, si está repetido devuelve "true".
+        // Devuelve "false" si no encuentra el numero, si esta repetido devuelve "true".
         return repetido;
     }
 }

@@ -13,12 +13,12 @@ public class Demo {
     }
 
     /**
-     * Esto es una función llamada "calculadoraQueSoloSuma" la cual solo
-     * suma dos números recibifos como argumentos.
-     * @param unNumero - Es un número entero (int) para ser sumado.
-     * @param otroNumero - Es otro número entero (int) para ser sumado.
-     * @return devuelve un número entero (int) con el resultado de la suma.
-     * @author Agustín.
+     * Esto es una funcion llamada "calculadoraQueSoloSuma" la cual solo
+     * suma dos numeros recibifos como argumentos.
+     * @param unNumero - Es un numero entero (int) para ser sumado.
+     * @param otroNumero - Es otro numero entero (int) para ser sumado.
+     * @return devuelve un numero entero (int) con el resultado de la suma.
+     * @author Agustin.
      *
      */
     public static int calculadoraQueSoloSuma (int unNumero, int otroNumero) {

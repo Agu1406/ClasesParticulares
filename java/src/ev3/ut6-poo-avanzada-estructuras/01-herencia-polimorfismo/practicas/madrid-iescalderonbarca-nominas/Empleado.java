@@ -1,12 +1,12 @@
 package madrid.iescalderonbarca.ejercicios.nominas;
 
 /**
- * Práctica nóminas.
+ * Practica nominas.
  *
- * Clase abstracta que representa a un empleado genérico de la empresa.
- * Aquí solo se definen los atributos comunes y la estructura básica.
+ * Clase abstracta que representa a un empleado generico de la empresa.
+ * Aqui solo se definen los atributos comunes y la estructura basica.
  *
- * VERSIÓN SIN RESOLVER (PLANTILLA PARA EL ALUMNO)
+ * VERSION SIN RESOLVER (PLANTILLA PARA EL ALUMNO)
  */
 public abstract class Empleado implements Cobros {
 
@@ -15,9 +15,9 @@ public abstract class Empleado implements Cobros {
     protected String apellido1;
     protected String apellido2;
     protected String dni;
-    protected int antiguedadDias; // antigüedad medida en días
+    protected int antiguedadDias; // antiguedad medida en dias
 
-    // Constructor básico
+    // Constructor basico
     public Empleado(String nombre,
                     String apellido1,
                     String apellido2,
@@ -30,7 +30,7 @@ public abstract class Empleado implements Cobros {
         this.antiguedadDias = antiguedadDias;
     }
 
-    // Getters sencillos por si se necesitan en el main/menú
+    // Getters sencillos por si se necesitan en el main/menu
     public String getNombreCompleto() {
         return nombre + " " + apellido1 + " " + apellido2;
     }
@@ -44,16 +44,16 @@ public abstract class Empleado implements Cobros {
     }
 
     /**
-     * Método de ayuda sugerido: calcula los años completos
-     * de antigüedad a partir de los días trabajados.
+     * Metodo de ayuda sugerido: calcula los anos completos
+     * de antiguedad a partir de los dias trabajados.
      *
-     * @return años de antigüedad (solo años completos).
+     * @return anos de antiguedad (solo anos completos).
      */
     protected int calcularAniosAntiguedad() {
         return antiguedadDias / 365;
     }
 
-    // LOS MÉTODOS sueldo() E indemnizacion() SE DEJAN
-    // SIN IMPLEMENTAR AQUÍ (al ser abstracta) para que
+    // LOS METODOS sueldo() E indemnizacion() SE DEJAN
+    // SIN IMPLEMENTAR AQUI (al ser abstracta) para que
     // los complete el alumno en las subclases concretas.
 }

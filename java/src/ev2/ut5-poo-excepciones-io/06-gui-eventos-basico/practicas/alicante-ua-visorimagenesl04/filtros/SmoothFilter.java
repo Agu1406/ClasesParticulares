@@ -10,7 +10,7 @@ import java.util.ArrayList;
  * An image filter to reduce sharp edges and pixelization. A bit like
  * a soft lens.
  * 
- * @author Michael Kölling and David J. Barnes.
+ * @author Michael K?lling and David J. Barnes.
  * @version 1.0
  */
 public class SmoothFilter extends Filter

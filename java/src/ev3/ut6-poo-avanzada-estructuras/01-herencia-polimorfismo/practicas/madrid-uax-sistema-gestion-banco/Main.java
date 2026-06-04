@@ -1,7 +1,7 @@
 package madrid.uax.tecnicasprogramacion.sistema_gestion_banco;
 
 /**
- * Sistema de gestión bancaria (UAX).
+ * Sistema de gestion bancaria (UAX).
  *
  * <p><b>Objetivo:</b> modelar cuentas bancarias con ingresos, retiros y control de saldo insuficiente.</p>
  *
@@ -9,12 +9,12 @@ package madrid.uax.tecnicasprogramacion.sistema_gestion_banco;
  * <ul>
  *   <li>Crear cuentas con distintos saldos iniciales y operar sobre ellas.</li>
  *   <li>Lanzar {@link SaldoInsufienteException} cuando no haya fondos.</li>
- *   <li>Validar importes no válidos según el enunciado.</li>
+ *   <li>Validar importes no validos segun el enunciado.</li>
  * </ul>
  *
  * <p>Utiliza POO, excepciones personalizadas y aserciones.</p>
  *
- * @author Agustín. A. Marquez. Piña
+ * @author Agustin. A. Marquez. Pina
  * @since 29/05/2026
  * @see <a href="mailto:agu1406@outlook.es">agu1406@outlook.es</a>
  * @see <a href="https://github.com/Agu1406/ClasesParticulares">Repositorio GitHub</a>
@@ -28,12 +28,12 @@ public class Main {
 
         // PRIMERA PARTE - EJERCICIOS CON LA CUENTA CON SALDO "0" //
 
-        // En la primera cuenta depositamos 1000€ y retiramos 500€
+        // En la primera cuenta depositamos 1000? y retiramos 500?
         cuentaBancariaSaldo0.ingresarDinero(1000);
         cuentaBancariaSaldo0.retirarDinero(500);
-        // Immprimo por pantalla ambos, el saldo de la cuenta y el número de cuenta.
+        // Immprimo por pantalla ambos, el saldo de la cuenta y el numero de cuenta.
         System.out.println("Saldo de la cuenta: " + cuentaBancariaSaldo0.getSaldo());
-        System.out.println("Número de la cuenta: " + cuentaBancariaSaldo0.getNumeroCuenta());
+        System.out.println("Numero de la cuenta: " + cuentaBancariaSaldo0.getNumeroCuenta());
 
         // SEGUNDA PARTE - EJERCICIOS CON LA CUENTA CON SALDO "-1". //
 
@@ -47,11 +47,11 @@ public class Main {
             cuentaBancariaSaldoN.ingresarDinero(0);
             cuentaBancariaSaldoN.retirarDinero(-1);
         } catch (SaldoInsufienteException exception) {
-            System.out.println("¡Lo siento! Su saldo actual es insuficiente para realizar está operación.");
+            System.out.println("!Lo siento! Su saldo actual es insuficiente para realizar esta operacion.");
         }
-        // Impprimo por pantalla ambos, el saldo de la cuenta y el número
+        // Impprimo por pantalla ambos, el saldo de la cuenta y el numero
         System.out.println("Saldo de la cuenta: " + cuentaBancariaSaldoN.getSaldo());
-        System.out.println("Número de la cuenta: " + cuentaBancariaSaldoN.getNumeroCuenta());
+        System.out.println("Numero de la cuenta: " + cuentaBancariaSaldoN.getNumeroCuenta());
 
     }
 }

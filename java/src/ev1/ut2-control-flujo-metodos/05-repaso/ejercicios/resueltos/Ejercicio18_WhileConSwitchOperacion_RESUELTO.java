@@ -2,10 +2,10 @@ package general.repaso;
 
 /**
  * Ejercicio: while con switch
- * Objetivo: Aplica operación aritmética por código con switch.
- * Versión resuelta.
+ * Objetivo: Aplica operacion aritmetica por codigo con switch.
+ * Version resuelta.
  *
- * @author Agustín. A. Marquez. Piña
+ * @author Agustin. A. Marquez. Pina
  * @since 29/05/2026
  * @see <a href="mailto:agu1406@outlook.es">agu1406@outlook.es</a>
  * @see <a href="https://github.com/Agu1406/ClasesParticulares">Repositorio GitHub</a>
@@ -21,7 +21,7 @@ public class Ejercicio18_WhileConSwitchOperacion_RESUELTO {
                 case 2 -> System.out.println(a + " - " + b + " = " + (a - b));
                 case 3 -> System.out.println(a + " * " + b + " = " + (a * b));
                 case 4 -> System.out.println(a + " / " + b + " = " + (a / b));
-                default -> System.out.println("Operación inválida");
+                default -> System.out.println("Operacion invalida");
             }
             codigo++;
         }

@@ -7,7 +7,7 @@ import java.util.HashMap;
  * Dado un mapa de nombres y notas, comprueba si existe un alumno y muestra su nota;
  * si no existe, muestra un mensaje claro.
  *
- * @author Agustín. A. Marquez. Piña
+ * @author Agustin. A. Marquez. Pina
  * @since 29/05/2026
  * @see <a href="mailto:agu1406@outlook.es">agu1406@outlook.es</a>
  * @see <a href="https://github.com/Agu1406/ClasesParticulares">Repositorio GitHub</a>

@@ -8,7 +8,7 @@ import java.awt.*;
  * An image filter to create a pixelization effect, like an enlarged
  * low-resolution digital image.
  * 
- * @author Michael Kölling and David J. Barnes.
+ * @author Michael K?lling and David J. Barnes.
  * @version 1.0
  */
 public class PixelizeFilter extends Filter

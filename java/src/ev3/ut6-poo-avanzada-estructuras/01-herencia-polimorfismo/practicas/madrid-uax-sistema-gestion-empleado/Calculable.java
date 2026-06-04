@@ -6,7 +6,7 @@ package madrid.uax.tecnicasprogramacion.sistema_gestion_empleado;
  */
 public interface Calculable {
     /**
-     * Calcula el salario del empleado, el código debe ser implementado por cada
+     * Calcula el salario del empleado, el codigo debe ser implementado por cada
      * clase que implemente la interfaz.
      * 
      * @return El salario calculado.

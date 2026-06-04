@@ -1,13 +1,13 @@
 package ev3.ut7.jdbc;
 
 /**
- * Teoría: índice del subtema JDBC (UT7, RA9).
+ * Teoria: indice del subtema JDBC (UT7, RA9).
  *
  * <p><b>Objetivo:</b> conectar Java con MySQL, ejecutar SQL y CRUD con JDBC.</p>
  *
- * <p>Orden sugerido en {@code teoria/01-…} … {@code 05-…}:</p>
+ * <p>Orden sugerido en {@code teoria/01-?} ? {@code 05-?}:</p>
  * <ol>
- *   <li>{@link ev3.ut7.jdbc.entorno.EntornoXamppIntro} — XAMPP, MySQL, Connector/J</li>
+ *   <li>{@link ev3.ut7.jdbc.entorno.EntornoXamppIntro} - XAMPP, MySQL, Connector/J</li>
  *   <li>{@code teoria/02-conexion-driver/SandBox.java}</li>
  *   <li>{@code teoria/03-statement-select/SandBox.java}</li>
  *   <li>{@code teoria/04-preparedstatement-crud/SandBox.java}</li>
@@ -15,9 +15,9 @@ package ev3.ut7.jdbc;
  * </ol>
  *
  * <p>Ejercicios en {@code ejercicios/pendientes} y {@code resueltos}.
- * Práctica de centro: {@code practicas/sevilla-iesvelazquez-colegio-jdbc/}.</p>
+ * Practica de centro: {@code practicas/sevilla-iesvelazquez-colegio-jdbc/}.</p>
  *
- * @author Agustín. A. Marquez. Piña
+ * @author Agustin. A. Marquez. Pina
  * @since 02/06/2026
  * @see <a href="mailto:agu1406@outlook.es">agu1406@outlook.es</a>
  * @see <a href="https://github.com/Agu1406/ClasesParticulares">Repositorio GitHub</a>

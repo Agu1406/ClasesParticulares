@@ -1,5 +1,5 @@
 /**
- * Teoría: GUI y eventos básicos para E/S (RA5).
+ * Teoria: GUI y eventos basicos para E/S (RA5).
  */
 public class GuiEventosIntro {
 

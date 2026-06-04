@@ -1,10 +1,10 @@
-﻿package general.condicionales;
+package general.condicionales;
 
 /**
  * Ejercicio 3 (switch): Calculadora simple (+, -, *, /)
- * Versión resuelta.
+ * Version resuelta.
  *
- * @author Agustín. A. Marquez. Piña
+ * @author Agustin. A. Marquez. Pina
  * @since 29/04/2026
  * @see <a href="mailto:agu1406@outlook.es">agu1406@outlook.es</a>
  * @see <a href="https://github.com/Agu1406/ClasesParticulares">Repositorio GitHub</a>
@@ -20,7 +20,7 @@ public class Ejercicio3_SWITCH_RESUELTO {
                     case '-': System.out.println(a - b); break;
                     case '*': System.out.println(a * b); break;
                     case '/': System.out.println((double) a / b); break;
-                    default: System.out.println("Operador inválido");
+                    default: System.out.println("Operador invalido");
                 }
     }
 }

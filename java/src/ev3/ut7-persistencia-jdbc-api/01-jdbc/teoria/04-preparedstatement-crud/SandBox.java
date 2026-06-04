@@ -13,7 +13,7 @@ import java.sql.Statement;
  * <p>
  * Usa placeholders {@code ?} en lugar de concatenar SQL. Incluye demo de riesgo de inyeccion SQL.
  *
- * @author Agustín. A. Marquez. Piña
+ * @author Agustin. A. Marquez. Pina
  * @since 29/05/2026
  * @see <a href="mailto:agu1406@outlook.es">agu1406@outlook.es</a>
  * @see <a href="https://github.com/Agu1406/ClasesParticulares">Repositorio GitHub</a>

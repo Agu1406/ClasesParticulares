@@ -4,11 +4,11 @@ import java.util.ArrayList;
 import java.util.List;
 
 /**
- * Estación Concepción (Línea 6, Metro de Madrid).
+ * Estacion Concepcion (Linea 6, Metro de Madrid).
  *
  * <p>Enunciado en {@code estacion-concepcion--madrid-iescalderonbarca.pdf} (misma carpeta).</p>
  *
- * @author Agustín. A. Marquez. Piña
+ * @author Agustin. A. Marquez. Pina
  * @since 29/05/2026
  * @see <a href="mailto:agu1406@outlook.es">agu1406@outlook.es</a>
  * @see <a href="https://github.com/Agu1406/ClasesParticulares">Repositorio GitHub</a>
@@ -16,7 +16,7 @@ import java.util.List;
  */
 public class EstacionConcepcion {
 
-    private static final String NOMBRE = "Concepción";
+    private static final String NOMBRE = "Concepcion";
     private static final int LINEA = 6;
 
     private final List<Pasajero> anden;
@@ -54,9 +54,9 @@ public class EstacionConcepcion {
     }
 
     /**
-     * Embarca pasajeros del andén en el tren mientras haya plazas libres.
+     * Embarca pasajeros del anden en el tren mientras haya plazas libres.
      *
-     * @return número de pasajeros que han subido
+     * @return numero de pasajeros que han subido
      */
     public int embarcarEnTren(Tren tren) {
         int embarcados = 0;
@@ -74,10 +74,10 @@ public class EstacionConcepcion {
 
     public void mostrarEstado() {
         System.out.println();
-        System.out.println("=== Estación " + NOMBRE + " (Línea " + LINEA + ") ===");
-        System.out.println("Pasajeros en andén: " + anden.size());
+        System.out.println("=== Estacion " + NOMBRE + " (Linea " + LINEA + ") ===");
+        System.out.println("Pasajeros en anden: " + anden.size());
         if (anden.isEmpty()) {
-            System.out.println("  (anden vacío)");
+            System.out.println("  (anden vacio)");
         } else {
             for (int i = 0; i < anden.size(); i++) {
                 System.out.println("  " + (i + 1) + ". " + anden.get(i));

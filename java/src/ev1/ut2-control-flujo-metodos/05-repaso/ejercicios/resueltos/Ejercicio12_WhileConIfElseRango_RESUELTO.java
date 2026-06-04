@@ -3,9 +3,9 @@ package general.repaso;
 /**
  * Ejercicio: while con if-else
  * Objetivo: Cuenta del 1 al 25 y clasifica en bajo/alto con if-else.
- * Versión resuelta.
+ * Version resuelta.
  *
- * @author Agustín. A. Marquez. Piña
+ * @author Agustin. A. Marquez. Pina
  * @since 29/05/2026
  * @see <a href="mailto:agu1406@outlook.es">agu1406@outlook.es</a>
  * @see <a href="https://github.com/Agu1406/ClasesParticulares">Repositorio GitHub</a>

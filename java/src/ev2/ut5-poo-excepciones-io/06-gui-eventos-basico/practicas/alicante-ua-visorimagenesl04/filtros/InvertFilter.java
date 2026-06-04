@@ -7,7 +7,7 @@ import java.awt.Color;
 /**
  * An image filter to invert colors.
  * 
- * @author Michael Kölling and David J. Barnes.
+ * @author Michael K?lling and David J. Barnes.
  * @version 1.0
  */
 public class InvertFilter extends Filter

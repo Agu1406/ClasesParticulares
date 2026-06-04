@@ -19,7 +19,7 @@ public class Ejercicio17_ExcepcionesYFinally_SIN_RESOLVER {
     }
 
     static String accesoArray(int tam) {
-        // TODO: crea String[] de tamaño tam y accede a indice 3.
+        // TODO: crea String[] de tamano tam y accede a indice 3.
         return "";
     }
 }

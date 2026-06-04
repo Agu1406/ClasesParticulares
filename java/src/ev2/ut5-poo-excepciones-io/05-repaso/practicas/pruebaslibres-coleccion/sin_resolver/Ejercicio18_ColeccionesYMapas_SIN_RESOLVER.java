@@ -15,10 +15,10 @@ import java.util.Set;
 public class Ejercicio18_ColeccionesYMapas_SIN_RESOLVER {
 
     public static void main(String[] args) {
-        // TODO 1: crear una List con duplicados y mostrar su tamaño.
+        // TODO 1: crear una List con duplicados y mostrar su tamano.
         // TODO 2: pasar esos elementos a Set y mostrar que elimina duplicados.
         // TODO 3: crear HashMap, insertar "dos"->2 y luego "dos"->22.
-        // TODO 4: imprimir valor de "dos", valor de null y tamaño final del mapa.
+        // TODO 4: imprimir valor de "dos", valor de null y tamano final del mapa.
     }
 
     static List<String> crearListaConDuplicados() {

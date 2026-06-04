@@ -7,7 +7,7 @@ import java.awt.*;
 /**
  * An three-level gray-based threshold filter.
  * 
- * @author Michael Kölling and David J. Barnes.
+ * @author Michael K?lling and David J. Barnes.
  * @version 1.0
  */
 public class ThresholdFilter extends Filter

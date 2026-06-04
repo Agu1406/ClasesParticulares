@@ -6,20 +6,20 @@ import java.io.InputStreamReader;
  * Control de habitantes en un edificio (Colegio Salesiano, Salamanca).
  *
  * <p>Enunciado: {@code control-habitantes-edificio--salamanca-colegiosalesiano.pdf}
- * (carpeta de la práctica).</p>
+ * (carpeta de la practica).</p>
  *
- * <p><b>Objetivo:</b> registrar y consultar habitantes por piso y puerta mediante menú.</p>
+ * <p><b>Objetivo:</b> registrar y consultar habitantes por piso y puerta mediante menu.</p>
  *
  * <p>Para ello, el programa debe:</p>
  * <ul>
- *   <li>Almacenar habitantes en una matriz 6×4 (pisos y puertas A–D).</li>
- *   <li>Pedir datos iniciales y ofrecer opciones de consulta y modificación.</li>
- *   <li>Mostrar totales y desgloses según el enunciado.</li>
+ *   <li>Almacenar habitantes en una matriz 6?4 (pisos y puertas A-D).</li>
+ *   <li>Pedir datos iniciales y ofrecer opciones de consulta y modificacion.</li>
+ *   <li>Mostrar totales y desgloses segun el enunciado.</li>
  * </ul>
  *
- * <p>Utiliza matrices bidimensionales, {@link java.io.BufferedReader} y menú por consola.</p>
+ * <p>Utiliza matrices bidimensionales, {@link java.io.BufferedReader} y menu por consola.</p>
  *
- * @author Agustín. A. Marquez. Piña
+ * @author Agustin. A. Marquez. Pina
  * @since 29/05/2026
  * @see <a href="mailto:agu1406@outlook.es">agu1406@outlook.es</a>
  * @see <a href="https://github.com/Agu1406/ClasesParticulares">Repositorio GitHub</a>
@@ -45,7 +45,7 @@ public class ControlHabitantesEdificio {
             // Pedir los datos de habitantes
             pedirDatosHabitantes();
             
-            // Mostrar menú y procesar opciones
+            // Mostrar menu y procesar opciones
             int opcion;
             
             do {
@@ -66,14 +66,14 @@ public class ControlHabitantesEdificio {
                         opcionD_MostrarTabla();
                         break;
                     case 5:
-                        System.out.println("\nSaliendo del programa. ¡Hasta luego!");
+                        System.out.println("\nSaliendo del programa. !Hasta luego!");
                         break;
                     default:
-                        System.out.println("\nOpción no válida. Por favor, elija una opción del 1 al 5.");
+                        System.out.println("\nOpcion no valida. Por favor, elija una opcion del 1 al 5.");
                 }
                 
                 if (opcion != 5) {
-                    System.out.println("\nPresione Enter para volver al menú...");
+                    System.out.println("\nPresione Enter para volver al menu...");
                     lector.readLine();
                 }
             } while (opcion != 5);
@@ -82,15 +82,15 @@ public class ControlHabitantesEdificio {
         } catch (IOException e) {
             System.out.println("Error al leer datos: " + e.getMessage());
         } catch (NumberFormatException e) {
-            System.out.println("Error: debe introducir un número válido.");
+            System.out.println("Error: debe introducir un numero valido.");
         }
     }
     
     /**
-     * Pide al usuario que introduzca el número de habitantes de cada puerta
+     * Pide al usuario que introduzca el numero de habitantes de cada puerta
      */
     private static void pedirDatosHabitantes() throws IOException {
-        System.out.println("Introduzca el número de habitantes para cada puerta del edificio:\n");
+        System.out.println("Introduzca el numero de habitantes para cada puerta del edificio:\n");
         
         for (int piso = 0; piso < NUM_PISOS; piso++) {
             for (int puerta = 0; puerta < NUM_PUERTAS; puerta++) {
@@ -99,7 +99,7 @@ public class ControlHabitantesEdificio {
                 
                 // Validar que no sea negativo
                 while (habitantes[piso][puerta] < 0) {
-                    System.out.print("El número de habitantes no puede ser negativo. Inténtelo de nuevo: ");
+                    System.out.print("El numero de habitantes no puede ser negativo. Intentelo de nuevo: ");
                     habitantes[piso][puerta] = Integer.parseInt(lector.readLine());
                 }
             }
@@ -108,26 +108,26 @@ public class ControlHabitantesEdificio {
     }
     
     /**
-     * Muestra el menú de opciones
+     * Muestra el menu de opciones
      */
     private static void mostrarMenu() {
-        System.out.println("\nMenú de opciones:");
-        System.out.println("1. Obtener el número máximo y mínimo de habitantes");
+        System.out.println("\nMenu de opciones:");
+        System.out.println("1. Obtener el numero maximo y minimo de habitantes");
         System.out.println("2. Calcular la media de habitantes por letra");
         System.out.println("3. Calcular la media de habitantes por piso");
         System.out.println("4. Mostrar los datos en forma de tabla");
         System.out.println("5. Salir del programa");
-        System.out.print("\nSeleccione una opción (1-5): ");
+        System.out.print("\nSeleccione una opcion (1-5): ");
     }
     
     /**
-     * Opción A: Obtener el número máximo y mínimo de habitantes
+     * Opcion A: Obtener el numero maximo y minimo de habitantes
      */
     private static void opcionA_MaximoMinimo() {
         int maximo = habitantes[0][0];
         int minimo = habitantes[0][0];
         
-        // Encontrar máximo y mínimo
+        // Encontrar maximo y minimo
         for (int piso = 0; piso < NUM_PISOS; piso++) {
             for (int puerta = 0; puerta < NUM_PUERTAS; puerta++) {
                 if (habitantes[piso][puerta] > maximo) {
@@ -139,14 +139,14 @@ public class ControlHabitantesEdificio {
             }
         }
         
-        // Mostrar todas las posiciones con el máximo
-        System.out.println("\nEl número máximo de habitantes pertenece al piso " + 
+        // Mostrar todas las posiciones con el maximo
+        System.out.println("\nEl numero maximo de habitantes pertenece al piso " + 
                           obtenerPrimerPisoConValor(maximo) + ", letra " + 
                           obtenerPrimeraLetraConValor(maximo) + ".");
         mostrarTodasLasPosicionesConValor(maximo);
         
-        // Mostrar todas las posiciones con el mínimo
-        System.out.println("El número mínimo pertenece al piso " + 
+        // Mostrar todas las posiciones con el minimo
+        System.out.println("El numero minimo pertenece al piso " + 
                           obtenerPrimerPisoConValor(minimo) + ", letra " + 
                           obtenerPrimeraLetraConValor(minimo) + ".");
         mostrarTodasLasPosicionesConValor(minimo);
@@ -196,7 +196,7 @@ public class ControlHabitantesEdificio {
     }
     
     /**
-     * Opción B: Calcular la media de habitantes por letra
+     * Opcion B: Calcular la media de habitantes por letra
      */
     private static void opcionB_MediaPorLetra() {
         for (int puerta = 0; puerta < NUM_PUERTAS; puerta++) {
@@ -211,7 +211,7 @@ public class ControlHabitantesEdificio {
     }
     
     /**
-     * Opción C: Calcular la media de habitantes por piso
+     * Opcion C: Calcular la media de habitantes por piso
      */
     private static void opcionC_MediaPorPiso() {
         double[] mediasPisos = new double[NUM_PISOS];
@@ -238,7 +238,7 @@ public class ControlHabitantesEdificio {
         System.out.printf("\nLa menor media de habitantes por piso es %.2f y corresponde al piso %d.%n", 
                          menorMedia, pisoMenorMedia + 1);
         
-        // Determinar cuántas puertas superan la media en cada piso
+        // Determinar cuantas puertas superan la media en cada piso
         System.out.println("\nPuertas que superan la media en cada piso:");
         for (int piso = 0; piso < NUM_PISOS; piso++) {
             int contadorPuertasSuperanMedia = 0;
@@ -252,7 +252,7 @@ public class ControlHabitantesEdificio {
     }
     
     /**
-     * Opción D: Mostrar los datos en forma de tabla
+     * Opcion D: Mostrar los datos en forma de tabla
      */
     private static void opcionD_MostrarTabla() {
         System.out.println();

@@ -1,4 +1,4 @@
-﻿package general.arrays.resueltos.medio;
+package general.arrays.resueltos.medio;
 
 /**
  * Ejercicio 9 (medio): Rotar un array N posiciones a la derecha
@@ -7,9 +7,9 @@
  * la derecha. El original no se modifica.
  * 
  * Original = [1][2][3][4][5][6]
- * Rotar 2 → [5][6][1][2][3][4]
+ * Rotar 2 -> [5][6][1][2][3][4]
  * 
- * @author Agustín. A. Marquez. Piña
+ * @author Agustin. A. Marquez. Pina
  * @since 14/06/2025
  * @see <a href="mailto:agu1406@outlook.es">agu1406@outlook.es</a>
  * @see <a href="https://github.com/Agu1406/ClasesParticulares">Repositorio GitHub</a>
@@ -21,7 +21,7 @@ public class Ejercicio9_ArrayRotar {
      * Devuelve un nuevo array con los elementos rotados N posiciones
      * a la derecha. El array original no se modifica.
      * @param array Array original
-     * @param posiciones Número de posiciones a rotar (puede ser mayor que el tamaño)
+     * @param posiciones Numero de posiciones a rotar (puede ser mayor que el tamano)
      * @return Nuevo array rotado
      */
     public static int[] rotarDerecha(int[] array, int posiciones) {

@@ -37,24 +37,24 @@ public class PartidaAjedrez {
 
         // Inicializar piezas simuladas (sin funcionalidad)
         // Caballos
-        tablero.put("b1", new PiezaSimulada("blancas", "b1", "♞"));
-        tablero.put("g1", new PiezaSimulada("blancas", "g1", "♞"));
-        tablero.put("b8", new PiezaSimulada("negras", "b8", "♞"));
-        tablero.put("g8", new PiezaSimulada("negras", "g8", "♞"));
+        tablero.put("b1", new PiezaSimulada("blancas", "b1", "?"));
+        tablero.put("g1", new PiezaSimulada("blancas", "g1", "?"));
+        tablero.put("b8", new PiezaSimulada("negras", "b8", "?"));
+        tablero.put("g8", new PiezaSimulada("negras", "g8", "?"));
 
         // Alfiles
-        tablero.put("c1", new PiezaSimulada("blancas", "c1", "♝"));
-        tablero.put("f1", new PiezaSimulada("blancas", "f1", "♝"));
-        tablero.put("c8", new PiezaSimulada("negras", "c8", "♝"));
-        tablero.put("f8", new PiezaSimulada("negras", "f8", "♝"));
+        tablero.put("c1", new PiezaSimulada("blancas", "c1", "?"));
+        tablero.put("f1", new PiezaSimulada("blancas", "f1", "?"));
+        tablero.put("c8", new PiezaSimulada("negras", "c8", "?"));
+        tablero.put("f8", new PiezaSimulada("negras", "f8", "?"));
 
         // Reinas
-        tablero.put("d1", new PiezaSimulada("blancas", "d1", "♛"));
-        tablero.put("d8", new PiezaSimulada("negras", "d8", "♛"));
+        tablero.put("d1", new PiezaSimulada("blancas", "d1", "?"));
+        tablero.put("d8", new PiezaSimulada("negras", "d8", "?"));
 
         // Reyes
-        tablero.put("e1", new PiezaSimulada("blancas", "e1", "♚"));
-        tablero.put("e8", new PiezaSimulada("negras", "e8", "♚"));
+        tablero.put("e1", new PiezaSimulada("blancas", "e1", "?"));
+        tablero.put("e8", new PiezaSimulada("negras", "e8", "?"));
     }
 
     public boolean realizarMovimiento(String movimiento) {
@@ -77,7 +77,7 @@ public class PartidaAjedrez {
             return false;
         }
 
-        // Verificar que el movimiento es válido
+        // Verificar que el movimiento es valido
         if (!pieza.esMovimientoValido(destino)) {
             return false;
         }
@@ -98,14 +98,14 @@ public class PartidaAjedrez {
     }
 
     public boolean esJaqueMate() {
-        // Implementación simplificada: verificar si el rey está en jaque y no puede moverse
-        // En una implementación real, se necesitaría verificar todas las piezas y sus movimientos
+        // Implementacion simplificada: verificar si el rey esta en jaque y no puede moverse
+        // En una implementacion real, se necesitaria verificar todas las piezas y sus movimientos
         return false;
     }
 
     public boolean esEmpate() {
-        // Implementación simplificada: verificar si hay menos de 50 movimientos sin capturas
-        // En una implementación real, se necesitaría verificar más condiciones
+        // Implementacion simplificada: verificar si hay menos de 50 movimientos sin capturas
+        // En una implementacion real, se necesitaria verificar mas condiciones
         return movimientos.size() >= 50;
     }
 
@@ -128,7 +128,7 @@ public class PartidaAjedrez {
         System.out.println();
         System.out.print("    "); // Cuatro espacios iniciales para alinear con el borde
         for (char c = 'a'; c <= 'h'; c++) {
-            System.out.print(c + "   "); // Tres espacios después de cada letra
+            System.out.print(c + "   "); // Tres espacios despues de cada letra
         }
         System.out.println();
         
@@ -136,7 +136,7 @@ public class PartidaAjedrez {
         
         for (int fila = 8; fila >= 1; fila--) {
             StringBuilder linea = new StringBuilder();
-            linea.append(fila).append("| "); // Número de fila y primer separador con espacio
+            linea.append(fila).append("| "); // Numero de fila y primer separador con espacio
             
             for (char columna = 'a'; columna <= 'h'; columna++) {
                 String posicion = columna + String.valueOf(fila);
@@ -145,16 +145,16 @@ public class PartidaAjedrez {
                     if (pieza instanceof PiezaSimulada) {
                         linea.append(((PiezaSimulada) pieza).getSimbolo() + " | ");
                     } else if (pieza instanceof Peon) {
-                        linea.append("♟ | ");
+                        linea.append("? | ");
                     } else if (pieza instanceof Torre) {
-                        linea.append("♜ | ");
+                        linea.append("? | ");
                     }
                 } else {
-                    linea.append("  | "); // Dos espacios para casillas vacías + separador con espacio
+                    linea.append("  | "); // Dos espacios para casillas vacias + separador con espacio
                 }
             }
             
-            linea.append(fila); // Número de fila al final
+            linea.append(fila); // Numero de fila al final
             System.out.println(linea.toString());
             System.out.println(lineaSeparadora);
         }
@@ -162,7 +162,7 @@ public class PartidaAjedrez {
         // Mostrar letras de columnas alineadas
         System.out.print("    "); // Cuatro espacios iniciales para alinear con el borde
         for (char c = 'a'; c <= 'h'; c++) {
-            System.out.print(c + "   "); // Tres espacios después de cada letra
+            System.out.print(c + "   "); // Tres espacios despues de cada letra
         }
         System.out.println();
     }

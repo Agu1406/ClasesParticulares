@@ -1,10 +1,10 @@
-﻿package general.trycatchfinally;
+package general.trycatchfinally;
 
 /**
- * Ejercicio 4: Varios catch: parse o división
- * Versión resuelta.
+ * Ejercicio 4: Varios catch: parse o division
+ * Version resuelta.
  *
- * @author Agustín. A. Marquez. Piña
+ * @author Agustin. A. Marquez. Pina
  * @since 29/04/2026
  * @see <a href="mailto:agu1406@outlook.es">agu1406@outlook.es</a>
  * @see <a href="https://github.com/Agu1406/ClasesParticulares">Repositorio GitHub</a>
@@ -16,11 +16,11 @@ public class Ejercicio4_TryCatchFinally_RESUELTO {
                     String txt = "0"; int n = Integer.parseInt(txt); int x = 10 / n;
                     System.out.println("Bloque try ejecutado correctamente.");
                 } catch (NumberFormatException e) {
-                    System.out.println("Error de formato numérico.");
+                    System.out.println("Error de formato numerico.");
                 } catch (ArithmeticException e) {
-                    System.out.println("Error aritmético.");
+                    System.out.println("Error aritmetico.");
                 } catch (ArrayIndexOutOfBoundsException e) {
-                    System.out.println("Índice fuera de rango.");
+                    System.out.println("Indice fuera de rango.");
                 } catch (NullPointerException e) {
                     System.out.println("Referencia nula.");
                 }

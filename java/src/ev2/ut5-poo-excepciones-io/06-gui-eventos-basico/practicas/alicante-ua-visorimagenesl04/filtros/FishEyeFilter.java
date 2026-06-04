@@ -6,7 +6,7 @@ import valencia.alicante.ua.visorimagenesl04.imagen.OFImage;
  * An image filter to create an effect similar to a fisheye camera lens.
  * (Works especially well on portraits.)
  * 
- * @author Michael Kölling and David J. Barnes.
+ * @author Michael K?lling and David J. Barnes.
  * @version 1.0
  */
 public class FishEyeFilter extends Filter

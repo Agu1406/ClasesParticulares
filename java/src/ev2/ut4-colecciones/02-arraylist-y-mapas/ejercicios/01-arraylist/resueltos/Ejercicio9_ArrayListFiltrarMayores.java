@@ -1,11 +1,11 @@
-﻿package general.arraylist.resueltos;
+package general.arraylist.resueltos;
 
 import java.util.ArrayList;
 
 /**
  * Ejercicio 9 resuelto: Filtrar mayores que un valor
  * 
- * @author Agustín. A. Marquez. Piña
+ * @author Agustin. A. Marquez. Pina
  * @since 26/04/2026
  * @see <a href="mailto:agu1406@outlook.es">agu1406@outlook.es</a>
  * @see <a href="https://github.com/Agu1406/ClasesParticulares">Repositorio GitHub</a>

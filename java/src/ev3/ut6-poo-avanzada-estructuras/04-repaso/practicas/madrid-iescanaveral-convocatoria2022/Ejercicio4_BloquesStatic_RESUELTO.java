@@ -1,17 +1,17 @@
-﻿package madrid.iescanaveral.ejercicios.convocatoria2022;
+package madrid.iescanaveral.ejercicios.convocatoria2022;
 
 /**
- * Ejercicio 4: Dado el siguiente código, ¿es correcto o presenta errores? - RESUELTO
+ * Ejercicio 4: Dado el siguiente codigo, ?es correcto o presenta errores? - RESUELTO
  * 
- * RESPUESTA: No, porque daría una excepción java.lang.NullPointerException cuando se intenta 
- * acceder a una posición del array en el bloque de código static.
+ * RESPUESTA: No, porque daria una excepcion java.lang.NullPointerException cuando se intenta 
+ * acceder a una posicion del array en el bloque de codigo static.
  * 
- * Explicación:
+ * Explicacion:
  * - El bloque static se ejecuta ANTES del constructor
  * - En el bloque static, 'intervalos' es null
  * - Al intentar acceder a intervalos[0], se produce NullPointerException
  * 
- * @author Agustín. A. Marquez. Piña
+ * @author Agustin. A. Marquez. Pina
  * @since 14/01/2026
  * @see <a href="mailto:agu1406@outlook.es">agu1406@outlook.es</a>
  * @see <a href="https://github.com/Agu1406/ClasesParticulares">Repositorio GitHub</a>
@@ -21,16 +21,16 @@ public class Ejercicio4_BloquesStatic_RESUELTO {
     private static final int MAX_INTERVALOS = 14;
     private static Intervalo[] intervalos = null;
     
-    // SOLUCIÓN: Inicializar el array ANTES del bloque static
-    // Opción 1: Inicializar directamente
+    // SOLUCION: Inicializar el array ANTES del bloque static
+    // Opcion 1: Inicializar directamente
     // private static Intervalo[] intervalos = new Intervalo[MAX_INTERVALOS];
     
-    // Opción 2: Inicializar en el bloque static ANTES de usarlo
+    // Opcion 2: Inicializar en el bloque static ANTES de usarlo
     static {
         // Primero inicializar el array
         intervalos = new Intervalo[Ejercicio4_BloquesStatic_RESUELTO.MAX_INTERVALOS];
         
-        // Ahora sí podemos usarlo
+        // Ahora si podemos usarlo
         Intervalo first = new Intervalo(2, 4);
         intervalos[0] = first;
         Intervalo aux = null;

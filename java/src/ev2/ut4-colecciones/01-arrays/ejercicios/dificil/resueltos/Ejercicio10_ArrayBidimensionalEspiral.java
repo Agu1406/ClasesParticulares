@@ -1,10 +1,10 @@
-﻿package general.arrays.resueltos.dificil;
+package general.arrays.resueltos.dificil;
 
 /**
- * Ejercicio 10 (difícil): Recorrer una matriz en espiral
+ * Ejercicio 10 (dificil): Recorrer una matriz en espiral
  * 
  * Recorre los elementos de la matriz desde fuera hacia dentro, capa a
- * capa, usando cuatro variables para delimitar el rectángulo pendiente.
+ * capa, usando cuatro variables para delimitar el rectangulo pendiente.
  * 
  *  [ 1][ 2][ 3][ 4]
  *  [ 5][ 6][ 7][ 8]
@@ -14,7 +14,7 @@
  * Recorrido en espiral:
  *   1, 2, 3, 4, 8, 12, 16, 15, 14, 13, 9, 5, 6, 7, 11, 10
  * 
- * @author Agustín. A. Marquez. Piña
+ * @author Agustin. A. Marquez. Pina
  * @since 14/06/2025
  * @see <a href="mailto:agu1406@outlook.es">agu1406@outlook.es</a>
  * @see <a href="https://github.com/Agu1406/ClasesParticulares">Repositorio GitHub</a>

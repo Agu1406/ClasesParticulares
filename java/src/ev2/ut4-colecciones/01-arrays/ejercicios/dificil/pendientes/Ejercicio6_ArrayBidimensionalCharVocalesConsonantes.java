@@ -1,17 +1,17 @@
-﻿package general.arrays.dificil;
+package general.arrays.dificil;
 
 /**
  * Ejercicio 6: Array bidimensional de caracteres - Contar vocales y consonantes
  * 
  * Crea un array bidimensional de caracteres (char) de 4 filas y 4 columnas
- * que represente una matriz de letras. Asigna valores de letras a cada posición.
+ * que represente una matriz de letras. Asigna valores de letras a cada posicion.
  * 
- * Crea una función llamada esVocal que reciba un carácter y retorne true
+ * Crea una funcion llamada esVocal que reciba un caracter y retorne true
  * si es una vocal (a, e, i, o, u), o false en caso contrario.
- * La función debe considerar tanto mayúsculas como minúsculas.
+ * La funcion debe considerar tanto mayusculas como minusculas.
  * 
- * Crea otra función llamada contarVocalesYConsonantes que reciba el array bidimensional
- * y use bucles for anidados para contar cuántas vocales y cuántas consonantes hay
+ * Crea otra funcion llamada contarVocalesYConsonantes que reciba el array bidimensional
+ * y use bucles for anidados para contar cuantas vocales y cuantas consonantes hay
  * en total en la matriz. Debe mostrar por pantalla ambos contadores.
  * 
  * Ejemplo de vocales: 'A', 'E', 'I', 'O', 'U', 'a', 'e', 'i', 'o', 'u'
@@ -28,10 +28,10 @@
  * 
  * Total: 7 vocales, 9 consonantes
  * 
- * Para acceder a una posición: array[fila][columna]
- * Ejemplo: array[0][1] es la posición fila 0, columna 1
+ * Para acceder a una posicion: array[fila][columna]
+ * Ejemplo: array[0][1] es la posicion fila 0, columna 1
  * 
- * @author Agustín. A. Marquez. Piña
+ * @author Agustin. A. Marquez. Pina
  * @since 14/06/2025
  * @see <a href="mailto:agu1406@outlook.es">agu1406@outlook.es</a>
  * @see <a href="https://github.com/Agu1406/ClasesParticulares">Repositorio GitHub</a>

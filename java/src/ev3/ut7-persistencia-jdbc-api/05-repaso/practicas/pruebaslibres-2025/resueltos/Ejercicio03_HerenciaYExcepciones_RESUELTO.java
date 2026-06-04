@@ -53,7 +53,7 @@ class TestExcepcionesR {
     }
     public int getNumeroPositivo() throws ExcepcionNegativaR {
         if (numero < 0) {
-            throw new ExcepcionNegativaR("Número negativo");
+            throw new ExcepcionNegativaR("Numero negativo");
         }
         return numero;
     }

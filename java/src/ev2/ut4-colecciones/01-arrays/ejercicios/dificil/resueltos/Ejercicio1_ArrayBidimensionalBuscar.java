@@ -1,10 +1,10 @@
-﻿package general.arrays.resueltos.dificil;
+package general.arrays.resueltos.dificil;
 
 /**
- * Ejercicio 1 (difícil): Buscar un valor en una matriz 2D y devolver su posición
+ * Ejercicio 1 (dificil): Buscar un valor en una matriz 2D y devolver su posicion
  * 
- * Devuelve [fila, columna] de la primera aparición o {-1, -1} si no está.
- * Además cuenta cuántas veces aparece el valor en toda la matriz.
+ * Devuelve [fila, columna] de la primera aparicion o {-1, -1} si no esta.
+ * Ademas cuenta cuantas veces aparece el valor en toda la matriz.
  * 
  *          Columnas
  *          [0][1][2][3]
@@ -12,10 +12,10 @@
  * Fila [1] [ 2][ 6][ 8][ 6]
  * Fila [2] [ 1][ 9][ 3][ 6]
  * 
- * Buscar el 6 → fila 0, columna 1 / Ocurrencias: 4
- * Buscar el 99 → no encontrado
+ * Buscar el 6 -> fila 0, columna 1 / Ocurrencias: 4
+ * Buscar el 99 -> no encontrado
  * 
- * @author Agustín. A. Marquez. Piña
+ * @author Agustin. A. Marquez. Pina
  * @since 14/06/2025
  * @see <a href="mailto:agu1406@outlook.es">agu1406@outlook.es</a>
  * @see <a href="https://github.com/Agu1406/ClasesParticulares">Repositorio GitHub</a>
@@ -24,10 +24,10 @@
 public class Ejercicio1_ArrayBidimensionalBuscar {
     
     /**
-     * Busca la primera aparición de valor en la matriz.
+     * Busca la primera aparicion de valor en la matriz.
      * @param matriz Matriz donde buscar
      * @param valor Valor a buscar
-     * @return Array con [fila, columna] de la primera aparición, o {-1, -1}
+     * @return Array con [fila, columna] de la primera aparicion, o {-1, -1}
      */
     public static int[] buscarPosicion(int[][] matriz, int valor) {
         for (int fila = 0; fila < matriz.length; fila++) {
@@ -41,10 +41,10 @@ public class Ejercicio1_ArrayBidimensionalBuscar {
     }
     
     /**
-     * Cuenta cuántas veces aparece el valor en toda la matriz.
+     * Cuenta cuantas veces aparece el valor en toda la matriz.
      * @param matriz Matriz donde contar
      * @param valor Valor cuya frecuencia queremos saber
-     * @return Número de apariciones del valor en la matriz
+     * @return Numero de apariciones del valor en la matriz
      */
     public static int contarOcurrencias(int[][] matriz, int valor) {
         int contador = 0;

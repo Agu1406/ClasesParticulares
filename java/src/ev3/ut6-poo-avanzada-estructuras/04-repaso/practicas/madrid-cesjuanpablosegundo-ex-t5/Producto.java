@@ -50,10 +50,10 @@ public class Producto {
     }
 
     /**
-     * Muestra toda la información del producto
+     * Muestra toda la informacion del producto
      */
     public void mostrarDatos() {
-        System.out.println("Producto: " + nombre + " - Precio: " + precio + " €");
+        System.out.println("Producto: " + nombre + " - Precio: " + precio + " ?");
     }
 
     @Override

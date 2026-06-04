@@ -23,14 +23,14 @@ public class Biblioteca {
 
     public void agregarLibro(Libro libro) {
         if (catalogo.size() >= maxLibros) {
-            throw new IllegalStateException("Se ha alcanzado el límite máximo de libros");
+            throw new IllegalStateException("Se ha alcanzado el limite maximo de libros");
         }
         catalogo.add(libro);
     }
 
     public void agregarUsuario(Usuario usuario) {
         if (usuarios.size() >= maxUsuarios) {
-            throw new IllegalStateException("Se ha alcanzado el límite máximo de usuarios");
+            throw new IllegalStateException("Se ha alcanzado el limite maximo de usuarios");
         }
         usuarios.add(usuario);
     }
@@ -45,10 +45,10 @@ public class Biblioteca {
 
     public void reservarLibro(Usuario usuario, Libro libro, Date fechaInicio, Date fechaFin) {
         if (!existeUsuario(usuario)) {
-            throw new IllegalArgumentException("El usuario no está registrado en la biblioteca");
+            throw new IllegalArgumentException("El usuario no esta registrado en la biblioteca");
         }
         if (!existeLibro(libro)) {
-            throw new IllegalArgumentException("El libro no está en el catálogo");
+            throw new IllegalArgumentException("El libro no esta en el catalogo");
         }
 
         Reserva nuevaReserva = new Reserva(usuario, libro, fechaInicio, fechaFin);
@@ -67,7 +67,7 @@ public class Biblioteca {
     }
 
     public void imprimirCatalogo() {
-        System.out.println("=== Catálogo de la sistema_gestion_biblioteca.Biblioteca ===");
+        System.out.println("=== Catalogo de la sistema_gestion_biblioteca.Biblioteca ===");
         for (Libro libro : catalogo) {
             libro.imprimir();
         }

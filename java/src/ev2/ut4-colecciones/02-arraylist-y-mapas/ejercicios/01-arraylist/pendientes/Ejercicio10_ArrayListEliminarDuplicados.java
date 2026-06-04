@@ -1,4 +1,4 @@
-﻿package general.arraylist;
+package general.arraylist;
 
 import java.util.ArrayList;
 
@@ -6,7 +6,7 @@ import java.util.ArrayList;
  * Ejercicio 10: Eliminar duplicados manualmente
  * Crea una lista sin duplicados recorriendo la lista original.
  * 
- * @author Agustín. A. Marquez. Piña
+ * @author Agustin. A. Marquez. Pina
  * @since 26/04/2026
  * @see <a href="mailto:agu1406@outlook.es">agu1406@outlook.es</a>
  * @see <a href="https://github.com/Agu1406/ClasesParticulares">Repositorio GitHub</a>

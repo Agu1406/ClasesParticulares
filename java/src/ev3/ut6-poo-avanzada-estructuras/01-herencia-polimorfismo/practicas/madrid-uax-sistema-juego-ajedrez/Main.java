@@ -18,7 +18,7 @@ public class Main {
         while (!salir) {
             mostrarMenu();
             int opcion = scanner.nextInt();
-            scanner.nextLine(); // Consumir el salto de línea
+            scanner.nextLine(); // Consumir el salto de linea
 
             switch (opcion) {
                 case 1:
@@ -41,25 +41,25 @@ public class Main {
                     break;
                 case 0:
                     salir = true;
-                    System.out.println("¡Gracias por jugar!");
+                    System.out.println("!Gracias por jugar!");
                     break;
                 default:
-                    System.out.println("Opción no válida. Por favor, intente de nuevo.");
+                    System.out.println("Opcion no valida. Por favor, intente de nuevo.");
             }
         }
         scanner.close();
     }
 
     private static void mostrarMenu() {
-        System.out.println("\n=== MENÚ DEL JUEGO DE AJEDREZ ===");
+        System.out.println("\n=== MENU DEL JUEGO DE AJEDREZ ===");
         System.out.println("1. Iniciar nueva partida");
         System.out.println("2. Realizar movimiento");
         System.out.println("3. Mostrar tablero");
         System.out.println("4. Mostrar movimientos realizados");
-        System.out.println("5. Consultar posición");
+        System.out.println("5. Consultar posicion");
         System.out.println("6. Mostrar estado de la partida");
         System.out.println("0. Salir");
-        System.out.print("Seleccione una opción: ");
+        System.out.print("Seleccione una opcion: ");
     }
 
     private static void iniciarNuevaPartida() {
@@ -81,7 +81,7 @@ public class Main {
             System.out.println("Movimiento realizado correctamente.");
             partida.mostrarTablero();
         } else {
-            System.out.println("Movimiento no válido. Intente de nuevo.");
+            System.out.println("Movimiento no valido. Intente de nuevo.");
         }
     }
 
@@ -97,19 +97,19 @@ public class Main {
     }
 
     private static void consultarPosicion() {
-        System.out.print("Ingrese la posición a consultar (ejemplo: e4): ");
+        System.out.print("Ingrese la posicion a consultar (ejemplo: e4): ");
         String posicion = scanner.nextLine();
         Pieza pieza = partida.obtenerPiezaEnPosicion(posicion);
         
         if (pieza != null) {
             System.out.println("Pieza en " + posicion + ": " + 
-                (pieza instanceof Peon ? "Peón" : "Torre") + " " + pieza.getColor());
-            System.out.println("Movimientos posibles desde esta posición:");
+                (pieza instanceof Peon ? "Peon" : "Torre") + " " + pieza.getColor());
+            System.out.println("Movimientos posibles desde esta posicion:");
             for (String mov : partida.obtenerMovimientosPosibles(posicion)) {
                 System.out.println("- " + mov);
             }
         } else {
-            System.out.println("No hay ninguna pieza en esa posición.");
+            System.out.println("No hay ninguna pieza en esa posicion.");
         }
     }
 
@@ -120,7 +120,7 @@ public class Main {
         }
         
         System.out.println("\nEstado actual de la partida:");
-        System.out.println("¿Jaque mate? " + partida.esJaqueMate());
-        System.out.println("¿Empate? " + partida.esEmpate());
+        System.out.println("?Jaque mate? " + partida.esJaqueMate());
+        System.out.println("?Empate? " + partida.esEmpate());
     }
 } 

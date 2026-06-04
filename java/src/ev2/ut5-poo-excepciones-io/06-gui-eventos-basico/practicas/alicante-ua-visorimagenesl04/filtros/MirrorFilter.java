@@ -7,7 +7,7 @@ import java.awt.*;
 /**
  * An image filter to mirror (flip) the image horizontally.
  * 
- * @author Michael Kölling and David J. Barnes.
+ * @author Michael K?lling and David J. Barnes.
  * @version 1.0
  */
 public class MirrorFilter extends Filter

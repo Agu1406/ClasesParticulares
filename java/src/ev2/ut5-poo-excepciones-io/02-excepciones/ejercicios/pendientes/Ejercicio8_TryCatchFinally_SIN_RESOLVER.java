@@ -1,10 +1,10 @@
-﻿package general.trycatchfinally;
+package general.trycatchfinally;
 
 /**
- * Ejercicio 8: Catch + finally: división
- * Versión sin resolver.
+ * Ejercicio 8: Catch + finally: division
+ * Version sin resolver.
  *
- * @author Agustín. A. Marquez. Piña
+ * @author Agustin. A. Marquez. Pina
  * @since 29/04/2026
  * @see <a href="mailto:agu1406@outlook.es">agu1406@outlook.es</a>
  * @see <a href="https://github.com/Agu1406/ClasesParticulares">Repositorio GitHub</a>
@@ -12,9 +12,9 @@
  */
 public class Ejercicio8_TryCatchFinally_SIN_RESOLVER {
     public static void main(String[] args) {
-        // TODO: coloca este código en un try:
+        // TODO: coloca este codigo en un try:
                 // int x = 100 / 5; System.out.println(x);
-                // TODO: añade uno o varios catch según corresponda.
-                // TODO: añade finally que siempre muestre un mensaje final.
+                // TODO: anade uno o varios catch segun corresponda.
+                // TODO: anade finally que siempre muestre un mensaje final.
     }
 }

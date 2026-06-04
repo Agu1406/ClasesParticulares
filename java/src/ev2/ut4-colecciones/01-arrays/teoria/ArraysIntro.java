@@ -1,7 +1,7 @@
 package general.arrays;
 
 /**
- * Teoría: arrays en Java.
+ * Teoria: arrays en Java.
  *
  * <p><b>Objetivo:</b> declarar arrays unidimensionales y bidimensionales, recorrerlos
  * con bucles y aplicar operaciones habituales (sumar, buscar, ordenar).</p>
@@ -9,7 +9,7 @@ package general.arrays;
  * <p>Ejercicios por dificultad en {@code ejercicios/facil|medio|dificil/}
  * (carpetas {@code pendientes} y {@code resueltos}).</p>
  *
- * @author Agustín. A. Marquez. Piña
+ * @author Agustin. A. Marquez. Pina
  * @since 29/05/2026
  * @see <a href="mailto:agu1406@outlook.es">agu1406@outlook.es</a>
  * @see <a href="https://github.com/Agu1406/ClasesParticulares">Repositorio GitHub</a>

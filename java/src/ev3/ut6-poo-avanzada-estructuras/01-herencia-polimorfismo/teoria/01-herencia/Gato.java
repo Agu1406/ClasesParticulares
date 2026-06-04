@@ -1,11 +1,11 @@
-﻿package general.poo_herencia;
+package general.poo_herencia;
 
 /**
  * Subclase Gato que hereda de Animal.
  *
- * Debe sobrescribir la función hacerSonido() para imprimir algo como "Miau".
+ * Debe sobrescribir la funcion hacerSonido() para imprimir algo como "Miau".
  * 
- * @author Agustín. A. Marquez. Piña
+ * @author Agustin. A. Marquez. Pina
  * @since 14/06/2025
  * @see <a href="mailto:agu1406@outlook.es">agu1406@outlook.es</a>
  * @see <a href="https://github.com/Agu1406/ClasesParticulares">Repositorio GitHub</a>
@@ -13,7 +13,7 @@
  */
 public class Gato extends Animal {
 
-    // TODO: Crear constructor que llame a super(nombre) y sobrescribir la función hacerSonido()
+    // TODO: Crear constructor que llame a super(nombre) y sobrescribir la funcion hacerSonido()
 
 }
 

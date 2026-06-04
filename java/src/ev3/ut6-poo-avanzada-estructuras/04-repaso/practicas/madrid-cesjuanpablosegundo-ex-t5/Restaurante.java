@@ -4,16 +4,16 @@ import java.util.ArrayList;
 import java.util.List;
 
 /**
- * Clase que gestiona todos los pedidos y la recaudación del restaurante
+ * Clase que gestiona todos los pedidos y la recaudacion del restaurante
  */
 public class Restaurante {
-    private int caja; // Recaudación de los pedidos
+    private int caja; // Recaudacion de los pedidos
     private String nif; // Identificador de la empresa
     private String nombre; // Nombre de la empresa
     private List<Pedido> pedidos; // Lista de pedidos
 
     /**
-     * Constructor sin parámetros de la clase Restaurante
+     * Constructor sin parametros de la clase Restaurante
      */
     public Restaurante() {
         this.nif = "";
@@ -46,7 +46,7 @@ public class Restaurante {
      * Muestra el valor de la caja
      */
     public void mostrarcaja() {
-        System.out.println("Valor de la caja: " + caja + " €");
+        System.out.println("Valor de la caja: " + caja + " ?");
     }
 
     /**
@@ -92,7 +92,7 @@ public class Restaurante {
     /**
      * Agrega un pedido a la lista. No se admiten pedidos de clientes que ya tengan uno activo
      * @param pedido Pedido a agregar
-     * @return true si se agregó correctamente, false si el cliente ya tiene un pedido activo
+     * @return true si se agrego correctamente, false si el cliente ya tiene un pedido activo
      */
     public boolean agregarpedido(Pedido pedido) {
         // Verificar si el cliente ya tiene un pedido activo (no cobrado)
@@ -111,21 +111,21 @@ public class Restaurante {
     /**
      * Cobra el pedido del cliente con el DNI especificado y emite una factura
      * @param dni DNI del cliente cuyo pedido se va a cobrar
-     * @return true si se cobró correctamente, false si no se encontró el pedido o ya estaba cobrado
+     * @return true si se cobro correctamente, false si no se encontro el pedido o ya estaba cobrado
      */
     public boolean cobrarpedido(String dni) {
         for (Pedido pedido : pedidos) {
             if (pedido.getCliente().getDni().equals(dni) && !pedido.isEstado()) {
                 // Marcar el pedido como cobrado
                 pedido.setEstado(true);
-                // Añadir el valor a la caja
+                // Anadir el valor a la caja
                 caja += pedido.getCuenta();
                 // Emitir factura
                 emitirFactura(pedido);
                 return true;
             }
         }
-        System.out.println("ERROR: No se encontró un pedido activo para el cliente con DNI " + dni);
+        System.out.println("ERROR: No se encontro un pedido activo para el cliente con DNI " + dni);
         return false;
     }
 

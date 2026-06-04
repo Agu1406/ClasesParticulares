@@ -1,14 +1,14 @@
-﻿package madrid.iescanaveral.ejercicios.convocatoria2022;
+package madrid.iescanaveral.ejercicios.convocatoria2022;
 
 import java.io.*;
 
 /**
- * Ejercicio 14: ¿Qué se producirá si intenta compilar y ejecutar el código siguiente, 
- * pero no hay ningún archivo llamado Hello.txt en el directorio actual?
+ * Ejercicio 14: ?Que se producira si intenta compilar y ejecutar el codigo siguiente, 
+ * pero no hay ningun archivo llamado Hello.txt en el directorio actual?
  * 
  * Analiza el manejo de excepciones y el bloque finally en Java.
  * 
- * @author Agustín. A. Marquez. Piña
+ * @author Agustin. A. Marquez. Pina
  * @since 14/01/2026
  * @see <a href="mailto:agu1406@outlook.es">agu1406@outlook.es</a>
  * @see <a href="https://github.com/Agu1406/ClasesParticulares">Repositorio GitHub</a>

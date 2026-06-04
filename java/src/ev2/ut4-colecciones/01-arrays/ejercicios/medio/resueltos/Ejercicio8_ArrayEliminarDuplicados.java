@@ -1,4 +1,4 @@
-﻿package general.arrays.resueltos.medio;
+package general.arrays.resueltos.medio;
 
 /**
  * Ejercicio 8 (medio): Eliminar duplicados de un array unidimensional
@@ -9,7 +9,7 @@
  * Original       = [4][6][5][4][2][6][8][5]
  * Sin duplicados = [4][6][5][2][8]
  * 
- * @author Agustín. A. Marquez. Piña
+ * @author Agustin. A. Marquez. Pina
  * @since 14/06/2025
  * @see <a href="mailto:agu1406@outlook.es">agu1406@outlook.es</a>
  * @see <a href="https://github.com/Agu1406/ClasesParticulares">Repositorio GitHub</a>
@@ -18,10 +18,10 @@
 public class Ejercicio8_ArrayEliminarDuplicados {
     
     /**
-     * Comprueba si el valor ya está dentro de las primeras 'hasta'
+     * Comprueba si el valor ya esta dentro de las primeras 'hasta'
      * posiciones del array.
      * @param array Array donde buscar
-     * @param hasta Hasta qué posición (exclusive) considerar
+     * @param hasta Hasta que posicion (exclusive) considerar
      * @param valor Valor a buscar
      * @return true si valor aparece en array[0..hasta-1], false en otro caso
      */
@@ -36,7 +36,7 @@ public class Ejercicio8_ArrayEliminarDuplicados {
     
     /**
      * Devuelve un nuevo array con cada valor del original una sola vez,
-     * manteniendo el orden de la primera aparición.
+     * manteniendo el orden de la primera aparicion.
      * @param array Array original (no se modifica)
      * @return Nuevo array sin duplicados
      */

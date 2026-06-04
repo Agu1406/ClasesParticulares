@@ -20,12 +20,12 @@ public class Pedido {
         this.cliente = cliente;
         this.productos = new ArrayList<>();
         this.cuenta = 0;
-        this.estado = false; // Por defecto no está cobrado
+        this.estado = false; // Por defecto no esta cobrado
     }
 
     /**
      * Obtiene el estado del pedido
-     * @return true si está cobrado, false si no está cobrado
+     * @return true si esta cobrado, false si no esta cobrado
      */
     public boolean isEstado() {
         return estado;
@@ -33,7 +33,7 @@ public class Pedido {
 
     /**
      * Establece el estado del pedido
-     * @param estado true si está cobrado, false si no está cobrado
+     * @param estado true si esta cobrado, false si no esta cobrado
      */
     public void setEstado(boolean estado) {
         this.estado = estado;
@@ -81,14 +81,14 @@ public class Pedido {
     }
 
     /**
-     * Muestra la información de todos los productos del pedido
+     * Muestra la informacion de todos los productos del pedido
      */
     public void listaproductos() {
         System.out.println("=== Productos del pedido ===");
         for (Producto producto : productos) {
             producto.mostrarDatos();
         }
-        System.out.println("Total: " + cuenta + " €");
+        System.out.println("Total: " + cuenta + " ?");
     }
 
     @Override
@@ -96,7 +96,7 @@ public class Pedido {
         return "Pedido{" +
                 "estado=" + (estado ? "Cobrado" : "No cobrado") +
                 ", cliente=" + cliente.getNombre() + " (DNI: " + cliente.getDni() + ")" +
-                ", cuenta=" + cuenta + " €" +
+                ", cuenta=" + cuenta + " ?" +
                 ", numeroProductos=" + productos.size() +
                 '}';
     }

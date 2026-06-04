@@ -3,9 +3,9 @@ package general.repaso;
 /**
  * Ejercicio: while con switch
  * Objetivo: Recorre meses 1..12 y muestra nombre de mes con switch.
- * Versión resuelta.
+ * Version resuelta.
  *
- * @author Agustín. A. Marquez. Piña
+ * @author Agustin. A. Marquez. Pina
  * @since 29/05/2026
  * @see <a href="mailto:agu1406@outlook.es">agu1406@outlook.es</a>
  * @see <a href="https://github.com/Agu1406/ClasesParticulares">Repositorio GitHub</a>
@@ -28,7 +28,7 @@ public class Ejercicio6_WhileConSwitch_RESUELTO {
                 case 10 -> System.out.println("Octubre");
                 case 11 -> System.out.println("Noviembre");
                 case 12 -> System.out.println("Diciembre");
-                default -> System.out.println("Mes inválido");
+                default -> System.out.println("Mes invalido");
             }
             mes++;
         }

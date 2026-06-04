@@ -2,10 +2,10 @@ package general.repaso;
 
 /**
  * Ejercicio: for con switch
- * Objetivo: Convierte notas numéricas a letra (A/B/C/D) con switch.
- * Versión sin resolver.
+ * Objetivo: Convierte notas numericas a letra (A/B/C/D) con switch.
+ * Version sin resolver.
  *
- * @author Agustín. A. Marquez. Piña
+ * @author Agustin. A. Marquez. Pina
  * @since 29/05/2026
  * @see <a href="mailto:agu1406@outlook.es">agu1406@outlook.es</a>
  * @see <a href="https://github.com/Agu1406/ClasesParticulares">Repositorio GitHub</a>

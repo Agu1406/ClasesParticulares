@@ -8,7 +8,7 @@ import java.sql.SQLException;
 /**
  * Ejercicio 1  - RESUELTO. Probar conexion a JdbcTeoria (RA9-b).
  *
- * @author Agustín. A. Marquez. Piña
+ * @author Agustin. A. Marquez. Pina
  * @since 29/05/2026
  * @see <a href="mailto:agu1406@outlook.es">agu1406@outlook.es</a>
  * @see <a href="https://github.com/Agu1406/ClasesParticulares">Repositorio GitHub</a>

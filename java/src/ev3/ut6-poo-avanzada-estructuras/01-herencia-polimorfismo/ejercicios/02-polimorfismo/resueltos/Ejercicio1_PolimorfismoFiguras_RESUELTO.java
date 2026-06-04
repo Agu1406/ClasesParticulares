@@ -3,7 +3,7 @@ package general.poo_polimorfismo;
 /**
  * Ejercicio 1: Polimorfismo con figuras (RESUELTO)
  * 
- * @author Agustín. A. Marquez. Piña
+ * @author Agustin. A. Marquez. Pina
  * @since 14/06/2025
  * @see <a href="mailto:agu1406@outlook.es">agu1406@outlook.es</a>
  * @see <a href="https://github.com/Agu1406/ClasesParticulares">Repositorio GitHub</a>
@@ -51,7 +51,7 @@ public class Ejercicio1_PolimorfismoFiguras_RESUELTO {
         figuras[2] = new Circulo(1.0);
 
         for (Figura f : figuras) {
-            System.out.println("Área: " + f.calcularArea());
+            System.out.println("Area: " + f.calcularArea());
         }
     }
 }

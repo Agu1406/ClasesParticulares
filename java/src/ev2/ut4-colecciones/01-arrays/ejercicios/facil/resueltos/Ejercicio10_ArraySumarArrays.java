@@ -1,17 +1,17 @@
-﻿package general.arrays.resueltos.facil;
+package general.arrays.resueltos.facil;
 
 /**
  * Ejercicio 10: Sumar dos arrays elemento a elemento
  * 
- * Devuelve un nuevo array del mismo tamaño donde cada posición es
+ * Devuelve un nuevo array del mismo tamano donde cada posicion es
  * la suma de las posiciones equivalentes en los dos arrays de entrada.
- * Asumimos que ambos arrays tienen el mismo tamaño.
+ * Asumimos que ambos arrays tienen el mismo tamano.
  * 
  * Array A    = [1][2][3][4][5]
  * Array B    = [10][20][30][40][50]
  * Resultado  = [11][22][33][44][55]
  * 
- * @author Agustín. A. Marquez. Piña
+ * @author Agustin. A. Marquez. Pina
  * @since 14/06/2025
  * @see <a href="mailto:agu1406@outlook.es">agu1406@outlook.es</a>
  * @see <a href="https://github.com/Agu1406/ClasesParticulares">Repositorio GitHub</a>
@@ -20,10 +20,10 @@
 public class Ejercicio10_ArraySumarArrays {
     
     /**
-     * Suma dos arrays del mismo tamaño elemento a elemento.
+     * Suma dos arrays del mismo tamano elemento a elemento.
      * @param arrayA Primer array
-     * @param arrayB Segundo array (debe tener el mismo tamaño que arrayA)
-     * @return Nuevo array con la suma posición a posición
+     * @param arrayB Segundo array (debe tener el mismo tamano que arrayA)
+     * @return Nuevo array con la suma posicion a posicion
      */
     public static int[] sumarArrays(int[] arrayA, int[] arrayB) {
         int[] resultado = new int[arrayA.length];

@@ -1,11 +1,11 @@
-﻿package general.arrays.dificil;
+package general.arrays.dificil;
 
 /**
- * Ejercicio 2 (difícil): Operaciones con matrices cuadradas (transpuesta,
+ * Ejercicio 2 (dificil): Operaciones con matrices cuadradas (transpuesta,
  * diagonal y suma de matrices)
  * 
  * Crea dos arrays bidimensionales de enteros, ambos CUADRADOS de 3x3.
- * Asígnales valores a cada posición.
+ * Asignales valores a cada posicion.
  * 
  * Crea tres funciones:
  * 
@@ -20,13 +20,13 @@
  *       es decir matriz[0][0], matriz[1][1], matriz[2][2]...
  * 
  *  3) sumarMatrices(int[][] matrizA, int[][] matrizB)
- *     - Devuelve una nueva matriz del mismo tamaño donde cada celda
+ *     - Devuelve una nueva matriz del mismo tamano donde cada celda
  *       es la suma de la celda equivalente en A y en B:
  *       resultado[fila][columna] = matrizA[fila][columna] + matrizB[fila][columna]
- *     - Para este ejercicio asumimos que ambas matrices son del mismo tamaño.
+ *     - Para este ejercicio asumimos que ambas matrices son del mismo tamano.
  * 
- * También crea una función mostrar(int[][] matriz) que recorra la matriz
- * con dos bucles for anidados y muestre cada fila en una línea con los
+ * Tambien crea una funcion mostrar(int[][] matriz) que recorra la matriz
+ * con dos bucles for anidados y muestre cada fila en una linea con los
  * valores separados por espacios o tabuladores.
  * 
  * Desde el main, muestra la matrizA, su transpuesta, la suma de su
@@ -46,7 +46,7 @@
  *  [6][5][4]          [10][10][10]
  *  [3][2][1]          [10][10][10]
  * 
- * @author Agustín. A. Marquez. Piña
+ * @author Agustin. A. Marquez. Pina
  * @since 14/06/2025
  * @see <a href="mailto:agu1406@outlook.es">agu1406@outlook.es</a>
  * @see <a href="https://github.com/Agu1406/ClasesParticulares">Repositorio GitHub</a>

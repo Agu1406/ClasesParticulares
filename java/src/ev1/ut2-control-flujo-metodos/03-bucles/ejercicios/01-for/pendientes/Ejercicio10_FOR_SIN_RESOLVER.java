@@ -1,10 +1,10 @@
-﻿package general.bucles;
+package general.bucles;
 
 /**
- * Ejercicio 10 (for): Dibujar triángulo de asteriscos (5 filas)
- * Versión sin resolver.
+ * Ejercicio 10 (for): Dibujar triangulo de asteriscos (5 filas)
+ * Version sin resolver.
  *
- * @author Agustín. A. Marquez. Piña
+ * @author Agustin. A. Marquez. Pina
  * @since 29/04/2026
  * @see <a href="mailto:agu1406@outlook.es">agu1406@outlook.es</a>
  * @see <a href="https://github.com/Agu1406/ClasesParticulares">Repositorio GitHub</a>

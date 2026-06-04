@@ -1,11 +1,11 @@
-﻿package general.strings.resueltos;
+package general.strings.resueltos;
 
 /**
  * Ejercicio 11: Contar caracteres en un string
  * Crea un programa que cuente la cantidad de caracteres en una palabra/string
  * tomando en cuenta los espacios en blanco y sin tomarlos en cuenta
  * 
- * @author Agustín. A. Marquez. Piña
+ * @author Agustin. A. Marquez. Pina
  * @since 14/06/2025
  * @see <a href="mailto:agu1406@outlook.es">agu1406@outlook.es</a>
  * @see <a href="https://github.com/Agu1406/ClasesParticulares">Repositorio GitHub</a>
@@ -14,7 +14,7 @@
 public class Ejercicio11_ContarCaracteres {
     public static void main(String[] args) {
         // Crear un string con espacios
-        String texto = "Programación en Java";
+        String texto = "Programacion en Java";
         
         System.out.println("Texto: \"" + texto + "\"");
         

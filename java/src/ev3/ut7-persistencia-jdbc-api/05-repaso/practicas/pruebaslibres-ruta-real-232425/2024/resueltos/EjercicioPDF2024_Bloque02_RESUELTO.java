@@ -1,4 +1,4 @@
-﻿package pruebaslibres.practica.ruta_real_232425.y2024.resueltos;
+package pruebaslibres.practica.ruta_real_232425.y2024.resueltos;
 
 /**
  * Cobertura 2024 - Bloque 2

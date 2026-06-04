@@ -1,11 +1,11 @@
-﻿package madrid.iescalderonbarca.ejercicios.arrays;
+package madrid.iescalderonbarca.ejercicios.arrays;
 
 /**
- * Ejercicio 2: En el ejercicio anterior sumar sólo las posiciones impares.
+ * Ejercicio 2: En el ejercicio anterior sumar solo las posiciones impares.
  * Dado estos dos arrays: {1, 3, 5, 7, 8} y {1, 2, 3, 4, 5}
- * obtener el array resultado sumando solo las posiciones impares (índices 1, 3, 5, ...).
+ * obtener el array resultado sumando solo las posiciones impares (indices 1, 3, 5, ...).
  * 
- * @author Agustín. A. Marquez. Piña
+ * @author Agustin. A. Marquez. Pina
  * @since 14/06/2025
  * @see <a href="mailto:agu1406@outlook.es">agu1406@outlook.es</a>
  * @see <a href="https://github.com/Agu1406/ClasesParticulares">Repositorio GitHub</a>
@@ -19,11 +19,11 @@ public class Ejercicio2_Arrays_SumarPosicionesImpares_RESUELTO {
 
         // Bucle que recorre todas las posiciones de los arrays
         for (int indice = 0; indice < array1.length; indice++) {
-            // Si la posición es impar (índice 1, 3, 5, ...), sumar los elementos
+            // Si la posicion es impar (indice 1, 3, 5, ...), sumar los elementos
             if (indice % 2 != 0) {
                 resultado[indice] = array1[indice] + array2[indice];
             } else {
-                // Si la posición es par, dejar el resultado en 0
+                // Si la posicion es par, dejar el resultado en 0
                 resultado[indice] = 0;
             }
         }
@@ -37,14 +37,14 @@ public class Ejercicio2_Arrays_SumarPosicionesImpares_RESUELTO {
     }
 
     /**
-     * Función que imprime un array de enteros en formato [elemento1, elemento2, ...]
+     * Funcion que imprime un array de enteros en formato [elemento1, elemento2, ...]
      */
     private static void imprimirArray(int[] array) {
         System.out.print("[");
         // Bucle que recorre todos los elementos del array para imprimirlos
         for (int indice = 0; indice < array.length; indice++) {
             System.out.print(array[indice]);
-            // Si no es el último elemento, imprimir una coma y un espacio
+            // Si no es el ultimo elemento, imprimir una coma y un espacio
             if (indice < array.length - 1) {
                 System.out.print(", ");
             }

@@ -6,7 +6,7 @@ import valencia.alicante.ua.visorimagenesl04.imagen.OFImage;
 /**
  * An image filter to make the image a bit darker.
  * 
- * @author Michael Kölling and David J. Barnes.
+ * @author Michael K?lling and David J. Barnes.
  * @version 1.0
  */
 public class DarkerFilter extends Filter

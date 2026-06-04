@@ -1,10 +1,10 @@
-﻿package general.condicionales;
+package general.condicionales;
 
 /**
- * Ejercicio 7 (switch): Días del mes (sin bisiesto)
- * Versión sin resolver.
+ * Ejercicio 7 (switch): Dias del mes (sin bisiesto)
+ * Version sin resolver.
  *
- * @author Agustín. A. Marquez. Piña
+ * @author Agustin. A. Marquez. Pina
  * @since 29/04/2026
  * @see <a href="mailto:agu1406@outlook.es">agu1406@outlook.es</a>
  * @see <a href="https://github.com/Agu1406/ClasesParticulares">Repositorio GitHub</a>

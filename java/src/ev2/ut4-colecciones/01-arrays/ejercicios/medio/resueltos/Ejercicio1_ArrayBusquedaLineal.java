@@ -1,22 +1,22 @@
-﻿package general.arrays.resueltos.medio;
+package general.arrays.resueltos.medio;
 
 /**
- * Ejercicio 1 (medio): Búsqueda lineal y contar ocurrencias
+ * Ejercicio 1 (medio): Busqueda lineal y contar ocurrencias
  * 
- * Crea un array de números enteros con 8 elementos y asígnales valores
- * (puede haber valores repetidos a propósito).
+ * Crea un array de numeros enteros con 8 elementos y asignales valores
+ * (puede haber valores repetidos a proposito).
  * 
  * Funciones:
- *  - buscarPosicion: devuelve el índice de la primera aparición, o -1.
- *  - contarOcurrencias: devuelve cuántas veces aparece el valor.
+ *  - buscarPosicion: devuelve el indice de la primera aparicion, o -1.
+ *  - contarOcurrencias: devuelve cuantas veces aparece el valor.
  * 
  * int[] ejemplo = {4, 6, 5, 7, 2, 6, 8, 6}
  * 
- * Búsqueda del 6: posición 1
+ * Busqueda del 6: posicion 1
  * Ocurrencias del 6: 3
- * Búsqueda del 99: -1
+ * Busqueda del 99: -1
  * 
- * @author Agustín. A. Marquez. Piña
+ * @author Agustin. A. Marquez. Pina
  * @since 14/06/2025
  * @see <a href="mailto:agu1406@outlook.es">agu1406@outlook.es</a>
  * @see <a href="https://github.com/Agu1406/ClasesParticulares">Repositorio GitHub</a>
@@ -25,10 +25,10 @@
 public class Ejercicio1_ArrayBusquedaLineal {
     
     /**
-     * Devuelve la posición de la primera aparición de valor, o -1 si no está.
+     * Devuelve la posicion de la primera aparicion de valor, o -1 si no esta.
      * @param array Array donde buscar
      * @param valor Valor a buscar
-     * @return Índice de la primera aparición, o -1 si no se encuentra
+     * @return Indice de la primera aparicion, o -1 si no se encuentra
      */
     public static int buscarPosicion(int[] array, int valor) {
         for (int indice = 0; indice < array.length; indice++) {
@@ -40,10 +40,10 @@ public class Ejercicio1_ArrayBusquedaLineal {
     }
     
     /**
-     * Cuenta cuántas veces aparece el valor en el array.
+     * Cuenta cuantas veces aparece el valor en el array.
      * @param array Array donde contar
      * @param valor Valor cuya frecuencia queremos saber
-     * @return Número de ocurrencias del valor
+     * @return Numero de ocurrencias del valor
      */
     public static int contarOcurrencias(int[] array, int valor) {
         int contador = 0;
@@ -62,11 +62,11 @@ public class Ejercicio1_ArrayBusquedaLineal {
         int posicion = buscarPosicion(numeros, buscado);
         int ocurrencias = contarOcurrencias(numeros, buscado);
         
-        System.out.println("El valor " + buscado + " está en la posición: " + posicion);
+        System.out.println("El valor " + buscado + " esta en la posicion: " + posicion);
         System.out.println("El valor " + buscado + " aparece " + ocurrencias + " veces");
         
         int inexistente = 99;
         int posicionInexistente = buscarPosicion(numeros, inexistente);
-        System.out.println("El valor " + inexistente + " está en la posición: " + posicionInexistente);
+        System.out.println("El valor " + inexistente + " esta en la posicion: " + posicionInexistente);
     }
 }

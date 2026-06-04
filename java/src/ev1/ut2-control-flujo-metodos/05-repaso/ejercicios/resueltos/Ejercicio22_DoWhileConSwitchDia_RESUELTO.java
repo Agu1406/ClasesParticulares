@@ -2,10 +2,10 @@ package general.repaso;
 
 /**
  * Ejercicio: do-while con switch
- * Objetivo: Muestra nombre de día para códigos 1..7 con switch.
- * Versión resuelta.
+ * Objetivo: Muestra nombre de dia para codigos 1..7 con switch.
+ * Version resuelta.
  *
- * @author Agustín. A. Marquez. Piña
+ * @author Agustin. A. Marquez. Pina
  * @since 29/05/2026
  * @see <a href="mailto:agu1406@outlook.es">agu1406@outlook.es</a>
  * @see <a href="https://github.com/Agu1406/ClasesParticulares">Repositorio GitHub</a>
@@ -18,12 +18,12 @@ public class Ejercicio22_DoWhileConSwitchDia_RESUELTO {
             switch (codigo) {
                 case 1 -> System.out.println("Lunes");
                 case 2 -> System.out.println("Martes");
-                case 3 -> System.out.println("Miércoles");
+                case 3 -> System.out.println("Miercoles");
                 case 4 -> System.out.println("Jueves");
                 case 5 -> System.out.println("Viernes");
-                case 6 -> System.out.println("Sábado");
+                case 6 -> System.out.println("Sabado");
                 case 7 -> System.out.println("Domingo");
-                default -> System.out.println("Código inválido");
+                default -> System.out.println("Codigo invalido");
             }
             codigo++;
         } while (codigo <= 7);

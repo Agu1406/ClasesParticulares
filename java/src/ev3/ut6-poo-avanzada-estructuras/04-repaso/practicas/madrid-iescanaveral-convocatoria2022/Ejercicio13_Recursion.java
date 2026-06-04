@@ -1,11 +1,11 @@
-﻿package madrid.iescanaveral.ejercicios.convocatoria2022;
+package madrid.iescanaveral.ejercicios.convocatoria2022;
 
 /**
- * Ejercicio 13: Dada el siguiente código, indicar la salida.
+ * Ejercicio 13: Dada el siguiente codigo, indicar la salida.
  * 
- * Analiza el funcionamiento de la recursión en Java.
+ * Analiza el funcionamiento de la recursion en Java.
  * 
- * @author Agustín. A. Marquez. Piña
+ * @author Agustin. A. Marquez. Pina
  * @since 14/01/2026
  * @see <a href="mailto:agu1406@outlook.es">agu1406@outlook.es</a>
  * @see <a href="https://github.com/Agu1406/ClasesParticulares">Repositorio GitHub</a>

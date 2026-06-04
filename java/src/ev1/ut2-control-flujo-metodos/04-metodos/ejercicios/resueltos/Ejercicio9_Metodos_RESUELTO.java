@@ -1,10 +1,10 @@
-﻿package general.metodos;
+package general.metodos;
 
 /**
- * Ejercicio 9: Función con switch
- * Versión resuelta.
+ * Ejercicio 9: Funcion con switch
+ * Version resuelta.
  *
- * @author Agustín. A. Marquez. Piña
+ * @author Agustin. A. Marquez. Pina
  * @since 29/04/2026
  * @see <a href="mailto:agu1406@outlook.es">agu1406@outlook.es</a>
  * @see <a href="https://github.com/Agu1406/ClasesParticulares">Repositorio GitHub</a>
@@ -16,12 +16,12 @@ public class Ejercicio9_Metodos_RESUELTO {
             switch (dia) {
                 case 1: return "Lunes";
                 case 2: return "Martes";
-                case 3: return "Miércoles";
+                case 3: return "Miercoles";
                 case 4: return "Jueves";
                 case 5: return "Viernes";
-                case 6: return "Sábado";
+                case 6: return "Sabado";
                 case 7: return "Domingo";
-                default: return "Inválido";
+                default: return "Invalido";
             }
         }
 

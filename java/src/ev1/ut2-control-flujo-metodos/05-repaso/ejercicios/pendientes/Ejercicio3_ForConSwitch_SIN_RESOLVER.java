@@ -2,10 +2,10 @@ package general.repaso;
 
 /**
  * Ejercicio: for con switch
- * Objetivo: Recorre del 1 al 7 y muestra el día de la semana con switch.
- * Versión sin resolver.
+ * Objetivo: Recorre del 1 al 7 y muestra el dia de la semana con switch.
+ * Version sin resolver.
  *
- * @author Agustín. A. Marquez. Piña
+ * @author Agustin. A. Marquez. Pina
  * @since 29/05/2026
  * @see <a href="mailto:agu1406@outlook.es">agu1406@outlook.es</a>
  * @see <a href="https://github.com/Agu1406/ClasesParticulares">Repositorio GitHub</a>

@@ -1,11 +1,11 @@
-﻿package madrid.iescanaveral.ejercicios.convocatoria2022;
+package madrid.iescanaveral.ejercicios.convocatoria2022;
 
 /**
- * Ejercicio 1: ¿Qué se imprime cuando se compila y ejecuta el siguiente programa?
+ * Ejercicio 1: ?Que se imprime cuando se compila y ejecuta el siguiente programa?
  * 
- * Analiza el código y determina qué ocurre al ejecutarlo.
+ * Analiza el codigo y determina que ocurre al ejecutarlo.
  * 
- * @author Agustín. A. Marquez. Piña
+ * @author Agustin. A. Marquez. Pina
  * @since 14/01/2026
  * @see <a href="mailto:agu1406@outlook.es">agu1406@outlook.es</a>
  * @see <a href="https://github.com/Agu1406/ClasesParticulares">Repositorio GitHub</a>

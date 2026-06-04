@@ -1,9 +1,9 @@
 package general.condicionales;
 
 /**
- * Teoría: estructura {@code if} en Java.
+ * Teoria: estructura {@code if} en Java.
  *
- * <p><b>Objetivo:</b> ejecutar un bloque solo cuando se cumple una condición booleana.</p>
+ * <p><b>Objetivo:</b> ejecutar un bloque solo cuando se cumple una condicion booleana.</p>
  *
  * <pre>{@code
  * if (condicion) {
@@ -13,7 +13,7 @@ package general.condicionales;
  *
  * <p>Practica en {@code ejercicios/01-if/} (pendientes y resueltos).</p>
  *
- * @author Agustín. A. Marquez. Piña
+ * @author Agustin. A. Marquez. Pina
  * @since 29/05/2026
  * @see <a href="mailto:agu1406@outlook.es">agu1406@outlook.es</a>
  * @see <a href="https://github.com/Agu1406/ClasesParticulares">Repositorio GitHub</a>

@@ -1,11 +1,11 @@
-﻿package general.arrays.dificil;
+package general.arrays.dificil;
 
 /**
- * Ejercicio 3: Array bidimensional complejo con función y condicionales
- * Crea un array bidimensional de números enteros de 4 filas y 4 columnas
- * y asígnales valores. Crea una función llamada contarPares que reciba el array
- * como parámetro, use bucles for anidados y un if para contar cuántos números
- * pares hay en todo el array y retorne ese número. Llámala desde el main y muestra el resultado
+ * Ejercicio 3: Array bidimensional complejo con funcion y condicionales
+ * Crea un array bidimensional de numeros enteros de 4 filas y 4 columnas
+ * y asignales valores. Crea una funcion llamada contarPares que reciba el array
+ * como parametro, use bucles for anidados y un if para contar cuantos numeros
+ * pares hay en todo el array y retorne ese numero. Llamala desde el main y muestra el resultado
  * 
  * Array bidimensional de 4x4:
  * 
@@ -16,10 +16,10 @@
  * Fila [2] [ ][ ][ ][ ]
  * Fila [3] [ ][ ][ ][ ]
  * 
- * Para acceder a una posición: array[fila][columna]
- * Ejemplo: array[0][1] es la posición fila 0, columna 1
+ * Para acceder a una posicion: array[fila][columna]
+ * Ejemplo: array[0][1] es la posicion fila 0, columna 1
  * 
- * @author Agustín. A. Marquez. Piña
+ * @author Agustin. A. Marquez. Pina
  * @since 14/06/2025
  * @see <a href="mailto:agu1406@outlook.es">agu1406@outlook.es</a>
  * @see <a href="https://github.com/Agu1406/ClasesParticulares">Repositorio GitHub</a>

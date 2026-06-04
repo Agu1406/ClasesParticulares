@@ -1,17 +1,17 @@
-﻿package madrid.iescanaveral.ejercicios.convocatoria2022;
+package madrid.iescanaveral.ejercicios.convocatoria2022;
 
 /**
- * Ejercicio 10: Dado el siguiente fragmento de código, indica cuál es correcta - RESUELTO
+ * Ejercicio 10: Dado el siguiente fragmento de codigo, indica cual es correcta - RESUELTO
  * 
  * RESPUESTA: foo tiene el valor false
  * 
- * Explicación:
+ * Explicacion:
  * - En Java, los arrays de tipos primitivos se inicializan con valores por defecto
  * - Para boolean, el valor por defecto es false
  * - test[0], test[1], test[2] todos tienen valor false
  * - test[index] donde index=1, accede a test[1] que tiene valor false
  * 
- * @author Agustín. A. Marquez. Piña
+ * @author Agustin. A. Marquez. Pina
  * @since 14/01/2026
  * @see <a href="mailto:agu1406@outlook.es">agu1406@outlook.es</a>
  * @see <a href="https://github.com/Agu1406/ClasesParticulares">Repositorio GitHub</a>

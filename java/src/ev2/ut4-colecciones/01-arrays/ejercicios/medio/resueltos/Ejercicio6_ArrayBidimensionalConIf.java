@@ -1,10 +1,10 @@
-﻿package general.arrays.resueltos.medio;
+package general.arrays.resueltos.medio;
 
 /**
  * Ejercicio 6: Array bidimensional con condicional if
- * Crea un array bidimensional de números enteros de 3 filas y 3 columnas
- * y asígnales valores. Usa bucles for anidados para recorrer el array y
- * un if para mostrar solo los números mayores que 5
+ * Crea un array bidimensional de numeros enteros de 3 filas y 3 columnas
+ * y asignales valores. Usa bucles for anidados para recorrer el array y
+ * un if para mostrar solo los numeros mayores que 5
  * 
  * Array bidimensional de 3x3:
  * 
@@ -14,10 +14,10 @@
  * Fila [1] [ ][ ][ ]
  * Fila [2] [ ][ ][ ]
  * 
- * Para acceder a una posición: array[fila][columna]
- * Ejemplo: array[0][1] es la posición fila 0, columna 1
+ * Para acceder a una posicion: array[fila][columna]
+ * Ejemplo: array[0][1] es la posicion fila 0, columna 1
  * 
- * @author Agustín. A. Marquez. Piña
+ * @author Agustin. A. Marquez. Pina
  * @since 14/06/2025
  * @see <a href="mailto:agu1406@outlook.es">agu1406@outlook.es</a>
  * @see <a href="https://github.com/Agu1406/ClasesParticulares">Repositorio GitHub</a>
@@ -32,8 +32,8 @@ public class Ejercicio6_ArrayBidimensionalConIf {
             {4, 7, 5}
         };
         
-        // Recorrer el array y mostrar solo los números mayores que 5
-        System.out.println("Números mayores que 5:");
+        // Recorrer el array y mostrar solo los numeros mayores que 5
+        System.out.println("Numeros mayores que 5:");
         for (int fila = 0; fila < tablaNumeros.length; fila++) {
             for (int columna = 0; columna < tablaNumeros[fila].length; columna++) {
                 if (tablaNumeros[fila][columna] > 5) {

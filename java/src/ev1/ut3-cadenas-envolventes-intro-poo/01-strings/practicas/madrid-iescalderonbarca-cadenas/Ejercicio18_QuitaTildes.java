@@ -1,13 +1,13 @@
-﻿package madrid.iescalderonbarca.ejercicios.cadenas;
+package madrid.iescalderonbarca.ejercicios.cadenas;
 
 /**
- * Práctica de cadenas Calderón — ejercicio 18 (bloque 16–20).
+ * Practica de cadenas Calderon - ejercicio 18 (bloque 16-20).
  *
  * <p><b>Objetivo de este ejercicio:</b> implementar {@code quitaTildes} para normalizar vocales acentuadas.</p>
  *
- * <p>Enunciado del bloque en la carpeta de la práctica. Utiliza {@link String}.</p>
+ * <p>Enunciado del bloque en la carpeta de la practica. Utiliza {@link String}.</p>
  *
- * @author Agustín. A. Marquez. Piña
+ * @author Agustin. A. Marquez. Pina
  * @since 14/01/2026
  * @see <a href="mailto:agu1406@outlook.es">agu1406@outlook.es</a>
  * @see <a href="https://github.com/Agu1406/ClasesParticulares">Repositorio GitHub</a>
@@ -15,14 +15,14 @@
  */
 public class Ejercicio18_QuitaTildes {
     public static void main(String[] args) {
-        // TODO: Implementa la función quitaTildes y pruébala aquí
+        // TODO: Implementa la funcion quitaTildes y pruebala aqui
         // Ejemplo de uso:
-        // String resultado = quitaTildes("José María");
-        // System.out.println(resultado); // Debería imprimir "Jose Maria"
+        // String resultado = quitaTildes("Jose Maria");
+        // System.out.println(resultado); // Deberia imprimir "Jose Maria"
     }
     
-    // TODO: Implementa la función quitaTildes aquí
+    // TODO: Implementa la funcion quitaTildes aqui
     // public static String quitaTildes(String texto) {
-    //     // Tu código aquí
+    //     // Tu codigo aqui
     // }
 }

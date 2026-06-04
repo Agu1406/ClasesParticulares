@@ -12,25 +12,25 @@ public class PruebaAjedrez {
         // Realizar algunos movimientos
         System.out.println("\nRealizando movimientos...");
         
-        // Movimiento válido de peón blanco
+        // Movimiento valido de peon blanco
         if (partida.realizarMovimiento("e2-e4")) {
             System.out.println("Movimiento e2-e4 realizado correctamente");
         } else {
-            System.out.println("Movimiento e2-e4 no válido");
+            System.out.println("Movimiento e2-e4 no valido");
         }
         
-        // Movimiento válido de peón negro
+        // Movimiento valido de peon negro
         if (partida.realizarMovimiento("e7-e5")) {
             System.out.println("Movimiento e7-e5 realizado correctamente");
         } else {
-            System.out.println("Movimiento e7-e5 no válido");
+            System.out.println("Movimiento e7-e5 no valido");
         }
         
-        // Movimiento inválido (intentar mover pieza del oponente)
+        // Movimiento invalido (intentar mover pieza del oponente)
         if (partida.realizarMovimiento("e5-e6")) {
             System.out.println("Movimiento e5-e6 realizado correctamente");
         } else {
-            System.out.println("Movimiento e5-e6 no válido (no es tu turno)");
+            System.out.println("Movimiento e5-e6 no valido (no es tu turno)");
         }
         
         // Mostrar estado actual del tablero

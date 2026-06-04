@@ -1,18 +1,18 @@
-﻿package general.arrays.resueltos.dificil;
+package general.arrays.resueltos.dificil;
 
 /**
- * Ejercicio 7 (difícil): Multiplicación de matrices (A × B)
+ * Ejercicio 7 (dificil): Multiplicacion de matrices (A ? B)
  * 
- * Suponemos que ambas matrices son cuadradas y del mismo tamaño.
+ * Suponemos que ambas matrices son cuadradas y del mismo tamano.
  * El elemento resultado[fila][columna] se calcula como la suma de
  * A[fila][k] * B[k][columna] para k de 0 a N-1.
  * 
- * A =                B =                A × B =
+ * A =                B =                A ? B =
  *  [1][2][3]          [1][0][0]          [1][2][3]
  *  [4][5][6]          [0][1][0]          [4][5][6]
  *  [7][8][9]          [0][0][1]          [7][8][9]
  * 
- * @author Agustín. A. Marquez. Piña
+ * @author Agustin. A. Marquez. Pina
  * @since 14/06/2025
  * @see <a href="mailto:agu1406@outlook.es">agu1406@outlook.es</a>
  * @see <a href="https://github.com/Agu1406/ClasesParticulares">Repositorio GitHub</a>
@@ -22,10 +22,10 @@ public class Ejercicio7_ArrayBidimensionalMultiplicarMatrices {
     
     /**
      * Devuelve la matriz resultado de multiplicar A por B.
-     * Se asume que ambas son cuadradas y del mismo tamaño.
+     * Se asume que ambas son cuadradas y del mismo tamano.
      * @param matrizA Primera matriz
      * @param matrizB Segunda matriz
-     * @return Nueva matriz con el producto A × B
+     * @return Nueva matriz con el producto A ? B
      */
     public static int[][] multiplicarMatrices(int[][] matrizA, int[][] matrizB) {
         int tamano = matrizA.length;
@@ -45,7 +45,7 @@ public class Ejercicio7_ArrayBidimensionalMultiplicarMatrices {
     }
     
     /**
-     * Muestra una matriz por pantalla, una fila por línea.
+     * Muestra una matriz por pantalla, una fila por linea.
      * @param matriz Matriz a mostrar
      */
     public static void mostrar(int[][] matriz) {
@@ -76,7 +76,7 @@ public class Ejercicio7_ArrayBidimensionalMultiplicarMatrices {
         System.out.println("\nMatriz B (identidad):");
         mostrar(matrizB);
         
-        System.out.println("\nA × B:");
+        System.out.println("\nA ? B:");
         mostrar(multiplicarMatrices(matrizA, matrizB));
     }
 }

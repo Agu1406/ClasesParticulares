@@ -32,4 +32,4 @@ bin/
 *.class
 
 ### Otros
-/ordenar
+/src/ordenar/

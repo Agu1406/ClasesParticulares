@@ -1,10 +1,10 @@
-﻿package general.condicionales;
+package general.condicionales;
 
 /**
- * Ejercicio 8 (switch): Tipo de triángulo por opción
- * Versión resuelta.
+ * Ejercicio 8 (switch): Tipo de triangulo por opcion
+ * Version resuelta.
  *
- * @author Agustín. A. Marquez. Piña
+ * @author Agustin. A. Marquez. Pina
  * @since 29/04/2026
  * @see <a href="mailto:agu1406@outlook.es">agu1406@outlook.es</a>
  * @see <a href="https://github.com/Agu1406/ClasesParticulares">Repositorio GitHub</a>
@@ -14,10 +14,10 @@ public class Ejercicio8_SWITCH_RESUELTO {
     public static void main(String[] args) {
         int opcion = 3;
                 switch (opcion) {
-                    case 1: System.out.println("Equilátero"); break;
-                    case 2: System.out.println("Isósceles"); break;
+                    case 1: System.out.println("Equilatero"); break;
+                    case 2: System.out.println("Isosceles"); break;
                     case 3: System.out.println("Escaleno"); break;
-                    default: System.out.println("No válido");
+                    default: System.out.println("No valido");
                 }
     }
 }

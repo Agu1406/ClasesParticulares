@@ -1,9 +1,9 @@
 package general.condicionales;
 
 /**
- * Teoría: {@code switch} en Java.
+ * Teoria: {@code switch} en Java.
  *
- * <p><b>Objetivo:</b> comparar una expresión con varios valores constantes (casos)
+ * <p><b>Objetivo:</b> comparar una expresion con varios valores constantes (casos)
  * sin encadenar muchos {@code if-else}.</p>
  *
  * <pre>{@code
@@ -16,7 +16,7 @@ package general.condicionales;
  *
  * <p>Practica en {@code ejercicios/03-switch/} (pendientes y resueltos).</p>
  *
- * @author Agustín. A. Marquez. Piña
+ * @author Agustin. A. Marquez. Pina
  * @since 29/05/2026
  * @see <a href="mailto:agu1406@outlook.es">agu1406@outlook.es</a>
  * @see <a href="https://github.com/Agu1406/ClasesParticulares">Repositorio GitHub</a>
@@ -29,8 +29,8 @@ public class SwitchIntro {
         switch (dia) {
             case 1 -> System.out.println("Lunes");
             case 2 -> System.out.println("Martes");
-            case 3 -> System.out.println("Miércoles");
-            default -> System.out.println("Otro día");
+            case 3 -> System.out.println("Miercoles");
+            default -> System.out.println("Otro dia");
         }
     }
 }

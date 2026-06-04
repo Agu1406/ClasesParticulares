@@ -1,18 +1,18 @@
-﻿package madrid.iescanaveral.ejercicios.convocatoria2022;
+package madrid.iescanaveral.ejercicios.convocatoria2022;
 
 /**
- * Ejercicio 16: Dado el siguiente fragmento de código, indicar cuál es correcta - RESUELTO
+ * Ejercicio 16: Dado el siguiente fragmento de codigo, indicar cual es correcta - RESUELTO
  * 
- * RESPUESTA: No compilará por la línea p.pasarCurso();
+ * RESPUESTA: No compilara por la linea p.pasarCurso();
  * 
- * Explicación:
+ * Explicacion:
  * - p es una referencia de tipo Persona
- * - Aunque apunta a un objeto Alumno, solo puede acceder a métodos definidos en Persona
- * - pasarCurso() está definido solo en Alumno, no en Persona
- * - El compilador no permite llamar a métodos que no están en el tipo de la referencia
- * - Para llamar a pasarCurso(), necesitarías hacer un casting: ((Alumno)p).pasarCurso()
+ * - Aunque apunta a un objeto Alumno, solo puede acceder a metodos definidos en Persona
+ * - pasarCurso() esta definido solo en Alumno, no en Persona
+ * - El compilador no permite llamar a metodos que no estan en el tipo de la referencia
+ * - Para llamar a pasarCurso(), necesitarias hacer un casting: ((Alumno)p).pasarCurso()
  * 
- * @author Agustín. A. Marquez. Piña
+ * @author Agustin. A. Marquez. Pina
  * @since 14/01/2026
  * @see <a href="mailto:agu1406@outlook.es">agu1406@outlook.es</a>
  * @see <a href="https://github.com/Agu1406/ClasesParticulares">Repositorio GitHub</a>
@@ -57,10 +57,10 @@ public class Ejercicio16_HerenciaPolimorfismo_RESUELTO {
         
         p = new Alumno(15);  // p ahora apunta a un Alumno, pero es referencia Persona
         
-        // ERROR DE COMPILACIÓN: p.pasarCurso();
-        // La referencia p es de tipo Persona, y pasarCurso() no está en Persona
+        // ERROR DE COMPILACION: p.pasarCurso();
+        // La referencia p es de tipo Persona, y pasarCurso() no esta en Persona
         
-        // SOLUCIÓN: Hacer casting
+        // SOLUCION: Hacer casting
         if (p instanceof Alumno) {
             ((Alumno) p).pasarCurso();
         }

@@ -1,10 +1,10 @@
-﻿package general.condicionales;
+package general.condicionales;
 
 /**
- * Ejercicio 5 (switch): Elegir opción de menú
- * Versión resuelta.
+ * Ejercicio 5 (switch): Elegir opcion de menu
+ * Version resuelta.
  *
- * @author Agustín. A. Marquez. Piña
+ * @author Agustin. A. Marquez. Pina
  * @since 29/04/2026
  * @see <a href="mailto:agu1406@outlook.es">agu1406@outlook.es</a>
  * @see <a href="https://github.com/Agu1406/ClasesParticulares">Repositorio GitHub</a>
@@ -18,7 +18,7 @@ public class Ejercicio5_SWITCH_RESUELTO {
                     case 2: System.out.println("Abrir archivo"); break;
                     case 3: System.out.println("Guardar"); break;
                     case 4: System.out.println("Salir"); break;
-                    default: System.out.println("Opción inválida");
+                    default: System.out.println("Opcion invalida");
                 }
     }
 }

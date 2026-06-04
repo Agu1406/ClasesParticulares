@@ -4,7 +4,7 @@ package general.strings;
  * Ejercicio 9: Usar StringBuilder
  * Crea un StringBuilder, usa append() varias veces y convierte a String con toString()
  *
- * @author Agustín. A. Marquez. Piña
+ * @author Agustin. A. Marquez. Pina
  * @since 29/05/2026
  * @see <a href="mailto:agu1406@outlook.es">agu1406@outlook.es</a>
  * @see <a href="https://github.com/Agu1406/ClasesParticulares">Repositorio GitHub</a>
@@ -12,6 +12,6 @@ package general.strings;
  */
 public class Ejercicio9_StringBuilder {
     public static void main(String[] args) {
-        // TODO: StringBuilder con append; segundo ejemplo en bucle (números)
+        // TODO: StringBuilder con append; segundo ejemplo en bucle (numeros)
     }
 }

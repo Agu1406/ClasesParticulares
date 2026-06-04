@@ -1,11 +1,11 @@
-﻿package madrid.iescanaveral.ejercicios.convocatoria2022;
+package madrid.iescanaveral.ejercicios.convocatoria2022;
 
 /**
- * Ejercicio 4: Dado el siguiente código, ¿es correcto o presenta errores en tiempo de compilación o ejecución?
+ * Ejercicio 4: Dado el siguiente codigo, ?es correcto o presenta errores en tiempo de compilacion o ejecucion?
  * 
- * Analiza el uso de bloques static y la inicialización de arrays estáticos.
+ * Analiza el uso de bloques static y la inicializacion de arrays estaticos.
  * 
- * @author Agustín. A. Marquez. Piña
+ * @author Agustin. A. Marquez. Pina
  * @since 14/01/2026
  * @see <a href="mailto:agu1406@outlook.es">agu1406@outlook.es</a>
  * @see <a href="https://github.com/Agu1406/ClasesParticulares">Repositorio GitHub</a>

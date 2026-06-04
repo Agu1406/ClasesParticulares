@@ -3,9 +3,9 @@ package general.mapas.resueltos;
 import java.util.HashMap;
 
 /**
- * Ejercicio 1 resuelto: HashMap básico.
+ * Ejercicio 1 resuelto: HashMap basico.
  *
- * @author Agustín. A. Marquez. Piña
+ * @author Agustin. A. Marquez. Pina
  * @since 29/05/2026
  * @see <a href="mailto:agu1406@outlook.es">agu1406@outlook.es</a>
  * @see <a href="https://github.com/Agu1406/ClasesParticulares">Repositorio GitHub</a>

@@ -1,11 +1,11 @@
-﻿package general.strings.resueltos;
+package general.strings.resueltos;
 
 /**
  * Ejercicio 8: Dividir strings
  * Crea un string con varias palabras separadas por espacios o comas,
  * y usa split() para dividirlo en un array de strings
  * 
- * @author Agustín. A. Marquez. Piña
+ * @author Agustin. A. Marquez. Pina
  * @since 14/06/2025
  * @see <a href="mailto:agu1406@outlook.es">agu1406@outlook.es</a>
  * @see <a href="https://github.com/Agu1406/ClasesParticulares">Repositorio GitHub</a>
@@ -27,7 +27,7 @@ public class Ejercicio8_Split {
         }
         
         // Ejemplo con comas
-        String textoConComas = "Manzana,Plátano,Naranja,Uva";
+        String textoConComas = "Manzana,Platano,Naranja,Uva";
         System.out.println("\nTexto con comas: " + textoConComas);
         
         String[] frutas = textoConComas.split(",");

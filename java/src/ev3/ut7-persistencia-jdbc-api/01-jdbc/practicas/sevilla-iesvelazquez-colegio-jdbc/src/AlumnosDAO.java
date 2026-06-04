@@ -7,7 +7,7 @@ import java.util.List;
 /**
  * Capa de acceso a datos para la tabla {@code Alumnos}.
  *
- * <p><b>Objetivo:</b> encapsular el CRUD y las transacciones para que la lógica de negocio
+ * <p><b>Objetivo:</b> encapsular el CRUD y las transacciones para que la logica de negocio
  * no mezcle SQL con el flujo principal ({@link ColegioDemo}).</p>
  *
  * <p>Para ello, esta clase debe:</p>
@@ -15,13 +15,13 @@ import java.util.List;
  *   <li>Insertar, buscar por id, listar, actualizar y borrar alumnos con sentencias parametrizadas.</li>
  *   <li>Mapear filas de {@link java.sql.ResultSet} a objetos {@link Alumno}.</li>
  *   <li>Gestionar conexiones con try-with-resources y propagar {@link java.sql.SQLException}.</li>
- *   <li>Ofrecer un método que inserte dos alumnos en una misma transacción (commit/rollback).</li>
+ *   <li>Ofrecer un metodo que inserte dos alumnos en una misma transaccion (commit/rollback).</li>
  * </ul>
  *
  * <p>Utiliza {@link ColegioConnection}, {@link java.sql.PreparedStatement} y
  * {@link java.sql.ResultSet}.</p>
  *
- * @author Agustín. A. Marquez. Piña
+ * @author Agustin. A. Marquez. Pina
  * @since 29/05/2026
  * @see <a href="mailto:agu1406@outlook.es">agu1406@outlook.es</a>
  * @see <a href="https://github.com/Agu1406/ClasesParticulares">Repositorio GitHub</a>
@@ -79,7 +79,7 @@ public class AlumnosDAO {
         return lista;
     }
 
-    // (Método de búsqueda con filtros eliminado para ceñirnos al PDF)
+    // (Metodo de busqueda con filtros eliminado para cenirnos al PDF)
 
     // Actualiza datos de un alumno
     public boolean actualizar(Alumno alumno) throws SQLException {
@@ -106,14 +106,14 @@ public class AlumnosDAO {
         }
     }
 
-    // Ejemplo transaccional: insertar dos alumnos como una unidad atómica
+    // Ejemplo transaccional: insertar dos alumnos como una unidad atomica
     public void insertarDosAlumnosEnTransaccion(Alumno a1, Alumno a2) throws SQLException {
         String sql = "INSERT INTO Alumnos (nombre, correo, telefono) VALUES (?, ?, ?)";
         try (Connection cn = ColegioConnection.getConnection();
              PreparedStatement ps = cn.prepareStatement(sql, Statement.RETURN_GENERATED_KEYS)) {
             boolean oldAutoCommit = cn.getAutoCommit();
             try {
-                cn.setAutoCommit(false); // inicio de transacción
+                cn.setAutoCommit(false); // inicio de transaccion
 
                 // Alumno 1
                 ps.setString(1, a1.getNombre());

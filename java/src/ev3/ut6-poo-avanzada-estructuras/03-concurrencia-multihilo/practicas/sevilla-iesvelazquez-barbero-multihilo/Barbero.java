@@ -13,13 +13,13 @@ public class Barbero implements Runnable {
 
     /**
      * Constructor que nos deja crear un nuevo barbero permitiendonos elegir
-     * en que barbería va a trabajar y cuanto tiempo tarda en atender a los
+     * en que barberia va a trabajar y cuanto tiempo tarda en atender a los
      * clientes.
-     * @param barberia (Clase BarberShop) barbería donde trabaja.
+     * @param barberia (Clase BarberShop) barberia donde trabaja.
      * @param tiempoAtencion (int) tiempo en milisegundos que tarda en atender.
      */
     public Barbero(BarberShop barberia, int tiempoAtencion) {
-        // Asignamos la referencia a la barbería donde este barbero trabajará
+        // Asignamos la referencia a la barberia donde este barbero trabajara
         this.barberia = barberia;
         
         // Asignamos el tiempo que tarda el barbero en atender a cada cliente (se usa en Thread.sleep)
@@ -27,25 +27,25 @@ public class Barbero implements Runnable {
     }
 
     /**
-     * Método run() que se ejecuta cuando el hilo del barbero se inicia.
-     * Este método contiene el ciclo de vida del barbero: esperar clientes, atenderlos, repetir.
+     * Metodo run() que se ejecuta cuando el hilo del barbero se inicia.
+     * Este metodo contiene el ciclo de vida del barbero: esperar clientes, atenderlos, repetir.
      */
     @Override
     public void run() {
         /*
          * Try-catch para manejar excepciones de tipo InterruptedException.
-         * Esta excepción puede ocurrir cuando el hilo es interrumpido mientras está en wait() o sleep().
+         * Esta excepcion puede ocurrir cuando el hilo es interrumpido mientras esta en wait() o sleep().
          */
         try {
             /*
              * Bucle infinito que hace que el barbero trabaje indefinidamente.
-             * El barbero repetirá este ciclo: esperar cliente -> atender -> repetir.
-             * Solo se detendrá cuando el hilo sea interrumpido desde fuera (interrupt()).
+             * El barbero repetira este ciclo: esperar cliente -> atender -> repetir.
+             * Solo se detendra cuando el hilo sea interrumpido desde fuera (interrupt()).
              */
             while (true) {
 
                 /*
-                 * Utilizando "barbería" controlamos que el hilo de "Barbero" se duerma
+                 * Utilizando "barberia" controlamos que el hilo de "Barbero" se duerma
                  * (wait) cuando no haya clientes y deje de dormir cuando si los haya y
                  * actualice las variables del programa que son:
                  *
@@ -59,13 +59,13 @@ public class Barbero implements Runnable {
                 /*
                  * Simulamos el tiempo que tarda el barbero en atender a un cliente.
                  * Thread.sleep() hace que el hilo del barbero duerma durante tiempoAtencion milisegundos.
-                 * Durante este tiempo, el barbero está "cortando el pelo" del cliente.
+                 * Durante este tiempo, el barbero esta "cortando el pelo" del cliente.
                  */
                 Thread.sleep(tiempoAtencion);
 
                 /*
-                 * Llamamos a terminarAtender() para indicar que el barbero terminó de atender al cliente.
-                 * Este método actualiza las variables compartidas (turnoActual, siguienteTurnoAAtender)
+                 * Llamamos a terminarAtender() para indicar que el barbero termino de atender al cliente.
+                 * Este metodo actualiza las variables compartidas (turnoActual, siguienteTurnoAAtender)
                  * y notifica a todos los hilos esperando usando notifyAll().
                  */
                 barberia.terminarAtender();
@@ -73,9 +73,9 @@ public class Barbero implements Runnable {
         } catch (InterruptedException e) {
             /*
              * Si el hilo es interrumpido (por ejemplo, cuando todos los clientes terminaron),
-             * capturamos la excepción, mostramos un mensaje y restablecemos la bandera de interrupción.
+             * capturamos la excepcion, mostramos un mensaje y restablecemos la bandera de interrupcion.
              */
-            System.out.println("¡El barbero fue interrumpido!");
+            System.out.println("!El barbero fue interrumpido!");
             Thread.currentThread().interrupt();
         }
     }

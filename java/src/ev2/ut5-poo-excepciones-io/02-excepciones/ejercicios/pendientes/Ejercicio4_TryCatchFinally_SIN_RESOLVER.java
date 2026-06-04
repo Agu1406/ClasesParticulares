@@ -1,10 +1,10 @@
-﻿package general.trycatchfinally;
+package general.trycatchfinally;
 
 /**
- * Ejercicio 4: Varios catch: parse o división
- * Versión sin resolver.
+ * Ejercicio 4: Varios catch: parse o division
+ * Version sin resolver.
  *
- * @author Agustín. A. Marquez. Piña
+ * @author Agustin. A. Marquez. Pina
  * @since 29/04/2026
  * @see <a href="mailto:agu1406@outlook.es">agu1406@outlook.es</a>
  * @see <a href="https://github.com/Agu1406/ClasesParticulares">Repositorio GitHub</a>
@@ -12,9 +12,9 @@
  */
 public class Ejercicio4_TryCatchFinally_SIN_RESOLVER {
     public static void main(String[] args) {
-        // TODO: coloca este código en un try:
+        // TODO: coloca este codigo en un try:
                 // String txt = "0"; int n = Integer.parseInt(txt); int x = 10 / n;
-                // TODO: añade VARIOS catch (al menos 2) para excepciones distintas.
+                // TODO: anade VARIOS catch (al menos 2) para excepciones distintas.
                 // TODO: muestra mensajes diferenciados por catch.
     }
 }

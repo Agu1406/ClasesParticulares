@@ -15,13 +15,13 @@ public class GestionArrayMultidimensional {
     private static Random random = new Random();
     
     /**
-     * Método principal que inicia la aplicación
+     * Metodo principal que inicia la aplicacion
      */
     public static void main(String[] args) {
         int opcion;
         boolean arrayRellenado = false;
         
-        // Bucle principal del menú
+        // Bucle principal del menu
         do {
             mostrarMenu();
             opcion = sc.nextInt();
@@ -35,67 +35,67 @@ public class GestionArrayMultidimensional {
                     if (arrayRellenado) {
                         rotarFilasAbajo();
                     } else {
-                        System.out.println("Primero debes rellenar el array (opción 1).");
+                        System.out.println("Primero debes rellenar el array (opcion 1).");
                     }
                     break;
                 case 3:
                     if (arrayRellenado) {
                         rotarColumnasIzquierda();
                     } else {
-                        System.out.println("Primero debes rellenar el array (opción 1).");
+                        System.out.println("Primero debes rellenar el array (opcion 1).");
                     }
                     break;
                 case 4:
                     mostrarArray();
                     break;
                 case 5:
-                    System.out.println("¡Hasta luego!");
+                    System.out.println("!Hasta luego!");
                     break;
                 default:
-                    System.out.println("Opción no válida. Inténtalo de nuevo.");
+                    System.out.println("Opcion no valida. Intentalo de nuevo.");
             }
             
         } while(opcion != 5);
     }
     
     /**
-     * Muestra el menú principal de opciones
+     * Muestra el menu principal de opciones
      */
     private static void mostrarMenu() {
-        System.out.println("\nGESTIÓN DE ARRAY MULTIDIMENSIONAL 3x3");
+        System.out.println("\nGESTION DE ARRAY MULTIDIMENSIONAL 3x3");
         System.out.println("1. Rellenar array");
         System.out.println("2. Rotar filas abajo");
         System.out.println("3. Rotar columnas izquierda");
         System.out.println("4. Mostrar array");
         System.out.println("5. Salir");
-        System.out.print("Elige una opción: ");
+        System.out.print("Elige una opcion: ");
     }
     
     /**
-     * Rellena el array con números aleatorios entre 1 y 10
+     * Rellena el array con numeros aleatorios entre 1 y 10
      */
     private static void rellenarArray() {
         System.out.println("\nRELLENAR ARRAY");
         
-        // Rellenar cada posición con un número aleatorio entre 1 y 10
+        // Rellenar cada posicion con un numero aleatorio entre 1 y 10
         for (int fila = 0; fila < 3; fila++) {
             for (int columna = 0; columna < 3; columna++) {
-                array[fila][columna] = random.nextInt(10) + 1; // Números del 1 al 10
+                array[fila][columna] = random.nextInt(10) + 1; // Numeros del 1 al 10
             }
         }
         
-        System.out.println("Array rellenado correctamente con números aleatorios (1-10).");
+        System.out.println("Array rellenado correctamente con numeros aleatorios (1-10).");
         mostrarArray();
     }
     
     /**
-     * Rota todas las filas del array una posición hacia abajo
-     * La última fila pasa a ser la primera
+     * Rota todas las filas del array una posicion hacia abajo
+     * La ultima fila pasa a ser la primera
      */
     private static void rotarFilasAbajo() {
         System.out.println("\nROTAR FILAS ABAJO");
         
-        // Guardar la última fila
+        // Guardar la ultima fila
         int[] ultimaFila = new int[3];
         for (int columna = 0; columna < 3; columna++) {
             ultimaFila[columna] = array[2][columna];
@@ -108,7 +108,7 @@ public class GestionArrayMultidimensional {
             }
         }
         
-        // Poner la última fila en la primera posición
+        // Poner la ultima fila en la primera posicion
         for (int columna = 0; columna < 3; columna++) {
             array[0][columna] = ultimaFila[columna];
         }
@@ -118,8 +118,8 @@ public class GestionArrayMultidimensional {
     }
     
     /**
-     * Rota todas las columnas del array una posición hacia la izquierda
-     * La primera columna pasa a ser la última
+     * Rota todas las columnas del array una posicion hacia la izquierda
+     * La primera columna pasa a ser la ultima
      */
     private static void rotarColumnasIzquierda() {
         System.out.println("\nROTAR COLUMNAS IZQUIERDA");
@@ -137,7 +137,7 @@ public class GestionArrayMultidimensional {
             }
         }
         
-        // Poner la primera columna en la última posición
+        // Poner la primera columna en la ultima posicion
         for (int fila = 0; fila < 3; fila++) {
             array[fila][2] = primeraColumna[fila];
         }

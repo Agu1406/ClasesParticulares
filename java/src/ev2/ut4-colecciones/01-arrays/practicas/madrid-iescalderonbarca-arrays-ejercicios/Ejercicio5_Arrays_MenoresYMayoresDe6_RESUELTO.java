@@ -1,10 +1,10 @@
-﻿package madrid.iescalderonbarca.ejercicios.arrays;
+package madrid.iescalderonbarca.ejercicios.arrays;
 
 /**
- * Ejercicio 5: A partir del siguiente array {2, 3, 4, 7, 8, 10, 11} obtener dos más,
+ * Ejercicio 5: A partir del siguiente array {2, 3, 4, 7, 8, 10, 11} obtener dos mas,
  * uno que contenga solo los elementos menores de 6 y otro los mayores de 6.
  * 
- * @author Agustín. A. Marquez. Piña
+ * @author Agustin. A. Marquez. Pina
  * @since 14/06/2025
  * @see <a href="mailto:agu1406@outlook.es">agu1406@outlook.es</a>
  * @see <a href="https://github.com/Agu1406/ClasesParticulares">Repositorio GitHub</a>
@@ -14,11 +14,11 @@ public class Ejercicio5_Arrays_MenoresYMayoresDe6_RESUELTO {
     public static void main(String[] args) {
         int[] array = {2, 3, 4, 7, 8, 10, 11};
         
-        // Contar cuántos elementos son menores y mayores de 6
+        // Contar cuantos elementos son menores y mayores de 6
         int menores = 0;
         int mayores = 0;
         
-        // Bucle que recorre el array para contar cuántos elementos son menores y mayores de 6
+        // Bucle que recorre el array para contar cuantos elementos son menores y mayores de 6
         for (int indice = 0; indice < array.length; indice++) {
             // Si el elemento es menor que 6, incrementar el contador de menores
             if (array[indice] < 6) {
@@ -29,7 +29,7 @@ public class Ejercicio5_Arrays_MenoresYMayoresDe6_RESUELTO {
             }
         }
 
-        // Crear los nuevos arrays con el tamaño correcto
+        // Crear los nuevos arrays con el tamano correcto
         int[] menoresDe6 = new int[menores];
         int[] mayoresDe6 = new int[mayores];
         
@@ -58,14 +58,14 @@ public class Ejercicio5_Arrays_MenoresYMayoresDe6_RESUELTO {
     }
 
     /**
-     * Función que imprime un array de enteros en formato [elemento1, elemento2, ...]
+     * Funcion que imprime un array de enteros en formato [elemento1, elemento2, ...]
      */
     private static void imprimirArray(int[] array) {
         System.out.print("[");
         // Bucle que recorre todos los elementos del array para imprimirlos
         for (int indice = 0; indice < array.length; indice++) {
             System.out.print(array[indice]);
-            // Si no es el último elemento, imprimir una coma y un espacio
+            // Si no es el ultimo elemento, imprimir una coma y un espacio
             if (indice < array.length - 1) {
                 System.out.print(", ");
             }

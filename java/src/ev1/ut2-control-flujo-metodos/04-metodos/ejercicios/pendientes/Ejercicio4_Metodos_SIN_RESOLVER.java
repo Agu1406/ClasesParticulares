@@ -1,10 +1,10 @@
-﻿package general.metodos;
+package general.metodos;
 
 /**
- * Ejercicio 4: Función que retorna double
- * Versión sin resolver.
+ * Ejercicio 4: Funcion que retorna double
+ * Version sin resolver.
  *
- * @author Agustín. A. Marquez. Piña
+ * @author Agustin. A. Marquez. Pina
  * @since 29/04/2026
  * @see <a href="mailto:agu1406@outlook.es">agu1406@outlook.es</a>
  * @see <a href="https://github.com/Agu1406/ClasesParticulares">Repositorio GitHub</a>
@@ -12,9 +12,9 @@
  */
 public class Ejercicio4_Metodos_SIN_RESOLVER {
 
-    // TODO: crea la función calcularAreaCirculo según el enunciado.
+    // TODO: crea la funcion calcularAreaCirculo segun el enunciado.
 
     public static void main(String[] args) {
-        // TODO: llama a la función calcularAreaCirculo desde main y muestra el resultado si corresponde.
+        // TODO: llama a la funcion calcularAreaCirculo desde main y muestra el resultado si corresponde.
     }
 }

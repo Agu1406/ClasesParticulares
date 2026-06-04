@@ -1,15 +1,15 @@
 package general.strings;
 
 /**
- * Teoría: la clase {@link String} en Java.
+ * Teoria: la clase {@link String} en Java.
  *
  * <p><b>Objetivo:</b> trabajar con cadenas inmutables: crear, concatenar, medir longitud
- * y usar métodos habituales ({@code length}, {@code charAt}, {@code substring}, etc.).</p>
+ * y usar metodos habituales ({@code length}, {@code charAt}, {@code substring}, etc.).</p>
  *
  * <p>Ejercicios en {@code ejercicios/pendientes} y {@code ejercicios/resueltos}.
- * Práctica de centro en {@code practicas/madrid-iescalderonbarca-cadenas/}.</p>
+ * Practica de centro en {@code practicas/madrid-iescalderonbarca-cadenas/}.</p>
  *
- * @author Agustín. A. Marquez. Piña
+ * @author Agustin. A. Marquez. Pina
  * @since 29/05/2026
  * @see <a href="mailto:agu1406@outlook.es">agu1406@outlook.es</a>
  * @see <a href="https://github.com/Agu1406/ClasesParticulares">Repositorio GitHub</a>

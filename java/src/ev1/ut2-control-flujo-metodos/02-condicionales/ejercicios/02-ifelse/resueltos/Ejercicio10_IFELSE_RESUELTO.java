@@ -1,10 +1,10 @@
-﻿package general.condicionales;
+package general.condicionales;
 
 /**
- * Ejercicio 10 (ifelse): Comprobar si una letra es mayúscula
- * Versión resuelta.
+ * Ejercicio 10 (ifelse): Comprobar si una letra es mayuscula
+ * Version resuelta.
  *
- * @author Agustín. A. Marquez. Piña
+ * @author Agustin. A. Marquez. Pina
  * @since 29/04/2026
  * @see <a href="mailto:agu1406@outlook.es">agu1406@outlook.es</a>
  * @see <a href="https://github.com/Agu1406/ClasesParticulares">Repositorio GitHub</a>
@@ -14,9 +14,9 @@ public class Ejercicio10_IFELSE_RESUELTO {
     public static void main(String[] args) {
         char c = 'G';
                 if (Character.isUpperCase(c)) {
-                    System.out.println("Mayúscula");
+                    System.out.println("Mayuscula");
                 } else {
-                    System.out.println("No mayúscula");
+                    System.out.println("No mayuscula");
                 }
     }
 }

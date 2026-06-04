@@ -1,18 +1,18 @@
 package madrid.iescalderonbarca.ejercicios.nominas;
 
 /**
- * Práctica nóminas.
+ * Practica nominas.
  *
- * Clase que representa al Personal de administración.
+ * Clase que representa al Personal de administracion.
  *
- * VERSIÓN SIN RESOLVER (PLANTILLA PARA EL ALUMNO)
+ * VERSION SIN RESOLVER (PLANTILLA PARA EL ALUMNO)
  */
 public class PersonalAdministracion extends Empleado {
 
     // Constantes sugeridas:
     public static final double BRUTO_BASE = 1600.0;
     public static final double RETENCION = 0.13;            // 13 %
-    public static final double REVALORIZACION_ANUAL = 0.06;  // 6 % por año completo
+    public static final double REVALORIZACION_ANUAL = 0.06;  // 6 % por ano completo
 
     public PersonalAdministracion(String nombre,
                                   String apellido1,
@@ -24,14 +24,14 @@ public class PersonalAdministracion extends Empleado {
 
     @Override
     public double sueldo() {
-        // TODO: implementar el cálculo del sueldo neto mensual
-        // (revalorización y retención; no tiene comisiones).
+        // TODO: implementar el calculo del sueldo neto mensual
+        // (revalorizacion y retencion; no tiene comisiones).
         return 0.0;
     }
 
     @Override
     public double indemnizacion() {
-        // TODO: implementar el cálculo de la indemnización por despido.
+        // TODO: implementar el calculo de la indemnizacion por despido.
         return 0.0;
     }
 }

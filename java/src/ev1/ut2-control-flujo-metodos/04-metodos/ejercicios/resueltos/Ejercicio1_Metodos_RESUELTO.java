@@ -1,10 +1,10 @@
-﻿package general.metodos;
+package general.metodos;
 
 /**
- * Ejercicio 1: Función void sin parámetros
- * Versión resuelta.
+ * Ejercicio 1: Funcion void sin parametros
+ * Version resuelta.
  *
- * @author Agustín. A. Marquez. Piña
+ * @author Agustin. A. Marquez. Pina
  * @since 29/04/2026
  * @see <a href="mailto:agu1406@outlook.es">agu1406@outlook.es</a>
  * @see <a href="https://github.com/Agu1406/ClasesParticulares">Repositorio GitHub</a>
@@ -13,7 +13,7 @@
 public class Ejercicio1_Metodos_RESUELTO {
 
     public static void mostrarMensaje() {
-            System.out.println("Hola desde la función");
+            System.out.println("Hola desde la funcion");
         }
 
     public static void main(String[] args) {

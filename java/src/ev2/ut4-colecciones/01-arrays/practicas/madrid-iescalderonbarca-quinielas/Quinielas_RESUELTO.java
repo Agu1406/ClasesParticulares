@@ -3,8 +3,8 @@ package madrid.iescalderonbarca.ejercicios.quinielas;
 import java.util.Scanner;
 
 /**
- * Aplicación que permite hacer apuestas de fútbol al estilo quiniela.
- * Cada jugador podrá hacer un máximo de 20 quinielas por jornada.
+ * Aplicacion que permite hacer apuestas de futbol al estilo quiniela.
+ * Cada jugador podra hacer un maximo de 20 quinielas por jornada.
  * 
  * @author Alumno
  * @version 1.0
@@ -12,19 +12,19 @@ import java.util.Scanner;
 public class Quinielas_RESUELTO {
 	
 	/**
-	 * Límite máximo de quinielas que puede realizar un jugador por jornada.
-	 * Este límite está sujeto a las políticas de lucha contra la ludopatía.
+	 * Limite maximo de quinielas que puede realizar un jugador por jornada.
+	 * Este limite esta sujeto a las politicas de lucha contra la ludopatia.
 	 */
 	private static final int LIMITE_QUINIELAS = 20;
 	
 	/**
 	 * Array que almacena todas las quinielas del jugador.
-	 * La posición 0 contiene la quiniela oficial con los resultados de la jornada.
+	 * La posicion 0 contiene la quiniela oficial con los resultados de la jornada.
 	 */
 	private Quiniela[] quinielas;
 	
 	/**
-	 * Índice de la quiniela activa. Por defecto es 0 (quiniela oficial).
+	 * Indice de la quiniela activa. Por defecto es 0 (quiniela oficial).
 	 */
 	private int quinielaActiva;
 	
@@ -39,10 +39,10 @@ public class Quinielas_RESUELTO {
 	private Scanner sc;
 	
 	/**
-	 * Constructor que inicializa la aplicación.
+	 * Constructor que inicializa la aplicacion.
 	 */
 	public Quinielas() {
-		// El array tiene tamaño LIMITE_QUINIELAS + 1 porque incluye la quiniela oficial
+		// El array tiene tamano LIMITE_QUINIELAS + 1 porque incluye la quiniela oficial
 		quinielas = new Quiniela[LIMITE_QUINIELAS + 1];
 		quinielaActiva = 0; // Por defecto la quiniela oficial
 		quinielasJugadas = 0;
@@ -55,7 +55,7 @@ public class Quinielas_RESUELTO {
 	
 	/**
 	 * Inicializa la quiniela oficial con los partidos de la jornada.
-	 * En una aplicación real, estos datos vendrían de una base de datos o archivo.
+	 * En una aplicacion real, estos datos vendrian de una base de datos o archivo.
 	 */
 	private void inicializarQuinielaOficial() {
 		// Partidos de ejemplo para la jornada
@@ -77,7 +77,7 @@ public class Quinielas_RESUELTO {
 			"Oviedo - Lugo"
 		};
 		
-		// Resultados oficiales de ejemplo (en una aplicación real vendrían de una base de datos)
+		// Resultados oficiales de ejemplo (en una aplicacion real vendrian de una base de datos)
 		char[] resultadosOficiales = {'1', 'X', '2', '1', 'X', '2', '1', 'X', '2', '1', 'X', '2', '1', 'X', '2'};
 		
 		quinielas[0].copiarPartidos(partidosOficiales);
@@ -85,11 +85,11 @@ public class Quinielas_RESUELTO {
 	}
 	
 	/**
-	 * Muestra el menú principal de la aplicación.
+	 * Muestra el menu principal de la aplicacion.
 	 */
 	private void mostrarMenu() {
 		System.out.println("\n==========================================");
-		System.out.println("          MENÚ QUINIELAS");
+		System.out.println("          MENU QUINIELAS");
 		System.out.println("==========================================");
 		System.out.println("1. Rellenar una quiniela nueva manualmente");
 		System.out.println("2. Rellenar una quiniela nueva aleatoriamente");
@@ -99,11 +99,11 @@ public class Quinielas_RESUELTO {
 		System.out.println("6. Mostrar los partidos y las apuestas");
 		System.out.println("7. Salir");
 		System.out.println("==========================================");
-		System.out.print("Seleccione una opción: ");
+		System.out.print("Seleccione una opcion: ");
 	}
 	
 	/**
-	 * Método principal que ejecuta la aplicación.
+	 * Metodo principal que ejecuta la aplicacion.
 	 */
 	public void ejecutar() {
 		int opcion;
@@ -133,21 +133,21 @@ public class Quinielas_RESUELTO {
 					mostrarPartidosyApuestas();
 					break;
 				case 7:
-					System.out.println("\n¡Hasta luego!");
+					System.out.println("\n!Hasta luego!");
 					break;
 				default:
-					System.out.println("\nOpción no válida. Por favor, seleccione una opción del 1 al 7.");
+					System.out.println("\nOpcion no valida. Por favor, seleccione una opcion del 1 al 7.");
 			}
 		} while (opcion != 7);
 	}
 	
 	/**
-	 * Opción 1: Rellena una quiniela nueva manualmente.
+	 * Opcion 1: Rellena una quiniela nueva manualmente.
 	 */
 	private void rellenarQuinielaManual() {
 		if (quinielasJugadas >= LIMITE_QUINIELAS) {
-			System.out.println("\nHa alcanzado el límite de quinielas permitido por jornada (" + LIMITE_QUINIELAS + ").");
-			System.out.println("No se puede rellenar ningún boleto adicional.");
+			System.out.println("\nHa alcanzado el limite de quinielas permitido por jornada (" + LIMITE_QUINIELAS + ").");
+			System.out.println("No se puede rellenar ningun boleto adicional.");
 			return;
 		}
 		
@@ -166,12 +166,12 @@ public class Quinielas_RESUELTO {
 	}
 	
 	/**
-	 * Opción 2: Rellena una quiniela nueva aleatoriamente.
+	 * Opcion 2: Rellena una quiniela nueva aleatoriamente.
 	 */
 	private void rellenarQuinielaAleatoria() {
 		if (quinielasJugadas >= LIMITE_QUINIELAS) {
-			System.out.println("\nHa alcanzado el límite de quinielas permitido por jornada (" + LIMITE_QUINIELAS + ").");
-			System.out.println("No se puede rellenar ningún boleto adicional.");
+			System.out.println("\nHa alcanzado el limite de quinielas permitido por jornada (" + LIMITE_QUINIELAS + ").");
+			System.out.println("No se puede rellenar ningun boleto adicional.");
 			return;
 		}
 		
@@ -189,11 +189,11 @@ public class Quinielas_RESUELTO {
 	}
 	
 	/**
-	 * Opción 3: Selecciona la quiniela activa.
+	 * Opcion 3: Selecciona la quiniela activa.
 	 */
 	private void seleccionarQuinielaActiva() {
 		if (quinielasJugadas == 0) {
-			System.out.println("\nTodavía no se ha rellenado ninguna quiniela.");
+			System.out.println("\nTodavia no se ha rellenado ninguna quiniela.");
 			return;
 		}
 		
@@ -213,12 +213,12 @@ public class Quinielas_RESUELTO {
 			}
 		} else {
 			quinielaActiva = 0;
-			System.out.println("\nOpción fuera de rango. La quiniela activa es la quiniela oficial.");
+			System.out.println("\nOpcion fuera de rango. La quiniela activa es la quiniela oficial.");
 		}
 	}
 	
 	/**
-	 * Opción 4: Comprueba los aciertos de la quiniela activa con la oficial.
+	 * Opcion 4: Comprueba los aciertos de la quiniela activa con la oficial.
 	 */
 	private void comprobarAciertos() {
 		if (quinielaActiva == 0) {
@@ -228,11 +228,11 @@ public class Quinielas_RESUELTO {
 		
 		int aciertos = quinielas[quinielaActiva].comprobarApuestas(quinielas[0]);
 		System.out.println("\n=== COMPROBAR ACIERTOS ===");
-		System.out.println("Número de aciertos: " + aciertos + " de 15");
+		System.out.println("Numero de aciertos: " + aciertos + " de 15");
 	}
 	
 	/**
-	 * Opción 5: Muestra los partidos de la jornada (de la quiniela oficial).
+	 * Opcion 5: Muestra los partidos de la jornada (de la quiniela oficial).
 	 */
 	private void mostrarPartidosJornada() {
 		System.out.println("\n=== PARTIDOS DE LA JORNADA ===");
@@ -241,7 +241,7 @@ public class Quinielas_RESUELTO {
 	}
 	
 	/**
-	 * Opción 6: Muestra los partidos y las apuestas de la quiniela activa.
+	 * Opcion 6: Muestra los partidos y las apuestas de la quiniela activa.
 	 */
 	private void mostrarPartidosyApuestas() {
 		System.out.println("\n=== PARTIDOS Y APUESTAS (QUINIELA ACTIVA) ===");
@@ -255,7 +255,7 @@ public class Quinielas_RESUELTO {
 	}
 	
 	/**
-	 * Método main que inicia la aplicación.
+	 * Metodo main que inicia la aplicacion.
 	 */
 	public static void main(String[] args) {
 		Quinielas_RESUELTO app = new Quinielas_RESUELTO();

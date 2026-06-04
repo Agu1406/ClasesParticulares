@@ -1,12 +1,12 @@
-﻿package madrid.iescanaveral.ejercicios.convocatoria2022;
+package madrid.iescanaveral.ejercicios.convocatoria2022;
 
 /**
- * Ejercicio 2: Si en Java la clase B hereda de la clase A y ejecutamos el siguiente código,
- * ¿cuál será la salida que se imprima? - RESUELTO
+ * Ejercicio 2: Si en Java la clase B hereda de la clase A y ejecutamos el siguiente codigo,
+ * ?cual sera la salida que se imprima? - RESUELTO
  * 
  * Este ejercicio requiere analizar el comportamiento del polimorfismo y instanceof en Java.
  * 
- * @author Agustín. A. Marquez. Piña
+ * @author Agustin. A. Marquez. Pina
  * @since 14/01/2026
  * @see <a href="mailto:agu1406@outlook.es">agu1406@outlook.es</a>
  * @see <a href="https://github.com/Agu1406/ClasesParticulares">Repositorio GitHub</a>

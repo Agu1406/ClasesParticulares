@@ -1,12 +1,12 @@
-﻿package madrid.iescanaveral.ejercicios.convocatoria2022;
+package madrid.iescanaveral.ejercicios.convocatoria2022;
 
 /**
- * Ejercicio 1: ¿Qué se imprime cuando se compila y ejecuta el siguiente programa? - RESUELTO
+ * Ejercicio 1: ?Que se imprime cuando se compila y ejecuta el siguiente programa? - RESUELTO
  * 
- * RESPUESTA: El programa no se compila porque i no está inicializado.
+ * RESPUESTA: El programa no se compila porque i no esta inicializado.
  * En Java, las variables locales deben ser inicializadas antes de usarse.
  * 
- * @author Agustín. A. Marquez. Piña
+ * @author Agustin. A. Marquez. Pina
  * @since 14/01/2026
  * @see <a href="mailto:agu1406@outlook.es">agu1406@outlook.es</a>
  * @see <a href="https://github.com/Agu1406/ClasesParticulares">Repositorio GitHub</a>
@@ -14,14 +14,14 @@
  */
 public class Ejercicio1_DoWhileInicializacion_RESUELTO {
     public static void main(String[] args) {
-        // ERROR: La variable i no está inicializada
+        // ERROR: La variable i no esta inicializada
         // int i;
         // do {
-        //     i++;  // Error de compilación: variable i might not have been initialized
+        //     i++;  // Error de compilacion: variable i might not have been initialized
         // } while (i < 0);
         // System.out.println(i);
         
-        // SOLUCIÓN CORRECTA: Inicializar la variable antes de usarla
+        // SOLUCION CORRECTA: Inicializar la variable antes de usarla
         int i = 0;
         do {
             i++;

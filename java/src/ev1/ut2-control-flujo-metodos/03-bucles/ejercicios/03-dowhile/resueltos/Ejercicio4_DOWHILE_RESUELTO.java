@@ -1,10 +1,10 @@
-﻿package general.bucles;
+package general.bucles;
 
 /**
- * Ejercicio 4 (dowhile): Sumar números del 1 al 100
- * Versión resuelta.
+ * Ejercicio 4 (dowhile): Sumar numeros del 1 al 100
+ * Version resuelta.
  *
- * @author Agustín. A. Marquez. Piña
+ * @author Agustin. A. Marquez. Pina
  * @since 29/04/2026
  * @see <a href="mailto:agu1406@outlook.es">agu1406@outlook.es</a>
  * @see <a href="https://github.com/Agu1406/ClasesParticulares">Repositorio GitHub</a>

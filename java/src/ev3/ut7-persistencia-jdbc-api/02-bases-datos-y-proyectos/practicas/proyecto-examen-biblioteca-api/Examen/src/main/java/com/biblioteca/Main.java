@@ -39,21 +39,21 @@ public class Main {
         Biblioteca bibliotecaCentro = bibliotecaDAO.insertar(
                 "Calle Mayor 12", "Madrid", "Madrid");
         Biblioteca bibliotecaNorte = bibliotecaDAO.insertar(
-                "Av. de la Constitución 45", "Burgos", "Burgos");
+                "Av. de la Constitucion 45", "Burgos", "Burgos");
         Biblioteca bibliotecaSur = bibliotecaDAO.insertar(
-                "Plaza de España 3", "Sevilla", "Sevilla");
+                "Plaza de Espana 3", "Sevilla", "Sevilla");
         System.out.println("Bibliotecas registradas: " + bibliotecaDAO.listarTodas().size());
 
         System.out.println("\n=== Alta de autores (con control de DNI duplicado) ===");
-        Autor garcia = crearAutor("Ana", "García", "12345678A");
-        Autor lopez = crearAutor("Carlos", "López", "87654321B");
+        Autor garcia = crearAutor("Ana", "Garcia", "12345678A");
+        Autor lopez = crearAutor("Carlos", "Lopez", "87654321B");
         intentarCrearAutorDuplicado("Pedro", "Ruiz", "12345678A");
 
-        System.out.println("\n=== Inserción de libros (buscando autor y controlando ISBN duplicado) ===");
+        System.out.println("\n=== Insercion de libros (buscando autor y controlando ISBN duplicado) ===");
         insertarLibro("978-84-376-0494-7", garcia, bibliotecaCentro, 320, "Novela", 2018);
         insertarLibro("978-84-8181-227-5", lopez, bibliotecaNorte, 256, "Ensayo", 2020);
         insertarLibro("978-84-339-2879-8", garcia, bibliotecaSur, 410, "Novela", 2015);
-        intentarInsertarLibroDuplicado("978-84-376-0494-7", lopez, bibliotecaNorte, 100, "Poesía", 2022);
+        intentarInsertarLibroDuplicado("978-84-376-0494-7", lopez, bibliotecaNorte, 100, "Poesia", 2022);
 
         System.out.println("\n=== Libros de la biblioteca de Madrid ===");
         listarLibrosBiblioteca(bibliotecaCentro.id());
@@ -61,7 +61,7 @@ public class Main {
         System.out.println("\n=== Todos los autores ===");
         listarAutores();
 
-        System.out.println("\n=== Exportación CSV de libros de Ana García ===");
+        System.out.println("\n=== Exportacion CSV de libros de Ana Garcia ===");
         exportarLibrosAutor(garcia.id(), "libros_ana_garcia.csv");
     }
 
@@ -101,7 +101,7 @@ public class Main {
     ) throws SQLException {
         Optional<Autor> autorEncontrado = autorDAO.buscarPorId(autor.id());
         if (autorEncontrado.isEmpty()) {
-            System.out.println("No se encontró el autor con id " + autor.id() + ". Libro no insertado.");
+            System.out.println("No se encontro el autor con id " + autor.id() + ". Libro no insertado.");
             return;
         }
 

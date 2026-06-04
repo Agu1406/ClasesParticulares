@@ -12,18 +12,18 @@ public abstract class Empleado implements Calculable {
      * Constructor de la clase Empleado.
      * @param nombre El nombre del empleado.
      * @param salarioBase El salario base del empleado.
-     * @throws IllegalArgumentException Si el salario base es negativo o el nombre está vacío.
+     * @throws IllegalArgumentException Si el salario base es negativo o el nombre esta vacio.
      */
     public Empleado(String nombre, double salarioBase) {
         // Comprobamos que el salario base no es negativo
         if (salarioBase < 0) {
-            // Si el salario base es negativo, lanzamos una excepción
+            // Si el salario base es negativo, lanzamos una excepcion
             throw new IllegalArgumentException("El salario base no puede ser negativo");
         }
-        // Comprobamos que el nombre no está vacío
+        // Comprobamos que el nombre no esta vacio
         if (nombre == null || nombre.trim().isEmpty()) {
-            // Si el nombre está vacío, lanzamos una excepción
-            throw new IllegalArgumentException("El nombre no puede estar vacío");
+            // Si el nombre esta vacio, lanzamos una excepcion
+            throw new IllegalArgumentException("El nombre no puede estar vacio");
         }
         // Asignamos los valores a los atributos si no hay excepciones
         this.nombre = nombre;

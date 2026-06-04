@@ -1,14 +1,14 @@
-﻿package general.inputoutputficheros;
+package general.inputoutputficheros;
 
 import java.io.BufferedWriter;
 import java.io.FileWriter;
 import java.io.IOException;
 
 /**
- * Ejercicio 1: Crear un TXT y escribir una línea
- * Versión resuelta.
+ * Ejercicio 1: Crear un TXT y escribir una linea
+ * Version resuelta.
  *
- * @author Agustín. A. Marquez. Piña
+ * @author Agustin. A. Marquez. Pina
  * @since 29/04/2026
  * @see <a href="mailto:agu1406@outlook.es">agu1406@outlook.es</a>
  * @see <a href="https://github.com/Agu1406/ClasesParticulares">Repositorio GitHub</a>

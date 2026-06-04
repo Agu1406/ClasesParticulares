@@ -1,22 +1,22 @@
 package andalucia.sevilla.iesvelazquez.DAM1.alquiler.fase1;
 
 /**
- * Sistema de alquiler de vehículos — fase 1 (IES Velázquez).
+ * Sistema de alquiler de vehiculos - fase 1 (IES Velazquez).
  *
- * <p>Enunciado: {@code alquileres-coches--sevilla-iesvelazquez.pdf} (carpeta de la práctica).</p>
+ * <p>Enunciado: {@code alquileres-coches--sevilla-iesvelazquez.pdf} (carpeta de la practica).</p>
  *
- * <p><b>Objetivo:</b> gestionar clientes, vehículos y alquileres con arrays y clases asociadas.</p>
+ * <p><b>Objetivo:</b> gestionar clientes, vehiculos y alquileres con arrays y clases asociadas.</p>
  *
  * <p>Para ello, el programa debe:</p>
  * <ul>
- *   <li>Registrar y buscar clientes y vehículos.</li>
- *   <li>Crear alquileres y calcular importes según el enunciado.</li>
- *   <li>Ofrecer menú de operaciones sobre las estructuras en memoria.</li>
+ *   <li>Registrar y buscar clientes y vehiculos.</li>
+ *   <li>Crear alquileres y calcular importes segun el enunciado.</li>
+ *   <li>Ofrecer menu de operaciones sobre las estructuras en memoria.</li>
  * </ul>
  *
- * <p>Utiliza POO, arrays y utilidades ({@link Utilidades}, {@link ES}). Fases 2 y 3 amplían el modelo.</p>
+ * <p>Utiliza POO, arrays y utilidades ({@link Utilidades}, {@link ES}). Fases 2 y 3 amplian el modelo.</p>
  *
- * @author Agustín. A. Marquez. Piña
+ * @author Agustin. A. Marquez. Pina
  * @since 29/05/2026
  * @see <a href="mailto:agu1406@outlook.es">agu1406@outlook.es</a>
  * @see <a href="https://github.com/Agu1406/ClasesParticulares">Repositorio GitHub</a>

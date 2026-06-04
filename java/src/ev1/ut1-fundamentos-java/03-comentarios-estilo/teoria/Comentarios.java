@@ -2,11 +2,11 @@ package ev1.ut0.comentarios;
 /**
  * Existen tres tipos de comentarios en Java, los comentarios como este se llaman
  * "JavaDoc", empiezan con una barra diagonal "/" seguida de dos astericos y cada
- * linea de texto/información después de la marca de inicio llevan un asterisco,
+ * linea de texto/informacion despues de la marca de inicio llevan un asterisco,
  * y marcamso el final con un asterisco seguido de una barra diagonal "/".
  * 
  * Este mismo comentario es un excelente ejemplo de ello, se usa para dar las
- * explicaciones más profesionales a los fragmentos/bloques de código más
+ * explicaciones mas profesionales a los fragmentos/bloques de codigo mas
  * importantes de nuestros programas.
  */
 public class Comentarios {
@@ -17,7 +17,7 @@ public class Comentarios {
 
         Y termina con asterico seguido de una barra inclinada "/" sienfo este
         comentario el ejemplo vivo de ello, entre el "inicio" y el "final" de
-        este comentario puedo escribir todas las lineas de información que
+        este comentario puedo escribir todas las lineas de informacion que
         quiero con menos peso profesional y documentativo que el comentario
         explicando anteriormente a este ,el "JavaDoc".
         */
@@ -26,7 +26,7 @@ public class Comentarios {
 
         // Se escriben con doble barra inclinada "//" y ocupan una sola linea.
 
-        // Se usan para explicaciones o notas muy breves y no pueden ocupar más de una linea.
+        // Se usan para explicaciones o notas muy breves y no pueden ocupar mas de una linea.
 
         // Solo tienen inicio, el final es el propio final de la linea como tal.
     }

@@ -3,26 +3,26 @@ import java.util.HashMap;
 import java.util.Map;
 
 public class TablaHash {
-    // Función hash: fHash(k) = (k² - 1)
+    // Funcion hash: fHash(k) = (k? - 1)
     private static int funcionHash(int k) {
         return (k * k - 1) % 7;
     }
 
-    // Función para imprimir el estado de la tabla
+    // Funcion para imprimir el estado de la tabla
     private static void imprimirTabla(Map<Integer, Integer> tabla) {
         System.out.println("\nEstado actual de la tabla:");
         for (int i = 0; i < 7; i++) {
-            System.out.print("Posición " + i + ": ");
+            System.out.print("Posicion " + i + ": ");
             if (tabla.containsKey(i)) {
                 System.out.println(tabla.get(i));
             } else {
-                System.out.println("vacía");
+                System.out.println("vacia");
             }
         }
     }
 
     public static void main(String[] args) {
-        // Crear tabla hash de tamaño 7
+        // Crear tabla hash de tamano 7
         Map<Integer, Integer> tabla = new HashMap<>(7);
         
         // Valores a insertar
@@ -32,9 +32,9 @@ public class TablaHash {
         for (int valor : valores) {
             int posicion = funcionHash(valor);
             System.out.println("\nInsertando valor: " + valor);
-            System.out.println("Posición calculada: " + posicion);
+            System.out.println("Posicion calculada: " + posicion);
             
-            // En HashMap, si hay colisión, se maneja automáticamente
+            // En HashMap, si hay colision, se maneja automaticamente
             tabla.put(posicion, valor);
             
             imprimirTabla(tabla);

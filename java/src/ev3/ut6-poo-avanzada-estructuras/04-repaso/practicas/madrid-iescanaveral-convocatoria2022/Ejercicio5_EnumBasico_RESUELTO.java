@@ -1,16 +1,16 @@
-﻿package madrid.iescanaveral.ejercicios.convocatoria2022;
+package madrid.iescanaveral.ejercicios.convocatoria2022;
 
 /**
- * Ejercicio 5: ¿Cuál es la salida del siguiente código? - RESUELTO
+ * Ejercicio 5: ?Cual es la salida del siguiente codigo? - RESUELTO
  * 
  * RESPUESTA: MAYO
  * 
- * Explicación:
- * - Cuando se imprime un enum con System.out.println(), se llama automáticamente a toString()
- * - El método toString() de Enum devuelve el nombre de la constante (MAYO en este caso)
+ * Explicacion:
+ * - Cuando se imprime un enum con System.out.println(), se llama automaticamente a toString()
+ * - El metodo toString() de Enum devuelve el nombre de la constante (MAYO en este caso)
  * - El campo 'numero' no se muestra a menos que se sobrescriba toString()
  * 
- * @author Agustín. A. Marquez. Piña
+ * @author Agustin. A. Marquez. Pina
  * @since 14/01/2026
  * @see <a href="mailto:agu1406@outlook.es">agu1406@outlook.es</a>
  * @see <a href="https://github.com/Agu1406/ClasesParticulares">Repositorio GitHub</a>
@@ -27,7 +27,7 @@ public class Ejercicio5_EnumBasico_RESUELTO {
             this.numero = numero;
         }
         
-        // Si queremos mostrar el número, podemos sobrescribir toString()
+        // Si queremos mostrar el numero, podemos sobrescribir toString()
         // @Override
         // public String toString() {
         //     return name() + "(" + numero + ")";
@@ -38,7 +38,7 @@ public class Ejercicio5_EnumBasico_RESUELTO {
         Mes mes1 = Mes.MAYO;
         System.out.println(mes1);  // Imprime: MAYO
         
-        // Para acceder al número:
+        // Para acceder al numero:
         // System.out.println(mes1.numero);  // Imprime: 5
     }
 }

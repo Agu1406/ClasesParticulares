@@ -7,17 +7,17 @@ public class SistemaBiblioteca {
         // Crear biblioteca (usaremos biblioteca1)
         Biblioteca biblioteca1 = new Biblioteca("Angulo", 5, 5);
         
-        // Crear tres libros físicos
+        // Crear tres libros fisicos
         LibroFisico libroFisico1 = new LibroFisico("Don Quijote", "Miguel de Cervantes", "Bueno");
-        LibroFisico libroFisico2 = new LibroFisico("Cien años de soledad", "Gabriel García Márquez", "Excelente");
-        LibroFisico libroFisico3 = new LibroFisico("La Casa de los Espíritus", "Isabel Allende", "Regular");
+        LibroFisico libroFisico2 = new LibroFisico("Cien anos de soledad", "Gabriel Garcia Marquez", "Excelente");
+        LibroFisico libroFisico3 = new LibroFisico("La Casa de los Espiritus", "Isabel Allende", "Regular");
 
         // Crear tres libros digitales
-        LibroDigital libroDigital1 = new LibroDigital("El Principito", "Antoine de Saint-Exupéry", "PDF");
+        LibroDigital libroDigital1 = new LibroDigital("El Principito", "Antoine de Saint-Exupery", "PDF");
         LibroDigital libroDigital2 = new LibroDigital("1984", "George Orwell", "EPUB");
         LibroDigital libroDigital3 = new LibroDigital("Fahrenheit 451", "Ray Bradbury", "MOBI");
 
-        // Añadir todos los libros al catálogo
+        // Anadir todos los libros al catalogo
         biblioteca1.agregarLibro(libroFisico1);
         biblioteca1.agregarLibro(libroFisico2);
         biblioteca1.agregarLibro(libroFisico3);
@@ -26,9 +26,9 @@ public class SistemaBiblioteca {
         biblioteca1.agregarLibro(libroDigital3);
 
         // Registrar varios usuarios
-        Usuario usuario1 = new Usuario("Juan Pérez");
-        Usuario usuario2 = new Usuario("María García");
-        Usuario usuario3 = new Usuario("Carlos López");
+        Usuario usuario1 = new Usuario("Juan Perez");
+        Usuario usuario2 = new Usuario("Maria Garcia");
+        Usuario usuario3 = new Usuario("Carlos Lopez");
 
         biblioteca1.agregarUsuario(usuario1);
         biblioteca1.agregarUsuario(usuario2);
@@ -43,7 +43,7 @@ public class SistemaBiblioteca {
             Date fecha3Inicio = new Date(113, 0, 2);   // 02/01/2013
             Date fecha3Fin = new Date(113, 0, 4);      // 04/01/2013
 
-            // Reservar libro físico del 21/12/2023 hasta el 24/12/2023
+            // Reservar libro fisico del 21/12/2023 hasta el 24/12/2023
             biblioteca1.reservarLibro(usuario1, libroFisico1, fecha1Inicio, fecha1Fin);
 
             // Reservar libro digital del 26/11/2012 al 30/11/2012
@@ -62,8 +62,8 @@ public class SistemaBiblioteca {
         System.out.println("\n=== LISTADO DE RESERVAS ACTIVAS ===");
         biblioteca1.mostrarReservasActivas();
 
-        // Mostrar información completa de la biblioteca
-        System.out.println("\n=== CATÁLOGO DE LA BIBLIOTECA ===");
+        // Mostrar informacion completa de la biblioteca
+        System.out.println("\n=== CATALOGO DE LA BIBLIOTECA ===");
         biblioteca1.imprimirCatalogo();
     }
 } 

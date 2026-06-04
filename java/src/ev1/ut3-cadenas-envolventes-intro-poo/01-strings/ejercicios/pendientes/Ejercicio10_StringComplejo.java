@@ -2,10 +2,10 @@ package general.strings;
 
 /**
  * Ejercicio 10: Ejercicio complejo con strings
- * Toma un nombre completo, divídelo con split(), formatea nombre en mayúsculas
- * y apellido en minúsculas
+ * Toma un nombre completo, dividelo con split(), formatea nombre en mayusculas
+ * y apellido en minusculas
  *
- * @author Agustín. A. Marquez. Piña
+ * @author Agustin. A. Marquez. Pina
  * @since 29/05/2026
  * @see <a href="mailto:agu1406@outlook.es">agu1406@outlook.es</a>
  * @see <a href="https://github.com/Agu1406/ClasesParticulares">Repositorio GitHub</a>

@@ -1,14 +1,14 @@
-﻿package general.arrays.dificil;
+package general.arrays.dificil;
 
 /**
- * Ejercicio 1 (difícil): Buscar un valor en una matriz 2D y devolver su posición
+ * Ejercicio 1 (dificil): Buscar un valor en una matriz 2D y devolver su posicion
  * 
  * Crea un array bidimensional de enteros de 3 filas y 4 columnas.
- * Asígnale valores a cada posición (puede haber repetidos).
+ * Asignale valores a cada posicion (puede haber repetidos).
  * 
- * Crea una función llamada buscarPosicion que reciba la matriz y un valor
+ * Crea una funcion llamada buscarPosicion que reciba la matriz y un valor
  * y que devuelva un array de dos elementos con [fila, columna] de la PRIMERA
- * aparición del valor en la matriz. Si el valor no está en la matriz, debe
+ * aparicion del valor en la matriz. Si el valor no esta en la matriz, debe
  * devolver el array {-1, -1}.
  * 
  * Pista:
@@ -16,11 +16,11 @@
  *      for (int fila = 0; fila < matriz.length; fila++)
  *          for (int columna = 0; columna < matriz[fila].length; columna++)
  *  - En cuanto encuentres el valor, devuelve new int[]{fila, columna}
- *    para parar la búsqueda (return sale de la función).
+ *    para parar la busqueda (return sale de la funcion).
  *  - Si los bucles terminan sin encontrarlo, devuelve {-1, -1}.
  * 
- * Después, también cuenta cuántas veces aparece ese valor en TODA la matriz
- * con otra función llamada contarOcurrencias.
+ * Despues, tambien cuenta cuantas veces aparece ese valor en TODA la matriz
+ * con otra funcion llamada contarOcurrencias.
  * 
  * Desde el main, prueba con un valor existente y otro inexistente y muestra:
  *  - "Valor X encontrado en fila F, columna C"
@@ -35,11 +35,11 @@
  * Fila [1] [ 2][ 6][ 8][ 6]
  * Fila [2] [ 1][ 9][ 3][ 6]
  * 
- * Buscar el 6 → primera aparición: fila 0, columna 1
+ * Buscar el 6 -> primera aparicion: fila 0, columna 1
  * Ocurrencias del 6: 4
- * Buscar el 99 → no encontrado, {-1, -1}
+ * Buscar el 99 -> no encontrado, {-1, -1}
  * 
- * @author Agustín. A. Marquez. Piña
+ * @author Agustin. A. Marquez. Pina
  * @since 14/06/2025
  * @see <a href="mailto:agu1406@outlook.es">agu1406@outlook.es</a>
  * @see <a href="https://github.com/Agu1406/ClasesParticulares">Repositorio GitHub</a>

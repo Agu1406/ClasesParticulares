@@ -1,11 +1,11 @@
-﻿package madrid.iescanaveral.ejercicios.convocatoria2022;
+package madrid.iescanaveral.ejercicios.convocatoria2022;
 
 /**
- * Ejercicio 16: Dado el siguiente fragmento de código, indicar cuál de las siguientes afirmaciones es correcta.
+ * Ejercicio 16: Dado el siguiente fragmento de codigo, indicar cual de las siguientes afirmaciones es correcta.
  * 
- * Analiza el polimorfismo y la herencia en Java, especialmente con referencias polimórficas.
+ * Analiza el polimorfismo y la herencia en Java, especialmente con referencias polimorficas.
  * 
- * @author Agustín. A. Marquez. Piña
+ * @author Agustin. A. Marquez. Pina
  * @since 14/01/2026
  * @see <a href="mailto:agu1406@outlook.es">agu1406@outlook.es</a>
  * @see <a href="https://github.com/Agu1406/ClasesParticulares">Repositorio GitHub</a>
@@ -48,7 +48,7 @@ public class Ejercicio16_HerenciaPolimorfismo {
         Persona p = new Persona(28);
         System.out.print(p.darEdad() + " - ");
         p = new Alumno(15);
-        p.pasarCurso();  // ¿Compila?
+        p.pasarCurso();  // ?Compila?
         System.out.print(p.darEdad());
     }
         */

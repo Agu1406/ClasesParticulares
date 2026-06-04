@@ -1,19 +1,19 @@
 package general.poobasico;
 
 /**
- * Teoría: encapsulamiento en Java.
+ * Teoria: encapsulamiento en Java.
  *
  * <p><b>Objetivo:</b> ocultar atributos con {@code private} y acceder mediante
- * métodos {@code get} / {@code set}, validando datos cuando haga falta.</p>
+ * metodos {@code get} / {@code set}, validando datos cuando haga falta.</p>
  *
  * <ul>
- *   <li>{@code private} — solo visible dentro de la clase.</li>
- *   <li>{@code public} getters/setters — interfaz controlada hacia fuera.</li>
+ *   <li>{@code private} - solo visible dentro de la clase.</li>
+ *   <li>{@code public} getters/setters - interfaz controlada hacia fuera.</li>
  * </ul>
  *
  * <p>Practica en {@code ejercicios/05-encapsulamiento/pendientes} y {@code resueltos}.</p>
  *
- * @author Agustín. A. Marquez. Piña
+ * @author Agustin. A. Marquez. Pina
  * @since 02/06/2026
  * @see <a href="mailto:agu1406@outlook.es">agu1406@outlook.es</a>
  * @see <a href="https://github.com/Agu1406/ClasesParticulares">Repositorio GitHub</a>

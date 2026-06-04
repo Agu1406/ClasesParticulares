@@ -6,27 +6,27 @@ import java.sql.SQLException;
 import java.util.Properties;
 
 /**
- * Conexión JDBC a la base de datos {@code Colegio}.
+ * Conexion JDBC a la base de datos {@code Colegio}.
  *
- * <p><b>Práctica integradora</b> IES Velázquez — bloque {@code 01-jdbc} (RA9).
- * Enunciado: {@code acceso-datos-contenido--sevilla-iesvelazquez.pdf} (carpeta de la práctica).</p>
+ * <p><b>Practica integradora</b> IES Velazquez - bloque {@code 01-jdbc} (RA9).
+ * Enunciado: {@code acceso-datos-contenido--sevilla-iesvelazquez.pdf} (carpeta de la practica).</p>
  *
- * <p><b>Objetivo de esta parte:</b> disponer de una conexión estable a MySQL para que el resto
- * de la aplicación pueda leer y modificar datos de alumnos.</p>
+ * <p><b>Objetivo de esta parte:</b> disponer de una conexion estable a MySQL para que el resto
+ * de la aplicacion pueda leer y modificar datos de alumnos.</p>
  *
  * <p>Para ello, el programa debe:</p>
  * <ul>
  *   <li>Cargar el driver JDBC de MySQL y abrir un {@link Connection} con {@link DriverManager}.</li>
- *   <li>Centralizar host, puerto, usuario, contraseña y nombre de la base de datos.</li>
- *   <li>Construir la URL JDBC con los parámetros adecuados para MySQL 8+.</li>
- *   <li>Comprobar que la conexión responde antes de ejecutar el CRUD ({@link ColegioDemo}).</li>
+ *   <li>Centralizar host, puerto, usuario, contrasena y nombre de la base de datos.</li>
+ *   <li>Construir la URL JDBC con los parametros adecuados para MySQL 8+.</li>
+ *   <li>Comprobar que la conexion responde antes de ejecutar el CRUD ({@link ColegioDemo}).</li>
  * </ul>
  *
  * <p>Utiliza <b>XAMPP</b> (MySQL), <b>MySQL Connector/J</b> en el classpath y la API JDBC
  * ({@link java.sql.Connection}, {@link java.util.Properties}). La base y la tabla se crean con
  * {@link ColegioSetup} o con {@code sql/colegio.sql}.</p>
  *
- * @author Agustín. A. Marquez. Piña
+ * @author Agustin. A. Marquez. Pina
  * @since 29/05/2026
  * @see <a href="mailto:agu1406@outlook.es">agu1406@outlook.es</a>
  * @see <a href="https://github.com/Agu1406/ClasesParticulares">Repositorio GitHub</a>
@@ -34,26 +34,26 @@ import java.util.Properties;
  */
 public class ColegioConnection {
 
-    // Cambia estos valores según tu entorno local
+    // Cambia estos valores segun tu entorno local
     private static final String HOST = "localhost";
     private static final int PORT = 3306;
-    private static final String DATABASE = "Colegio"; // se crea vía SQL o desde Java
+    private static final String DATABASE = "Colegio"; // se crea via SQL o desde Java
     private static final String USER = "root";
-    private static final String PASSWORD = ""; // pon tu contraseña
+    private static final String PASSWORD = ""; // pon tu contrasena
 
-    // Construye la URL de conexión MySQL moderna (MySQL 8+)
+    // Construye la URL de conexion MySQL moderna (MySQL 8+)
     private static String buildJdbcUrl(String host, int port, String database) {
         return "jdbc:mysql://" + host + ":" + port + "/" + database +
                 "?useSSL=false&allowPublicKeyRetrieval=true&serverTimezone=UTC";
     }
 
     public static Connection getConnection() throws SQLException {
-        // Carga explícita del driver según PDF (aunque DriverManager lo hace automático
-        // con JDBC 4, aquí lo forzamos para seguir la teoría)
+        // Carga explicita del driver segun PDF (aunque DriverManager lo hace automatico
+        // con JDBC 4, aqui lo forzamos para seguir la teoria)
         try {
             Class.forName("com.mysql.cj.jdbc.Driver");
         } catch (ClassNotFoundException e) {
-            throw new SQLException("No se encontró el driver MySQL JDBC en el classpath", e);
+            throw new SQLException("No se encontro el driver MySQL JDBC en el classpath", e);
         }
 
         String url = buildJdbcUrl(HOST, PORT, DATABASE);
@@ -61,14 +61,14 @@ public class ColegioConnection {
         Properties props = new Properties();
         props.setProperty("user", USER);
         props.setProperty("password", PASSWORD);
-        // Ejemplos de propiedades útiles
+        // Ejemplos de propiedades utiles
         props.setProperty("autoReconnect", "true");
         props.setProperty("characterEncoding", "utf8");
 
         return DriverManager.getConnection(url, props);
     }
 
-    // Getters públicos para evitar reflexión desde otras clases del mismo paquete
+    // Getters publicos para evitar reflexion desde otras clases del mismo paquete
     public static String getHost() { return HOST; }
     public static int getPort() { return PORT; }
     public static String getUser() { return USER; }
@@ -76,7 +76,7 @@ public class ColegioConnection {
 
      public static void main(String[] args) {
          try (Connection cn = getConnection()) {
-             System.out.println("Conexión OK a MySQL (BD: " + DATABASE + ")");
+             System.out.println("Conexion OK a MySQL (BD: " + DATABASE + ")");
          } catch (SQLException e) {
              SqlExceptionUtil.printSQLException(e);
          }

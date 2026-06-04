@@ -1,10 +1,10 @@
-﻿package general.basicos;
+package general.basicos;
 
 /**
- * Ejercicio 4: Dividir dos números
- * Crea dos variables numéricas, asígnales valores y muestra su división por pantalla
+ * Ejercicio 4: Dividir dos numeros
+ * Crea dos variables numericas, asignales valores y muestra su division por pantalla
  * 
- * @author Agustín. A. Marquez. Piña
+ * @author Agustin. A. Marquez. Pina
  * @since 14/06/2025
  * @see <a href="mailto:agu1406@outlook.es">agu1406@outlook.es</a>
  * @see <a href="https://github.com/Agu1406/ClasesParticulares">Repositorio GitHub</a>

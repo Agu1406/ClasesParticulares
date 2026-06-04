@@ -1,9 +1,9 @@
 package madrid.iescalderonbarca.ejercicios.estacionconcepcion;
 
 /**
- * Pasajero que espera en el andén de Concepción.
+ * Pasajero que espera en el anden de Concepcion.
  *
- * @author Agustín. A. Marquez. Piña
+ * @author Agustin. A. Marquez. Pina
  * @since 29/05/2026
  * @see <a href="mailto:agu1406@outlook.es">agu1406@outlook.es</a>
  * @see <a href="https://github.com/Agu1406/ClasesParticulares">Repositorio GitHub</a>
@@ -29,6 +29,6 @@ public class Pasajero {
 
     @Override
     public String toString() {
-        return nombre + " → " + destino;
+        return nombre + " -> " + destino;
     }
 }

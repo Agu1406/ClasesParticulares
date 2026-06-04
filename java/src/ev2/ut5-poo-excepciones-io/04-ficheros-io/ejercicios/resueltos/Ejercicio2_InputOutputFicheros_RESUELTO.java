@@ -1,14 +1,14 @@
-﻿package general.inputoutputficheros;
+package general.inputoutputficheros;
 
 import java.io.BufferedWriter;
 import java.io.FileWriter;
 import java.io.IOException;
 
 /**
- * Ejercicio 2: Escribir varias líneas en TXT
- * Versión resuelta.
+ * Ejercicio 2: Escribir varias lineas en TXT
+ * Version resuelta.
  *
- * @author Agustín. A. Marquez. Piña
+ * @author Agustin. A. Marquez. Pina
  * @since 29/04/2026
  * @see <a href="mailto:agu1406@outlook.es">agu1406@outlook.es</a>
  * @see <a href="https://github.com/Agu1406/ClasesParticulares">Repositorio GitHub</a>
@@ -19,7 +19,7 @@ public class Ejercicio2_InputOutputFicheros_RESUELTO {
         String basePath = "src/ev2/ut4/inputoutputficheros";
         try (BufferedWriter bw = new BufferedWriter(new FileWriter(basePath + "/salida2.txt"))) {
             for (int n = 1; n <= 5; n++) {
-                bw.write("Línea " + n);
+                bw.write("Linea " + n);
                 bw.newLine();
             }
         } catch (IOException e) {

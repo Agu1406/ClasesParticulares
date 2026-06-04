@@ -1,10 +1,10 @@
-﻿package madrid.iescalderonbarca.ejercicios.arrays;
+package madrid.iescalderonbarca.ejercicios.arrays;
 
 /**
  * Ejercicio 8: A partir del siguiente array {2, 3, 4, 7, 8} obtener otro donde
- * la primera posición se multiplique por 10, la segunda por 100, la tercera por 1000 etc...
+ * la primera posicion se multiplique por 10, la segunda por 100, la tercera por 1000 etc...
  * 
- * @author Agustín. A. Marquez. Piña
+ * @author Agustin. A. Marquez. Pina
  * @since 14/06/2025
  * @see <a href="mailto:agu1406@outlook.es">agu1406@outlook.es</a>
  * @see <a href="https://github.com/Agu1406/ClasesParticulares">Repositorio GitHub</a>
@@ -17,7 +17,7 @@ public class Ejercicio8_Arrays_MultiplicarPorPotencia10_RESUELTO {
         
         // Bucle que recorre el array para multiplicar cada elemento por una potencia de 10
         for (int indice = 0; indice < array.length; indice++) {
-            // Calcular 10^(indice+1) para cada posición (10, 100, 1000, ...)
+            // Calcular 10^(indice+1) para cada posicion (10, 100, 1000, ...)
             int multiplicador = (int) Math.pow(10, indice + 1);
             resultado[indice] = array[indice] * multiplicador;
         }
@@ -29,14 +29,14 @@ public class Ejercicio8_Arrays_MultiplicarPorPotencia10_RESUELTO {
     }
 
     /**
-     * Función que imprime un array de enteros en formato [elemento1, elemento2, ...]
+     * Funcion que imprime un array de enteros en formato [elemento1, elemento2, ...]
      */
     private static void imprimirArray(int[] array) {
         System.out.print("[");
         // Bucle que recorre todos los elementos del array para imprimirlos
         for (int indice = 0; indice < array.length; indice++) {
             System.out.print(array[indice]);
-            // Si no es el último elemento, imprimir una coma y un espacio
+            // Si no es el ultimo elemento, imprimir una coma y un espacio
             if (indice < array.length - 1) {
                 System.out.print(", ");
             }

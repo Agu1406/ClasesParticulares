@@ -1,12 +1,12 @@
-﻿package general.arrays.dificil;
+package general.arrays.dificil;
 
 /**
- * Ejercicio 10 (difícil): Recorrer una matriz en espiral
+ * Ejercicio 10 (dificil): Recorrer una matriz en espiral
  * 
  * Crea un array bidimensional de enteros de 4 filas y 4 columnas con
  * valores del 1 al 16 ordenados por filas.
  * 
- * Crea una función llamada recorrerEnEspiral que reciba la matriz y
+ * Crea una funcion llamada recorrerEnEspiral que reciba la matriz y
  * muestre por pantalla todos sus elementos siguiendo un recorrido
  * en ESPIRAL desde fuera hacia dentro, en este orden:
  * 
@@ -18,7 +18,7 @@
  *      recorrer todos los elementos.
  * 
  * Idea para resolverlo: usa cuatro variables que delimiten el
- * rectángulo que falta por recorrer:
+ * rectangulo que falta por recorrer:
  *  - filaArriba (empieza en 0)
  *  - filaAbajo  (empieza en matriz.length - 1)
  *  - columnaIzquierda (empieza en 0)
@@ -26,7 +26,7 @@
  * 
  * Usa un bucle while (filaArriba <= filaAbajo && columnaIzquierda <= columnaDerecha).
  * Dentro del while haz cuatro bucles for, uno para cada lado de la
- * "capa". Después de cada lado, ajusta el límite correspondiente
+ * "capa". Despues de cada lado, ajusta el limite correspondiente
  * (filaArriba++, columnaDerecha--, etc.).
  * 
  * Ejemplo con una matriz 4x4:
@@ -40,14 +40,14 @@
  *   1, 2, 3, 4, 8, 12, 16, 15, 14, 13, 9, 5, 6, 7, 11, 10
  * 
  * Visualmente:
- *  → → → →
- *           ↓
- *  → → ↓    ↓
- *  ↑   ↓    ↓
- *  ↑ ← ←    ↓
- *  ← ← ← ← ←
+ *  -> -> -> ->
+ *           ?
+ *  -> -> ?    ?
+ *  ?   ?    ?
+ *  ? <- <-    ?
+ *  <- <- <- <- <-
  * 
- * @author Agustín. A. Marquez. Piña
+ * @author Agustin. A. Marquez. Pina
  * @since 14/06/2025
  * @see <a href="mailto:agu1406@outlook.es">agu1406@outlook.es</a>
  * @see <a href="https://github.com/Agu1406/ClasesParticulares">Repositorio GitHub</a>

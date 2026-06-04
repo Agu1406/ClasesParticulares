@@ -1,10 +1,10 @@
-﻿package madrid.iescalderonbarca.ejercicios.arrays;
+package madrid.iescalderonbarca.ejercicios.arrays;
 
 /**
  * Ejercicio 10: Dado el siguiente array de caracteres {'P', 'a', 'l', 'a', 'b', 'r', 'a'}
  * convertirlo en un String.
  * 
- * @author Agustín. A. Marquez. Piña
+ * @author Agustin. A. Marquez. Pina
  * @since 14/06/2025
  * @see <a href="mailto:agu1406@outlook.es">agu1406@outlook.es</a>
  * @see <a href="https://github.com/Agu1406/ClasesParticulares">Repositorio GitHub</a>
@@ -23,14 +23,14 @@ public class Ejercicio10_Arrays_ArrayCharAString_RESUELTO {
     }
 
     /**
-     * Función que imprime un array de caracteres en formato ['c', 'a', 'r', ...]
+     * Funcion que imprime un array de caracteres en formato ['c', 'a', 'r', ...]
      */
     private static void imprimirArrayChar(char[] array) {
         System.out.print("[");
         // Bucle que recorre todos los caracteres del array para imprimirlos
         for (int indice = 0; indice < array.length; indice++) {
             System.out.print("'" + array[indice] + "'");
-            // Si no es el último elemento, imprimir una coma y un espacio
+            // Si no es el ultimo elemento, imprimir una coma y un espacio
             if (indice < array.length - 1) {
                 System.out.print(", ");
             }

@@ -7,7 +7,7 @@ import java.awt.*;
 /**
  * An image filter to create a solarization effect.
  * 
- * @author Michael Kölling and David J. Barnes.
+ * @author Michael K?lling and David J. Barnes.
  * @version 1.0
  */
 public class SolarizeFilter extends Filter

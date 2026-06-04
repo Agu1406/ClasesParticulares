@@ -1,4 +1,4 @@
-﻿package general.arrays.resueltos.medio;
+package general.arrays.resueltos.medio;
 
 /**
  * Ejercicio 3 (medio): Copiar y fusionar dos arrays
@@ -7,9 +7,9 @@
  * int[] array2 = {5, 6, 7}
  * 
  * Copia de array1: [1][2][3][4]
- * Fusión array1 + array2: [1][2][3][4][5][6][7]
+ * Fusion array1 + array2: [1][2][3][4][5][6][7]
  * 
- * @author Agustín. A. Marquez. Piña
+ * @author Agustin. A. Marquez. Pina
  * @since 14/06/2025
  * @see <a href="mailto:agu1406@outlook.es">agu1406@outlook.es</a>
  * @see <a href="https://github.com/Agu1406/ClasesParticulares">Repositorio GitHub</a>
@@ -32,10 +32,10 @@ public class Ejercicio3_ArrayCopiarFusionar {
     
     /**
      * Devuelve un nuevo array que contiene primero los elementos de
-     * arrayA y a continuación los de arrayB.
+     * arrayA y a continuacion los de arrayB.
      * @param arrayA Primer array
      * @param arrayB Segundo array
-     * @return Nuevo array con la concatenación de ambos
+     * @return Nuevo array con la concatenacion de ambos
      */
     public static int[] fusionar(int[] arrayA, int[] arrayB) {
         int[] resultado = new int[arrayA.length + arrayB.length];
@@ -72,7 +72,7 @@ public class Ejercicio3_ArrayCopiarFusionar {
         System.out.print("Copia de array1:        ");
         mostrar(copia);
         
-        System.out.print("Fusión array1 + array2: ");
+        System.out.print("Fusion array1 + array2: ");
         mostrar(fusion);
     }
 }

@@ -14,12 +14,12 @@ public class GestionAlumnosClase {
     private static Scanner sc = new Scanner(System.in);
     
     /**
-     * Método principal que inicia la aplicación
+     * Metodo principal que inicia la aplicacion
      */
     public static void main(String[] args) {
-        System.out.println("GESTIÓN DE ALUMNOS DE CLASE\n");
+        System.out.println("GESTION DE ALUMNOS DE CLASE\n");
         
-        // Paso a: Pedir número de alumnos
+        // Paso a: Pedir numero de alumnos
         int numeroAlumnos = pedirNumeroAlumnos();
         
         // Paso b: Pedir nombres y notas
@@ -33,10 +33,10 @@ public class GestionAlumnosClase {
     }
     
     /**
-     * Pide al usuario el número de alumnos de la clase
+     * Pide al usuario el numero de alumnos de la clase
      */
     private static int pedirNumeroAlumnos() {
-        System.out.print("Introduce el número de alumnos de la clase: ");
+        System.out.print("Introduce el numero de alumnos de la clase: ");
         int numero = sc.nextInt();
         return numero;
     }

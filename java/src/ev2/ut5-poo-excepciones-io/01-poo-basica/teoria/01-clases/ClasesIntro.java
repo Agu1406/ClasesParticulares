@@ -1,7 +1,7 @@
 package general.poobasico;
 
 /**
- * Teoría: clase y objeto en Java.
+ * Teoria: clase y objeto en Java.
  *
  * <p><b>Objetivo:</b> distinguir la <em>clase</em> (plantilla con atributos) del
  * <em>objeto</em> (instancia concreta creada con {@code new}).</p>
@@ -17,7 +17,7 @@ package general.poobasico;
  *
  * <p>Practica en {@code ejercicios/01-clases/pendientes} y {@code resueltos}.</p>
  *
- * @author Agustín. A. Marquez. Piña
+ * @author Agustin. A. Marquez. Pina
  * @since 02/06/2026
  * @see <a href="mailto:agu1406@outlook.es">agu1406@outlook.es</a>
  * @see <a href="https://github.com/Agu1406/ClasesParticulares">Repositorio GitHub</a>

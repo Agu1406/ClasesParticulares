@@ -4,9 +4,9 @@ import java.util.HashMap;
 
 /**
  * Ejercicio 8: Clave con mayor nota.
- * Recorre el mapa y encuentra el nombre del alumno con la nota más alta.
+ * Recorre el mapa y encuentra el nombre del alumno con la nota mas alta.
  *
- * @author Agustín. A. Marquez. Piña
+ * @author Agustin. A. Marquez. Pina
  * @since 29/05/2026
  * @see <a href="mailto:agu1406@outlook.es">agu1406@outlook.es</a>
  * @see <a href="https://github.com/Agu1406/ClasesParticulares">Repositorio GitHub</a>

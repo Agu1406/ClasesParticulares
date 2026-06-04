@@ -4,9 +4,9 @@ import java.util.HashMap;
 
 /**
  * Ejercicio 4: Sumar todos los valores.
- * Recorre solo los valores de un mapa de cantidades por día y calcula el total.
+ * Recorre solo los valores de un mapa de cantidades por dia y calcula el total.
  *
- * @author Agustín. A. Marquez. Piña
+ * @author Agustin. A. Marquez. Pina
  * @since 29/05/2026
  * @see <a href="mailto:agu1406@outlook.es">agu1406@outlook.es</a>
  * @see <a href="https://github.com/Agu1406/ClasesParticulares">Repositorio GitHub</a>
@@ -17,7 +17,7 @@ public class Ejercicio4_HashMapSumarValues {
         HashMap<String, Integer> ventas = new HashMap<>();
         ventas.put("Lunes", 12);
         ventas.put("Martes", 8);
-        ventas.put("Miércoles", 15);
+        ventas.put("Miercoles", 15);
 
         // TODO: Recorrer values() y sumar; mostrar total
     }

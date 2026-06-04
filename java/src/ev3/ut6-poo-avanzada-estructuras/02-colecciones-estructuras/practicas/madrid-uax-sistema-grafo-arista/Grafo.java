@@ -7,12 +7,12 @@ public class Grafo {
 
     public Grafo(int numNodos) {
         this.nodos = new Nodo[numNodos];
-        this.aristas = new Arista[numNodos * numNodos]; // Máximo número posible de aristas
+        this.aristas = new Arista[numNodos * numNodos]; // Maximo numero posible de aristas
         this.numNodos = 0;
         this.numAristas = 0;
     }
 
-    public boolean añadirArista(Arista arista) {
+    public boolean anadirArista(Arista arista) {
         if (numAristas < aristas.length) {
             aristas[numAristas++] = arista;
             return true;
@@ -20,7 +20,7 @@ public class Grafo {
         return false;
     }
 
-    public boolean añadirNodo(Nodo nodo) {
+    public boolean anadirNodo(Nodo nodo) {
         if (numNodos < nodos.length) {
             nodos[numNodos++] = nodo;
             return true;
@@ -32,7 +32,7 @@ public class Grafo {
         for (int i = 0; i < numAristas; i++) {
             if (aristas[i].getV1().igual(arista.getV1()) && 
                 aristas[i].getV2().igual(arista.getV2())) {
-                // Mover la última arista a esta posición
+                // Mover la ultima arista a esta posicion
                 aristas[i] = aristas[numAristas - 1];
                 numAristas--;
                 return true;
@@ -48,10 +48,10 @@ public class Grafo {
             for (int i = 0; i < numAristas; i++) {
                 if (aristas[i].getV1().igual(nodo) || aristas[i].getV2().igual(nodo)) {
                     eliminarArista(aristas[i]);
-                    i--; // Ajustar el índice ya que eliminamos una arista
+                    i--; // Ajustar el indice ya que eliminamos una arista
                 }
             }
-            // Mover el último nodo a esta posición
+            // Mover el ultimo nodo a esta posicion
             nodos[pos] = nodos[numNodos - 1];
             numNodos--;
             return true;
@@ -89,12 +89,12 @@ public class Grafo {
     }
 
     public Grafo limpieza() {
-        // Crear un nuevo grafo con el mismo número máximo de nodos
+        // Crear un nuevo grafo con el mismo numero maximo de nodos
         Grafo grafoLimpio = new Grafo(this.nodos.length);
         
         // 1. Copiar todos los nodos al nuevo grafo
         for (int i = 0; i < numNodos; i++) {
-            grafoLimpio.añadirNodo(this.nodos[i]);
+            grafoLimpio.anadirNodo(this.nodos[i]);
         }
         
         // 2. Copiar las aristas, cambiando el signo de las negativas
@@ -102,7 +102,7 @@ public class Grafo {
             Arista arista = this.aristas[i];
             int nuevoPeso = arista.getPeso() < 0 ? -arista.getPeso() : arista.getPeso();
             Arista nuevaArista = new Arista(arista.getV1(), arista.getV2(), nuevoPeso);
-            grafoLimpio.añadirArista(nuevaArista);
+            grafoLimpio.anadirArista(nuevaArista);
         }
         
         // 3. Eliminar nodos de grado 0

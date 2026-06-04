@@ -1,10 +1,10 @@
-﻿package general.metodos;
+package general.metodos;
 
 /**
- * Ejercicio 10: Función compleja combinada
- * Versión resuelta.
+ * Ejercicio 10: Funcion compleja combinada
+ * Version resuelta.
  *
- * @author Agustín. A. Marquez. Piña
+ * @author Agustin. A. Marquez. Pina
  * @since 29/04/2026
  * @see <a href="mailto:agu1406@outlook.es">agu1406@outlook.es</a>
  * @see <a href="https://github.com/Agu1406/ClasesParticulares">Repositorio GitHub</a>
@@ -18,7 +18,7 @@ public class Ejercicio10_Metodos_RESUELTO {
             for (int i = 1; i <= n; i++) {
                 suma += i;
             }
-            return "Número " + n + ", " + paridad + ", suma 1..n = " + suma;
+            return "Numero " + n + ", " + paridad + ", suma 1..n = " + suma;
         }
 
     public static void main(String[] args) {

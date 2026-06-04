@@ -1,5 +1,5 @@
 /**
- * Teoría: genéricos, regex y datos de intercambio (RA6).
+ * Teoria: genericos, regex y datos de intercambio (RA6).
  */
 public class GenericosRegexIntro {
 

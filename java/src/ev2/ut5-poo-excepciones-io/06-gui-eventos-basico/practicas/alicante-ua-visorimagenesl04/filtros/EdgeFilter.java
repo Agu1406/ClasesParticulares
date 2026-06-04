@@ -11,7 +11,7 @@ import java.util.ArrayList;
  * An image filter to detect edges and highlight them, a bit like 
  * a colored pencil drawing.
  * 
- * @author Michael Kölling and David J. Barnes.
+ * @author Michael K?lling and David J. Barnes.
  * @version 1.0
  */
 public class EdgeFilter extends Filter

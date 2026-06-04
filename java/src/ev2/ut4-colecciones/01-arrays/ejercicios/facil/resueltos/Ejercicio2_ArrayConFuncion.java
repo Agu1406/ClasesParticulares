@@ -1,23 +1,23 @@
-﻿package general.arrays.resueltos.facil;
+package general.arrays.resueltos.facil;
 
 /**
- * Ejercicio 2: Array unidimensional con función
- * Crea un array de números enteros con 5 elementos y asígnales valores.
- * Crea una función llamada mostrarArray que reciba el array como parámetro
- * y muestre todos sus valores usando un bucle for. Llámala desde el main
+ * Ejercicio 2: Array unidimensional con funcion
+ * Crea un array de numeros enteros con 5 elementos y asignales valores.
+ * Crea una funcion llamada mostrarArray que reciba el array como parametro
+ * y muestre todos sus valores usando un bucle for. Llamala desde el main
  * 
  * int[] ejemplo = new int{4, 6, 5, 7, 2}
  * 
  * Eso significa que el Array
  * tiene 5 cajitas, una cosa es el
  * valor dentro de las cajitas y
- * otra la posición que tienen
+ * otra la posicion que tienen
  * las cajitas, ejemplo
  * 
  * Valores = [4][6][5][7][2]
  * Posiciones = [0][1][2][3][4]
  * 
- * @author Agustín. A. Marquez. Piña
+ * @author Agustin. A. Marquez. Pina
  * @since 14/06/2025
  * @see <a href="mailto:agu1406@outlook.es">agu1406@outlook.es</a>
  * @see <a href="https://github.com/Agu1406/ClasesParticulares">Repositorio GitHub</a>
@@ -26,13 +26,13 @@
 public class Ejercicio2_ArrayConFuncion {
     
     /**
-     * Función que muestra todos los valores del array
+     * Funcion que muestra todos los valores del array
      * @param array Array de enteros a mostrar
      */
     public static void mostrarArray(int[] array) {
         System.out.println("Valores del array:");
         for (int indice = 0; indice < array.length; indice++) {
-            System.out.println("Posición " + indice + ": " + array[indice]);
+            System.out.println("Posicion " + indice + ": " + array[indice]);
         }
     }
     
@@ -40,7 +40,7 @@ public class Ejercicio2_ArrayConFuncion {
         // Crear array de 5 elementos y asignar valores
         int[] numeros = {4, 6, 5, 7, 2};
         
-        // Llamar a la función mostrarArray
+        // Llamar a la funcion mostrarArray
         mostrarArray(numeros);
     }
 }

@@ -14,7 +14,7 @@ public class LibroFisico extends Libro {
 
     @Override
     public void imprimir() {
-        System.out.printf("sistema_gestion_biblioteca.Libro Físico - Título: %s, Autor: %s, Ubicación: %s%n",
+        System.out.printf("sistema_gestion_biblioteca.Libro Fisico - Titulo: %s, Autor: %s, Ubicacion: %s%n",
             getTitulo(), getAutor(), ubicacion);
     }
 } 

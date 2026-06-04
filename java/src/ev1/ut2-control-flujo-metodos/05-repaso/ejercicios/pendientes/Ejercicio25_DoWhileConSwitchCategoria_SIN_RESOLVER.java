@@ -2,10 +2,10 @@ package general.repaso;
 
 /**
  * Ejercicio: do-while con switch
- * Objetivo: Clasifica productos por categoría numérica con switch.
- * Versión sin resolver.
+ * Objetivo: Clasifica productos por categoria numerica con switch.
+ * Version sin resolver.
  *
- * @author Agustín. A. Marquez. Piña
+ * @author Agustin. A. Marquez. Pina
  * @since 29/05/2026
  * @see <a href="mailto:agu1406@outlook.es">agu1406@outlook.es</a>
  * @see <a href="https://github.com/Agu1406/ClasesParticulares">Repositorio GitHub</a>

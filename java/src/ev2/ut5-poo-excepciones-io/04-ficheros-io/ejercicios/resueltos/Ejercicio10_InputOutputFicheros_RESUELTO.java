@@ -1,4 +1,4 @@
-﻿package general.inputoutputficheros;
+package general.inputoutputficheros;
 
 import java.io.BufferedWriter;
 import java.io.File;
@@ -7,9 +7,9 @@ import java.io.IOException;
 
 /**
  * Ejercicio 10: Crear reporte TXT tras copiar JPG
- * Versión resuelta.
+ * Version resuelta.
  *
- * @author Agustín. A. Marquez. Piña
+ * @author Agustin. A. Marquez. Pina
  * @since 29/04/2026
  * @see <a href="mailto:agu1406@outlook.es">agu1406@outlook.es</a>
  * @see <a href="https://github.com/Agu1406/ClasesParticulares">Repositorio GitHub</a>
@@ -22,7 +22,7 @@ public class Ejercicio10_InputOutputFicheros_RESUELTO {
         try (BufferedWriter bw = new BufferedWriter(new FileWriter(basePath + "/reporte_copia.txt"))) {
             bw.write("Nombre: " + copia.getName());
             bw.newLine();
-            bw.write("Tamaño bytes: " + copia.length());
+            bw.write("Tamano bytes: " + copia.length());
             bw.newLine();
         } catch (IOException e) {
             System.out.println(e.getMessage());

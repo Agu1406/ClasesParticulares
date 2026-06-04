@@ -1,11 +1,11 @@
-﻿package general.arraylist.resueltos;
+package general.arraylist.resueltos;
 
 import java.util.ArrayList;
 
 /**
  * Ejercicio 4 resuelto: Eliminar y verificar
  * 
- * @author Agustín. A. Marquez. Piña
+ * @author Agustin. A. Marquez. Pina
  * @since 26/04/2026
  * @see <a href="mailto:agu1406@outlook.es">agu1406@outlook.es</a>
  * @see <a href="https://github.com/Agu1406/ClasesParticulares">Repositorio GitHub</a>
@@ -22,7 +22,7 @@ public class Ejercicio4_ArrayListEliminar {
         nombres.remove("Ana");
 
         System.out.println("Lista final: " + nombres);
-        System.out.println("¿Contiene 'Ana'? " + nombres.contains("Ana"));
+        System.out.println("?Contiene 'Ana'? " + nombres.contains("Ana"));
     }
 }
 

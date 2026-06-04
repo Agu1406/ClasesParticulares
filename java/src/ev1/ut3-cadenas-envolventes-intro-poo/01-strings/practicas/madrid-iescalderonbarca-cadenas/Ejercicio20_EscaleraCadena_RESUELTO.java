@@ -1,10 +1,10 @@
-﻿package madrid.iescalderonbarca.ejercicios.cadenas;
+package madrid.iescalderonbarca.ejercicios.cadenas;
 
 /**
- * Ejercicio 20: Realiza la función escaleraCadena que recibe un String y devuelve otro en el que
- * alterna los caracteres del parámetro entre mayúsculas y minúsculas. - RESUELTO
+ * Ejercicio 20: Realiza la funcion escaleraCadena que recibe un String y devuelve otro en el que
+ * alterna los caracteres del parametro entre mayusculas y minusculas. - RESUELTO
  * 
- * @author Agustín. A. Marquez. Piña
+ * @author Agustin. A. Marquez. Pina
  * @since 14/01/2026
  * @see <a href="mailto:agu1406@outlook.es">agu1406@outlook.es</a>
  * @see <a href="https://github.com/Agu1406/ClasesParticulares">Repositorio GitHub</a>
@@ -12,7 +12,7 @@
  */
 public class Ejercicio20_EscaleraCadena_RESUELTO {
     public static void main(String[] args) {
-        // Pruebas de la función escaleraCadena
+        // Pruebas de la funcion escaleraCadena
         System.out.println("=== Pruebas de escaleraCadena ===");
         
         String texto1 = "Hola mundo";
@@ -44,11 +44,11 @@ public class Ejercicio20_EscaleraCadena_RESUELTO {
     }
     
     /**
-     * Alterna los caracteres de un String entre mayúsculas y minúsculas.
-     * El primer carácter será mayúscula, el segundo minúscula, el tercero mayúscula, etc.
+     * Alterna los caracteres de un String entre mayusculas y minusculas.
+     * El primer caracter sera mayuscula, el segundo minuscula, el tercero mayuscula, etc.
      * 
      * @param texto El String a transformar
-     * @return Un nuevo String con caracteres alternados entre mayúsculas y minúsculas
+     * @return Un nuevo String con caracteres alternados entre mayusculas y minusculas
      */
     public static String escaleraCadena(String texto) {
         if (texto == null) {
@@ -64,13 +64,13 @@ public class Ejercicio20_EscaleraCadena_RESUELTO {
         for (int i = 0; i < texto.length(); i++) {
             char c = texto.charAt(i);
             
-            // Si la posición es par (0, 2, 4, ...), convertir a mayúscula
-            // Si la posición es impar (1, 3, 5, ...), convertir a minúscula
+            // Si la posicion es par (0, 2, 4, ...), convertir a mayuscula
+            // Si la posicion es impar (1, 3, 5, ...), convertir a minuscula
             if (i % 2 == 0) {
-                // Posición par: mayúscula
+                // Posicion par: mayuscula
                 resultado.append(Character.toUpperCase(c));
             } else {
-                // Posición impar: minúscula
+                // Posicion impar: minuscula
                 resultado.append(Character.toLowerCase(c));
             }
         }

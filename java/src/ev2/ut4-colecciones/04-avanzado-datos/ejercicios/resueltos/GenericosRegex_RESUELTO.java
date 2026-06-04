@@ -1,3 +1,3 @@
 public class GenericosRegex_RESUELTO {
-    // Resuelto: añadir implementación didáctica progresiva.
+    // Resuelto: anadir implementacion didactica progresiva.
 }

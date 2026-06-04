@@ -1,17 +1,17 @@
-﻿package madrid.iescanaveral.ejercicios.convocatoria2022;
+package madrid.iescanaveral.ejercicios.convocatoria2022;
 
 /**
- * Ejercicio 8: ¿Cuál es la salida del siguiente código? - RESUELTO
+ * Ejercicio 8: ?Cual es la salida del siguiente codigo? - RESUELTO
  * 
  * RESPUESTA: TRES
  * 
- * Explicación:
+ * Explicacion:
  * - a1 y a2 son objetos diferentes (aunque tengan el mismo valor), por lo que a1 == a2 es false
  * - a1 y a3 son objetos diferentes, por lo que a1 == a3 es false
  * - a3 = a2 hace que a3 apunte al mismo objeto que a2, por lo que a2 == a3 es true
  * - El operador == compara referencias, no valores
  * 
- * @author Agustín. A. Marquez. Piña
+ * @author Agustin. A. Marquez. Pina
  * @since 14/01/2026
  * @see <a href="mailto:agu1406@outlook.es">agu1406@outlook.es</a>
  * @see <a href="https://github.com/Agu1406/ClasesParticulares">Repositorio GitHub</a>
@@ -41,7 +41,7 @@ public class Ejercicio8_ComparacionObjetos_RESUELTO {
             System.out.println(" TRES");  // Se imprime esto
         }
         
-        // Para comparar valores, usar equals() (después de implementarlo)
+        // Para comparar valores, usar equals() (despues de implementarlo)
         // if (a1.valor == a2.valor) { ... }
     }
 }

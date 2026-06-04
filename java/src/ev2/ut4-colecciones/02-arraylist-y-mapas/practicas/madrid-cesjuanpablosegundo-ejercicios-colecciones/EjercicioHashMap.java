@@ -9,7 +9,7 @@ import java.util.Scanner;
  * Este programa simula un registro de estudiantes y sus calificaciones donde puedes:
  * - Agregar estudiantes con sus notas
  * - Ver todos los estudiantes y sus notas
- * - Buscar la nota de un estudiante específico
+ * - Buscar la nota de un estudiante especifico
  * - Eliminar estudiantes
  * - Calcular el promedio de todas las notas
  * 
@@ -17,7 +17,7 @@ import java.util.Scanner;
  * - Clave (Key): El nombre del estudiante (String)
  * - Valor (Value): La nota del estudiante (Double)
  * 
- * Es muy útil cuando necesitas buscar información rápidamente usando una clave.
+ * Es muy util cuando necesitas buscar informacion rapidamente usando una clave.
  * 
  * @author Clases Particulares
  * @since 2025
@@ -34,12 +34,12 @@ public class EjercicioHashMap {
         int opcion;
         
         System.out.println("=== REGISTRO DE ESTUDIANTES Y NOTAS ===");
-        System.out.println("Sistema de gestión de calificaciones");
+        System.out.println("Sistema de gestion de calificaciones");
         System.out.println();
         
         do {
             mostrarMenu();
-            System.out.print("Elige una opción: ");
+            System.out.print("Elige una opcion: ");
             opcion = scanner.nextInt();
             scanner.nextLine(); // Limpiar el buffer
             
@@ -60,10 +60,10 @@ public class EjercicioHashMap {
                     calcularPromedio(estudiantes);
                     break;
                 case 6:
-                    System.out.println("¡Gracias por usar el sistema de calificaciones!");
+                    System.out.println("!Gracias por usar el sistema de calificaciones!");
                     break;
                 default:
-                    System.out.println("Opción no válida. Por favor elige del 1 al 6.");
+                    System.out.println("Opcion no valida. Por favor elige del 1 al 6.");
             }
             
             System.out.println();
@@ -74,7 +74,7 @@ public class EjercicioHashMap {
     }
     
     /**
-     * Muestra el menú de opciones disponibles
+     * Muestra el menu de opciones disponibles
      */
     private static void mostrarMenu() {
         System.out.println("1. Agregar estudiante y nota");
@@ -88,7 +88,7 @@ public class EjercicioHashMap {
     /**
      * Agrega un estudiante con su nota al HashMap
      * 
-     * @param estudiantes El HashMap donde se guardará el estudiante
+     * @param estudiantes El HashMap donde se guardara el estudiante
      * @param scanner El Scanner para leer la entrada del usuario
      */
     private static void agregarEstudiante(HashMap<String, Double> estudiantes, Scanner scanner) {
@@ -99,20 +99,20 @@ public class EjercicioHashMap {
         double nota = scanner.nextDouble();
         scanner.nextLine(); // Limpiar el buffer
         
-        // Verificar que la nota esté en el rango válido
+        // Verificar que la nota este en el rango valido
         if (nota < 0.0 || nota > 10.0) {
-            System.out.println("✗ La nota debe estar entre 0.0 y 10.0");
+            System.out.println("? La nota debe estar entre 0.0 y 10.0");
             return;
         }
         
         // Agregar el par clave-valor usando .put()
-        // Si el estudiante ya existe, su nota será actualizada
+        // Si el estudiante ya existe, su nota sera actualizada
         if (estudiantes.containsKey(nombre)) {
-            System.out.println("⚠ El estudiante ya existe. Se actualizará su nota.");
+            System.out.println("? El estudiante ya existe. Se actualizara su nota.");
         }
         
         estudiantes.put(nombre, nota);
-        System.out.println("✓ Estudiante '" + nombre + "' agregado con nota " + nota);
+        System.out.println("? Estudiante '" + nombre + "' agregado con nota " + nota);
         System.out.println("Total de estudiantes: " + estudiantes.size());
     }
     
@@ -122,7 +122,7 @@ public class EjercicioHashMap {
      * @param estudiantes El HashMap con los estudiantes
      */
     private static void mostrarTodosEstudiantes(HashMap<String, Double> estudiantes) {
-        // Verificar si el HashMap está vacío usando .isEmpty()
+        // Verificar si el HashMap esta vacio usando .isEmpty()
         if (estudiantes.isEmpty()) {
             System.out.println("No hay estudiantes registrados.");
             return;
@@ -145,9 +145,9 @@ public class EjercicioHashMap {
     }
     
     /**
-     * Busca la nota de un estudiante específico
+     * Busca la nota de un estudiante especifico
      * 
-     * @param estudiantes El HashMap donde se buscará el estudiante
+     * @param estudiantes El HashMap donde se buscara el estudiante
      * @param scanner El Scanner para leer la entrada del usuario
      */
     private static void buscarNotaEstudiante(HashMap<String, Double> estudiantes, Scanner scanner) {
@@ -163,18 +163,18 @@ public class EjercicioHashMap {
         if (estudiantes.containsKey(nombreBuscado)) {
             // Obtener el valor asociado a la clave usando .get()
             Double nota = estudiantes.get(nombreBuscado);
-            System.out.println("✓ Estudiante encontrado:");
+            System.out.println("? Estudiante encontrado:");
             System.out.printf("  Nombre: %s%n", nombreBuscado);
             System.out.printf("  Nota: %.2f%n", nota);
         } else {
-            System.out.println("✗ Estudiante '" + nombreBuscado + "' no encontrado.");
+            System.out.println("? Estudiante '" + nombreBuscado + "' no encontrado.");
         }
     }
     
     /**
      * Elimina un estudiante del HashMap
      * 
-     * @param estudiantes El HashMap del cual se eliminará el estudiante
+     * @param estudiantes El HashMap del cual se eliminara el estudiante
      * @param scanner El Scanner para leer la entrada del usuario
      */
     private static void eliminarEstudiante(HashMap<String, Double> estudiantes, Scanner scanner) {
@@ -190,11 +190,11 @@ public class EjercicioHashMap {
         if (estudiantes.containsKey(nombreEliminar)) {
             // Eliminar el par clave-valor usando .remove()
             Double notaEliminada = estudiantes.remove(nombreEliminar);
-            System.out.println("✓ Estudiante '" + nombreEliminar + "' eliminado.");
+            System.out.println("? Estudiante '" + nombreEliminar + "' eliminado.");
             System.out.println("  Nota eliminada: " + notaEliminada);
             System.out.println("Total de estudiantes restantes: " + estudiantes.size());
         } else {
-            System.out.println("✗ Estudiante '" + nombreEliminar + "' no encontrado.");
+            System.out.println("? Estudiante '" + nombreEliminar + "' no encontrado.");
         }
     }
     
@@ -220,7 +220,7 @@ public class EjercicioHashMap {
         // Calcular el promedio
         double promedio = suma / estudiantes.size();
         
-        System.out.println("=== ESTADÍSTICAS ===");
+        System.out.println("=== ESTADISTICAS ===");
         System.out.println("Total de estudiantes: " + estudiantes.size());
         System.out.printf("Suma de todas las notas: %.2f%n", suma);
         System.out.printf("Promedio de las notas: %.2f%n", promedio);

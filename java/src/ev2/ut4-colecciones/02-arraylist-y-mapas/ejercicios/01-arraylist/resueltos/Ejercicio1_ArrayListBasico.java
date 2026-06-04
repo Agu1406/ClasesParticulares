@@ -1,11 +1,11 @@
-﻿package general.arraylist.resueltos;
+package general.arraylist.resueltos;
 
 import java.util.ArrayList;
 
 /**
- * Ejercicio 1 resuelto: ArrayList básico
+ * Ejercicio 1 resuelto: ArrayList basico
  * 
- * @author Agustín. A. Marquez. Piña
+ * @author Agustin. A. Marquez. Pina
  * @since 26/04/2026
  * @see <a href="mailto:agu1406@outlook.es">agu1406@outlook.es</a>
  * @see <a href="https://github.com/Agu1406/ClasesParticulares">Repositorio GitHub</a>
@@ -22,7 +22,7 @@ public class Ejercicio1_ArrayListBasico {
 
         System.out.println("Valores de la lista:");
         for (int i = 0; i < numeros.size(); i++) {
-            System.out.println("Posición " + i + ": " + numeros.get(i));
+            System.out.println("Posicion " + i + ": " + numeros.get(i));
         }
     }
 }

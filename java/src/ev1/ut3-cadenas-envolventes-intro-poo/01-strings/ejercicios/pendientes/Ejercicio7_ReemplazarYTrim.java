@@ -4,7 +4,7 @@ package general.strings;
  * Ejercicio 7: Reemplazar y eliminar espacios
  * Usa trim() y replace() sobre un string con espacios al inicio y al final
  *
- * @author Agustín. A. Marquez. Piña
+ * @author Agustin. A. Marquez. Pina
  * @since 29/05/2026
  * @see <a href="mailto:agu1406@outlook.es">agu1406@outlook.es</a>
  * @see <a href="https://github.com/Agu1406/ClasesParticulares">Repositorio GitHub</a>
@@ -12,6 +12,6 @@ package general.strings;
  */
 public class Ejercicio7_ReemplazarYTrim {
     public static void main(String[] args) {
-        // TODO: trim; replace de carácter y de substring
+        // TODO: trim; replace de caracter y de substring
     }
 }

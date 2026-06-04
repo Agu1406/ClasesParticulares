@@ -1,9 +1,9 @@
 package general.poo_abstraccion;
 
 /**
- * Ejercicio 1: Abstracción con cuentas bancarias (RESUELTO)
+ * Ejercicio 1: Abstraccion con cuentas bancarias (RESUELTO)
  * 
- * @author Agustín. A. Marquez. Piña
+ * @author Agustin. A. Marquez. Pina
  * @since 14/06/2025
  * @see <a href="mailto:agu1406@outlook.es">agu1406@outlook.es</a>
  * @see <a href="https://github.com/Agu1406/ClasesParticulares">Repositorio GitHub</a>
@@ -26,7 +26,7 @@ public class Ejercicio1_AbstraccionCuenta_RESUELTO {
                 return;
             }
             saldo += cantidad;
-            System.out.println("Depósito de " + cantidad + " realizado. Saldo actual: " + saldo);
+            System.out.println("Deposito de " + cantidad + " realizado. Saldo actual: " + saldo);
         }
 
         public abstract void retirar(double cantidad);
@@ -53,7 +53,7 @@ public class Ejercicio1_AbstraccionCuenta_RESUELTO {
                 return;
             }
             if (cantidad > limiteRetiroDiario) {
-                System.out.println("La cantidad supera el límite diario de retiro: " + limiteRetiroDiario);
+                System.out.println("La cantidad supera el limite diario de retiro: " + limiteRetiroDiario);
                 return;
             }
             if (cantidad > saldo) {
@@ -66,12 +66,12 @@ public class Ejercicio1_AbstraccionCuenta_RESUELTO {
     }
 
     public static void main(String[] args) {
-        CuentaAhorro cuenta = new CuentaAhorro("Lucía", 1000, 300);
+        CuentaAhorro cuenta = new CuentaAhorro("Lucia", 1000, 300);
 
         cuenta.mostrarDatos();
         cuenta.depositar(200);
         cuenta.retirar(150);
-        cuenta.retirar(400); // supera límite diario
+        cuenta.retirar(400); // supera limite diario
         cuenta.mostrarDatos();
     }
 }

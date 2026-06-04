@@ -2,10 +2,10 @@ package general.repaso;
 
 /**
  * Ejercicio: while con if-else
- * Objetivo: Clasifica temperaturas en frío/calor con if-else.
- * Versión sin resolver.
+ * Objetivo: Clasifica temperaturas en frio/calor con if-else.
+ * Version sin resolver.
  *
- * @author Agustín. A. Marquez. Piña
+ * @author Agustin. A. Marquez. Pina
  * @since 29/05/2026
  * @see <a href="mailto:agu1406@outlook.es">agu1406@outlook.es</a>
  * @see <a href="https://github.com/Agu1406/ClasesParticulares">Repositorio GitHub</a>

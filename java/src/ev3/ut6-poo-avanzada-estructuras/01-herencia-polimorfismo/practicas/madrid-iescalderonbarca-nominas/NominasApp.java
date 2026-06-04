@@ -5,12 +5,12 @@ import java.util.List;
 import java.util.Scanner;
 
 /**
- * Práctica nóminas.
+ * Practica nominas.
  *
- * Clase principal con un menú muy sencillo que el alumno puede
- * ampliar y completar según el enunciado.
+ * Clase principal con un menu muy sencillo que el alumno puede
+ * ampliar y completar segun el enunciado.
  *
- * VERSIÓN SIN RESOLVER (PLANTILLA PARA EL ALUMNO)
+ * VERSION SIN RESOLVER (PLANTILLA PARA EL ALUMNO)
  */
 public class NominasApp {
 
@@ -23,21 +23,21 @@ public class NominasApp {
         int opcion;
         do {
             mostrarMenu();
-            opcion = leerEntero("Elige una opción: ");
+            opcion = leerEntero("Elige una opcion: ");
             switch (opcion) {
                 case 1 -> altaEmpleado();
                 case 2 -> bajaEmpleado();
                 case 3 -> listarSueldos();
                 case 4 -> mostrarIndemnizaciones();
-                case 0 -> System.out.println("Saliendo de la aplicación de nóminas...");
-                default -> System.out.println("Opción no válida.");
+                case 0 -> System.out.println("Saliendo de la aplicacion de nominas...");
+                default -> System.out.println("Opcion no valida.");
             }
         } while (opcion != 0);
     }
 
     private static void mostrarMenu() {
         System.out.println("=====================================");
-        System.out.println("        MENÚ PRÁCTICA NÓMINAS        ");
+        System.out.println("        MENU PRACTICA NOMINAS        ");
         System.out.println("=====================================");
         System.out.println("1. Dar de alta un empleado");
         System.out.println("2. Dar de baja un empleado");
@@ -48,14 +48,14 @@ public class NominasApp {
     }
 
     /**
-     * TODO: completar la lógica de alta de empleados.
+     * TODO: completar la logica de alta de empleados.
      */
     private static void altaEmpleado() {
         System.out.println("[ALTA EMPLEADO] (por completar por el alumno)");
     }
 
     /**
-     * TODO: completar la lógica de baja de empleados.
+     * TODO: completar la logica de baja de empleados.
      */
     private static void bajaEmpleado() {
         System.out.println("[BAJA EMPLEADO] (por completar por el alumno)");
@@ -69,7 +69,7 @@ public class NominasApp {
     }
 
     /**
-     * TODO: recorrer la lista EMPLEADOS y mostrar indemnización con indemnizacion().
+     * TODO: recorrer la lista EMPLEADOS y mostrar indemnizacion con indemnizacion().
      */
     private static void mostrarIndemnizaciones() {
         System.out.println("[MOSTRAR INDEMNIZACIONES] (por completar por el alumno)");
@@ -78,7 +78,7 @@ public class NominasApp {
     private static int leerEntero(String mensaje) {
         System.out.print(mensaje);
         while (!SC.hasNextInt()) {
-            System.out.print("Introduce un número entero válido: ");
+            System.out.print("Introduce un numero entero valido: ");
             SC.next();
         }
         int valor = SC.nextInt();

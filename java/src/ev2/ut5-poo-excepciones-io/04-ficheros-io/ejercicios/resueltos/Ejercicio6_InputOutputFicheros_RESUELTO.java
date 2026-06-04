@@ -1,14 +1,14 @@
-﻿package general.inputoutputficheros;
+package general.inputoutputficheros;
 
 import java.io.BufferedReader;
 import java.io.FileReader;
 import java.io.IOException;
 
 /**
- * Ejercicio 6: Contar líneas de un TXT
- * Versión resuelta.
+ * Ejercicio 6: Contar lineas de un TXT
+ * Version resuelta.
  *
- * @author Agustín. A. Marquez. Piña
+ * @author Agustin. A. Marquez. Pina
  * @since 29/04/2026
  * @see <a href="mailto:agu1406@outlook.es">agu1406@outlook.es</a>
  * @see <a href="https://github.com/Agu1406/ClasesParticulares">Repositorio GitHub</a>
@@ -22,7 +22,7 @@ public class Ejercicio6_InputOutputFicheros_RESUELTO {
             while (br.readLine() != null) {
                 contador++;
             }
-            System.out.println("Líneas: " + contador);
+            System.out.println("Lineas: " + contador);
         } catch (IOException e) {
             System.out.println(e.getMessage());
         }

@@ -1,11 +1,11 @@
-﻿package general.arrays.resueltos.medio;
+package general.arrays.resueltos.medio;
 
 /**
- * Ejercicio 7: Sumar una fila de un array bidimensional con función
- * Crea un array bidimensional de números enteros de 3 filas y 3 columnas
- * y asígnales valores. Crea una función llamada sumarFila que reciba el array
- * y un número de fila como parámetros, use un bucle for para sumar todos los
- * elementos de esa fila y retorne el resultado. Llámala desde el main para
+ * Ejercicio 7: Sumar una fila de un array bidimensional con funcion
+ * Crea un array bidimensional de numeros enteros de 3 filas y 3 columnas
+ * y asignales valores. Crea una funcion llamada sumarFila que reciba el array
+ * y un numero de fila como parametros, use un bucle for para sumar todos los
+ * elementos de esa fila y retorne el resultado. Llamala desde el main para
  * sumar la primera fila (fila 0)
  * 
  * Array bidimensional de 3x3:
@@ -16,10 +16,10 @@
  * Fila [1] [ ][ ][ ]
  * Fila [2] [ ][ ][ ]
  * 
- * Para acceder a una posición: array[fila][columna]
- * Ejemplo: array[0][1] es la posición fila 0, columna 1
+ * Para acceder a una posicion: array[fila][columna]
+ * Ejemplo: array[0][1] es la posicion fila 0, columna 1
  * 
- * @author Agustín. A. Marquez. Piña
+ * @author Agustin. A. Marquez. Pina
  * @since 14/06/2025
  * @see <a href="mailto:agu1406@outlook.es">agu1406@outlook.es</a>
  * @see <a href="https://github.com/Agu1406/ClasesParticulares">Repositorio GitHub</a>
@@ -28,9 +28,9 @@
 public class Ejercicio7_ArraySumarFila {
     
     /**
-     * Función que suma todos los elementos de una fila específica
+     * Funcion que suma todos los elementos de una fila especifica
      * @param tablaNumeros Array bidimensional de enteros
-     * @param fila Número de fila a sumar (0-indexed)
+     * @param fila Numero de fila a sumar (0-indexed)
      * @return Suma de los elementos de la fila
      */
     public static int sumarFila(int[][] tablaNumeros, int fila) {
@@ -49,7 +49,7 @@ public class Ejercicio7_ArraySumarFila {
             {7, 8, 9}
         };
         
-        // Llamar a la función para sumar la primera fila (fila 0)
+        // Llamar a la funcion para sumar la primera fila (fila 0)
         int sumaFila0 = sumarFila(tablaNumeros, 0);
         System.out.println("La suma de la fila 0 es: " + sumaFila0);
     }

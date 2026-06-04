@@ -29,9 +29,9 @@ public class EmpleadoPorHoras extends Empleado {
         if (tarifaPorHora < 0) {
             throw new IllegalArgumentException("La tarifa por hora no puede ser negativa");
         }
-        // Comprobamos que la tarifa por hora no es superior a 150€
+        // Comprobamos que la tarifa por hora no es superior a 150?
         if (tarifaPorHora > 150) {
-            throw new TarifaExcesivaException("La tarifa por hora no puede superar los 150€");
+            throw new TarifaExcesivaException("La tarifa por hora no puede superar los 150?");
         }
         // Asignamos los valores a los atributos
         this.horasTrabajadas = horasTrabajadas;
@@ -40,7 +40,7 @@ public class EmpleadoPorHoras extends Empleado {
 
     /**
      * Calcula el salario mensual del empleado por horas.
-     * Se asume un mes estándar de 4 semanas.
+     * Se asume un mes estandar de 4 semanas.
      * 
      * @return El salario mensual del empleado por horas.
      */
@@ -50,9 +50,9 @@ public class EmpleadoPorHoras extends Empleado {
          * Es curioso porque si las horas trabajadas se registran por semana,
          * el salario mensual se calcula multiplicando las horas trabajadas por la
          * tarifa por hora y por 4 (semanas que tiene un mes), pero si fues el total
-         * de horas trabajadas en un mes, el salario mensual se calcularía simplemente
+         * de horas trabajadas en un mes, el salario mensual se calcularia simplemente
          * multiplicando el total de horas trabajadas por la tarifa por hora, lo dejare
-         * como está por ahora, asumiendo que las horas trabajadas se registran por
+         * como esta por ahora, asumiendo que las horas trabajadas se registran por
          * semana.
          */
         return horasTrabajadas * tarifaPorHora * 4;

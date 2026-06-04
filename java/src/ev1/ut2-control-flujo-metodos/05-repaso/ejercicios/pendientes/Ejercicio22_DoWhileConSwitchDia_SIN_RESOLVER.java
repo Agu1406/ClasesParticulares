@@ -2,10 +2,10 @@ package general.repaso;
 
 /**
  * Ejercicio: do-while con switch
- * Objetivo: Muestra nombre de día para códigos 1..7 con switch.
- * Versión sin resolver.
+ * Objetivo: Muestra nombre de dia para codigos 1..7 con switch.
+ * Version sin resolver.
  *
- * @author Agustín. A. Marquez. Piña
+ * @author Agustin. A. Marquez. Pina
  * @since 29/05/2026
  * @see <a href="mailto:agu1406@outlook.es">agu1406@outlook.es</a>
  * @see <a href="https://github.com/Agu1406/ClasesParticulares">Repositorio GitHub</a>

@@ -17,7 +17,7 @@ public class SorteoMundial {
     private static Random random = new Random();
     
     /**
-     * Método principal que inicia la aplicación
+     * Metodo principal que inicia la aplicacion
      */
     public static void main(String[] args) {
         System.out.println("SORTEO DEL MUNDIAL\n");
@@ -41,20 +41,20 @@ public class SorteoMundial {
         System.out.println("Introduce las 5 selecciones del bombo " + numeroBombo + ":");
         
         for (int indice = 0; indice < 5; indice++) {
-            System.out.print("Selección " + (indice + 1) + ": ");
+            System.out.print("Seleccion " + (indice + 1) + ": ");
             String seleccion = sc.next();
             
-            // Verificar que no esté vacía
+            // Verificar que no este vacia
             if (seleccion.isEmpty()) {
-                System.out.println("El nombre no puede estar vacío. Inténtalo de nuevo.");
-                indice--; // Repetir esta iteración
+                System.out.println("El nombre no puede estar vacio. Intentalo de nuevo.");
+                indice--; // Repetir esta iteracion
                 continue;
             }
             
-            // Verificar que no esté duplicada en el mismo bombo
+            // Verificar que no este duplicada en el mismo bombo
             if (bombo.contains(seleccion)) {
-                System.out.println("Esta selección ya está en el bombo. Inténtalo de nuevo.");
-                indice--; // Repetir esta iteración
+                System.out.println("Esta seleccion ya esta en el bombo. Intentalo de nuevo.");
+                indice--; // Repetir esta iteracion
                 continue;
             }
             
@@ -85,7 +85,7 @@ public class SorteoMundial {
             System.out.println("Partido " + (indice + 1) + ": " + equipo1 + " vs " + equipo2);
         }
         
-        System.out.println("\nSorteo completado. ¡Buena suerte a todos los equipos!");
+        System.out.println("\nSorteo completado. !Buena suerte a todos los equipos!");
     }
 }
 

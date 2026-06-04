@@ -14,7 +14,7 @@ public class Torre extends Pieza {
         char columnaDestino = posicionDestino.charAt(0);
         int filaDestino = Character.getNumericValue(posicionDestino.charAt(1));
 
-        // La torre se mueve en línea recta (misma columna o misma fila)
+        // La torre se mueve en linea recta (misma columna o misma fila)
         return columnaOrigen == columnaDestino || filaOrigen == filaDestino;
     }
 

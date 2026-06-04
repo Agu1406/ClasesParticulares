@@ -1,10 +1,10 @@
-﻿package madrid.iescalderonbarca.ejercicios.cadenas;
+package madrid.iescalderonbarca.ejercicios.cadenas;
 
 /**
- * Ejercicio 17: Codifica la función ocultaVocales que recibe un String y lo devuelve cambiando
- * todas las vocales sin acentuar presentes en él por caracteres 'X'. - RESUELTO
+ * Ejercicio 17: Codifica la funcion ocultaVocales que recibe un String y lo devuelve cambiando
+ * todas las vocales sin acentuar presentes en el por caracteres 'X'. - RESUELTO
  * 
- * @author Agustín. A. Marquez. Piña
+ * @author Agustin. A. Marquez. Pina
  * @since 14/01/2026
  * @see <a href="mailto:agu1406@outlook.es">agu1406@outlook.es</a>
  * @see <a href="https://github.com/Agu1406/ClasesParticulares">Repositorio GitHub</a>
@@ -12,7 +12,7 @@
  */
 public class Ejercicio17_OcultaVocales_RESUELTO {
     public static void main(String[] args) {
-        // Pruebas de la función ocultaVocales
+        // Pruebas de la funcion ocultaVocales
         System.out.println("=== Pruebas de ocultaVocales ===");
         
         String texto1 = "Hola mundo";
@@ -22,11 +22,11 @@ public class Ejercicio17_OcultaVocales_RESUELTO {
         System.out.println("Esperado: \"HXlX mXndX\"");
         System.out.println();
         
-        String texto2 = "PROGRAMACIÓN";
+        String texto2 = "PROGRAMACION";
         String resultado2 = ocultaVocales(texto2);
         System.out.println("Texto: \"" + texto2 + "\"");
         System.out.println("Resultado: \"" + resultado2 + "\"");
-        System.out.println("Esperado: \"PRXGRXMXCXÓN\" (solo vocales sin acentuar)");
+        System.out.println("Esperado: \"PRXGRXMXCXON\" (solo vocales sin acentuar)");
         System.out.println();
         
         String texto3 = "xyz";
@@ -38,9 +38,9 @@ public class Ejercicio17_OcultaVocales_RESUELTO {
     
     /**
      * Oculta todas las vocales sin acentuar (a, e, i, o, u, A, E, I, O, U) 
-     * reemplazándolas por 'X'.
+     * reemplazandolas por 'X'.
      * 
-     * @param texto El String en el que se ocultarán las vocales
+     * @param texto El String en el que se ocultaran las vocales
      * @return Un nuevo String con las vocales sin acentuar reemplazadas por 'X'
      */
     public static String ocultaVocales(String texto) {
@@ -52,7 +52,7 @@ public class Ejercicio17_OcultaVocales_RESUELTO {
         
         for (int i = 0; i < texto.length(); i++) {
             char c = texto.charAt(i);
-            // Verificar si es una vocal sin acentuar (mayúscula o minúscula)
+            // Verificar si es una vocal sin acentuar (mayuscula o minuscula)
             if (c == 'a' || c == 'e' || c == 'i' || c == 'o' || c == 'u' ||
                 c == 'A' || c == 'E' || c == 'I' || c == 'O' || c == 'U') {
                 resultado.append('X');

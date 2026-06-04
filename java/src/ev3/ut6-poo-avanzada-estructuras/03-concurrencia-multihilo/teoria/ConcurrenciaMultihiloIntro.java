@@ -1,7 +1,7 @@
 /**
- * Teoría: concurrencia y multihilo en Java.
+ * Teoria: concurrencia y multihilo en Java.
  *
- * <p>Objetivo: comprender hilos, sincronización básica y problemas de carrera.</p>
+ * <p>Objetivo: comprender hilos, sincronizacion basica y problemas de carrera.</p>
  */
 public class ConcurrenciaMultihiloIntro {
 

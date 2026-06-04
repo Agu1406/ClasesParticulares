@@ -4,7 +4,7 @@ package general.strings;
  * Ejercicio 2: Longitud de un string
  * Crea un string y muestra su longitud por pantalla usando length()
  *
- * @author Agustín. A. Marquez. Piña
+ * @author Agustin. A. Marquez. Pina
  * @since 29/05/2026
  * @see <a href="mailto:agu1406@outlook.es">agu1406@outlook.es</a>
  * @see <a href="https://github.com/Agu1406/ClasesParticulares">Repositorio GitHub</a>

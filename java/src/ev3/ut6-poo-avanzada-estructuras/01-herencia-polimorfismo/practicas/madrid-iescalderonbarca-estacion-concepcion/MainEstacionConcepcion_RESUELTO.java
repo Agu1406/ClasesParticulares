@@ -3,11 +3,11 @@ package madrid.iescalderonbarca.ejercicios.estacionconcepcion;
 import java.util.Scanner;
 
 /**
- * Menú principal de la práctica Estación Concepción — RESUELTO.
+ * Menu principal de la practica Estacion Concepcion - RESUELTO.
  *
  * <p>Enunciado en {@code estacion-concepcion--madrid-iescalderonbarca.pdf} (misma carpeta).</p>
  *
- * @author Agustín. A. Marquez. Piña
+ * @author Agustin. A. Marquez. Pina
  * @since 29/05/2026
  * @see <a href="mailto:agu1406@outlook.es">agu1406@outlook.es</a>
  * @see <a href="https://github.com/Agu1406/ClasesParticulares">Repositorio GitHub</a>
@@ -22,14 +22,14 @@ public class MainEstacionConcepcion_RESUELTO {
         int opcion;
         do {
             mostrarMenu();
-            opcion = leerEntero("Opción: ");
+            opcion = leerEntero("Opcion: ");
             System.out.println();
             switch (opcion) {
                 case 1 -> registrarPasajero();
                 case 2 -> simularLlegadaTren();
                 case 3 -> ESTACION.mostrarEstado();
-                case 4 -> System.out.println("Fin de la simulación.");
-                default -> System.out.println("Opción no válida.");
+                case 4 -> System.out.println("Fin de la simulacion.");
+                default -> System.out.println("Opcion no valida.");
             }
         } while (opcion != 4);
         TECLADO.close();
@@ -37,28 +37,28 @@ public class MainEstacionConcepcion_RESUELTO {
 
     private static void mostrarMenu() {
         System.out.println();
-        System.out.println("--- Metro Línea 6 · Estación Concepción ---");
-        System.out.println("1. Registrar llegada de pasajero al andén");
+        System.out.println("--- Metro Linea 6 ? Estacion Concepcion ---");
+        System.out.println("1. Registrar llegada de pasajero al anden");
         System.out.println("2. Simular llegada de tren y embarque");
-        System.out.println("3. Mostrar estado de la estación");
+        System.out.println("3. Mostrar estado de la estacion");
         System.out.println("4. Salir");
     }
 
     private static void registrarPasajero() {
         System.out.print("Nombre del pasajero: ");
         String nombre = TECLADO.nextLine().trim();
-        System.out.print("Estación destino: ");
+        System.out.print("Estacion destino: ");
         String destino = TECLADO.nextLine().trim();
         if (nombre.isEmpty() || destino.isEmpty()) {
             System.out.println("Nombre y destino son obligatorios.");
             return;
         }
         ESTACION.registrarLlegadaPasajero(new Pasajero(nombre, destino));
-        System.out.println("Pasajero registrado en el andén.");
+        System.out.println("Pasajero registrado en el anden.");
     }
 
     private static void simularLlegadaTren() {
-        int numero = leerEntero("Número de tren: ");
+        int numero = leerEntero("Numero de tren: ");
         int capacidad = leerEntero("Capacidad del tren: ");
         if (capacidad <= 0) {
             System.out.println("La capacidad debe ser positiva.");
@@ -73,7 +73,7 @@ public class MainEstacionConcepcion_RESUELTO {
         Tren tren = new Tren(numero, capacidad, sentido);
         System.out.println("Llega " + tren);
 
-        int bajan = leerEntero("¿Cuántos pasajeros bajan en Concepción? ");
+        int bajan = leerEntero("?Cuantos pasajeros bajan en Concepcion? ");
         try {
             tren.bajarPasajeros(bajan);
         } catch (IllegalArgumentException e) {
@@ -94,7 +94,7 @@ public class MainEstacionConcepcion_RESUELTO {
         System.out.print(mensaje);
         while (!TECLADO.hasNextInt()) {
             TECLADO.nextLine();
-            System.out.print("Introduce un número entero: ");
+            System.out.print("Introduce un numero entero: ");
         }
         int valor = TECLADO.nextInt();
         TECLADO.nextLine();

@@ -1,7 +1,7 @@
 package general.poobasico;
 
 /**
- * Teoría: varios objetos de la misma clase.
+ * Teoria: varios objetos de la misma clase.
  *
  * <p><b>Objetivo:</b> crear varias instancias independientes; cada objeto tiene sus
  * propios valores de atributo.</p>
@@ -11,7 +11,7 @@ package general.poobasico;
  *
  * <p>Practica en {@code ejercicios/02-objetos/pendientes} y {@code resueltos}.</p>
  *
- * @author Agustín. A. Marquez. Piña
+ * @author Agustin. A. Marquez. Pina
  * @since 02/06/2026
  * @see <a href="mailto:agu1406@outlook.es">agu1406@outlook.es</a>
  * @see <a href="https://github.com/Agu1406/ClasesParticulares">Repositorio GitHub</a>

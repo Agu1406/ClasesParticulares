@@ -8,7 +8,7 @@ import valencia.alicante.ua.visorimagenesl04.imagen.OFImage;
  * application. Filters can be applied to OFImages by invoking the apply 
  * method.
  * 
- * @author Michael Kölling and David J. Barnes.
+ * @author Michael K?lling and David J. Barnes.
  * @version 1.0
  */
 public abstract class Filter

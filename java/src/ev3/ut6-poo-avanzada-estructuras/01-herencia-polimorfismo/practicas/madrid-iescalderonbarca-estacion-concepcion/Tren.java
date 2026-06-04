@@ -1,9 +1,9 @@
 package madrid.iescalderonbarca.ejercicios.estacionconcepcion;
 
 /**
- * Tren de la línea 6 que para en Concepción.
+ * Tren de la linea 6 que para en Concepcion.
  *
- * @author Agustín. A. Marquez. Piña
+ * @author Agustin. A. Marquez. Pina
  * @since 29/05/2026
  * @see <a href="mailto:agu1406@outlook.es">agu1406@outlook.es</a>
  * @see <a href="https://github.com/Agu1406/ClasesParticulares">Repositorio GitHub</a>
@@ -55,13 +55,13 @@ public class Tren {
 
     public void bajarPasajeros(int cantidad) {
         if (cantidad < 0 || cantidad > ocupacion) {
-            throw new IllegalArgumentException("Cantidad de bajadas no válida.");
+            throw new IllegalArgumentException("Cantidad de bajadas no valida.");
         }
         ocupacion -= cantidad;
     }
 
     @Override
     public String toString() {
-        return "Tren " + numero + " (" + sentido + ") — " + ocupacion + "/" + capacidad + " plazas";
+        return "Tren " + numero + " (" + sentido + ") - " + ocupacion + "/" + capacidad + " plazas";
     }
 }

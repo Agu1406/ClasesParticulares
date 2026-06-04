@@ -5,24 +5,24 @@ import java.util.List;
 import java.util.Scanner;
 
 /**
- * Gestión de nóminas de una empresa (IES Calderón Barca).
+ * Gestion de nominas de una empresa (IES Calderon Barca).
  *
  * <p>Enunciado: {@code nominas--madrid-iescalderonbarca.pdf} y
- * {@code practica-obligatoria-ra4--madrid-iescalderonbarca.pdf} (carpeta de la práctica).</p>
+ * {@code practica-obligatoria-ra4--madrid-iescalderonbarca.pdf} (carpeta de la practica).</p>
  *
- * <p><b>Objetivo:</b> administrar empleados de distintas categorías y calcular sueldos e indemnizaciones.</p>
+ * <p><b>Objetivo:</b> administrar empleados de distintas categorias y calcular sueldos e indemnizaciones.</p>
  *
  * <p>Para ello, el programa debe:</p>
  * <ul>
- *   <li>Ofrecer un menú repetitivo: alta, baja, cálculo de sueldos e indemnizaciones.</li>
+ *   <li>Ofrecer un menu repetitivo: alta, baja, calculo de sueldos e indemnizaciones.</li>
  *   <li>Modelar empleados con herencia ({@link Empleado} y subclases).</li>
  *   <li>Aplicar polimorfismo mediante la interfaz {@link Cobros}.</li>
- *   <li>Persistir la lista de empleados en memoria durante la sesión.</li>
+ *   <li>Persistir la lista de empleados en memoria durante la sesion.</li>
  * </ul>
  *
  * <p>Utiliza POO (herencia, interfaces), {@link java.util.ArrayList} y {@link Scanner}.</p>
  *
- * @author Agustín. A. Marquez. Piña
+ * @author Agustin. A. Marquez. Pina
  * @since 29/05/2026
  * @see <a href="mailto:agu1406@outlook.es">agu1406@outlook.es</a>
  * @see <a href="https://github.com/Agu1406/ClasesParticulares">Repositorio GitHub</a>
@@ -42,19 +42,19 @@ public class MainNominas {
                 case 2 -> bajaEmpleado();
                 case 3 -> calcularSueldos();
                 case 4 -> calcularIndemnizaciones();
-                default -> System.out.println("Opción no válida.");
+                default -> System.out.println("Opcion no valida.");
             }
         }
     }
 
     private static void mostrarMenu() {
         System.out.println();
-        System.out.println("--- NÓMINAS ---");
+        System.out.println("--- NOMINAS ---");
         System.out.println("1. Alta de empleado");
         System.out.println("2. Baja de empleado");
         System.out.println("3. Calcular sueldo de empleados");
-        System.out.println("4. Calcular indemnización por despido");
-        System.out.print("Elija opción (1-4): ");
+        System.out.println("4. Calcular indemnizacion por despido");
+        System.out.print("Elija opcion (1-4): ");
     }
 
     private static int leerOpcion() {
@@ -66,9 +66,9 @@ public class MainNominas {
     }
 
     private static void altaEmpleado() {
-        // TODO: pedir nombre, apellidos, DNI, antigüedad en días y categoría.
+        // TODO: pedir nombre, apellidos, DNI, antiguedad en dias y categoria.
         // Crear el empleado con la clase correspondiente (MozoAlmacen, JefeSeccion, etc.)
-        // y añadirlo a la lista empleados.
+        // y anadirlo a la lista empleados.
         System.out.println("TODO: implementar alta de empleado.");
     }
 
@@ -79,7 +79,7 @@ public class MainNominas {
         if (quitado) {
             System.out.println("Empleado dado de baja.");
         } else {
-            System.out.println("No se encontró ningún empleado con ese DNI.");
+            System.out.println("No se encontro ningun empleado con ese DNI.");
         }
     }
 
@@ -97,7 +97,7 @@ public class MainNominas {
             System.out.println("No hay empleados en la empresa.");
             return;
         }
-        // TODO: recorrer la lista y mostrar la indemnización de cada empleado usando polimorfismo.
-        System.out.println("TODO: listar indemnización por despido de cada empleado.");
+        // TODO: recorrer la lista y mostrar la indemnizacion de cada empleado usando polimorfismo.
+        System.out.println("TODO: listar indemnizacion por despido de cada empleado.");
     }
 }

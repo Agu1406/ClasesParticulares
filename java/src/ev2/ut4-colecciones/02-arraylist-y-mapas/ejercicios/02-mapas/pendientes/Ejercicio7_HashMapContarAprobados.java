@@ -4,9 +4,9 @@ import java.util.HashMap;
 
 /**
  * Ejercicio 7: Contar aprobados.
- * Cuenta cuántas notas del mapa son mayores o iguales que 5.0 (aprobado).
+ * Cuenta cuantas notas del mapa son mayores o iguales que 5.0 (aprobado).
  *
- * @author Agustín. A. Marquez. Piña
+ * @author Agustin. A. Marquez. Pina
  * @since 29/05/2026
  * @see <a href="mailto:agu1406@outlook.es">agu1406@outlook.es</a>
  * @see <a href="https://github.com/Agu1406/ClasesParticulares">Repositorio GitHub</a>

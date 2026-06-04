@@ -12,15 +12,15 @@ import java.util.TreeSet;
 public class Soluciones_RESUELTO {
     
     /**
-     * Ejercicio 1 - Análisis de Complejidad
+     * Ejercicio 1 - Analisis de Complejidad
      * 
-     * Método 1:
+     * Metodo 1:
      * - Mejor caso (case 0 y case 1): O(log x)
      *   - En case 0: O(1) - retorno inmediato
      *   - En case 1: O(log x) - bucle que multiplica i por 2
-     * - Peor caso (case 2): O(∞) - bucle while infinito
+     * - Peor caso (case 2): O(?) - bucle while infinito
      * 
-     * Método 2:
+     * Metodo 2:
      * - Complejidad: O(x * log x)
      *   - Bucle exterior: O(x) - itera x-1 veces
      *   - Bucle interior: O(log x) - j se multiplica por 2
@@ -28,11 +28,11 @@ public class Soluciones_RESUELTO {
      */
     
     /**
-     * Ejercicio 2 - Ordenación por Inserción Directa
+     * Ejercicio 2 - Ordenacion por Insercion Directa
      * 
      * Secuencia inicial: 1 0 6 4 8 2 4 7 7
      * 
-     * Fases de ordenación:
+     * Fases de ordenacion:
      * 1. [1] 0 6 4 8 2 4 7 7
      * 2. [0 1] 6 4 8 2 4 7 7
      * 3. [0 1 6] 4 8 2 4 7 7
@@ -46,7 +46,7 @@ public class Soluciones_RESUELTO {
      * Sobre el pivote en Quicksort:
      * - El pivote es el elemento que se usa para dividir el array en dos subarrays
      * - Es importante porque afecta directamente al rendimiento del algoritmo
-     * - Una mala elección puede llevar a O(n²) en el peor caso
+     * - Una mala eleccion puede llevar a O(n?) en el peor caso
      * - Ejemplo de peor caso: array ordenado [1,2,3,4,5] usando el primer elemento como pivote
      */
     
@@ -71,12 +71,12 @@ public class Soluciones_RESUELTO {
     }
     
     /**
-     * Ejercicio 4 - Libros con número de registro par
+     * Ejercicio 4 - Libros con numero de registro par
      */
     public static ArrayList<Libro> librosPares(ArrayList<Libro> libros) {
         ArrayList<Libro> resultado = new ArrayList<>();
         for (Libro libro : libros) {
-            // Extraemos la parte numérica del registro (sin las letras)
+            // Extraemos la parte numerica del registro (sin las letras)
             String numStr = libro.numRegistro.substring(0, 4);
             int num = Integer.parseInt(numStr);
             if (num % 2 == 0) {
@@ -87,21 +87,21 @@ public class Soluciones_RESUELTO {
     }
     
     /**
-     * Ejercicio 5 - Modificación de Libro para TreeSet
+     * Ejercicio 5 - Modificacion de Libro para TreeSet
      */
     static class Libro implements Comparable<Libro> {
         String autor;
         String numRegistro;
-        int añoEdición;
+        int anoEdicion;
         
         @Override
         public int compareTo(Libro otro) {
-            // Primero comparamos por año
-            int compAño = Integer.compare(this.añoEdición, otro.añoEdición);
-            if (compAño != 0) {
-                return compAño;
+            // Primero comparamos por ano
+            int compAno = Integer.compare(this.anoEdicion, otro.anoEdicion);
+            if (compAno != 0) {
+                return compAno;
             }
-            // Si el año es igual, comparamos por número de registro
+            // Si el ano es igual, comparamos por numero de registro
             return this.numRegistro.compareTo(otro.numRegistro);
         }
         
@@ -109,18 +109,18 @@ public class Soluciones_RESUELTO {
         public boolean equals(Object obj) {
             if (!(obj instanceof Libro)) return false;
             Libro otro = (Libro) obj;
-            return this.añoEdición == otro.añoEdición && 
+            return this.anoEdicion == otro.anoEdicion && 
                    this.numRegistro.equals(otro.numRegistro);
         }
         
         @Override
         public int hashCode() {
-            return Objects.hash(añoEdición, numRegistro);
+            return Objects.hash(anoEdicion, numRegistro);
         }
     }
     
     /**
-     * Ejercicio 6 - Autor con más libros
+     * Ejercicio 6 - Autor con mas libros
      */
     public static String autorMasLibros(TreeSet<Libro> libros) {
         Map<String, Integer> contadorAutores = new HashMap<>();
@@ -130,7 +130,7 @@ public class Soluciones_RESUELTO {
             contadorAutores.merge(libro.autor, 1, Integer::sum);
         }
         
-        // Encontramos el autor con más libros
+        // Encontramos el autor con mas libros
         String autorMasLibros = null;
         int maxLibros = 0;
         
@@ -169,7 +169,7 @@ public class Soluciones_RESUELTO {
     private static void imprimeSueldosAltosRecursivo(NodoJugador nodo, int sueldoMinimo) {
         if (nodo == null) return;
         
-        // Recorremos el árbol en orden
+        // Recorremos el arbol en orden
         imprimeSueldosAltosRecursivo(nodo.izq, sueldoMinimo);
         
         if (nodo.jugador.getSueldoTotal() > sueldoMinimo) {
@@ -192,13 +192,13 @@ class Alumno {
 class Libro {
     String autor;
     String numRegistro;
-    int añoEdición;
+    int anoEdicion;
 }
 
 class Jugador {
     String nombre;
     String equipo;
-    String posición;
+    String posicion;
     int sueldo;
     int primas;
     

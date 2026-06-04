@@ -1,11 +1,11 @@
-﻿package madrid.iescalderonbarca.ejercicios.arrays;
+package madrid.iescalderonbarca.ejercicios.arrays;
 
 /**
- * Enunciado: `ejercicios-arrays-1--madrid-iescalderonbarca.pdf` (carpeta de la práctica).
+ * Enunciado: `ejercicios-arrays-1--madrid-iescalderonbarca.pdf` (carpeta de la practica).
  * <p><b>Objetivo de este ejercicio:</b> Dados estos dos arrays: {1, 3, 5, 7, 9} y {6, 4, 2, 1, 3}
- * multiplicar un array por otro (posición a posición) y dividir el resultado entre 10 (todas las posiciones).
+ * multiplicar un array por otro (posicion a posicion) y dividir el resultado entre 10 (todas las posiciones).
  * 
- * @author Agustín. A. Marquez. Piña
+ * @author Agustin. A. Marquez. Pina
  * @since 14/06/2025
  * @see <a href="mailto:agu1406@outlook.es">agu1406@outlook.es</a>
  * @see <a href="https://github.com/Agu1406/ClasesParticulares">Repositorio GitHub</a>

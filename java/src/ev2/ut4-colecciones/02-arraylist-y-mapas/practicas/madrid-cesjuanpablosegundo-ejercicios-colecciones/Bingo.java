@@ -4,8 +4,8 @@ import java.util.Random;
 
 /**
  * Programa que simula un juego de Bingo
- * Cada cartón es una matriz 5x5 con números aleatorios entre 1 y 75
- * El espacio central está marcado como "libre" (XX)
+ * Cada carton es una matriz 5x5 con numeros aleatorios entre 1 y 75
+ * El espacio central esta marcado como "libre" (XX)
  */
 public class Bingo {
     private static final int FILAS = 5;
@@ -15,8 +15,8 @@ public class Bingo {
     
     private int[][] carton;
     private boolean[][] cartonMarcado;
-    private int[] numerosCantados;  // Array unidimensional para números cantados
-    private int cantidadNumerosCantados;  // Contador de números cantados
+    private int[] numerosCantados;  // Array unidimensional para numeros cantados
+    private int cantidadNumerosCantados;  // Contador de numeros cantados
     private Random random;
     private boolean lineaCompletada;
     private boolean bingoCompletado;
@@ -27,7 +27,7 @@ public class Bingo {
     public Bingo() {
         this.carton = new int[FILAS][COLUMNAS];
         this.cartonMarcado = new boolean[FILAS][COLUMNAS];
-        this.numerosCantados = new int[NUMERO_MAX];  // Array de tamaño 75
+        this.numerosCantados = new int[NUMERO_MAX];  // Array de tamano 75
         this.cantidadNumerosCantados = 0;
         this.random = new Random();
         this.lineaCompletada = false;
@@ -38,22 +38,22 @@ public class Bingo {
     }
     
     /**
-     * Genera un cartón de Bingo con números aleatorios
+     * Genera un carton de Bingo con numeros aleatorios
      */
     public void generarCarton() {
         for (int i = 0; i < FILAS; i++) {
             for (int j = 0; j < COLUMNAS; j++) {
-                // El espacio central se deja como 0 (se mostrará como XX)
+                // El espacio central se deja como 0 (se mostrara como XX)
                 if (i == 2 && j == 2) {
                     carton[i][j] = 0;
                 } else {
-                    // Generar número aleatorio entre 1 y 75
+                    // Generar numero aleatorio entre 1 y 75
                     int numero;
                     boolean repetido;
                     do {
                         numero = random.nextInt(NUMERO_MAX) + NUMERO_MIN;
                         repetido = false;
-                        // Verificar que no esté repetido en el cartón
+                        // Verificar que no este repetido en el carton
                         for (int k = 0; k < FILAS; k++) {
                             for (int l = 0; l < COLUMNAS; l++) {
                                 if (carton[k][l] == numero) {
@@ -71,7 +71,7 @@ public class Bingo {
     }
     
     /**
-     * Verifica si un número ya fue cantado
+     * Verifica si un numero ya fue cantado
      */
     private boolean yaFueCantado(int numero) {
         for (int i = 0; i < cantidadNumerosCantados; i++) {
@@ -83,12 +83,12 @@ public class Bingo {
     }
     
     /**
-     * Genera un número aleatorio entre 1 y 75 que no haya sido cantado
-     * @return el número generado, o -1 si ya se cantaron todos
+     * Genera un numero aleatorio entre 1 y 75 que no haya sido cantado
+     * @return el numero generado, o -1 si ya se cantaron todos
      */
     public int generarNumeroCantado() {
         if (cantidadNumerosCantados >= NUMERO_MAX) {
-            return -1; // Ya se cantaron todos los números
+            return -1; // Ya se cantaron todos los numeros
         }
         
         int numero;
@@ -102,9 +102,9 @@ public class Bingo {
     }
     
     /**
-     * Marca un número en el cartón si está presente
-     * @param numero el número a marcar
-     * @return true si el número estaba en el cartón y fue marcado
+     * Marca un numero en el carton si esta presente
+     * @param numero el numero a marcar
+     * @return true si el numero estaba en el carton y fue marcado
      */
     public boolean marcarNumero(int numero) {
         for (int i = 0; i < FILAS; i++) {
@@ -119,11 +119,11 @@ public class Bingo {
     }
     
     /**
-     * Verifica si hay una línea completa (horizontal, vertical o diagonal)
-     * @return true si hay al menos una línea completa
+     * Verifica si hay una linea completa (horizontal, vertical o diagonal)
+     * @return true si hay al menos una linea completa
      */
     public boolean verificarLinea() {
-        // Verificar líneas horizontales
+        // Verificar lineas horizontales
         for (int i = 0; i < FILAS; i++) {
             boolean lineaCompleta = true;
             for (int j = 0; j < COLUMNAS; j++) {
@@ -137,7 +137,7 @@ public class Bingo {
             }
         }
         
-        // Verificar líneas verticales
+        // Verificar lineas verticales
         for (int j = 0; j < COLUMNAS; j++) {
             boolean lineaCompleta = true;
             for (int i = 0; i < FILAS; i++) {
@@ -179,8 +179,8 @@ public class Bingo {
     }
     
     /**
-     * Verifica si el cartón completo está marcado (Bingo completo)
-     * @return true si todas las casillas están marcadas
+     * Verifica si el carton completo esta marcado (Bingo completo)
+     * @return true si todas las casillas estan marcadas
      */
     public boolean verificarBingo() {
         for (int i = 0; i < FILAS; i++) {
@@ -194,20 +194,20 @@ public class Bingo {
     }
     
     /**
-     * Muestra el cartón actualizado en la consola
+     * Muestra el carton actualizado en la consola
      */
     public void mostrarCarton() {
-        System.out.println("\nCartón de Bingo:\n");
+        System.out.println("\nCarton de Bingo:\n");
         for (int i = 0; i < FILAS; i++) {
             for (int j = 0; j < COLUMNAS; j++) {
                 if (carton[i][j] == 0) {
                     // Espacio libre (centro)
                     System.out.print("XX   ");
                 } else if (cartonMarcado[i][j]) {
-                    // Número marcado
+                    // Numero marcado
                     System.out.print("[" + carton[i][j] + "]  ");
                 } else {
-                    // Número sin marcar
+                    // Numero sin marcar
                     if (carton[i][j] < 10) {
                         System.out.print(carton[i][j] + "    ");
                     } else {
@@ -221,12 +221,12 @@ public class Bingo {
     }
     
     /**
-     * Método principal que ejecuta el juego
+     * Metodo principal que ejecuta el juego
      */
     public void jugar() {
         System.out.println("=== JUEGO DE BINGO ===\n");
         
-        // Generar el cartón
+        // Generar el carton
         generarCarton();
         mostrarCarton();
         
@@ -235,40 +235,40 @@ public class Bingo {
             int numeroCantado = generarNumeroCantado();
             
             if (numeroCantado == -1) {
-                System.out.println("Se han cantado todos los números posibles.");
+                System.out.println("Se han cantado todos los numeros posibles.");
                 break;
             }
             
-            System.out.println("Número cantado: " + numeroCantado);
+            System.out.println("Numero cantado: " + numeroCantado);
             
-            // Marcar el número si está en el cartón
+            // Marcar el numero si esta en el carton
             if (marcarNumero(numeroCantado)) {
-                System.out.println("¡Número encontrado en tu cartón!");
+                System.out.println("!Numero encontrado en tu carton!");
             }
             
-            // Mostrar el cartón actualizado
+            // Mostrar el carton actualizado
             mostrarCarton();
             
-            // Verificar si se completó una línea (solo la primera vez)
+            // Verificar si se completo una linea (solo la primera vez)
             if (!lineaCompletada && verificarLinea()) {
                 lineaCompletada = true;
-                System.out.println("¡LÍNEA! Has completado una línea horizontal, vertical o diagonal.\n");
+                System.out.println("!LINEA! Has completado una linea horizontal, vertical o diagonal.\n");
             }
             
-            // Verificar si se completó el Bingo
+            // Verificar si se completo el Bingo
             if (verificarBingo()) {
                 bingoCompletado = true;
-                System.out.println("¡BINGO! Has completado el cartón completo.\n");
+                System.out.println("!BINGO! Has completado el carton completo.\n");
                 break;
             }
         }
         
         System.out.println("=== FIN DEL JUEGO ===");
-        System.out.println("Total de números cantados: " + cantidadNumerosCantados);
+        System.out.println("Total de numeros cantados: " + cantidadNumerosCantados);
     }
     
     /**
-     * Método main para ejecutar el programa
+     * Metodo main para ejecutar el programa
      */
     public static void main(String[] args) {
         Bingo juego = new Bingo();

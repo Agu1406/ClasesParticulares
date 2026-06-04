@@ -1,11 +1,11 @@
-﻿package madrid.iescanaveral.ejercicios.convocatoria2022;
+package madrid.iescanaveral.ejercicios.convocatoria2022;
 
 /**
- * Ejercicio 5: ¿Cuál es la salida del siguiente código?
+ * Ejercicio 5: ?Cual es la salida del siguiente codigo?
  * 
- * Analiza el comportamiento de los enums en Java y el método toString().
+ * Analiza el comportamiento de los enums en Java y el metodo toString().
  * 
- * @author Agustín. A. Marquez. Piña
+ * @author Agustin. A. Marquez. Pina
  * @since 14/01/2026
  * @see <a href="mailto:agu1406@outlook.es">agu1406@outlook.es</a>
  * @see <a href="https://github.com/Agu1406/ClasesParticulares">Repositorio GitHub</a>

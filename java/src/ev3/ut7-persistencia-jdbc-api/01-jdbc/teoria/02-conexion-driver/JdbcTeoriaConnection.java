@@ -6,15 +6,15 @@ import java.sql.SQLException;
 import java.util.Properties;
 
 /**
- * Conexión compartida para teoría y ejercicios JDBC (BD demo {@code JdbcTeoria}).
+ * Conexion compartida para teoria y ejercicios JDBC (BD demo {@code JdbcTeoria}).
  *
- * <p><b>Objetivo:</b> centralizar la conexión a MySQL para los SandBoxes del bloque {@code 01-jdbc}.</p>
+ * <p><b>Objetivo:</b> centralizar la conexion a MySQL para los SandBoxes del bloque {@code 01-jdbc}.</p>
  *
  * <p>Para ello, esta clase debe:</p>
  * <ul>
  *   <li>Cargar el driver MySQL y abrir {@link Connection} contra {@code JdbcTeoria}.</li>
- *   <li>Exponer host, puerto, usuario y contraseña configurables (XAMPP).</li>
- *   <li>Reutilizarse desde los SandBoxes de conexión, SELECT, CRUD y transacciones.</li>
+ *   <li>Exponer host, puerto, usuario y contrasena configurables (XAMPP).</li>
+ *   <li>Reutilizarse desde los SandBoxes de conexion, SELECT, CRUD y transacciones.</li>
  * </ul>
  *
  * <p>Utiliza <b>XAMPP</b>, <b>MySQL Connector/J</b> y {@link DriverManager}.
@@ -22,7 +22,7 @@ import java.util.Properties;
  *
  * @see ev3.ut7.jdbc.entorno.EntornoXamppIntro
  *
- * @author Agustín. A. Marquez. Piña
+ * @author Agustin. A. Marquez. Pina
  * @since 29/05/2026
  * @see <a href="mailto:agu1406@outlook.es">agu1406@outlook.es</a>
  * @see <a href="https://github.com/Agu1406/ClasesParticulares">Repositorio GitHub</a>

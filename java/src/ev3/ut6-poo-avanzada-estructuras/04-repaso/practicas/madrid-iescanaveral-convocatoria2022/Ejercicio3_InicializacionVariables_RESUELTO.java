@@ -1,17 +1,17 @@
-﻿package madrid.iescanaveral.ejercicios.convocatoria2022;
+package madrid.iescanaveral.ejercicios.convocatoria2022;
 
 /**
- * Ejercicio 3: ¿Cuál es la salida del siguiente programa? - RESUELTO
+ * Ejercicio 3: ?Cual es la salida del siguiente programa? - RESUELTO
  * 
- * RESPUESTA: No da ningún error de compilación y produce como salida el valor 0.
+ * RESPUESTA: No da ningun error de compilacion y produce como salida el valor 0.
  * 
- * Explicación:
+ * Explicacion:
  * - Cuando se inicializa 'i', se llama a dameJ()
- * - En ese momento, 'j' aún no ha sido inicializada (tiene valor por defecto 0)
+ * - En ese momento, 'j' aun no ha sido inicializada (tiene valor por defecto 0)
  * - Por lo tanto, dameJ() retorna 0
  * - Luego 'j' se inicializa con 10, pero 'i' ya tiene el valor 0
  * 
- * @author Agustín. A. Marquez. Piña
+ * @author Agustin. A. Marquez. Pina
  * @since 14/01/2026
  * @see <a href="mailto:agu1406@outlook.es">agu1406@outlook.es</a>
  * @see <a href="https://github.com/Agu1406/ClasesParticulares">Repositorio GitHub</a>

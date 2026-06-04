@@ -2,19 +2,19 @@ package madrid.uax.tecnicasprogramacion.sistema_juego_ajedrez.ejercicio1;
 
 public class PruebaPila {
     public static void main(String[] args) {
-        // Crear una pila con tamaño por defecto
+        // Crear una pila con tamano por defecto
         Pila pila1 = new Pila();
-        System.out.println("Pila 1 creada con tamaño por defecto: " + pila1.getTamano());
+        System.out.println("Pila 1 creada con tamano por defecto: " + pila1.getTamano());
         
-        // Crear una pila con tamaño específico
+        // Crear una pila con tamano especifico
         Pila pila2 = new Pila(5);
-        System.out.println("Pila 2 creada con tamaño 5: " + pila2.getTamano());
+        System.out.println("Pila 2 creada con tamano 5: " + pila2.getTamano());
         
         // Probar operaciones con pila2
         System.out.println("\nOperaciones con pila2:");
         
-        // Verificar si está vacía
-        System.out.println("¿La pila está vacía? " + pila2.estaVacia());
+        // Verificar si esta vacia
+        System.out.println("?La pila esta vacia? " + pila2.estaVacia());
         
         // Insertar elementos
         System.out.println("\nInsertando elementos...");
@@ -32,7 +32,7 @@ public class PruebaPila {
         System.out.println("\nEliminando elemento de la cima: " + pila2.pop());
         pila2.mostrar();
         
-        // Verificar si está vacía después de operaciones
-        System.out.println("\n¿La pila está vacía? " + pila2.estaVacia());
+        // Verificar si esta vacia despues de operaciones
+        System.out.println("\n?La pila esta vacia? " + pila2.estaVacia());
     }
 } 

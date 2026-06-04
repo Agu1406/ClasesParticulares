@@ -4,12 +4,12 @@ package andalucia.sevilla.iesvelazquez.colegiojdbc.src;
  * Modelo de dominio: un alumno del colegio.
  *
  * <p><b>Objetivo:</b> representar en memoria los datos que se guardan en la tabla {@code Alumnos}
- * sin depender de la API JDBC en la capa de presentación o de negocio.</p>
+ * sin depender de la API JDBC en la capa de presentacion o de negocio.</p>
  *
- * <p>Debe almacenar identificador, nombre, correo y teléfono; el id puede ser {@code null}
+ * <p>Debe almacenar identificador, nombre, correo y telefono; el id puede ser {@code null}
  * antes del INSERT (clave autoincremental en MySQL).</p>
  *
- * @author Agustín. A. Marquez. Piña
+ * @author Agustin. A. Marquez. Pina
  * @since 29/05/2026
  * @see <a href="mailto:agu1406@outlook.es">agu1406@outlook.es</a>
  * @see <a href="https://github.com/Agu1406/ClasesParticulares">Repositorio GitHub</a>

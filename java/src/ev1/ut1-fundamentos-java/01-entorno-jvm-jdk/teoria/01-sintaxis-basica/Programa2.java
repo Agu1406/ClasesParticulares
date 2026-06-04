@@ -1,21 +1,21 @@
-// La línea llamada "package" podéis ignorarla por completo, mucho más adelante se explica.
+// La linea llamada "package" podeis ignorarla por completo, mucho mas adelante se explica.
 package ev1.ut0.sintaxisbasica;
 
 /**
- * Por ahora, recuerda, el nombre del programa se escribe aquí y siempre debe
+ * Por ahora, recuerda, el nombre del programa se escribe aqui y siempre debe
  * coincidir exactamente con el nombre del archivo. Recuerda que, por ahora,
- * no hace falta entender ni la línea que dice "public class" ni tampoco la
- * línea que dice "public static void main (String [] args)", ya llegará
- * el día en que lo entiendas.
+ * no hace falta entender ni la linea que dice "public class" ni tampoco la
+ * linea que dice "public static void main (String [] args)", ya llegara
+ * el dia en que lo entiendas.
  * 
- * Aquí solo queremos aprender, por ahora, a imprimir mensajes/texto.
+ * Aqui solo queremos aprender, por ahora, a imprimir mensajes/texto.
  */
 public class Programa2 {
     public static void main(String[] args) {
-        // Aquí le doy la instrucción de imprimir "¡Hola mundo!".
-        System.out.println("¡Hola mundo!");
+        // Aqui le doy la instruccion de imprimir "!Hola mundo!".
+        System.out.println("!Hola mundo!");
 
-        // Aquí le doy la instrucción de imprimir mi nombre.
-        System.out.println("¡Mi nombre es Agustín!");
+        // Aqui le doy la instruccion de imprimir mi nombre.
+        System.out.println("!Mi nombre es Agustin!");
     }
 }

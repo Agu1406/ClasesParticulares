@@ -1,10 +1,10 @@
-﻿package general.metodos;
+package general.metodos;
 
 /**
- * Ejercicio 7: Función con if-else
- * Versión sin resolver.
+ * Ejercicio 7: Funcion con if-else
+ * Version sin resolver.
  *
- * @author Agustín. A. Marquez. Piña
+ * @author Agustin. A. Marquez. Pina
  * @since 29/04/2026
  * @see <a href="mailto:agu1406@outlook.es">agu1406@outlook.es</a>
  * @see <a href="https://github.com/Agu1406/ClasesParticulares">Repositorio GitHub</a>
@@ -12,9 +12,9 @@
  */
 public class Ejercicio7_Metodos_SIN_RESOLVER {
 
-    // TODO: crea la función calificarNota según el enunciado.
+    // TODO: crea la funcion calificarNota segun el enunciado.
 
     public static void main(String[] args) {
-        // TODO: llama a la función calificarNota desde main y muestra el resultado si corresponde.
+        // TODO: llama a la funcion calificarNota desde main y muestra el resultado si corresponde.
     }
 }

@@ -3,10 +3,10 @@ package castillaleon.valladolid.iesgregoriofernandez.aplicacion_ecommerce.Modelo
 // Clase que representa un producto en la tienda
 public class Producto {
     private String referencia; // Referencia del producto
-    private String descripcion; // Descripción del producto
+    private String descripcion; // Descripcion del producto
     private int precio; // Precio del producto en enteros
 
-    // Constructor que inicializa la referencia, descripción y precio del producto
+    // Constructor que inicializa la referencia, descripcion y precio del producto
     public Producto(String referencia, String descripcion, int precio) {
         this.referencia = referencia;
         this.descripcion = descripcion;
@@ -23,12 +23,12 @@ public class Producto {
         this.referencia = referencia;
     }
 
-    // Getter para obtener la descripción del producto
+    // Getter para obtener la descripcion del producto
     public String getDescripcion() {
         return descripcion;
     }
 
-    // Setter para establecer la descripción del producto
+    // Setter para establecer la descripcion del producto
     public void setDescripcion(String descripcion) {
         this.descripcion = descripcion;
     }

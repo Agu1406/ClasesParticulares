@@ -4,17 +4,17 @@ import java.util.HashMap;
 import java.util.Map;
 
 /**
- * Teoría: mapas ({@link HashMap}) en Java.
+ * Teoria: mapas ({@link HashMap}) en Java.
  *
- * <p><b>Objetivo:</b> almacenar pares <em>clave → valor</em> y recuperar datos por clave
+ * <p><b>Objetivo:</b> almacenar pares <em>clave -> valor</em> y recuperar datos por clave
  * sin recorrer toda la estructura.</p>
  *
  * <p>Operaciones habituales:</p>
  * <ul>
- *   <li>{@code put(clave, valor)} — insertar o actualizar.</li>
- *   <li>{@code get(clave)} — obtener el valor (o {@code null} si no existe).</li>
- *   <li>{@code containsKey(clave)} — comprobar si la clave está registrada.</li>
- *   <li>{@code remove(clave)} — eliminar un par.</li>
+ *   <li>{@code put(clave, valor)} - insertar o actualizar.</li>
+ *   <li>{@code get(clave)} - obtener el valor (o {@code null} si no existe).</li>
+ *   <li>{@code containsKey(clave)} - comprobar si la clave esta registrada.</li>
+ *   <li>{@code remove(clave)} - eliminar un par.</li>
  *   <li>{@code size()}, {@code isEmpty()}, {@code clear()}.</li>
  * </ul>
  *
@@ -23,7 +23,7 @@ import java.util.Map;
  * <p>Ejercicios HashMap en {@code ejercicios/02-mapas/pendientes} y {@code resueltos}
  * (clases {@code Ejercicio*_HashMap*}).</p>
  *
- * @author Agustín. A. Marquez. Piña
+ * @author Agustin. A. Marquez. Pina
  * @since 29/05/2026
  * @see <a href="mailto:agu1406@outlook.es">agu1406@outlook.es</a>
  * @see <a href="https://github.com/Agu1406/ClasesParticulares">Repositorio GitHub</a>
@@ -38,7 +38,7 @@ public class MapasIntro {
         edades.put("Marta", 19);
 
         System.out.println("Edad de Luis: " + edades.get("Luis"));
-        System.out.println("¿Existe Pedro? " + edades.containsKey("Pedro"));
+        System.out.println("?Existe Pedro? " + edades.containsKey("Pedro"));
 
         System.out.println("--- Todos los pares ---");
         for (Map.Entry<String, Integer> entrada : edades.entrySet()) {

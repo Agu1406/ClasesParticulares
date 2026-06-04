@@ -1,16 +1,16 @@
-﻿package madrid.iescanaveral.ejercicios.convocatoria2022;
+package madrid.iescanaveral.ejercicios.convocatoria2022;
 
 /**
- * Ejercicio 7: ¿Cuál es la salida del siguiente código? - RESUELTO
+ * Ejercicio 7: ?Cual es la salida del siguiente codigo? - RESUELTO
  * 
  * RESPUESTA: El programa no compila
  * 
- * Explicación:
- * - En la línea "if (i = 2)" se está usando el operador de asignación (=) en lugar de comparación (==)
- * - En Java, no se puede usar una asignación como condición en un if (a menos que sea boolean)
- * - El compilador detecta este error y no permite compilar el código
+ * Explicacion:
+ * - En la linea "if (i = 2)" se esta usando el operador de asignacion (=) en lugar de comparacion (==)
+ * - En Java, no se puede usar una asignacion como condicion en un if (a menos que sea boolean)
+ * - El compilador detecta este error y no permite compilar el codigo
  * 
- * @author Agustín. A. Marquez. Piña
+ * @author Agustin. A. Marquez. Pina
  * @since 14/01/2026
  * @see <a href="mailto:agu1406@outlook.es">agu1406@outlook.es</a>
  * @see <a href="https://github.com/Agu1406/ClasesParticulares">Repositorio GitHub</a>
@@ -24,11 +24,11 @@ public class Ejercicio7_AsignacionVsComparacion_RESUELTO {
         if (check == true) {
             i = 1;
         } else {
-            i = 2;  // check es false por defecto, así que i = 2
+            i = 2;  // check es false por defecto, asi que i = 2
         }
         
         // ERROR: if (i = 2) no compila
-        // CORRECCIÓN: usar == para comparar
+        // CORRECCION: usar == para comparar
         if (i == 2) {
             i = i + 2;  // i = 2 + 2 = 4
         } else {

@@ -40,7 +40,7 @@ public class bibliotecas {
         while (rs.next()) {
             hay = true;
             System.out.println("ISBN: " + rs.getString(1) + ", paginas: " + rs.getInt(2)
-                    + ", tipo: " + rs.getString(3) + ", año: " + rs.getInt(4)
+                    + ", tipo: " + rs.getString(3) + ", ano: " + rs.getInt(4)
                     + ", autor: " + rs.getString(5) + " " + rs.getString(6));
         }
         if (!hay) {

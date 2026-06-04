@@ -1,4 +1,4 @@
-﻿package pruebaslibres.practica.ruta_real_232425.y2025.resueltos;
+package pruebaslibres.practica.ruta_real_232425.y2025.resueltos;
 
 /**
  * Cobertura 2025 - Bloque 3

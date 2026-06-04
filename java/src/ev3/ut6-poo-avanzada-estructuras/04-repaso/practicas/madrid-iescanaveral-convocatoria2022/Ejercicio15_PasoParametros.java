@@ -1,11 +1,11 @@
-﻿package madrid.iescanaveral.ejercicios.convocatoria2022;
+package madrid.iescanaveral.ejercicios.convocatoria2022;
 
 /**
- * Ejercicio 15: Indicar cuál es la salida por consola cuando se ejecuta el siguiente programa.
+ * Ejercicio 15: Indicar cual es la salida por consola cuando se ejecuta el siguiente programa.
  * 
- * Analiza el paso de parámetros por valor y por referencia en Java.
+ * Analiza el paso de parametros por valor y por referencia en Java.
  * 
- * @author Agustín. A. Marquez. Piña
+ * @author Agustin. A. Marquez. Pina
  * @since 14/01/2026
  * @see <a href="mailto:agu1406@outlook.es">agu1406@outlook.es</a>
  * @see <a href="https://github.com/Agu1406/ClasesParticulares">Repositorio GitHub</a>

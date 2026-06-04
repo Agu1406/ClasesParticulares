@@ -6,9 +6,9 @@ import java.sql.SQLException;
  * Utilidad para diagnosticar fallos JDBC.
  *
  * <p><b>Objetivo:</b> mostrar de forma legible la cadena de {@link SQLException} (mensaje,
- * SQLState y código de error) cuando falle la conexión o una sentencia SQL.</p>
+ * SQLState y codigo de error) cuando falle la conexion o una sentencia SQL.</p>
  *
- * @author Agustín. A. Marquez. Piña
+ * @author Agustin. A. Marquez. Pina
  * @since 29/05/2026
  * @see <a href="mailto:agu1406@outlook.es">agu1406@outlook.es</a>
  * @see <a href="https://github.com/Agu1406/ClasesParticulares">Repositorio GitHub</a>

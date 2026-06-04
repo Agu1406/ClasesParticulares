@@ -1,11 +1,11 @@
-﻿package general.arraylist.resueltos;
+package general.arraylist.resueltos;
 
 import java.util.ArrayList;
 
 /**
- * Ejercicio 6 resuelto: Insertar en posición
+ * Ejercicio 6 resuelto: Insertar en posicion
  * 
- * @author Agustín. A. Marquez. Piña
+ * @author Agustin. A. Marquez. Pina
  * @since 26/04/2026
  * @see <a href="mailto:agu1406@outlook.es">agu1406@outlook.es</a>
  * @see <a href="https://github.com/Agu1406/ClasesParticulares">Repositorio GitHub</a>
@@ -19,7 +19,7 @@ public class Ejercicio6_ArrayListInsertarPosicion {
         nombres.add("Marta");
         nombres.add("Pedro");
 
-        nombres.add(2, "Lucía");
+        nombres.add(2, "Lucia");
         System.out.println(nombres);
     }
 }

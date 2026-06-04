@@ -19,7 +19,7 @@ public class EmpleadoAsalariado extends Empleado {
         super(nombre, salarioBase);
         // Comprobamos que el salario anual no es negativo
         if (salarioAnual < 0) {
-            // Si el salario anual es negativo, lanzamos una excepción
+            // Si el salario anual es negativo, lanzamos una excepcion
             throw new SalarioInvalidoException("El salario anual no puede ser negativo");
         }
         // Asignamos el salario anual al atributo

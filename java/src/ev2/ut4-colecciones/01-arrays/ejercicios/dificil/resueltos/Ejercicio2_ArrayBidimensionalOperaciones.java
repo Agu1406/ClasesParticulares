@@ -1,7 +1,7 @@
-﻿package general.arrays.resueltos.dificil;
+package general.arrays.resueltos.dificil;
 
 /**
- * Ejercicio 2 (difícil): Operaciones con matrices cuadradas (transpuesta,
+ * Ejercicio 2 (dificil): Operaciones con matrices cuadradas (transpuesta,
  * diagonal y suma de matrices)
  * 
  * matrizA =          transpuesta(matrizA) =
@@ -16,7 +16,7 @@
  *  [6][5][4]          [10][10][10]
  *  [3][2][1]          [10][10][10]
  * 
- * @author Agustín. A. Marquez. Piña
+ * @author Agustin. A. Marquez. Pina
  * @since 14/06/2025
  * @see <a href="mailto:agu1406@outlook.es">agu1406@outlook.es</a>
  * @see <a href="https://github.com/Agu1406/ClasesParticulares">Repositorio GitHub</a>
@@ -59,7 +59,7 @@ public class Ejercicio2_ArrayBidimensionalOperaciones {
     
     /**
      * Devuelve una nueva matriz cuyo contenido es la suma celda a celda
-     * de matrizA y matrizB. Se asume que ambas tienen el mismo tamaño.
+     * de matrizA y matrizB. Se asume que ambas tienen el mismo tamano.
      * @param matrizA Primera matriz
      * @param matrizB Segunda matriz
      * @return Nueva matriz con la suma de ambas
@@ -79,7 +79,7 @@ public class Ejercicio2_ArrayBidimensionalOperaciones {
     }
     
     /**
-     * Muestra una matriz por pantalla, una fila por línea.
+     * Muestra una matriz por pantalla, una fila por linea.
      * @param matriz Matriz a mostrar
      */
     public static void mostrar(int[][] matriz) {

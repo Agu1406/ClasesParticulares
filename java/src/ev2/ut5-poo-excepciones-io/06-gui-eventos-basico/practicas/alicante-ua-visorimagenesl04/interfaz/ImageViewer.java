@@ -15,11 +15,11 @@ import java.util.ArrayList;
 import java.util.List;
 
 /**
- * Visor de imágenes con filtros (UA Alicante, práctica L04).
+ * Visor de imagenes con filtros (UA Alicante, practica L04).
  *
- * <p>Enunciado: PDFs {@code l02}–{@code l04} en la carpeta de la práctica.</p>
+ * <p>Enunciado: PDFs {@code l02}-{@code l04} en la carpeta de la practica.</p>
  *
- * <p><b>Objetivo:</b> cargar imágenes, aplicar filtros y mostrar la interfaz gráfica.</p>
+ * <p><b>Objetivo:</b> cargar imagenes, aplicar filtros y mostrar la interfaz grafica.</p>
  *
  * <p>Para ello, el programa debe:</p>
  * <ul>
@@ -27,10 +27,10 @@ import java.util.List;
  *   <li>Aplicar filtros del paquete {@code filtros} sobre la imagen activa.</li>
  * </ul>
  *
- * <p>Utiliza <b>Swing</b> (AWT), POO y el proyecto base de Kölling/Barnes.</p>
+ * <p>Utiliza <b>Swing</b> (AWT), POO y el proyecto base de K?lling/Barnes.</p>
  *
- * @author Michael Kölling, David J. Barnes
- * @author Agustín. A. Marquez. Piña
+ * @author Michael K?lling, David J. Barnes
+ * @author Agustin. A. Marquez. Pina
  * @version 3.1
  * @since 29/05/2026
  * @see <a href="mailto:agu1406@outlook.es">agu1406@outlook.es</a>

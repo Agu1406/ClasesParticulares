@@ -1,9 +1,9 @@
 /**
- * Teoría: Spring Framework (UT8) — reservado.
+ * Teoria: Spring Framework (UT8) - reservado.
  *
  * <p>Subtema planificado para IoC, beans y proyectos Spring.</p>
  *
- * @author Agustín. A. Marquez. Piña
+ * @author Agustin. A. Marquez. Pina
  * @since 02/06/2026
  * @see <a href="mailto:agu1406@outlook.es">agu1406@outlook.es</a>
  * @see <a href="https://github.com/Agu1406/ClasesParticulares">Repositorio GitHub</a>

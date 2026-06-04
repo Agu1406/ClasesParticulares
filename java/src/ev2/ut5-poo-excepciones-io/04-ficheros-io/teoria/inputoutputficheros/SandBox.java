@@ -9,8 +9,8 @@ import java.io.IOException;
 public class SandBox {
 
     public static void main(String[] args) {
-        System.out.println("=== INTRODUCCIÓN SÚPER JUNIOR A INPUT/OUTPUT ===");
-        System.out.println("Vamos a crear, escribir, leer, añadir y copiar un fichero.");
+        System.out.println("=== INTRODUCCION SUPER JUNIOR A INPUT/OUTPUT ===");
+        System.out.println("Vamos a crear, escribir, leer, anadir y copiar un fichero.");
         System.out.println();
 
         String basePath = "src/ev2/ut4/inputoutputficheros";
@@ -26,7 +26,7 @@ public class SandBox {
     }
 
     private static void paso1CrearYEscribir(String ruta) {
-        System.out.println("1) Crear fichero y escribir líneas (sobrescribe si existe)");
+        System.out.println("1) Crear fichero y escribir lineas (sobrescribe si existe)");
         try (BufferedWriter bw = new BufferedWriter(new FileWriter(ruta))) {
             bw.write("Linea 1: Hola alumno");
             bw.newLine();
@@ -40,7 +40,7 @@ public class SandBox {
     }
 
     private static void paso2Leer(String ruta) {
-        System.out.println("2) Leer el fichero línea a línea");
+        System.out.println("2) Leer el fichero linea a linea");
         try (BufferedReader br = new BufferedReader(new FileReader(ruta))) {
             String linea;
             while ((linea = br.readLine()) != null) {
@@ -53,10 +53,10 @@ public class SandBox {
     }
 
     private static void paso3Append(String ruta) {
-        System.out.println("3) Añadir una línea al final (append = true)");
+        System.out.println("3) Anadir una linea al final (append = true)");
         try (BufferedWriter bw = new BufferedWriter(new FileWriter(ruta, true))) {
             bw.newLine();
-            bw.write("Linea 4: Esta línea fue añadida con append");
+            bw.write("Linea 4: Esta linea fue anadida con append");
         } catch (IOException e) {
             System.out.println("Error al hacer append: " + e.getMessage());
         }

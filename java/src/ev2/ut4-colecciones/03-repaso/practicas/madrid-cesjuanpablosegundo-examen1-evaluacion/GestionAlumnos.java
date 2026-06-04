@@ -14,12 +14,12 @@ public class GestionAlumnos {
     private static Scanner sc = new Scanner(System.in);
     
     /**
-     * Método principal que inicia la aplicación
+     * Metodo principal que inicia la aplicacion
      */
     public static void main(String[] args) {
         int opcion;
         
-        // Bucle principal del menú
+        // Bucle principal del menu
         do {
             mostrarMenu();
             opcion = sc.nextInt();
@@ -44,44 +44,44 @@ public class GestionAlumnos {
                     mostrarAlumnosNotaMinima();
                     break;
                 case 7:
-                    System.out.println("¡Hasta luego!");
+                    System.out.println("!Hasta luego!");
                     break;
                 default:
-                    System.out.println("Opción no válida. Inténtalo de nuevo.");
+                    System.out.println("Opcion no valida. Intentalo de nuevo.");
             }
             
         } while(opcion != 7);
     }
     
     /**
-     * Muestra el menú principal de opciones
+     * Muestra el menu principal de opciones
      */
     private static void mostrarMenu() {
-        System.out.println("\nGESTIÓN DE ALUMNOS");
+        System.out.println("\nGESTION DE ALUMNOS");
         System.out.println("1. Agregar alumno");
         System.out.println("2. Listar alumnos");
         System.out.println("3. Buscar alumno");
         System.out.println("4. Mostrar alumno con mejor nota");
         System.out.println("5. Expulsar alumno");
-        System.out.println("6. Mostrar alumnos con nota mínima");
+        System.out.println("6. Mostrar alumnos con nota minima");
         System.out.println("7. Salir");
-        System.out.print("Elige una opción: ");
+        System.out.print("Elige una opcion: ");
     }
     
     /**
      * Agrega un nuevo alumno a la lista
-     * Solicita número de matrícula, nombre, apellido y nota media
+     * Solicita numero de matricula, nombre, apellido y nota media
      */
     private static void agregarAlumno() {
         System.out.println("\nAGREGAR ALUMNO");
         
-        // Pedir número de matrícula
-        System.out.print("Número de matrícula: ");
+        // Pedir numero de matricula
+        System.out.print("Numero de matricula: ");
         String matricula = sc.next();
         
-        // Verificar si la matrícula ya existe
+        // Verificar si la matricula ya existe
         if (existeMatricula(matricula)) {
-            System.out.println("ERROR: Ya existe un alumno con esa matrícula.");
+            System.out.println("ERROR: Ya existe un alumno con esa matricula.");
             return;
         }
         
@@ -124,7 +124,7 @@ public class GestionAlumnos {
     }
     
     /**
-     * Busca un alumno por su número de matrícula
+     * Busca un alumno por su numero de matricula
      */
     private static void buscarAlumno() {
         System.out.println("\nBUSCAR ALUMNO");
@@ -134,7 +134,7 @@ public class GestionAlumnos {
             return;
         }
         
-        System.out.print("Introduce el número de matrícula: ");
+        System.out.print("Introduce el numero de matricula: ");
         String matricula = sc.next();
         
         // Buscar el alumno
@@ -144,12 +144,12 @@ public class GestionAlumnos {
             System.out.println("Alumno encontrado:");
             System.out.println(alumnoEncontrado);
         } else {
-            System.out.println("No se encontró ningún alumno con esa matrícula.");
+            System.out.println("No se encontro ningun alumno con esa matricula.");
         }
     }
     
     /**
-     * Muestra el alumno con la nota media más alta
+     * Muestra el alumno con la nota media mas alta
      */
     private static void mostrarAlumnoMejorNota() {
         System.out.println("\nALUMNO CON MEJOR NOTA");
@@ -172,7 +172,7 @@ public class GestionAlumnos {
     }
     
     /**
-     * Expulsa un alumno de la lista usando su matrícula
+     * Expulsa un alumno de la lista usando su matricula
      */
     private static void expulsarAlumno() {
         System.out.println("\nEXPULSAR ALUMNO");
@@ -182,7 +182,7 @@ public class GestionAlumnos {
             return;
         }
         
-        System.out.print("Introduce el número de matrícula del alumno a expulsar: ");
+        System.out.print("Introduce el numero de matricula del alumno a expulsar: ");
         String matricula = sc.next();
         
         // Buscar y eliminar el alumno
@@ -192,23 +192,23 @@ public class GestionAlumnos {
             listaAlumnos.remove(alumnoAEliminar);
             System.out.println("Alumno expulsado correctamente.");
         } else {
-            System.out.println("No se encontró ningún alumno con esa matrícula.");
+            System.out.println("No se encontro ningun alumno con esa matricula.");
         }
     }
     
     /**
-     * Muestra todos los alumnos con una nota media superior a la mínima indicada
+     * Muestra todos los alumnos con una nota media superior a la minima indicada
      */
     private static void mostrarAlumnosNotaMinima() {
-        System.out.println("\nALUMNOS CON NOTA MÍNIMA");
+        System.out.println("\nALUMNOS CON NOTA MINIMA");
         
         if (listaAlumnos.isEmpty()) {
             System.out.println("No hay alumnos registrados.");
             return;
         }
         
-        // Pedir nota mínima
-        System.out.print("Introduce la nota mínima (0-10): ");
+        // Pedir nota minima
+        System.out.print("Introduce la nota minima (0-10): ");
         double notaMinima = sc.nextDouble();
         
         // Buscar y mostrar alumnos con nota superior
@@ -225,19 +225,19 @@ public class GestionAlumnos {
         if (!encontrados) {
             System.out.println("No se encontraron alumnos con nota superior a " + notaMinima);
         } else {
-            System.out.println("Búsqueda completada.");
+            System.out.println("Busqueda completada.");
         }
     }
     
     /**
-     * Verifica si existe un alumno con la matrícula indicada
+     * Verifica si existe un alumno con la matricula indicada
      */
     private static boolean existeMatricula(String matricula) {
         return buscarPorMatricula(matricula) != null;
     }
     
     /**
-     * Busca un alumno por su matrícula
+     * Busca un alumno por su matricula
      */
     private static Alumno buscarPorMatricula(String matricula) {
         for (Alumno alumno : listaAlumnos) {
@@ -251,7 +251,7 @@ public class GestionAlumnos {
 
 /**
  * Clase que representa un Alumno
- * Contiene matrícula, nombre, apellido y nota media
+ * Contiene matricula, nombre, apellido y nota media
  */
 class Alumno {
     private String matricula;
@@ -287,11 +287,11 @@ class Alumno {
     }
     
     /**
-     * Devuelve una representación en String del alumno
+     * Devuelve una representacion en String del alumno
      */
     @Override
     public String toString() {
-        return String.format("Matrícula: %s | Nombre: %s %s | Nota Media: %.2f", 
+        return String.format("Matricula: %s | Nombre: %s %s | Nota Media: %.2f", 
                            matricula, nombre, apellido, notaMedia);
     }
 }

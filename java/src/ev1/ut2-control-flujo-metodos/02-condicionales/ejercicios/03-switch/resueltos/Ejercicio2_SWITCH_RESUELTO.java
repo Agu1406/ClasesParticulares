@@ -1,10 +1,10 @@
-﻿package general.condicionales;
+package general.condicionales;
 
 /**
- * Ejercicio 2 (switch): Mostrar mes por número (1-12)
- * Versión resuelta.
+ * Ejercicio 2 (switch): Mostrar mes por numero (1-12)
+ * Version resuelta.
  *
- * @author Agustín. A. Marquez. Piña
+ * @author Agustin. A. Marquez. Pina
  * @since 29/04/2026
  * @see <a href="mailto:agu1406@outlook.es">agu1406@outlook.es</a>
  * @see <a href="https://github.com/Agu1406/ClasesParticulares">Repositorio GitHub</a>
@@ -26,7 +26,7 @@ public class Ejercicio2_SWITCH_RESUELTO {
                     case 10: System.out.println("Octubre"); break;
                     case 11: System.out.println("Noviembre"); break;
                     case 12: System.out.println("Diciembre"); break;
-                    default: System.out.println("Mes inválido");
+                    default: System.out.println("Mes invalido");
                 }
     }
 }

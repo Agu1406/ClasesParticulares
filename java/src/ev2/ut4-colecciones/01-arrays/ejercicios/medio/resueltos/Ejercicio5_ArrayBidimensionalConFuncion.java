@@ -1,11 +1,11 @@
-﻿package general.arrays.resueltos.medio;
+package general.arrays.resueltos.medio;
 
 /**
- * Ejercicio 5: Array bidimensional con función
- * Crea un array bidimensional de números enteros de 3 filas y 3 columnas
- * y asígnales valores. Crea una función llamada mostrarArrayBidimensional
- * que reciba el array como parámetro y muestre todos sus valores usando
- * bucles for anidados. Llámala desde el main
+ * Ejercicio 5: Array bidimensional con funcion
+ * Crea un array bidimensional de numeros enteros de 3 filas y 3 columnas
+ * y asignales valores. Crea una funcion llamada mostrarArrayBidimensional
+ * que reciba el array como parametro y muestre todos sus valores usando
+ * bucles for anidados. Llamala desde el main
  * 
  * Array bidimensional de 3x3:
  * 
@@ -15,10 +15,10 @@
  * Fila [1] [ ][ ][ ]
  * Fila [2] [ ][ ][ ]
  * 
- * Para acceder a una posición: array[fila][columna]
- * Ejemplo: array[0][1] es la posición fila 0, columna 1
+ * Para acceder a una posicion: array[fila][columna]
+ * Ejemplo: array[0][1] es la posicion fila 0, columna 1
  * 
- * @author Agustín. A. Marquez. Piña
+ * @author Agustin. A. Marquez. Pina
  * @since 14/06/2025
  * @see <a href="mailto:agu1406@outlook.es">agu1406@outlook.es</a>
  * @see <a href="https://github.com/Agu1406/ClasesParticulares">Repositorio GitHub</a>
@@ -27,7 +27,7 @@
 public class Ejercicio5_ArrayBidimensionalConFuncion {
     
     /**
-     * Función que muestra todos los valores del array bidimensional
+     * Funcion que muestra todos los valores del array bidimensional
      * @param tablaNumeros Array bidimensional de enteros a mostrar
      */
     public static void mostrarArrayBidimensional(int[][] tablaNumeros) {
@@ -36,7 +36,7 @@ public class Ejercicio5_ArrayBidimensionalConFuncion {
             for (int columna = 0; columna < tablaNumeros[fila].length; columna++) {
                 System.out.print(tablaNumeros[fila][columna] + " ");
             }
-            System.out.println(); // Salto de línea después de cada fila
+            System.out.println(); // Salto de linea despues de cada fila
         }
     }
     
@@ -48,7 +48,7 @@ public class Ejercicio5_ArrayBidimensionalConFuncion {
             {7, 8, 9}
         };
         
-        // Llamar a la función mostrarArrayBidimensional
+        // Llamar a la funcion mostrarArrayBidimensional
         mostrarArrayBidimensional(tablaNumeros);
     }
 }
