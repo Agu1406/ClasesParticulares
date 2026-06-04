@@ -1,6 +1,6 @@
 /**
- * Test y anclas
- * @description Usa ^ y $ con test().
+ * 01 — Test y anclas
+ * @description Solo digitos de principio a fin. Define PATRON_NORMAL y PATRON_LOOKAHEAD; compara con probarPar().
  * @author Agustín. A. Marquez. Piña
  * @since 27/05/2026
  * @level easy
@@ -9,6 +9,20 @@
  * @see <a href="https://www.agustinmarquez.dev">agustinmarquez.dev</a>
  */
 
-const r = /^\d+$/;
-console.log("123:", r.test("123"));
-console.log("12a:", r.test("12a"));
+/**
+ * @param {string} etiqueta
+ * @param {string} valor
+ * @param {RegExp} patronNormal
+ * @param {RegExp} patronLookahead
+ */
+function probarPar(etiqueta, valor, patronNormal, patronLookahead) {
+  console.log(etiqueta + ' "' + valor + '"');
+  console.log("  normal:    ", patronNormal.test(valor));
+  console.log("  lookahead: ", patronLookahead.test(valor));
+}
+
+const PATRON_NORMAL = /^\d+$/;
+const PATRON_LOOKAHEAD = /^(?=\d+$)\d+$/;
+
+probarPar("ok", "123", PATRON_NORMAL, PATRON_LOOKAHEAD);
+probarPar("con letra", "12a", PATRON_NORMAL, PATRON_LOOKAHEAD);

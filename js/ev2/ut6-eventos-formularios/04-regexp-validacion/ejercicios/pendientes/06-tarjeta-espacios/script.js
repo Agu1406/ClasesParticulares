@@ -1,13 +1,28 @@
 /**
- * Tarjeta 4x4
- * @description Formato 1234 1234 1234 1234.
+ * 06 — Tarjeta 4x4
+ * @description Normal: bloques fijos. Lookahead: guardia por bloque. Define PATRON_NORMAL y PATRON_LOOKAHEAD; compara con probarPar().
  * @author Agustín. A. Marquez. Piña
  * @since 27/05/2026
- * @level easy
+ * @level medium
  * @see <a href="mailto:agu1406@outlook.es">agu1406@outlook.es</a>
  * @see <a href="https://github.com/Agu1406/ClasesParticulares">Repositorio GitHub</a>
  * @see <a href="https://www.agustinmarquez.dev">agustinmarquez.dev</a>
- * @hint dígitos y espacios
+ * @hint 1234 1234 1234 1234
  */
 
-// TODO: const tarjeta = /^\d{4} \d{4} \d{4} \d{4}$/;
+/**
+ * @param {string} etiqueta
+ * @param {string} valor
+ * @param {RegExp} patronNormal
+ * @param {RegExp} patronLookahead
+ */
+function probarPar(etiqueta, valor, patronNormal, patronLookahead) {
+  console.log(etiqueta + ' "' + valor + '"');
+  console.log("  normal:    ", patronNormal.test(valor));
+  console.log("  lookahead: ", patronLookahead.test(valor));
+}
+
+// TODO: const PATRON_NORMAL = /.../;
+// TODO: const PATRON_LOOKAHEAD = /.../;
+// TODO: probarPar("etiqueta", "texto", PATRON_NORMAL, PATRON_LOOKAHEAD);
+

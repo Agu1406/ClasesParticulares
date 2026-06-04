@@ -1,6 +1,6 @@
 /**
- * CVC
- * @description Exactamente 3 dígitos.
+ * 09 — CVC
+ * @description Tres digitos exactos; lookahead confirma forma antes de leer. Define PATRON_NORMAL y PATRON_LOOKAHEAD; compara con probarPar().
  * @author Agustín. A. Marquez. Piña
  * @since 27/05/2026
  * @level easy
@@ -10,4 +10,19 @@
  * @hint ^\d{3}$
  */
 
-// TODO: const cvc = /^\d{3}$/;
+/**
+ * @param {string} etiqueta
+ * @param {string} valor
+ * @param {RegExp} patronNormal
+ * @param {RegExp} patronLookahead
+ */
+function probarPar(etiqueta, valor, patronNormal, patronLookahead) {
+  console.log(etiqueta + ' "' + valor + '"');
+  console.log("  normal:    ", patronNormal.test(valor));
+  console.log("  lookahead: ", patronLookahead.test(valor));
+}
+
+// TODO: const PATRON_NORMAL = /.../;
+// TODO: const PATRON_LOOKAHEAD = /.../;
+// TODO: probarPar("etiqueta", "texto", PATRON_NORMAL, PATRON_LOOKAHEAD);
+

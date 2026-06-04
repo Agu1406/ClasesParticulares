@@ -81,6 +81,7 @@ Contenidos: cliente/servidor, DevTools, sintaxis (`let`, bucles, condicionales),
 
 - Tarea 06 AJAX: `ev2/ut6-eventos-formularios/03-formularios/practicas/almeria-morones-tarea06-tiempo-ajax/`
 - Tarjeta crédito (regexp / lookahead): `ev2/ut6-eventos-formularios/04-regexp-validacion/practicas/almeria-morones-tarjeta-credito/`
+- Ejercicios regexp (`04-regexp-validacion/ejercicios/`): solo `pendientes/` y `resueltos/`; cada carpeta `01-…` … `10-…` pide **regex normal** y **lookahead** (sin `(?:)`).
 
 ---
 
@@ -101,7 +102,7 @@ En centros con solo 2 evaluaciones, `ut8` puede no impartirse; el DOM (`ut7`) ci
 | --- | --- | --- |
 | Subtema | `evN/utX-…/01-tema/` … | Bloque numerado del temario |
 | Teoría | `…/teoria/*.js` | Ejemplos ejecutables (JSDoc) |
-| Ejercicios | `…/ejercicios/pendientes\|resueltos/01-…` | 10 + 10 por subtema |
+| Ejercicios | `…/ejercicios/pendientes\|resueltos/01-…` | 10 + 10 por subtema; orden `01`→`10` en el nombre de carpeta |
 | Prácticas | `…/practicas/{origen}-…/` | Enunciado + `*_SIN_RESOLVER` + `*_RESUELTO` |
 | Repaso UT | `…/NN-repaso/` | Mezcla de toda la UT |
 
