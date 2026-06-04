@@ -1,0 +1,98 @@
+{
+   
+   "Personajes": {
+      "Philip J. Fry":{
+         "Edad":25,
+         "Profesión":"Repartidor de Pizza",
+         "Amigos":[
+            "Bender",
+            "Leela"
+         ],
+         "Enemigos":[
+            "Mom"
+         ],
+         "Intereses":[
+            "Videojuegos",
+            "Comida basura"
+         ],
+         "Habilidades":[
+            "Congelamiento Criogénico",
+            "Resistencia a la hipnosis"
+         ]
+      },
+      "Bender Bending Rodríguez":{
+         "Edad":1,
+         "Profesión":"Robot alcohólico",
+         "Amigos":[
+            "Fry",
+            "Leela"
+         ],
+         "Enemigos":[
+            "Flexo"
+         ],
+         "Intereses":[
+            "Robar",
+            "Alcohol"
+         ],
+         "Habilidades":[
+            "Flexibilidad",
+            "Imán humano"
+         ]
+      },
+      "Turanga Leela":{
+         "Edad":27,
+         "Profesión":"Capitana de la nave Planet Express",
+         "Amigos":[
+            "Fry",
+            "Bender",
+            "Amy"
+         ],
+         "Enemigos":[
+            "Mom",
+            "Zapp Brannigan"
+         ],
+         "Intereses":[
+            "Artes marciales",
+            "Exploración espacial"
+         ],
+         "Habilidades":[
+            "Visión mejorada",
+            "Gran puntería"
+         ]
+      },
+      "Dr. John Zoidberg":{
+         "Edad":"Desconocida",
+         "Profesión":"Médico alienígena",
+         "Amigos":[
+            "Fry",
+            "Bender"
+         ],
+         "Enemigos":[
+            "Su propia raza"
+         ],
+         "Intereses":[
+            "Comida basura",
+            "Comida en general"
+         ],
+         "Habilidades":[
+            "Regeneración celular",
+            "Camuflaje"
+         ]
+      },
+      "Amy Wong":{
+         "Edad":22,
+         "Profesión":"Estudiante de ingeniería",
+         "Amigos":[
+            "Fry",
+            "Leela"
+         ],
+         "Enemigos":[
+            "Profesor Wernstrom"
+         ],
+         "Habilidades":[
+            "Superinteligencia",
+            "Poderes psíquicos"
+         ]
+      }
+   } 
+}

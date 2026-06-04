@@ -1,0 +1,29 @@
+[
+      {
+        "nombre": "Bob Esponja",
+        "especie": "Esponja de mar",
+        "trabajo": "Cocinero en el Crustáceo Cascarudo"
+      },
+      {
+        "nombre": "Patricio Estrella",
+        "especie": "Estrella de mar",
+        "trabajo": "Desempleado"
+      },
+      {
+        "nombre": "Calamardo Tentáculos",
+        "especie": "Pulpo",
+        "trabajo": "Cajero en el Crustáceo Cascarudo"
+      },
+      {
+        "nombre": "Arenita Mejillas",
+        "especie": "Ardilla",
+        "trabajo": "Científica"
+      },
+      {
+        "nombre": "Don Cangrejo",
+        "especie": "Cangrejo",
+        "trabajo": "Dueño del Crustáceo Cascarudo"
+      }
+
+]
+  

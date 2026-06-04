@@ -1,0 +1,152 @@
+
+#contenedor-principal {
+    display: flex;
+    gap: 20px;
+    padding: 20px;
+}
+
+#lado-izquierdo, #lado-central, #lado-derecho {
+    flex: 1;
+    border: 1px solid #ccc;
+    padding: 15px;
+    border-radius: 8px;
+    min-height: 500px;
+}
+
+
+#texto-ayuda {
+    font-size: 12px;
+    color: #666;
+    margin-top: 8px;
+}
+
+
+#mensaje-inicial, #mensaje-seleccion {
+    color: #999;
+    text-align: center;
+}
+
+
+.ocultar {
+    display: none;
+}
+
+
+.loader-ciudad, .loader-tiempo {
+    text-align: center;
+    padding: 20px;
+    color: #666;
+}
+
+
+.error-ciudad, .error-tiempo {
+    color: red;
+    padding: 10px;
+    background: #ffeeee;
+    border-radius: 4px;
+}
+
+
+#localidad {
+    width: 100%;
+    padding: 8px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+#btn-buscar {
+    width: 100%;
+    padding: 8px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+#btn-buscar:hover {
+    background-color: #0056b3;
+}
+
+
+#lista-ciudades {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+#lista-ciudades li {
+    padding: 8px;
+    cursor: pointer;
+}
+
+#lista-ciudades li:hover {
+    background: #f0f0f0;
+}
+
+
+#info-ciudad {
+    background-color: #f9f9f9;
+    padding: 10px;
+    border-radius: 6px;
+    margin-bottom: 15px;
+}
+
+#info-ciudad p {
+    margin: 8px 0;
+}
+
+
+#tiempo-actual {
+    background-color: #e8f4f8;
+    padding: 10px;
+    border-radius: 6px;
+    margin-bottom: 15px;
+}
+
+
+#tiempo-prevision {
+    display: flex;
+    gap: 15px;
+    margin-top: 10px;
+}
+
+.primera-prevision, .ultima-prevision {
+    flex: 1;
+    border: 1px solid #ddd;
+    padding: 10px;
+    border-radius: 5px;
+    background-color: #fff;
+}
+
+.primera-prevision h4, .ultima-prevision h4 {
+    margin-top: 0;
+    color: #007bff;
+}
+
+
+.atribucion {
+    font-size: 11px;
+    margin-top: 20px;
+    text-align: center;
+    color: #666;
+}
+
+.loader-ciudad, .loader-tiempo {
+    text-align: center;
+    padding: 20px;
+}
+
+.loader-ciudad img, .loader-tiempo img {
+    display: block;
+    margin: 0 auto 10px auto;
+    width: 50px;  /* Ajusta el tamaño si es necesario */
+}
+
+#icono-actual img {
+    width: 50px;
+    height: 50px;
+    vertical-align: middle;
+}

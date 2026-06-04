@@ -2,126 +2,121 @@
 
 Material de **Desarrollo web en entorno cliente** (módulo **0612**, 2.º de DAW), organizado como en `java/`: por **evaluación (EV)** y **unidad teórica (UT)**, alineado con el BOE.
 
-## Temario oficial
+- [BOE-2023-06-03-RD-405-modulo-0612-DWEC.md](./BOE-2023-06-03-RD-405-modulo-0612-DWEC.md)
 
-- [BOE-2023-06-03-RD-405-modulo-0612-DWEC.md](./BOE-2023-06-03-RD-405-modulo-0612-DWEC.md) — extracto RD 405/2023 (7 RA, contenidos, orientaciones).
+## Estructura de `js/`
 
-## Estructura del directorio `js/`
-
-```bash
+```text
 js/
 ├── BOE-2023-06-03-RD-405-modulo-0612-DWEC.md
-├── README.md                    # Esta guía
-├── ev1/                         # 1.ª evaluación
-│   ├── ut1-cliente-web/
-│   ├── ut2-sintaxis-js/
-│   ├── ut3-objetos-intro/
-│   └── README.md
-├── ev2/                         # 2.ª evaluación
-│   ├── ut4-objetos-navegador/
-│   ├── ut5-poo-colecciones/
-│   ├── ut6-eventos-formularios/
-│   └── README.md
-└── ev3/                         # 3.ª evaluación
-    ├── ut7-dom/
-    ├── ut8-async-frameworks/
-    └── README.md
+├── README.md                 ← única guía (esta)
+├── ignorar/                  ← gitignored: material bruto, scripts generadores
+├── ev1/
+├── ev2/
+└── ev3/
 ```
 
-Cada `ut*` se recorre por subtemas numerados (`01-…`, `02-…`, …, `0N-integracion`). Dentro de cada subtema: `teoria/`, `ejercicios/` (01–10 genéricos) y `practicas/` (entregas de cualquier instituto).
+Cada UT usa subtemas numerados (`01-…`, `02-…`, …, `NN-repaso`). En cada subtema: `teoria/`, `ejercicios/pendientes|resueltos/` (01–10) y, si aplica, `practicas/` (enunciado + `_SIN_RESOLVER` + `_RESUELTO` en la misma carpeta, como en Java).
 
----
+**Orden de estudio:** teoría → ejercicios genéricos → prácticas de instituto → bloque `NN-repaso` de la UT.
 
-## Dos o tres evaluaciones según el centro
+### Scripts (solo local)
 
-El **BOE** define 7 RA; el **centro** reparte en **2 o 3 trimestres** en la programación didáctica.
+Los generadores viven en `ignorar/scripts/` y **no** se publican en GitHub. Ejemplo:
 
-| Modelo | Cuándo | En este repo |
-| --- | --- | --- |
-| **3 evaluaciones** | Muchos IES (mapa por defecto abajo) | `ev1` + `ev2` + `ev3` |
-| **2 evaluaciones** | Algunos centros en 2.º (ej. DWEC con 2 trimestres lectivos) | Mismo árbol: 1.º trimestre → `ev1`, 2.º trimestre → `ev2`+`ev3`; RA 7 puede quedar fuera o en recuperación |
-
-Material de referencia **2 trimestres** (IES Arquitecto Ventura Rodríguez, Madrid, curso 2024–25): topics 1–4 en 1.º trimestre (`ev1`–`ev2`, carpetas `practicas/ventura-*`), topics 5–6 + examen final en 2.º (`ev2`–`ev3`, mismas `practicas/`).
+```bash
+node js/ignorar/scripts/gen-regexp-ut6-aguadulce.mjs
+```
 
 ---
 
 ## Mapa RA → evaluación → unidad
 
-Referencia normativa: **7 resultados de aprendizaje (RA)** del BOE.  
-La repartición en **3 evaluaciones** reproduce el esquema habitual de FP (tres trimestres) y el estilo de Programación en 1.º (`ev1` / `ev2` / `ev3`).
-
-| Evaluación | RA del BOE | Unidades (UT) | Qué debes dominar al final |
-| --- | --- | --- | --- |
-| **EV1** | **RA 1**, **RA 2**, inicio **RA 3** | ut1, ut2, ut3 | Entender cliente web, escribir JS básico en el navegador, usar consola y objetos globales elementales. |
-| **EV2** | **RA 3** (cierre), **RA 4**, **RA 5** | ut4, ut5, ut6 | Objetos del navegador, POO en JS, arrays/funciones, eventos y validación de formularios. |
-| **EV3** | **RA 6**, **RA 7** | ut7, ut8 | DOM avanzado, separación de capas, comunicación asíncrona, JSON, fetch y frameworks. |
-
-### Detalle por evaluación
-
-#### EV1 — Fundamentos del cliente y sintaxis JavaScript
-
-| UT | RA | Contenidos (BOE) | Criterios clave (resumen) |
-| --- | --- | --- | --- |
-| **ut1-cliente-web** | RA 1 | Cliente/servidor, ejecución en navegador, integración HTML+JS, DevTools | Modelos cliente/servidor, lenguajes de script, herramientas de prueba |
-| **ut2-sintaxis-js** | RA 2 | Variables, tipos, operadores, if/for/while, comentarios | Sintaxis correcta, ámbitos, conversiones, depuración básica |
-| **ut3-objetos-intro** | RA 2 → RA 3 | Primer contacto con `console`, `document`/`window` de forma guiada | Selección del lenguaje, sentencias en navegador, lectura de errores en consola |
-
-#### EV2 — Objetos, POO, colecciones e interactividad
-
-| UT | RA | Contenidos (BOE) | Criterios clave (resumen) |
-| --- | --- | --- | --- |
-| **ut4-objetos-navegador** | RA 3 | `window`, `document`, diálogos, ventanas, almacenamiento en navegador | Objetos predefinidos, interacción con usuario, storage |
-| **ut5-poo-colecciones** | RA 4 | Funciones, arrays, map/filter/reduce, clases, métodos, patrones básicos | POO en JS, colecciones, código reutilizable documentado |
-| **ut6-eventos-formularios** | RA 5 | `addEventListener`, tipos de eventos, validación, regex en formularios | Apps interactivas, validación y prueba |
-
-**Ejercicios en el repo (EV2 / ut5):**
-
-- [Tocadiscos — enunciado](./ev2/ut5-poo-colecciones/enunciados/tocadiscos--almeria-iesaguadulce.md) — [código](./ev2/ut5-poo-colecciones/03-objetos-y-clases/practicas/almeria-tocadiscos/)
-- [Ejército romano (POO)](./ev2/ut5-poo-colecciones/03-objetos-y-clases/practicas/almeria-ejercito-romano/) — clases `Soldado`, `Centuria`, `Legion`
-
-#### EV3 — DOM dinámico y comunicación asíncrona
-
-| UT | RA | Contenidos (BOE) | Criterios clave (resumen) |
-| --- | --- | --- | --- |
-| **ut7-dom** | RA 6 | Selección y modificación del DOM, eventos en nodos, compatibilidad entre navegadores, separación contenido / aspecto / comportamiento | Manipular estructura HTML desde JS, capas independientes |
-| **ut8-async-frameworks** | RA 7 | Promesas, `fetch`, JSON, actualización dinámica de la página, introducción a librerías o frameworks (React, Vue, etc.) | Comunicación cliente-servidor asíncrona, uso responsable de frameworks |
-
----
-
-## Tabla rápida: RA → EV
-
-| RA | Título breve | Evaluación principal |
+| Evaluación | RA del BOE | Unidades (UT) |
 | --- | --- | --- |
-| RA 1 | Arquitecturas y tecnologías cliente | EV1 |
-| RA 2 | Sintaxis del lenguaje | EV1 |
-| RA 3 | Objetos predefinidos del lenguaje | EV1 (inicio) + EV2 (ut4) |
-| RA 4 | Estructuras definidas por el usuario (funciones, arrays, POO) | EV2 |
-| RA 5 | Eventos y aplicaciones interactivas | EV2 |
+| **EV1** | RA 1, RA 2, inicio RA 3 | `ut1-cliente-web`, `ut2-sintaxis-js`, `ut3-objetos-intro` |
+| **EV2** | RA 3 (cierre), RA 4, RA 5 | `ut4-objetos-navegador`, `ut5-poo-colecciones`, `ut6-eventos-formularios` |
+| **EV3** | RA 6, RA 7 | `ut7-dom`, `ut8-async-frameworks` |
+
+| RA | Título breve | EV principal |
+| --- | --- | --- |
+| RA 1 | Arquitecturas cliente | EV1 |
+| RA 2 | Sintaxis | EV1 |
+| RA 3 | Objetos predefinidos | EV1 + EV2 (`ut4`) |
+| RA 4 | Funciones, arrays, POO | EV2 |
+| RA 5 | Eventos y formularios | EV2 |
 | RA 6 | DOM | EV3 |
-| RA 7 | Comunicación asíncrona y frameworks | EV3 |
+| RA 7 | Async y frameworks | EV3 |
+
+Pesos orientativos: EV1 **30–35 %**, EV2 **35–40 %**, EV3 **25–35 %** (cada centro define los suyos en la programación didáctica).
 
 ---
 
-## Pesos orientativos para evaluación (centro)
+## EV1 — Cliente web y JavaScript básico
 
-El BOE no fija porcentajes por RA; cada departamento los define en la **programación didáctica**. Propuesta equilibrada (ajustable):
+| UT | Subtemas | Repaso | Prácticas de instituto |
+| --- | --- | --- | --- |
+| `ut1-cliente-web` | `01` cliente · `02` scripts · `03` devtools · `04` dom | `05-repaso` | Ventura en `02`, `04` |
+| `ut2-sintaxis-js` | `01` variables · `02` operadores · `03` condicionales · `04` bucles · `05` estilo | `06-repaso` | Ventura en `01`–`04` |
+| `ut3-objetos-intro` | `01` consola · `02` window/document · `03` errores | `04-repaso` | — |
 
-| Evaluación | RA incluidos | Peso orientativo |
+Contenidos: cliente/servidor, DevTools, sintaxis (`let`, bucles, condicionales), `console`, primer contacto con `window`/`document`.
+
+---
+
+## EV2 — Objetos del navegador, POO e interactividad
+
+| UT | Subtemas | Repaso | Prácticas de instituto |
+| --- | --- | --- | --- |
+| `ut4-objetos-navegador` | `01` window · `02` document · `03` diálogos · `04` storage | `05-repaso` | — |
+| `ut5-poo-colecciones` | `01` funciones · `02` arrays · `03` objetos/clases · `04` herencia | `05-repaso` | Ventura `01`–`04`; Almería en `03` |
+| `ut6-eventos-formularios` | `01` eventos · `02` listeners · `03` formularios · `04` regexp | `05-repaso` | Ventura `01`–`02`; Aguadulce (Morones) `03`–`04` |
+
+**Proyectos Almería (ut5):**
+
+- Tocadiscos: `ev2/ut5-poo-colecciones/03-objetos-y-clases/practicas/almeria-tocadiscos/`
+- Ejército romano: `ev2/ut5-poo-colecciones/03-objetos-y-clases/practicas/almeria-ejercito-romano/`
+
+**Aguadulce — Morones (ut6):**
+
+- Tarea 06 AJAX: `ev2/ut6-eventos-formularios/03-formularios/practicas/almeria-morones-tarea06-tiempo-ajax/`
+- Tarjeta crédito (regexp / lookahead): `ev2/ut6-eventos-formularios/04-regexp-validacion/practicas/almeria-morones-tarjeta-credito/`
+
+---
+
+## EV3 — DOM y comunicación asíncrona
+
+| UT | Subtemas | Repaso | Prácticas de instituto |
+| --- | --- | --- | --- |
+| `ut7-dom` | `01` selectores · `02` nodos · `03` atributos · `04` classList | `05-repaso` | Ventura `01`–`04`; examen en `05-repaso` |
+| `ut8-async-frameworks` | `01` async · `02` promesas · `03` fetch · `04` DOM+APIs | `05-repaso` | — |
+
+En centros con solo 2 evaluaciones, `ut8` puede no impartirse; el DOM (`ut7`) cierra el módulo.
+
+---
+
+## Convención de carpetas
+
+| Capa | Ruta | Qué guarda |
 | --- | --- | --- |
-| EV1 | RA 1, RA 2, RA 3 (parcial) | 30–35 % |
-| EV2 | RA 3 (cierre), RA 4, RA 5 | 35–40 % |
-| EV3 | RA 6, RA 7 | 25–35 % |
+| Subtema | `evN/utX-…/01-tema/` … | Bloque numerado del temario |
+| Teoría | `…/teoria/*.js` | Ejemplos ejecutables (JSDoc) |
+| Ejercicios | `…/ejercicios/pendientes\|resueltos/01-…` | 10 + 10 por subtema |
+| Prácticas | `…/practicas/{origen}-…/` | Enunciado + `*_SIN_RESOLVER` + `*_RESUELTO` |
+| Repaso UT | `…/NN-repaso/` | Mezcla de toda la UT |
 
-En muchos centros **hay que aprobar todos los RA** evaluados en cada convocatoria (nota mínima 5 por bloque), igual que en Programación.
+**PHP** usa geografía en la raíz (`php/andalucia/…`). **JS** prioriza subtema numerado; el material de centro va en `practicas/`, no en carpetas `enunciados/` sueltas.
 
 ---
 
-## Cómo usar esta guía (alumno o profesor)
+## Dos o tres evaluaciones según el centro
 
-1. Abre el [BOE del módulo](./BOE-2023-06-03-RD-405-modulo-0612-DWEC.md) y localiza el RA de la UT que toque.
-2. Entra en `evN/utX-…/` y añade apuntes, ejercicios o enlaces.
-3. Antes de un examen, repasa la fila de la tabla **RA → EV** y los criterios de evaluación del BOE de esos RA.
-4. Si el centro publica programación didáctica propia, **prioriza sus fechas y pesos**; este mapa sigue siendo válido para saber *qué* entra en cada evaluación.
+| Modelo | En este repo |
+| --- | --- |
+| **3 evaluaciones** | `ev1` + `ev2` + `ev3` |
+| **2 evaluaciones** | Mismo árbol: 1.º trimestre → `ev1`, 2.º → `ev2`+`ev3` |
+
+Referencia **IES Ventura Rodríguez** (Madrid): topics 1–4 en 1.º trimestre; topics 5–6 + examen en 2.º (`practicas/ventura-*` repartidas en `ev1`–`ev3`).
 
 ---
 
@@ -129,34 +124,8 @@ En muchos centros **hay que aprobar todos los RA** evaluados en cada convocatori
 
 | Programación (Java) | DWEC (JavaScript) |
 | --- | --- |
-| `ev1` fundamentos, tipos, bucles | `ev1` cliente web + sintaxis JS |
-| `ev2` arrays, ArrayList | `ev2` arrays, funciones, POO (como tocadiscos) |
-| `ev3` POO avanzada, JDBC | `ev3` DOM, fetch, APIs, frameworks |
+| `ev1` fundamentos | `ev1` cliente + sintaxis |
+| `ev2` colecciones, POO | `ev2` POO, eventos, formularios |
+| `ev3` JDBC, Spring | `ev3` DOM, fetch, frameworks |
 
-La lógica es la misma: **EV = trimestre académico**, **UT = bloque dentro del trimestre**, **RA = lo que exige el BOE**.
-
----
-
-## Convención de carpetas (temario + centros)
-
-| Capa | Ruta | Qué guarda |
-| --- | --- | --- |
-| Subtema BOE | `evN/utX-…/01-tema/`, `02-…`, … | Bloque numerado del temario |
-| Teoría | `…/teoria/*.js` | Ejemplos ejecutables comentados (JSDoc) |
-| Ejercicios genéricos | `…/ejercicios/pendientes\|resueltos/01-…` | 10 + 10 por subtema (nivel fácil, progresivo) |
-| Prácticas de instituto | `…/practicas/{origen}-…/` | Entregas reales dentro del subtema que toca (ej. `ventura-ejercicio-1.2`) |
-| Repaso UT | `…/05-repaso/` (o `06-repaso`, según subtemas) | Último bloque numerado: ejercicios que mezclan toda la UT |
-| Enunciados sueltos | `evN/utX-…/enunciados/{tema}--{provincia}-{centro}.ext` | PDF, MD o DOCX |
-| Proyectos grandes | `evN/utX-…/{provincia}-{centro}-{proyecto}/` | Solo si no encaja en un subtema (ej. tocadiscos) |
-
-**PHP** usa geografía en la raíz (`php/andalucia/…`). **JS** prioriza **subtema numerado**; el material de centro va en `practicas/`, no como carpeta suelta al lado de `01-04`.
-
----
-
-## Próximos pasos en el repo
-
-- [ ] Ampliar apuntes genéricos en UT aún vacías (`ut3`, `ut4`, `ut8`, …)
-- [ ] Exámenes tipo por evaluación en `evN/docs/`
-- [x] Material clase DWEC — IES Ventura Rodríguez (Madrid), 2 trimestres
-
-Guías detalladas por evaluación: [ev1/README.md](./ev1/README.md), [ev2/README.md](./ev2/README.md), [ev3/README.md](./ev3/README.md).
+Convenciones detalladas de Java: `java/src/ignorar/AGENT.md` (no commiteado; misma idea que `js/ignorar/`).

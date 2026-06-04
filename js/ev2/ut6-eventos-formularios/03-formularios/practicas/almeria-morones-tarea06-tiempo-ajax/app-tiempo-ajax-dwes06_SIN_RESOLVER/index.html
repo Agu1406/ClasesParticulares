@@ -1,0 +1,142 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <title>El tiempo con Tomorrow Api</title>
+    <link rel="stylesheet" href="estilos/estilo.css" />
+  </head>
+  <body>
+    <h1>WEB PARA BUSCAR INFORMACIÓN DE CIUDADES Y TIEMPO</h1>
+    <h1>ALUMNO: RAFAEL MORONES BURGOS/ DWEC/ 25-26</h1>
+
+    <!--ESTRUCTURA WEB
+    DIV- contenedor principal
+      div-contenedor izquierdo
+        input
+        botón  
+      div-contendor central
+        spinner
+        errores
+        lista ciudad
+      div-contendor derecha
+        spinner
+        errores
+        div-info ciudad
+          pais
+          región
+          población   
+        div-info tiempo
+          div-tiempo actual (Realtime )
+            temperatura
+            icono del tiempo
+            si llueve o no
+          div-tiempo prevision  (forescat)
+            Primer previsión
+              dia y hora
+              icono del tiempo
+              si llueve o no
+            Última previsión
+              dia y hora
+              icono del tiempo
+              si llueve o no
+
+    -->
+    <!--Creamos un CONTENEDOR PRINCIPAL que contendrá toda la estructura-->
+    <div id="contenedor-principal">
+      <!-- Creamos un CONTENEDOR IZQUIERDO para la búsqueda de la población -->
+      <div id="lado-izquierdo">
+        <h2>Busca tu ciudad</h2>
+        <!--Contiene un input para escribir la ciudad, un botón de enviar y una pequeña ayuda-->
+        <input type="text" id="localidad" placeholder="Ej: Madrid o Paris,FR" />
+        <button id="btn-buscar">Dale a buscar</button>
+        <p id="texto-ayuda">Si no pones coma (,) se asume España</p>
+        <!--Un contenedor para mostrar errores-->
+        <div id="error-busqueda" class="error-busqueda ocultar"></div>
+      </div>
+
+      <!-- Creamos un CONTENEDOR CENTRAL para mostar los resultados -->
+      <div id="lado-central">
+        <h2>Resultados de tu búsqueda</h2>
+        <!--Usamos un spinner o loader tal y como se indica en los apuntes-->
+        <!--Le sirve al usuario como información mientras espera la respuesta de la API-->
+        <div id="loader-ciudades" class="loader-ciudad ocultar">
+          <img src="iconos/loader/ajax-loader.gif" alt="cargar loader" />
+          <p>Buscando ciudades...</p>
+        </div>
+        <!-- Creamos un contenedor para mostrar los errores específicos cuando falla la búsqueda de ciudades -->
+        <!--Usamos la clase ocultar para que aparezca o desaparezca los elementos-->
+        <div id="error-ciudades" class="error-ciudad ocultar"></div>
+        <!--Mostramos las ciudades en forma de lista-->
+        <ul id="lista-ciudades" class="ocultar">
+          <li id="mensaje-inicial">Escribe una ciudad y pulsa Buscar</li>
+        </ul>
+      </div>
+
+      <!-- Creamos un CONTENEDOR DERECHO para mostar información de la ciudad seleccionada
+       por el usuario-->
+      <div id="lado-derecho">
+        <h2>Información de tu Ciudad</h2>
+        <!--Creamos un contenedor para mostrar el spinner y los posibles errores-->
+        <div id="loader-tiempo" class="loader-tiempo ocultar">
+          <img src="iconos/loader/ajax-loader(2).gif" alt="cargar loader" />
+          <p>Cargando datos del tiempo...</p>
+        </div>
+        <div id="error-tiempo" class="error-tiempo ocultar"></div>
+     
+        <p id="mensaje-seleccion">Selecciona una ciudad</p>
+    
+        <!--Toda la información permanecerá oculta hasta que llegue el momento de mostrarla-->
+        <div id="info-completa" class="ocultar">
+          <!-- Mostramos los datos de la ciudad con los 3 campos que se pide-->
+          <h3>CIUDAD: <span id="nombre-ciudad"></span><h3>
+          <div id="info-ciudad">
+            <p><strong>País:</strong> <span id="pais-ciudad"></span></p>
+            <p><strong>Región:</strong> <span id="region-ciudad"></span></p>
+            <p><strong>Población:</strong> <span id="poblacion-ciudad"></span></p>
+            <br />
+          </div>
+          <!--Justo debajo mostramos la informacíón del tiempo y las previsiones-->
+
+          <!-- Contenedor para mostrar todo el tiempo (actual y previsión)-->
+          <div id="info-tiempo">
+            <!-- Contenedor para mostrar el TIEMPO ACTUAL-->
+            <h3>Tiempo Actual</h3>
+            <div id="tiempo-actual">
+              <!-- Mostramos temperatura, imagen y lluvia-->
+              <p>Temperatura: <span id="temp-actual"></span>°C</p>
+              <p>Imagen:<span id="icono-actual"></span></p>
+              <p>Lluvia: <span id="lluvia-actual"></span></p>
+              <p>Humedad: <span id="humedad-actual"></span>%</p>
+            </div>
+            <br />
+
+            <!-- Contenedor para mostrar la PREVISION-->
+            <h3>Previsión</h3>
+            <div id="tiempo-prevision">
+              <div class="primera-prevision">
+                <!-- Mostramos fecha, imagen y lluvia-->
+                <h4>Primera</h4>
+                <p>Fecha: <span id="fecha-primera"></span></p>
+                <p>Imagen: <span id="icono-primera"></span></p>
+                <p>Lluvia: <span id="lluvia-primera"></span></p>
+              </div>
+              <br />
+              <div class="ultima-prevision">
+                <h4>Última</h4>
+                <!-- Mostramos fecha, imagen y lluvia-->
+                <p>Fecha: <span id="fecha-ultima"></span></p>
+                <p>Imagen: <span id="icono-ultima"></span></p>
+                <p>Lluvia: <span id="lluvia-ultima"></span></p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Cargamos las librerías que necesitamos -->
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <script src="applicacionTiempo.js"></script>
+  </body>
+</html>
