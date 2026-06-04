@@ -10,8 +10,8 @@ Material de **Programacion (0485)** organizado por evaluaciones y unidades. Norm
 java/
 ├── BOE-2023-06-03-RD-405-modulo-0485-programacion.md
 ├── README.md
-├── scripts/
 └── src/
+    ├── ignorar/          # scripts locales (gitignore; mantenimiento)
     ├── ev1/              RA1-RA3
     ├── ev2/              RA4-RA6
     └── ev3/              RA7-RA9
@@ -48,6 +48,7 @@ En `teoria/` del subtema solo van clases explicativas (`*Intro.java`, demos). Lo
 | `04-bdoo` (UT7) | `BdooIntro` | demo guiada en `practicas/` |
 | `03-poo-avanzado`, `05-repaso` (UT7) | `*Intro` (reservado) | — |
 | `01-spring`, `02-repaso` (UT8) | `*Intro` (reservado) | — |
+| `ut9-programacion-funcional-java` | `ProgramacionFuncionalIntro` + `01-lambda-y-sam` … `05-repaso` | PDF en `material/` |
 ### practicas/ (centro + enunciado + solucion)
 
 Cada practica de instituto/universidad es **una carpeta** (`comunidad-centro-tema`) con PDF/documento y codigo en la **misma raiz** (pendiente, `_RESUELTO`, varios `.java` si hace falta). **No** subcarpeta `resueltos/`, ni `docs/` ni `enunciados/` sueltos.
@@ -114,6 +115,7 @@ En cada clase principal de una practica, documentar con **objetivo pedagogico**,
 | `ut6-poo-avanzada-estructuras` | Herencia avanzada, multihilo, estructuras |
 | `ut7-persistencia-jdbc-api` | JDBC/MySQL (`01-jdbc`), proyectos BD (`02-bases-datos-y-proyectos`) |
 | `ut8-frameworks-spring` | Spring |
+| `ut9-programacion-funcional-java` | Lambda, Stream API, Optional, principios PF (ampliacion; refuerzo RA6 j) |
 
 ## Requisitos habituales
 
