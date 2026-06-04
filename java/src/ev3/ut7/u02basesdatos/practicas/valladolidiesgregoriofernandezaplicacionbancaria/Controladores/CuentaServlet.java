@@ -1,4 +1,4 @@
-package ev3.ut7.u02basesdatos.practicas.valladolidiesgregoriofernandezaplicacionbancaria.Controladores;
+package ev3.ut7.u02basesdatos.practicas.valladolidiesgregoriofernandezaplicacionbancaria.controladores;
 
 import jakarta.servlet.RequestDispatcher;
 import jakarta.servlet.ServletException;
@@ -10,8 +10,8 @@ import jakarta.servlet.http.HttpSession;
 
 import java.io.IOException;
 
-import ev3.ut7.u02basesdatos.practicas.valladolidiesgregoriofernandezaplicacionbancaria.Modelos.Cliente;
-import ev3.ut7.u02basesdatos.practicas.valladolidiesgregoriofernandezaplicacionbancaria.Modelos.Cuenta;
+import ev3.ut7.u02basesdatos.practicas.valladolidiesgregoriofernandezaplicacionbancaria.modelos.Cliente;
+import ev3.ut7.u02basesdatos.practicas.valladolidiesgregoriofernandezaplicacionbancaria.modelos.Cuenta;
 
 /**
  * Servlet implementation class CuentaServlet

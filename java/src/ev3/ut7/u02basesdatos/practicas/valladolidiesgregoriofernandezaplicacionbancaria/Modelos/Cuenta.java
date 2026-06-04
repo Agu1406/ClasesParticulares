@@ -1,4 +1,4 @@
-package ev3.ut7.u02basesdatos.practicas.valladolidiesgregoriofernandezaplicacionbancaria.Modelos;
+package ev3.ut7.u02basesdatos.practicas.valladolidiesgregoriofernandezaplicacionbancaria.modelos;
 
 public class Cuenta {
 	private String ISBN;

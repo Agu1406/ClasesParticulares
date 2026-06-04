@@ -1,4 +1,4 @@
-package ev3.ut7.u02basesdatos.practicas.valladolidiesgregoriofernandezaplicacionecommerce.Modelos;
+package ev3.ut7.u02basesdatos.practicas.valladolidiesgregoriofernandezaplicacionecommerce.modelos;
 
 // Clase que representa un producto en la tienda
 public class Producto {

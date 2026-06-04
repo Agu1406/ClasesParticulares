@@ -1,10 +1,10 @@
-package ev3.ut7.u02basesdatos.practicas.valladolidiesgregoriofernandezaplicacionbancaria.Controladores;
+package ev3.ut7.u02basesdatos.practicas.valladolidiesgregoriofernandezaplicacionbancaria.controladores;
 
 import jakarta.servlet.*;
 import jakarta.servlet.annotation.WebServlet;
 import jakarta.servlet.http.*;
 import java.io.IOException;
-import ev3.ut7.u02basesdatos.practicas.valladolidiesgregoriofernandezaplicacionbancaria.Modelos.Cliente;
+import ev3.ut7.u02basesdatos.practicas.valladolidiesgregoriofernandezaplicacionbancaria.modelos.Cliente;
 
 /**
  * Servlet implementation class ClienteServlet

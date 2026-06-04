@@ -1,4 +1,4 @@
-package ev3.ut7.u02basesdatos.practicas.valladolidiesgregoriofernandezaplicacionecommerce.Controladores;
+package ev3.ut7.u02basesdatos.practicas.valladolidiesgregoriofernandezaplicacionecommerce.controladores;
 
 import jakarta.servlet.ServletException;
 import jakarta.servlet.annotation.WebServlet;
@@ -10,7 +10,7 @@ import jakarta.servlet.http.HttpSession;
 import jakarta.servlet.ServletContextEvent;
 import jakarta.servlet.ServletContextListener;
 import jakarta.servlet.FilterChain;
-import ev3.ut7.u02basesdatos.practicas.valladolidiesgregoriofernandezaplicacionecommerce.Modelos.Producto;
+import ev3.ut7.u02basesdatos.practicas.valladolidiesgregoriofernandezaplicacionecommerce.modelos.Producto;
 
 import java.io.IOException;
 import java.util.ArrayList;
