@@ -111,6 +111,7 @@
  * @level theory
  * @see ./01-regexp-basico.js
  * @see ./03-regexp-casos-comunes.js
+ * @see ./04-formulario-rafael-morones.js
  */
 
 /**
@@ -181,6 +182,27 @@ var PATRON_SIN_ESPACIOS = /^(?!.*\s).+$/;
  * @type {RegExp}
  */
 var PATRON_PASSWORD = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d).{8,}$/;
+
+/**
+ * Password con lookahead negativo: sin espacios (apuntes Rafael).
+ * Patron: /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?!.*\s).{8,}$/
+ *
+ * - (?!.*\s): en ningun sitio puede haber espacio en blanco.
+ * - .{8,}: minimo 8 caracteres (el punto consume un caracter por repeticion).
+ *
+ * @type {RegExp}
+ */
+var PATRON_PASSWORD_SIN_ESPACIOS =
+  /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?!.*\s).{8,}$/;
+
+/**
+ * Correo con guardias (?=) / (?!) y cuerpo que lee usuario@dominio.tld.
+ * Incluye (?=.{5,50}$) para longitud total (como en clase).
+ *
+ * @type {RegExp}
+ */
+var PATRON_CORREO_LOOKAHEAD =
+  /^(?!.*\s)(?=.*@)(?=.*\.)(?=.{5,50}$)[A-Za-z0-9._+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{2,}$/;
 
 /**
  * Nombre y apellido con lookahead (tarjetaCredito.js).
@@ -266,6 +288,12 @@ function main() {
   console.log("\n--- D) Varios (?=) seguidos (password) ---");
   mostrarPrueba("Abcdef12", "Abcdef12", PATRON_PASSWORD);
   mostrarPrueba("abcdef12 sin mayus", "abcdef12", PATRON_PASSWORD);
+  mostrarPrueba("Abc def12 con espacio", "Abc def12", PATRON_PASSWORD_SIN_ESPACIOS);
+
+  console.log("\n--- D2) Correo (lookahead + cuerpo; ver 04-formulario-rafael-morones.js) ---");
+  mostrarPrueba("correo ok", "rafael@ejemplo.com", PATRON_CORREO_LOOKAHEAD);
+  mostrarPrueba("con espacio", "rafael @ejemplo.com", PATRON_CORREO_LOOKAHEAD);
+  mostrarPrueba("muy corto", "a@b", PATRON_CORREO_LOOKAHEAD);
 
   console.log("\n--- F2) Misma regla: solo regex normal vs con lookahead ---");
   console.log('Password "abcdef12A" (mayus al final):');

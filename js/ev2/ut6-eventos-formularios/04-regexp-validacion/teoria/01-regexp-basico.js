@@ -4,6 +4,18 @@
  * Una expresion regular es un patron de texto. Compruebas si lo que escribe el usuario
  * encaja. En JavaScript: /patron/  o  new RegExp("patron").
  *
+ * DOS GRUPOS (apuntes Rafael Morones — ver tambien 04-formulario-rafael-morones.js):
+ *
+ *   1) Buscador: encontrar si un trozo aparece DENTRO de un texto mas largo.
+ *      Suele ir SIN ^ y $ (o solo ^ si debe empezar ahi).
+ *      var saludo = "¡Hola! Buenos dias";
+ *      /hola/i.test(saludo)   → true  (busca "hola" sin importar mayusculas)
+ *      INCORRECTO: saludo.regex(/hola/)  — en JS no existe .regex en strings.
+ *      CORRECTO:   /hola/.test(saludo)  o  saludo.match(/hola/i)
+ *
+ *   2) Patron de validacion (formulario): TODO el valor del input debe cumplir
+ *      las reglas de principio a fin → casi siempre ^ al inicio y $ al final.
+ *
  * Delimitadores (las barras / ... /):
  *   En JavaScript la regex va entre dos barras, como las comillas de un string.
  *   Lo que va DENTRO es el patron; las barras NO se buscan en el texto del usuario.
@@ -74,6 +86,7 @@
  *
  * Siguiente teoria: 02-lookahead-positivo-negativo.js — (?=) y (?!).
  * Casos habituales: 03-regexp-casos-comunes.js.
+ * Formulario (correo, password, validarCampo): 04-formulario-rafael-morones.js.
  *
  * @author Agustín. A. Marquez. Piña
  * @since 27/05/2026
@@ -146,13 +159,40 @@ var PATRON_NOMBRE_ACTUAL = /^[a-zA-ZñÑ]+\s[a-zA-ZñÑ]+$/;
 var PATRON_CVC_ACTUAL = /^\d{3}$/;
 
 /**
+ * Correo muy simple (primer borrador en clase): algo @ algo . algo.
+ * En formularios conviene anclas: /^.+@.+\..+$/ o el patron mas estricto del 04.
+ *
+ * @type {RegExp}
+ */
+var PATRON_CORREO_SIMPLE = /^.+@.+\..+$/;
+
+/**
+ * Password solo alfanumerico 8+ (normal, sin exigir mayus/minus/digito por separado).
+ *
+ * @type {RegExp}
+ */
+var PATRON_PASSWORD_NORMAL = /^[a-zA-Z0-9]{8,}$/;
+
+/**
+ * Fecha dd/mm/aaaa (solo forma, no valida dias reales).
+ *
+ * @type {RegExp}
+ */
+var PATRON_FECHA_NORMAL = /^\d{2}\/\d{2}\/\d{4}$/;
+
+/**
  * Punto de entrada (equivalente a public static void main en Java).
  * Ejecutar: node js/ev2/ut6-eventos-formularios/04-regexp-validacion/teoria/01-regexp-basico.js
  */
 function main() {
   console.log("=== 01-regexp-basico ===\n");
 
-  console.log("--- Delimitadores / ... / y anclas ^ $ (ver JSDoc del archivo) ---");
+  console.log("--- Buscador vs patron (^ $) ---");
+  var saludoMatutino = "¡Hola! Buenos dias a todos";
+  console.log('texto largo, /hola/i (buscador):', /hola/i.test(saludoMatutino));
+  console.log('mismo texto, /^hola$/ (patron estricto):', /^hola$/.test(saludoMatutino));
+
+  console.log("\n--- Delimitadores / ... / y anclas ^ $ (ver JSDoc del archivo) ---");
   var textoHola = "hola";
   var textoHolaMundo = "hola mundo";
   var texto12Hola = "12hola";
@@ -186,6 +226,11 @@ function main() {
   console.log("\n--- PATRON_CVC_ACTUAL (\\d{3} = exactamente tres digitos) ---");
   console.log("042 ->", PATRON_CVC_ACTUAL.test("042"));
   console.log("42 ->", PATRON_CVC_ACTUAL.test("42"));
+
+  console.log("\n--- Patrones de formulario (normal, ver 04 para lookahead) ---");
+  console.log("correo simple rafael@x.es ->", PATRON_CORREO_SIMPLE.test("rafael@x.es"));
+  console.log("password Abcdef12 (solo alfanumerico) ->", PATRON_PASSWORD_NORMAL.test("Abcdef12"));
+  console.log("fecha 04/06/2026 ->", PATRON_FECHA_NORMAL.test("04/06/2026"));
 
   console.log("\n--- validarCampo() ---");
   console.log('"" ->', validarCampo("", PATRON_NOMBRE_ACTUAL));

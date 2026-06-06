@@ -17,6 +17,7 @@
  * @level theory
  * @see ./01-regexp-basico.js
  * @see ./02-lookahead-positivo-negativo.js
+ * @see ./04-formulario-rafael-morones.js
  */
 
 /**
@@ -59,17 +60,20 @@ var PASSWORD_NORMAL = /^[a-zA-Z0-9]{8,}$/;
 var PASSWORD_LOOKAHEAD = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?!.*\s).{8,}$/;
 
 // --- 2. Correo ---
-/** Normal: forma tipica user@dominio.ext (sin guardias extra). */
-var CORREO_NORMAL = /^[A-Za-z0-9._+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{2,}$/;
+/** Normal (clase): primer borrador .+@.+ con anclas. */
+var CORREO_NORMAL = /^.+@.+\..+$/;
+/** Normal (estricto): usuario@dominio.tld sin guardias lookahead. */
+var CORREO_NORMAL_ESTRICTO = /^[A-Za-z0-9._+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{2,}$/;
 /**
- * Lookahead: sin espacios, con @ y con punto; luego el mismo cuerpo que la normal.
+ * Lookahead (Rafael Morones): guardias + cuerpo que lee el correo.
  *
- * - (?!.*\s): No puede haber espacios en toda la cadena (rechaza "rafael @ejemplo.com").
- * - (?=.*@): Debe existir al menos un arroba en algun sitio.
- * - (?=.*\.): Debe existir al menos un punto (dominio.tld).
- * - [A-Za-z0-9._+-]+@...: Parte que consume caracteres (usuario@dominio.ext).
+ * - (?!.*\s): sin espacios.
+ * - (?=.*@) (?=.*\.): debe haber @ y punto.
+ * - (?=.{5,50}$): entre 5 y 50 caracteres en total.
+ * - [A-Za-z0-9._+-]+@...: parte normal (no es "solo lookahead").
  */
-var CORREO_LOOKAHEAD = /^(?!.*\s)(?=.*@)(?=.*\.)[A-Za-z0-9._+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{2,}$/;
+var CORREO_LOOKAHEAD =
+  /^(?!.*\s)(?=.*@)(?=.*\.)(?=.{5,50}$)[A-Za-z0-9._+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{2,}$/;
 
 // --- 3. DNI ---
 /** Normal: 8 digitos y una letra al final. */

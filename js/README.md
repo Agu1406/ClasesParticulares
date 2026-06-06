@@ -81,6 +81,7 @@ Contenidos: cliente/servidor, DevTools, sintaxis (`let`, bucles, condicionales),
 
 - Tarea 06 AJAX: `ev2/ut6-eventos-formularios/03-formularios/practicas/almeria-morones-tarea06-tiempo-ajax/`
 - Tarjeta crédito (regexp / lookahead): `ev2/ut6-eventos-formularios/04-regexp-validacion/practicas/almeria-morones-tarjeta-credito/`
+- Teoría regexp: `01` bases · `02` lookahead · `03` casos comunes · `04` formulario (apuntes Rafael Morones).
 - Ejercicios regexp (`04-regexp-validacion/ejercicios/`): solo `pendientes/` y `resueltos/`; cada carpeta `01-…` … `10-…` pide **regex normal** y **lookahead** (sin `(?:)`).
 
 ---
