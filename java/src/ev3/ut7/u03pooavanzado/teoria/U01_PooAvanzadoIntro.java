@@ -3,8 +3,8 @@ package ev3.ut7.u03pooavanzado.teoria;
 /**
  * Teoria: persistencia orientada a objetos (UT7, RA8) - reservado.
  *
- * <p>Subtema planificado para ORM/persistencia OO. Sin material activo aun;
- * ver JDBC en {@code 01-jdbc/} y proyectos en {@code 02-bases-datos-y-proyectos/}.</p>
+ * <p>Practica de examen con Hibernate/JPA en
+ * {@code ev3/ut7/u05repaso/practicas/examen3evbibliotecacomunidadjdbc/hibernate/}.</p>
  *
  * @author Agustin. A. Marquez. Pina
  * @since 02/06/2026

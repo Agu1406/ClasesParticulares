@@ -31,7 +31,12 @@ function validarFormulario(evento) {
   salida.textContent = "";
   textoError = "";
 
-  // TODO: regex con lookahead (?=) / (?!) donde pida el profesor (sin (?:))
+  // TODO: lookahead (?=) / (?!) — prohibido (?:)
+  // let expresionRegularNombreApellido =
+  //   /^(?=.{3,}\s)(?=.*[A-Za-záéíóúÁÉÍÓÚñÑ])[A-Za-záéíóúÁÉÍÓÚñÑ]+\s[A-Za-záéíóúÁÉÍÓÚñÑ]+$/;
+  // let expresionRegularTarjeta =
+  //   /^(?=\d{4} )\d{4} (?=\d{4} )\d{4} (?=\d{4} )\d{4} (?=\d{4}$)\d{4}$/;
+  // let expresionRegularCVC = /^(?=\d{3}$)\d{3}$/;
   let expresionRegularNombreApellido = /.*/;
   let expresionRegularTarjeta = /.*/;
   let expresionRegularCVC = /.*/;

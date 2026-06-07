@@ -26,6 +26,7 @@ Los generadores viven en `ignorar/scripts/` y **no** se publican en GitHub. Ejem
 
 ```bash
 node js/ignorar/scripts/gen-regexp-ut6-aguadulce.mjs
+node js/ignorar/scripts/gen-teoria-ev2-ev3.mjs
 ```
 
 ---
@@ -102,8 +103,8 @@ En centros con solo 2 evaluaciones, `ut8` puede no impartirse; el DOM (`ut7`) ci
 | Capa | Ruta | Qué guarda |
 | --- | --- | --- |
 | Subtema | `evN/utX-…/01-tema/` … | Bloque numerado del temario |
-| Teoría | `…/teoria/*.js` | Ejemplos ejecutables (JSDoc) |
-| Ejercicios | `…/ejercicios/pendientes\|resueltos/01-…` | 10 + 10 por subtema; orden `01`→`10` en el nombre de carpeta |
+| Teoría | `…/teoria/01-….js` … `04-….js` | Mínimo **4** archivos por subtema (ev2/ev3) |
+| Ejercicios | `…/ejercicios/pendientes\|resueltos/01-…` | Mínimo **10 + 10** por subtema; orden `01`→`10` en el nombre de carpeta |
 | Prácticas | `…/practicas/{origen}-…/` | Enunciado + `*_SIN_RESOLVER` + `*_RESUELTO` |
 | Repaso UT | `…/NN-repaso/` | Mezcla de toda la UT |
 

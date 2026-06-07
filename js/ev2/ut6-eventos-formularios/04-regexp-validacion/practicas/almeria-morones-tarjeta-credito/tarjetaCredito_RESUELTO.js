@@ -149,10 +149,26 @@ function validarFormulario(evento) {
   salida.textContent = "";
   textoError = "";
 
-  // Expresión regular de nombre adaptada para admitir acentos comunes
-  let expresionRegularNombreApellido = /^[a-zA-ZñÑ]+\s[a-zA-ZñÑ]+$/;
-  let expresionRegularTarjeta = /^\d{4} \d{4} \d{4} \d{4}$/;
-  let expresionRegularCVC = /^\d{3}$/;
+  /*
+   * Lookahead (?=) y (?!) — sin (?:) ni agrupaciones especiales.
+   * Ver teoria: 02-lookahead-positivo-negativo.js y 04-formulario-rafael-morones.js
+   *
+   * Nombre:
+   *   (?=.{3,}\s)  → al menos 3 caracteres antes del espacio (no vale "Al Bo" si quieres más largo)
+   *   (?=.*[A-Za-záéíóúÁÉÍÓÚñÑ]) → al menos una letra (con tildes y ñ)
+   *   [A-Za-z...]+\s[A-Za-z...]+ → dos palabras separadas por un espacio
+   *
+   * Tarjeta (bloque a bloque):
+   *   (?=\d{4} ) antes de cada bloque; (?=\d{4}$) en el último (sin espacio final)
+   *
+   * CVC:
+   *   (?=\d{3}$) confirma 3 dígitos; \d{3} los lee
+   */
+  let expresionRegularNombreApellido =
+    /^(?=.{3,}\s)(?=.*[A-Za-záéíóúÁÉÍÓÚñÑ])[A-Za-záéíóúÁÉÍÓÚñÑ]+\s[A-Za-záéíóúÁÉÍÓÚñÑ]+$/;
+  let expresionRegularTarjeta =
+    /^(?=\d{4} )\d{4} (?=\d{4} )\d{4} (?=\d{4} )\d{4} (?=\d{4}$)\d{4}$/;
+  let expresionRegularCVC = /^(?=\d{3}$)\d{3}$/;
 
   let todoCorrecto = true;
 
@@ -174,7 +190,7 @@ function validarFormulario(evento) {
       document.getElementById("cvc").value = cvc;
 
       // Validar el CVC autogenerado contra su expresión regular
-      if (!validarCampo("cvc", expresionRegularCVC, "CVC")) {
+      if (!validarCampo("cvc", expresionRegularCVC)) {
         todoCorrecto = false;
       }
     }
