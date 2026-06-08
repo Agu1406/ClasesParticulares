@@ -1,23 +1,20 @@
-// La línea llamada "package" podéis ignorarla por completo, mucho más adelante se explica.
 package ev1.ut1_fundamentosjava.u01entornojvmjdk.teoria;
 
 /**
- * Cuando aprendemos nuevos lenguajes (no solo de programación) es normal que utilicemos
- * palabras y frases que no entendemos, lo mismo pasa con Java, mira el siguiente ejemplo:
+ * <p><b>OBJETIVO:</b> Reconocer las lineas minimas de un programa Java ({@code public class …}
+ * y {@code public static void main(String[] args)}) aunque aun no dominemos cada palabra clave.</p>
  *
- * "public class U02_Programa1", por ejemplo la palabra "public" no es necesario entenderla
- * ahora.
+ * <br>
  *
- * "class" en español significa clase y es el nombre que se le da a los archivos / ficheros
- * que contienen nuestro código, este archivo completo es una clase java desde la primera
- * línea hasta la última.
- *
- * "U02_Programa1" es el nombre del archivo, puede ser el que nosotros queramos, yo he elegido
- * este para que sea coherente y fácil de identificar en que orden hay que verlos.
- *
- * Lo mismo pasa con la siguiente línea la cual es "public static void main(String[] args)",
- * puede ser muy agobiante entender que significan todas estás palabras, por ahora con aprender
- * a escribirlo de memoria será suficiente.
+ * <p><b>CONTENIDO:</b> En lenguajes nuevos aparecen terminos desconocidos; en Java es normal.</p>
+ * <ul>
+ * <li>{@code public class U02_Programa1}: {@code class} es la unidad que agrupa el codigo; el nombre
+ * coincide con el archivo.</li>
+ * <li>{@code public static void main(String[] args)}: punto de entrada del programa; aprendelo de
+ * memoria por ahora.</li>
+ * <li>{@code System.out.println(...)}: imprime texto en consola.</li>
+ * </ul>
+ * <p>La linea {@code package} se explicara mas adelante; de momento puedes ignorarla.</p>
  *
  * @author Agustin. A. Marquez. Pina
  * @since 03/06/2026

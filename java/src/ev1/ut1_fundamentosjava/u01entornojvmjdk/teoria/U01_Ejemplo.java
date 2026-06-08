@@ -1,18 +1,18 @@
-// La linea llamada "package" podeis ignorarla por completo, mucho mas adelante se explica.
 package ev1.ut1_fundamentosjava.u01entornojvmjdk.teoria;
 
 /**
- * Cuando instalamos Java en nuestros ordenadores normalmente tenemos dos opciones las cuales son:
+ * <p><b>OBJETIVO:</b> Diferenciar JVM y JDK al instalar Java, y ejecutar un primer
+ * {@code System.out.println} para comprobar que el entorno funciona.</p>
  *
- * - JVM (Java Virtual Machine): Es el software que lee y ejecuta código Java y lo traduce para que
- * nuestros ordenadores / portátiles / dispositivos puedan usarlos.
+ * <br>
  *
- * - JDK (Java Developer Kit): Es el software que permite editar, compilar, buscar errores y testear
- * código Java permitiendo diseñar y desarrollar nuestras propias aplicaciones en el lenguaje.
- *
- * Es por eso que muchos usuarios comunes solo necesitan el JVM para ejecutar aplicaciones Java mientras
- * que nosotros, los desarrolladores, necesitamos ambos, ya que con el JVM también compilamos y ejecutamos
- * y con el JDK diseñamos y creamos.
+ * <p><b>CONTENIDO:</b> Al instalar Java suele haber dos piezas:</p>
+ * <ul>
+ * <li><b>JVM</b> (Java Virtual Machine): ejecuta bytecode y traduce el programa para el sistema.</li>
+ * <li><b>JDK</b> (Java Development Kit): compila, depura y permite crear aplicaciones Java.</li>
+ * </ul>
+ * <p>El usuario final suele bastarle con la JVM; nosotros necesitamos JDK (y con el JDK ya ejecutamos
+ * y compilamos). La linea {@code package} se explicara mas adelante; de momento puedes ignorarla.</p>
  *
  * @author Agustin. A. Marquez. Pina
  * @since 03/06/2026
@@ -22,7 +22,6 @@ package ev1.ut1_fundamentosjava.u01entornojvmjdk.teoria;
  */
 public class U01_Ejemplo {
     public static void main(String[] args) {
-
-        System.out.println("¡Hola mundo! Esta es tú primera lección.");
+        System.out.println("¡Hola mundo! Esta es tu primera leccion.");
     }
 }
