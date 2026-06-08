@@ -2,14 +2,14 @@
 package ev1.ut1_fundamentosjava.u01entornojvmjdk.teoria;
 
 /**
- * Finalmente, con estas bases sencillas del lenguaje, el ultimo concepto que quiero que
- * aprendaís es las llaves, ¿que significan? todas las cosas en la vida tienen un inicio
+ * Finalmente, con estas bases sencillas del lenguaje, el último concepto que quiero que
+ * aprendas es las llaves, ¿qué significan? Todas las cosas en la vida tienen un inicio
  * y un final, nada es eterno, nuestro código empieza con las llaves "{" y ahí donde se
  * cierran es donde termina el código, así que, aunque por ejemplo, este documento tenga
- * 28 lineas, lo cierto es que el verdadero código, es decir lo que nuestra maquina usa
- * de verdad es solo lo que existen dentro de esas llaves, es decir de la linea 22 hasta
- * la linea 26, mientras que el resto son solo comentarios que no aportan nada al código
- * más alla de una explicación (como esto) o contexto que JVM usa para ejecutar.
+ * 28 líneas, lo cierto es que el verdadero código, es decir lo que nuestra máquina usa
+ * de verdad es solo lo que existen dentro de esas llaves, es decir de la línea 22 hasta
+ * la línea 26, mientras que el resto son solo comentarios que no aportan nada al código
+ * más allá de una explicación (como esto) o contexto que JVM usa para ejecutar.
  *
  * @author Agustin. A. Marquez. Pina
  * @since 03/06/2026
@@ -19,10 +19,10 @@ package ev1.ut1_fundamentosjava.u01entornojvmjdk.teoria;
  */
 public class U02_Programa2 {
     public static void main(String[] args) {
-        // Aqui le doy la instruccion de imprimir "!Hola mundo!".
+        // Aquí le doy la instruction de imprimir "!Hola mundo!".
         System.out.println("!Hola mundo!");
 
-        // Aqui le doy la instruccion de imprimir mi nombre.
+        // Aquí le doy la instruction de imprimir mi nombre.
         System.out.println("!Mi nombre es Agustin!");
     }
 }

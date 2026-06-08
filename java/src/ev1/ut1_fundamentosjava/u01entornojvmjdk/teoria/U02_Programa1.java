@@ -1,4 +1,4 @@
-// La linea llamada "package" podeis ignorarla por completo, mucho mas adelante se explica.
+// La línea llamada "package" podéis ignorarla por completo, mucho más adelante se explica.
 package ev1.ut1_fundamentosjava.u01entornojvmjdk.teoria;
 
 /**
@@ -10,12 +10,12 @@ package ev1.ut1_fundamentosjava.u01entornojvmjdk.teoria;
  *
  * "class" en español significa clase y es el nombre que se le da a los archivos / ficheros
  * que contienen nuestro código, este archivo completo es una clase java desde la primera
- * linea hasta la ultima.
+ * línea hasta la última.
  *
  * "U02_Programa1" es el nombre del archivo, puede ser el que nosotros queramos, yo he elegido
- * este para que sea coherente y facil de identificar en que orden hay que verlos.
+ * este para que sea coherente y fácil de identificar en que orden hay que verlos.
  *
- * Lo mismo pasa con la siguiente linea la cual es "public static void main(String[] args)",
+ * Lo mismo pasa con la siguiente línea la cual es "public static void main(String[] args)",
  * puede ser muy agobiante entender que significan todas estás palabras, por ahora con aprender
  * a escribirlo de memoria será suficiente.
  *
