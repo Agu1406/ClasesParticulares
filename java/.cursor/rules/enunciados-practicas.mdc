@@ -1,0 +1,46 @@
+---
+description: Convencion de nombres para enunciados en practicas/ (PDF, DOCX, MD)
+globs: src/**/practicas/**/*
+alwaysApply: false
+---
+
+# Enunciados de practicas
+
+Patron obligatorio para documentos de enunciado en `practicas/`:
+
+```
+{comunidad}-{centro}-{nombre-practica}.{extension}
+```
+
+## Partes
+
+- **comunidad:** CCAA o `interno` (minusculas, sin tildes): `madrid`, `valenciana`, `sevilla`, `alicante`, `valladolid`, `salamanca`, `interno`
+- **centro:** tipo + nombre pegado: `iescalderonbarca`, `iesrosachacel`, `iesvelazquez`, `cesjuanpablosegundo`, `ua`, `uax`
+- **nombre-practica:** kebab-case descriptivo: `quinielas-i`, `practica-libros`, `ejercicios-funciones`
+- **extension:** preferir `.pdf`; `.md` solo material propio del repo
+
+## Reglas
+
+- Minusculas, ASCII, guiones simples `-` unicamente
+- Sin espacios, tildes, `(1)`, prefijos `ProgNN` del centro original
+- Varios enunciados en una carpeta → distintos `{nombre-practica}`
+- Prefijo `{comunidad}-{centro}-` coherente con la carpeta del proyecto (`madridiesrosachacelobjetos` → `madrid-iesrosachacel-`)
+
+## Estructura plana (carpeta practica)
+
+- Todo en la **raiz** de `practicas/{proyecto}/`: enunciados, `_SIN_RESOLVER` / `_RESUELTO`, `.sql`, `.dat`, etc.
+- **Prohibido** crear subcarpetas (`dao/`, `fase1/`, `Objetos/`, `datos/`, …).
+- Varias fases o tecnologias → carpetas **hermanas** en `practicas/` (`…fase1`, `…fase2`, `…jdbchibernate`, `…jdbcjdbc`).
+- Material Eclipse de referencia del centro → `src/ignorar/referencia-centros/`.
+
+## JavaDoc
+
+```java
+ * <p>Enunciado: {@code madrid-iesrosachacel-practica-libros.pdf} (carpeta de la practica).</p>
+```
+
+## Legacy (renombrar al editar)
+
+Patron antiguo `{nombre}--{comunidad}-{centro}.pdf` → migrar a `{comunidad}-{centro}-{nombre}.pdf`.
+
+Indice completo: `README.md` seccion *Enunciados de practicas*.

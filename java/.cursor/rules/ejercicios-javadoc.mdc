@@ -1,0 +1,58 @@
+---
+description: Convencion de nombres y JavaDoc para ejercicios en ejercicios/pendientes y ejercicios/resueltos
+globs: src/**/ejercicios/**/*
+alwaysApply: false
+---
+
+# Ejercicios (pendientes / resueltos)
+
+## Nombre de archivo y clase
+
+```
+E{NN}_{NombreDescriptivo}_Pendiente.java   → carpeta pendientes/
+E{NN}_{NombreDescriptivo}_Resuelto.java   → carpeta resueltos/
+```
+
+- `{NN}`: dos digitos (`E01`, `E02`, …).
+- Misma raiz de nombre entre par pendiente/resuelto.
+- La clase publica coincide con el nombre del archivo.
+
+Legacy a migrar al tocar: `Ejercicio1_…`, `Ejercicio01_…_SIN_RESOLVER`, `…_RESUELTO`.
+
+## JavaDoc — pendiente
+
+Solo bloque **OBJETIVO**. Pie fijo al final (fuera del `<p>`):
+
+```java
+/**
+ * <p><b>OBJETIVO:</b> Texto para el alumno.</p>
+ *
+ * @author Agustin. A. Marquez. Pina
+ * @since dd/MM/yyyy
+ * @see <a href="mailto:agu1406@outlook.es">agu1406@outlook.es</a>
+ * @see <a href="https://github.com/Agu1406/ClasesParticulares">Repositorio GitHub</a>
+ * @see <a href="https://www.agustinmarquez.dev">Sitio web</a>
+ */
+```
+
+## JavaDoc — resuelto
+
+**OBJETIVO** + `<br>` + **SOLUCIÓN** + mismo pie:
+
+```java
+/**
+ * <p><b>OBJETIVO:</b> …</p>
+ *
+ * <br>
+ *
+ * <p><b>SOLUCIÓN:</b> …</p>
+ *
+ * @author …
+ */
+```
+
+## Reglas
+
+- No meter `@author`, `@since` ni `@see` dentro del `<p>` de OBJETIVO o SOLUCIÓN.
+- No usar scripts masivos para reescribir JavaDoc: cada ejercicio tiene texto distinto; migrar **subtema a subtema** leyendo el codigo.
+- Plantilla de referencia: `src/ev1/ut1_fundamentosjava/u01entornojvmjdk/ejercicios/`.
