@@ -1,4 +1,4 @@
-package ev1.ut1_fundamentosjava.u02tiposvariablesconversion.ejercicios.pendientes;
+package ev1.ut1_fundamentosjava.u02tiposvariablesconversion.teoria;
 
 /**
  * <p></p>
@@ -10,9 +10,7 @@ package ev1.ut1_fundamentosjava.u02tiposvariablesconversion.ejercicios.pendiente
  * @since 03/06/2026
  *
  */
-public class E01_TiposVariables_Pendiente {
-
+public class U02_CasteoTipos {
     public static void main(String[] args) {
-        // TODO: alumno
     }
 }

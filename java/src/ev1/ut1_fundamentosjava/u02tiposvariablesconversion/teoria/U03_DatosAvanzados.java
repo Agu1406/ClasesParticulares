@@ -1,13 +1,16 @@
 package ev1.ut1_fundamentosjava.u02tiposvariablesconversion.teoria;
 
 /**
- * Tipos envolventes (wrappers) de los primitivos: {@link Byte}, {@link Short}, {@link Character},
- * {@link Integer}, {@link Long}, {@link Float}, {@link Double} y {@link String}.
+ * <p></p>
  *
- * <p>Aqui solo se declaran. El uso aplicado ({@code parseInt}, {@code valueOf}, {@code equals})
- * se trabaja en {@link ev1.ut3_stringsyenvolventes.teoria.U02_EnvolventesIntro}.</p>
+ * @author Agustin. A. Marquez. Pina
+ * @see <a href="mailto:agu1406@outlook.es">agu1406@outlook.es</a>
+ * @see <a href="https://github.com/Agu1406/ClasesParticulares">Repositorio GitHub</a>
+ * @see <a href="https://www.agustinmarquez.dev">Sitio web</a>
+ * @since 03/06/2026
+ *
  */
-public class U02_DatosAvanzados {
+public class U03_DatosAvanzados {
     public static void main(String[] args) {
         Byte myByte = 42;
         Short myShort = 32_000;
