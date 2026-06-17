@@ -1,0 +1,54 @@
+---
+description: Convencion de carpetas y nombres para examenes en uXX_examenes/practicas/
+globs: src/**/u*_examenes/**/*
+alwaysApply: false
+---
+
+# Examenes (ultimo subtema de cada UT)
+
+## Subtema
+
+- Ultima carpeta de cada UT: `u{NN}_examenes` (siempre la de mayor numero).
+- Sustituye al antiguo `u{NN}_repaso` para material de examen/simulacro (legacy `repaso` pendiente de migrar).
+- Los examenes viven en **`practicas/`** (no en una carpeta `examenes/` separada).
+
+## Estructura por examen
+
+```
+u05_examenes/
+└── practicas/
+    └── madridiesrosachacelenunciadov6/
+        ├── madrid-iesrosachacel-examenes-enunciado-v6.pdf
+        ├── pendiente/
+        │   ├── ejercicio_1/
+        │   ├── ejercicio_2/
+        │   └── ejercicio_3/
+        └── resuelto/
+            ├── ejercicio_1/
+            ├── ejercicio_2/
+            └── ejercicio_3/
+```
+
+Modelo de referencia: `…/internotpppsalesanalytics/` (enunciado en raiz + `pendiente/` + `resuelto/`).
+
+- **Carpeta de proyecto:** `{comunidad}{centro}{identificador}` (misma logica que el resto de `practicas/`).
+- **PDF en la raiz** del proyecto (no dentro de `pendiente/` ni `resuelto/`).
+- **`pendiente/`** y **`resuelto/`**: cada uno con subcarpetas `ejercicio_1`, `ejercicio_2`, `ejercicio_3` (un `main` aislado por ejercicio).
+- Package: `…u05examenes.practicas.{carpeta}.resuelto.ejercicio_1` (etc.).
+
+## Nombre del documento
+
+Mismo patron que practicas (ver `README.md` y `enunciados-practicas.mdc`):
+
+```
+{comunidad}-{centro}-{nombre-examen}.pdf
+```
+
+## Clases Java
+
+- Un ejercicio = subcarpeta `ejercicio_1`, `ejercicio_2`, `ejercicio_3` dentro de `pendiente/` y `resuelto/`.
+- Clase de entrada: **`Main.java`** en cada subcarpeta (un `main` aislado por ejercicio).
+- Pendiente: `UnsupportedOperationException` o `// TODO` donde el alumno completa.
+- Resuelto: JavaDoc con **OBJETIVO** + **SOLUCION**.
+
+Indice completo: `README.md` seccion *Examenes*.

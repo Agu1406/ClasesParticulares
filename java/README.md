@@ -20,13 +20,17 @@ java/
 
 ### Convencion por subtema (EV1, EV2, EV3)
 
-Cada **UT** lleva prefijo de orden y nombre: `ut{N}_{nombre}` (p. ej. `ut1_fundamentosjava`, `ut2_controlflujometodos`). Cada **subtema** bajo la UT: `u{NN}{nombre}` (p. ej. `u01entornojvmjdk`, `u02condicionales`). Tres carpetas fijas por subtema (o directamente bajo la UT si el bloque es unico, como `ut3_stringsyenvolventes/teoria/` con bloques `U01_`, `U02_`…):
+Cada **UT** lleva prefijo de orden y nombre: `ut{N}_{nombre}` (p. ej. `ut1_fundamentosjava`, `ut2_controlflujometodos`). Cada **subtema** bajo la UT: `u{NN}{nombre}` (p. ej. `u01entornojvmjdk`, `u02condicionales`).
+
+**Ultimo subtema de cada UT:** `u{NN}_examenes` (mayor numero de la UT). Ahi van simulacros y examenes de centro. El antiguo `u{NN}_repaso` queda como **legacy** hasta migrarlo.
+
+Carpetas habituales por subtema tematico (o directamente bajo la UT si el bloque es unico, como `ut3_stringsyenvolventes/teoria/` con bloques `U01_`, `U02_`…):
 
 | Carpeta | Contenido |
 |---------|-----------|
-| `teoria/` | Bloques en orden `u01/`, `u02/`, `u03/`… (orden didactico 01→02→03; prefijo `u` para paquetes Java validos) |
+| `teoria/` | Bloques en orden `U01_`, `U02_`, `U03_`… (orden didactico; prefijo `U` en clases de teoria) |
 | `ejercicios/` | Solo `pendientes/` y `resueltos/` con el mismo ejercicio pareado: `E{NN}_{Nombre}_Pendiente.java` / `E{NN}_{Nombre}_Resuelto.java` (legacy: `EjercicioNN_…_SIN_RESOLVER` / `_RESUELTO`) |
-| `practicas/` | Una carpeta por proyecto; PDF + version alumno + version resuelta en la misma raiz |
+| `practicas/` | Una carpeta por proyecto. **Estructura plana** (PDF + `_SIN_RESOLVER` / `_RESUELTO` en la raiz). **Excepcion** en `u{NN}_examenes`: PDF en la raiz del proyecto + subcarpetas `pendiente/` y `resuelto/` (como `internotpppsalesanalytics`) |
 
 El `package` de cada `.java` coincide con la ruta bajo `src/` (sin guiones en carpetas con codigo). Ejemplo:
 
@@ -56,9 +60,44 @@ practicas/
 
 En JavaDoc puede decirse «funcion»; en rutas y nombres de clase use **metodos**, no `funciones`.
 
-### Enunciados de practicas (convencion de nombres)
+### Examenes (`u{NN}_examenes/practicas/`)
 
-Todos los documentos de enunciado en `practicas/` siguen **un solo patron**:
+El ultimo subtema de cada UT usa la carpeta **`practicas/`** (igual que el resto de subtemas), no una carpeta `examenes/` aparte.
+
+Examenes UT6 (PDF reales IES Rosa Chacel, origen `u04repaso/practicas/madridiesrosachacelexamenes/`):
+- `…/madridiesrosachacelenunciadov6/` (3 ejercicios; `madrid-iesrosachacel-examenes-enunciado-v6.pdf`)
+- `…/madridiesrosachacel14mar2024/` (2 ejercicios; `madrid-iesrosachacel-examenes-14-mar-2024.pdf`)
+- `…/madridiesrosachacel15abril2024/` (2 ejercicios; `madrid-iesrosachacel-examenes-15-abril-2024.pdf`)
+- `…/madridiesrosachacelmarzo2023/` (1 ejercicio; `madrid-iesrosachacel-examenes-marzo-2023.pdf`)
+
+```
+u05_examenes/
+└── practicas/
+    └── madridiesrosachacelenunciadov6/
+        ├── madrid-iesrosachacel-examenes-enunciado-v6.pdf
+        ├── pendiente/
+        │   ├── ejercicio_1/   → {@code Main.java}
+        │   ├── ejercicio_2/   → {@code Main.java}
+        │   └── ejercicio_3/   → {@code Main.java}
+        └── resuelto/
+            ├── ejercicio_1/
+            ├── ejercicio_2/
+            └── ejercicio_3/
+```
+
+Referencia identica en forma: `…/internotpppsalesanalytics/` (`pendiente/` + `resuelto/` + enunciado en la raiz).
+
+- **Carpeta de proyecto:** `{comunidad}{centro}{identificador}` (misma convencion que otras `practicas/`).
+- **Package:** `…u05examenes.practicas.madridiesrosachacelenunciadov6.resuelto.ejercicio_1` (cada ejercicio en su subcarpeta; un `main` por ejercicio).
+- Regla Cursor: `.cursor/rules/enunciados-examenes.mdc`.
+
+Al migrar desde `u04repaso/practicas/…`, mover cada examen a `u{NN}_examenes/practicas/{proyecto}/` con PDF + `pendiente/` + `resuelto/`.
+
+### Enunciados de practicas y examenes (convencion de nombres)
+
+**Origen de la convencion:** definida en este `README.md` (seccion siguiente) y replicada en `.cursor/rules/enunciados-practicas.mdc` y `.cursor/rules/enunciados-examenes.mdc` para que el asistente la aplique al editar archivos. El README es la **guia canonica**; las reglas Cursor son un extracto operativo.
+
+Todos los documentos de enunciado en `practicas/` (incluido `u{NN}_examenes/practicas/`) siguen **un solo patron**:
 
 ```
 {comunidad}-{centro}-{nombre-practica}.{extension}
@@ -112,7 +151,7 @@ Aun presente en parte del repo; al tocar una practica, renombrar al patron nuevo
 
 ### UT9 (programacion funcional)
 
-Ruta: `src/ev3/ut9_programacionfuncional/pf/` con subtemas `u01lambda`, `u02streams`, `u03optional`, `u04principios`, `u05repaso`. Practicas TPP EPIG: `…/u01lambda/practicas/valencianaepigtppsesion1/` … `…/u05repaso/practicas/valencianaepigtppsesion5/`. PDFs del modulo (colocar en `pf/u05repaso/teoria/universidad/`): `sesion1_lambda_collections.pdf`, `TPPHoja2_alumno_clase.pdf`, `TPPHoja3_alumno_fix.pdf`, `TPPHoja4_alumno_clase_fix.pdf`, `TPPHoja5_alumno.pdf`, `Metodos y Funciones (Parcial 1 PL).docx`; diapos en `pf/u05repaso/teoria/01_functional_prog.pdf`.
+Ruta: `src/ev3/ut9_programacionfuncional/pf/` con subtemas `u01lambda`, `u02streams`, `u03optional`, `u04principios`, `u05repaso` (pendiente renombrar a `u05_examenes`). Practicas TPP EPIG: `…/u01lambda/practicas/valencianaepigtppsesion1/` … `…/u05repaso/practicas/valencianaepigtppsesion5/`. PDFs del modulo (colocar en `pf/u05repaso/teoria/universidad/`): `sesion1_lambda_collections.pdf`, `TPPHoja2_alumno_clase.pdf`, `TPPHoja3_alumno_fix.pdf`, `TPPHoja4_alumno_clase_fix.pdf`, `TPPHoja5_alumno.pdf`, `Metodos y Funciones (Parcial 1 PL).docx`; diapos en `pf/u05repaso/teoria/01_functional_prog.pdf`.
 
 ## JavaDoc (pie de clase)
 
@@ -152,15 +191,15 @@ En cada clase principal de una practica, documentar con **objetivo pedagogico**,
 
 | UT | Contenido |
 |----|-----------|
-| `ev2/ut4_colecciones` | Arrays, ArrayList, mapas, repaso |
-| `ev2/ut5_pooexcepcionesio` | POO basica, excepciones, ficheros, GUI |
+| `ev2/ut4_colecciones` | Arrays, ArrayList, mapas (`u04repaso` legacy → futuro `u05_examenes`) |
+| `ev2/ut5_pooexcepcionesio` | POO basica, excepciones, ficheros, GUI (`u05repaso` legacy) |
 
 ### EV3 - Avanzado y persistencia (RA7, RA8, RA9)
 
 | UT | Contenido |
 |----|-----------|
-| `ev3/ut6_pooavanzadaestructuras` | Herencia, colecciones, concurrencia |
-| `ev3/ut7_persistenciajdbcapi` | JDBC, BDD, repaso |
+| `ev3/ut6_pooavanzadaestructuras` | Herencia, colecciones, concurrencia, examenes (`u05_examenes`; legacy `u04repaso`) |
+| `ev3/ut7_persistenciajdbcapi` | JDBC, BDD, examenes (`u05repaso` legacy) |
 | `ev3/ut8_frameworksspring` | Spring |
 | `ev3/ut9_programacionfuncional/pf` | Lambda, Stream API, Optional, principios PF |
 

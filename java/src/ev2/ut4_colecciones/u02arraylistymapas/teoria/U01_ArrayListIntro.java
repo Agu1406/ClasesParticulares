@@ -3,48 +3,59 @@ package ev2.ut4_colecciones.u02arraylistymapas.teoria;
 import java.util.ArrayList;
 
 /**
- * Teoria: {@link ArrayList} en Java.
- *
- * <p><b>Objetivo:</b> usar listas dinamicas que crecen y se reducen en tiempo de ejecucion,
- * frente a un array de tamano fijo.</p>
- *
- * <p>Operaciones habituales:</p>
- * <ul>
- *   <li>{@code new ArrayList&lt;&gt;()} - crear lista vacia.</li>
- *   <li>{@code add(valor)} - anadir al final.</li>
- *   <li>{@code add(indice, valor)} - insertar en una posicion.</li>
- *   <li>{@code get(indice)} / {@code set(indice, valor)} - leer y modificar.</li>
- *   <li>{@code remove(valor)} / {@code remove(indice)} - eliminar.</li>
- *   <li>{@code size()}, {@code contains(valor)}, {@code isEmpty()}.</li>
- * </ul>
- *
- * <p>Recorrido: bucle {@code for} por indice o {@code for-each} sobre la lista.</p>
- *
- * <p>Ejercicios ArrayList en {@code ejercicios/01-arraylist/pendientes} y {@code resueltos}
- * (clases {@code Ejercicio*_ArrayList*}).</p>
+ * Clase introductoria a {@link ArrayList}: listas dinamicas que crecen y se reducen en ejecucion.
  *
  * @author Agustin. A. Marquez. Pina
- * @since 29/05/2026
+ * @since 03/06/2026
  * @see <a href="mailto:agu1406@outlook.es">agu1406@outlook.es</a>
  * @see <a href="https://github.com/Agu1406/ClasesParticulares">Repositorio GitHub</a>
  * @see <a href="https://www.agustinmarquez.dev">Sitio web</a>
  */
 public class U01_ArrayListIntro {
 
-    public static void main(String[] args) {
-        ArrayList<Integer> numeros = new ArrayList<>();
-        numeros.add(10);
-        numeros.add(20);
-        numeros.add(30);
+	public static void main(String[] args) {
 
-        System.out.println("Tamano: " + numeros.size());
-        System.out.println("Primer elemento: " + numeros.get(0));
+		/*
+		 * A diferencia de un array, ArrayList no tiene tamano fijo.
+		 * Sintaxis: ArrayList<Tipo> nombre = new ArrayList<>();
+		 *
+		 * Indice    => [0][1][2]...
+		 * Valores   => (vacia al crear)
+		 */
+		ArrayList<Integer> numeros = new ArrayList<>();
 
-        numeros.set(1, 99);
-        System.out.println("Tras set(1, 99): " + numeros);
+		/*
+		 * add(valor) anade al final de la lista.
+		 *
+		 * Indice    => [0][1][2]
+		 * Valores   => [10][20][30]
+		 */
+		numeros.add(10);
+		numeros.add(20);
+		numeros.add(30);
 
-        for (int n : numeros) {
-            System.out.println("Valor: " + n);
-        }
-    }
+		/*
+		 * size() devuelve cuantos elementos hay (no el ultimo indice).
+		 * get(indice) lee el valor de una posicion, igual que en un array.
+		 */
+		System.out.println("Tamano: " + numeros.size());
+		System.out.println("Primer elemento: " + numeros.get(0));
+
+		/*
+		 * set(indice, valor) sustituye el dato que habia en esa posicion.
+		 *
+		 * Antes     => [10][20][30]
+		 * Despues   => [10][99][30]
+		 */
+		numeros.set(1, 99);
+		System.out.println("Tras set(1, 99): " + numeros);
+
+		/*
+		 * Recorrido con for-each: recorre cada elemento sin usar el indice.
+		 */
+		System.out.println("Recorrido for-each:");
+		for (int n : numeros) {
+			System.out.println("Valor: " + n);
+		}
+	}
 }

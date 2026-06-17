@@ -1,13 +1,19 @@
 package ev2.ut5_pooexcepcionesio.u02excepciones.teoria;
 
 /**
- * Indice del subtema excepciones (UT5).
+ * Teoria: indice del subtema excepciones (UT5).
  *
  * <p><b>Objetivo:</b> manejar errores en tiempo de ejecucion con {@code try-catch-finally},
- * {@code throw} y validaciones sin detener todo el programa.</p>
+ * {@code throw}, {@code throws} y excepciones propias, sin detener todo el programa.</p>
  *
- * <p>Teoria ejecutable: {@link U01_TryCatchFinallyIntro}.
- * Ejercicios en {@code ejercicios/pendientes} y {@code ejercicios/resueltos}
+ * <p>Orden sugerido:</p>
+ * <ol>
+ *   <li>{@link U02_ExcepcionesConceptos} — que es una excepcion y tipos habituales</li>
+ *   <li>{@link U03_TryCatchFinallyIntro} — {@code try}, {@code catch} y {@code finally}</li>
+ *   <li>{@link U04_ThrowThrowsYExcepcionesPropias} — {@code throw}, {@code throws} y clases propias</li>
+ * </ol>
+ *
+ * <p>Ejercicios en {@code ejercicios/pendientes} y {@code ejercicios/resueltos}
  * (1-11; el 11 practica division con reglas y {@code throw}).</p>
  *
  * @author Agustin. A. Marquez. Pina
@@ -18,6 +24,11 @@ package ev2.ut5_pooexcepcionesio.u02excepciones.teoria;
  */
 public class U01_ExcepcionesIntro {
 
-    private U01_ExcepcionesIntro() {
-    }
+	public static void main(String[] args) {
+		System.out.println("Excepciones — orden de estudio:");
+		System.out.println("  1. U02_ExcepcionesConceptos");
+		System.out.println("  2. U03_TryCatchFinallyIntro");
+		System.out.println("  3. U04_ThrowThrowsYExcepcionesPropias");
+		System.out.println("Practica despues en ejercicios/ (1 a 11).");
+	}
 }

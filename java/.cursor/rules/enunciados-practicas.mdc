@@ -30,6 +30,7 @@ Patron obligatorio para documentos de enunciado en `practicas/`:
 
 - Todo en la **raiz** de `practicas/{proyecto}/`: enunciados, `_SIN_RESOLVER` / `_RESUELTO`, `.sql`, `.dat`, etc.
 - **Prohibido** crear subcarpetas (`dao/`, `fase1/`, `Objetos/`, `datos/`, …).
+- **Excepcion (examenes):** en `u{NN}_examenes/practicas/` usar `pendiente/` y `resuelto/` + PDF en la raiz (como `internotpppsalesanalytics`). Ver `enunciados-examenes.mdc`.
 - Varias fases o tecnologias → carpetas **hermanas** en `practicas/` (`…fase1`, `…fase2`, `…jdbchibernate`, `…jdbcjdbc`).
 - Material Eclipse de referencia del centro → `src/ignorar/referencia-centros/`.
 
