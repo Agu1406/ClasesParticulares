@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.StackPane?>
+
+<StackPane minHeight="280.0" minWidth="360.0" prefHeight="280.0" prefWidth="360.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ev2.ut5_pooexcepcionesio.ejercicios.resueltos.e04_operaciones.E04_OperacionesController">
+   <children>
+      <GridPane alignment="CENTER" hgap="8.0" vgap="10.0">
+         <padding>
+            <Insets bottom="15.0" left="15.0" right="15.0" top="15.0" />
+         </padding>
+         <children>
+            <Label text="E04 — Operaciones basicas" GridPane.columnSpan="2" />
+            <Label text="Numero A:" GridPane.rowIndex="1" />
+            <TextField fx:id="campoA" prefWidth="180.0" text="10" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+            <Label text="Numero B:" GridPane.rowIndex="2" />
+            <TextField fx:id="campoB" prefWidth="180.0" text="3" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+            <Button mnemonicParsing="false" onAction="#onSumarClick" text="+" GridPane.rowIndex="3" />
+            <Button mnemonicParsing="false" onAction="#onRestarClick" text="-" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+            <Button mnemonicParsing="false" onAction="#onMultiplicarClick" text="*" GridPane.rowIndex="4" />
+            <Button mnemonicParsing="false" onAction="#onDividirClick" text="/" GridPane.columnIndex="1" GridPane.rowIndex="4" />
+            <Label fx:id="lblResultado" alignment="CENTER" text="Resultado: —" GridPane.columnSpan="2" GridPane.rowIndex="5" />
+         </children>
+      </GridPane>
+   </children>
+</StackPane>

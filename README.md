@@ -84,11 +84,9 @@ La idea surgió este año (2025) después de más de un año impartiendo clases,
 - Bibliotecas: JavaFX, Jakarta Servlet API
 
 ### **javafx/**
-- Interfaces gráficas con JavaFX
-- Aplicaciones de escritorio con FXML
-- Proyectos con Gradle y JavaFX SDK 25.0.1
-- Documentación sobre diseño de interfaces (DAW 2)
-- Estructura modular con recursos y layouts
+- GUI JavaFX (RA5 y futuro EV3): misma logica `ev1`/`ev2`/`ev3` que `java/`, modulo Gradle aparte
+- Nucleo actual en `ev2/ut5_pooexcepcionesio/` (teoria, ejercicios, practicas)
+- Material original conservado en `javafx/src/ignorar/legacy/` (no se elimina)
 
 ### **js/**
 - **DWEC** (módulo 0612, 2.º DAW): temario BOE, mapa RA → evaluaciones (`ev1`–`ev3`) y unidades teóricas
@@ -106,15 +104,11 @@ La idea surgió este año (2025) después de más de un año impartiendo clases,
 - Documentación PDF de prácticas y ejercicios
 
 ### **python/**
-- **13 ejercicios numerados** progresivos:
-  - Variables, operadores, input
-  - Control de flujo (if, if-else)
-  - Bucles (for, while)
-  - Estructuras de datos (listas, tuplas, diccionarios)
-  - Diccionarios avanzados
-- Proyectos prácticos: Calculadora, Gestor de Tareas, Tienda de Compra
-- Documentación PDF sobre proyectos y ejercicios de ampliación
-- Organización por sintaxis básica y proyectos avanzados
+- **Curso de especialización FP** — Python (RD 566/2024) + **paridad pedagógica con Java** (UT1–UT9)
+- Estructura espejo de `java/`: `src/ev1` (UT1–3), `ev2` (UT4–5), `ev3` (UT6–9)
+- BOE: [python/BOE-2024-06-20-RD-566-curso-especializacion-python.md](python/BOE-2024-06-20-RD-566-curso-especializacion-python.md)
+- Material Sevilla (IES Velázquez): gestor de tareas (UT4), ampliación Python (UT6)
+- Ver [python/README.md](python/README.md)
 
 ### **rn/**
 - Desarrollo de aplicaciones móviles multiplataforma con React Native y Expo

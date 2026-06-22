@@ -10,7 +10,7 @@ Fuente oficial: [Real Decreto 405/2023 (BOE-A-2023-13221)](https://boe.es/diario
 
 ## Resultados de aprendizaje (RA)
 
-Texto oficial del BOE y **donde se trabaja en este repositorio** (`src/ev1`, `ev2`, `ev3`).
+"Texto oficial del BOE y **donde se trabaja en este repositorio** (`src/ev1`, `ev2`, `ev3`).
 
 ### RA1 — Reconoce la estructura de un programa informatico
 

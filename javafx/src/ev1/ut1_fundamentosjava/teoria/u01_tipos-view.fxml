@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.StackPane?>
+
+<!-- StackPane centra su contenido en horizontal y vertical -->
+<StackPane minHeight="260.0" minWidth="420.0" prefHeight="260.0" prefWidth="420.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ev1.ut1_fundamentosjava.teoria.U01_TiposYConversionController">
+   <children>
+      <GridPane alignment="CENTER" hgap="10.0" vgap="10.0">
+         <padding>
+            <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+         </padding>
+         <children>
+            <Label text="Entero:" />
+            <TextField fx:id="campoEntero" prefWidth="220.0" text="10" GridPane.columnIndex="1" />
+            <Label text="Decimal:" GridPane.rowIndex="1" />
+            <TextField fx:id="campoDecimal" prefWidth="220.0" text="3.14" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+            <Button mnemonicParsing="false" onAction="#onConvertirClick" text="Convertir" GridPane.columnSpan="2" GridPane.halignment="CENTER" GridPane.rowIndex="2" />
+            <Label fx:id="lblResultado" alignment="CENTER" maxWidth="360.0" text="Pulsa Convertir" wrapText="true" GridPane.columnSpan="2" GridPane.halignment="CENTER" GridPane.rowIndex="3" />
+         </children>
+      </GridPane>
+   </children>
+</StackPane>

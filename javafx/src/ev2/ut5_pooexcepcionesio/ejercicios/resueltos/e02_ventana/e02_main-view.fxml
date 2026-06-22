@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.layout.VBox?>
+
+<StackPane minHeight="200.0" minWidth="320.0" prefHeight="200.0" prefWidth="320.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ev2.ut5_pooexcepcionesio.ejercicios.resueltos.e02_ventana.E02_VentanaController">
+   <children>
+      <VBox alignment="CENTER" spacing="15.0">
+         <padding>
+            <Insets bottom="15.0" left="15.0" right="15.0" top="15.0" />
+         </padding>
+         <children>
+            <Label text="E02 — Ventana secundaria" />
+            <Button mnemonicParsing="false" onAction="#onAbrirAvisoClick" text="Abrir aviso" />
+         </children>
+      </VBox>
+   </children>
+</StackPane>

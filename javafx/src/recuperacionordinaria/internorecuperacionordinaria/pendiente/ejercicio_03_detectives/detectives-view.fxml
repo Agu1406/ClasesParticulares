@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.StackPane?>
+
+<StackPane minHeight="320.0" minWidth="420.0" prefHeight="320.0" prefWidth="420.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="recuperacionordinaria.internorecuperacionordinaria.pendiente.ejercicio_03_detectives.DetectivesController">
+   <children>
+      <GridPane alignment="CENTER" hgap="10.0" vgap="12.0">
+         <padding>
+            <Insets bottom="15.0" left="15.0" right="15.0" top="15.0" />
+         </padding>
+         <children>
+            <Label text="Codigo del Caso:" />
+            <TextField fx:id="campoCodigo" prefWidth="240.0" GridPane.columnIndex="1" />
+            <Label text="Nombre del Sospechoso:" GridPane.rowIndex="1" />
+            <TextField fx:id="campoSospechoso" prefWidth="240.0" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+            <Label text="Estado:" GridPane.rowIndex="2" />
+            <ComboBox fx:id="comboEstado" prefWidth="240.0" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+            <Button mnemonicParsing="false" onAction="#onArchivarClick" text="Archivar Expediente" GridPane.columnIndex="0" GridPane.rowIndex="3" />
+            <Button mnemonicParsing="false" onAction="#onCargarUltimoClick" text="Cargar Ultimo Expediente" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+            <Label fx:id="lblEstado" text="Completa el controller." GridPane.columnSpan="2" GridPane.rowIndex="4" />
+         </children>
+      </GridPane>
+   </children>
+</StackPane>

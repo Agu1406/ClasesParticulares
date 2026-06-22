@@ -1,9 +1,7 @@
 plugins {
     id 'java'
     id 'application'
-    id 'org.javamodularity.moduleplugin' version '1.8.12'
     id 'org.openjfx.javafxplugin' version '0.1.0'
-    id 'org.beryx.jlink' version '2.26.0'
 }
 
 group 'org.agu1406'
@@ -15,43 +13,79 @@ repositories {
 
 ext {
     junitVersion = '5.10.2'
+    javafxVersion = '21.0.6'
 }
 
-sourceCompatibility = '23'
-targetCompatibility = '23'
+sourceCompatibility = '21'
+targetCompatibility = '21'
 
-tasks.withType(JavaCompile) {
+java {
+    toolchain {
+        languageVersion = JavaLanguageVersion.of(21)
+    }
+}
+
+sourceSets {
+    main {
+        java {
+            srcDirs = ['src']
+            exclude '**/ignorar/**'
+        }
+        resources {
+            srcDirs = ['src']
+            exclude '**/*.java'
+            exclude '**/*.md'
+            exclude '**/ignorar/**'
+        }
+    }
+}
+
+tasks.withType(JavaCompile).configureEach {
     options.encoding = 'UTF-8'
+    options.release = 21
 }
 
 application {
-    mainModule = 'org.agu1406.clasesjavafxgradle'
-    mainClass = 'org.agu1406.clasesjavafxgradle.HelloApplication'
+    mainClass = findProperty('mainClass') ?: 'ev2.ut5_pooexcepcionesio.teoria.U02_FXMLLoaderIntro'
 }
 
 javafx {
-    version = '25.0.1'
+    version = javafxVersion
     modules = ['javafx.controls', 'javafx.fxml']
 }
 
-dependencies {
+def javafxOs = {
+    def os = org.gradle.internal.os.OperatingSystem.current()
+    if (os.isWindows()) return 'win'
+    if (os.isMacOsX()) return 'mac'
+    if (os.isLinux()) return 'linux'
+    throw new GradleException('Sistema operativo no soportado para JavaFX')
+}()
 
-    testImplementation("org.junit.jupiter:junit-jupiter-api:${junitVersion}")
-    testRuntimeOnly("org.junit.jupiter:junit-jupiter-engine:${junitVersion}")
+dependencies {
+    implementation "org.openjfx:javafx-controls:${javafxVersion}:${javafxOs}"
+    implementation "org.openjfx:javafx-fxml:${javafxVersion}:${javafxOs}"
+
+    testImplementation "org.junit.jupiter:junit-jupiter-api:${junitVersion}"
+    testRuntimeOnly "org.junit.jupiter:junit-jupiter-engine:${junitVersion}"
+}
+
+// IntelliJ (Build and run using Gradle) crea tareas "*.main()" sin JavaFX.
+tasks.withType(JavaExec).configureEach { exec ->
+    if (exec.name.endsWith('.main()')) {
+        exec.doFirst {
+            def allJars = exec.classpath.files
+            def javafxJars = allJars.findAll { it.name.startsWith('javafx-') }
+            def appJars = allJars.findAll { !it.name.startsWith('javafx-') }
+            exec.jvmArgs += [
+                '--module-path', javafxJars.collect { it.absolutePath }.join(File.pathSeparator),
+                '--add-modules', 'javafx.controls,javafx.fxml'
+            ]
+            exec.classpath = files(appJars)
+        }
+    }
 }
 
 test {
     useJUnitPlatform()
-}
-
-jlink {
-    imageZip = project.file("${buildDir}/distributions/app-${javafx.platform.classifier}.zip")
-    options = ['--strip-debug', '--compress', '2', '--no-header-files', '--no-man-pages']
-    launcher {
-        name = 'app'
-    }
-}
-
-jlinkZip {
-    group = 'distribution'
 }

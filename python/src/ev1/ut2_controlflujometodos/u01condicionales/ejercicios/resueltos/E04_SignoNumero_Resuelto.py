@@ -1,0 +1,16 @@
+"""
+OBJETIVO: Entero: positivo, negativo o cero (tres ramas).
+TIPO: if / elif / else.
+SOLUCION: ver codigo.
+
+Autor: Agustin. A. Marquez. Pina
+Contacto: agu1406@outlook.es
+"""
+
+n = int(input("n: "))
+if n > 0:
+    print("positivo")
+elif n < 0:
+    print("negativo")
+else:
+    print("cero")
