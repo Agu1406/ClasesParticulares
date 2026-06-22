@@ -15,6 +15,13 @@ public class U02_EjemploJava {
 
         // ❌ System.out.println("=" * 30);
 
+        // Aquí incluso la dificultad para algo sencillo incrementa.
+        int x = 0;
+        while (x < 30) {
+            System.out.println("=");
+            x++;
+        }
+
         System.out.println("¡Fin del ejemplo U02 de Java!");
     }
 }
