@@ -20,10 +20,10 @@ Cada **subtema** (o UT3 a nivel de unidad) tiene **10 ejercicios** en:
 
 | Teoria | Contenido |
 |--------|-----------|
-| `U04_IfIntro` | `if` solo |
-| `U05_IfElseIntro` | `if` / `elif` / `else`, ternario |
-| `U06_MatchCaseIntro` | `match` / `case` (switch Python 3.10+) |
-| `U07_CondicionalesAnidadasIntro` | anidados, `and` / `or` / `not` |
+| `U01_IfIntro` | `if` solo |
+| `U02_IfElseIntro` | `if` / `elif` / `else`, ternario |
+| `U03_MatchCaseIntro` | `match` / `case` (switch Python 3.10+) |
+| `U04_CondicionalesAnidadasIntro` | anidados, `and` / `or` / `not` |
 
 | Ejercicio | Tipo |
 |-----------|------|

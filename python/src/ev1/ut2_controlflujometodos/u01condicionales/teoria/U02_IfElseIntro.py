@@ -1,5 +1,5 @@
 """
-U05 — if / elif / else y operador ternario.
+U02 — if / elif / else y operador ternario.
 
 OBJETIVO:
   - Encadenar varias condiciones con elif (rangos, escalones).
@@ -8,6 +8,9 @@ OBJETIVO:
   - Si comparas muchos valores exactos (1, 2, 3...), mira U06 match/case.
 
 Autor: Agustin. A. Marquez. Pina
+Contacto: agu1406@outlook.es
+Repositorio GitHub: https://github.com/Agu1406/ClasesParticulares
+Sitio web: https://www.agustinmarquez.dev
 """
 
 nota = 7.2

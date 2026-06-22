@@ -1,5 +1,5 @@
 """
-U06 — Funciones con def.
+U01 — Funciones con def.
 
 OBJETIVO:
   - Agrupar codigo reutilizable en funciones.
@@ -8,6 +8,9 @@ OBJETIVO:
   - Llamar: resultado = funcion(argumentos)
 
 Autor: Agustin. A. Marquez. Pina
+Contacto: agu1406@outlook.es
+Repositorio GitHub: https://github.com/Agu1406/ClasesParticulares
+Sitio web: https://www.agustinmarquez.dev
 """
 
 

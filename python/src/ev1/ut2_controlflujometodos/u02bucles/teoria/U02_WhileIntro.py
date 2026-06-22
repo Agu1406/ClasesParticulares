@@ -1,5 +1,5 @@
 """
-U08 — Bucle while.
+U02 — Bucle while.
 
 OBJETIVO:
   - Repetir mientras una condicion sea True.
@@ -7,6 +7,9 @@ OBJETIVO:
   - break sale del bucle; continue salta a la siguiente vuelta.
 
 Autor: Agustin. A. Marquez. Pina
+Contacto: agu1406@outlook.es
+Repositorio GitHub: https://github.com/Agu1406/ClasesParticulares
+Sitio web: https://www.agustinmarquez.dev
 """
 
 contador = 0

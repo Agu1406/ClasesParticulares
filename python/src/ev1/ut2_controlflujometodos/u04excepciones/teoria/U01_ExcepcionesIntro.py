@@ -1,5 +1,5 @@
 """
-U08 — Excepciones: try / except.
+U01 — Excepciones: try / except.
 
 OBJETIVO:
   - Capturar errores en tiempo de ejecucion sin que el programa se cierre.
@@ -7,6 +7,9 @@ OBJETIVO:
   - int("abc") lanza ValueError; division por cero ZeroDivisionError.
 
 Autor: Agustin. A. Marquez. Pina
+Contacto: agu1406@outlook.es
+Repositorio GitHub: https://github.com/Agu1406/ClasesParticulares
+Sitio web: https://www.agustinmarquez.dev
 """
 
 texto = "42"

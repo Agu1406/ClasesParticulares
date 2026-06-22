@@ -12,6 +12,9 @@ REGLAS:
   - Python infiere el tipo; no declaras int x como en Java.
 
 Autor: Agustin. A. Marquez. Pina
+Contacto: agu1406@outlook.es
+Repositorio GitHub: https://github.com/Agu1406/ClasesParticulares
+Sitio web: https://www.agustinmarquez.dev
 """
 
 # --- Tipos numericos ---

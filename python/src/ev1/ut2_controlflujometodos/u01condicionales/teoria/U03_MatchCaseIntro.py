@@ -1,5 +1,5 @@
 """
-U06 — match / case (equivalente moderno al switch de Java).
+U03 — match / case (equivalente moderno al switch de Java).
 
 OBJETIVO:
   - Comparar un valor con varios casos concretos (Python 3.10+).
@@ -12,6 +12,9 @@ EQUIVALENCIA JAVA:
   Python: match opcion: case "1": ... case _: ...
 
 Autor: Agustin. A. Marquez. Pina
+Contacto: agu1406@outlook.es
+Repositorio GitHub: https://github.com/Agu1406/ClasesParticulares
+Sitio web: https://www.agustinmarquez.dev
 """
 
 opcion = "2"

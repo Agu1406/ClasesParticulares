@@ -1,5 +1,5 @@
 """
-U07 — Condicionales anidados y operadores logicos.
+U04 — Condicionales anidados y operadores logicos.
 
 OBJETIVO:
   - if dentro de otro if (anidado) cuando hay dos condiciones en cascada.
@@ -7,6 +7,9 @@ OBJETIVO:
   - Combinar con if/elif cuando match no encaja (rangos, desigualdades).
 
 Autor: Agustin. A. Marquez. Pina
+Contacto: agu1406@outlook.es
+Repositorio GitHub: https://github.com/Agu1406/ClasesParticulares
+Sitio web: https://www.agustinmarquez.dev
 """
 
 edad = 20

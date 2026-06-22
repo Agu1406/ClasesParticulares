@@ -1,6 +1,15 @@
 """
-EJERCICIO 11: Tuplas
-En este ejercicio aprenderás a trabajar con tuplas en Python.
+U01 — Tuplas en Python.
+
+OBJETIVO:
+  - Crear tuplas y acceder a elementos.
+  - Entender inmutabilidad y desempaquetado.
+  - Usar tuplas como claves o registros simples.
+
+Autor: Agustin. A. Marquez. Pina
+Contacto: agu1406@outlook.es
+Repositorio GitHub: https://github.com/Agu1406/ClasesParticulares
+Sitio web: https://www.agustinmarquez.dev
 """
 
 # 1. Crear tuplas

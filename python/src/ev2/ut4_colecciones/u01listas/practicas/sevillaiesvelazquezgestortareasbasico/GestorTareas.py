@@ -9,6 +9,11 @@ Aplicación completa para gestionar tareas con las siguientes funciones:
 - Resumir tareas
 
 Autor: Estudiante
+
+Autor: Agustin. A. Marquez. Pina
+Contacto: agu1406@outlook.es
+Repositorio GitHub: https://github.com/Agu1406/ClasesParticulares
+Sitio web: https://www.agustinmarquez.dev
 """
 
 # Base de datos de tareas (lista de diccionarios)

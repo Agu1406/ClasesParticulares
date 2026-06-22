@@ -1,5 +1,5 @@
 """
-U09 — Patrones con bucles anidados.
+U03 — Patrones con bucles anidados.
 
 OBJETIVO:
   - Bucles dentro de bucles (tablas de multiplicar, dibujos).
@@ -7,6 +7,9 @@ OBJETIVO:
   - Factorial como producto repetido.
 
 Autor: Agustin. A. Marquez. Pina
+Contacto: agu1406@outlook.es
+Repositorio GitHub: https://github.com/Agu1406/ClasesParticulares
+Sitio web: https://www.agustinmarquez.dev
 """
 
 # print(): titulo tabla del 4

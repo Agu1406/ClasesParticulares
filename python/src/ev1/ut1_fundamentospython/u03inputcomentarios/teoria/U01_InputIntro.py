@@ -1,5 +1,5 @@
 """
-U03 — Entrada de datos con input().
+U01 — Entrada de datos con input().
 
 OBJETIVO:
   - input() lee texto del teclado (siempre devuelve str).
@@ -11,6 +11,9 @@ NOTA DIDACTICA:
   Descomenta el bloque "VERSION INTERACTIVA" para practicar con input().
 
 Autor: Agustin. A. Marquez. Pina
+Contacto: agu1406@outlook.es
+Repositorio GitHub: https://github.com/Agu1406/ClasesParticulares
+Sitio web: https://www.agustinmarquez.dev
 """
 
 # --- Demo con valores fijos (ejecutable en clase sin esperar teclado) ---

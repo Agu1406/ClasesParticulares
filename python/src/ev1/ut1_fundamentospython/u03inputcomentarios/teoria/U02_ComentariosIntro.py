@@ -1,5 +1,5 @@
 """
-U04 — Comentarios y estilo basico.
+U02 — Comentarios y estilo basico.
 
 OBJETIVO:
   - Comentario de linea con #
@@ -8,6 +8,9 @@ OBJETIVO:
   - Nombres claros: snake_case para variables y funciones
 
 Autor: Agustin. A. Marquez. Pina
+Contacto: agu1406@outlook.es
+Repositorio GitHub: https://github.com/Agu1406/ClasesParticulares
+Sitio web: https://www.agustinmarquez.dev
 """
 
 # Esto es un comentario de una linea: el interprete lo ignora

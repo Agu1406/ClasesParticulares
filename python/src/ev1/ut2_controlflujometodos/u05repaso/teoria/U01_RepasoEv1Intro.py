@@ -1,5 +1,5 @@
 """
-U05 — Repaso EV1: conceptos clave.
+U01 — Repaso EV1: conceptos clave.
 
 OBJETIVO:
   - Repasar el flujo tipico de un programa junior en Python.
@@ -7,6 +7,9 @@ OBJETIVO:
   - Sin practica nueva: solo recordatorio antes de evaluacion.
 
 Autor: Agustin. A. Marquez. Pina
+Contacto: agu1406@outlook.es
+Repositorio GitHub: https://github.com/Agu1406/ClasesParticulares
+Sitio web: https://www.agustinmarquez.dev
 """
 
 # print(): titulo del repaso

@@ -7,6 +7,11 @@ ser un nombre valido en carácteres del alfabeto)
 
 Cuando el nombre es valido sale del bucle y saluda
 a ese nombre.
+
+Autor: Agustin. A. Marquez. Pina
+Contacto: agu1406@outlook.es
+Repositorio GitHub: https://github.com/Agu1406/ClasesParticulares
+Sitio web: https://www.agustinmarquez.dev
 """
 
 # Mensaje de bienvenida al supermercado.

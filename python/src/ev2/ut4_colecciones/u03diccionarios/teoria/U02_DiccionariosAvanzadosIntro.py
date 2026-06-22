@@ -1,6 +1,15 @@
 """
-EJERCICIO 13: Diccionarios Avanzados
-En este ejercicio practicarás operaciones avanzadas con diccionarios.
+U02 — Diccionarios avanzados.
+
+OBJETIVO:
+  - Combinar diccionarios y usar metodos utiles.
+  - Trabajar con diccionarios anidados.
+  - Aplicar comprensiones y valores por defecto.
+
+Autor: Agustin. A. Marquez. Pina
+Contacto: agu1406@outlook.es
+Repositorio GitHub: https://github.com/Agu1406/ClasesParticulares
+Sitio web: https://www.agustinmarquez.dev
 """
 
 # 1. Agregar elementos de forma segura

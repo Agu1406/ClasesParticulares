@@ -1,6 +1,15 @@
 """
-EJERCICIO 10: Listas
-En este ejercicio aprenderás a trabajar con listas en Python.
+U01 — Listas en Python.
+
+OBJETIVO:
+  - Crear listas y acceder a elementos por indice.
+  - Modificar, agregar y eliminar elementos.
+  - Recorrer listas con bucles.
+
+Autor: Agustin. A. Marquez. Pina
+Contacto: agu1406@outlook.es
+Repositorio GitHub: https://github.com/Agu1406/ClasesParticulares
+Sitio web: https://www.agustinmarquez.dev
 """
 
 # 1. Crear listas y acceder a elementos

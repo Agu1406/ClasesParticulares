@@ -1,6 +1,15 @@
 """
-EJERCICIO 12: Diccionarios Básicos
-En este ejercicio aprenderás a trabajar con diccionarios en Python.
+U01 — Diccionarios basicos.
+
+OBJETIVO:
+  - Crear diccionarios y acceder a claves.
+  - Agregar, modificar y eliminar pares clave-valor.
+  - Recorrer diccionarios.
+
+Autor: Agustin. A. Marquez. Pina
+Contacto: agu1406@outlook.es
+Repositorio GitHub: https://github.com/Agu1406/ClasesParticulares
+Sitio web: https://www.agustinmarquez.dev
 """
 
 # 1. Crear diccionarios

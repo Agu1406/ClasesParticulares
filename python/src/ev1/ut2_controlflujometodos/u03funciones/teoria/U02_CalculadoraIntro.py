@@ -1,5 +1,5 @@
 """
-U07 — Proyecto integrador: calculadora con funciones y menu.
+U02 — Proyecto integrador: calculadora con funciones y menu.
 
 OBJETIVO:
   - Combinar funciones, while, if/elif y return.
@@ -9,6 +9,9 @@ OBJETIVO:
 NOTA: usa input(). Para demo rapida ejecuta solo las funciones al final.
 
 Autor: Agustin. A. Marquez. Pina
+Contacto: agu1406@outlook.es
+Repositorio GitHub: https://github.com/Agu1406/ClasesParticulares
+Sitio web: https://www.agustinmarquez.dev
 """
 
 

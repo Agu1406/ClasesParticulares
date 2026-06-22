@@ -5,6 +5,8 @@ from pathlib import Path
 EV1 = Path(__file__).resolve().parents[2] / "src" / "ev1"
 AUTHOR = """Autor: Agustin. A. Marquez. Pina
 Contacto: agu1406@outlook.es
+Repositorio GitHub: https://github.com/Agu1406/ClasesParticulares
+Sitio web: https://www.agustinmarquez.dev
 """
 
 # (ruta_relativa_ev1, lista de 10 dicts con name, obj, pendiente, resuelto)

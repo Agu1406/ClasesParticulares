@@ -1,5 +1,5 @@
 """
-U07 — Bucle for y range().
+U01 — Bucle for y range().
 
 OBJETIVO:
   - Repetir un bloque un numero conocido de veces.
@@ -19,6 +19,9 @@ PARAMETRO end EN print() (muy usado en bucles):
     print()            -> baja de linea
 
 Autor: Agustin. A. Marquez. Pina
+Contacto: agu1406@outlook.es
+Repositorio GitHub: https://github.com/Agu1406/ClasesParticulares
+Sitio web: https://www.agustinmarquez.dev
 """
 
 # print(): titulo de la primera demo

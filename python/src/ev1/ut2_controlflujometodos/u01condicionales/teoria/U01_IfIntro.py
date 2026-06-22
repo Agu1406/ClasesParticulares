@@ -1,5 +1,5 @@
 """
-U04 — Condicional if.
+U01 — Condicional if.
 
 OBJETIVO:
   - Ejecutar codigo solo si se cumple una condicion.
@@ -7,9 +7,12 @@ OBJETIVO:
   - Las condiciones usan expresiones booleanas (True/False).
   - Solo if (sin else): el bloque se salta si la condicion es False.
 
-SIGUIENTE BLOQUE: U05 (elif/else), U06 (match/case), U07 (anidados).
+SIGUIENTE BLOQUE: U02 (elif/else), U03 (match/case), U04 (anidados).
 
 Autor: Agustin. A. Marquez. Pina
+Contacto: agu1406@outlook.es
+Repositorio GitHub: https://github.com/Agu1406/ClasesParticulares
+Sitio web: https://www.agustinmarquez.dev
 """
 
 edad = 17
