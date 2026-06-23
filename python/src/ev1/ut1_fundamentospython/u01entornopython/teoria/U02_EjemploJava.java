@@ -12,7 +12,6 @@ public class U02_EjemploJava {
 
         System.out.println("Mi nombre es: \t Agustín");
 
-
         // ❌ System.out.println("=" * 30);
 
         // Aquí incluso la dificultad para algo sencillo incrementa.
