@@ -16,7 +16,11 @@ Contacto: agu1406@outlook.es
 Repositorio GitHub: https://github.com/Agu1406/ClasesParticulares
 Sitio web: https://www.agustinmarquez.dev
 """
+print("\n¡INICIO DEL PROGRAMA!\n")
+"""
 
+"""
+print("\n¡FIN DEL PROGRAMA!\n")
 opcion = "2"
 
 # match: toma el valor de opcion y busca el case que coincida

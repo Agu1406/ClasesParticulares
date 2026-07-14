@@ -11,7 +11,11 @@ Contacto: agu1406@outlook.es
 Repositorio GitHub: https://github.com/Agu1406/ClasesParticulares
 Sitio web: https://www.agustinmarquez.dev
 """
+print("\n¡INICIO DEL PROGRAMA!\n")
+"""
 
+"""
+print("\n¡FIN DEL PROGRAMA!\n")
 edad = 20
 tiene_carnet = True
 

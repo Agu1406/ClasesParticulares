@@ -1,46 +1,56 @@
 """
-U02 — if / elif / else y operador ternario.
+U02 — Condicional if-else y elif.
 
 OBJETIVO:
-  - Encadenar varias condiciones con elif (rangos, escalones).
-  - else cubre el caso restante.
-  - Operador ternario: valor_si_true if condicion else valor_si_false
-  - Si comparas muchos valores exactos (1, 2, 3...), mira U06 match/case.
+    - Aprender la sintaxis y el uso de "elif".
+    - Aprender la sintaxis y el uso de "if-else".
+    - Aprender a personalizar los mensajes usando los ternarios.
 
 Autor: Agustin. A. Marquez. Pina
 Contacto: agu1406@outlook.es
 Repositorio GitHub: https://github.com/Agu1406/ClasesParticulares
 Sitio web: https://www.agustinmarquez.dev
 """
+print("\n¡INICIO DEL PROGRAMA!\n")
+"""
+PRIMERA PARTE - Sintaxis y uso del if-else.
+"""
+print(f"\n¡PROBANDO EL \"IF-ELSE\" CON VALORES INTRODUCIDOS EN EL PROGRAMA!\n")
+# Usamos "input" para escribir en cada prueba una nota diferente.
+nota = input("¡Dime que nota sacaste en el examen y te dire si has aprobado! ")
+print()
 
-nota = 7.2
+# Convertimos la nota en un número entero usando la función "int()".
+nota = int(nota)
 
-if nota >= 9:
-    calificacion = "Sobresaliente"
-elif nota >= 7:
-    calificacion = "Notable"
-elif nota >= 5:
-    calificacion = "Aprobado"
+# Si la nota es mayor o igual a cinco, se ejecuta el "if".
+if nota >= 5:
+    print(f"¡Felicidades! Has aprobado con un {nota}. \n")
+# Si la nota no es ni mayor ni igual a cinco, se ejecuta el "else".
 else:
-    calificacion = "Suspenso"
+    print(f"¡Lo siento! Has suspendido con un {nota}. \n")
 
-# print(): f-string con nota y la calificacion asignada en el if/elif
-print(f"Nota {nota} -> {calificacion}")
+# Usamos "input" para escribir en cada prueba un núemro diferente.
+numero = input("¡Dime un número y te dire si es par! ")
+print()
 
-numero = 14
+# Si el resto de dividir X número entre dos es cero es un número par, se ejecuta el "if".
 if numero % 2 == 0:
-    # print(): modulo % devuelve resto; si es 0 el numero es par
-    print(numero, "es par")
+    print(f"El número {numero} es par.")
+# Si el resto no es cero entonces es un número impar, se ejecuta el "else".
 else:
-    # print(): rama else cuando el resto no es 0
-    print(numero, "es impar")
+    print(f"El número {numero} es impar.")
+"""
+SEGUNDA PARTE - Sintaxis y uso del elif.
+"""
+print(f"\n¡PROBANDO EL \"ELIF\" CON VALORES INTRODUCIDOS EN EL PROGRAMA!\n")
 
-edad = 16
-mensaje = "puede votar" if edad >= 18 else "no puede votar"
-# print(): muestra el resultado del operador ternario
-print(mensaje)
+# TODO hacer un par de elifs como material de clase.
 
-respuesta = "si"
-if respuesta.lower() == "si":
-    # lower(): convierte el texto a minusculas antes de comparar
-    print("Respuesta afirmativa")
+"""
+TERCERA PARTE - Definir un resultado u otro usando ternarios y condiciones.
+"""
+
+# TODO hacer un par de ejemplos con ternarios.
+
+print("\n¡FIN DEL PROGRAMA!\n")

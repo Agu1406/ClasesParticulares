@@ -2,10 +2,10 @@
 U06 — Repaso general de la U02tiposvariables
 
 OBJETIVO:
-  - Creación de variables.
-  - Imprimir mensajes por consola.
-  - Identificar los tipos de variables.
-  - Utilizar diferentes operadores de python.
+    - Creación de variables.
+    - Imprimir mensajes por consola.
+    - Identificar los tipos de variables.
+    - Utilizar diferentes operadores de python.
 
 Autor: Agustin. A. Marquez. Pina
 Contacto: agu1406@outlook.es

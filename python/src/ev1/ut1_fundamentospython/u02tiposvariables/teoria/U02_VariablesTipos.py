@@ -4,10 +4,10 @@ U01 — Variables y tipos basicos en Python.
 En la clase previa entendimos que diferentes variables pueden guardar
 diferente tipos de información, los cuales fueron:
 
-- int (números enteros)
-- double (números decimales)
-- str (texto / cadenas)
-- boolean (verdadero / falso)
+  - int (números enteros)
+  - double (números decimales)
+  - str (texto / cadenas)
+  - boolean (verdadero / falso)
 
 Python puede decirnos si una "X" variable es de un tipo u otro usando una
 función nativa de Python llamada "type()", Python usa esta función para

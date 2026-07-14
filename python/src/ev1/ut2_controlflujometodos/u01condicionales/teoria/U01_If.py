@@ -2,9 +2,9 @@
 U01 — Condicional if.
 
 OBJETIVO:
-  - Entender el funcionamiento de una estructura "if".
-  - Permitir que el código ejecuta una acción si una condición se cumple, si no, no.
-  - Probar diferentes tipos de condiciones usando diferentes tipos de datos en el "if".
+    - Entender el funcionamiento de una estructura "if".
+    - Permitir que el código ejecuta una acción si una condición se cumple, si no, no.
+    - Probar diferentes tipos de condiciones usando diferentes tipos de datos en el "if".
 
 Autor: Agustin. A. Marquez. Pina
 Contacto: agu1406@outlook.es
@@ -93,8 +93,8 @@ if edad >= 18:
 if edad <= 17:
     print(f"¡El profesor no es mayor de edad! \n")
 
-# ✅ La edad es mayor o igual al valor de la condición, por lo tanto, el if si se ejecuta.
-if edad >= 28:
+# ✅ La edad es menor o igual al valor de la condición, por lo tanto, el if si se ejecuta.
+if edad <= 28:
     print(f"¡El profesor es un adulto joven! \n")
 
 # ❌ La edad no es mayor o igual al valor de la condición, por lo tanto, el if no se ejecuta.
