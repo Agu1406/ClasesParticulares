@@ -13,53 +13,46 @@ Sitio web: https://www.agustinmarquez.dev
 """
 print("\n¡INICIO DEL PROGRAMA!\n")
 """
-
+PRIMERA PARTE - Ejemplo con "if" dentro de otros "if".
 """
-print("\n¡FIN DEL PROGRAMA!\n")
+print(f"\n¡PRUEBA USANDO UN \"IF\" ANIDADO DENTRO DE OTRO \"IF\"!\n")
 edad = 20
 tiene_carnet = True
 
+# PRIMERA VALIDACIÓN: Si ya es mayor de edad el if se ejecuta.
 if edad >= 18:
-    # Primer nivel: ya es mayor de edad
+    # SEGUNDA VALIDACIÓN: Si además de ser mayor, tiene carnet, el if se ejecuta.
     if tiene_carnet:
-        # print(): solo si edad OK y ademas tiene carnet
         print("Puede conducir")
     else:
-        # print(): mayor de edad pero sin carnet
         print("Necesita sacarse el carnet")
 else:
-    # print(): menor de edad; no se mira el carnet
     print("Es menor de edad")
 
-# and en una sola condicion (equivalente a dos if anidados simples)
+"""
+SEGUNDA PARTE - Solo si ambas condiciones se cumplen usando "and" se ejeucta el "if".
+"""
+print(f"\n¡PRUEBA USANDO UN \"IF\" CON MULTIPLES CONDICIONES ENCADENADAS CON \"AND\"!\n")
 temperatura = 25
 soleado = True
 if temperatura > 20 and soleado:
-    # print(): hace buen tiempo para salir
     print("Buen dia para salir")
-
-# or: basta una condicion verdadera
+"""
+TERCERA PARTE - Si una (cualquiera) de las dos condiciones se cumple usando "or" se ejecuta el "if".
+"""
+print(f"\n¡PRUEBA USANDO UN \"IF\" CON MULTIPLES CONDICIONES ENCADENADAS CON \"OR\"!\n")
 es_finde = True
 es_festivo = False
+
 if es_finde or es_festivo:
-    # print(): descanso si finde O festivo
     print("Dia de descanso")
 
-# not: niega un booleano
+"""
+CUARTA PARTE - Si una condición no se cumple (validando con not), entonces el "if" se ejecuta.
+"""
+print(f"\n¡PRUEBA USANDO UN \"IF\" NEGANDO CONDICIONES CON \"NOT\"!\n")
 llueve = False
 if not llueve:
-    # print(): se ejecuta porque llueve es False
     print("No hace falta paraguas")
 
-# if / elif / else con operadores logicos
-usuario = "admin"
-clave = "1234"
-if usuario == "admin" and clave == "1234":
-    # print(): credenciales correctas
-    print("Acceso concedido")
-elif usuario == "admin":
-    # print(): usuario bien pero clave mal
-    print("Clave incorrecta")
-else:
-    # print(): usuario desconocido
-    print("Usuario no existe")
+print("\n¡FIN DEL PROGRAMA!\n")
