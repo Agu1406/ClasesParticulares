@@ -1,5 +1,5 @@
 """
-OBJETIVO: Lista multiplos de 3 del 3 al 15.
+OBJETIVO: Imprime los multiplos de 3 del 3 al 15.
 SOLUCION: ver codigo.
 
 Autor: Agustin. A. Marquez. Pina

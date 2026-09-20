@@ -45,11 +45,10 @@ La idea surgió este año (2025) después de más de un año impartiendo clases,
 - Ejercicios de laboratorio con soluciones
 
 ### **cpp/**
-- Programación en C++ con proyectos prácticos
-- Proyectos de gestión: Supermercado (archivos, productos, ventas, reportes)
-- Juegos: Juego de conquistas
-- Aplicaciones con CMake y estructura modular
-- Proyectos organizados por universidad (UAX)
+- C++ con estructura espejo de `java/`, `python/` y `csharp/`: `src/ev1` (UT1–UT3)
+- Teoría + ejercicios `Pendiente` / `Resuelto` (EV2/EV3 pendientes)
+- Material de centro UAX en `madrid/` (C + CMake): supermercado, juego de conquistas
+- Ver [cpp/README.md](cpp/README.md)
 
 ### **css/**
 - Estilos CSS reutilizables y compartidos
@@ -110,6 +109,11 @@ La idea surgió este año (2025) después de más de un año impartiendo clases,
 - Material Sevilla (IES Velázquez): gestor de tareas (UT4), ampliación Python (UT6)
 - Ver [python/README.md](python/README.md)
 
+### **csharp/**
+- C# / .NET con estructura espejo de `java/` y `python/`: `src/ev1` (UT1–3), `ev2` (UT4–5)
+- Teoría + ejercicios `Pendiente` / `Resuelto` (sin prácticas de centro por ahora)
+- Ver [csharp/README.md](csharp/README.md)
+
 ### **rn/**
 - Desarrollo de aplicaciones móviles multiplataforma con React Native y Expo
 - Proyecto completo: **Sevici** (aplicación de bicicletas públicas)
@@ -160,12 +164,13 @@ La idea surgió este año (2025) después de más de un año impartiendo clases,
 |----------|---------------|
 | **Java** | POO, Swing, JavaFX, JDBC, multihilo, estructuras de datos |
 | **PHP** | Desarrollo web, formularios, BD, MVC, DAO |
-| **C++** | Algoritmos, estructuras de datos, POO, gestión de proyectos |
+| **C++** | Fundamentos, control de flujo, strings; proyectos UAX (CMake) |
 | **C** | Programación estructurada, estructuras de datos, pilas, colas, registros, memoria dinámica |
 | **Kotlin** | Desarrollo Android, SharedPreferences, SQLite, archivos |
 | **HTML/CSS/JS** | Interfaces web, maquetación, diseño responsive, frontend |
 | **JavaScript** | Desarrollo web, interactividad (en desarrollo) |
 | **Python** | Sintaxis básica, POO, estructuras de datos, proyectos prácticos |
+| **C#** | .NET, fundamentos, control de flujo, colecciones, POO, I/O |
 | **React Native** | Desarrollo multiplataforma Android & iOS, Expo, TypeScript |
 | **SQL** | Bases de datos MySQL, consultas, gestión de datos, Microsoft Access |
 | **CSS** | Estilos reutilizables, diseño web, componentes compartidos |

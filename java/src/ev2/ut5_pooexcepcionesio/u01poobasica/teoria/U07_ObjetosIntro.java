@@ -6,13 +6,13 @@ package ev2.ut5_pooexcepcionesio.u01poobasica.teoria;
  * <p><b>Objetivo:</b> crear varias instancias independientes; cada objeto tiene sus
  * propios valores de atributo.</p>
  *
- * <p>Demo ampliado con varias clases relacionadas:
- * {@link general.poobasico.objetos.U07_EjemploObjetosJuego} (en {@code teoria/02-objetos/}).</p>
- *
- * <p>Practica en {@code ejercicios/02-objetos/pendientes} y {@code resueltos}.</p>
+ * <p>Demo ampliada con varias clases del dominio juego:
+ * {@link U07_EjemploObjetosJuego} ({@link U07_Jugador}, {@link U07_Partida},
+ * {@link U07_Inventario}).</p>
  *
  * @author Agustin. A. Marquez. Pina
  * @since 02/06/2026
+ * @see U07_EjemploObjetosJuego
  * @see <a href="mailto:agu1406@outlook.es">agu1406@outlook.es</a>
  * @see <a href="https://github.com/Agu1406/ClasesParticulares">Repositorio GitHub</a>
  * @see <a href="https://www.agustinmarquez.dev">Sitio web</a>

@@ -3,8 +3,8 @@
 | UT | Carpeta | Subtemas |
 |----|---------|----------|
 | UT4 | `ut4_colecciones` | `u01listas` … `u06repaso` (incl. NumPy/pandas BOE 5101) |
-| UT5 | `ut5_pooexcepcionesio` | `u01poobasica` … `u05repaso` |
+| UT5 | `ut5_pooexcepcionesio` | `u01poobasica`, `u02excepciones`, `u03ficherosio`, `u04examenes` |
 
-**Prácticas:** Sevilla gestor de tareas (UT4), `tiendacompra` (UT5).
+**Prácticas:** Sevilla gestor de tareas (UT4), `tiendacompra` (UT5), Elche UMH Ingeniería Mecánica (`u04examenes/practicas/elcheumhingenieriamecanica`).
 
 Cubre BOE **5100** (UT5–UT6) y **5101** colecciones/datos (UT4).

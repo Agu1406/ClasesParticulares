@@ -1,10 +1,10 @@
 """
-U01 — Diccionarios basicos.
+U01 — Introduccion a diccionarios.
 
 OBJETIVO:
-  - Crear diccionarios y acceder a claves.
-  - Agregar, modificar y eliminar pares clave-valor.
-  - Recorrer diccionarios.
+  - Crear pares clave -> valor (como HashMap / Dictionary).
+  - Leer con dict[clave] y con get (seguro).
+  - Comprobar claves con in y consultar len().
 
 Autor: Agustin. A. Marquez. Pina
 Contacto: agu1406@outlook.es
@@ -12,88 +12,35 @@ Repositorio GitHub: https://github.com/Agu1406/ClasesParticulares
 Sitio web: https://www.agustinmarquez.dev
 """
 
-# 1. Crear diccionarios
-print("=== DICCIONARIOS BÁSICOS ===")
-estudiante = {
-    "nombre": "Ana",
-    "edad": 20,
-    "carrera": "Informática",
-    "promedio": 8.5
-}
+print("\n¡INICIO DEL PROGRAMA!\n")
+"""
+PRIMERA PARTE — Crear y leer.
+"""
+print("¡DEMO 1: CREAR Y LEER!\n")
 
-print(f"Estudiante: {estudiante}")
-print(f"Nombre: {estudiante['nombre']}")
-print(f"Edad: {estudiante.get('edad', 'No disponible')}")
+edades = {}
+edades["Ana"] = 20
+edades["Luis"] = 22
+edades["Marta"] = 19
+print(f"Diccionario: {edades}")
+print(f"Edad de Luis: {edades['Luis']}")
+print(f"Numero de personas: {len(edades)}")
 
-# 2. Agregar y modificar elementos
-print("\n=== AGREGAR Y MODIFICAR ===")
-estudiante["semestre"] = 4  # Agregar nueva clave
-estudiante["promedio"] = 9.0  # Modificar valor
-print(f"Actualizado: {estudiante}")
+"""
+SEGUNDA PARTE — get y clave inexistente.
+"""
+print("\n¡DEMO 2: get()!\n")
 
-# 3. Eliminar elementos
-print("\n=== ELIMINAR ELEMENTOS ===")
-print(f"Antes: {estudiante}")
-edad_eliminada = estudiante.pop("edad")
-print(f"Edad eliminada: {edad_eliminada}")
-print(f"Después: {estudiante}")
+print(f"get('Ana'): {edades.get('Ana')}")
+print(f"get('Pedro', 'No disponible'): {edades.get('Pedro', 'No disponible')}")
+# edades['Pedro']  # KeyError si la clave no existe
 
-# 4. Obtener todas las claves y valores
-print("\n=== CLAVES Y VALORES ===")
-print(f"Claves: {estudiante.keys()}")
-print(f"Valores: {estudiante.values()}")
-print(f"Items: {estudiante.items()}")
+"""
+TERCERA PARTE — in (equivale a containsKey).
+"""
+print("\n¡DEMO 3: CLAVE IN DICT!\n")
 
-# 5. Iterar sobre diccionarios
-print("\n=== ITERAR SOBRE DICCIONARIOS ===")
-for clave, valor in estudiante.items():
-    print(f"{clave}: {valor}")
+print(f"'Luis' in edades -> {'Luis' in edades}")
+print(f"'Pedro' in edades -> {'Pedro' in edades}")
 
-# 6. Diccionarios anidados
-print("\n=== DICCIONARIOS ANIDADOS ===")
-libros = {
-    "1984": {
-        "autor": "George Orwell",
-        "año": 1949,
-        "páginas": 328
-    },
-    "El Quijote": {
-        "autor": "Miguel de Cervantes",
-        "año": 1605,
-        "páginas": 863
-    }
-}
-
-for titulo, info in libros.items():
-    print(f"\n{titulo}:")
-    print(f"  Autor: {info['autor']}")
-    print(f"  Año: {info['año']}")
-    print(f"  Páginas: {info['páginas']}")
-
-# 7. Verificar si una clave existe
-print("\n=== VERIFICAR CLAVES ===")
-clave = "nombre"
-if clave in estudiante:
-    print(f"'{clave}' existe con valor: {estudiante[clave]}")
-
-clave2 = "direccion"
-valor = estudiante.get(clave2, "No disponible")
-print(f"'{clave2}': {valor}")
-
-# 8. Contar elementos
-print("\n=== CONTAR ===")
-texto = "programar en Python es genial"
-conteo_letras = {}
-
-for letra in texto.replace(" ", ""):  # Ignorar espacios
-    conteo_letras[letra] = conteo_letras.get(letra, 0) + 1
-
-print(f"Conteo de letras en '{texto}':")
-for letra, cantidad in sorted(conteo_letras.items()):
-    print(f"  {letra}: {cantidad}")
-
-# PRÁCTICA: Crea un diccionario de contactos telefónicos
-print("\n=== AGENDA TELEFÓNICA ===")
-# TODO: Escribe tu código aquí
-
-
+print("\n¡FIN DEL PROGRAMA!\n")

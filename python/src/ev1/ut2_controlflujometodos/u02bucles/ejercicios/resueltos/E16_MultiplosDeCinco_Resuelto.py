@@ -1,0 +1,12 @@
+"""
+OBJETIVO: Imprime los multiplos de 5 del 5 al 50.
+SOLUCION: ver codigo.
+
+Autor: Agustin. A. Marquez. Pina
+Contacto: agu1406@outlook.es
+Repositorio GitHub: https://github.com/Agu1406/ClasesParticulares
+Sitio web: https://www.agustinmarquez.dev
+"""
+
+for i in range(5, 51, 5):
+    print(i)

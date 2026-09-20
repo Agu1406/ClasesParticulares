@@ -17,7 +17,8 @@ print("=== REPASO EV1 ===")
 # print(): punto 1 del indice
 print("1. UT1: print, variables, tipos, operadores, input, comentarios")
 # print(): punto 2 del indice
-print("2. UT2: if/elif/else, for, while, funciones, excepciones basicas")
+print("2. UT2: if/elif/else, for, while, funciones, validacion de entrada")
+print("   (try/except y POO: EV2 UT5 u02excepciones / u01poobasica)")
 # print(): punto 3 del indice
 print("3. UT3: cadenas str, metodos, f-strings")
 # print(): linea en blanco

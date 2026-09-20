@@ -1,0 +1,5 @@
+Ana,21,Madrid,Ingeniería,Leer
+Luis,19,Valencia,Medicina,Fútbol
+Carmen,22,Sevilla,Historia,Pintar
+Pedro,20,Bilbao,Economía,Ajedrez
+Lucía,23,Barcelona,Biología,Viajar

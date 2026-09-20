@@ -4,14 +4,7 @@ package ev2.ut5_pooexcepcionesio.u01poobasica.teoria;
  * Teoria: miembros {@code static} en Java.
  *
  * <p><b>Objetivo:</b> compartir un atributo entre todas las instancias de la clase
- * (por ejemplo un contador de objetos creados).</p>
- *
- * <ul>
- *   <li>{@code static} - pertenece a la clase, no a un objeto concreto.</li>
- *   <li>Se accede con {@code NombreClase.atributo} o desde un objeto (menos claro).</li>
- * </ul>
- *
- * <p>Practica en {@code ejercicios/07-estatico/pendientes} y {@code resueltos}.</p>
+ * (por ejemplo un contador de objetos creados) y generar IDs unicos.</p>
  *
  * @author Agustin. A. Marquez. Pina
  * @since 02/06/2026
@@ -22,17 +15,20 @@ package ev2.ut5_pooexcepcionesio.u01poobasica.teoria;
 public class U04_EstaticoIntro {
 
     static class Usuario {
-        static int total = 0;
+        static int contador = 0;
+        String id;
 
         Usuario() {
-            total++;
+            contador++;
+            this.id = "ID" + contador;
         }
     }
 
     public static void main(String[] args) {
-        new Usuario();
-        new Usuario();
-        new Usuario();
-        System.out.println("Usuarios creados: " + Usuario.total);
+        Usuario u1 = new Usuario();
+        Usuario u2 = new Usuario();
+        Usuario u3 = new Usuario();
+        System.out.println("Usuarios creados: " + Usuario.contador);
+        System.out.println(u1.id + ", " + u2.id + ", " + u3.id);
     }
 }

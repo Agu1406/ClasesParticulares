@@ -1,11 +1,10 @@
 """
-U01 — Funciones con def.
+U01 — Introduccion a funciones (acciones sin return).
 
 OBJETIVO:
-  - Agrupar codigo reutilizable en funciones.
-  - def nombre(parametros): + cuerpo indentado.
-  - return devuelve un valor al quien llama.
-  - Llamar: resultado = funcion(argumentos)
+  - Entender que es una funcion y por que sirve modularizar.
+  - Definir funciones con def que solo ejecutan acciones (print).
+  - Llamar una funcion varias veces desde el programa principal.
 
 Autor: Agustin. A. Marquez. Pina
 Contacto: agu1406@outlook.es
@@ -14,51 +13,48 @@ Sitio web: https://www.agustinmarquez.dev
 """
 
 
-def saludar(nombre):
-    """Docstring: descripcion de la funcion saludar."""
-    # print(): f-string dentro de la funcion saludar
-    print(f"Hola, {nombre}!")
+def saludar():
+    # Solo hace una accion: imprimir. No usa return.
+    print("¡Hola desde la funcion saludar()!")
 
 
-def sumar(a, b):
-    """Docstring: devuelve la suma de a y b."""
-    # return: devuelve el resultado al codigo que llamo a sumar()
-    return a + b
+def imprimir_separador():
+    # Reutilizamos este bloque cada vez que queramos una linea visual.
+    print("-" * 30)
 
 
-def es_mayor_de_edad(edad):
-    # return: devuelve True o False segun la edad
-    return edad >= 18
+def contar_hasta_cinco():
+    # Dentro de la funcion tambien podemos usar bucles.
+    print("Contando hasta 5:", end=" ")
+    for i in range(1, 6):
+        print(i, end=" ")
+    print()
 
 
-# saludar(): llama a la funcion definida arriba con el argumento "Carlos"
-saludar("Carlos")
-# print(): muestra el resultado devuelto por sumar(3, 4)
-print("3 + 4 =", sumar(3, 4))
+print("\n¡INICIO DEL PROGRAMA!\n")
+"""
+PRIMERA PARTE - Llamar una funcion varias veces.
+"""
+print(f"\n¡DEMO 1: SALUDAR!\n")
 
-if es_mayor_de_edad(20):
-    # print(): rama if si la funcion devolvio True
-    print("Acceso permitido")
-else:
-    # print(): rama else si devolvio False
-    print("Acceso denegado")
+# Cada llamada ejecuta el cuerpo de saludar() otra vez.
+saludar()
+saludar()
 
+"""
+SEGUNDA PARTE - Funcion que imprime un separador.
+"""
+print(f"\n¡DEMO 2: SEPARADOR!\n")
 
-def area_rectangulo(base, altura):
-    # return: devuelve base por altura
-    return base * altura
+imprimir_separador()
+print("Contenido entre separadores")
+imprimir_separador()
 
+"""
+TERCERA PARTE - Funcion con logica interna (bucle).
+"""
+print(f"\n¡DEMO 3: CONTAR HASTA 5!\n")
 
-# print(): muestra el valor devuelto por area_rectangulo(5, 3)
-print("Area 5x3 =", area_rectangulo(5, 3))
+contar_hasta_cinco()
 
-
-def repetir_mensaje(texto, veces=1):
-    # range(veces): genera numeros del 0 al veces-1 para repetir el bucle
-    for _ in range(veces):
-        # print(): muestra texto en cada vuelta del for
-        print(texto)
-
-
-# repetir_mensaje(): llama con texto "Python" y veces=3
-repetir_mensaje("Python", 3)
+print("\n¡FIN DEL PROGRAMA!\n")

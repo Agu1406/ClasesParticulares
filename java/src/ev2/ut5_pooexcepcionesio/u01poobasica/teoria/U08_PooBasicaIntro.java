@@ -3,20 +3,21 @@ package ev2.ut5_pooexcepcionesio.u01poobasica.teoria;
 /**
  * Teoria: indice del subtema POO basica (UT5).
  *
- * <p><b>Objetivo:</b> pasar de programacion estructurada a clases y objetos. Cada bloque
- * tiene su {@code *Intro} en {@code teoria/NN-concepto/} y ejercicios en
- * {@code ejercicios/NN-concepto/} (mismo numero en ambos).</p>
+ * <p><b>Objetivo:</b> pasar de programacion estructurada a clases y objetos.
+ * Orden sugerido de los bloques {@code *Intro} en {@code teoria/}:</p>
  *
- * <p>Orden sugerido:</p>
  * <ol>
- *   <li>{@link U01_ClasesIntro} -> {@code ejercicios/01-clases/}</li>
- *   <li>{@link U07_ObjetosIntro} -> {@code ejercicios/02-objetos/} (demo: {@link general.poobasico.objetos.U07_EjemploObjetosJuego})</li>
- *   <li>{@link U02_ConstructoresIntro} -> {@code ejercicios/03-constructores/}</li>
- *   <li>{@link U06_MetodosIntro} -> {@code ejercicios/04-metodos/}</li>
- *   <li>{@link U03_EncapsulamientoIntro} -> {@code ejercicios/05-encapsulamiento/}</li>
- *   <li>{@link U05_InstanciasIntro} -> {@code ejercicios/06-instancias/}</li>
- *   <li>{@link U04_EstaticoIntro} -> {@code ejercicios/07-estatico/}</li>
+ *   <li>{@link U01_ClasesIntro}</li>
+ *   <li>{@link U02_ConstructoresIntro}</li>
+ *   <li>{@link U03_EncapsulamientoIntro}</li>
+ *   <li>{@link U04_EstaticoIntro}</li>
+ *   <li>{@link U05_InstanciasIntro}</li>
+ *   <li>{@link U06_MetodosIntro}</li>
+ *   <li>{@link U07_ObjetosIntro} + demo {@link U07_EjemploObjetosJuego}</li>
+ *   <li>{@link U09_RepasoMoto} + {@link U09_RepasoMotoDemo}</li>
  * </ol>
+ *
+ * <p>Practica multi-clase: {@code practicas/internoconcesionario/}.</p>
  *
  * @author Agustin. A. Marquez. Pina
  * @since 02/06/2026
@@ -27,7 +28,9 @@ package ev2.ut5_pooexcepcionesio.u01poobasica.teoria;
 public class U08_PooBasicaIntro {
 
     public static void main(String[] args) {
-        System.out.println("POO basica - lee cada *Intro en teoria/ y practica en ejercicios/01-clases ? 07-estatico");
-        System.out.println("Orden: 01-clases -> 02-objetos -> 03-constructores -> 04-metodos -> ?");
+        System.out.println("POO basica - lee cada *Intro en teoria/");
+        System.out.println("Orden: clases -> constructores -> encapsulamiento -> estatico");
+        System.out.println("       -> instancias -> metodos -> objetos/juego -> repaso Moto");
+        System.out.println("Practica: internoconcesionario");
     }
 }

@@ -3,20 +3,10 @@ package ev2.ut5_pooexcepcionesio.u01poobasica.teoria;
 /**
  * Teoria: metodos de instancia en una clase.
  *
- * <p><b>Objetivo:</b> definir comportamiento dentro de la clase (por ejemplo calcular
- * area) y llamarlo desde el objeto.</p>
+ * <p><b>Objetivo:</b> definir comportamiento dentro de la clase (calcular area,
+ * {@code toString} con {@code @Override}) y llamarlo desde el objeto.</p>
  *
- * <pre>{@code
- * class Rectangulo {
- *     double base, altura;
- *     double calcularArea() {
- *         return base * altura;
- *     }
- * }
- * }</pre>
- *
- * <p>Practica en {@code ejercicios/04-metodos/pendientes} y {@code resueltos}
- * (package de ejercicios: {@code general.poobasico.funciones}).</p>
+ * <p>Practica en {@code ejercicios/} (metodos).</p>
  *
  * @author Agustin. A. Marquez. Pina
  * @since 02/06/2026
@@ -27,8 +17,8 @@ package ev2.ut5_pooexcepcionesio.u01poobasica.teoria;
 public class U06_MetodosIntro {
 
     static class Rectangulo {
-        double base;
-        double altura;
+        private double base;
+        private double altura;
 
         Rectangulo(double base, double altura) {
             this.base = base;
@@ -38,10 +28,23 @@ public class U06_MetodosIntro {
         double calcularArea() {
             return base * altura;
         }
+
+        @Override
+        public String toString() {
+            return "¡Datos de la figura!\n"
+                    + "- Base: " + this.base + "\n"
+                    + "- Altura: " + this.altura + "\n"
+                    + "- Area: " + this.calcularArea() + "\n";
+        }
     }
 
     public static void main(String[] args) {
-        Rectangulo r = new Rectangulo(4, 5);
-        System.out.println("Area: " + r.calcularArea());
+        Rectangulo figura1 = new Rectangulo(10, 10);
+        Rectangulo figura2 = new Rectangulo(15, 20);
+
+        System.out.println("Area figura 1 --> " + figura1.calcularArea());
+        System.out.println("Area figura 2 --> " + figura2.calcularArea());
+        System.out.println(figura1);
+        System.out.println(figura2);
     }
 }

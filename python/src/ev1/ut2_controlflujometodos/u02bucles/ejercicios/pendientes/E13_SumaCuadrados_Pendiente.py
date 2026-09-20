@@ -1,0 +1,10 @@
+"""
+OBJETIVO: Calcula la suma de los cuadrados del 1 al 10 (1+4+9+...+100).
+
+Autor: Agustin. A. Marquez. Pina
+Contacto: agu1406@outlook.es
+Repositorio GitHub: https://github.com/Agu1406/ClasesParticulares
+Sitio web: https://www.agustinmarquez.dev
+"""
+
+# TODO:

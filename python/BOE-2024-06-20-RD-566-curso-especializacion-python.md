@@ -48,7 +48,7 @@ El repo organiza el contenido en **UT1–UT9** (como `java/`), mapeando los cuat
 
 | Contenido | Carpeta |
 |-----------|---------|
-| Condicionales, bucles, funciones, excepciones | `u01condicionales` … `u04excepciones` |
+| Condicionales, bucles, funciones, validacion de entrada | `u01condicionales` … `u04validacionentrada` |
 
 ### 5101 → UT4
 
@@ -62,7 +62,7 @@ El repo organiza el contenido en **UT1–UT9** (como `java/`), mapeando los cuat
 
 | Contenido | Carpeta |
 |-----------|---------|
-| Clases, excepciones, ficheros | UT5 `u01poobasica` … `u03ficherosio` |
+| Clases, excepciones, ficheros | UT5 `u01poobasica`, `u02excepciones`, `u03ficherosio` |
 | Herencia, ampliación centro | UT6 `u01herenciapolimorfismo` (+ PDF Sevilla) |
 
 ## Nota didáctica

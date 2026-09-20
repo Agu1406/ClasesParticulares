@@ -27,10 +27,10 @@ python/
 | UT | Carpeta Python | Equivalente Java | Estado material |
 |----|----------------|------------------|-----------------|
 | **UT1** | `ut1_fundamentospython` | `ut1_fundamentosjava` | Teoría U01–U03 |
-| **UT2** | `ut2_controlflujometodos` | `ut2_controlflujometodos` | Teoría U04–U09 |
-| **UT3** | `ut3_strings` | `ut3_stringsyenvolventes` | U01 strings (inicio) |
-| **UT4** | `ut4_colecciones` | `ut4_colecciones` + NumPy/pandas (5101) | U10–U13; práctica Sevilla gestor |
-| **UT5** | `ut5_pooexcepcionesio` | `ut5_pooexcepcionesio` | `tiendacompra`; pendiente POO completa |
+| **UT2** | `ut2_controlflujometodos` | `ut2_controlflujometodos` | Condicionales, bucles, funciones, validación entrada |
+| **UT3** | `ut3_strings` | `ut3_stringsyenvolventes` | U01–U03 (f-strings, `:<` `:>` `:^`) |
+| **UT4** | `ut4_colecciones` | `ut4_colecciones` + NumPy/pandas (5101) | Listas U01–U06; tuplas U01–U05; dicts U01–U06; práctica Sevilla gestor |
+| **UT5** | `ut5_pooexcepcionesio` | `ut5_pooexcepcionesio` | POO U01–U04, excepciones U01–U07 + E01–E15, ficheros U01–U07 (CSV + marco) + E01–E11, `tiendacompra`, examen Elche UMH (`u04examenes`) |
 | **UT6** | `ut6_pooavanzadaestructuras` | `ut6_pooavanzadaestructuras` | PDF ampliación Sevilla |
 | **UT7** | `ut7_persistenciaapi` | `ut7_persistenciajdbcapi` | Esqueleto (`sqlite3`, SQL) |
 | **UT8** | `ut8_frameworksweb` | `ut8_frameworksspring` | Esqueleto (Flask/FastAPI) |
@@ -51,8 +51,9 @@ python/
 |-----------|---------------------|
 | Gestor de tareas básico | `ev2/ut4_colecciones/u01listas/practicas/sevillaiesvelazquezgestortareasbasico/` |
 | Ejercicio ampliación Python | `ev3/ut6_pooavanzadaestructuras/u01herenciapolimorfismo/practicas/sevillaiesvelazquezejercicioampliacionpython/` |
+| Examen Elche UMH (Ing. Mecánica) | `ev2/ut5_pooexcepcionesio/u04examenes/practicas/elcheumhingenieriamecanica/` |
 
-Origen: `python/sevilla/documentos/` (copia de referencia).
+Origen Sevilla: `python/sevilla/documentos/` (copia de referencia). Origen Elche: `python/src/ordenaryborrar/` (T5-P2, T5-P3, examen).
 
 ## Módulos BOE 566/2024 → UT
 
@@ -70,7 +71,7 @@ Origen: `python/sevilla/documentos/` (copia de referencia).
 - [x] Incorporar PDFs Sevilla en `practicas/`
 - [ ] Diagnóstico de nivel (`src/diagnostico/`, como Java)
 - [ ] Ejercicios pendientes/resueltos por subtema (meta: paridad con ~300+ ficheros Java de EV1–EV2)
-- [ ] UT3 strings completa, UT5 POO con clases, UT7 sqlite, UT8 Flask, UT9 lambda/map/filter
+- [ ] UT3 strings completa, UT5 ampliar POO, UT7 sqlite, UT8 Flask, UT9 lambda/map/filter
 - [ ] Prácticas Sevilla Java portadas o equivalentes (alquiler → UT6, colegio → UT7)
 
 ## Ejecutar

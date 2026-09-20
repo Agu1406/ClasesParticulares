@@ -11,7 +11,7 @@ package ev2.ut5_pooexcepcionesio.u01poobasica.teoria;
  *   <li>{@code public} getters/setters - interfaz controlada hacia fuera.</li>
  * </ul>
  *
- * <p>Practica en {@code ejercicios/05-encapsulamiento/pendientes} y {@code resueltos}.</p>
+ * <p>Practica en {@code ejercicios/} (encapsulamiento).</p>
  *
  * @author Agustin. A. Marquez. Pina
  * @since 02/06/2026
@@ -22,7 +22,17 @@ package ev2.ut5_pooexcepcionesio.u01poobasica.teoria;
 public class U03_EncapsulamientoIntro {
 
     static class Cuenta {
+        private String titular;
         private double saldo;
+
+        Cuenta(String titular, double saldo) {
+            this.titular = titular;
+            this.saldo = saldo;
+        }
+
+        public String getTitular() {
+            return titular;
+        }
 
         public double getSaldo() {
             return saldo;
@@ -36,9 +46,26 @@ public class U03_EncapsulamientoIntro {
     }
 
     public static void main(String[] args) {
-        Cuenta cuenta = new Cuenta();
+        Cuenta cuenta1 = new Cuenta("Daniel", 123456.99);
+        Cuenta cuenta2 = new Cuenta("Agustin", 2000.56);
+
+        /*
+         * No se puede: cuenta1.titular = "...";  (private)
+         * Solo getters (y setters cuando existan).
+         */
+        imprimirDatosCuenta(cuenta1);
+        imprimirDatosCuenta(cuenta2);
+
+        Cuenta cuenta = new Cuenta("Demo", 0);
         cuenta.setSaldo(100);
         cuenta.setSaldo(-50);
-        System.out.println("Saldo: " + cuenta.getSaldo());
+        System.out.println("Saldo tras setSaldo(-50) rechazado: " + cuenta.getSaldo());
+    }
+
+    public static void imprimirDatosCuenta(Cuenta cuenta) {
+        System.out.println(
+                "¡Datos de la cuenta!\n"
+                        + "- Titular: " + cuenta.getTitular() + ".\n"
+                        + "- Saldo: " + cuenta.getSaldo() + ".\n");
     }
 }

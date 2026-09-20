@@ -1,0 +1,18 @@
+#include <iostream>
+using namespace std;
+
+/*
+OBJETIVO: Imprimir columnas Nombre y Edad separadas con \t.
+SOLUCION: ver codigo.
+
+Autor: Agustin. A. Marquez. Pina
+Contacto: agu1406@outlook.es
+Repositorio GitHub: https://github.com/Agu1406/ClasesParticulares
+Sitio web: https://www.agustinmarquez.dev
+*/
+
+int main() {
+    cout << "Nombre\tEdad" << endl;
+    cout << "Luis\t22" << endl;
+    return 0;
+}

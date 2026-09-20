@@ -4,19 +4,10 @@ package ev2.ut5_pooexcepcionesio.u01poobasica.teoria;
  * Teoria: constructores en Java.
  *
  * <p><b>Objetivo:</b> inicializar objetos al crearlos con un metodo especial que lleva
- * el mismo nombre que la clase.</p>
+ * el mismo nombre que la clase. {@code this} distingue atributos del objeto de los
+ * parametros.</p>
  *
- * <pre>{@code
- * class Libro {
- *     String titulo;
- *     Libro(String titulo) {
- *         this.titulo = titulo;
- *     }
- * }
- * Libro l = new Libro("Java");
- * }</pre>
- *
- * <p>Practica en {@code ejercicios/03-constructores/pendientes} y {@code resueltos}.</p>
+ * <p>Practica en {@code ejercicios/} (constructores).</p>
  *
  * @author Agustin. A. Marquez. Pina
  * @since 02/06/2026
@@ -37,7 +28,20 @@ public class U02_ConstructoresIntro {
     }
 
     public static void main(String[] args) {
-        Libro libro = new Libro("Clean Code", "Robert C. Martin");
-        System.out.println(libro.titulo + " - " + libro.autor);
+        /*
+         * this permite saber a que objeto se asignan titulo/autor
+         * (libro1 vs libro2) al ejecutar el constructor.
+         */
+        Libro libro1 = new Libro("Don Quijote de la Mancha", "Miguel de Cervantes");
+        Libro libro2 = new Libro("La granja animal", "George Orwell");
+
+        System.out.println(
+                "¡Datos del primer libro!\n"
+                        + "- Titulo: " + libro1.titulo + ".\n"
+                        + "- Autor: " + libro1.autor + ".\n");
+        System.out.println(
+                "¡Datos del segundo libro!\n"
+                        + "- Titulo: " + libro2.titulo + ".\n"
+                        + "- Autor: " + libro2.autor + ".\n");
     }
 }

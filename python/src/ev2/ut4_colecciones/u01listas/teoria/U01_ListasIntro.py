@@ -1,10 +1,11 @@
 """
-U01 — Listas en Python.
+U01 — Introduccion a listas.
 
 OBJETIVO:
-  - Crear listas y acceder a elementos por indice.
-  - Modificar, agregar y eliminar elementos.
-  - Recorrer listas con bucles.
+  - Crear listas vacias y con valores iniciales.
+  - Acceder y modificar elementos por indice (positivo y negativo).
+  - Usar len() y rebanadas (slicing) basicas.
+  - Entender que la lista es dinamica: crece y se reduce en ejecucion.
 
 Autor: Agustin. A. Marquez. Pina
 Contacto: agu1406@outlook.es
@@ -12,80 +13,52 @@ Repositorio GitHub: https://github.com/Agu1406/ClasesParticulares
 Sitio web: https://www.agustinmarquez.dev
 """
 
-# 1. Crear listas y acceder a elementos
-print("=== LISTAS BÁSICAS ===")
+print("\n¡INICIO DEL PROGRAMA!\n")
+"""
+PRIMERA PARTE — Crear lista vacia y con valores iniciales.
+  Lista vacia: []
+  Con valores: ["Ana", "Luis"]
+"""
+print("¡DEMO 1: CREAR LISTAS!\n")
+
+numeros = []
+print(f"Lista vacia: {numeros}")
+print(f"Longitud: {len(numeros)}")
+
+nombres = ["Ana", "Luis", "Marta"]
+print(f"Lista con valores: {nombres}")
+print(f"Longitud: {len(nombres)}")
+
+"""
+SEGUNDA PARTE — Acceso por indice.
+  Indices empiezan en 0. El ultimo se puede leer con -1.
+"""
+print("\n¡DEMO 2: ACCESO POR INDICE!\n")
+
 frutas = ["manzana", "banana", "naranja", "uva", "kiwi"]
 print(f"Frutas: {frutas}")
+print(f"Primera (indice 0): {frutas[0]}")
+print(f"Segunda (indice 1): {frutas[1]}")
+print(f"Ultima (indice -1): {frutas[-1]}")
+print(f"Penultima (indice -2): {frutas[-2]}")
 
-print(f"Primera fruta: {frutas[0]}")
-print(f"Última fruta: {frutas[-1]}")
-print(f"Primeras tres: {frutas[0:3]}")
+"""
+TERCERA PARTE — Modificar por indice.
+  lista[indice] = nuevo_valor reemplaza lo que habia.
+"""
+print("\n¡DEMO 3: MODIFICAR POR INDICE!\n")
 
-# 2. Modificar elementos
-print("\n=== MODIFICAR ELEMENTOS ===")
 frutas[1] = "fresa"
-print(f"Después de cambiar: {frutas}")
+print(f"Tras frutas[1] = 'fresa': {frutas}")
 
-# 3. Agregar elementos
-print("\n=== AGREGAR ELEMENTOS ===")
-frutas.append("mango")  # Agregar al final
-print(f"Agregando 'mango': {frutas}")
+"""
+CUARTA PARTE — Rebanadas (slicing).
+  lista[inicio:fin] -> desde inicio hasta fin (sin incluir fin).
+"""
+print("\n¡DEMO 4: REBANADAS!\n")
 
-frutas.insert(2, "pera")  # Insertar en posición
-print(f"Insertando 'pera': {frutas}")
+print(f"Primeras tres frutas[0:3]: {frutas[0:3]}")
+print(f"Desde el indice 2: {frutas[2:]}")
+print(f"Hasta el indice 2 (sin incluirlo): {frutas[:2]}")
 
-# 4. Eliminar elementos
-print("\n=== ELIMINAR ELEMENTOS ===")
-frutas.remove("uva")  # Eliminar por valor
-print(f"Eliminando 'uva': {frutas}")
-
-fruta_eliminada = frutas.pop()  # Elimina el último
-print(f"Eliminada con pop(): {fruta_eliminada}")
-print(f"Lista actual: {frutas}")
-
-# 5. Operaciones con listas
-print("\n=== OPERACIONES ===")
-numeros = [3, 1, 4, 1, 5, 9, 2, 6]
-print(f"Números: {numeros}")
-print(f"Longitud: {len(numeros)}")
-print(f"Máximo: {max(numeros)}")
-print(f"Mínimo: {min(numeros)}")
-print(f"Suma: {sum(numeros)}")
-
-# 6. Ordenar listas
-print("\n=== ORDENAR ===")
-numeros_copia = numeros.copy()
-numeros_copia.sort()
-print(f"Ordenada: {numeros_copia}")
-print(f"Original: {numeros}")
-
-# 7. Búsqueda en listas
-print("\n=== BÚSQUEDA ===")
-frutas = ["manzana", "banana", "naranja", "uva"]
-buscar = "banana"
-
-if buscar in frutas:
-    indice = frutas.index(buscar)
-    print(f"'{buscar}' encontrada en índice {indice}")
-else:
-    print(f"'{buscar}' no encontrada")
-
-# 8. Lista de listas
-print("\n=== LISTAS DE LISTAS ===")
-calificaciones = [
-    ["Ana", 8.5, 9.0, 7.5],
-    ["Luis", 7.0, 8.0, 8.5],
-    ["María", 9.0, 9.5, 9.0]
-]
-
-print("Calificaciones de estudiantes:")
-for estudiante in calificaciones:
-    nombre = estudiante[0]
-    promedio = sum(estudiante[1:]) / len(estudiante[1:])
-    print(f"{nombre}: {promedio:.2f}")
-
-# PRÁCTICA: Crea una lista de compras
-print("\n=== LISTA DE COMPRAS ===")
-# TODO: Escribe tu código aquí
-
-
+print("\n¡FIN DEL PROGRAMA!\n")
