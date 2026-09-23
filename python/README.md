@@ -41,7 +41,7 @@ python/
 | **UT6** | `ut6_pooavanzadaestructuras` | `ut6_pooavanzadaestructuras` | u01 herencia/polimorfismo/ABC + prácticas CES; Sevilla ampliación; u02–u05 stub |
 | **UT7** | `ut7_persistenciaapi` | `ut7_persistenciajdbcapi` | Esqueleto (`sqlite3`, SQL, ORM) |
 | **UT8** | `ut8_frameworksweb` | `ut8_frameworksspring` | Esqueleto (Flask) |
-| **UT9** | `ut9_programacionfuncional` | `ut9_programacionfuncional` | Esqueleto (`pf/` lambda–streams) |
+| **UT9** | `ut9_programacionfuncional` | `ut9_programacionfuncional` | **u01lambda** (teoría+E01–E12); resto esqueleto |
 
 ### Convención (igual que Java)
 
@@ -89,12 +89,14 @@ Origen Sevilla: `python/sevilla/documentos/` (copia de referencia). Origen Elche
 - [x] Carpetas de `practicas/` sin guiones; enunciados kebab-case
 - [x] Depósitos `sevilla/`, `ignorar/`, `src/ordenaryborrar/` documentados (no se mezclan con el árbol EV)
 
-### Fase B — contenido bidireccional (pendiente)
+### Fase B — contenido bidireccional (en curso)
 
-- [ ] Paridad de volumen con Java (teoría/ejercicios EV1–EV3 donde el lenguaje lo permita)
+- [x] C++ EV2 + UT6 u01 desde C# (familia espejo)
+- [x] Python UT9 `u01lambda` desde Java (lambda/map/filter)
+- [ ] Paridad de volumen con Java (resto EV3)
 - [ ] Propagar exclusivos Python (NumPy, pandas, Flask, …) hacia Java/C#/C++ cuando tenga sentido
 - [ ] Diagnóstico de nivel (`src/diagnostico/`, como Java)
-- [ ] UT7 sqlite, UT8 Flask, UT9 lambda/map/filter con material real
+- [ ] UT7 sqlite, UT8 Flask; UT9 streams/optional/principios
 - [ ] Prácticas Sevilla Java portadas o equivalentes (alquiler → UT6, colegio → UT7)
 
 ## Ejecutar
