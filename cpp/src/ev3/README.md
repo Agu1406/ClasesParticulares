@@ -1,23 +1,24 @@
 # EV3 (C++) — Programación avanzada
 
-Equivalente a **Java / Python / C# EV3** (UT6–UT9). Misma idea pedagógica: herencia/polimorfismo → persistencia → frameworks → programación funcional.
+Equivalente a **Java / Python / C# EV3** (UT6–UT9).
 
 ## Mapa de unidades
 
 | UT | Carpeta | Tema | Estado |
 |----|---------|------|--------|
-| **UT6** | `ut6_pooavanzadaestructuras/` | Herencia, polimorfismo, colecciones, concurrencia | **u01 prácticas CES**; resto esqueleto |
-| **UT7** | `ut7_persistenciastl/` | Persistencia (ficheros / SQLite vía API C++) | Esqueleto |
-| **UT8** | `ut8_frameworks/` | Frameworks / librerías de aplicación | Esqueleto |
-| **UT9** | `ut9_programacionfuncional/` | Lambdas, algoritmos STL, estilo funcional | Esqueleto |
+| **UT6** | `ut6_pooavanzadaestructuras/` | Herencia, polimorfismo, colecciones, concurrencia | **u01 completo** (teoría + E01–E10 + prácticas CES); u02–u04 esqueleto |
+| **UT7** | `ut7_persistenciastl/` | Persistencia | Esqueleto |
+| **UT8** | `ut8_frameworks/` | Frameworks | Esqueleto |
+| **UT9** | `ut9_programacionfuncional/` | Lambdas / STL funcional | Esqueleto |
 
-## Prácticas CES (u01)
+## Cómo estudiar UT6 u01
 
-En `ut6_pooavanzadaestructuras/u01herenciapolimorfismo/practicas/`:
+1. `teoria/U00_Indice.cpp`
+2. `U01_HerenciaIntro` → `U02_PolimorfismoIntro` → `U03_AbstraccionIntro` → `U04_InterfacesIntro`
+3. Ejercicios E01–E10 (`pendientes` / `resueltos`)
+4. Prácticas CES en `practicas/madridcesjuanpablosegundo*`
 
-- `madridcesjuanpablosegundocentralita`
-- `madridcesjuanpablosegundofiguras`
-- `madridcesjuanpablosegundotrabajadores`
-- `madridcesjuanpablosegundoalumnos`
-
-Fuente de estilo: `android/src/ev2/` y `android/madrid/cesjuanpablosegundo/`.
+```powershell
+g++ -std=c++17 .\teoria\U01_HerenciaIntro.cpp -o demo
+.\demo
+```
