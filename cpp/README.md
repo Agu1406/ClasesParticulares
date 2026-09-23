@@ -25,7 +25,7 @@ cpp/
 └── src/
     ├── ev1/             UT1–UT3   (fundamentos, control, strings)
     ├── ev2/             UT4–UT5   (colecciones + POO/excepciones/IO) — contenido
-    └── ev3/             UT6–UT9   (herencia CES; ut7–ut9 esqueleto)
+    └── ev3/             UT6–UT9   (u01 herencia + u01lambda; ut7–ut8 esqueleto)
 ```
 
 ### Mapa UT ↔ Java / Python / C#
