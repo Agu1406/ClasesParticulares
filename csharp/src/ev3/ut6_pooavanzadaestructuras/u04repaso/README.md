@@ -1,3 +1,3 @@
 # u04 — Repaso UT6
 
-Pendiente. Mini-repaso integrado de herencia, colecciones y concurrencia.
+**Esqueleto** (Fase A). Contenido pendiente (Fase B): mini-repaso integrado de herencia, colecciones y concurrencia. Legacy hasta migrar a `u{NN}examenes` (como en Java).

@@ -8,145 +8,109 @@ Los estudiantes pueden acceder a tests interactivos tipo Google Forms para prepa
 
 ## Propósito del Repositorio
 
-Este repositorio nace con el objetivo de **preservar y organizar todo el contenido teórico y práctico** que enseño a través de mi servicio de clases particulares a distancia. 
+Este repositorio nace con el objetivo de **preservar y organizar todo el contenido teórico y práctico** que enseño a través de mi servicio de clases particulares a distancia.
 
 ### Origen de la Idea
 
 La idea surgió este año (2025) después de más de un año impartiendo clases, cuando me di cuenta de que **no estaba guardando el contenido en ningún lugar** y era demasiado valioso para dejarlo perder. Cada ejercicio, práctica, proyecto y explicación representa horas de trabajo y conocimiento acumulado que merece ser preservado.
 
+## Organización del repo: dos familias
+
+### Familia espejo (Programación 0485 / paridad pedagógica)
+
+Misma jerarquía `src/ev{N}/ut{N}_{tema}/u{NN}…` y las mismas convenciones de nombres. **Canon:** [`java/README.md`](java/README.md).
+
+| Módulo | Rol |
+|--------|-----|
+| [`java/`](java/README.md) | Guía canónica + material más completo |
+| [`python/`](python/README.md) | Espejo + RD 566/2024 (NumPy/pandas, etc.) |
+| [`csharp/`](csharp/README.md) | Espejo .NET / C# |
+| [`cpp/`](cpp/README.md) | Espejo C++ / STL |
+
+**Fase A (estructura):** hecha — EV/UT alineados; prácticas CES (centralita, figuras, trabajadores, alumnos) en `ev3/ut6_…/u01herenciapolimorfismo/practicas/` en los cuatro.
+
+**Fase B (contenido):** pendiente — paridad bidireccional de teoría/ejercicios (Java → resto y exclusivos de cada lenguaje → Java/resto).
+
+### Temario propio (no forzar UT1–UT9 de Java)
+
+| Módulo | Temario |
+|--------|---------|
+| [`js/`](js/README.md) | DWEC 0612 (mapa propio, kebab-case) |
+| [`android/`](android/README.md) / [`flutter/`](flutter/README.md) | PMDM (Kotlin / Dart) |
+| [`javafx/`](javafx/README.md) | GUI JavaFX (RA5) |
+| [`c/`](c/README.md) | C por módulos `01-…` |
+| [`interfaces/`](interfaces/) | HTML/CSS/JS por centro |
+| [`php/`](php/), [`sql/`](sql/), [`linux/`](linux/) | Por CCAA / centro |
+| [`react/`](react/), [`css/`](css/), [`tests/`](tests/README.md), [`portfolio/`](portfolio/) | Tutoriales, estilos, tests, sitio |
+
 ## Estructura del Repositorio
 
 ### **android/**
-- PMDM / Kotlin con estructura **EV1–EV3** (como `java/`): fundamentos Kotlin, POO consola CES, Android UI/persistencia
-- Prompt examen CES (5 turnos): [`android/madrid/cesjuanpablosegundo/`](android/madrid/cesjuanpablosegundo/)
-- Prácticas CES (centralita, figuras, trabajadores, alumnos) + teoría Android T01–T08
-- Ejercicios SharedPreferences, archivos, SQLite; proyectos Gradle y convocatoria extraordinaria
+- PMDM / Kotlin con estructura **EV1–EV3** (mapa propio PMDM, no UT1–UT9 de Java)
+- Prompt examen CES: [`android/madrid/cesjuanpablosegundo/`](android/madrid/cesjuanpablosegundo/)
+- Prácticas CES + teoría Android; SharedPreferences, archivos, SQLite
 - Ver [android/README.md](android/README.md)
 
 ### **flutter/**
-- Rama Flutter del temario PMDM (Dart, widgets, proyectos hello_world / inicial / componentes)
+- Rama Flutter del temario PMDM (Dart, widgets, proyectos)
 - Ver [flutter/README.md](flutter/README.md)
 
-### **c-lang/**
-- Programación en C estructurada en **12 módulos progresivos**:
-  - 01-introduccion: Hola mundo, estructura de programas, compilación
-  - 02-sintaxis-basica: Tipos de datos, casting, variables, operadores, E/S
-  - 03-control-flujo: if, switch, bucles (for, while, do-while), break/continue
-  - 04-funciones
-  - 05-arreglos-strings
-  - 06-punteros
-  - 07-estructuras-uniones
-  - 08-memoria-dinamica
-  - 09-archivos
-  - 10-preprocesador
-  - 11-bibliotecas-estandar
-  - 12-proyectos-practicos
-- **Ejercicios resueltos** en cada módulo (más de 20 ejercicios)
-- Documentación PDF sobre pilas, colas y registros
-- Ejercicios de laboratorio con soluciones
+### **c/**
+- Programación en C por módulos progresivos (`01-introduccion`, `02-sintaxis-basica`, `03-control-flujo`, …)
+- Documentación PDF (pilas, colas, registros) y ejercicios de laboratorio
 
 ### **cpp/**
-- C++ con estructura espejo de `java/`, `python/` y `csharp/`: `src/ev1` (UT1–UT3)
-- Teoría + ejercicios `Pendiente` / `Resuelto` (EV2/EV3 pendientes)
-- Material de centro UAX en `madrid/` (C + CMake): supermercado, juego de conquistas
+- Familia espejo: `src/ev1` (UT1–UT3), `ev2` (UT4–UT5 esqueleto), `ev3` (UT6 CES + UT7–UT9 esqueleto)
+- Material UAX en `madrid/` (CMake), fuera del árbol EV
 - Ver [cpp/README.md](cpp/README.md)
 
 ### **css/**
-- Estilos CSS reutilizables y compartidos
-- Componentes de diseño comunes
-- Variables CSS globales
-- Archivo index.css con estilos base
+- Estilos CSS reutilizables y compartidos (`index.css`)
 
-### **c-interfaces/**
-- Desarrollo de interfaces web con HTML, CSS y JavaScript
-- Tareas prácticas de maquetación y diseño responsive
-- Proyectos frontend: páginas web, formularios interactivos
-- Ejercicios de diseño web y estilos avanzados
-- Organización por comunidad autónoma y centro educativo
+### **interfaces/**
+- Desarrollo de interfaces web (HTML/CSS/JS) organizado por comunidad y centro
 
 ### **java/**
-- Programación en Java con estructura completa organizada por regiones:
-  - **Andalucía**: Almería, Sevilla (JavaFX, JDBC, multihilo, talleres)
-  - **Castilla y León**: Valladolid, Salamanca (aplicaciones bancarias, e-commerce)
-  - **Galicia**: Santiago de Compostela (USC - POO completa: encapsulación, herencia, polimorfismo, interfaces, excepciones)
-  - **Madrid**: UAX, IES Calderón Barca, CES Juan Pablo Segundo (estructuras de datos, técnicas de programación, arrays, ArrayList, HashMap)
-  - **Valencia**: Alicante (UA)
-- **Ejercicios organizados por categorías**:
-  - Ejercicios básicos (variables, operaciones)
-  - Bucles y condicionales
-  - Funciones
-  - Arrays
-  - ArrayList
-  - Ejercicios conocidos (27 ejercicios resueltos)
-- Proyectos con JavaFX, Swing, JDBC, multihilo
-- Aplicaciones de gestión: bancarias, e-commerce, talleres mecánicos
-- Documentación PDF completa sobre POO y técnicas de programación
-- Bibliotecas: JavaFX, Jakarta Servlet API
+- Canon de la familia espejo — Programación (0485), EV1–EV3 / UT1–UT9
+- Teoría, ejercicios, prácticas de centro, diagnóstico, recuperación ordinaria
+- Guía completa: [java/README.md](java/README.md)
 
 ### **javafx/**
-- GUI JavaFX (RA5 y futuro EV3): misma logica `ev1`/`ev2`/`ev3` que `java/`, modulo Gradle aparte
-- Nucleo actual en `ev2/ut5_pooexcepcionesio/` (teoria, ejercicios, practicas)
-- Material original conservado en `javafx/src/ignorar/legacy/` (no se elimina)
+- GUI JavaFX: misma lógica `ev1`/`ev2`/`ev3` que `java/`, módulo Gradle aparte
+- Núcleo en `ev2/ut5_pooexcepcionesio/`; legacy en `javafx/src/ignorar/legacy/`
 
 ### **js/**
-- **DWEC** (módulo 0612, 2.º DAW): temario BOE, mapa RA → evaluaciones (`ev1`–`ev3`) y unidades teóricas
-- DWEC por evaluaciones (`ev1`–`ev3`); ejercicios por centro con nombre (`almeria-iesaguadulce-tocadiscos`, `madrid-iesventurarodriguez-topic-*`, …)
+- **DWEC** (0612): temario BOE propio (`ev1`–`ev3`, kebab-case, sin forzar UT Java)
 - Ver [js/README.md](js/README.md) y [BOE DWEC](js/BOE-2023-06-03-RD-405-modulo-0612-DWEC.md)
 
 ### **php/**
-- Desarrollo web con PHP organizado por regiones:
-  - **Andalucía** (Almería): Web de películas (fácil e intermedio) con CSV y MySQL
-  - **Catalunya** (Barcelona - UOC): Tienda online completa con carrito, autenticación, pedidos
-  - **Madrid**: Ejercicios de relación (UD2, UD3, UD4) - más de 40 problemas resueltos
-- Proyectos completos: e-commerce, gestión de películas, formularios
-- Integración con bases de datos MySQL
-- Arquitectura MVC y DAO (Data Access Object)
-- Documentación PDF de prácticas y ejercicios
+- Desarrollo web por regiones (Andalucía, Catalunya/UOC, Madrid UD2–UD4)
+- MVC, DAO, MySQL
 
 ### **python/**
-- **Curso de especialización FP** — Python (RD 566/2024) + **paridad pedagógica con Java** (UT1–UT9)
-- Estructura espejo de `java/`: `src/ev1` (UT1–3), `ev2` (UT4–5), `ev3` (UT6–9)
-- BOE: [python/BOE-2024-06-20-RD-566-curso-especializacion-python.md](python/BOE-2024-06-20-RD-566-curso-especializacion-python.md)
-- Material Sevilla (IES Velázquez): gestor de tareas (UT4), ampliación Python (UT6)
+- Familia espejo + curso especialización RD 566/2024
+- CES en `ev3/ut6/…`; material Sevilla/Elche documentado en el README del módulo
 - Ver [python/README.md](python/README.md)
 
 ### **csharp/**
-- C# / .NET con estructura espejo de `java/` y `python/`: `src/ev1` (UT1–3), `ev2` (UT4–5)
-- Teoría + ejercicios `Pendiente` / `Resuelto` (sin prácticas de centro por ahora)
+- Familia espejo .NET: EV1–EV3 / UT1–UT9; prácticas CES en `ev3/ut6/…`
 - Ver [csharp/README.md](csharp/README.md)
 
-### **rn/**
-- Desarrollo de aplicaciones móviles multiplataforma con React Native y Expo
-- Proyecto completo: **Sevici** (aplicación de bicicletas públicas)
-  - Autenticación (login, registro multi-paso)
-  - Navegación con tabs (explore, map, profile, trips)
-  - Componentes reutilizables y temas
-  - Validación y almacenamiento
-- Ejercicios y simulacros de examen
-- Documentación PDF de prácticas y exámenes
-- TypeScript y componentes modernos
-
 ### **sql/**
-- **10 ejercicios progresivos** sobre MySQL:
-  - Introducción a MySQL
-  - Creación de bases de datos y tablas
-  - Tipos de datos
-  - Inserción, consulta, filtrado (WHERE)
-  - Actualización y eliminación de datos
-  - Operadores y funciones SQL
-- Contenido adicional: Microsoft Access (prácticas con archivos .mdb)
-- Documentación PDF de prácticas
-- Organización por ejercicios numerados y contenido por región
+- Scripts y prácticas MySQL / Access organizados por región y centro
+
+### **react/**
+- Tutoriales React (inicio rápido, tres en línea); no es temario EV
+
+### **linux/**
+- Material de sistemas / RA3 y centros concretos
 
 ### **tests/**
-- **Sistema de tests interactivos** tipo Google Forms
-- Tests disponibles en modo **Examen** y modo **Estudio**
-- Componentes globales reutilizables (header y footer)
-- Tests disponibles:
-  - **JavaFX**: 2 tests con 37 preguntas totales
-  - **Arrays en Java**: 1 test con 20 preguntas
-- Desplegado en GitHub Pages
-- Ver [tests/README.md](tests/README.md) para más detalles
+- Sistema de tests interactivos (Examen / Estudio) en GitHub Pages
+- Ver [tests/README.md](tests/README.md)
+
+### **portfolio/**
+- Sitio del portfolio (Astro/React); no es asignatura
 
 ## Contenido Educativo
 
@@ -163,18 +127,19 @@ La idea surgió este año (2025) después de más de un año impartiendo clases,
 
 | Lenguaje | Uso Principal |
 |----------|---------------|
-| **Java** | POO, Swing, JavaFX, JDBC, multihilo, estructuras de datos |
-| **PHP** | Desarrollo web, formularios, BD, MVC, DAO |
-| **C++** | Fundamentos, control de flujo, strings; proyectos UAX (CMake) |
-| **C** | Programación estructurada, estructuras de datos, pilas, colas, registros, memoria dinámica |
-| **Kotlin** | Desarrollo Android, SharedPreferences, SQLite, archivos |
-| **HTML/CSS/JS** | Interfaces web, maquetación, diseño responsive, frontend |
-| **JavaScript** | Desarrollo web, interactividad (en desarrollo) |
-| **Python** | Sintaxis básica, POO, estructuras de datos, proyectos prácticos |
-| **C#** | .NET, fundamentos, control de flujo, colecciones, POO, I/O |
-| **React Native** | Desarrollo multiplataforma Android & iOS, Expo, TypeScript |
-| **SQL** | Bases de datos MySQL, consultas, gestión de datos, Microsoft Access |
-| **CSS** | Estilos reutilizables, diseño web, componentes compartidos |
+| **Java** | Canon espejo 0485: POO, Swing, JDBC, multihilo, colecciones |
+| **Python** | Espejo + datos (NumPy/pandas), Flask (esqueleto) |
+| **C#** | Espejo .NET: fundamentos, colecciones, POO, ADO.NET/LINQ (esqueleto) |
+| **C++** | Espejo: fundamentos EV1; EV2/EV3 estructura + prácticas CES |
+| **C** | Programación estructurada por módulos |
+| **Kotlin / Android** | PMDM: consola CES, UI, persistencia |
+| **JavaScript** | DWEC (cliente web) |
+| **PHP** | Desarrollo web, formularios, BD, MVC |
+| **SQL** | MySQL, consultas, Access |
+| **HTML/CSS** | Interfaces web, maquetación |
+| **Flutter / Dart** | PMDM multiplataforma |
+| **React** | Tutoriales frontend |
+| **CSS** | Estilos reutilizables |
 
 ## Sistema de Tests Interactivos
 
@@ -196,7 +161,7 @@ El repositorio incluye un **sistema completo de tests interactivos** desplegado 
 ## Convenciones del Proyecto
 
 ### Commits
-Seguimos la convención de **Conventional Commits** para mantener un historial claro:
+Seguimos la convención de **Conventional Commits** (`PERSONALGUIDE.md`):
 - `feat`: Nuevas funcionalidades
 - `fix`: Corrección de errores
 - `docs`: Documentación
@@ -205,13 +170,11 @@ Seguimos la convención de **Conventional Commits** para mantener un historial c
 - `test`: Añadir o modificar tests
 - `chore`: Tareas de mantenimiento
 
-Existe un documento `guia-commits.txt` en el directorio principal con una guía detallada de commits para desarrolladores junior.
-
 ### Organización
-- **Por comunidad autónoma** → **Ciudad** → **Centro educativo**
-- **Por módulo** → **Unidad** → **Ejercicio**
-- **Código fuente** separado de **documentación**
-- **Tests interactivos** en directorio `tests/` con estructura modular
+- **Familia espejo:** `src/evN/utN_tema/uNNsubtema/{teoria,ejercicios,practicas}` — detalles en [`java/README.md`](java/README.md)
+- **Por centro (php/sql/interfaces/…):** comunidad → ciudad → centro
+- **Código fuente** separado de **documentación** de módulo
+- **Tests interactivos** en `tests/`
 
 ## Objetivos
 

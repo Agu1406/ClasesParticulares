@@ -1,5 +1,5 @@
 # UT7 — Persistencia con ADO.NET
 
-Equivalente a Java `ut7_persistenciajdbcapi`, pero en C# usamos **ADO.NET** (típicamente SQLite o SQL Server).
+Equivalente a Java `ut7_persistenciajdbcapi` / Python `ut7_persistenciaapi` / C++ `ut7_persistenciastl`.
 
-Contenido pendiente: conexión, comandos, DataReader, parámetros.
+**Esqueleto** (Fase A). Contenido pendiente (Fase B): conexión, comandos, DataReader, parámetros (típicamente SQLite o SQL Server).

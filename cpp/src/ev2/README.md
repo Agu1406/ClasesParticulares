@@ -1,6 +1,12 @@
-﻿# EV2 (C++) — espejo parcial
+﻿# EV2 (C++) — Colecciones y POO básica
 
-Incluye practicas CES Juan Pablo Segundo (centralita, figuras, trabajadores, alumnos) en:
-`ut6_pooavanzadaestructuras/u01herenciapolimorfismo/practicas/`
+Equivalente a **Java / Python / C# EV2** (UT4–UT5). Esqueleto estructural (Fase A): carpetas listas; contenido pedagógico pendiente (Fase B).
 
-Fuente Kotlin: `android/src/ev2/` y `android/madrid/cesjuanpablosegundo/`.
+## Mapa
+
+| UT | Carpeta | Tema | Estado |
+|----|---------|------|--------|
+| **UT4** | `ut4_colecciones/` | Arrays, `vector`/`map`, datos avanzados, repaso | Esqueleto |
+| **UT5** | `ut5_pooexcepcionesio/` | POO básica, excepciones, ficheros, repaso | Esqueleto |
+
+Las prácticas CES de herencia (centralita, figuras, trabajadores, alumnos) están en **EV3** → `ut6_pooavanzadaestructuras/u01herenciapolimorfismo/practicas/` (paridad con Java/Python/C#).

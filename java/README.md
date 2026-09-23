@@ -2,10 +2,23 @@
 
 Material de **Programacion (0485)** organizado por evaluaciones y unidades. Normativa: `BOE-2023-06-03-RD-405-modulo-0485-programacion.md`.
 
-Modulo **`java/`** del repositorio [ClasesParticulares](https://github.com/Agu1406/ClasesParticulares). Modulos relacionados:
+Modulo **`java/`** del repositorio [ClasesParticulares](https://github.com/Agu1406/ClasesParticulares). Este `README.md` es la **guia canonica** de carpetas, nomenclatura y estructura EV/UT para la familia espejo.
+
+**Familia espejo (mismo mapa UT1–UT9 / EV1–EV3):**
+
+- [`python/`](../python/README.md) — RD 566/2024 + paridad pedagogica
+- [`csharp/`](../csharp/README.md) — .NET / C#
+- [`cpp/`](../cpp/README.md) — g++ / STL
+
+Otros modulos relacionados (temario propio, no espejo UT1–UT9 de Programacion 0485):
 
 - [`javafx/`](../javafx/README.md) — interfaces JavaFX (Gradle, JDK 21)
 - [`tests/`](../tests/README.md) — tests interactivos HTML
+
+**Roadmap de paridad:**
+
+- **Fase A (hecha):** estructura y convenciones alineadas en python/csharp/cpp (canon = este README).
+- **Fase B (pendiente):** contenido bidireccional — primero propagar de Java al resto (donde el lenguaje lo permita); despues regalar a Java (y al resto) lo exclusivo de cada lenguaje (p. ej. NumPy/pandas en Python).
 
 **Volumen aproximado:** ~1396 clases `.java`, 78 proyectos en `practicas/`, 63 PDF.
 

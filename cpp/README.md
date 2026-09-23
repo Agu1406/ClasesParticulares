@@ -1,10 +1,15 @@
 # C++ — Clases particulares
 
-Material de C++ organizado **como `java/`, `python/` y `csharp/`**: evaluaciones **EV1** (UT1–UT3), subtemas `u01…`, `teoria/`, `ejercicios/`.
+Material de C++ organizado **como `java/`, `python/` y `csharp/`**: evaluaciones **EV1–EV3**, unidades **UT1–UT9**, subtemas `u01…`, `teoria/`, `ejercicios/`, `practicas/`.
 
 **Objetivo del repo:** paridad pedagógica con el módulo 0485 en Java (`../java/`), con Python (`../python/`) y con C# (`../csharp/`), adaptado a compilador, `iostream` y la STL.
 
-El material de centro UAX permanece en `madrid/` (proyectos C con CMake). No forma parte de Ev1.
+**Familia espejo:** `java` ↔ `python` ↔ `csharp` ↔ `cpp`. Canon de carpetas/nombres: [`../java/README.md`](../java/README.md).
+
+- **Fase A (hecha):** estructura EV1–EV3 alineada; prácticas CES en `ev3/ut6/…`.
+- **Fase B (pendiente):** rellenar teoría/ejercicios desde Java (y devolver a Java lo exclusivo de C++).
+
+El material de centro UAX permanece en `madrid/` (proyectos C con CMake). No forma parte del árbol EV.
 
 ## Requisitos
 
@@ -19,18 +24,23 @@ cpp/
 ├── madrid/              ← UAX (C + CMake; no se toca)
 └── src/
     ├── ev1/             UT1–UT3   (fundamentos, control, strings)
-    └── ev2/             practicas CES (herencia) — ver src/ev2/README.md
+    ├── ev2/             UT4–UT5   (colecciones + POO/excepciones/IO) — esqueleto
+    └── ev3/             UT6–UT9   (herencia CES, persistencia, frameworks, PF)
 ```
-
-**EV2** incluye practicas espejo CES Juan Pablo Segundo (centralita, figuras, trabajadores, alumnos) en `ut6_pooavanzadaestructuras/u01herenciapolimorfismo/practicas/`. **EV3** aún no existe.
 
 ### Mapa UT ↔ Java / Python / C#
 
-| UT | Carpeta C++ | Equivalente Java | Notas |
-|----|-------------|------------------|-------|
-| **UT1** | `ut1_fundamentoscpp` | `ut1_fundamentosjava` | g++, `cout`/`cin`, tipos |
-| **UT2** | `ut2_controlflujometodos` | `ut2_controlflujometodos` | if/switch, bucles, funciones |
-| **UT3** | `ut3_strings` | `ut3_stringsyenvolventes` | `std::string` mutable (sin StringBuilder) |
+| UT | Carpeta C++ | Equivalente Java | Estado |
+|----|-------------|------------------|--------|
+| **UT1** | `ut1_fundamentoscpp` | `ut1_fundamentosjava` | Contenido EV1 |
+| **UT2** | `ut2_controlflujometodos` | `ut2_controlflujometodos` | Contenido EV1 |
+| **UT3** | `ut3_strings` | `ut3_stringsyenvolventes` | Contenido EV1 |
+| **UT4** | `ut4_colecciones` | `ut4_colecciones` | Esqueleto |
+| **UT5** | `ut5_pooexcepcionesio` | `ut5_pooexcepcionesio` | Esqueleto |
+| **UT6** | `ut6_pooavanzadaestructuras` | igual | Prácticas CES en u01; resto esqueleto |
+| **UT7** | `ut7_persistenciastl` | `ut7_persistenciajdbcapi` | Esqueleto |
+| **UT8** | `ut8_frameworks` | `ut8_frameworksspring` | Esqueleto |
+| **UT9** | `ut9_programacionfuncional` | igual | Esqueleto |
 
 ### Convención (igual que Java/Python/C#)
 
@@ -38,7 +48,8 @@ cpp/
 - **Subtema:** `u{NN}{nombre}`
 - **Teoría:** `U{NN}_{Nombre}.cpp` ejecutables con explicación en comentario de bloque
 - **Ejercicios:** `E{NN}_*_Pendiente.cpp` / `_Resuelto.cpp`
-- **Sin `practicas/`** en Ev1 (el material UAX está en `madrid/`)
+- **Prácticas de centro:** carpeta `{comunidad}{centro}{nombre}` sin guiones; enunciados en kebab-case
+- **Sin `practicas/` en EV1** (el material UAX está en `madrid/`)
 
 ### Formato C++ (Ev1)
 

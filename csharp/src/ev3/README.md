@@ -2,14 +2,16 @@
 
 Equivalente a **Java EV3** (UT6–UT9). Misma idea pedagógica: herencia/polimorfismo → persistencia → web → LINQ/funcional.
 
+**Familia espejo** con `java` / `python` / `cpp`. Fase A = estructura; Fase B = paridad de contenido.
+
 ## Mapa de unidades
 
 | UT | Carpeta | Tema | Estado |
 |----|---------|------|--------|
-| **UT6** | `ut6_pooavanzadaestructuras/` | Herencia, polimorfismo, colecciones, concurrencia | **u01 completo**; resto esqueleto |
-| **UT7** | `ut7_persistenciaado/` | Persistencia con ADO.NET / SQLite | Esqueleto |
-| **UT8** | `ut8_aspnet/` | ASP.NET Core (web) | Esqueleto |
-| **UT9** | `ut9_linqfuncional/` | LINQ, delegates, programación funcional | Esqueleto |
+| **UT6** | `ut6_pooavanzadaestructuras/` | Herencia, polimorfismo, colecciones, concurrencia | **u01 completo** (+ prácticas CES); resto esqueleto |
+| **UT7** | `ut7_persistenciaado/` | Persistencia con ADO.NET / SQLite | Esqueleto (Fase B) |
+| **UT8** | `ut8_aspnet/` | ASP.NET Core (web) | Esqueleto (Fase B) |
+| **UT9** | `ut9_linqfuncional/` | LINQ, delegates, programación funcional | Esqueleto (Fase B) |
 
 ## Cómo estudiar UT6 u01 (herencia)
 
@@ -21,6 +23,8 @@ Orden pedagógico (no el número de carpeta):
 4. **Interfaces** — `U04_InterfacesIntro.cs` (`interface` + implementación)
 
 Empieza por `u01herenciapolimorfismo/teoria/U00_Indice.cs` y luego los ejercicios E01–E10.
+
+Prácticas CES: `u01herenciapolimorfismo/practicas/madridcesjuanpablosegundo*`.
 
 ## Convención de código (igual EV2)
 

@@ -1,5 +1,5 @@
 # UT9 — LINQ y programación funcional
 
-Equivalente a Java `ut9_programacionfuncional`: **LINQ**, delegates, lambdas y composición.
+Equivalente a Java `ut9_programacionfuncional` / Python `ut9_programacionfuncional` / C++ `ut9_programacionfuncional`.
 
-Contenido pendiente: `Where`/`Select`, delegates, expresión lambda.
+**Esqueleto** (Fase A). Contenido pendiente (Fase B): `Where`/`Select`, delegates, expresión lambda y composición.

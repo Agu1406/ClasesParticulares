@@ -1,8 +1,13 @@
 # C# — Clases particulares
 
-Material de C# / .NET organizado **como `java/` y `python/`**: evaluaciones **EV1–EV3**, unidades **UT1–UT9**, subtemas `u01…`, `teoria/`, `ejercicios/`.
+Material de C# / .NET organizado **como `java/` y `python/`**: evaluaciones **EV1–EV3**, unidades **UT1–UT9**, subtemas `u01…`, `teoria/`, `ejercicios/`, `practicas/`.
 
 **Objetivo del repo:** paridad pedagógica con el módulo 0485 en Java (`../java/`) y con Python (`../python/`), adaptado a CLR, SDK .NET y APIs de C#.
+
+**Familia espejo:** `java` ↔ `python` ↔ `csharp` ↔ `cpp`. Canon de carpetas/nombres: [`../java/README.md`](../java/README.md).
+
+- **Fase A (hecha):** estructura EV1–EV3 alineada; prácticas CES en `ev3/ut6/…`.
+- **Fase B (pendiente):** rellenar teoría/ejercicios desde Java (y devolver a Java lo exclusivo de C# / .NET).
 
 ## Requisitos
 
@@ -17,7 +22,7 @@ csharp/
 └── src/
     ├── ev1/    UT1–UT3   (fundamentos, control, strings)
     ├── ev2/    UT4–UT5   (colecciones + POO/excepciones/IO)
-    └── ev3/    UT6–UT9   (herencia, ADO.NET, ASP.NET, LINQ)
+    └── ev3/    UT6–UT9   (herencia + CES, ADO.NET, ASP.NET, LINQ)
 ```
 
 ### Mapa UT ↔ Java / Python
@@ -29,8 +34,8 @@ csharp/
 | **UT3** | `ut3_strings` | `ut3_stringsyenvolventes` | string, interpolación, StringBuilder (Split/Join en EV2: arrays) |
 | **UT4** | `ut4_colecciones` | `ut4_colecciones` | arrays, List, Dictionary |
 | **UT5** | `ut5_pooexcepcionesio` | `ut5_pooexcepcionesio` | clases, try/catch, File (sin GUI) |
-| **UT6** | `ut6_pooavanzadaestructuras` | igual | herencia, colecciones avanzadas, concurrencia |
-| **UT7** | `ut7_persistenciaado` | `ut7_persistenciajdbcapi` | ADO.NET / SQLite (no JDBC) |
+| **UT6** | `ut6_pooavanzadaestructuras` | igual | herencia + prácticas CES en u01; resto esqueleto |
+| **UT7** | `ut7_persistenciaado` | `ut7_persistenciajdbcapi` | ADO.NET / SQLite (esqueleto) |
 | **UT8** | `ut8_aspnet` | `ut8_frameworksspring` | ASP.NET Core (esqueleto) |
 | **UT9** | `ut9_linqfuncional` | `ut9_programacionfuncional` | LINQ / delegates (esqueleto) |
 
@@ -40,7 +45,16 @@ csharp/
 - **Subtema:** `u{NN}{nombre}`
 - **Teoría:** `U{NN}_{Nombre}.cs` ejecutables con explicación en comentario de bloque
 - **Ejercicios:** `E{NN}_*_Pendiente.cs` / `_Resuelto.cs`
-- **Sin `practicas/`** por ahora (no hay material de centro)
+- **Prácticas de centro:** carpeta `{comunidad}{centro}{nombre}` sin guiones; ficheros `NombrePendiente.cs` / `NombreResuelto.cs` (PascalCase)
+
+### Prácticas CES (Juan Pablo Segundo)
+
+En `ev3/ut6_pooavanzadaestructuras/u01herenciapolimorfismo/practicas/` (misma ruta relativa que Java/Python/C++):
+
+- `madridcesjuanpablosegundocentralita` — `CentralitaPendiente.cs` / `CentralitaResuelto.cs`
+- `madridcesjuanpablosegundofiguras` — `FigurasPendiente.cs` / `FigurasResuelto.cs`
+- `madridcesjuanpablosegundotrabajadores` — `TrabajadoresPendiente.cs` / `TrabajadoresResuelto.cs`
+- `madridcesjuanpablosegundoalumnos` — `AlumnosPendiente.cs` / `AlumnosResuelto.cs`
 
 ### Formato de ejercicios (desde `u04metodos` en adelante)
 
