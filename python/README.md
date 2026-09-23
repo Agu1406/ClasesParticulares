@@ -41,7 +41,7 @@ python/
 | **UT6** | `ut6_pooavanzadaestructuras` | `ut6_pooavanzadaestructuras` | u01 herencia/polimorfismo/ABC + prácticas CES; Sevilla ampliación; u02–u05 stub |
 | **UT7** | `ut7_persistenciaapi` | `ut7_persistenciajdbcapi` | Esqueleto (`sqlite3`, SQL, ORM) |
 | **UT8** | `ut8_frameworksweb` | `ut8_frameworksspring` | Esqueleto (Flask) |
-| **UT9** | `ut9_programacionfuncional` | `ut9_programacionfuncional` | **u01lambda** (teoría+E01–E12); resto esqueleto |
+| **UT9** | `ut9_programacionfuncional` | `ut9_programacionfuncional` | **u01lambda** + **u02streams**; resto esqueleto |
 
 ### Convención (igual que Java)
 
@@ -92,7 +92,8 @@ Origen Sevilla: `python/sevilla/documentos/` (copia de referencia). Origen Elche
 ### Fase B — contenido bidireccional (en curso)
 
 - [x] C++ EV2 + UT6 u01 desde C# (familia espejo)
-- [x] Python UT9 `u01lambda` desde Java (lambda/map/filter)
+- [x] Python UT9 `u01lambda` + `u02streams` desde Java (PF)
+- [x] C# UT9 `u01lambda` (LINQ/lambdas) espejo Python/Java
 - [ ] Paridad de volumen con Java (resto EV3)
 - [ ] Propagar exclusivos Python (NumPy, pandas, Flask, …) hacia Java/C#/C++ cuando tenga sentido
 - [ ] Diagnóstico de nivel (`src/diagnostico/`, como Java)

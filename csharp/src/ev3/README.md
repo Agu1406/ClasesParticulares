@@ -11,7 +11,7 @@ Equivalente a **Java EV3** (UT6–UT9). Misma idea pedagógica: herencia/polimor
 | **UT6** | `ut6_pooavanzadaestructuras/` | Herencia, polimorfismo, colecciones, concurrencia | **u01 completo** (+ prácticas CES); resto esqueleto |
 | **UT7** | `ut7_persistenciaado/` | Persistencia con ADO.NET / SQLite | Esqueleto (Fase B) |
 | **UT8** | `ut8_aspnet/` | ASP.NET Core (web) | Esqueleto (Fase B) |
-| **UT9** | `ut9_linqfuncional/` | LINQ, delegates, programación funcional | Esqueleto (Fase B) |
+| **UT9** | `ut9_linqfuncional/` | LINQ, delegates, programación funcional | **u01lambda completo**; resto esqueleto |
 
 ## Cómo estudiar UT6 u01 (herencia)
 
