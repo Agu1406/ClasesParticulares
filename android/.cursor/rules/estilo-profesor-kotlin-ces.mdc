@@ -1,0 +1,41 @@
+---
+description: Estilo Kotlin consola del profesor CES Juan Pablo Segundo (Borja/PMDM). Usar en examenes y practicas tipo centralita/figuras/trabajadores/alumnos.
+globs: "**/*.{kt,kts}"
+alwaysApply: false
+---
+
+# Estilo profesor Kotlin CES (consola)
+
+Al generar o editar Kotlin en este modulo, imita el codigo de clase PMDM/CES, no Kotlin "moderno limpio".
+
+## Stack por defecto
+
+- Kotlin JVM consola (`fun main`, `readln`).
+- Sin Android/Compose/ViewModel/Coroutines/Room salvo que el enunciado lo pida.
+- Flutter solo si el enunciado lo pide explicitamente.
+
+## Estructura
+
+- `Entrada.kt` o `Main.kt` = menu / entrada.
+- `model/` = dominio (`open` / `abstract` + hijas).
+- `controller/` = colecciones y reglas (`Centralita`, `Empresa`, `Colegio`, `School`).
+
+## Patrones obligatorios
+
+- Herencia didactica: `open class` / `abstract class`, `override fun mostrarDatos()`.
+- Constructores primario + secundarios `constructor(...) : this(...)`.
+- Nullables con mensajes: `${x ?: "dato no disponible"}` / `"no se ha definido…"`.
+- `ArrayList` + a menudo `lateinit` + `init { lista = arrayListOf() }`.
+- Menu `do/while` + `when`.
+- DNI/codigos: `equals(..., ignoreCase = true)`.
+- Nombres de dominio en espanol; comentarios breves en espanol.
+- Mensajes al usuario con `println` en espanol.
+
+## Prohibido (salvo enunciado)
+
+- sealed / data class "por gusto", MVVM, repositories, Sequence/Flow.
+- Explicaciones largas: entregar ficheros `.kt` completos.
+
+## Referencia
+
+Ver `madrid/cesjuanpablosegundo/referencia-estilo/` (p1–p4) y `PROMPT_EXAMEN_AGENTE.md`.

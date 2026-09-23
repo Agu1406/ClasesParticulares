@@ -18,10 +18,11 @@ cpp/
 ├── README.md
 ├── madrid/              ← UAX (C + CMake; no se toca)
 └── src/
-    └── ev1/             UT1–UT3   (fundamentos, control, strings)
+    ├── ev1/             UT1–UT3   (fundamentos, control, strings)
+    └── ev2/             practicas CES (herencia) — ver src/ev2/README.md
 ```
 
-**EV2** (colecciones, POO, excepciones, IO) y **EV3** aún no existen en este módulo.
+**EV2** incluye practicas espejo CES Juan Pablo Segundo (centralita, figuras, trabajadores, alumnos) en `ut6_pooavanzadaestructuras/u01herenciapolimorfismo/practicas/`. **EV3** aún no existe.
 
 ### Mapa UT ↔ Java / Python / C#
 

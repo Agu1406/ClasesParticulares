@@ -1,0 +1,11 @@
+"""
+OBJETIVO: ABC Cuenta con depositar concreto y retirar abstracto; CuentaAhorro implementa retirar.
+
+Autor: Agustin. A. Marquez. Pina
+Contacto: agu1406@outlook.es
+Repositorio GitHub: https://github.com/Agu1406/ClasesParticulares
+Sitio web: https://www.agustinmarquez.dev
+"""
+
+# TODO: class Cuenta(ABC) con depositar y retirar abstracto
+# TODO: CuentaAhorro; depositar y retirar; mostrar saldo

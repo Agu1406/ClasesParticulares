@@ -29,12 +29,12 @@ python/
 | **UT1** | `ut1_fundamentospython` | `ut1_fundamentosjava` | Teoría U01–U03 |
 | **UT2** | `ut2_controlflujometodos` | `ut2_controlflujometodos` | Condicionales, bucles, funciones, validación entrada |
 | **UT3** | `ut3_strings` | `ut3_stringsyenvolventes` | U01–U03 (f-strings, `:<` `:>` `:^`) |
-| **UT4** | `ut4_colecciones` | `ut4_colecciones` + NumPy/pandas (5101) | Listas U01–U06; tuplas U01–U05; dicts U01–U06; práctica Sevilla gestor |
-| **UT5** | `ut5_pooexcepcionesio` | `ut5_pooexcepcionesio` | POO U01–U04, excepciones U01–U07 + E01–E15, ficheros U01–U07 (CSV + marco) + E01–E11, `tiendacompra`, examen Elche UMH (`u04examenes`) |
-| **UT6** | `ut6_pooavanzadaestructuras` | `ut6_pooavanzadaestructuras` | PDF ampliación Sevilla |
-| **UT7** | `ut7_persistenciaapi` | `ut7_persistenciajdbcapi` | Esqueleto (`sqlite3`, SQL) |
-| **UT8** | `ut8_frameworksweb` | `ut8_frameworksspring` | Esqueleto (Flask/FastAPI) |
-| **UT9** | `ut9_programacionfuncional` | `ut9_programacionfuncional` | Esqueleto (`pf/`) |
+| **UT4** | `ut4_colecciones` | `ut4_colecciones` + NumPy/pandas (5101) | Listas U01–U06 + E01–E12; tuplas U01–U05 + E01–E10; dicts U01–U06 + E01–E12; `u04numpy`/`u05pandas`/`u06repaso`; práctica Sevilla gestor |
+| **UT5** | `ut5_pooexcepcionesio` | `ut5_pooexcepcionesio` | POO U01–U07 + E01–E10 + `tiendacompra`; excepciones U01–U07 + E01–E15; ficheros U01–U07 + E01–E11; examen Elche UMH (`u04examenes`) |
+| **UT6** | `ut6_pooavanzadaestructuras` | `ut6_pooavanzadaestructuras` | u01 herencia/polimorfismo/ABC (U00–U04 + E01–E10); Sevilla ampliación; u02–u05 stub |
+| **UT7** | `ut7_persistenciaapi` | `ut7_persistenciajdbcapi` | Esqueleto (`sqlite3`, SQL, ORM) |
+| **UT8** | `ut8_frameworksweb` | `ut8_frameworksspring` | Esqueleto (Flask) |
+| **UT9** | `ut9_programacionfuncional` | `ut9_programacionfuncional` | Esqueleto (`pf/` lambda–streams) |
 
 ### Convención (igual que Java)
 

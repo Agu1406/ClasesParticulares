@@ -17,14 +17,15 @@ La idea surgió este año (2025) después de más de un año impartiendo clases,
 ## Estructura del Repositorio
 
 ### **android/**
-- Desarrollo móvil con Android y Kotlin
-- **15 ejercicios prácticos** sobre:
-  - SharedPreferences (básico, email, agenda, modos)
-  - Sistema de archivos (lectura, escritura, verificación)
-  - SQLite (conceptos, SQLiteOpenHelper, CRUD completo)
-- Proyectos completos: Gestor de Tareas, aplicaciones híbridas
-- Proyectos de exámenes y convocatorias extraordinarias
-- Proyectos con Gradle y estructura modular
+- PMDM / Kotlin con estructura **EV1–EV3** (como `java/`): fundamentos Kotlin, POO consola CES, Android UI/persistencia
+- Prompt examen CES (5 turnos): [`android/madrid/cesjuanpablosegundo/`](android/madrid/cesjuanpablosegundo/)
+- Prácticas CES (centralita, figuras, trabajadores, alumnos) + teoría Android T01–T08
+- Ejercicios SharedPreferences, archivos, SQLite; proyectos Gradle y convocatoria extraordinaria
+- Ver [android/README.md](android/README.md)
+
+### **flutter/**
+- Rama Flutter del temario PMDM (Dart, widgets, proyectos hello_world / inicial / componentes)
+- Ver [flutter/README.md](flutter/README.md)
 
 ### **c-lang/**
 - Programación en C estructurada en **12 módulos progresivos**:
