@@ -7,7 +7,7 @@ Material de C++ organizado **como `java/`, `python/` y `csharp/`**: evaluaciones
 **Familia espejo:** `java` ↔ `python` ↔ `csharp` ↔ `cpp`. Canon de carpetas/nombres: [`../java/README.md`](../java/README.md).
 
 - **Fase A (hecha):** estructura EV1–EV3 alineada; prácticas CES en `ev3/ut6/…`.
-- **Fase B (pendiente):** rellenar teoría/ejercicios desde Java (y devolver a Java lo exclusivo de C++).
+- **Fase B (en curso):** EV2 (UT4–UT5) portado desde C# (~185 `.cpp`). Pendiente: EV3 ut7–ut9 y exclusivos C++→Java.
 
 El material de centro UAX permanece en `madrid/` (proyectos C con CMake). No forma parte del árbol EV.
 
@@ -24,8 +24,8 @@ cpp/
 ├── madrid/              ← UAX (C + CMake; no se toca)
 └── src/
     ├── ev1/             UT1–UT3   (fundamentos, control, strings)
-    ├── ev2/             UT4–UT5   (colecciones + POO/excepciones/IO) — esqueleto
-    └── ev3/             UT6–UT9   (herencia CES, persistencia, frameworks, PF)
+    ├── ev2/             UT4–UT5   (colecciones + POO/excepciones/IO) — contenido
+    └── ev3/             UT6–UT9   (herencia CES; ut7–ut9 esqueleto)
 ```
 
 ### Mapa UT ↔ Java / Python / C#
@@ -35,8 +35,8 @@ cpp/
 | **UT1** | `ut1_fundamentoscpp` | `ut1_fundamentosjava` | Contenido EV1 |
 | **UT2** | `ut2_controlflujometodos` | `ut2_controlflujometodos` | Contenido EV1 |
 | **UT3** | `ut3_strings` | `ut3_stringsyenvolventes` | Contenido EV1 |
-| **UT4** | `ut4_colecciones` | `ut4_colecciones` | Esqueleto |
-| **UT5** | `ut5_pooexcepcionesio` | `ut5_pooexcepcionesio` | Esqueleto |
+| **UT4** | `ut4_colecciones` | `ut4_colecciones` | Teoría + ejercicios (port C#) |
+| **UT5** | `ut5_pooexcepcionesio` | `ut5_pooexcepcionesio` | Teoría + ejercicios (port C#) |
 | **UT6** | `ut6_pooavanzadaestructuras` | igual | Prácticas CES en u01; resto esqueleto |
 | **UT7** | `ut7_persistenciastl` | `ut7_persistenciajdbcapi` | Esqueleto |
 | **UT8** | `ut8_frameworks` | `ut8_frameworksspring` | Esqueleto |

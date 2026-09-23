@@ -1,10 +1,12 @@
 # UT5 — POO, excepciones e I/O (C++)
 
-Equivalente a Java/Python/C# `ut5_pooexcepcionesio`. **Esqueleto** (Fase A): contenido pendiente de paridad (Fase B).
+Equivalente a Java/Python/C# `ut5_pooexcepcionesio`. Portado desde C# (Fase B).
 
-| Subtema | Carpeta | Contenido previsto |
-|---------|---------|-------------------|
-| u01 | `u01poobasica/` | Clases, encapsulación, constructores |
+| Subtema | Carpeta | Contenido |
+|---------|---------|-----------|
+| u01 | `u01poobasica/` | Clases, campos, constructores, métodos, estático, encapsulación |
 | u02 | `u02excepciones/` | `try` / `catch`, `throw` |
 | u03 | `u03ficherosio/` | Ficheros con `<fstream>` |
-| u04 | `u04repaso/` | Repaso / exámenes |
+| u04 | `u04repaso/` | Repaso integrado |
+
+Convención: igual que UT4. Clases auxiliares en el mismo `.cpp` (estilo didáctico, un fichero ejecutable).
