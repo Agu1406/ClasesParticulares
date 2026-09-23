@@ -130,7 +130,7 @@ El fichero `ventas.txt` tiene líneas `codigo,precio_unitario,unidades`. Puede h
 
 ## Correspondencia con plantillas
 
-Plantillas en `sin_resolver/` (`*_SinResolver.py`) y `resuelto/` (`*_Resuelto.py`):
+Plantillas en `pendientes/` (`*_Pendiente.py`) y `resueltos/` (`*_Resuelto.py`):
 
 | Código | Archivo |
 |--------|---------|
