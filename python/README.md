@@ -40,7 +40,7 @@ python/
 | **UT5** | `ut5_pooexcepcionesio` | `ut5_pooexcepcionesio` | POO U01–U07 + E01–E10 + `tiendacompra`; excepciones U01–U07 + E01–E15; ficheros U01–U07 + E01–E11; examen Elche UMH (`u04examenes`) |
 | **UT6** | `ut6_pooavanzadaestructuras` | `ut6_pooavanzadaestructuras` | u01 herencia/polimorfismo/ABC + prácticas CES; Sevilla ampliación; u02–u05 stub |
 | **UT7** | `ut7_persistenciaapi` | `ut7_persistenciajdbcapi` | **u01sqlite** (teoría+E01–E08); resto esqueleto |
-| **UT8** | `ut8_frameworksweb` | `ut8_frameworksspring` | Esqueleto (Flask) |
+| **UT8** | `ut8_frameworksweb` | `ut8_frameworksspring` | **u01flask** (teoría+E01–E08); u02 esqueleto |
 | **UT9** | `ut9_programacionfuncional` | `ut9_programacionfuncional` | **u01lambda** + **u02streams**; resto esqueleto |
 
 ### Convención (igual que Java)
@@ -96,10 +96,13 @@ Origen Sevilla: `python/sevilla/documentos/` (copia de referencia). Origen Elche
 - [x] C# UT9 `u01lambda` (LINQ/lambdas) espejo Python/Java
 - [x] C++ UT9 `u01lambda` (STL lambdas/algoritmos)
 - [x] Python UT7 `u01sqlite` (sqlite3 ↔ JDBC pedagógico)
+- [x] C# UT7 `u01sqlite` (ADO.NET + Microsoft.Data.Sqlite)
+- [x] Python UT8 `u01flask` (rutas/JSON ↔ Spring pedagógico)
 - [ ] Paridad de volumen con Java (resto EV3)
 - [ ] Propagar exclusivos Python (NumPy, pandas, Flask, …) hacia Java/C#/C++ cuando tenga sentido
 - [ ] Diagnóstico de nivel (`src/diagnostico/`, como Java)
-- [ ] UT7 ampliar (u02 SQL, DAO); UT8 Flask; UT9 optional/principios
+- [ ] UT7 ampliar (u02 SQL, DAO); UT8 repaso; UT9 optional/principios
+- [ ] C# UT8 ASP.NET espejo Flask; C++ UT7 persistencia
 - [ ] Prácticas Sevilla Java portadas o equivalentes (alquiler → UT6, colegio → UT7)
 
 ## Ejecutar

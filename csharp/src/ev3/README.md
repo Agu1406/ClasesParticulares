@@ -9,7 +9,7 @@ Equivalente a **Java EV3** (UT6–UT9). Misma idea pedagógica: herencia/polimor
 | UT | Carpeta | Tema | Estado |
 |----|---------|------|--------|
 | **UT6** | `ut6_pooavanzadaestructuras/` | Herencia, polimorfismo, colecciones, concurrencia | **u01 completo** (+ prácticas CES); resto esqueleto |
-| **UT7** | `ut7_persistenciaado/` | Persistencia con ADO.NET / SQLite | Esqueleto (Fase B) |
+| **UT7** | `ut7_persistenciaado/` | Persistencia con ADO.NET / SQLite | **u01sqlite completo**; resto esqueleto |
 | **UT8** | `ut8_aspnet/` | ASP.NET Core (web) | Esqueleto (Fase B) |
 | **UT9** | `ut9_linqfuncional/` | LINQ, delegates, programación funcional | **u01lambda completo**; resto esqueleto |
 
