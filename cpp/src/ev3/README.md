@@ -9,7 +9,7 @@ Equivalente a **Java / Python / C# EV3** (UT6–UT9).
 | **UT6** | `ut6_pooavanzadaestructuras/` | Herencia, polimorfismo, colecciones, concurrencia | **u01 completo** (teoría + E01–E10 + prácticas CES); u02–u04 esqueleto |
 | **UT7** | `ut7_persistenciastl/` | Persistencia | Esqueleto |
 | **UT8** | `ut8_frameworks/` | Frameworks | Esqueleto |
-| **UT9** | `ut9_programacionfuncional/` | Lambdas / STL funcional | Esqueleto |
+| **UT9** | `ut9_programacionfuncional/` | Lambdas / STL funcional | **u01lambda completo**; resto esqueleto |
 
 ## Cómo estudiar UT6 u01
 

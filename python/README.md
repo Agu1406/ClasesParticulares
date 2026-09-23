@@ -39,7 +39,7 @@ python/
 | **UT4** | `ut4_colecciones` | `ut4_colecciones` + NumPy/pandas (5101) | Listas U01–U06 + E01–E12; tuplas U01–U05 + E01–E10; dicts U01–U06 + E01–E12; `u04numpy`/`u05pandas`/`u06repaso`; práctica Sevilla gestor |
 | **UT5** | `ut5_pooexcepcionesio` | `ut5_pooexcepcionesio` | POO U01–U07 + E01–E10 + `tiendacompra`; excepciones U01–U07 + E01–E15; ficheros U01–U07 + E01–E11; examen Elche UMH (`u04examenes`) |
 | **UT6** | `ut6_pooavanzadaestructuras` | `ut6_pooavanzadaestructuras` | u01 herencia/polimorfismo/ABC + prácticas CES; Sevilla ampliación; u02–u05 stub |
-| **UT7** | `ut7_persistenciaapi` | `ut7_persistenciajdbcapi` | Esqueleto (`sqlite3`, SQL, ORM) |
+| **UT7** | `ut7_persistenciaapi` | `ut7_persistenciajdbcapi` | **u01sqlite** (teoría+E01–E08); resto esqueleto |
 | **UT8** | `ut8_frameworksweb` | `ut8_frameworksspring` | Esqueleto (Flask) |
 | **UT9** | `ut9_programacionfuncional` | `ut9_programacionfuncional` | **u01lambda** + **u02streams**; resto esqueleto |
 
@@ -94,10 +94,12 @@ Origen Sevilla: `python/sevilla/documentos/` (copia de referencia). Origen Elche
 - [x] C++ EV2 + UT6 u01 desde C# (familia espejo)
 - [x] Python UT9 `u01lambda` + `u02streams` desde Java (PF)
 - [x] C# UT9 `u01lambda` (LINQ/lambdas) espejo Python/Java
+- [x] C++ UT9 `u01lambda` (STL lambdas/algoritmos)
+- [x] Python UT7 `u01sqlite` (sqlite3 ↔ JDBC pedagógico)
 - [ ] Paridad de volumen con Java (resto EV3)
 - [ ] Propagar exclusivos Python (NumPy, pandas, Flask, …) hacia Java/C#/C++ cuando tenga sentido
 - [ ] Diagnóstico de nivel (`src/diagnostico/`, como Java)
-- [ ] UT7 sqlite, UT8 Flask; UT9 streams/optional/principios
+- [ ] UT7 ampliar (u02 SQL, DAO); UT8 Flask; UT9 optional/principios
 - [ ] Prácticas Sevilla Java portadas o equivalentes (alquiler → UT6, colegio → UT7)
 
 ## Ejecutar

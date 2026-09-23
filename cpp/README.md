@@ -7,7 +7,7 @@ Material de C++ organizado **como `java/`, `python/` y `csharp/`**: evaluaciones
 **Familia espejo:** `java` ↔ `python` ↔ `csharp` ↔ `cpp`. Canon de carpetas/nombres: [`../java/README.md`](../java/README.md).
 
 - **Fase A (hecha):** estructura EV1–EV3 alineada; prácticas CES en `ev3/ut6/…`.
-- **Fase B (en curso):** EV2 (UT4–UT5) + EV3 UT6 u01 (herencia) portados desde C#. Pendiente: ut6 u02–u04, ut7–ut9 y exclusivos C++→Java.
+- **Fase B (en curso):** EV2 + UT6 u01 + UT9 u01lambda. Pendiente: ut6 u02–u04, ut7–ut8.
 
 El material de centro UAX permanece en `madrid/` (proyectos C con CMake). No forma parte del árbol EV.
 
@@ -40,7 +40,7 @@ cpp/
 | **UT6** | `ut6_pooavanzadaestructuras` | igual | **u01 completo** (teoría+E01–E10+CES); resto esqueleto |
 | **UT7** | `ut7_persistenciastl` | `ut7_persistenciajdbcapi` | Esqueleto |
 | **UT8** | `ut8_frameworks` | `ut8_frameworksspring` | Esqueleto |
-| **UT9** | `ut9_programacionfuncional` | igual | Esqueleto |
+| **UT9** | `ut9_programacionfuncional` | igual | **u01lambda** (STL); resto esqueleto |
 
 ### Convención (igual que Java/Python/C#)
 
