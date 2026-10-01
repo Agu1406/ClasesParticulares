@@ -7,7 +7,7 @@ Material de C# / .NET organizado **como `java/` y `python/`**: evaluaciones **EV
 **Familia espejo:** `java` ↔ `python` ↔ `csharp` ↔ `cpp`. Canon de carpetas/nombres: [`../java/README.md`](../java/README.md).
 
 - **Fase A (hecha):** estructura EV1–EV3 alineada; prácticas CES en `ev3/ut6/…`.
-- **Fase B (en curso):** UT7 `u01sqlite` + UT9 `u01lambda` con contenido. Pendiente: ut8 ASP.NET y resto UT7/UT9.
+- **Fase B (en curso):** UT7 `u01sqlite` + UT8 `u01minimalapis` + UT9 `u01lambda`. Pendiente: ampliar u02+ de cada UT.
 
 ## Requisitos
 
@@ -36,7 +36,7 @@ csharp/
 | **UT5** | `ut5_pooexcepcionesio` | `ut5_pooexcepcionesio` | clases, try/catch, File (sin GUI) |
 | **UT6** | `ut6_pooavanzadaestructuras` | igual | herencia + prácticas CES en u01; resto esqueleto |
 | **UT7** | `ut7_persistenciaado` | `ut7_persistenciajdbcapi` | **u01sqlite** (ADO + Microsoft.Data.Sqlite); resto esqueleto |
-| **UT8** | `ut8_aspnet` | `ut8_frameworksspring` | ASP.NET Core (esqueleto) |
+| **UT8** | `ut8_aspnet` | `ut8_frameworksspring` | **u01minimalapis** (espejo Flask); u02 esqueleto |
 | **UT9** | `ut9_linqfuncional` | `ut9_programacionfuncional` | **u01lambda** (teoría+E01–E12); resto esqueleto |
 
 ### Convención (igual que Java/Python)

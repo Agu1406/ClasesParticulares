@@ -98,11 +98,12 @@ Origen Sevilla: `python/sevilla/documentos/` (copia de referencia). Origen Elche
 - [x] Python UT7 `u01sqlite` (sqlite3 ↔ JDBC pedagógico)
 - [x] C# UT7 `u01sqlite` (ADO.NET + Microsoft.Data.Sqlite)
 - [x] Python UT8 `u01flask` (rutas/JSON ↔ Spring pedagógico)
+- [x] C# UT8 `u01minimalapis` (ASP.NET ↔ Flask)
 - [ ] Paridad de volumen con Java (resto EV3)
 - [ ] Propagar exclusivos Python (NumPy, pandas, Flask, …) hacia Java/C#/C++ cuando tenga sentido
 - [ ] Diagnóstico de nivel (`src/diagnostico/`, como Java)
 - [ ] UT7 ampliar (u02 SQL, DAO); UT8 repaso; UT9 optional/principios
-- [ ] C# UT8 ASP.NET espejo Flask; C++ UT7 persistencia
+- [ ] C# UT8 ampliar u02; C++ UT7 persistencia
 - [ ] Prácticas Sevilla Java portadas o equivalentes (alquiler → UT6, colegio → UT7)
 
 ## Ejecutar

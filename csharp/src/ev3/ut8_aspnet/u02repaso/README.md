@@ -1,0 +1,1 @@
+# Stub — por implementar
