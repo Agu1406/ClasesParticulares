@@ -1,0 +1,25 @@
+# Proyectos y medios del ciclo: no van en git
+*.blend
+*.blend1
+*.fbx
+*.obj
+*.mtl
+*.mb
+*.ma
+*.max
+*.c4d
+*.ztl
+*.spp
+*.psd
+*.kra
+*.clip
+*.exr
+*.hdr
+*.tga
+*.mp4
+*.mov
+*.avi
+*.mkv
+*.wav
+*.aiff
+*.aif

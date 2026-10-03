@@ -1,12 +1,11 @@
 /*
-U02 — Operaciones comunes con List.
+U02 — Operaciones comunes con vector.
 
 OBJETIVO:
-  - Comprobar si un valor existe con Contains (y equivalente manual).
-  - Eliminar un elemento con Remove (y equivalente manual).
-  - Ordenar la lista con Sort (y equivalente manual: burbuja).
-  - Buscar el primer elemento que cumpla una condicion con Find.
-  - Recorrer listas e imprimir posiciones.
+  - Comprobar si un valor existe recorriendo (no hay Contains de C#).
+  - Eliminar un elemento copiando los que se quedan (junior, sin iteradores).
+  - Ordenar con burbuja y con sort() de <algorithm>.
+  - Buscar el primer elemento que cumpla una condicion (bucle, sin lambda).
 
 Autor: Agustin. A. Marquez. Pina
 Contacto: agu1406@outlook.es
@@ -14,437 +13,335 @@ Repositorio GitHub: https://github.com/Agu1406/ClasesParticulares
 Sitio web: https://www.agustinmarquez.dev
 */
 
-
-
 #include <iostream>
 #include <string>
 #include <vector>
-#include <map>
-#include <set>
-#include <fstream>
-#include <sstream>
-#include <regex>
-#include <stdexcept>
-#include <limits>
+#include <algorithm>
 using namespace std;
 
-
-
-void ImprimirMenu();
-
-void DemoContains();
-
-void BuscarConContains(vector<int> listaNumeros);
-
-void BuscarSinContains(vector<int> listaNumeros);
-
-void DemoRemove();
-
-void EliminarConRemove(vector<string> listaNombres);
-
-void EliminarSinRemove(vector<string> listaNombres);
-
-int BuscarElementoStringLista(vector<string> lista, string cadena);
-
-void ImprimirListaStrings(vector<string> lista);
-
-void ImprimirListaInts(vector<int> lista);
-
-void DemoSort();
-
-void OrdenarSinSort(vector<string> listaNombres, vector<int> listaNumeros);
-
-void OrdenarConSort(vector<string> listaNombres, vector<int> listaNumeros);
-
-void DemoFind();
-
-
-
-void ImprimirMenu()
+bool ContieneInt(vector<int> lista, int valor)
+{
+    for (int i = 0; i < (int)lista.size(); i++)
     {
-        cout << "=== U02 Operaciones con List ===" << endl;
-        cout << "1. Contains" << endl;
-        cout << "2. Remove" << endl;
-        cout << "3. Sort" << endl;
-        cout << "4. Find" << endl;
-        cout << "0. Salir" << endl;
-    }
-
-/*
-    PRIMERA PARTE — Contains: submenu con busqueda manual vs Contains().
-    */
-void DemoContains()
-    {
-        vector<int> listaNumeros = new vector<int> { 1, 3, 5, 2, 4 };
-        bool continuar = true;
-        int opcion;
-
-        while (continuar)
+        if (lista[i] == valor)
         {
-            cout << "\n¿Cual funcion quieres usar?\n" << "[1] - Buscar sin \"Contains(;\"\n" +
-                "[2] - Buscar con \"Contains();\"\n" +
-                "[3] - ¡Volver al menu principal!\n" +
-                "\nIntroduce una opcion -> "
-            );
-
-            cin >> opcion;
-
-            switch (opcion)
-            {
-                case 1:
-                    BuscarSinContains(listaNumeros);
-                    break;
-                case 2:
-                    BuscarConContains(listaNumeros);
-                    break;
-                case 3:
-                    cout << "...Volviendo al menu principal...\n" << endl;
-                    continuar = false;
-                    break;
-                default:
-                    cout << "\n¡Opcion no valida! Intentalo de nuevo.\n" << endl;
-                    break;
-            }
+            return true;
         }
     }
+    return false;
+}
 
-void BuscarConContains(vector<int> listaNumeros)
+bool ContieneString(vector<string> lista, string valor)
+{
+    for (int i = 0; i < (int)lista.size(); i++)
     {
-        cout << "Introduce el numero que estas buscando -> ";
-        int cin >> numeroBuscado;
-        cout << endl;
-
-        bool encontrado = listaNumeros.count(numeroBuscado);
-        cout << encontrado
-            ? $"¡El numero {numeroBuscado} se encuentra en la lista!"
-            : $"¡El numero {numeroBuscado} no se encuentra en la lista!" << endl;
-    }
-
-void BuscarSinContains(vector<int> listaNumeros)
-    {
-        cout << "Introduce el numero que estas buscando -> ";
-        int cin >> numeroBuscado;
-        cout << endl;
-
-        int posicionEncontrada = -1;
-
-        for (int posicion = 0; posicion < listaNumeros.size(); posicion++)
+        if (lista[i] == valor)
         {
-            if (listaNumeros[posicion] == numeroBuscado)
-            {
-                posicionEncontrada = posicion;
-            }
-        }
-
-        if (posicionEncontrada >= 0)
-        {
-            cout << $"¡El numero \"{numeroBuscado}\" se encuentra en la posicion [{posicionEncontrada}]!" << endl;
-        }
-        else
-        {
-            cout << $"¡El numero \"{numeroBuscado}\" no se encuentra en ninguna posicion de la lista!" << endl;
+            return true;
         }
     }
-
-/*
-    SEGUNDA PARTE — Remove: submenu con eliminacion manual vs Remove().
-    */
-void DemoRemove()
-    {
-        vector<string> listaNombres1 = new vector<string> { "Javier", "Agustin", "Kim", "Pedro" };
-        vector<string> listaNombres2 = new vector<string> { "Javier", "Agustin", "Kim", "Pedro" };
-        bool continuar = true;
-        int opcion;
-
-        while (continuar)
-        {
-            cout << "\n¿Cual funcion quieres usar?\n" << "[1] - Eliminar X dato sin \"Remove(;\"\n" +
-                "[2] - Eliminar X dato con \"Remove();\"\n" +
-                "[3] - ¡Volver al menu principal!\n" +
-                "\nIntroduce una opcion -> "
-            );
-
-            cin >> opcion;
-
-            switch (opcion)
-            {
-                case 1:
-                    EliminarSinRemove(listaNombres1);
-                    break;
-                case 2:
-                    EliminarConRemove(listaNombres2);
-                    break;
-                case 3:
-                    cout << "...Volviendo al menu principal...\n" << endl;
-                    continuar = false;
-                    break;
-                default:
-                    cout << "\n¡Opcion no valida! Intentalo de nuevo.\n" << endl;
-                    break;
-            }
-        }
-    }
-
-void EliminarConRemove(vector<string> listaNombres)
-    {
-        string nombre = "";
-        bool valido = false;
-
-        while (!valido)
-        {
-            cout << "Introduce el nombre que deseas eliminar -> ";
-            cin >> nombre;
-            cout << endl;
-
-            if (listaNombres.count(nombre))
-            {
-                valido = true;
-            }
-            else
-            {
-                cout << "¡Error! Ese nombre no existe en la lista, verificalo e intentalo de nuevo." << endl;
-            }
-        }
-
-        cout << "¡Lista antes de usar \"Remove()\"!" << endl;
-        ImprimirListaStrings(listaNombres);
-
-        listaNombres.erase(nombre);
-
-        cout << "¡Lista despues de usar \"Remove()\"!" << endl;
-        ImprimirListaStrings(listaNombres);
-    }
-
-void EliminarSinRemove(vector<string> listaNombres)
-    {
-        bool invalido = true;
-        string nombre = "";
-        ImprimirListaStrings(listaNombres);
-
-        while (invalido)
-        {
-            cout << "Introduce el nombre que deseas eliminar -> ";
-            cin >> nombre;
-            cout << endl;
-
-            if (listaNombres.count(nombre))
-            {
-                invalido = false;
-            }
-            else
-            {
-                cout << "¡Error! Ese nombre no existe en la lista, verificalo e intentalo de nuevo." << endl;
-            }
-        }
-
-        int posicionBorrado = BuscarElementoStringLista(listaNombres, nombre);
-
-        if (posicionBorrado != -1)
-        {
-            // Pedagogico: "borrar" dejando nullptr (Remove() si compacta la lista).
-            listaNombres[posicionBorrado] = nullptr!;
-            ImprimirListaStrings(listaNombres);
-            cout << "\n¡Nombre eliminado exitosamente de la lista!\n" << endl;
-        }
-    }
-
-int BuscarElementoStringLista(vector<string> lista, string cadena)
-    {
-        int posicionEncontrada = -1;
-
-        for (int posicion = 0; posicion < lista.size(); posicion++)
-        {
-            if (lista[posicion] != nullptr && lista[posicion].Equals(cadena))
-            {
-                posicionEncontrada = posicion;
-            }
-        }
-
-        return posicionEncontrada;
-    }
+    return false;
+}
 
 void ImprimirListaStrings(vector<string> lista)
+{
+    cout << "¡Imprimiendo lista!" << endl;
+    for (int i = 0; i < (int)lista.size(); i++)
     {
-        cout << "¡Imprimiendo lista!" << endl;
-        for (int posicion = 0; posicion < lista.size(); posicion++)
-        {
-            cout << "N.º[" << (posicion + 1) << "] - " << (lista[posicion]) << endl;
-        }
+        cout << "N.[" << (i + 1) << "] - " << lista[i] << endl;
     }
+}
 
 void ImprimirListaInts(vector<int> lista)
+{
+    cout << "¡Imprimiendo lista!" << endl;
+    for (int i = 0; i < (int)lista.size(); i++)
     {
-        cout << "¡Imprimiendo lista!" << endl;
-        for (int posicion = 0; posicion < lista.size(); posicion++)
+        cout << "N.[" << (i + 1) << "] - " << lista[i] << endl;
+    }
+}
+
+void ImprimirMenu()
+{
+    cout << "=== U02 Operaciones con vector ===" << endl;
+    cout << "1. Buscar (Contains)" << endl;
+    cout << "2. Eliminar" << endl;
+    cout << "3. Ordenar" << endl;
+    cout << "4. Buscar el primero (Find)" << endl;
+    cout << "0. Salir" << endl;
+}
+
+void BuscarConFuncion(vector<int> listaNumeros)
+{
+    cout << "Introduce el numero que estas buscando -> ";
+    int numeroBuscado;
+    cin >> numeroBuscado;
+    cout << endl;
+
+    if (ContieneInt(listaNumeros, numeroBuscado))
+    {
+        cout << "El numero " << numeroBuscado << " esta en la lista." << endl;
+    }
+    else
+    {
+        cout << "El numero " << numeroBuscado << " no esta en la lista." << endl;
+    }
+}
+
+void BuscarConBucle(vector<int> listaNumeros)
+{
+    cout << "Introduce el numero que estas buscando -> ";
+    int numeroBuscado;
+    cin >> numeroBuscado;
+    cout << endl;
+
+    int posicionEncontrada = -1;
+    for (int i = 0; i < (int)listaNumeros.size(); i++)
+    {
+        if (listaNumeros[i] == numeroBuscado)
         {
-            cout << "N.º[" << (posicion + 1) << "] - " << (lista[posicion]) << endl;
+            posicionEncontrada = i;
         }
     }
 
-/*
-    TERCERA PARTE — Sort: submenu con burbuja manual vs Sort().
-    */
-void DemoSort()
+    if (posicionEncontrada >= 0)
     {
-        vector<string> listaNombres1 = new vector<string> { "Javier", "Agustin", "Kim", "Pedro" };
-        vector<string> listaNombres2 = new vector<string> { "Javier", "Agustin", "Kim", "Pedro" };
-        vector<int> listaNumeros1 = new vector<int> { 2, 4, 6, 1, 3, 5 };
-        vector<int> listaNumeros2 = new vector<int> { 2, 4, 6, 1, 3, 5 };
-        bool continuar = true;
-        int opcion;
-
-        while (continuar)
-        {
-            cout << "\n¿Cual funcion quieres usar?\n" << "[1] - Ordenar lista sin \"Sort(;\"\n" +
-                "[2] - Ordenar lista con \"Sort();\"\n" +
-                "[3] - ¡Volver al menu principal!\n" +
-                "\nIntroduce una opcion -> "
-            );
-
-            cin >> opcion;
-
-            switch (opcion)
-            {
-                case 1:
-                    OrdenarSinSort(listaNombres1, listaNumeros1);
-                    break;
-                case 2:
-                    OrdenarConSort(listaNombres2, listaNumeros2);
-                    break;
-                case 3:
-                    cout << "...Volviendo al menu principal...\n" << endl;
-                    continuar = false;
-                    break;
-                default:
-                    cout << "\n¡Opcion no valida! Intentalo de nuevo.\n" << endl;
-                    break;
-            }
-        }
+        cout << "El numero " << numeroBuscado << " esta en la posicion [" << posicionEncontrada << "]." << endl;
     }
-
-void OrdenarSinSort(vector<string> listaNombres, vector<int> listaNumeros)
+    else
     {
-        cout << "¡Lista de nombres ANTES de ordenar!" << endl;
-        ImprimirListaStrings(listaNombres);
-
-        for (int i = 0; i < listaNombres.size() - 1; i++)
-        {
-            for (int j = 0; j < listaNombres.size() - 1 - i; j++)
-            {
-                if (listaNombres[j].CompareTo(listaNombres[j + 1]) > 0)
-                {
-                    string aux = listaNombres[j];
-                    listaNombres[j] = listaNombres[j + 1];
-                    listaNombres[j + 1] = aux;
-                }
-            }
-        }
-
-        cout << "¡Lista de nombres DESPUES de ordenar!" << endl;
-        ImprimirListaStrings(listaNombres);
-
-        cout << "¡Lista de numeros ANTES de ordenar!" << endl;
-        ImprimirListaInts(listaNumeros);
-
-        for (int i = 0; i < listaNumeros.size() - 1; i++)
-        {
-            for (int j = 0; j < listaNumeros.size() - 1 - i; j++)
-            {
-                if (listaNumeros[j] > listaNumeros[j + 1])
-                {
-                    int aux = listaNumeros[j];
-                    listaNumeros[j] = listaNumeros[j + 1];
-                    listaNumeros[j + 1] = aux;
-                }
-            }
-        }
-
-        cout << "¡Lista de numeros DESPUES de ordenar!" << endl;
-        ImprimirListaInts(listaNumeros);
+        cout << "El numero " << numeroBuscado << " no esta en la lista." << endl;
     }
+}
 
-void OrdenarConSort(vector<string> listaNombres, vector<int> listaNumeros)
+void DemoContains()
+{
+    vector<int> listaNumeros = { 1, 3, 5, 2, 4 };
+    bool continuar = true;
+    int opcion;
+
+    while (continuar)
     {
-        cout << "¡Lista de nombres ANTES de usar \"Sort()\"!" << endl;
-        ImprimirListaStrings(listaNombres);
+        cout << endl;
+        cout << "¿Como quieres buscar?" << endl;
+        cout << "[1] - Bucle for (a mano)" << endl;
+        cout << "[2] - Funcion ContieneInt" << endl;
+        cout << "[3] - Volver al menu principal" << endl;
+        cout << "Introduce una opcion -> ";
+        cin >> opcion;
 
-        listaNombres.Sort();
-
-        cout << "¡Lista de nombres DESPUES de usar \"Sort()\"!" << endl;
-        ImprimirListaStrings(listaNombres);
-
-        cout << "¡Lista de numeros ANTES de usar \"Sort()\"!" << endl;
-        ImprimirListaInts(listaNumeros);
-
-        listaNumeros.Sort();
-
-        cout << "¡Lista de numeros DESPUES de usar \"Sort()\"!" << endl;
-        ImprimirListaInts(listaNumeros);
-    }
-
-/*
-    CUARTA PARTE — Find: primer elemento que cumpla una condicion (lambda).
-    */
-void DemoFind()
-    {
-        cout << "¡DEMO — Find!\n" << endl;
-
-        vector<int> nums = new vector<int> { 1, 2, 5, 8 };
-
-        int encontrado = nums.Find(x => x > 4);
-        cout << "Primer valor > 4: " << encontrado << endl;
-
-        int noExiste = nums.Find(x => x > 100);
-
-        if (noExiste == 0 && !nums.count(0))
+        if (opcion == 1)
         {
-            cout << "No hay ningun valor > 100 (Find devolvio 0 por defecto de int)." << endl;
+            BuscarConBucle(listaNumeros);
+        }
+        else if (opcion == 2)
+        {
+            BuscarConFuncion(listaNumeros);
+        }
+        else if (opcion == 3)
+        {
+            continuar = false;
         }
         else
         {
-            cout << "Resultado Find > 100: " << noExiste << endl;
+            cout << "Opcion no valida." << endl;
         }
+    }
+}
 
-        vector<string> palabras = new vector<string> { "sol", "luna", "estrella" };
-        string larga = palabras.Find(p => p.size() > 4);
-        cout << "Primera palabra con mas de 4 letras: " << larga << endl;
+void EliminarCopiando(vector<string> listaNombres)
+{
+    ImprimirListaStrings(listaNombres);
+
+    cout << "Introduce el nombre que deseas eliminar -> ";
+    string nombre;
+    cin >> nombre;
+    cout << endl;
+
+    if (!ContieneString(listaNombres, nombre))
+    {
+        cout << "Ese nombre no esta en la lista." << endl;
+        return;
     }
 
+    vector<string> nueva;
+    for (int i = 0; i < (int)listaNombres.size(); i++)
+    {
+        if (listaNombres[i] != nombre)
+        {
+            nueva.push_back(listaNombres[i]);
+        }
+    }
 
+    cout << "Lista despues de eliminar:" << endl;
+    ImprimirListaStrings(nueva);
+}
+
+void DemoRemove()
+{
+    cout << "¡DEMO — Eliminar copiando los que se quedan!\n" << endl;
+    vector<string> listaNombres = { "Javier", "Agustin", "Kim", "Pedro" };
+    EliminarCopiando(listaNombres);
+}
+
+void OrdenarConBurbuja()
+{
+    vector<string> nombres = { "Javier", "Agustin", "Kim", "Pedro" };
+    vector<int> numeros = { 2, 4, 6, 1, 3, 5 };
+
+    cout << "Nombres ANTES:" << endl;
+    ImprimirListaStrings(nombres);
+
+    for (int i = 0; i < (int)nombres.size() - 1; i++)
+    {
+        for (int j = 0; j < (int)nombres.size() - 1 - i; j++)
+        {
+            if (nombres[j] > nombres[j + 1])
+            {
+                string aux = nombres[j];
+                nombres[j] = nombres[j + 1];
+                nombres[j + 1] = aux;
+            }
+        }
+    }
+
+    cout << "Nombres DESPUES:" << endl;
+    ImprimirListaStrings(nombres);
+
+    cout << "Numeros ANTES:" << endl;
+    ImprimirListaInts(numeros);
+
+    for (int i = 0; i < (int)numeros.size() - 1; i++)
+    {
+        for (int j = 0; j < (int)numeros.size() - 1 - i; j++)
+        {
+            if (numeros[j] > numeros[j + 1])
+            {
+                int aux = numeros[j];
+                numeros[j] = numeros[j + 1];
+                numeros[j + 1] = aux;
+            }
+        }
+    }
+
+    cout << "Numeros DESPUES:" << endl;
+    ImprimirListaInts(numeros);
+}
+
+void OrdenarConSort()
+{
+    vector<string> nombres = { "Javier", "Agustin", "Kim", "Pedro" };
+    vector<int> numeros = { 2, 4, 6, 1, 3, 5 };
+
+    cout << "Nombres ANTES de sort():" << endl;
+    ImprimirListaStrings(nombres);
+    sort(nombres.begin(), nombres.end());
+    cout << "Nombres DESPUES de sort():" << endl;
+    ImprimirListaStrings(nombres);
+
+    cout << "Numeros ANTES de sort():" << endl;
+    ImprimirListaInts(numeros);
+    sort(numeros.begin(), numeros.end());
+    cout << "Numeros DESPUES de sort():" << endl;
+    ImprimirListaInts(numeros);
+}
+
+void DemoSort()
+{
+    bool continuar = true;
+    int opcion;
+
+    while (continuar)
+    {
+        cout << endl;
+        cout << "¿Como quieres ordenar?" << endl;
+        cout << "[1] - Burbuja (a mano)" << endl;
+        cout << "[2] - sort() de <algorithm>" << endl;
+        cout << "[3] - Volver al menu principal" << endl;
+        cout << "Introduce una opcion -> ";
+        cin >> opcion;
+
+        if (opcion == 1)
+        {
+            OrdenarConBurbuja();
+        }
+        else if (opcion == 2)
+        {
+            OrdenarConSort();
+        }
+        else if (opcion == 3)
+        {
+            continuar = false;
+        }
+        else
+        {
+            cout << "Opcion no valida." << endl;
+        }
+    }
+}
+
+void DemoFind()
+{
+    cout << "¡DEMO — Primer valor que cumple una condicion!\n" << endl;
+
+    vector<int> nums = { 1, 2, 5, 8 };
+    int encontrado = -1;
+    for (int i = 0; i < (int)nums.size(); i++)
+    {
+        if (nums[i] > 4)
+        {
+            encontrado = nums[i];
+            break;
+        }
+    }
+    cout << "Primer valor > 4: " << encontrado << endl;
+
+    vector<string> palabras = { "sol", "luna", "estrella" };
+    string larga = "";
+    for (int i = 0; i < (int)palabras.size(); i++)
+    {
+        if ((int)palabras[i].size() > 4)
+        {
+            larga = palabras[i];
+            break;
+        }
+    }
+    cout << "Primera palabra con mas de 4 letras: " << larga << endl;
+}
 
 int main()
+{
+    int opcion;
+    do
     {
-        int opcion;
-        do
+        ImprimirMenu();
+        cout << "Introduce una opcion -> ";
+        cin >> opcion;
+        cout << endl;
+
+        switch (opcion)
         {
-            ImprimirMenu();
-            cout << "Introduce una opcion -> ";
-            cin >> opcion;
-            cout << endl;
+            case 1:
+                DemoContains();
+                break;
+            case 2:
+                DemoRemove();
+                break;
+            case 3:
+                DemoSort();
+                break;
+            case 4:
+                DemoFind();
+                break;
+            case 0:
+                cout << "Saliendo..." << endl;
+                break;
+            default:
+                cout << "Opcion no valida." << endl;
+                break;
+        }
 
-            switch (opcion)
-            {
-                case 1:
-                    DemoContains();
-                    break;
-                case 2:
-                    DemoRemove();
-                    break;
-                case 3:
-                    DemoSort();
-                    break;
-                case 4:
-                    DemoFind();
-                    break;
-                case 0:
-                    cout << "Saliendo..." << endl;
-                    break;
-                default:
-                    cout << "Opcion no valida." << endl;
-                    break;
-            }
-
-            cout << endl;
-        } while (opcion != 0);
-        return 0;
+        cout << endl;
+    } while (opcion != 0);
+    return 0;
 }

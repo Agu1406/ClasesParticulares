@@ -2,12 +2,12 @@
 U04 — Arrays bidimensionales (matrices).
 
 OBJETIVO:
-  - Declarar una matriz con int[,] (filas y columnas).
-  - Acceder a elementos con dos indices: matriz[fila, columna].
+  - Declarar una matriz clasica: int matriz[FILAS][COLS].
+  - Acceder con dos indices: matriz[fila][columna] (no coma como en C#).
   - Recorrer una matriz con for anidados y llaves { }.
-  - Entender la diferencia basica entre matriz rectangular y array escalonado.
-  - Practicar class + Main + menu do-while (EV1).
-  - Aplicacion: U06 Tres en raya (tablero char[3,3]).
+  - Entender que en C++ junior la matriz es rectangular (todas las filas igual de largas).
+  - Practicar funciones + main + menu do-while (EV1).
+  - Aplicacion: practicas/internotresenraya (tablero char[3][3]).
 
 Autor: Agustin. A. Marquez. Pina
 Contacto: agu1406@outlook.es
@@ -15,154 +15,162 @@ Repositorio GitHub: https://github.com/Agu1406/ClasesParticulares
 Sitio web: https://www.agustinmarquez.dev
 */
 
-
-
 #include <iostream>
-#include <string>
-#include <vector>
-#include <map>
-#include <set>
-#include <fstream>
-#include <sstream>
-#include <regex>
-#include <stdexcept>
-#include <limits>
 using namespace std;
 
-
-
-void ImprimirMenu();
-
-void DemoCrearMatriz();
-
-void DemoForAnidados();
-
-void DemoTablaNotas();
-
-void DemoEscalonado();
-
-
-
 void ImprimirMenu()
-    {
-        cout << "=== U04 Arrays bidimensionales ===" << endl;
-        cout << "1. Crear y acceder a int[,]" << endl;
-        cout << "2. Recorrido con for anidados" << endl;
-        cout << "3. Tabla de notas 3x2" << endl;
-        cout << "4. Array escalonado (referencia)" << endl;
-        cout << "0. Salir" << endl;
-    }
+{
+    cout << "=== U04 Arrays bidimensionales ===" << endl;
+    cout << "1. Crear y acceder a int[2][2]" << endl;
+    cout << "2. Recorrido con for anidados" << endl;
+    cout << "3. Tabla de notas 3x2" << endl;
+    cout << "4. Matriz rectangular (no escalonada)" << endl;
+    cout << "0. Salir" << endl;
+}
 
 void DemoCrearMatriz()
-    {
-        cout << "¡DEMO — Crear y acceder a int[,]!\n" << endl;
-        int[,] matriz = {
-            { 1, 2 },
-            { 3, 4 }
-        };
+{
+    cout << "¡DEMO — Crear y acceder a int[2][2]!\n" << endl;
+    const int FILAS = 2;
+    const int COLS = 2;
+    int matriz[FILAS][COLS] = {
+        {1, 2},
+        {3, 4}
+    };
 
-        cout << "matriz[0,0] = " << matriz[0, 0] << endl;
-        cout << "matriz[0,1] = " << matriz[0, 1] << endl;
-        cout << "matriz[1,0] = " << matriz[1, 0] << endl;
-        cout << "matriz[1,1] = " << matriz[1, 1] << endl;
-        cout << "Filas (GetLength(0)): " << matriz.GetLength(0) << endl;
-        cout << "Columnas (GetLength(1)): " << matriz.GetLength(1) << endl;
-    }
+    cout << "matriz[0][0] = " << matriz[0][0] << endl;
+    cout << "matriz[0][1] = " << matriz[0][1] << endl;
+    cout << "matriz[1][0] = " << matriz[1][0] << endl;
+    cout << "matriz[1][1] = " << matriz[1][1] << endl;
+    cout << "Filas: " << FILAS << endl;
+    cout << "Columnas: " << COLS << endl;
+}
 
 void DemoForAnidados()
-    {
-        cout << "¡DEMO — Recorrido con for anidados!\n" << endl;
-        int[,] matriz = {
-            { 1, 2 },
-            { 3, 4 }
-        };
+{
+    cout << "¡DEMO — Recorrido con for anidados!\n" << endl;
+    const int FILAS = 2;
+    const int COLS = 2;
+    int matriz[FILAS][COLS] = {
+        {1, 2},
+        {3, 4}
+    };
 
-        for (int fila = 0; fila < matriz.GetLength(0); fila++)
+    for (int fila = 0; fila < FILAS; fila++)
+    {
+        for (int col = 0; col < COLS; col++)
         {
-            for (int col = 0; col < matriz.GetLength(1); col++)
-            {
-                cout << "  matriz[" << fila << "," << col << "] = " << matriz[fila, col] << endl;
-            }
+            cout << "  matriz[" << fila << "][" << col << "] = " << matriz[fila][col] << endl;
         }
     }
+}
 
 void DemoTablaNotas()
-    {
-        cout << "¡DEMO — Tabla de notas 3x2!\n" << endl;
-        int[,] notas = vector<vector<int>>(3, vector<int>(2));
-        notas[0, 0] = 7;
-        notas[0, 1] = 8;
-        notas[1, 0] = 6;
-        notas[1, 1] = 9;
-        notas[2, 0] = 5;
-        notas[2, 1] = 7;
+{
+    cout << "¡DEMO — Tabla de notas 3x2!\n" << endl;
+    const int FILAS = 3;
+    const int COLS = 2;
+    int notas[FILAS][COLS] = {};
+    notas[0][0] = 7;
+    notas[0][1] = 8;
+    notas[1][0] = 6;
+    notas[1][1] = 9;
+    notas[2][0] = 5;
+    notas[2][1] = 7;
 
-        for (int fila = 0; fila < notas.GetLength(0); fila++)
+    for (int fila = 0; fila < FILAS; fila++)
+    {
+        cout << "  Alumno " << (fila + 1) << ": ";
+        for (int col = 0; col < COLS; col++)
         {
-            cout << "  Alumno " << (fila + 1) << ": ";
-            for (int col = 0; col < notas.GetLength(1); col++)
+            cout << notas[fila][col];
+            if (col < COLS - 1)
             {
-                cout << notas[fila, col];
-                if (col < notas.GetLength(1) - 1)
-                {
-                    cout << ", ";
-                }
+                cout << ", ";
             }
-            cout << endl;
+        }
+        cout << endl;
+    }
+}
+
+/*
+C# tiene int[][] (cada fila un array de largo distinto).
+En C++ junior int m[FILAS][COLS] es SIEMPRE rectangular: mismas columnas en cada fila.
+vector (listas) se ve en u02; aqui no.
+*/
+void DemoRectangular()
+{
+    cout << "¡DEMO — Matriz rectangular (no escalonada)!\n" << endl;
+    const int FILAS = 2;
+    const int COLS = 3;
+    int rectangular[FILAS][COLS] = {
+        {10, 20, 0},
+        {30, 40, 50}
+    };
+
+    cout << "Todas las filas tienen " << COLS << " columnas." << endl;
+    for (int f = 0; f < FILAS; f++)
+    {
+        for (int c = 0; c < COLS; c++)
+        {
+            cout << "  rectangular[" << f << "][" << c << "] = " << rectangular[f][c] << endl;
         }
     }
 
-void DemoEscalonado()
+    cout << "\nIdea de filas de distinto largo: dos arrays 1D separados." << endl;
+    int filaCorta[] = {10, 20};
+    int filaLarga[] = {30, 40, 50};
+    const int N_CORTA = 2;
+    const int N_LARGA = 3;
+
+    cout << "filaCorta (" << N_CORTA << "): ";
+    for (int i = 0; i < N_CORTA; i++)
     {
-        cout << "¡DEMO — Array escalonado (referencia)!\n" << endl;
-        vector<int>[] escalonada = vector<int>(2)[];
-        escalonada[0] = new vector<int> { 10, 20 };
-        escalonada[1] = new vector<int> { 30, 40, 50 };
-
-        for (int f = 0; f < escalonada.size(); f++)
-        {
-            for (int c = 0; c < escalonada[f].size(); c++)
-            {
-                cout << "  escalonada[" << f << "][" << c << "] = " << escalonada[f][c] << endl;
-            }
-        }
+        cout << filaCorta[i] << " ";
     }
+    cout << endl;
 
-
+    cout << "filaLarga (" << N_LARGA << "): ";
+    for (int i = 0; i < N_LARGA; i++)
+    {
+        cout << filaLarga[i] << " ";
+    }
+    cout << endl;
+}
 
 int main()
+{
+    int opcion;
+    do
     {
-        int opcion;
-        do
+        ImprimirMenu();
+        cout << "Introduce una opcion -> ";
+        cin >> opcion;
+        cout << endl;
+
+        switch (opcion)
         {
-            ImprimirMenu();
-            cout << "Introduce una opcion -> ";
-            cin >> opcion;
-            cout << endl;
+            case 1:
+                DemoCrearMatriz();
+                break;
+            case 2:
+                DemoForAnidados();
+                break;
+            case 3:
+                DemoTablaNotas();
+                break;
+            case 4:
+                DemoRectangular();
+                break;
+            case 0:
+                cout << "Saliendo..." << endl;
+                break;
+            default:
+                cout << "Opcion no valida." << endl;
+                break;
+        }
 
-            switch (opcion)
-            {
-                case 1:
-                    DemoCrearMatriz();
-                    break;
-                case 2:
-                    DemoForAnidados();
-                    break;
-                case 3:
-                    DemoTablaNotas();
-                    break;
-                case 4:
-                    DemoEscalonado();
-                    break;
-                case 0:
-                    cout << "Saliendo..." << endl;
-                    break;
-                default:
-                    cout << "Opcion no valida." << endl;
-                    break;
-            }
-
-            cout << endl;
-        } while (opcion != 0);
-        return 0;
+        cout << endl;
+    } while (opcion != 0);
+    return 0;
 }

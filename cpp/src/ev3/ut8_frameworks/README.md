@@ -1,5 +1,9 @@
-# UT8 — Frameworks (C++)
+# UT8 — Frameworks (C++): introducción a SDL
 
-Equivalente pedagógico a Java `ut8_frameworksspring` / C# `ut8_aspnet` / Python `ut8_frameworksweb`.
+En Java/C# esta UT es Spring/ASP.NET. En **este grado (videojuegos)** el PDF *Intro SDL* es el framework.
 
-Contenido pendiente: librerías o frameworks de aplicación acordes al nivel del curso (esqueleto estructural).
+Los `.cpp` **compilan sin instalar SDL**: simulan el bucle en consola y muestran las llamadas reales del PDF en comentarios. Cuando el alumno tenga SDL3, copia esas llamadas.
+
+| Subtema | Contenido |
+|---------|-----------|
+| u01sdl | Init/ventana, texturas, `SDL_FRect`, eventos, ticks/delay |

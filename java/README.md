@@ -258,7 +258,7 @@ En cada clase principal de una practica, documentar con **objetivo pedagogico**,
 
 | UT | Subtemas | Contenido |
 |----|----------|-----------|
-| `ev2/ut4_colecciones` | `u01arrays`, `u02arraylistymapas`, `u03avanzadodatos`, `u04repaso` (legacy) | Arrays (`U06_ArrayBurbuja`), ArrayList/mapas; practicas internas `internocazatesoros`, `internopescalo`, `internotresenraya` |
+| `ev2/ut4_colecciones` | `u01arrays`, `u02arraylistymapas`, `u03avanzadodatos`, `u04repaso` (legacy) | Arrays (`U06_ArrayBurbuja`, practicas `internotresenraya`, `internobatallanaval`); ArrayList/mapas (`internocazatesoros`, `internopescalo`) |
 | `ev2/ut5_pooexcepcionesio` | `u01poobasica`, `u02excepciones`, `u03ficherosio`, `u04guieventosbasico`, `u05repaso` (legacy) | POO basica (`U07` demo juego, `U09` repaso Moto, `internoconcesionario`); excepciones (`U01`–`U05`, ejercicios 1–11 + E12–E14, `ejemplointernoexcepciones`); ficheros; Swing |
 
 ### EV3 - Avanzado y persistencia (RA7, RA8, RA9)

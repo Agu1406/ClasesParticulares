@@ -42,6 +42,7 @@ Misma jerarquía `src/ev{N}/ut{N}_{tema}/u{NN}…` y las mismas convenciones de 
 | [`interfaces/`](interfaces/) | HTML/CSS/JS por centro |
 | [`php/`](php/), [`sql/`](sql/), [`linux/`](linux/) | Por CCAA / centro |
 | [`react/`](react/), [`css/`](css/), [`tests/`](tests/README.md), [`portfolio/`](portfolio/) | Tutoriales, estilos, tests, sitio |
+| [`animacion3d/`](animacion3d/README.md) | C.F.G.S. Animaciones 3D, Juegos y Entornos Interactivos (apuntes) |
 
 ## Estructura del Repositorio
 
@@ -108,6 +109,11 @@ Misma jerarquía `src/ev{N}/ut{N}_{tema}/u{NN}…` y las mismas convenciones de 
 ### **tests/**
 - Sistema de tests interactivos (Examen / Estudio) en GitHub Pages
 - Ver [tests/README.md](tests/README.md)
+
+### **animacion3d/**
+- Apuntes del C.F.G.S. Animaciones 3D, Juegos y Entornos Interactivos (curso 26/27)
+- Una carpeta por módulo del aula; sin escenas, texturas ni vídeo
+- Ver [animacion3d/README.md](animacion3d/README.md)
 
 ### **portfolio/**
 - Sitio del portfolio (Astro/React); no es asignatura

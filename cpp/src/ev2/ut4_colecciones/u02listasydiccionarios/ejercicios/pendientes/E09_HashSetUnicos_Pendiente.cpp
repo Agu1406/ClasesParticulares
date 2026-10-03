@@ -1,5 +1,5 @@
 /*
-OBJETIVO: Agregar duplicados a HashSet e imprimir unicos. Menu do-while: completar desde un menu interactivo con opcion 0 para salir.
+OBJETIVO: Meter duplicados en un set e imprimir los unicos.
 
 Autor: Agustin. A. Marquez. Pina
 Contacto: agu1406@outlook.es
@@ -7,88 +7,55 @@ Repositorio GitHub: https://github.com/Agu1406/ClasesParticulares
 Sitio web: https://www.agustinmarquez.dev
 */
 
-
-
 #include <iostream>
-#include <string>
-#include <vector>
-#include <map>
 #include <set>
-#include <fstream>
-#include <sstream>
-#include <regex>
-#include <stdexcept>
-#include <limits>
 using namespace std;
 
-
-
-void ImprimirMenu();
-
-void MostrarObjetivo();
-
-void EjecutarEjercicio();
-
-
-
 void ImprimirMenu()
-    {
-        cout << "=== EJERCICIO ===" << endl;
-        cout << "1. Trabajar ejercicio" << endl;
-        cout << "2. Ver objetivo" << endl;
-        cout << "0. Salir" << endl;
-        
-    }
+{
+    cout << "=== EJERCICIO ===" << endl;
+    cout << "1. Trabajar ejercicio" << endl;
+    cout << "2. Ver objetivo" << endl;
+    cout << "0. Salir" << endl;
+}
 
 void MostrarObjetivo()
-    {
-        cout << "Agregar duplicados a HashSet e imprimir unicos." << endl;
-    }
+{
+    cout << "Agregar duplicados a un set e imprimir los unicos." << endl;
+}
 
 void EjecutarEjercicio()
-    {
-        set<int> nums = set<int>();
-        // TODO: Add 1,2,2,3,3,3 y mostrar Count y elementos.
-    }
-
-
+{
+    // TODO: insert 1, 2, 2, 3, 3, 3; imprimir size() y cada valor.
+}
 
 int main()
+{
+    int opcion;
+    do
     {
-        using System.Collections.Generic;
+        ImprimirMenu();
+        cout << "Introduce una opcion -> ";
+        cin >> opcion;
+        cout << endl;
 
-        int opcion;
-
-        do
+        switch (opcion)
         {
-            ImprimirMenu();
-            cout << "Introduce una opcion -> ";
-            cin >> opcion;
+            case 1:
+                EjecutarEjercicio();
+                break;
+            case 2:
+                MostrarObjetivo();
+                break;
+            case 0:
+                cout << "Saliendo..." << endl;
+                break;
+            default:
+                cout << "Opcion no valida." << endl;
+                break;
+        }
 
-            switch (opcion)
-            {
-                case 1:
-                    EjecutarEjercicio();
-                    break;
-                case 2:
-                    MostrarObjetivo();
-                    break;
-                case 0:
-                    cout << "Saliendo..." << endl;
-                    break;
-                default:
-                    cout << "Opcion no valida. Intenta de nuevo." << endl;
-                    break;
-            }
-
-            if (opcion != 0)
-            {
-                cout << endl;
-                cout << "Pulsa ENTER para continuar..." << endl;
-                cin.ignore(numeric_limits<streamsize>::max(), '\n');
-                cin.get();
-                // clear omitido
-            }
-        } while (opcion != 0);
-        return 0;
+        cout << endl;
+    } while (opcion != 0);
+    return 0;
 }

@@ -1,11 +1,10 @@
 /*
-U04 — Recorrer un Dictionary.
+U04 — Recorrer un map.
 
 OBJETIVO:
-  - Iterar con foreach sobre KeyValuePair<TKey, TValue>.
-  - Mostrar cada par clave -> valor en consola.
-  - Recorrer solo claves (Keys) o solo valores (Values).
-  - Usar llaves { } en todos los foreach.
+  - Recorrer cada par con range-for: par.first (clave) y par.second (valor).
+  - Recorrer solo claves o solo valores.
+  - Usar if dentro del recorrido (aprobados / suspensos).
 
 Autor: Agustin. A. Marquez. Pina
 Contacto: agu1406@outlook.es
@@ -13,186 +12,134 @@ Repositorio GitHub: https://github.com/Agu1406/ClasesParticulares
 Sitio web: https://www.agustinmarquez.dev
 */
 
-
-
 #include <iostream>
 #include <string>
-#include <vector>
 #include <map>
-#include <set>
-#include <fstream>
-#include <sstream>
-#include <regex>
-#include <stdexcept>
-#include <limits>
 using namespace std;
 
-
-
-void ImprimirMenu();
-
-map<string, int> CrearNotas();
-
-void DemoKeyValuePair();
-
-void DemoSoloClaves();
-
-void DemoSoloValores();
-
-void DemoLogicaRecorrido();
-
-void DemoResumenVar();
-
-
-
 void ImprimirMenu()
-    {
-        cout << "=== U04 Recorridos Dictionary ===" << endl;
-        cout << "1. foreach KeyValuePair" << endl;
-        cout << "2. Solo claves (Keys)" << endl;
-        cout << "3. Solo valores (Values)" << endl;
-        cout << "4. Logica en el recorrido" << endl;
-        cout << "5. Resumen con var" << endl;
-        cout << "0. Salir" << endl;
-    }
+{
+    cout << "=== U04 Recorridos map ===" << endl;
+    cout << "1. Recorrer pares clave-valor" << endl;
+    cout << "2. Solo claves" << endl;
+    cout << "3. Solo valores" << endl;
+    cout << "4. Logica en el recorrido" << endl;
+    cout << "5. Resumen" << endl;
+    cout << "0. Salir" << endl;
+}
 
 map<string, int> CrearNotas()
+{
+    map<string, int> notas;
+    notas["Matematicas"] = 7;
+    notas["Lengua"] = 8;
+    notas["Historia"] = 6;
+    return notas;
+}
+
+void DemoPares()
+{
+    cout << "¡DEMO — Pares first / second!\n" << endl;
+
+    map<string, int> notas = CrearNotas();
+    for (pair<string, int> par : notas)
     {
-        return new map<string, int>
-        {
-            { "Matematicas", 7 },
-            { "Lengua", 8 },
-            { "Historia", 6 }
-        };
+        cout << "  " << par.first << " -> " << par.second << endl;
     }
+}
 
-/*
-    PRIMERA PARTE — foreach sobre KeyValuePair.
-      Cada elemento es un par: par.first (asignatura) y par.second (nota).
-    */
-void DemoKeyValuePair()
-    {
-        cout << "¡DEMO — foreach KeyValuePair!\n" << endl;
-
-        map<string, int> notas = CrearNotas();
-
-        for (KeyValuePair<string, int> par : notas)
-        {
-            cout << "  " << par.first << " -> " << par.second << endl;
-        }
-    }
-
-/*
-    SEGUNDA PARTE — Recorrer solo claves con notas.Keys.
-      Util cuando necesitas listar nombres sin el valor asociado.
-    */
 void DemoSoloClaves()
+{
+    cout << "¡DEMO — Solo claves!\n" << endl;
+
+    map<string, int> notas = CrearNotas();
+    for (pair<string, int> par : notas)
     {
-        cout << "¡DEMO — Solo claves (Keys)!\n" << endl;
-
-        map<string, int> notas = CrearNotas();
-
-        for (string asignatura : notas.Keys)
-        {
-            cout << "  Asignatura: " << asignatura << endl;
-        }
+        cout << "  Asignatura: " << par.first << endl;
     }
+}
 
-/*
-    TERCERA PARTE — Recorrer solo valores con notas.Values.
-      Los valores pueden repetirse; las claves no.
-    */
 void DemoSoloValores()
+{
+    cout << "¡DEMO — Solo valores!\n" << endl;
+
+    map<string, int> notas = CrearNotas();
+    for (pair<string, int> par : notas)
     {
-        cout << "¡DEMO — Solo valores (Values)!\n" << endl;
-
-        map<string, int> notas = CrearNotas();
-
-        for (int nota : notas.Values)
-        {
-            cout << "  Nota: " << nota << endl;
-        }
+        cout << "  Nota: " << par.second << endl;
     }
+}
 
-/*
-    CUARTA PARTE — Recorrido con logica: contar aprobados y mostrar suspensos.
-    */
 void DemoLogicaRecorrido()
+{
+    cout << "¡DEMO — Logica en el recorrido!\n" << endl;
+
+    map<string, int> notas = CrearNotas();
+    int aprobados = 0;
+
+    for (pair<string, int> par : notas)
     {
-        cout << "¡DEMO — Logica en el recorrido!\n" << endl;
-
-        map<string, int> notas = CrearNotas();
-        int aprobados = 0;
-
-        for (KeyValuePair<string, int> par : notas)
+        if (par.second >= 5)
         {
-            if (par.second >= 5)
-            {
-                aprobados++;
-                cout << "  Aprobado: " << par.first << " (" << par.second << ")" << endl;
-            }
-            else
-            {
-                cout << "  Suspenso: " << par.first << " (" << par.second << ")" << endl;
-            }
+            aprobados++;
+            cout << "  Aprobado: " << par.first << " (" << par.second << ")" << endl;
         }
-
-        cout << "Total aprobados: " << aprobados << endl;
-    }
-
-/*
-    QUINTA PARTE — Desestructuracion en foreach (var par).
-    */
-void DemoResumenVar()
-    {
-        cout << "¡DEMO — Resumen ordenado!\n" << endl;
-
-        map<string, int> notas = CrearNotas();
-
-        for (var par : notas)
+        else
         {
-            cout << "  [" << par.first << "] = " << par.second << endl;
+            cout << "  Suspenso: " << par.first << " (" << par.second << ")" << endl;
         }
     }
 
+    cout << "Total aprobados: " << aprobados << endl;
+}
 
+void DemoResumen()
+{
+    cout << "¡DEMO — Resumen!\n" << endl;
+
+    map<string, int> notas = CrearNotas();
+    for (pair<string, int> par : notas)
+    {
+        cout << "  [" << par.first << "] = " << par.second << endl;
+    }
+}
 
 int main()
+{
+    int opcion;
+    do
     {
-        int opcion;
-        do
+        ImprimirMenu();
+        cout << "Introduce una opcion -> ";
+        cin >> opcion;
+        cout << endl;
+
+        switch (opcion)
         {
-            ImprimirMenu();
-            cout << "Introduce una opcion -> ";
-            cin >> opcion;
-            cout << endl;
+            case 1:
+                DemoPares();
+                break;
+            case 2:
+                DemoSoloClaves();
+                break;
+            case 3:
+                DemoSoloValores();
+                break;
+            case 4:
+                DemoLogicaRecorrido();
+                break;
+            case 5:
+                DemoResumen();
+                break;
+            case 0:
+                cout << "Saliendo..." << endl;
+                break;
+            default:
+                cout << "Opcion no valida." << endl;
+                break;
+        }
 
-            switch (opcion)
-            {
-                case 1:
-                    DemoKeyValuePair();
-                    break;
-                case 2:
-                    DemoSoloClaves();
-                    break;
-                case 3:
-                    DemoSoloValores();
-                    break;
-                case 4:
-                    DemoLogicaRecorrido();
-                    break;
-                case 5:
-                    DemoResumenVar();
-                    break;
-                case 0:
-                    cout << "Saliendo..." << endl;
-                    break;
-                default:
-                    cout << "Opcion no valida." << endl;
-                    break;
-            }
-
-            cout << endl;
-        } while (opcion != 0);
-        return 0;
+        cout << endl;
+    } while (opcion != 0);
+    return 0;
 }

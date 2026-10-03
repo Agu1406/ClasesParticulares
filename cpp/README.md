@@ -23,9 +23,9 @@ cpp/
 ├── README.md
 ├── madrid/              ← UAX (C + CMake; no se toca)
 └── src/
-    ├── ev1/             UT1–UT3   (fundamentos, control, strings)
-    ├── ev2/             UT4–UT5   (colecciones + POO/excepciones/IO) — contenido
-    └── ev3/             UT6–UT9   (u01 herencia + u01lambda; ut7–ut8 esqueleto)
+    ├── ev1/             UT1–UT4   (fundamentos, control, strings, struct/refs)
+    ├── ev2/             UT3 punteros (extra C++) + UT4 colecciones + UT5 POO
+    └── ev3/             UT6–UT9   (herencia, **UT8 = SDL**, lambda)
 ```
 
 ### Mapa UT ↔ Java / Python / C#
@@ -34,13 +34,17 @@ cpp/
 |----|-------------|------------------|--------|
 | **UT1** | `ut1_fundamentoscpp` | `ut1_fundamentosjava` | Contenido EV1 |
 | **UT2** | `ut2_controlflujometodos` | `ut2_controlflujometodos` | Contenido EV1 |
-| **UT3** | `ut3_strings` | `ut3_stringsyenvolventes` | Contenido EV1 |
-| **UT4** | `ut4_colecciones` | `ut4_colecciones` | Teoría + ejercicios (port C#) |
-| **UT5** | `ut5_pooexcepcionesio` | `ut5_pooexcepcionesio` | Teoría + ejercicios (port C#) |
-| **UT6** | `ut6_pooavanzadaestructuras` | igual | **u01 completo** (teoría+E01–E10+CES); resto esqueleto |
-| **UT7** | `ut7_persistenciastl` | `ut7_persistenciajdbcapi` | Esqueleto |
-| **UT8** | `ut8_frameworks` | `ut8_frameworksspring` | Esqueleto |
-| **UT9** | `ut9_programacionfuncional` | igual | **u01lambda** (STL); resto esqueleto |
+| **UT3 Ev1** | `ev1/ut3_strings` | strings | EV1 |
+| **UT4 Ev1** | `ev1/ut4_tiposcompuestos` | *(C++ extra, PDF Intro)* enum/struct/`&`/casts | Nuevo |
+| **UT3 Ev2** | `ev2/ut3_punterosmemoria` | *(C++ extra)* `*` `new` `delete[]` | Nuevo. **Después de arrays, antes de POO** |
+| **UT4 Ev2** | `ev2/ut4_colecciones` | arrays, `array`, `vector`, `map`, `set` | Contenido |
+| **UT5** | `ut5_pooexcepcionesio` | clases + **Vector2D** + **VectorOfDoubles** | Ampliado PDF POO |
+| **UT6** | `ut6_pooavanzadaestructuras` | herencia | u01 |
+| **UT7** | `ut7_persistenciastl` | ficheros/STL | Esqueleto |
+| **UT8** | `ut8_frameworks` | **SDL** (PDF 3; en Java sería Spring) | Nuevo |
+| **UT9** | `ut9_programacionfuncional` | lambda/STL | u01lambda |
+
+**Orden de clase (PDFs UCM):** Ev1 UT1–UT4 → Ev2 UT4 u01 arrays → Ev2 UT3 punteros → Ev2 UT4 u02 vector → Ev2 UT5 POO → Ev3 UT8 SDL.
 
 ### Convención (igual que Java/Python/C#)
 
@@ -66,7 +70,7 @@ int main() {
 ```
 
 - Estándar **C++17** y `using namespace std;` (nivel junior).
-- **EV1:** no se usan **arrays**, punteros, `new` ni ficheros (se introducen en EV2).
+- **EV1:** no se usan **arrays**, punteros, `new` ni ficheros (se introducen en EV2). Ev1 **UT4** sí tiene `enum`, `struct` y referencias (`&`).
 - Hasta `u03bucles`: programa lineal dentro de `main`.
 - Desde **EV1 `ut2_controlflujometodos/u04metodos`**: menú `do-while` + `switch`, opción **0 = salir**. En comentarios se habla de **funciones** (aún no hay clases); la carpeta se llama `u04metodos` para paridad con Java/C#.
 
