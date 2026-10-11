@@ -4,22 +4,26 @@ package ev3.ut6_pooavanzadaestructuras.u01herenciapolimorfismo.teoria;
  * Indice del subtema herencia, polimorfismo, abstraccion e interfaces (UT6).
  *
  * <p><b>Objetivo:</b> ampliar POO basica (UT5) con jerarquias. Cada bloque vive en
- * su subcarpeta bajo {@code teoria/} (varias clases .java por tema).</p>
+ * su subcarpeta bajo {@code teoria/}, y cada ejemplo en un subdirectorio propio
+ * (clases del dominio + {@code *Intro} con {@code main}).</p>
  *
  * <p><b>Orden sugerido para la clase:</b></p>
  * <ol>
- *   <li>{@link ev3.ut6_pooavanzadaestructuras.u01herenciapolimorfismo.teoria.U02_Herencia.U02_HerenciaIntro}
+ *   <li>{@link ev3.ut6_pooavanzadaestructuras.u01herenciapolimorfismo.teoria.U02_Herencia.Animal.U02_HerenciaIntro}
  *       — {@code extends}, {@code super}, {@code @Override}, {@code protected}
- *       ({@code teoria/U02_Herencia/})</li>
- *   <li>{@link ev3.ut6_pooavanzadaestructuras.u01herenciapolimorfismo.teoria.U03_Polimorfismo.U03_PolimorfismoIntro}
- *       — array de supertipo, enlace dinamico, {@code instanceof}
- *       ({@code teoria/U03_Polimorfismo/})</li>
- *   <li>{@link ev3.ut6_pooavanzadaestructuras.u01herenciapolimorfismo.teoria.U01_Abstraccion.U01_AbstraccionIntro}
+ *       ({@code teoria/U02_Herencia/Animal/})</li>
+ *   <li>Polimorfismo ({@code teoria/U03_Polimorfismo/}):
+ *       {@link ev3.ut6_pooavanzadaestructuras.u01herenciapolimorfismo.teoria.U03_Polimorfismo.Figura.Main},
+ *       {@link ev3.ut6_pooavanzadaestructuras.u01herenciapolimorfismo.teoria.U03_Polimorfismo.Vehiculo.Main},
+ *       {@link ev3.ut6_pooavanzadaestructuras.u01herenciapolimorfismo.teoria.U03_Polimorfismo.Cuenta.Main},
+ *       {@link ev3.ut6_pooavanzadaestructuras.u01herenciapolimorfismo.teoria.U03_Polimorfismo.Empleado.Main}
+ *       — array de supertipo, enlace dinamico, {@code instanceof}</li>
+ *   <li>{@link ev3.ut6_pooavanzadaestructuras.u01herenciapolimorfismo.teoria.U01_Abstraccion.Cuenta.U01_AbstraccionIntro}
  *       — {@code abstract class} / metodos abstractos
- *       ({@code teoria/U01_Abstraccion/})</li>
- *   <li>{@link ev3.ut6_pooavanzadaestructuras.u01herenciapolimorfismo.teoria.U04_Interfaces.U04_InterfacesIntro}
+ *       ({@code teoria/U01_Abstraccion/Cuenta/})</li>
+ *   <li>{@link ev3.ut6_pooavanzadaestructuras.u01herenciapolimorfismo.teoria.U04_Interfaces.Volable.U04_InterfacesIntro}
  *       — {@code interface} / {@code implements}
- *       ({@code teoria/U04_Interfaces/})</li>
+ *       ({@code teoria/U04_Interfaces/Volable/})</li>
  * </ol>
  *
  * <p>Ejercicios en {@code ejercicios/pendientes} y {@code ejercicios/resueltos}.
@@ -35,10 +39,13 @@ public class U00_HerenciaPolimorfismoIndice {
 
     public static void main(String[] args) {
         System.out.println("UT6 — Herencia y polimorfismo. Orden de estudio:");
-        System.out.println("  1. U02_Herencia/U02_HerenciaIntro");
-        System.out.println("  2. U03_Polimorfismo/U03_PolimorfismoIntro");
-        System.out.println("  3. U01_Abstraccion/U01_AbstraccionIntro");
-        System.out.println("  4. U04_Interfaces/U04_InterfacesIntro");
-        System.out.println("Ejecuta el main de cada *Intro en su carpeta.");
+        System.out.println("  1. U02_Herencia/Animal/U02_HerenciaIntro");
+        System.out.println("  2. U03_Polimorfismo/Figura/Main");
+        System.out.println("     U03_Polimorfismo/Vehiculo/Main");
+        System.out.println("     U03_Polimorfismo/Cuenta/Main");
+        System.out.println("     U03_Polimorfismo/Empleado/Main");
+        System.out.println("  3. U01_Abstraccion/Cuenta/U01_AbstraccionIntro");
+        System.out.println("  4. U04_Interfaces/Volable/U04_InterfacesIntro");
+        System.out.println("Ejecuta el main de cada *Intro en su carpeta de ejemplo.");
     }
 }

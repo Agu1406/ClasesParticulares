@@ -265,7 +265,7 @@ En cada clase principal de una practica, documentar con **objetivo pedagogico**,
 
 | UT | Subtemas | Contenido |
 |----|----------|-----------|
-| `ev3/ut6_pooavanzadaestructuras` | `u01herenciapolimorfismo`, `u02coleccionesestructuras`, `u03concurrenciamultihilo`, `u04repaso` (legacy), `u05examenes` | Herencia/polimorfismo/abstraccion/interfaces (teoria en subdirs `U01_Abstraccion`…`U04_Interfaces`), colecciones, concurrencia, examenes Rosa Chacel |
+| `ev3/ut6_pooavanzadaestructuras` | `u01herenciapolimorfismo`, `u02coleccionesestructuras`, `u03concurrenciamultihilo`, `u04repaso` (legacy), `u05examenes` | Herencia/polimorfismo/abstraccion/interfaces (teoria: `U01_Abstraccion/Cuenta`, `U02_Herencia/Animal`, `U03_Polimorfismo/` Figura|Vehiculo|Cuenta|Empleado, `U04_Interfaces/Volable`), colecciones, concurrencia, examenes Rosa Chacel |
 | `ev3/ut7_persistenciajdbcapi` | `u01jdbc`, `u02basesdatos`, `u03pooavanzado`, `u04bdoo`, `u05repaso` (legacy) | JDBC, BDD, Hibernate |
 | `ev3/ut8_frameworksspring` | `u01spring`, `u02repaso` | **Reservado** — placeholder sin codigo Spring implementado |
 | `ev3/ut9_programacionfuncional/pf` | `u01lambda`, `u02streams`, `u03optional`, `u04principios`, `u05repaso` (legacy) | Lambda, Stream API, Optional, principios PF, TPP EPIG |

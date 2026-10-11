@@ -1,4 +1,4 @@
-package ev3.ut6_pooavanzadaestructuras.u01herenciapolimorfismo.teoria.U02_Herencia;
+﻿package ev3.ut6_pooavanzadaestructuras.u01herenciapolimorfismo.teoria.U02_Herencia.Animal;
 
 /**
  * Subclase de {@link Animal}: hereda nombre y sobrescribe {@code hacerSonido()}.

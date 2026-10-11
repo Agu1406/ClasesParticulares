@@ -1,4 +1,4 @@
-package ev3.ut6_pooavanzadaestructuras.u01herenciapolimorfismo.teoria.U03_Polimorfismo;
+﻿package ev3.ut6_pooavanzadaestructuras.u01herenciapolimorfismo.teoria.U03_Polimorfismo.Figura;
 
 /**
  * Figura concreta: circulo.
@@ -6,7 +6,7 @@ package ev3.ut6_pooavanzadaestructuras.u01herenciapolimorfismo.teoria.U03_Polimo
  * @author Agustin. A. Marquez. Pina
  * @since 18/09/2026
  * @see Figura
- * @see U03_PolimorfismoIntro
+ * @see Main
  * @see <a href="mailto:agu1406@outlook.es">agu1406@outlook.es</a>
  * @see <a href="https://github.com/Agu1406/ClasesParticulares">Repositorio GitHub</a>
  * @see <a href="https://www.agustinmarquez.dev">Sitio web</a>

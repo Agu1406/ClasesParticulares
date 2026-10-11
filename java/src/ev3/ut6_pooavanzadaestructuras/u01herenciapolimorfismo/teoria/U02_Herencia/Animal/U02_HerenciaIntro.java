@@ -1,4 +1,4 @@
-package ev3.ut6_pooavanzadaestructuras.u01herenciapolimorfismo.teoria.U02_Herencia;
+﻿package ev3.ut6_pooavanzadaestructuras.u01herenciapolimorfismo.teoria.U02_Herencia.Animal;
 
 /**
  * Teoria: herencia ({@code extends}), {@code super}, {@code @Override} y {@code protected}.

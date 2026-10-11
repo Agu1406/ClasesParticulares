@@ -8,8 +8,6 @@ package ev3.ut6_pooavanzadaestructuras.u01herenciapolimorfismo.teoria.U03_Polimo
  * ejecuta la version de la clase real (enlace dinamico). Utilizar {@code instanceof}
  * cuando haga falta bajar al tipo concreto.</p>
  *
- * <p>Ejemplo paralelo a {@code teoria/U03_Polimorfismo/Figura/} (mismas ideas, otro dominio).</p>
- *
  * @author Agustin. A. Marquez. Pina
  * @since 11/10/2026
  * @see Vehiculo
@@ -25,17 +23,27 @@ public class Main {
         System.out.println("=== POLIMORFISMO: array de Vehiculo ===\n");
 
         Vehiculo[] flota = new Vehiculo[4];
-        flota[0] = new Coche("Seat", 5);
-        flota[1] = new Moto("Yamaha", false);
-        flota[2] = new Coche("Tesla", 4);
-        flota[3] = new Moto("Harley", true);
+        // AnyArgsConstructor del padre (motorEncendido = false por defecto)
+        flota[0] = new Coche("1234ABC", "rojo", "Seat", 0, 180, 5);
+        flota[1] = new Moto("5678XYZ", "negro", "Yamaha", 0, 220, false);
+        // AllArgsConstructor (motor ya encendido)
+        flota[2] = new Coche("9999ZZZ", "blanco", "Tesla", 0, 250, true, 4);
+        flota[3] = new Moto("1111AAA", "azul", "Harley", 0, 200, true, true);
 
-        System.out.println("--- Acelerar (enlace dinamico) ---");
+        System.out.println("--- Encender motores apagados ---");
+        for (Vehiculo v : flota) {
+            if (v.getMotorEncendido() != null && !v.getMotorEncendido()) {
+                v.encenderMotor();
+                System.out.println(v.getMarca() + " motor encendido.");
+            }
+        }
+
+        System.out.println("\n--- Acelerar (enlace dinamico) ---");
         for (Vehiculo v : flota) {
             v.acelerar();
         }
 
-        System.out.println("\n--- toString polimorfico ---");
+        System.out.println("\n--- toString ---");
         for (Vehiculo v : flota) {
             System.out.println(v);
         }
@@ -44,10 +52,12 @@ public class Main {
         for (Vehiculo v : flota) {
             if (v instanceof Coche) {
                 Coche c = (Coche) v;
-                System.out.println(c.getMarca() + " tiene " + c.getPuertas() + " puertas");
+                System.out.println(c.getMatricula() + " " + c.getMarca()
+                        + " tiene " + c.getPuertas() + " puertas");
             } else if (v instanceof Moto) {
                 Moto m = (Moto) v;
-                System.out.println(m.getMarca() + " sidecar=" + m.isTieneSidecar());
+                System.out.println(m.getMatricula() + " " + m.getMarca()
+                        + " sidecar=" + m.isTieneSidecar());
             }
         }
     }

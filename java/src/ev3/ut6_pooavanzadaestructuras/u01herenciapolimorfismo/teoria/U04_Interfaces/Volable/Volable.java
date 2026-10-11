@@ -1,4 +1,4 @@
-package ev3.ut6_pooavanzadaestructuras.u01herenciapolimorfismo.teoria.U04_Interfaces;
+﻿package ev3.ut6_pooavanzadaestructuras.u01herenciapolimorfismo.teoria.U04_Interfaces.Volable;
 
 /**
  * Interfaz: contrato de "puede volar" (solo metodos, sin estado).

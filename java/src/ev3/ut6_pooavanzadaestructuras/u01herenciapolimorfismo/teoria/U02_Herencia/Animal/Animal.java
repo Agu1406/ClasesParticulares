@@ -1,4 +1,4 @@
-package ev3.ut6_pooavanzadaestructuras.u01herenciapolimorfismo.teoria.U02_Herencia;
+﻿package ev3.ut6_pooavanzadaestructuras.u01herenciapolimorfismo.teoria.U02_Herencia.Animal;
 
 /**
  * Superclase de la jerarquia de animales.

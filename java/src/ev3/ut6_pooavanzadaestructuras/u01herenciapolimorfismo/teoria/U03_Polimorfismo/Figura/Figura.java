@@ -1,4 +1,4 @@
-package ev3.ut6_pooavanzadaestructuras.u01herenciapolimorfismo.teoria.U03_Polimorfismo;
+﻿package ev3.ut6_pooavanzadaestructuras.u01herenciapolimorfismo.teoria.U03_Polimorfismo.Figura;
 
 /**
  * Superclase abstracta de figuras geometricas.
@@ -10,7 +10,7 @@ package ev3.ut6_pooavanzadaestructuras.u01herenciapolimorfismo.teoria.U03_Polimo
  * @since 18/09/2026
  * @see Circulo
  * @see Rectangulo
- * @see U03_PolimorfismoIntro
+ * @see Main
  * @see <a href="mailto:agu1406@outlook.es">agu1406@outlook.es</a>
  * @see <a href="https://github.com/Agu1406/ClasesParticulares">Repositorio GitHub</a>
  * @see <a href="https://www.agustinmarquez.dev">Sitio web</a>
