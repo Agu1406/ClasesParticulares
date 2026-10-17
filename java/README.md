@@ -38,7 +38,8 @@ java/
     ├── recuperacionordinaria/   # examen ordinario (ej. 1, 2, 4, 5); ej. 3 en javafx/
     ├── ev1/                RA1-RA3  (ut1, ut2, ut3)
     ├── ev2/                RA4-RA6  (ut4, ut5)
-    └── ev3/                RA7-RA9  (ut6, ut7, ut8, ut9/pf)
+    ├── ev3/                RA7-RA9  (ut6, ut7, ut8, ut9/pf)
+    └── ev4/                Solo examenes / simulacros RA1+RA3+RA5 (consola)
 ```
 
 ### Convencion por subtema (EV1, EV2, EV3)
@@ -269,6 +270,17 @@ En cada clase principal de una practica, documentar con **objetivo pedagogico**,
 | `ev3/ut7_persistenciajdbcapi` | `u01jdbc`, `u02basesdatos`, `u03pooavanzado`, `u04bdoo`, `u05repaso` (legacy) | JDBC, BDD, Hibernate |
 | `ev3/ut8_frameworksspring` | `u01spring`, `u02repaso` | **Reservado** — placeholder sin codigo Spring implementado |
 | `ev3/ut9_programacionfuncional/pf` | `u01lambda`, `u02streams`, `u03optional`, `u04principios`, `u05repaso` (legacy) | Lambda, Stream API, Optional, principios PF, TPP EPIG |
+
+### EV4 - Solo examenes (RA1, RA3, RA5)
+
+Sin UTs ni teoria: cada examen es una carpeta al estilo del alumno.
+En cada ejercicio: `Main.java` (sin resolver) y `Done.java` (resuelto).
+
+| Examen | Ejercicios |
+|--------|------------|
+| `ev4/E01_ExamenRA123` | `E01_TicketIVA`, `E02_Centinela`, `E03_MenuApp` |
+| `ev4/E02_ExamenRA123` | `E01_ConversorTemperatura`, `E02_CajeroAparcamiento`, `E03_EntrenamientoNumerico` |
+| `ev4/E03_ExamenRA123` | `E01_ConversorMonedas`, `E02_TerminadosEn3`, `E03_AprenderASumar` |
 
 ## Requisitos y ejecucion
 
