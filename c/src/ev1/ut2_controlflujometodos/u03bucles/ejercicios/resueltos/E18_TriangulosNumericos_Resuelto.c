@@ -1,0 +1,39 @@
+/*
+E18 - Triangulo numerico (RESUELTO)
+
+ENUNCIADO:
+  Pide la altura y muestra: 1 / 12 / 123 / 1234 ... (cada fila cuenta hasta su numero de fila).
+
+EJEMPLO DE EJECUCION:
+  Altura: 4
+  1
+  12
+  123
+  1234
+
+PISTA:
+  El bucle interior imprime el numero de columna.
+
+SOLUCION:
+  Mismo esquema que el triangulo de asteriscos, pero imprimiendo la columna.
+
+Autor: Agustin. A. Marquez. Pina
+Contacto: agu1406@outlook.es
+Repositorio GitHub: https://github.com/Agu1406/ClasesParticulares
+Sitio web: https://www.agustinmarquez.dev
+*/
+
+#include <stdio.h>
+
+int main(void) {
+    int altura = 0;
+    printf("Altura: ");
+    scanf("%d", &altura);
+    for (int fila = 1; fila <= altura; fila++) {
+        for (int col = 1; col <= fila; col++) {
+            printf("%d", col);
+        }
+        printf("\n");
+    }
+    return 0;
+}

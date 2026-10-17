@@ -1,0 +1,58 @@
+/*
+E17 - Clasificar los caracteres de una linea (RESUELTO)
+
+ENUNCIADO:
+  Lee una linea y muestra cuantas letras, digitos, espacios y otros caracteres contiene.
+
+EJEMPLO DE EJECUCION:
+  Linea: Ruta 66, km 12.
+  Letras: 6
+  Digitos: 4
+  Espacios: 3
+  Otros: 2
+
+PISTA:
+  Usa isalpha, isdigit e isspace.
+
+SOLUCION:
+  Un unico recorrido con if / else if.
+
+Autor: Agustin. A. Marquez. Pina
+Contacto: agu1406@outlook.es
+Repositorio GitHub: https://github.com/Agu1406/ClasesParticulares
+Sitio web: https://www.agustinmarquez.dev
+*/
+
+#include <stdio.h>
+#include <string.h>
+#include <ctype.h>
+
+int main(void) {
+    char linea[100];
+    printf("Linea: ");
+    if (fgets(linea, sizeof(linea), stdin) == NULL) {
+        return 1;
+    }
+    linea[strcspn(linea, "\n")] = '\0';
+    int letras = 0;
+    int digitos = 0;
+    int espacios = 0;
+    int otros = 0;
+    for (int i = 0; linea[i] != '\0'; i++) {
+        unsigned char c = (unsigned char)linea[i];
+        if (isalpha(c)) {
+            letras++;
+        } else if (isdigit(c)) {
+            digitos++;
+        } else if (isspace(c)) {
+            espacios++;
+        } else {
+            otros++;
+        }
+    }
+    printf("Letras: %d\n", letras);
+    printf("Digitos: %d\n", digitos);
+    printf("Espacios: %d\n", espacios);
+    printf("Otros: %d\n", otros);
+    return 0;
+}

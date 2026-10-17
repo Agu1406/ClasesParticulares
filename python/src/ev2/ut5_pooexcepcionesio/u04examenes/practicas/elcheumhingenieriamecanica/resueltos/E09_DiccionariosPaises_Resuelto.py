@@ -23,28 +23,35 @@ Crea un programa que:
 """
 
 # ALGORITMO:
-# 1. Pedir 3 pares pais/capital e ir metiéndolos en el diccionario.
-# 2. Mostrar dict, keys, values e items.
-# 3. Consultar un país con .get(pais, "País no encontrado").
+# 1. Crear diccionario vacío.
+# 2. Con for i in range(3): pedir pais y capital; guardarlos.
+# 3. Mostrar el diccionario.
+# 4. Con bucles for: listas de paises, capitales y tuplas (pais, capital).
+# 5. Pedir un pais y mostrar capitales.get(..., "País no encontrado").
 
 capitales = {}
 
-pais1 = input("Pais 1: ")
-capital1 = input("Capital 1: ")
-capitales[pais1] = capital1
-
-pais2 = input("Pais 2: ")
-capital2 = input("Capital 2: ")
-capitales[pais2] = capital2
-
-pais3 = input("Pais 3: ")
-capital3 = input("Capital 3: ")
-capitales[pais3] = capital3
+for i in range(3):
+    pais = input(f"Pais {i + 1}: ")
+    capital = input(f"Capital {i + 1}: ")
+    capitales[pais] = capital
 
 print("Diccionario:", capitales)
-print("Paises:", list(capitales.keys()))
-print("Capitales:", list(capitales.values()))
-print("Tuplas (pais, capital):", list(capitales.items()))
+
+paises = []
+for pais in capitales:
+    paises.append(pais)
+print("Paises:", paises)
+
+lista_capitales = []
+for pais in capitales:
+    lista_capitales.append(capitales[pais])
+print("Capitales:", lista_capitales)
+
+tuplas = []
+for pais in capitales:
+    tuplas.append((pais, capitales[pais]))
+print("Tuplas (pais, capital):", tuplas)
 
 consulta = input("Consulta la capital de un pais: ")
 print(capitales.get(consulta, "País no encontrado"))

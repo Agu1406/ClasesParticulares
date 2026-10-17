@@ -26,6 +26,7 @@ Misma jerarquía `src/ev{N}/ut{N}_{tema}/u{NN}…` y las mismas convenciones de 
 | [`python/`](python/README.md) | Espejo + RD 566/2024 (NumPy/pandas, etc.) |
 | [`csharp/`](csharp/README.md) | Espejo .NET / C# |
 | [`cpp/`](cpp/README.md) | Espejo C++ / STL |
+| [`c/`](c/README.md) | C11 — EV1 alineada (UT1–UT4); a partir de EV2 temario propio |
 
 **Fase A (estructura):** hecha — EV/UT alineados; prácticas CES (centralita, figuras, trabajadores, alumnos) en `ev3/ut6_…/u01herenciapolimorfismo/practicas/` en los cuatro.
 
@@ -38,7 +39,6 @@ Misma jerarquía `src/ev{N}/ut{N}_{tema}/u{NN}…` y las mismas convenciones de 
 | [`js/`](js/README.md) | DWEC 0612 (mapa propio, kebab-case) |
 | [`android/`](android/README.md) / [`flutter/`](flutter/README.md) | PMDM (Kotlin / Dart) |
 | [`javafx/`](javafx/README.md) | GUI JavaFX (RA5) |
-| [`c/`](c/README.md) | C por módulos `01-…` |
 | [`interfaces/`](interfaces/) | HTML/CSS/JS por centro |
 | [`php/`](php/), [`sql/`](sql/), [`linux/`](linux/) | Por CCAA / centro |
 | [`react/`](react/), [`css/`](css/), [`tests/`](tests/README.md), [`portfolio/`](portfolio/) | Tutoriales, estilos, tests, sitio |
@@ -57,8 +57,10 @@ Misma jerarquía `src/ev{N}/ut{N}_{tema}/u{NN}…` y las mismas convenciones de 
 - Ver [flutter/README.md](flutter/README.md)
 
 ### **c/**
-- Programación en C por módulos progresivos (`01-introduccion`, `02-sintaxis-basica`, `03-control-flujo`, …)
-- Documentación PDF (pilas, colas, registros) y ejercicios de laboratorio
+- C11 con el mismo mapa de clase que C++ en EV1: `src/ev1` (UT1 fundamentos, UT2 control/funciones, UT3 cadenas, UT4 enum/struct)
+- Teoría ejecutable, ejercicios `_Pendiente`/`_Resuelto` y práctica interna por subtema
+- Carpetas `01-introduccion/`, `02-sintaxis-basica/`, `03-control-flujo/` son **legacy** (no usar en clase)
+- Guía: [c/README.md](c/README.md) · mapa EV1: [c/src/ev1/README.md](c/src/ev1/README.md)
 
 ### **cpp/**
 - Familia espejo: `src/ev1` (UT1–UT3), `ev2` (UT4–UT5 esqueleto), `ev3` (UT6 CES + UT7–UT9 esqueleto)
