@@ -17,8 +17,17 @@
 
 # Archivos de IDE
 **/.vscode/
+**/.vs/
 **/.eclipse/
 **/*.iml
+**/*.vcxproj.user
+
+# Visual Studio (C++)
+**/bin/
+**/x64/
+**/*.obj
+**/*.pdb
+**/*.ilk
 
 # Archivos de sistema
 **/.DS_Store
