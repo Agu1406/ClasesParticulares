@@ -1,15 +1,14 @@
 /*
-U03 — Bloque finally.
+U03 — Limpieza tras try/catch (en C++ NO hay finally).
 
-finally se ejecuta SIEMPRE: haya excepcion o no, y tambien si catch la manejo.
-Sirve para liberar recursos, cerrar ficheros o mostrar mensajes de cierre
-que no deben omitirse aunque algo falle en try.
+En C# existe finally. En C++ junior el codigo que va DESPUES del
+try/catch se ejecuta igual (si no haces return). Los ficheros se cierran
+solos al destruirse ofstream (RAII).
 
 OBJETIVO:
-  - Usar try / catch / finally en el mismo flujo.
-  - Comprobar que finally corre tras un error capturado.
-  - Comprobar que finally corre tambien cuando try termina bien.
-  - Entender finally como codigo de "limpieza" garantizado.
+  - Ver codigo de limpieza tras un error capturado.
+  - Ver la misma limpieza cuando try termina bien.
+  - Entender que ofstream se cierra al salir del bloque.
 
 Autor: Agustin. A. Marquez. Pina
 Contacto: agu1406@outlook.es
@@ -17,154 +16,113 @@ Repositorio GitHub: https://github.com/Agu1406/ClasesParticulares
 Sitio web: https://www.agustinmarquez.dev
 */
 
-
-
 #include <iostream>
 #include <string>
-#include <vector>
-#include <map>
-#include <set>
 #include <fstream>
-#include <sstream>
-#include <regex>
 #include <stdexcept>
-#include <limits>
 using namespace std;
 
-
-
-void ImprimirMenu();
-
-void DemoFinallyTrasError();
-
-void DemoFinallySinError();
-
-void DemoFinallyComoCierre();
-
-
-
 void ImprimirMenu()
+{
+    cout << "=== U03 Limpieza (sin finally) ===" << endl;
+    cout << "1. Limpieza tras error" << endl;
+    cout << "2. Limpieza sin error" << endl;
+    cout << "3. ofstream se cierra solo" << endl;
+    cout << "0. Salir" << endl;
+}
+
+void DemoLimpiezaTrasError()
+{
+    cout << "¡DEMO — Limpieza tras error!\n" << endl;
+
+    try
     {
-        cout << "=== U03 Bloque finally ===" << endl;
-        cout << "1. Finally tras error" << endl;
-        cout << "2. Finally sin error" << endl;
-        cout << "3. Finally como cierre" << endl;
-        cout << "0. Salir" << endl;
+        cout << "Entrando en try..." << endl;
+        throw runtime_error("Division entre cero (simulada).");
+    }
+    catch (const runtime_error& e)
+    {
+        cout << "catch: " << e.what() << endl;
     }
 
-/*
-    PRIMERA PARTE — Error en try: catch se ejecuta y luego finally.
-    */
-void DemoFinallyTrasError()
-    {
-        cout << "¡DEMO — Finally tras error!\n" << endl;
+    cout << "Despues del try/catch: siempre se ejecuta (tras error)." << endl;
+}
 
-        try
-        {
-            cout << "Entrando en try..." << endl;
-            int a = 10;
-            int b = 0;
-            int resultado = a / b;
-            cout << "Resultado: " << (resultado) << endl;
-        }
-        catch (DivideByZeroException)
-        {
-            cout << "Division entre cero detectada en catch." << endl;
-        }
-        finally
-        {
-            cout << "Bloque finally: siempre se ejecuta (tras error)." << endl;
-        }
+void DemoLimpiezaSinError()
+{
+    cout << "¡DEMO — Limpieza sin error!\n" << endl;
+
+    try
+    {
+        cout << "Entrando en try sin fallos..." << endl;
+        int suma = 5 + 3;
+        cout << "Suma correcta: " << suma << endl;
+    }
+    catch (const exception& e)
+    {
+        cout << e.what() << endl;
     }
 
-/*
-    SEGUNDA PARTE — try sin error: finally igualmente se ejecuta al final.
-    */
-void DemoFinallySinError()
-    {
-        cout << "¡DEMO — Finally sin error!\n" << endl;
+    cout << "Despues del try/catch: siempre se ejecuta (sin error)." << endl;
+}
 
-        try
-        {
-            cout << "Entrando en try sin fallos..." << endl;
-            int suma = 5 + 3;
-            cout << "Suma correcta: " << (suma) << endl;
-        }
-        catch (DivideByZeroException)
-        {
-            cout << "Division entre cero detectada en catch." << endl;
-        }
-        finally
-        {
-            cout << "Bloque finally: siempre se ejecuta (sin error)." << endl;
-        }
+void DemoCierreFichero()
+{
+    cout << "¡DEMO — ofstream se cierra solo!\n" << endl;
+
+    bool operacionOk = false;
+    try
+    {
+        ofstream f("demo_u03.txt");
+        f << "dato " << stoi("42") << endl;
+        operacionOk = true;
+        cout << "Operacion OK. Al salir del try, f se destruye y cierra el fichero." << endl;
+    }
+    catch (const exception&)
+    {
+        cout << "No se pudo completar la operacion." << endl;
     }
 
-/*
-    TERCERA PARTE — Simular "cierre de operacion" en finally.
-      En programas reales aqui cerrarias ficheros o conexiones.
-    */
-void DemoFinallyComoCierre()
+    if (operacionOk)
     {
-        cout << "¡DEMO — Finally como cierre!\n" << endl;
-
-        bool operacionCompletada = false;
-
-        try
-        {
-            int dato = int.Parse("42");
-            operacionCompletada = true;
-            cout << "Operacion OK con dato " << (dato) << endl;
-        }
-        catch (invalid_argument)
-        {
-            cout << "No se pudo completar la operacion." << endl;
-        }
-        finally
-        {
-            if (operacionCompletada)
-            {
-                cout << "Finally: liberando recursos (demo)." << endl;
-            }
-            else
-            {
-                cout << "Finally: limpieza tras fallo (demo)." << endl;
-            }
-        }
+        cout << "Limpieza: todo fue bien." << endl;
     }
-
-
+    else
+    {
+        cout << "Limpieza: hubo fallo." << endl;
+    }
+}
 
 int main()
+{
+    int opcion;
+    do
     {
-        int opcion;
-        do
+        ImprimirMenu();
+        cout << "Introduce una opcion -> ";
+        cin >> opcion;
+        cout << endl;
+
+        switch (opcion)
         {
-            ImprimirMenu();
-            cout << "Introduce una opcion -> ";
-            cin >> opcion;
-            cout << endl;
+            case 1:
+                DemoLimpiezaTrasError();
+                break;
+            case 2:
+                DemoLimpiezaSinError();
+                break;
+            case 3:
+                DemoCierreFichero();
+                break;
+            case 0:
+                cout << "Saliendo..." << endl;
+                break;
+            default:
+                cout << "Opcion no valida." << endl;
+                break;
+        }
 
-            switch (opcion)
-            {
-                case 1:
-                    DemoFinallyTrasError();
-                    break;
-                case 2:
-                    DemoFinallySinError();
-                    break;
-                case 3:
-                    DemoFinallyComoCierre();
-                    break;
-                case 0:
-                    cout << "Saliendo..." << endl;
-                    break;
-                default:
-                    cout << "Opcion no valida." << endl;
-                    break;
-            }
-
-            cout << endl;
-        } while (opcion != 0);
-        return 0;
+        cout << endl;
+    } while (opcion != 0);
+    return 0;
 }

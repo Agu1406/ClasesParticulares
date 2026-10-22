@@ -1,12 +1,12 @@
 /*
 U04 — Lanzar excepciones con throw.
 
-Ademas de capturar errores ajenos, puedes signalizar condiciones invalidas
-con throw new TipoExcepcion("mensaje"). Quien llame a tu metodo puede
+Ademas de capturar errores ajenos, puedes senalar condiciones invalidas
+con throw invalid_argument("mensaje"). Quien llame a tu funcion puede
 decidir capturarla o dejar que suba hasta un catch superior.
 
 OBJETIVO:
-  - Validar parametros con if { } y lanzar ArgumentException.
+  - Validar parametros con if { } y lanzar invalid_argument.
   - Capturar la excepcion en Main y mostrar el mensaje.
   - Contrastar llamada valida (sin throw) con llamada invalida.
   - Usar throw para documentar reglas de negocio en metodos propios.
@@ -20,15 +20,7 @@ Sitio web: https://www.agustinmarquez.dev
 
 
 #include <iostream>
-#include <string>
-#include <vector>
-#include <map>
-#include <set>
-#include <fstream>
-#include <sstream>
-#include <regex>
 #include <stdexcept>
-#include <limits>
 using namespace std;
 
 
@@ -95,7 +87,7 @@ void DemoEdadInvalida()
         }
         catch (invalid_argument& ex)
         {
-            cout << "Error capturado: " << (ex.Message) << endl;
+            cout << "Error capturado: " << ex.what() << endl;
         }
     }
 
@@ -112,7 +104,7 @@ void DemoEdadValida()
         }
         catch (invalid_argument& ex)
         {
-            cout << "Error capturado: " << (ex.Message) << endl;
+            cout << "Error capturado: " << ex.what() << endl;
         }
     }
 
@@ -129,7 +121,7 @@ void DemoValidarNota()
         }
         catch (invalid_argument& ex)
         {
-            cout << "Error capturado: " << (ex.Message) << endl;
+            cout << "Error capturado: " << ex.what() << endl;
         }
 
         try
@@ -138,7 +130,7 @@ void DemoValidarNota()
         }
         catch (invalid_argument& ex)
         {
-            cout << "Error capturado: " << (ex.Message) << endl;
+            cout << "Error capturado: " << ex.what() << endl;
         }
     }
 

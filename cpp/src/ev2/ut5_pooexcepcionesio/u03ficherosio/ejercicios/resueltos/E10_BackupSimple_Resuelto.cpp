@@ -1,5 +1,5 @@
 /*
-OBJETIVO: Backup simple: leer "datos.txt" y guardar copia en "datos_backup.txt". Menu do-while: mantener la solucion y ejecutarla desde menu interactivo.
+OBJETIVO: Backup simple: leer "datos.txt" y guardar copia en "datos.txt.bak".
 SOLUCION: ver codigo.
 
 Autor: Agustin. A. Marquez. Pina
@@ -8,90 +8,66 @@ Repositorio GitHub: https://github.com/Agu1406/ClasesParticulares
 Sitio web: https://www.agustinmarquez.dev
 */
 
-
-
 #include <iostream>
 #include <string>
-#include <vector>
-#include <map>
-#include <set>
 #include <fstream>
-#include <sstream>
-#include <regex>
-#include <stdexcept>
-#include <limits>
 using namespace std;
 
-
-
-void ImprimirMenu();
-
-void MostrarObjetivo();
-
-void EjecutarEjercicio();
-
-
-
 void ImprimirMenu()
-    {
-        cout << "=== EJERCICIO ===" << endl;
-        cout << "1. Ejecutar solucion" << endl;
-        cout << "2. Ver objetivo" << endl;
-        cout << "0. Salir" << endl;
-        
-    }
-
-void MostrarObjetivo()
-    {
-        cout << "Backup simple: leer \"datos.txt\" y guardar copia en \"datos_backup.txt\"." << endl;
-    }
+{
+    cout << "=== EJERCICIO ===" << endl;
+    cout << "1. Ejecutar solucion" << endl;
+    cout << "2. Ver objetivo" << endl;
+    cout << "0. Salir" << endl;
+}
 
 void EjecutarEjercicio()
+{
+    ofstream preparar("datos.txt");
+    preparar << "Informacion importante" << endl;
+    preparar.close();
+
+    ifstream origen("datos.txt");
+    if (!origen)
     {
-        { ofstream _ofs("datos.txt"); _ofs << ("Informacion importante"); };
-            string backup = ([](string _p){ ifstream i(_p); stringstream ss; ss<<i.rdbuf(); return ss.str(); })("datos.txt");
-            { ofstream _ofs("datos_backup.txt"); _ofs << (backup); };
-            cout << "Backup creado: datos_backup.txt" << endl;
+        cout << "No se pudo abrir datos.txt" << endl;
+        return;
     }
 
-
+    ofstream backup("datos.txt.bak");
+    string linea;
+    while (getline(origen, linea))
+    {
+        backup << linea << endl;
+    }
+    cout << "Backup creado: datos.txt.bak" << endl;
+}
 
 int main()
+{
+    int opcion;
+    do
     {
-        using System.IO;
-
-        int opcion;
-
-        do
+        ImprimirMenu();
+        cout << "Introduce una opcion -> ";
+        cin >> opcion;
+        cout << endl;
+        switch (opcion)
         {
-            ImprimirMenu();
-            cout << "Introduce una opcion -> ";
-            cin >> opcion;
-
-            switch (opcion)
-            {
-                case 1:
-                    EjecutarEjercicio();
-                    break;
-                case 2:
-                    MostrarObjetivo();
-                    break;
-                case 0:
-                    cout << "Saliendo..." << endl;
-                    break;
-                default:
-                    cout << "Opcion no valida. Intenta de nuevo." << endl;
-                    break;
-            }
-
-            if (opcion != 0)
-            {
-                cout << endl;
-                cout << "Pulsa ENTER para continuar..." << endl;
-                cin.ignore(numeric_limits<streamsize>::max(), '\n');
-                cin.get();
-                // clear omitido
-            }
-        } while (opcion != 0);
-        return 0;
+            case 1:
+                EjecutarEjercicio();
+                break;
+            case 2:
+                cout << "Backup simple: leer datos.txt y guardar copia en datos.txt.bak." << endl;
+                break;
+            case 0:
+                cout << "Saliendo..." << endl;
+                break;
+            default:
+                cout << "Opcion no valida." << endl;
+                break;
+        }
+        cout << endl;
+    } while (opcion != 0);
+    return 0;
 }

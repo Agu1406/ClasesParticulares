@@ -1,5 +1,5 @@
 /*
-OBJETIVO: Repaso: try/catch/finally con mensaje en finally. Menu do-while: mantener la solucion y ejecutarla desde menu interactivo.
+OBJETIVO: Repaso: try/catch y mensaje de limpieza despues (C++ no tiene finally).
 SOLUCION: ver codigo.
 
 Autor: Agustin. A. Marquez. Pina
@@ -8,97 +8,58 @@ Repositorio GitHub: https://github.com/Agu1406/ClasesParticulares
 Sitio web: https://www.agustinmarquez.dev
 */
 
-
-
 #include <iostream>
-#include <string>
-#include <vector>
-#include <map>
-#include <set>
-#include <fstream>
-#include <sstream>
-#include <regex>
 #include <stdexcept>
-#include <limits>
 using namespace std;
 
-
-
-void ImprimirMenu();
-
-void MostrarObjetivo();
-
-void EjecutarEjercicio();
-
-
-
 void ImprimirMenu()
-    {
-        cout << "=== EJERCICIO ===" << endl;
-        cout << "1. Ejecutar solucion" << endl;
-        cout << "2. Ver objetivo" << endl;
-        cout << "0. Salir" << endl;
-        
-    }
-
-void MostrarObjetivo()
-    {
-        cout << "Repaso: try/catch/finally con mensaje en finally." << endl;
-    }
+{
+    cout << "=== EJERCICIO ===" << endl;
+    cout << "1. Ejecutar solucion" << endl;
+    cout << "2. Ver objetivo" << endl;
+    cout << "0. Salir" << endl;
+}
 
 void EjecutarEjercicio()
+{
+    try
     {
-        try
-            {
-                int r = 5 / 0;
-                cout << r << endl;
-            }
-            catch (DivideByZeroException)
-            {
-                cout << "Error de division." << endl;
-            }
-            finally
-            {
-                cout << "Fin del repaso." << endl;
-            }
+        throw runtime_error("Division entre cero (simulada).");
+    }
+    catch (const runtime_error& e)
+    {
+        cout << "Error de division." << endl;
+        cout << e.what() << endl;
     }
 
-
+    cout << "Fin del repaso." << endl;
+}
 
 int main()
+{
+    int opcion;
+    do
     {
-        int opcion;
-
-        do
+        ImprimirMenu();
+        cout << "Introduce una opcion -> ";
+        cin >> opcion;
+        cout << endl;
+        switch (opcion)
         {
-            ImprimirMenu();
-            cout << "Introduce una opcion -> ";
-            cin >> opcion;
-
-            switch (opcion)
-            {
-                case 1:
-                    EjecutarEjercicio();
-                    break;
-                case 2:
-                    MostrarObjetivo();
-                    break;
-                case 0:
-                    cout << "Saliendo..." << endl;
-                    break;
-                default:
-                    cout << "Opcion no valida. Intenta de nuevo." << endl;
-                    break;
-            }
-
-            if (opcion != 0)
-            {
-                cout << endl;
-                cout << "Pulsa ENTER para continuar..." << endl;
-                cin.ignore(numeric_limits<streamsize>::max(), '\n');
-                cin.get();
-                // clear omitido
-            }
-        } while (opcion != 0);
-        return 0;
+            case 1:
+                EjecutarEjercicio();
+                break;
+            case 2:
+                cout << "Repaso: try/catch y mensaje de limpieza despues (C++ no tiene finally)." << endl;
+                break;
+            case 0:
+                cout << "Saliendo..." << endl;
+                break;
+            default:
+                cout << "Opcion no valida." << endl;
+                break;
+        }
+        cout << endl;
+    } while (opcion != 0);
+    return 0;
 }

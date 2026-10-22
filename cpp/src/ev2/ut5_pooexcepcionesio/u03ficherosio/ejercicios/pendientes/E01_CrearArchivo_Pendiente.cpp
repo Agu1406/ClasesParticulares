@@ -1,5 +1,5 @@
 /*
-OBJETIVO: Crear fichero "salida.txt" con File.WriteAllText y un mensaje inicial. Menu do-while: completar desde un menu interactivo con opcion 0 para salir.
+OBJETIVO: Crear fichero "salida.txt" con ofstream y un mensaje inicial.
 
 Autor: Agustin. A. Marquez. Pina
 Contacto: agu1406@outlook.es
@@ -7,87 +7,49 @@ Repositorio GitHub: https://github.com/Agu1406/ClasesParticulares
 Sitio web: https://www.agustinmarquez.dev
 */
 
-
-
 #include <iostream>
-#include <string>
-#include <vector>
-#include <map>
-#include <set>
 #include <fstream>
-#include <sstream>
-#include <regex>
-#include <stdexcept>
-#include <limits>
 using namespace std;
 
-
-
-void ImprimirMenu();
-
-void MostrarObjetivo();
-
-void EjecutarEjercicio();
-
-
-
 void ImprimirMenu()
-    {
-        cout << "=== EJERCICIO ===" << endl;
-        cout << "1. Trabajar ejercicio" << endl;
-        cout << "2. Ver objetivo" << endl;
-        cout << "0. Salir" << endl;
-        
-    }
-
-void MostrarObjetivo()
-    {
-        cout << "Crear fichero \"salida.txt\" con File.WriteAllText y un mensaje inicial." << endl;
-    }
+{
+    cout << "=== EJERCICIO ===" << endl;
+    cout << "1. Trabajar ejercicio" << endl;
+    cout << "2. Ver objetivo" << endl;
+    cout << "0. Salir" << endl;
+}
 
 void EjecutarEjercicio()
-    {
-        // TODO: Crear salida.txt con texto "Archivo creado" y confirmar en consola.
-    }
-
-
+{
+    // TODO: crea salida.txt con ofstream
+    // TODO: escribe "Archivo creado" y confirma en consola
+}
 
 int main()
+{
+    int opcion;
+    do
     {
-        using System.IO;
-
-        int opcion;
-
-        do
+        ImprimirMenu();
+        cout << "Introduce una opcion -> ";
+        cin >> opcion;
+        cout << endl;
+        switch (opcion)
         {
-            ImprimirMenu();
-            cout << "Introduce una opcion -> ";
-            cin >> opcion;
-
-            switch (opcion)
-            {
-                case 1:
-                    EjecutarEjercicio();
-                    break;
-                case 2:
-                    MostrarObjetivo();
-                    break;
-                case 0:
-                    cout << "Saliendo..." << endl;
-                    break;
-                default:
-                    cout << "Opcion no valida. Intenta de nuevo." << endl;
-                    break;
-            }
-
-            if (opcion != 0)
-            {
-                cout << endl;
-                cout << "Pulsa ENTER para continuar..." << endl;
-                cin.ignore(numeric_limits<streamsize>::max(), '\n');
-                cin.get();
-                // clear omitido
-            }
-        } while (opcion != 0);
-        return 0;
+            case 1:
+                EjecutarEjercicio();
+                break;
+            case 2:
+                cout << "Crear fichero salida.txt con ofstream y un mensaje inicial." << endl;
+                break;
+            case 0:
+                cout << "Saliendo..." << endl;
+                break;
+            default:
+                cout << "Opcion no valida." << endl;
+                break;
+        }
+        cout << endl;
+    } while (opcion != 0);
+    return 0;
 }

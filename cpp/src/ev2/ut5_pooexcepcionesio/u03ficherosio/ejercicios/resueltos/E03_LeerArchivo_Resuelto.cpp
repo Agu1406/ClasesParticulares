@@ -1,5 +1,5 @@
 /*
-OBJETIVO: Leer "notas.txt" con ReadAllText y mostrar contenido en consola. Menu do-while: mantener la solucion y ejecutarla desde menu interactivo.
+OBJETIVO: Leer "notas.txt" con ifstream y mostrar el contenido en consola.
 SOLUCION: ver codigo.
 
 Autor: Agustin. A. Marquez. Pina
@@ -8,107 +8,64 @@ Repositorio GitHub: https://github.com/Agu1406/ClasesParticulares
 Sitio web: https://www.agustinmarquez.dev
 */
 
-
-
 #include <iostream>
 #include <string>
-#include <vector>
-#include <map>
-#include <set>
 #include <fstream>
-#include <sstream>
-#include <regex>
-#include <stdexcept>
-#include <limits>
 using namespace std;
 
-
-
-void ImprimirMenu();
-
-void MostrarObjetivo();
-
-void EjecutarEjercicio();
-
-void EjecutarInteractivo();
-
-
-
 void ImprimirMenu()
-    {
-        cout << "=== EJERCICIO ===" << endl;
-        cout << "1. Ejecutar solucion" << endl;
-        cout << "2. Ver objetivo" << endl;
-        cout << "3. Leer otro fichero" << endl;
-        cout << "0. Salir" << endl;
-        
-    }
-
-void MostrarObjetivo()
-    {
-        cout << "Leer \"notas.txt\" con ReadAllText y mostrar contenido en consola." << endl;
-    }
+{
+    cout << "=== EJERCICIO ===" << endl;
+    cout << "1. Ejecutar solucion" << endl;
+    cout << "2. Ver objetivo" << endl;
+    cout << "0. Salir" << endl;
+}
 
 void EjecutarEjercicio()
+{
+    ofstream preparar("notas.txt");
+    preparar << "Contenido de prueba" << endl;
+    preparar.close();
+
+    ifstream f("notas.txt");
+    if (!f)
     {
-        { ofstream _ofs("notas.txt"); _ofs << ("Contenido de prueba\n"); };
-            string contenido = ([](string _p){ ifstream i(_p); stringstream ss; ss<<i.rdbuf(); return ss.str(); })("notas.txt");
-            cout << contenido << endl;
+        cout << "No se pudo abrir notas.txt" << endl;
+        return;
     }
 
-void EjecutarInteractivo()
+    string linea;
+    while (getline(f, linea))
     {
-        cout << "Nombre fichero: ";
-        string? nombre = cin.get();
-        if (string.IsNullOrWhiteSpace(nombre) || !(ifstream(nombre).good()))
-        {
-            cout << "Fichero no encontrado." << endl;
-            return;
-        }
-        cout << ([](string _p){ ifstream i(_p); stringstream ss; ss<<i.rdbuf(); return ss.str(); })(nombre) << endl;
+        cout << linea << endl;
     }
-
-
+}
 
 int main()
+{
+    int opcion;
+    do
     {
-        using System.IO;
-
-        int opcion;
-
-        do
+        ImprimirMenu();
+        cout << "Introduce una opcion -> ";
+        cin >> opcion;
+        cout << endl;
+        switch (opcion)
         {
-            ImprimirMenu();
-            cout << "Introduce una opcion -> ";
-            cin >> opcion;
-
-            switch (opcion)
-            {
-                case 1:
-                    EjecutarEjercicio();
-                    break;
-                case 3:
-                    EjecutarInteractivo();
-                    break;
-                case 2:
-                    MostrarObjetivo();
-                    break;
-                case 0:
-                    cout << "Saliendo..." << endl;
-                    break;
-                default:
-                    cout << "Opcion no valida. Intenta de nuevo." << endl;
-                    break;
-            }
-
-            if (opcion != 0)
-            {
-                cout << endl;
-                cout << "Pulsa ENTER para continuar..." << endl;
-                cin.ignore(numeric_limits<streamsize>::max(), '\n');
-                cin.get();
-                // clear omitido
-            }
-        } while (opcion != 0);
-        return 0;
+            case 1:
+                EjecutarEjercicio();
+                break;
+            case 2:
+                cout << "Leer notas.txt con ifstream y mostrar el contenido en consola." << endl;
+                break;
+            case 0:
+                cout << "Saliendo..." << endl;
+                break;
+            default:
+                cout << "Opcion no valida." << endl;
+                break;
+        }
+        cout << endl;
+    } while (opcion != 0);
+    return 0;
 }

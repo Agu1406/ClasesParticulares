@@ -12,24 +12,24 @@ import java.util.Scanner;
  * @see <a href="https://www.agustinmarquez.dev">Sitio web</a>
  */
 public class Done {
-
     public static void main(String[] args) {
         Scanner teclado = new Scanner(System.in);
-        int contador = 0;
+        int numero, contador = 0;
+        boolean continuar = true;
 
-        System.out.println("Introduce enteros positivos. Un negativo termina.");
+        while (continuar) {
+            System.out.print("Introduce un número => ");
+            numero = teclado.nextInt();
+            System.out.println();
 
-        System.out.print("Número => ");
-        int n = teclado.nextInt();
-
-        while (n >= 0) {
-            if (n % 10 == 3) {
+            if (numero % 10 == 3) {
                 contador++;
+            } else if (numero < 0) {
+                System.out.println("¡Fin del bule!");
+                continuar = false;
             }
-            System.out.print("Número => ");
-            n = teclado.nextInt();
         }
 
-        System.out.println("Números terminados en 3: " + contador);
-    }
+        System.out.printf("¡Un total de %d números ingresados acababan en tres!", contador);
+    }   
 }

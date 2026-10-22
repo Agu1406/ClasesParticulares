@@ -59,29 +59,6 @@ if altura <= 2.00:
     print(f"¡El profesor mide menos de dos metros! Puede subir a los carritos chocones. \n")
 
 """
-TERCERA PARTE - Uso del if con "bool" cuando el valor es "True" o cuando es "False" usando not
-"""
-print(f"\n¡PRUEBA DEL IF CON DATOS DEL TIPO \"bool\"!\n")
-humano = True
-jirafa = False
-
-# ✅ "humano" es True, por lo tanto si se ejecuta.
-if humano:
-    print(f"¡El profesor es un ser humano! \n")
-
-# ❌ "jirafa" es False, por lo tanto no se ejecuta.
-if jirafa:
-    print(f"¡El profesor es una jirafa! \n")
-
-# ✅ "jirafa" es False, por lo tanto si se ejecuta.
-if not jirafa:
-    print(f"¡El profesor no es una jirafa! \n")
-
-# ❌ "huamno" es True, por lo tanto, no se ejecuta.
-if not humano:
-    print(f"¡El profesor no es un humano! \n")
-
-"""
 TERCERA PARTE - Uso del if con "int" cuando el valor es menor ("<"), menor igual ("<="), mayor (">") o mayor igual (">=").
 """
 print(f"\n¡PRUEBA DEL IF CON DATOS DEL TIPO \"int\"!\n")
@@ -103,5 +80,27 @@ if edad <= 28:
 if edad >= 65:
     print(f"¡El profesor es un jubilado! \n")
 
-    
+    """
+CUARTA PARTE - Uso del if con "bool" cuando el valor es "True" o cuando es "False" usando not
+"""
+print(f"\n¡PRUEBA DEL IF CON DATOS DEL TIPO \"bool\"!\n")
+humano = True
+jirafa = False
+
+# ✅ "humano" es True, por lo tanto si se ejecuta.
+if humano:
+    print(f"¡El profesor es un ser humano! \n")
+
+# ❌ "jirafa" es False, por lo tanto no se ejecuta.
+if jirafa:
+    print(f"¡El profesor es una jirafa! \n")
+
+# ✅ "jirafa" es False, por lo tanto si se ejecuta.
+if not jirafa:
+    print(f"¡El profesor no es una jirafa! \n")
+
+# ❌ "huamno" es True, por lo tanto, no se ejecuta.
+if not humano:
+    print(f"¡El profesor no es un humano! \n")
+
 print("\nFIN DEL PROGRAMA\n")

@@ -2,11 +2,11 @@
 U01 — Repaso UT5: POO, excepciones e I/O de ficheros.
 
 Esta unidad integra tres bloques: clases con estado y metodos, manejo
-de errores con try/catch, y persistencia simple en texto con File.
+de errores con try/catch, y persistencia simple en texto con ofstream/ifstream.
 
 OBJETIVO:
   - Repasar clase + constructor + metodo de instancia (Alumno).
-  - Capturar FormatException al parsear entrada invalida.
+  - Capturar invalid_argument al parsear entrada invalida con stoi.
   - Escribir y leer un registro en demo_ut5.txt.
   - Ver un flujo completo de principio a fin en un solo programa.
 
@@ -16,65 +16,36 @@ Repositorio GitHub: https://github.com/Agu1406/ClasesParticulares
 Sitio web: https://www.agustinmarquez.dev
 */
 
-
-
 #include <iostream>
 #include <string>
-#include <vector>
-#include <map>
-#include <set>
 #include <fstream>
-#include <sstream>
-#include <regex>
 #include <stdexcept>
-#include <limits>
 using namespace std;
 
-
-
-void ImprimirMenu();
-
-void DemoPooAlumno();
-
-void DemoExcepciones();
-
-void DemoFicheros();
-
-void DemoIntegrado();
-
-
-
-class Alumno {
+class Alumno
+{
 public:
+    string nombre;
+    double nota;
 
-    string Nombre { get; };
-    double Nota { get; }
-
-    Alumno(string nombre, double nota)
+    Alumno(string n, double no)
     {
-        Nombre = nombre;
-        Nota = nota;
+        nombre = n;
+        nota = no;
     }
 
-    string Mostrar()
+    void Mostrar() const
     {
-        return $"{Nombre} tiene nota {Nota}";
+        cout << nombre << " tiene nota " << nota << endl;
     }
-}
+};
 
-class CuentaMini {
-public:
-
+class CuentaMini
+{
+private:
     double saldo;
 
-    double Saldo
-    {
-        get
-        {
-            return saldo;
-        };
-    }
-
+public:
     CuentaMini(double saldoInicial)
     {
         if (saldoInicial >= 0)
@@ -85,6 +56,11 @@ public:
         {
             saldo = 0;
         }
+    }
+
+    double GetSaldo() const
+    {
+        return saldo;
     }
 
     void Depositar(double cantidad)
@@ -108,142 +84,145 @@ public:
         saldo -= cantidad;
         return true;
     }
-}
-
-
+};
 
 void ImprimirMenu()
-    {
-        cout << "=== U01 Repaso UT5 ===" << endl;
-        cout << "1. POO — clase Alumno" << endl;
-        cout << "2. Excepciones — try/catch" << endl;
-        cout << "3. Ficheros — escribir y leer" << endl;
-        cout << "4. Integrado — cuenta y log" << endl;
-        cout << "0. Salir" << endl;
-    }
+{
+    cout << "=== U01 Repaso UT5 ===" << endl;
+    cout << "1. POO — clase Alumno" << endl;
+    cout << "2. Excepciones — try/catch" << endl;
+    cout << "3. Ficheros — escribir y leer" << endl;
+    cout << "4. Integrado — cuenta y log" << endl;
+    cout << "0. Salir" << endl;
+}
 
 /*
     PRIMERA PARTE — POO: objeto Alumno con constructor y metodo Mostrar().
     */
 void DemoPooAlumno()
-    {
-        cout << "¡DEMO — Repaso POO — clase Alumno!\n" << endl;
+{
+    cout << "¡DEMO — Repaso POO — clase Alumno!\n" << endl;
 
-        Alumno alumno = new Alumno("Maria", 9);
-        cout << alumno.Mostrar() << endl;
+    Alumno alumno("Maria", 9);
+    alumno.Mostrar();
 
-        Alumno otro = new Alumno("Luis", 7);
-        cout << otro.Mostrar() << endl;
-    }
+    Alumno otro("Luis", 7);
+    otro.Mostrar();
+}
 
 /*
     SEGUNDA PARTE — Excepciones: try/catch al convertir texto a numero.
       El programa no se detiene; muestra mensaje y continua.
     */
 void DemoExcepciones()
+{
+    cout << "¡DEMO — Repaso excepciones — try/catch!\n" << endl;
+
+    string textoInvalido = "abc";
+    try
     {
-        cout << "¡DEMO — Repaso excepciones — try/catch!\n" << endl;
-
-        string textoInvalido = "abc";
-        try
-        {
-            int notaParseada = int.Parse(textoInvalido);
-            cout << "Nota parseada: " << (notaParseada) << endl;
-        }
-        catch (invalid_argument)
-        {
-            cout << $"Entrada no valida: \"{textoInvalido}\" no es un entero." << endl;
-        }
-
-        string textoValido = "8";
-        try
-        {
-            int notaOk = int.Parse(textoValido);
-            cout << "Nota parseada correctamente: " << (notaOk) << endl;
-        }
-        catch (invalid_argument)
-        {
-            cout << "Error de formato inesperado." << endl;
-        }
+        int notaParseada = stoi(textoInvalido);
+        cout << "Nota parseada: " << notaParseada << endl;
     }
+    catch (const exception& e)
+    {
+        cout << "Entrada no valida: \"" << textoInvalido << "\" no es un entero." << endl;
+        cout << e.what() << endl;
+    }
+
+    string textoValido = "8";
+    try
+    {
+        int notaOk = stoi(textoValido);
+        cout << "Nota parseada correctamente: " << notaOk << endl;
+    }
+    catch (const exception& e)
+    {
+        cout << "Error de formato inesperado: " << e.what() << endl;
+    }
+}
 
 /*
     TERCERA PARTE — Ficheros: guardar registro del alumno y leerlo.
     */
 void DemoFicheros()
+{
+    cout << "¡DEMO — Repaso ficheros — escribir y leer!\n" << endl;
+
+    Alumno alumno("Maria", 9);
+    string fichero = "demo_ut5.txt";
+
+    ofstream salida(fichero);
+    salida << "Alumno: " << alumno.nombre << " | Nota: " << alumno.nota << endl;
+    salida.close();
+    cout << "Escrito en " << fichero << ":" << endl;
+
+    ifstream entrada(fichero);
+    if (entrada)
     {
-        cout << "¡DEMO — Repaso ficheros — escribir y leer!\n" << endl;
-
-        Alumno alumno = new Alumno("Maria", 9);
-        string fichero = "demo_ut5.txt";
-        string registro = $"Alumno: {alumno.Nombre} | Nota: {alumno.Nota}\n";
-
-        { ofstream _ofs(fichero); _ofs << (registro); };
-        cout << "Escrito en " << (fichero) << ":" << endl;
-
-        if ((ifstream(fichero).good()))
+        string linea;
+        while (getline(entrada, linea))
         {
-            string contenidoLeido = ([](string _p){ ifstream i(_p); stringstream ss; ss<<i.rdbuf(); return ss.str(); })(fichero);
-            cout << contenidoLeido << endl;
-        }
-        else
-        {
-            cout << "El fichero no se encontro tras escribir." << endl;
+            cout << linea << endl;
         }
     }
+    else
+    {
+        cout << "El fichero no se encontro tras escribir." << endl;
+    }
+}
 
 /*
     CUARTA PARTE — Mini demo de encapsulacion + fichero append.
     */
 void DemoIntegrado()
-    {
-        cout << "¡DEMO — Repaso integrado — cuenta y log!\n" << endl;
+{
+    cout << "¡DEMO — Repaso integrado — cuenta y log!\n" << endl;
 
-        string fichero = "demo_ut5.txt";
-        CuentaMini cuenta = new CuentaMini(50);
-        cuenta.Depositar(25);
-        cuenta.Retirar(10);
-        cout << "Saldo cuenta mini: " << (cuenta.Saldo) << " €" << endl;
+    string fichero = "demo_ut5.txt";
+    CuentaMini cuenta(50);
+    cuenta.Depositar(25);
+    cuenta.Retirar(10);
+    cout << "Saldo cuenta mini: " << cuenta.GetSaldo() << " EUR" << endl;
 
-        { ofstream _ofs(fichero, ios::app); _ofs << ($"Log: saldo final cuenta mini = {cuenta.Saldo}\n"); };
-        cout << "Linea de log anadida al mismo fichero." << endl;
-    }
-
-
+    ofstream log(fichero, ios::app);
+    log << "Log: saldo final cuenta mini = " << cuenta.GetSaldo() << endl;
+    cout << "Linea de log anadida al mismo fichero." << endl;
+}
 
 int main()
+{
+    int opcion;
+    do
     {
-        int opcion;
-        do
+        ImprimirMenu();
+        cout << "Introduce una opcion -> ";
+        cin >> opcion;
+        cout << endl;
+
+        switch (opcion)
         {
-            ImprimirMenu();
-            cout << "Introduce una opcion -> ";
-            cin >> opcion;
-            cout << endl;
+            case 1:
+                DemoPooAlumno();
+                break;
+            case 2:
+                DemoExcepciones();
+                break;
+            case 3:
+                DemoFicheros();
+                break;
+            case 4:
+                DemoIntegrado();
+                break;
+            case 0:
+                cout << "Saliendo..." << endl;
+                break;
+            default:
+                cout << "Opcion no valida." << endl;
+                break;
+        }
 
-            switch (opcion)
-            {
-                case 1:
-                    DemoPooAlumno();
-                    break;
-                case 2:
-                    DemoExcepciones();
-                    break;
-                case 3:
-                    DemoFicheros();
-                    break;
-                case 4:
-                    DemoIntegrado();
-                    break;
-                case 0:
-                    cout << "Saliendo..." << endl;
-                    break;
-                default:
-                    cout << "Opcion no valida." << endl;
-                    break;
-            }
-
-            cout << endl;
-        } while (opcion != 0);
-        return 0;
+        cout << endl;
+    } while (opcion != 0);
+    return 0;
 }

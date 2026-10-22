@@ -1,5 +1,10 @@
 /*
-OBJETIVO: Metodo ValidarEdad que lance ArgumentException si edad < 0. Menu do-while: completar desde un menu interactivo con opcion 0 para salir.
+E09 — throw si edad < 0.
+
+ValidarEdad lanza invalid_argument si la edad es negativa.
+Se captura con catch (const invalid_argument& e) y e.what().
+
+PENDIENTE: completa los TODO.
 
 Autor: Agustin. A. Marquez. Pina
 Contacto: agu1406@outlook.es
@@ -7,92 +12,53 @@ Repositorio GitHub: https://github.com/Agu1406/ClasesParticulares
 Sitio web: https://www.agustinmarquez.dev
 */
 
-
-
 #include <iostream>
-#include <string>
-#include <vector>
-#include <map>
-#include <set>
-#include <fstream>
-#include <sstream>
-#include <regex>
 #include <stdexcept>
-#include <limits>
 using namespace std;
 
-
-
-void ImprimirMenu();
-
-void MostrarObjetivo();
-
-void EjecutarEjercicio();
-
-void ValidarEdad(int edad);
-
-
+void ValidarEdad(int edad)
+{
+    // TODO: si edad < 0, throw invalid_argument("La edad no puede ser negativa.");
+    //       si no, cout << "Edad valida: " << edad
+}
 
 void ImprimirMenu()
-    {
-        cout << "=== EJERCICIO ===" << endl;
-        cout << "1. Trabajar ejercicio" << endl;
-        cout << "2. Ver objetivo" << endl;
-        cout << "0. Salir" << endl;
-        
-    }
-
-void MostrarObjetivo()
-    {
-        cout << "Metodo ValidarEdad que lance invalid_argument si edad < 0." << endl;
-    }
+{
+    cout << "=== E09 Throw edad negativa ===" << endl;
+    cout << "1. Ejercicio" << endl;
+    cout << "0. Salir" << endl;
+}
 
 void EjecutarEjercicio()
-    {
-        // TODO: ValidarEdad(-3) en try/catch invalid_argument.
-    }
-
-void ValidarEdad(int edad)
-    {
-        // TODO: throw new invalid_argument si edad negativa.
-    }
-
-
+{
+    // TODO: try { ValidarEdad(-3); }
+    //       catch (const invalid_argument& e) { cout << e.what(); }
+}
 
 int main()
+{
+    int opcion;
+    do
     {
-        int opcion;
+        ImprimirMenu();
+        cout << "Introduce una opcion -> ";
+        cin >> opcion;
+        cout << endl;
 
-        do
+        switch (opcion)
         {
-            ImprimirMenu();
-            cout << "Introduce una opcion -> ";
-            cin >> opcion;
+            case 1:
+                EjecutarEjercicio();
+                break;
+            case 0:
+                cout << "Saliendo..." << endl;
+                break;
+            default:
+                cout << "Opcion no valida." << endl;
+                break;
+        }
 
-            switch (opcion)
-            {
-                case 1:
-                    EjecutarEjercicio();
-                    break;
-                case 2:
-                    MostrarObjetivo();
-                    break;
-                case 0:
-                    cout << "Saliendo..." << endl;
-                    break;
-                default:
-                    cout << "Opcion no valida. Intenta de nuevo." << endl;
-                    break;
-            }
-
-            if (opcion != 0)
-            {
-                cout << endl;
-                cout << "Pulsa ENTER para continuar..." << endl;
-                cin.ignore(numeric_limits<streamsize>::max(), '\n');
-                cin.get();
-                // clear omitido
-            }
-        } while (opcion != 0);
-        return 0;
+        cout << endl;
+    } while (opcion != 0);
+    return 0;
 }

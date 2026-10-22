@@ -1,6 +1,5 @@
 /*
-OBJETIVO: Clase Producto con Nombre y Precio; calcula precio con IVA (21%). Menu do-while: mantener la solucion y ejecutarla desde menu interactivo.
-SOLUCION: ver codigo.
+OBJETIVO: Clase Producto (nombre, precio); calcula el precio con IVA 21%.
 
 Autor: Agustin. A. Marquez. Pina
 Contacto: agu1406@outlook.es
@@ -8,128 +7,89 @@ Repositorio GitHub: https://github.com/Agu1406/ClasesParticulares
 Sitio web: https://www.agustinmarquez.dev
 */
 
-
-
 #include <iostream>
 #include <string>
-#include <vector>
-#include <map>
-#include <set>
-#include <fstream>
-#include <sstream>
-#include <regex>
-#include <stdexcept>
-#include <limits>
 using namespace std;
 
+class Producto
+{
+    string nombre;
+    double precio;
 
-
-void ImprimirMenu();
-
-void MostrarObjetivo();
-
-void EjecutarEjercicio();
-
-void EjecutarInteractivo();
-
-
-
-class Producto {
 public:
-
-    string Nombre { get; };
-    double Precio { get; }
-
-    Producto(string nombre, double precio)
+    Producto(string nombreInicial, double precioInicial)
     {
-        Nombre = nombre;
-        Precio = precio;
+        nombre = nombreInicial;
+        precio = precioInicial;
     }
 
-    double PrecioConIva()
+    string getNombre() const
     {
-        return Precio * 1.21;
+        return nombre;
     }
-}
 
+    double getPrecio() const
+    {
+        return precio;
+    }
 
+    void setNombre(string nuevoNombre)
+    {
+        nombre = nuevoNombre;
+    }
+
+    void setPrecio(double nuevoPrecio)
+    {
+        precio = nuevoPrecio;
+    }
+
+    double PrecioConIva() const
+    {
+        return precio * 1.21;
+    }
+};
 
 void ImprimirMenu()
-    {
-        cout << "=== EJERCICIO ===" << endl;
-        cout << "1. Ejecutar solucion" << endl;
-        cout << "2. Ver objetivo" << endl;
-        cout << "3. Calcular IVA interactivo" << endl;
-        cout << "0. Salir" << endl;
-        
-    }
-
-void MostrarObjetivo()
-    {
-        Console.WriteLine("Clase Producto con Nombre y Precio; calcula precio con IVA (21%).");
-    }
+{
+    cout << "=== EJERCICIO ===" << endl;
+    cout << "1. Ejecutar solucion" << endl;
+    cout << "2. Ver objetivo" << endl;
+    cout << "0. Salir" << endl;
+}
 
 void EjecutarEjercicio()
-    {
-        Producto producto = new Producto("Camiseta", 19.99);
-            cout << (producto.Nombre) << ": " << (producto.PrecioConIva():F2) << " EUR con IVA" << endl;
-    }
+{
+    Producto producto("Camiseta", 19.99);
 
-void EjecutarInteractivo()
-    {
-        cout << "Nombre: ";
-        string? nombre = cin.get();
-        cout << "Precio: ";
-        if (double.TryParse(string(/*TODO cin*/), out double precio))
-        {
-            Producto producto = new Producto(nombre ?? "", precio);
-            cout << (producto.Nombre) << ": " << (producto.PrecioConIva():F2) << " EUR con IVA" << endl;
-        }
-        else
-        {
-            cout << "Precio invalido." << endl;
-        }
-    }
-
-
+    cout << producto.getNombre() << " sin IVA: " << producto.getPrecio() << " EUR" << endl;
+    cout << producto.getNombre() << " con IVA: " << producto.PrecioConIva() << " EUR" << endl;
+}
 
 int main()
+{
+    int opcion;
+    do
     {
-        int opcion;
-
-        do
+        ImprimirMenu();
+        cout << "Introduce una opcion -> ";
+        cin >> opcion;
+        cout << endl;
+        switch (opcion)
         {
-            ImprimirMenu();
-            cout << "Introduce una opcion -> ";
-            cin >> opcion;
-
-            switch (opcion)
-            {
-                case 1:
-                    EjecutarEjercicio();
-                    break;
-                case 3:
-                    EjecutarInteractivo();
-                    break;
-                case 2:
-                    MostrarObjetivo();
-                    break;
-                case 0:
-                    cout << "Saliendo..." << endl;
-                    break;
-                default:
-                    cout << "Opcion no valida. Intenta de nuevo." << endl;
-                    break;
-            }
-
-            if (opcion != 0)
-            {
-                cout << endl;
-                cout << "Pulsa ENTER para continuar..." << endl;
-                cin.ignore(numeric_limits<streamsize>::max(), '\n');
-                cin.get();
-                // clear omitido
-            }
-        } while (opcion != 0);
-        return 0;
+            case 1:
+                EjecutarEjercicio();
+                break;
+            case 2:
+                cout << "Producto (nombre, precio): calcula el precio con IVA 21%." << endl;
+                break;
+            case 0:
+                cout << "Saliendo..." << endl;
+                break;
+            default:
+                cout << "Opcion no valida." << endl;
+                break;
+        }
+        cout << endl;
+    } while (opcion != 0);
+    return 0;
 }

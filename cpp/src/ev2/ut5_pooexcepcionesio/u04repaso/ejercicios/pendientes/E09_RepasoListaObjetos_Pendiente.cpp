@@ -1,5 +1,5 @@
 /*
-OBJETIVO: Repaso: List<Persona> con varias personas; recorrer y mostrar. Menu do-while: completar desde un menu interactivo con opcion 0 para salir.
+OBJETIVO: Repaso: vector<Persona> con varias personas; recorrer y mostrar.
 
 Autor: Agustin. A. Marquez. Pina
 Contacto: agu1406@outlook.es
@@ -7,95 +7,57 @@ Repositorio GitHub: https://github.com/Agu1406/ClasesParticulares
 Sitio web: https://www.agustinmarquez.dev
 */
 
-
-
 #include <iostream>
 #include <string>
 #include <vector>
-#include <map>
-#include <set>
-#include <fstream>
-#include <sstream>
-#include <regex>
-#include <stdexcept>
-#include <limits>
 using namespace std;
 
-
-
-void ImprimirMenu();
-
-void MostrarObjetivo();
-
-void EjecutarEjercicio();
-
-
-
-class Persona {
+class Persona
+{
 public:
-
-    // TODO: Nombre y Edad.
+    // TODO: nombre (string) y edad (int)
+    // TODO: constructor Persona(string n, int e)
 };
 
-
-
 void ImprimirMenu()
-    {
-        cout << "=== EJERCICIO ===" << endl;
-        cout << "1. Trabajar ejercicio" << endl;
-        cout << "2. Ver objetivo" << endl;
-        cout << "0. Salir" << endl;
-        
-    }
-
-void MostrarObjetivo()
-    {
-        Console.WriteLine("Repaso: vector<Persona> con varias personas; recorrer y mostrar.");
-    }
+{
+    cout << "=== EJERCICIO ===" << endl;
+    cout << "1. Trabajar ejercicio" << endl;
+    cout << "2. Ver objetivo" << endl;
+    cout << "0. Salir" << endl;
+}
 
 void EjecutarEjercicio()
-    {
-        // TODO: List con 3 Persona; foreach mostrar Nombre y Edad.
-    }
-
-
+{
+    // TODO: vector con 3 Persona (Ana 20, Luis 25, Sara 22)
+    // TODO: recorre con for y muestra nombre y edad
+}
 
 int main()
+{
+    int opcion;
+    do
     {
-        using System.Collections.Generic;
-
-        int opcion;
-
-        do
+        ImprimirMenu();
+        cout << "Introduce una opcion -> ";
+        cin >> opcion;
+        cout << endl;
+        switch (opcion)
         {
-            ImprimirMenu();
-            cout << "Introduce una opcion -> ";
-            cin >> opcion;
-
-            switch (opcion)
-            {
-                case 1:
-                    EjecutarEjercicio();
-                    break;
-                case 2:
-                    MostrarObjetivo();
-                    break;
-                case 0:
-                    cout << "Saliendo..." << endl;
-                    break;
-                default:
-                    cout << "Opcion no valida. Intenta de nuevo." << endl;
-                    break;
-            }
-
-            if (opcion != 0)
-            {
-                cout << endl;
-                cout << "Pulsa ENTER para continuar..." << endl;
-                cin.ignore(numeric_limits<streamsize>::max(), '\n');
-                cin.get();
-                // clear omitido
-            }
-        } while (opcion != 0);
-        return 0;
+            case 1:
+                EjecutarEjercicio();
+                break;
+            case 2:
+                cout << "Repaso: vector<Persona> con varias personas; recorrer y mostrar." << endl;
+                break;
+            case 0:
+                cout << "Saliendo..." << endl;
+                break;
+            default:
+                cout << "Opcion no valida." << endl;
+                break;
+        }
+        cout << endl;
+    } while (opcion != 0);
+    return 0;
 }

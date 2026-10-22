@@ -1,6 +1,10 @@
 /*
-OBJETIVO: int.TryParse seguro; si falla muestra mensaje, si ok muestra el numero. Menu do-while: mantener la solucion y ejecutarla desde menu interactivo.
-SOLUCION: ver codigo.
+E01 — Parse seguro (stoi + try/catch).
+
+Si stoi falla muestra un mensaje; si ok muestra el numero.
+En C++ no existe TryParse: se usa try { n = stoi(texto); } catch.
+
+RESUELTO.
 
 Autor: Agustin. A. Marquez. Pina
 Contacto: agu1406@outlook.es
@@ -8,95 +12,59 @@ Repositorio GitHub: https://github.com/Agu1406/ClasesParticulares
 Sitio web: https://www.agustinmarquez.dev
 */
 
-
-
 #include <iostream>
 #include <string>
-#include <vector>
-#include <map>
-#include <set>
-#include <fstream>
-#include <sstream>
-#include <regex>
 #include <stdexcept>
-#include <limits>
 using namespace std;
 
-
-
-void ImprimirMenu();
-
-void MostrarObjetivo();
-
-void EjecutarEjercicio();
-
-
-
 void ImprimirMenu()
-    {
-        cout << "=== EJERCICIO ===" << endl;
-        cout << "1. Ejecutar solucion" << endl;
-        cout << "2. Ver objetivo" << endl;
-        cout << "0. Salir" << endl;
-        
-    }
-
-void MostrarObjetivo()
-    {
-        Console.WriteLine("int.TryParse seguro; si falla muestra mensaje, si ok muestra el numero.");
-    }
+{
+    cout << "=== E01 Parse seguro ===" << endl;
+    cout << "1. Ejercicio" << endl;
+    cout << "0. Salir" << endl;
+}
 
 void EjecutarEjercicio()
+{
+    cout << "Introduce un entero: ";
+    string texto;
+    cin >> texto;
+
+    try
     {
-        cout << "Introduce un entero: ";
-            string? texto = cin.get();
-
-            if (int.TryParse(texto, out int numero))
-            {
-                cout << "Numero valido: " << (numero) << endl;
-            }
-            else
-            {
-                cout << "Entrada invalida." << endl;
-            }
+        int numero = stoi(texto);
+        cout << "Numero valido: " << numero << endl;
     }
-
-
+    catch (const exception&)
+    {
+        cout << "Entrada invalida." << endl;
+    }
+}
 
 int main()
+{
+    int opcion;
+    do
     {
-        int opcion;
+        ImprimirMenu();
+        cout << "Introduce una opcion -> ";
+        cin >> opcion;
+        cout << endl;
 
-        do
+        switch (opcion)
         {
-            ImprimirMenu();
-            cout << "Introduce una opcion -> ";
-            cin >> opcion;
+            case 1:
+                EjecutarEjercicio();
+                break;
+            case 0:
+                cout << "Saliendo..." << endl;
+                break;
+            default:
+                cout << "Opcion no valida." << endl;
+                break;
+        }
 
-            switch (opcion)
-            {
-                case 1:
-                    EjecutarEjercicio();
-                    break;
-                case 2:
-                    MostrarObjetivo();
-                    break;
-                case 0:
-                    cout << "Saliendo..." << endl;
-                    break;
-                default:
-                    cout << "Opcion no valida. Intenta de nuevo." << endl;
-                    break;
-            }
-
-            if (opcion != 0)
-            {
-                cout << endl;
-                cout << "Pulsa ENTER para continuar..." << endl;
-                cin.ignore(numeric_limits<streamsize>::max(), '\n');
-                cin.get();
-                // clear omitido
-            }
-        } while (opcion != 0);
-        return 0;
+        cout << endl;
+    } while (opcion != 0);
+    return 0;
 }

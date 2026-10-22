@@ -1,5 +1,5 @@
 /*
-OBJETIVO: Repaso: clase Rectangulo con propiedades Ancho/Alto y area calculada. Menu do-while: mantener la solucion y ejecutarla desde menu interactivo.
+OBJETIVO: Repaso: clase Rectangulo con ancho, alto y area calculada.
 SOLUCION: ver codigo.
 
 Autor: Agustin. A. Marquez. Pina
@@ -8,112 +8,78 @@ Repositorio GitHub: https://github.com/Agu1406/ClasesParticulares
 Sitio web: https://www.agustinmarquez.dev
 */
 
-
-
 #include <iostream>
-#include <string>
-#include <vector>
-#include <map>
-#include <set>
-#include <fstream>
-#include <sstream>
-#include <regex>
-#include <stdexcept>
-#include <limits>
 using namespace std;
 
+class Rectangulo
+{
+private:
+    double ancho;
+    double alto;
 
-
-void ImprimirMenu();
-
-void MostrarObjetivo();
-
-void EjecutarEjercicio();
-
-void EjecutarInteractivo();
-
-
-
-class Rectangulo {
 public:
+    Rectangulo(double a, double h)
+    {
+        ancho = a;
+        alto = h;
+    }
 
-    double Ancho;
-    double Alto;
-    double Area => Ancho * Alto;
+    double GetAncho() const
+    {
+        return ancho;
+    }
+
+    double GetAlto() const
+    {
+        return alto;
+    }
+
+    double Area() const
+    {
+        return ancho * alto;
+    }
 };
 
-
-
 void ImprimirMenu()
-    {
-        cout << "=== EJERCICIO ===" << endl;
-        cout << "1. Ejecutar solucion" << endl;
-        cout << "2. Ver objetivo" << endl;
-        cout << "3. Calcular con otros valores" << endl;
-        cout << "0. Salir" << endl;
-        
-    }
-
-void MostrarObjetivo()
-    {
-        cout << "Repaso: clase Rectangulo con propiedades Ancho/Alto y area calculada." << endl;
-    }
+{
+    cout << "=== EJERCICIO ===" << endl;
+    cout << "1. Ejecutar solucion" << endl;
+    cout << "2. Ver objetivo" << endl;
+    cout << "0. Salir" << endl;
+}
 
 void EjecutarEjercicio()
-    {
-        Rectangulo r = new Rectangulo { Ancho = 6, Alto = 4 };
-            cout << "Ancho=" << (r.Ancho) << ", Alto=" << (r.Alto) << ", Area=" << (r.Area) << endl;
-    }
-
-void EjecutarInteractivo()
-    {
-        cout << "Ancho: ";
-        double.TryParse(string(/*TODO cin*/), out double ancho);
-        cout << "Alto: ";
-        double.TryParse(string(/*TODO cin*/), out double alto);
-        Rectangulo r = new Rectangulo { Ancho = ancho, Alto = alto };
-        cout << "Ancho=" << (r.Ancho) << ", Alto=" << (r.Alto) << ", Area=" << (r.Area) << endl;
-    }
-
-
+{
+    Rectangulo r(6, 4);
+    cout << "Ancho=" << r.GetAncho() << ", Alto=" << r.GetAlto()
+         << ", Area=" << r.Area() << endl;
+}
 
 int main()
+{
+    int opcion;
+    do
     {
-        int opcion;
-
-        do
+        ImprimirMenu();
+        cout << "Introduce una opcion -> ";
+        cin >> opcion;
+        cout << endl;
+        switch (opcion)
         {
-            ImprimirMenu();
-            cout << "Introduce una opcion -> ";
-            cin >> opcion;
-
-            switch (opcion)
-            {
-                case 1:
-                    EjecutarEjercicio();
-                    break;
-                case 3:
-                    EjecutarInteractivo();
-                    break;
-                case 2:
-                    MostrarObjetivo();
-                    break;
-                case 0:
-                    cout << "Saliendo..." << endl;
-                    break;
-                default:
-                    cout << "Opcion no valida. Intenta de nuevo." << endl;
-                    break;
-            }
-
-            if (opcion != 0)
-            {
-                cout << endl;
-                cout << "Pulsa ENTER para continuar..." << endl;
-                cin.ignore(numeric_limits<streamsize>::max(), '\n');
-                cin.get();
-                // clear omitido
-            }
-        } while (opcion != 0);
-        return 0;
+            case 1:
+                EjecutarEjercicio();
+                break;
+            case 2:
+                cout << "Repaso: clase Rectangulo con ancho, alto y area calculada." << endl;
+                break;
+            case 0:
+                cout << "Saliendo..." << endl;
+                break;
+            default:
+                cout << "Opcion no valida." << endl;
+                break;
+        }
+        cout << endl;
+    } while (opcion != 0);
+    return 0;
 }

@@ -1,6 +1,5 @@
 /*
-OBJETIVO: Clase Libro con constructor (titulo, autor); crea objeto y muestralo. Menu do-while: mantener la solucion y ejecutarla desde menu interactivo.
-SOLUCION: ver codigo.
+OBJETIVO: Clase Libro con constructor (titulo, autor); crea un objeto y muestralo.
 
 Autor: Agustin. A. Marquez. Pina
 Contacto: agu1406@outlook.es
@@ -8,117 +7,73 @@ Repositorio GitHub: https://github.com/Agu1406/ClasesParticulares
 Sitio web: https://www.agustinmarquez.dev
 */
 
-
-
 #include <iostream>
 #include <string>
-#include <vector>
-#include <map>
-#include <set>
-#include <fstream>
-#include <sstream>
-#include <regex>
-#include <stdexcept>
-#include <limits>
 using namespace std;
 
+class Libro
+{
+private:
+    string titulo;
+    string autor;
 
-
-void ImprimirMenu();
-
-void MostrarObjetivo();
-
-void EjecutarEjercicio();
-
-void EjecutarInteractivo();
-
-
-
-class Libro {
 public:
-
-    string Titulo { get; };
-    string Autor { get; }
-
-    Libro(string titulo, string autor)
+    Libro(string t, string a)
     {
-        Titulo = titulo;
-        Autor = autor;
+        titulo = t;
+        autor = a;
     }
-}
 
+    string GetTitulo() const
+    {
+        return titulo;
+    }
 
+    string GetAutor() const
+    {
+        return autor;
+    }
+};
 
 void ImprimirMenu()
-    {
-        cout << "=== EJERCICIO ===" << endl;
-        cout << "1. Ejecutar solucion" << endl;
-        cout << "2. Ver objetivo" << endl;
-        cout << "3. Crear libro interactivo" << endl;
-        cout << "0. Salir" << endl;
-        
-    }
-
-void MostrarObjetivo()
-    {
-        cout << "Clase Libro con constructor (titulo, autor << endl; crea objeto y muestralo.");
-    }
+{
+    cout << "=== EJERCICIO ===" << endl;
+    cout << "1. Ejecutar solucion" << endl;
+    cout << "2. Ver objetivo" << endl;
+    cout << "0. Salir" << endl;
+}
 
 void EjecutarEjercicio()
-    {
-        Libro libro = new Libro("El principito", "Antoine de Saint-Exupery");
-            cout << (libro.Titulo) << " - " << (libro.Autor) << endl;
-    }
-
-void EjecutarInteractivo()
-    {
-        cout << "Titulo: ";
-        string? titulo = cin.get();
-        cout << "Autor: ";
-        string? autor = cin.get();
-        Libro libro = new Libro(titulo ?? "", autor ?? "");
-        cout << (libro.Titulo) << " - " << (libro.Autor) << endl;
-    }
-
-
+{
+    Libro libro("El principito", "Antoine de Saint-Exupery");
+    cout << libro.GetTitulo() << " - " << libro.GetAutor() << endl;
+}
 
 int main()
+{
+    int opcion;
+    do
     {
-        int opcion;
-
-        do
+        ImprimirMenu();
+        cout << "Introduce una opcion -> ";
+        cin >> opcion;
+        cout << endl;
+        switch (opcion)
         {
-            ImprimirMenu();
-            cout << "Introduce una opcion -> ";
-            cin >> opcion;
-
-            switch (opcion)
-            {
-                case 1:
-                    EjecutarEjercicio();
-                    break;
-                case 3:
-                    EjecutarInteractivo();
-                    break;
-                case 2:
-                    MostrarObjetivo();
-                    break;
-                case 0:
-                    cout << "Saliendo..." << endl;
-                    break;
-                default:
-                    cout << "Opcion no valida. Intenta de nuevo." << endl;
-                    break;
-            }
-
-            if (opcion != 0)
-            {
-                cout << endl;
-                cout << "Pulsa ENTER para continuar..." << endl;
-                cin.ignore(numeric_limits<streamsize>::max(), '\n');
-                cin.get();
-                // clear omitido
-            }
-        } while (opcion != 0);
-        return 0;
+            case 1:
+                EjecutarEjercicio();
+                break;
+            case 2:
+                cout << "Clase Libro con constructor (titulo, autor); crea un objeto y muestralo." << endl;
+                break;
+            case 0:
+                cout << "Saliendo..." << endl;
+                break;
+            default:
+                cout << "Opcion no valida." << endl;
+                break;
+        }
+        cout << endl;
+    } while (opcion != 0);
+    return 0;
 }
