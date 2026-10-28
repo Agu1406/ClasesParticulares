@@ -17,6 +17,7 @@ import { useParams, Link } from "react-router-dom";
 import ReactMarkdown from "react-markdown";
 import remarkGfm from "remark-gfm";
 import { getLessonById, getLessonsByLanguage } from "../data/lessons";
+import { getSubjectByLanguage } from "../data/subjects";
 import CodeBlock from "../components/CodeBlock";
 
 function LessonPage() {
@@ -41,6 +42,10 @@ function LessonPage() {
 
     const languageLessons = getLessonsByLanguage(lesson.languageId);
     const nextLesson = languageLessons.find((l) => l.part === lesson.part + 1);
+    const subject = getSubjectByLanguage(lesson.languageId);
+    const sourceHref = lesson.sourcePath
+        ? `https://github.com/Agu1406/ClasesParticulares/${lesson.sourcePath.includes(".") ? "blob" : "tree"}/main/${lesson.sourcePath}`
+        : undefined;
 
     return (
         <div className="bg-lavender p-4 sm:p-6 md:p-8">
@@ -56,6 +61,27 @@ function LessonPage() {
                     <p className="text-slate-grey mt-4 leading-relaxed">
                         {lesson.description}
                     </p>
+                    {lesson.level && (
+                        <p className="text-xs font-bold uppercase tracking-wider text-scarlet mt-3">
+                            {lesson.level}
+                        </p>
+                    )}
+                    {lesson.examNote && (
+                        <p className="mt-4 bg-fawn/40 border border-fawn rounded-2xl p-4 text-sm text-evergreen">
+                            <strong>Para el examen. </strong>
+                            {lesson.examNote}
+                        </p>
+                    )}
+                    {sourceHref && (
+                        <a
+                            href={sourceHref}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="inline-block mt-3 text-sm text-evergreen underline"
+                        >
+                            Ver el material de clase en el repositorio
+                        </a>
+                    )}
                 </div>
 
                 {/* Barra de progreso (segmentos por cada parte) */}
@@ -87,6 +113,7 @@ function LessonPage() {
                                     remarkPlugins={[remarkGfm]}
                                     components={{
                                         code({ node, className, children, ...props }) {
+                                            void node;
                                             const isBlock = Boolean(className?.startsWith("language-"));
                                             if (!isBlock) {
                                                 return (
@@ -191,6 +218,23 @@ function LessonPage() {
                         </a>
                     )}
                 </section>
+
+                {subject && (
+                    <div className="flex flex-col sm:flex-row gap-3 mt-6">
+                        <Link
+                            to={`${subject.quizPath}?modo=estudio`}
+                            className="flex-1 text-center bg-white border border-evergreen/20 text-evergreen font-semibold py-3 px-4 rounded-2xl"
+                        >
+                            Simulacro en modo estudio
+                        </Link>
+                        <Link
+                            to={`${subject.quizPath}?modo=examen`}
+                            className="flex-1 text-center bg-scarlet text-white font-semibold py-3 px-4 rounded-2xl"
+                        >
+                            Modo examen
+                        </Link>
+                    </div>
+                )}
 
                 {/* Navegación: Volver al índice y Siguiente lección */}
                 <footer className="pt-10 pb-4">

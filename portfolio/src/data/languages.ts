@@ -51,7 +51,7 @@ export const languages: Language[] = [
         id: "c",
         name: "C",
         icon: cIcon,
-        description: "Programación estructurada, estructuras de datos, pilas, colas, registros, memoria dinámica",
+        description: "De cero a bucles: programa, tipos, operadores, entrada, condicionales y for / while / do-while",
         path: "/c"
     },
     {

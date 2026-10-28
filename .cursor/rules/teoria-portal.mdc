@@ -1,0 +1,53 @@
+---
+description: Cómo añadir estaciones de teoría al portal para que queden como las de C
+globs: portfolio/**/*.{md,ts,tsx}
+alwaysApply: false
+---
+
+# Estaciones de teoría
+
+Hazlo como C (`portfolio/src/content/lessons/c/` y `data/subjects.ts`). La forma de la página imita la línea de una asignatura en apuntesdam.com: número, nivel, resumen, simulacro, chuleta, qué aprendes, cómo es el examen, cómo estudiar y FAQ. Los colores son los del portal.
+
+## Archivo de estación
+
+`portfolio/src/content/lessons/{languageId}/{languageId}-{part}-{slug}.md`
+
+```yaml
+---
+id: c-1
+languageId: c
+title: Título corto
+description: Una frase que se ve en la estación, sin dos puntos sueltos.
+part: 1
+totalParts: 7
+roadmapPhase: fundamentos
+level: Principiante
+examNote: Qué cae de esta estación. Sin dos puntos, o entre comillas.
+sourcePath: c/src/ev1/.../U01_HolaMundo.c
+sectionIcons:
+  - menu_book
+exercises:
+  - id: e01
+    title: Enunciado breve.
+    fileUrl: "https://github.com/Agu1406/ClasesParticulares/blob/main/..."
+    solutionUrl: "https://github.com/Agu1406/ClasesParticulares/blob/main/..."
+---
+```
+
+- `fileUrl` y `solutionUrl` van entre comillas (el `https:` rompe el YAML si no).
+- El cuerpo son secciones `## Título` y bloques ` ```c `.
+- Una cita `> Para el examen:` cierra lo que hay que memorizar.
+- `sourcePath` es la ruta real dentro del repo. Si es carpeta, no lleva extensión.
+- `totalParts` es el mismo número en todas las estaciones de esa asignatura.
+- El orden de `part` sigue el temario del módulo (`c/src/ev1/README.md` en C), no un orden inventado.
+
+## Registro
+
+1. Import `?raw` y añádelo al array `sources` de `loadLessonsFromMarkdown.ts`.
+2. Si la asignatura es nueva, crea su ficha en `data/subjects.ts` (`getSubjectByLanguage` la engancha sola) y sus fases en `data/roadmapPhases.ts`.
+3. `quizPath` de la ficha apunta a `/examen/{id}` del banco de `tests/`.
+4. No rellenes `lessons.ts` a mano: ese array es solo el respaldo de Java.
+
+## Página
+
+`LanguagePage` ya pinta `SubjectOverview` cuando hay ficha. No crees `CPage.tsx`. En la lección, `examNote`, `level` y el enlace al repo salen solos.

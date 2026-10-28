@@ -38,6 +38,12 @@ function Header() {
                         <Link to="/java" className="hover:text-fawn transition-colors">
                             Java
                         </Link>
+                        <Link to="/c" className="hover:text-fawn transition-colors">
+                            C
+                        </Link>
+                        <Link to="/examen/c-basico-bucles?modo=estudio" className="hover:text-fawn transition-colors">
+                            Examen C
+                        </Link>
                         <Link to="/php" className="hover:text-fawn transition-colors">
                             PHP
                         </Link>
@@ -77,6 +83,20 @@ function Header() {
                             onClick={closeMenu}
                         >
                             Java
+                        </Link>
+                        <Link
+                            to="/c"
+                            className="py-3 px-4 rounded-lg hover:bg-evergreen-light hover:text-fawn transition-colors"
+                            onClick={closeMenu}
+                        >
+                            C
+                        </Link>
+                        <Link
+                            to="/examen/c-basico-bucles?modo=estudio"
+                            className="py-3 px-4 rounded-lg hover:bg-evergreen-light hover:text-fawn transition-colors"
+                            onClick={closeMenu}
+                        >
+                            Examen C
                         </Link>
                         <Link
                             to="/php"

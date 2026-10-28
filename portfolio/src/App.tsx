@@ -9,6 +9,7 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import HomePage from "./pages/HomePage";
 import LessonPage from "./pages/LessonPage";
 import LanguagePage from "./pages/LanguagePage";
+import QuizPage from "./pages/QuizPage";
 import Header from "./components/Header";
 import Footer from "./components/Footer";
 /**
@@ -40,6 +41,7 @@ function App() {
         <Route path="/" element={<HomePage />} />
         {/* Ruta dinámica para lecciones: /lesson/java-1, /lesson/java-2, etc. */}
         <Route path="/lesson/:lessonId" element={<LessonPage />} />
+        <Route path="/examen/:quizId" element={<QuizPage />} />
         {/* Ruta dinámica por lenguaje: /java, /python, /c, etc. Una sola LanguagePage para todos. */}
         <Route path="/:languageId" element={<LanguagePage />} />
       </Routes>

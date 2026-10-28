@@ -1,0 +1,35 @@
+---
+description: Criterio único para teoría del portal y tests interactivos. Léelo antes de añadir una asignatura, una estación o un examen.
+alwaysApply: true
+---
+
+# Teoría y tests: una sola forma
+
+El portal (`portfolio/`) y los tests (`tests/`) se construyen igual en todas las asignaturas. No inventes otro layout, otro motor de test ni otro sitio para las preguntas.
+
+## Teoría (portal)
+
+Referencia de estructura: una asignatura de [apuntesdam.com](https://apuntesdam.com/) (estaciones numeradas, nivel, «qué aprendes», «cómo es el examen», «cómo estudiar», FAQ, chuleta y simulacro). La paleta sigue siendo la del portal (evergreen, scarlet, fawn, lavender). No copies textos ni estilos de esa web.
+
+1. El contenido vive en `portfolio/src/content/lessons/{languageId}/{languageId}-N-slug.md`, con frontmatter. El cuerpo se parte por `## `.
+2. Registra el `.md` en `portfolio/src/data/loadLessonsFromMarkdown.ts`. Esa función es la fuente que publica `lessons`.
+3. La página del lenguaje (`/:languageId`) usa `SubjectOverview` si hay ficha en `data/subjects.ts`: estaciones en el orden del temario del repo, no un grid suelto. Sin ficha, se queda el grid de Java.
+4. Cada estación enlaza el `.c` o la carpeta de clase (`sourcePath`) y los ejercicios reales (`fileUrl` / `solutionUrl` entre comillas en el YAML).
+5. `level` y `examNote` salen en la lección. El detalle del formato está en `.cursor/rules/teoria-portal.mdc`.
+
+## Tests
+
+El motor es el de Java/JavaFX: `tests/js/test.js` (examen) y `tests/js/test-estudio.js` (estudio). No lo copies ni lo reescribas.
+
+1. Un banco `tests/js/questions/{slug}.js` con `const questions = [...]` (id, question, options de 4, correct 0-3, explanation, code opcional).
+2. Dos HTML en `tests/tests/{asignatura}/` que carguen ese banco y uno de los dos motores. Misma estructura que `tests/tests/c/`.
+3. Una tarjeta de cada modo en `tests/index.html`.
+4. El portal no duplica el banco: `portfolio/src/data/quizzes/loadClassicBank.ts` lee el mismo `.js`. La ruta es `/examen/{id}`.
+5. Las preguntas salen del temario del repo (objetivos de los `.c` de `teoria/`), no de un resumen genérico. El procedimiento está en `.cursor/rules/tests-interactivos.mdc`.
+
+## Qué no hacer
+
+- Otro framework de quiz, otro JSON paralelo o preguntas distintas en React y en HTML.
+- Una página de lenguaje con tarjetas sueltas cuando ya existe ficha de asignatura.
+- Enlazar ejercicios que no estén en el árbol del lenguaje.
+- Ampliar un examen por encima del corte que pida el enunciado (en C, «hasta bucles» se queda en `u03bucles`).

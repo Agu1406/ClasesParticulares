@@ -92,6 +92,13 @@ int main(void) {
 - **EV1:** no se enseña `malloc`, ficheros ni punteros avanzados. Sí hay un primer contacto con `&` / `*` al pasar structs y en `scanf`.
 - Política de texto: ejemplos en **ASCII**. UTF-8 se explica en `U08_CadenasYUtf8.c`, no se exige en ejercicios.
 
+## Examen sorpresa (hasta bucles)
+
+El corte es UT1 y UT2 hasta `u03bucles`. No entran funciones, cadenas ni struct.
+
+- Temario en el portal: página **C** (siete estaciones, chuleta y simulacro).
+- Mismo banco en HTML: `tests/tests/c/` (modo examen y modo estudio, 24 preguntas).
+
 ## Contacto
 
 agu1406@outlook.es

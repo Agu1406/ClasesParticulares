@@ -11,6 +11,10 @@ export interface LessonExerciseFrontmatter {
     fileFolder?: string;
     /** Subcarpeta para soluciones (ej. "strings/resueltos"). */
     solutionFolder?: string;
+    /** Enlace directo al enunciado o al .c pendiente. Gana a fileFolder. */
+    fileUrl?: string;
+    /** Enlace directo a la solución. Gana a solutionFolder. */
+    solutionUrl?: string;
 }
 
 export interface LessonFrontmatter {
@@ -27,5 +31,11 @@ export interface LessonFrontmatter {
     pdfSource?: "general" | "usc";
     /** Iconos por sección, por orden (opcional). */
     sectionIcons?: string[];
+    /** Nivel visible en la estación (Principiante, Intermedio…). */
+    level?: string;
+    /** Qué suele caer de esta estación en el examen. */
+    examNote?: string;
+    /** Ruta del material de clase dentro del repo. */
+    sourcePath?: string;
     exercises: LessonExerciseFrontmatter[];
 }

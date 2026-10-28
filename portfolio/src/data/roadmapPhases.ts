@@ -22,8 +22,15 @@ const JAVA_PHASES: RoadmapPhase[] = [
     { id: "poo", label: "EV1: Conceptos básicos de la POO", order: 3 },
 ];
 
+/** C, EV1, hasta bucles: el tramo del examen sorpresa. */
+const C_PHASES: RoadmapPhase[] = [
+    { id: "fundamentos", label: "UT1: programa, tipos y entrada", order: 1 },
+    { id: "control", label: "UT2: operadores, condicionales y bucles", order: 2 },
+];
+
 const PHASES_BY_LANGUAGE: Record<string, RoadmapPhase[]> = {
     java: JAVA_PHASES,
+    c: C_PHASES,
 };
 
 /**
@@ -37,7 +44,8 @@ export function getOrderedPhasesForLanguage(languageId: string): RoadmapPhase[] 
 /**
  * Devuelve la etiqueta de una fase por su id y lenguaje (opcional).
  */
-export function getPhaseLabel(phaseId: string, _languageId?: string): string {
-    const phase = JAVA_PHASES.find((p) => p.id === phaseId);
+export function getPhaseLabel(phaseId: string, languageId?: string): string {
+    const phases = languageId ? getOrderedPhasesForLanguage(languageId) : JAVA_PHASES;
+    const phase = phases.find((p) => p.id === phaseId);
     return phase?.label ?? phaseId;
 }

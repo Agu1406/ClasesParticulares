@@ -18,13 +18,16 @@
 import { useParams, Link } from "react-router-dom";
 import { getLanguageById } from "../data/languages";
 import { getLessonsByLanguage } from "../data/lessons";
+import { getSubjectByLanguage } from "../data/subjects";
 import LessonsGrid from "../components/LessonsGrid";
 import RoadmapSection from "../components/RoadmapSection";
+import SubjectOverview from "../components/SubjectOverview";
 
 function LanguagePage() {
     const { languageId } = useParams<{ languageId: string }>();
     const language = languageId ? getLanguageById(languageId) : null;
     const lessons = languageId ? getLessonsByLanguage(languageId) : [];
+    const subject = languageId ? getSubjectByLanguage(languageId) : undefined;
 
     if (!language) {
         return (
@@ -39,6 +42,10 @@ function LanguagePage() {
                 </div>
             </div>
         );
+    }
+
+    if (subject) {
+        return <SubjectOverview language={language} lessons={lessons} subject={subject} />;
     }
 
     return (

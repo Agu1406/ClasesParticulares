@@ -15,9 +15,13 @@ import {
     javaUscDocUrl,
     javaExercisesTreeUrl,
 } from "./javaRepo";
+import { loadLessonsFromMarkdown } from "./loadLessonsFromMarkdown";
 
-/** Listado estático de lecciones (Java). */
-export const lessons: Lesson[] = [
+/**
+ * Respaldo de Java si los Markdown de content/lessons no llegan a cargarse.
+ * Lo que ve el portal es `lessons`, más abajo, leído de esos Markdown.
+ */
+const javaLessonsFallback: Lesson[] = [
     {
         id: "java-1",
         languageId: "java",
@@ -419,6 +423,12 @@ export const lessons: Lesson[] = [
         },
     },
 ];
+
+const markdownLessons = loadLessonsFromMarkdown();
+
+/** Lecciones publicadas. Salen de content/lessons; el array de arriba es el respaldo. */
+export const lessons: Lesson[] =
+    markdownLessons.length > 0 ? markdownLessons : javaLessonsFallback;
 
 /**
  * Obtiene todas las lecciones de un lenguaje dado.

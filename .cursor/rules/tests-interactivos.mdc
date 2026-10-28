@@ -1,0 +1,56 @@
+---
+description: Cómo añadir un test de examen y de estudio sin forkear el motor
+globs: tests/**/*
+alwaysApply: false
+---
+
+# Tests interactivos
+
+El sistema es el de Java y JavaFX. Motor:
+
+- Examen (sin feedback hasta el final): `tests/js/test.js`
+- Estudio (feedback al marcar): `tests/js/test-estudio.js`
+- Estilos: `tests/css/styles.css` y `css/index.css` en la raíz del repo
+- Catálogo: `tests/index.html`
+
+No dupliques esas clases. Un test nuevo son un banco y dos HTML.
+
+## Banco
+
+`tests/js/questions/{slug}.js`
+
+```javascript
+const questions = [
+    {
+        id: 1,
+        question: "¿Qué imprime?",
+        options: ["A", "B", "C", "D"],
+        correct: 0,
+        explanation: "Por qué, con el vocabulario de clase.",
+        code: "printf(\"%d\\n\", 1);"
+    }
+];
+```
+
+- Cuatro opciones. `correct` es el índice, de 0 a 3.
+- `id` correlativo. El motor baraja; no hace falta desordenar el archivo.
+- `code` es opcional y es texto, no HTML.
+- Las preguntas salen de los objetivos de `teoria/` del módulo. Incluye traza («qué imprime») y concepto. No rellenes con cuentas sueltas que no estén en el temario.
+- Corta donde corte el encargo. En C, «hasta bucles» llega a `u03bucles` y no incluye `u04metodos`.
+
+## HTML
+
+Copia `tests/tests/c/test-c-basico-bucles.html` y la variante `-estudio.html`.
+
+- Examen carga `../../js/test.js`. Estudio carga `../../js/test-estudio.js` y deja el `div#feedback-area`.
+- Los dos cargan el mismo banco.
+- `aria-valuemax` y los textos «de N» usan el número real de preguntas. El motor lo recalcula al arrancar.
+- Cancelar vuelve a `../../index.html` (ya lo hace el motor).
+
+En `tests/index.html`, dos tarjetas con `data-mode="examen"` y `data-mode="estudio"`.
+
+## Portal
+
+Añade el `import ?raw` en `portfolio/src/data/quizzes/loadClassicBank.ts` y una entrada de `quizzes` con el mismo `id` que la ruta `/examen/{id}`. No vuelvas a escribir las preguntas en TypeScript.
+
+`data/subjects.ts` debe apuntar `quizPath` a esa ruta para que la asignatura enseñe el simulacro.

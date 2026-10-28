@@ -27,20 +27,20 @@ dist-ssr
 *.svg
 
 # Incluir los SVG que me interesan de los lenguajes que imparto.
-!src/assets/icons/java/
-!src/assets/icons/python/
-!src/assets/icons/c/
-!src/assets/icons/cplusplus/
-!src/assets/icons/csharp/
-!src/assets/icons/php/
-!src/assets/icons/mysql/
-!src/assets/icons/kotlin/
-!src/assets/icons/typescript/
-!src/assets/icons/javascript/
-!src/assets/icons/html5/
-!src/assets/icons/css3/
-!src/assets/icons/xml/
-!src/assets/icons/json/
+!src/assets/icons/java/*
+!src/assets/icons/python/*
+!src/assets/icons/c/*
+!src/assets/icons/cplusplus/*
+!src/assets/icons/csharp/*
+!src/assets/icons/php/*
+!src/assets/icons/mysql/*
+!src/assets/icons/kotlin/*
+!src/assets/icons/typescript/*
+!src/assets/icons/javascript/*
+!src/assets/icons/html5/*
+!src/assets/icons/css3/*
+!src/assets/icons/xml/*
+!src/assets/icons/json/*
 
 # Frameworks y librerías Frontend
 !src/assets/icons/react/*

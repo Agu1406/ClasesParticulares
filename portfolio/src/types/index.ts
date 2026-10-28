@@ -82,6 +82,12 @@ export interface Lesson {
     totalParts: number; // Indicador de cuantas lecciones hay disponibles del lenguaje.
     /** Fase del roadmap (ej. "fundamentos", "poo", "core"). Alinea con roadmap.sh para una ruta de aprendizaje clara. */
     roadmapPhase?: string;
+    /** Nivel de la estación, como en el temario (Principiante, Intermedio…). */
+    level?: string;
+    /** Aviso corto de lo que suele caer en el examen de esta estación. */
+    examNote?: string;
+    /** Ruta del material de clase dentro del repo (archivo .c o carpeta de teoría). */
+    sourcePath?: string;
     /**
      * Aquí viene una de las cosas más complejas (hasta ahora) que he tenido que diseñar porque la IA
      * me recomendaba cosas muy raras y complejas o viceversa, cosas nada escalables.

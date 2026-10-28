@@ -5,7 +5,13 @@
  * @see content/lessons/ Estructura de archivos por lenguaje
  */
 
+import { Buffer } from "buffer";
 import matter from "gray-matter";
+
+const scope = globalThis as unknown as { Buffer?: typeof Buffer };
+if (typeof scope.Buffer === "undefined") {
+    scope.Buffer = Buffer;
+}
 import type { Lesson } from "../types";
 import type { LessonFrontmatter, LessonExerciseFrontmatter } from "./lessonFrontmatter";
 import {
@@ -26,6 +32,13 @@ import java8 from "../content/lessons/java/java-8-strings-funciones.md?raw";
 import java9 from "../content/lessons/java/java-9-operaciones-matematicas.md?raw";
 import java10 from "../content/lessons/java/java-10-arrays.md?raw";
 import java11 from "../content/lessons/java/java-11-poo-basica.md?raw";
+import c1 from "../content/lessons/c/c-1-estructura-hola-mundo.md?raw";
+import c2 from "../content/lessons/c/c-2-printf-compilacion.md?raw";
+import c3 from "../content/lessons/c/c-3-tipos-variables.md?raw";
+import c4 from "../content/lessons/c/c-4-operadores.md?raw";
+import c5 from "../content/lessons/c/c-5-comentarios-entrada.md?raw";
+import c6 from "../content/lessons/c/c-6-condicionales.md?raw";
+import c7 from "../content/lessons/c/c-7-bucles.md?raw";
 
 /** Cada import ?raw puede ser string o { default: string } según el entorno. */
 function asRawString(value: unknown): string {
@@ -36,8 +49,11 @@ function asRawString(value: unknown): string {
 }
 
 function parseSections(body: string, sectionIcons?: string[]): Lesson["content"]["sections"] {
-    const trimmed = body.trim();
+    let trimmed = body.trim();
     if (!trimmed) return [];
+    if (trimmed.startsWith("## ")) {
+        trimmed = trimmed.slice(3);
+    }
 
     const parts = trimmed.split(/\n## /);
     return parts
@@ -65,8 +81,8 @@ function resolveExercises(
         id: ex.id,
         title: ex.title,
         completed: ex.completed ?? false,
-        fileUrl: ex.fileFolder ? javaExercisesTreeUrl(ex.fileFolder) : undefined,
-        solutionUrl: ex.solutionFolder ? javaExercisesTreeUrl(ex.solutionFolder) : undefined,
+        fileUrl: ex.fileUrl ?? (ex.fileFolder ? javaExercisesTreeUrl(ex.fileFolder) : undefined),
+        solutionUrl: ex.solutionUrl ?? (ex.solutionFolder ? javaExercisesTreeUrl(ex.solutionFolder) : undefined),
     }));
 }
 
@@ -95,6 +111,9 @@ function mdToLesson(_path: string, raw: string): Lesson {
         part: fm.part,
         totalParts: fm.totalParts,
         roadmapPhase: fm.roadmapPhase,
+        level: fm.level,
+        examNote: fm.examNote,
+        sourcePath: fm.sourcePath,
         content: {
             sections,
             exercises: resolveExercises(fm.exercises),
@@ -140,6 +159,7 @@ export function loadLessonsFromMarkdown(): Lesson[] {
     const lessons: Lesson[] = [];
     const sources = [
         java1, java2, java3, java4, java5, java6, java7, java8, java9, java10, java11,
+        c1, c2, c3, c4, c5, c6, c7,
     ];
 
     for (let i = 0; i < sources.length; i++) {
@@ -161,5 +181,5 @@ export function loadLessonsFromMarkdown(): Lesson[] {
         }
     }
 
-    return lessons.sort((a, b) => a.part - b.part);
+    return lessons.sort((a, b) => a.languageId.localeCompare(b.languageId) || a.part - b.part);
 }

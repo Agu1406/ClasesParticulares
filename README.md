@@ -162,9 +162,8 @@ El repositorio incluye un **sistema completo de tests interactivos** desplegado 
 **URL:** [https://agu1406.github.io/ClasesParticulares](https://agu1406.github.io/ClasesParticulares)
 
 ### Tests Disponibles:
-- **JavaFX**: 2 tests (Conceptos básicos y Completar código) - 37 preguntas
-- **Arrays en Java**: 1 test - 20 preguntas
-- Más categorías en desarrollo
+- **C, de cero a bucles**: 24 preguntas (modo Examen y modo Estudio), alineadas con `c/src/ev1` hasta bucles. También dentro del portal, en `/examen/c-basico-bucles`.
+- **Java y JavaFX**: el mismo motor (`tests/js/test.js` y `test-estudio.js`). Los bancos de esas asignaturas siguen en la rama `html`.
 
 ## Convenciones del Proyecto
 
