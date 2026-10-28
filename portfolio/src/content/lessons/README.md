@@ -8,6 +8,9 @@ Las lecciones del portal se editan aquí en archivos **.md** con:
 ## Estructura
 
 - `java/` — Lecciones de Java (guía java/src/README.md).
+- `c/` — Lecciones C EV1 (guía c/src/ev1/README.md); estilo pedagógico alineado con apuntesdam.com.
+
+Convenciones para agentes: `.cursor/rules/teoria-portfolio-apuntesdam.mdc`.
 
 Cada archivo debe tener en el frontmatter:
 

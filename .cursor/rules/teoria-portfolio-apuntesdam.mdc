@@ -1,0 +1,72 @@
+---
+description: Añadir o ampliar teoría en portfolio (Markdown + lecciones) estilo apuntesdam.com
+globs: portfolio/src/content/lessons/**/*
+alwaysApply: false
+---
+
+# Teoría en el portal (portfolio)
+
+## Referencia de producto
+
+Inspiración: [apuntesdam.com](https://apuntesdam.com) — temario por bloques, texto claro, **autoevaluación** enlazada, progresión «de cero a examen».
+
+No copiar diseño visual literal; sí la **estructura pedagógica**:
+
+1. Objetivo explícito al inicio.
+2. Secciones cortas con `##` en Markdown.
+3. Ejemplos de código ejecutables del repo (`c/src/...`, `java/src/...`).
+4. Enlace a ejercicios pendientes antes que resueltos.
+5. Cierre con test o práctica interna.
+
+## Archivos
+
+| Qué | Dónde |
+|-----|--------|
+| Contenido | `portfolio/src/content/lessons/{languageId}/*.md` |
+| Carga | `portfolio/src/data/loadLessonsFromMarkdown.ts` (import `?raw` explícito) |
+| Listado | `portfolio/src/data/lessons.ts` → `loadLessonsFromMarkdown()` |
+| URLs repo | `{language}Repo.ts` (ej. `javaRepo.ts`, `cRepo.ts`) |
+| Fases roadmap | `portfolio/src/data/roadmapPhases.ts` |
+
+## Frontmatter obligatorio
+
+```yaml
+id: c-1
+languageId: c
+title: ...
+description: ...
+part: 1
+totalParts: 6
+roadmapPhase: fundamentos   # id definido en roadmapPhases.ts
+sectionIcons:               # opcional, Material Icons
+  - terminal
+exercises:
+  - id: ex1
+    title: ...
+    fileFolder: ut1_.../ejercicios/pendientes   # ruta relativa a ev1 para C
+    solutionFolder: .../resueltos               # opcional
+```
+
+## Convención C
+
+- Teoría viva en `c/src/ev1/.../teoria/U*.c`.
+- `fileFolder` en frontmatter: ruta **relativa a** `c/src/ev1/` (ver `cEv1TreeUrl`).
+- Lecciones EV1 hasta bucles: 6 partes (UT1 + UT2 u01–u03); ampliar `totalParts` al añadir UT3/UT4.
+
+## Secciones Markdown
+
+- Separar con `\n## Título\n` (parser en `parseSections`).
+- Bloques de código con fence y lenguaje: ` ```c `, ` ```bash `.
+- Mencionar rutas del monorepo en prosa, no solo enlaces rotos.
+
+## Examen / test
+
+Si existe test HTML del módulo, mencionarlo en la última lección del bloque y registrar en `ExamPrepSection.tsx` + `public/tests/`.
+
+## Checklist agente
+
+1. Escribir `.md` en `content/lessons/{lang}/`.
+2. Añadir import en `loadLessonsFromMarkdown.ts`.
+3. Actualizar `roadmapPhases` si hay fase nueva.
+4. `npm run build` en `portfolio/`.
+5. Copiar test a `public/` si aplica.

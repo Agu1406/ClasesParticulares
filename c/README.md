@@ -92,6 +92,15 @@ int main(void) {
 - **EV1:** no se enseña `malloc`, ficheros ni punteros avanzados. Sí hay un primer contacto con `&` / `*` al pasar structs y en `scanf`.
 - Política de texto: ejemplos en **ASCII**. UTF-8 se explica en `U08_CadenasYUtf8.c`, no se exige en ejercicios.
 
+## Test de repaso (examen EV1 hasta bucles)
+
+Autoevaluación tipo examen (62 preguntas, 6 temas, opciones barajadas):
+
+- Abrir localmente: [`tests/test_ev1_hasta_bucles.html`](tests/test_ev1_hasta_bucles.html) (ver [`tests/README.md`](tests/README.md)).
+- En el portal: sección «Prepara el examen» en `/c` tras desplegar `portfolio/`.
+
+Plantilla del test: `linux/ra3/tests/` (misma mecánica que RA3 SMR).
+
 ## Contacto
 
 agu1406@outlook.es
