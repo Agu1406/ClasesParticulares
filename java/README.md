@@ -281,6 +281,12 @@ En cada ejercicio: `Main.java` (sin resolver) y `Done.java` (resuelto).
 | `ev4/E01_ExamenRA123` | `E01_TicketIVA`, `E02_Centinela`, `E03_MenuApp` |
 | `ev4/E02_ExamenRA123` | `E01_ConversorTemperatura`, `E02_CajeroAparcamiento`, `E03_EntrenamientoNumerico` |
 | `ev4/E03_ExamenRA123` | `E01_ConversorMonedas`, `E02_TerminadosEn3`, `E03_AprenderASumar` |
+| `ev4/E04_ExamenRA123` | `E01_FacturaDescuento`, `E02_RegistroEdades`, `E03_MenuCajero` |
+| `ev4/E05_ExamenRA123` | `E01_CalculadoraIMC`, `E02_MultiplosEnRango`, `E03_AdivinaNumero` |
+| `ev4/E06_ExamenRA123` | `E01_NominaSimple`, `E02_SumaHastaLimite`, `E03_MenuEstadisticas` |
+| `ev4/E07_ExamenRA123` | `E01_FacturaLuz`, `E02_ContadorPasos`, `E03_SimplificarFracciones`, `E04_DiaDelAno` (2 h / 10 pts; permite métodos) |
+
+Indice de enlaces a examenes/materiales publicos de otros centros: `ev4/FUENTES.md` (no se copian enunciados ajenos por copyright; E04–E06 son originales al estilo 1.ª eval).
 
 ## Requisitos y ejecucion
 
