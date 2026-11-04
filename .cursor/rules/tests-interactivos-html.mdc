@@ -1,0 +1,57 @@
+---
+description: Crear tests tipo examen HTML+JS (opciones barajadas, temas, feedback instantáneo)
+globs: "**/tests/test_*.html,**/tests/test_*.js"
+alwaysApply: false
+---
+
+# Tests interactivos (HTML + JavaScript)
+
+## Referencia canónica
+
+Copiar la **estructura** de `linux/ra3/tests/`:
+
+- `test_*_opciones_aleatorias.html` — shell Tailwind CDN, barra de temas, botones Corregir / Nuevo intento.
+- `test_*.js` — constante `QUESTIONS`, `TOPICS`, funciones `shuffle`, `buildQuiz`, feedback por pregunta.
+
+Ejemplo C EV1: `c/tests/test_ev1_hasta_bucles.{html,js}`.
+
+## Ubicación
+
+| Contexto | Ruta |
+|----------|------|
+| Material del módulo (fuente) | `{modulo}/tests/` p. ej. `c/tests/`, `linux/ra3/tests/` |
+| Portal GitHub Pages | Duplicar la pareja en `portfolio/public/tests/{slug}/` |
+
+Tras editar la fuente en `{modulo}/tests/`, **copiar** a `portfolio/public/…` para despliegue.
+
+## Modelo de datos
+
+```javascript
+/** @typedef {{ text: string, correct: boolean }} Option */
+/** @typedef {{ q: string, options: Option[], sources: string[] }} Question */
+```
+
+- Cuatro opciones por pregunta; una sola `correct: true`.
+- `sources`: ids de `TOPICS` (permite preguntas transversales).
+- Redactar preguntas desde el **temario del repo** (`.c`, `.md`, PDFs), no inventar APIs.
+
+## TOPICS
+
+- Un botón por subtema evaluable; incluir `shortLabel` si el título es largo (móvil).
+- Contador de cobertura en `#coverage`.
+
+## UX obligatoria
+
+- Barajar opciones en cada «Nuevo intento».
+- Feedback al seleccionar radio (correcto / incorrecto + referencia al temario).
+- Botón «Corregir» con resumen del tema activo.
+- Mobile-first: barra de acciones fija abajo en pantallas pequeñas.
+
+## Integración portal
+
+- Añadir bloque tipo `ExamPrepSection` en `LanguagePage` si el lenguaje tiene test.
+- Enlazar con `cRepo.ts` (o análogo) y documentar en `content/lessons/{lang}/`.
+
+## README
+
+Cada carpeta `tests/` debe tener `README.md`: cómo abrir localmente, temario cubierto, enlace al `.mdc` esta regla.

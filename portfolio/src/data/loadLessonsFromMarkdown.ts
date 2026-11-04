@@ -13,6 +13,7 @@ import {
     javaUscDocUrl,
     javaExercisesTreeUrl,
 } from "./javaRepo";
+import { cEv1TreeUrl } from "./cRepo";
 
 // Imports explícitos para que Vite incluya el contenido (el glob puede fallar en algunos entornos).
 import java1 from "../content/lessons/java/java-1-conceptos-basicos.md?raw";
@@ -26,6 +27,12 @@ import java8 from "../content/lessons/java/java-8-strings-funciones.md?raw";
 import java9 from "../content/lessons/java/java-9-operaciones-matematicas.md?raw";
 import java10 from "../content/lessons/java/java-10-arrays.md?raw";
 import java11 from "../content/lessons/java/java-11-poo-basica.md?raw";
+import c1 from "../content/lessons/c/c-1-hola-mundo-compilacion.md?raw";
+import c2 from "../content/lessons/c/c-2-printf-tipos.md?raw";
+import c3 from "../content/lessons/c/c-3-entrada-comentarios.md?raw";
+import c4 from "../content/lessons/c/c-4-operadores.md?raw";
+import c5 from "../content/lessons/c/c-5-condicionales.md?raw";
+import c6 from "../content/lessons/c/c-6-bucles.md?raw";
 
 /** Cada import ?raw puede ser string o { default: string } según el entorno. */
 function asRawString(value: unknown): string {
@@ -58,15 +65,25 @@ function parseSections(body: string, sectionIcons?: string[]): Lesson["content"]
         });
 }
 
+function exercisesTreeUrl(languageId: string, folder: string): string {
+    if (languageId === "c") {
+        return cEv1TreeUrl(folder);
+    }
+    return javaExercisesTreeUrl(folder);
+}
+
 function resolveExercises(
+    languageId: string,
     exercises: LessonExerciseFrontmatter[]
 ): Lesson["content"]["exercises"] {
     return exercises.map((ex) => ({
         id: ex.id,
         title: ex.title,
         completed: ex.completed ?? false,
-        fileUrl: ex.fileFolder ? javaExercisesTreeUrl(ex.fileFolder) : undefined,
-        solutionUrl: ex.solutionFolder ? javaExercisesTreeUrl(ex.solutionFolder) : undefined,
+        fileUrl: ex.fileFolder ? exercisesTreeUrl(languageId, ex.fileFolder) : undefined,
+        solutionUrl: ex.solutionFolder
+            ? exercisesTreeUrl(languageId, ex.solutionFolder)
+            : undefined,
     }));
 }
 
@@ -97,7 +114,7 @@ function mdToLesson(_path: string, raw: string): Lesson {
         roadmapPhase: fm.roadmapPhase,
         content: {
             sections,
-            exercises: resolveExercises(fm.exercises),
+            exercises: resolveExercises(fm.languageId, fm.exercises),
             pdfUrl,
         },
     };
@@ -140,6 +157,7 @@ export function loadLessonsFromMarkdown(): Lesson[] {
     const lessons: Lesson[] = [];
     const sources = [
         java1, java2, java3, java4, java5, java6, java7, java8, java9, java10, java11,
+        c1, c2, c3, c4, c5, c6,
     ];
 
     for (let i = 0; i < sources.length; i++) {
@@ -161,5 +179,10 @@ export function loadLessonsFromMarkdown(): Lesson[] {
         }
     }
 
-    return lessons.sort((a, b) => a.part - b.part);
+    return lessons.sort((a, b) => {
+        if (a.languageId !== b.languageId) {
+            return a.languageId.localeCompare(b.languageId);
+        }
+        return a.part - b.part;
+    });
 }

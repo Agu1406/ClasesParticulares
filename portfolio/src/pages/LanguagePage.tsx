@@ -20,6 +20,7 @@ import { getLanguageById } from "../data/languages";
 import { getLessonsByLanguage } from "../data/lessons";
 import LessonsGrid from "../components/LessonsGrid";
 import RoadmapSection from "../components/RoadmapSection";
+import ExamPrepSection from "../components/ExamPrepSection";
 
 function LanguagePage() {
     const { languageId } = useParams<{ languageId: string }>();
@@ -56,6 +57,7 @@ function LanguagePage() {
                     </p>
                 )}
                 {lessons.length === 0 && <div className="mb-8 md:mb-12" />}
+                <ExamPrepSection languageId={language.id} />
                 {/* Ruta de aprendizaje por fases (alineada con roadmap.sh) cuando exista. */}
                 <RoadmapSection languageId={language.id} lessons={lessons} />
                 <LessonsGrid lessons={lessons} />

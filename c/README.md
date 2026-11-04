@@ -115,6 +115,15 @@ Solo estas en teoría y ejercicios de aula:
 
 Contenido **nativo C**: no portar lecciones de C++/C#/Java línea a línea. Misma línea UT, ejemplos pensados para `printf`/`scanf` y trampas de C. Bool en consola: `1`/`0` o `si`/`no`, no `"true"`/`"false"`.
 
+## Test de repaso (examen EV1 hasta bucles)
+
+Autoevaluación tipo examen (62 preguntas, 6 temas, opciones barajadas):
+
+- Abrir localmente: [`tests/test_ev1_hasta_bucles.html`](tests/test_ev1_hasta_bucles.html) (ver [`tests/README.md`](tests/README.md)).
+- En el portal: sección «Prepara el examen» en `/c` tras desplegar `portfolio/`.
+
+Plantilla del test: `linux/ra3/tests/` (misma mecánica que RA3 SMR).
+
 ## Contacto
 
 agu1406@outlook.es
