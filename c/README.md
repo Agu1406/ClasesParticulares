@@ -89,8 +89,31 @@ int main(void) {
 - Estándar **C11**. Avisos **siempre** on: `-Wall -Wextra -pedantic`.
 - Hasta `u03bucles`: programa lineal dentro de `main`.
 - Desde **`u04metodos`**: se habla de **funciones** (en C no hay métodos). La carpeta se llama `u04metodos` por paridad con Java/C#/C++.
-- **EV1:** no se enseña `malloc`, ficheros ni punteros avanzados. Sí hay un primer contacto con `&` / `*` al pasar structs y en `scanf`.
-- Política de texto: ejemplos en **ASCII**. UTF-8 se explica en `U08_CadenasYUtf8.c`, no se exige en ejercicios.
+- Política de texto: ejemplos en **ASCII**. UTF-8 se menciona como aviso, no como mini-curso Unicode.
+
+### Lista blanca de cabeceras (EV1)
+
+Solo estas en teoría y ejercicios de aula:
+
+| Cabecera | Uso |
+|----------|-----|
+| `stdio.h` | `printf`, `scanf`, `fgets`, `fprintf`, `stderr` |
+| `stdlib.h` | `EXIT_SUCCESS` / `EXIT_FAILURE`, `exit`, conversiones básicas |
+| `stdbool.h` | `bool`, `true`, `false` |
+| `string.h` | `strlen`, `strcpy`, `strcmp`, `strcspn`… (UT3) |
+| `ctype.h` | `isalpha`, `isdigit`, `toupper`… (UT3) |
+| `math.h` | `fabs`, `fmod`, `sqrt`… (compilar con `-lm`) |
+| `limits.h` / `float.h` | rangos de enteros y reales |
+| `assert.h` | depuración (u06) |
+| `errno.h` / `stddef.h` | puntuales (`strtol`, `offsetof`) |
+
+**No usar en EV1:** `locale.h` / `setlocale`, `wchar.h`, `stdint.h`, `time.h`, hilos, regex, atributos GCC raros, catálogos enteros de `math.h` (trig/log/rand).
+
+### Qué no entra en EV1 (va a EV2)
+
+`malloc` / `free`, arrays como unidad, punteros avanzados, ficheros (`FILE *`). Sí hay un primer contacto con `&` / `*` en `scanf` y al pasar structs.
+
+Contenido **nativo C**: no portar lecciones de C++/C#/Java línea a línea. Misma línea UT, ejemplos pensados para `printf`/`scanf` y trampas de C. Bool en consola: `1`/`0` o `si`/`no`, no `"true"`/`"false"`.
 
 ## Contacto
 

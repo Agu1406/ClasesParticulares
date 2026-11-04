@@ -18,7 +18,8 @@ package ev1.ut2_controlflujometodos.u05repaso.teoria;
  * } while (condicion);
  * }</pre>
  *
- * <p>Ejercicios de referencia: 4, 7, 10, 13, 16, 19, 22, 25, 28 en {@code ejercicios/}.</p>
+ * <p>Ejercicios de referencia: E04, E07, E10, E13, E16, E19, E22, E25 y E28
+ * en {@code ejercicios/pendientes} y {@code ejercicios/resueltos}.</p>
  *
  * @author Agustin. A. Marquez. Pina
  * @since 08/06/2026

@@ -58,7 +58,7 @@ int main(void) {
 
     /*
     TERCERA PARTE - Decimales con strtod.
-      strtod usa el punto decimal (locale "C" por defecto).
+      strtod espera punto decimal (3.14), no coma (1,5).
     */
     printf("\n--- TERCERA PARTE: strtod ---\n\n");
 

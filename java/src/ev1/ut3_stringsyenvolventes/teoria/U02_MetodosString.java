@@ -11,7 +11,8 @@ import java.util.Scanner;
  * lexicografico).</p>
  *
  * <p>Bloque anterior: {@link U01_StringInmutabilidad}. Siguiente: {@link U03_StringBuilderIntro}.
- * Practica: ejercicios 2–5, 3 (equals) y {@code E14_CompareTo} en {@code ejercicios/}.</p>
+ * Practica: E02 a E06 y {@code E14_CompareTo} en {@code ejercicios/pendientes}
+ * y {@code ejercicios/resueltos}.</p>
  *
  * @author Agustin. A. Marquez. Pina
  * @since 08/08/2026

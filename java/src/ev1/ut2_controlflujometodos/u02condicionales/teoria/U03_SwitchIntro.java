@@ -14,7 +14,7 @@ package ev1.ut2_controlflujometodos.u02condicionales.teoria;
  * }
  * }</pre>
  *
- * <p>Practica en {@code ejercicios/03-switch/} (pendientes y resueltos).</p>
+ * <p>Practica en {@code ejercicios/pendientes} y {@code ejercicios/resueltos}, del E21 al E30.</p>
  *
  * @author Agustin. A. Marquez. Pina
  * @since 29/05/2026

@@ -21,7 +21,7 @@ package ev1.ut2_controlflujometodos.u03bucles.teoria;
  * }</pre>
  *
  * <p>Ejemplos tipicos: recorrer un rango de numeros, tablas de multiplicar, sumar acumuladores.
- * Practica en {@code ejercicios/01-for/} (pendientes y resueltos).</p>
+ * Practica en {@code ejercicios/pendientes} y {@code ejercicios/resueltos}, del E01 al E10.</p>
  *
  * @author Agustin. A. Marquez. Pina
  * @since 02/06/2026

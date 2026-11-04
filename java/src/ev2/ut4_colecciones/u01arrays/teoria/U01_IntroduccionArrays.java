@@ -3,6 +3,8 @@ package ev2.ut4_colecciones.u01arrays.teoria;
 /**
  * Clase introductoria a los arrays de una dimension.
  *
+ * <p>Practica en {@code ejercicios/pendientes} y {@code ejercicios/resueltos}, del E01 al E10.</p>
+ *
  * 
  * @author Agustin. A. Marquez. Pina
  * @since 03/06/2026

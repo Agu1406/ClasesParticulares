@@ -123,7 +123,7 @@ int main(void) {
     OCTAVA PARTE - Errores tipicos (el resto de patrones va en u05repaso).
       Off by one: i < n (desde 0) vs i <= n (desde 1).
       Nunca pongas ';' justo despues del for (...).
-      break / continue / acumuladores / centinela: u05repaso (como en C++/C#).
+      break / continue / acumuladores / centinela: u05repaso.
     */
     printf("\n--- OCTAVA PARTE: Errores tipicos ---\n\n");
 

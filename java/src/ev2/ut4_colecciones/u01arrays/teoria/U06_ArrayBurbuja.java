@@ -7,7 +7,8 @@ import java.util.Random;
  *
  * <p><b>Objetivo:</b> recorrer el array varias veces intercambiando pares
  * adyacentes desordenados hasta dejarlo ascendente. Practica en
- * {@code ejercicios/…/Ejercicio2_ArrayOrdenarBurbuja}.</p>
+ * {@code ejercicios/pendientes} y {@code ejercicios/resueltos}, el E12
+ * ({@code E12_ArrayOrdenarBurbuja}).</p>
  *
  * @author Agustin. A. Marquez. Pina
  * @since 05/09/2026

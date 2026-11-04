@@ -13,7 +13,7 @@ package ev1.ut2_controlflujometodos.u02condicionales.teoria;
  * }
  * }</pre>
  *
- * <p>Practica en {@code ejercicios/02-ifelse/} (pendientes y resueltos).</p>
+ * <p>Practica en {@code ejercicios/pendientes} y {@code ejercicios/resueltos}, del E11 al E20.</p>
  *
  * @author Agustin. A. Marquez. Pina
  * @since 29/05/2026

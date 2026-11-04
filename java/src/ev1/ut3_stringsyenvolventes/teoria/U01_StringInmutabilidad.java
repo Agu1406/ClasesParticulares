@@ -8,8 +8,9 @@ package ev1.ut3_stringsyenvolventes.teoria;
  * Distinguir {@code ==} (misma referencia) de {@code equals} (mismo contenido) y el pool
  * de literales de forma breve.</p>
  *
- * <p>Siguiente bloque: {@link U02_MetodosString}. Ejercicios 1–11 (strings), {@code E14_CompareTo}
- * y 12–13 (envolventes) en {@code ejercicios/}. Practica de centro en
+ * <p>Siguiente bloque: {@link U02_MetodosString}. Ejercicios E01 a E11 (strings),
+ * {@code E14_CompareTo} y E12 a E13 (envolventes) en {@code ejercicios/pendientes}
+ * y {@code ejercicios/resueltos}. Practica de centro en
  * {@code practicas/madridiescalderonbarcacadenas/}.</p>
  *
  * @author Agustin. A. Marquez. Pina

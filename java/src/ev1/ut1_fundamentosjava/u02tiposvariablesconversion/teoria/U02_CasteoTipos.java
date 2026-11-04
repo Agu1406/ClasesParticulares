@@ -7,6 +7,8 @@ package ev1.ut1_fundamentosjava.u02tiposvariablesconversion.teoria;
  * <p>Debes estar ya familiarizado con comentarios, sintaxis básica, variables e impresión
  * por pantalla, y diferenciar en teoría los datos primitivos de los avanzados.</p>
  *
+ * <p>Practica en {@code ejercicios/pendientes} y {@code ejercicios/resueltos}, el E02.</p>
+ *
  * @author Agustin. A. Marquez. Pina
  * @see <a href="mailto:agu1406@outlook.es">agu1406@outlook.es</a>
  * @see <a href="https://github.com/Agu1406/ClasesParticulares">Repositorio GitHub</a>

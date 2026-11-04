@@ -19,7 +19,7 @@ package ev1.ut2_controlflujometodos.u03bucles.teoria;
  *   <li>Garantiza una ejecucion minima (menus, peticion de datos al usuario).</li>
  * </ul>
  *
- * <p>Practica en {@code ejercicios/03-dowhile/} (pendientes y resueltos).</p>
+ * <p>Practica en {@code ejercicios/pendientes} y {@code ejercicios/resueltos}, del E21 al E30.</p>
  *
  * @author Agustin. A. Marquez. Pina
  * @since 02/06/2026

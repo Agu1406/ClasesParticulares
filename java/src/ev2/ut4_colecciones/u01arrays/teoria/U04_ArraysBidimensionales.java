@@ -3,6 +3,8 @@ package ev2.ut4_colecciones.u01arrays.teoria;
 /**
  * Arrays bidimensionales: declaracion, asignacion y lectura de valores.
  *
+ * <p>Practica en {@code ejercicios/pendientes} y {@code ejercicios/resueltos}, del E16 al E21.</p>
+ *
  * @author Agustin. A. Marquez. Pina
  * @since 03/06/2026
  * @see <a href="mailto:agu1406@outlook.es">agu1406@outlook.es</a>

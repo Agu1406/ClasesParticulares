@@ -17,7 +17,8 @@ package ev1.ut2_controlflujometodos.u05repaso.teoria;
  * <p><b>Recuerda:</b> actualizar la variable de control dentro del {@code while}
  * ({@code contador++}, {@code numero /= 10}) para evitar bucles infinitos.</p>
  *
- * <p>Ejercicios de referencia: 2, 6, 9, 12, 15, 18, 21, 24, 27, 30 en {@code ejercicios/}.</p>
+ * <p>Ejercicios de referencia: E02, E06, E09, E12, E15, E18, E21, E24, E27 y E30
+ * en {@code ejercicios/pendientes} y {@code ejercicios/resueltos}.</p>
  *
  * @author Agustin. A. Marquez. Pina
  * @since 08/06/2026

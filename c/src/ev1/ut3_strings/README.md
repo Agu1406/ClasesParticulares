@@ -4,5 +4,7 @@ Sin subtemas `u01…`: `teoria/`, `ejercicios/` y `practicas/` cuelgan de esta c
 
 Empieza siempre por `teoria/U01_CadenasEnC.c`: en C no hay `String`, hay un array de `char` que acaba en `'\0'`.
 
-- Práctica interna: `practicas/ejemplointernocadenas/`
+`U08_CadenasYUtf8.c` es solo un **aviso** de política ASCII del repo, no un curso de Unicode.
+
+- Práctica interna: `practicas/ejemplointernocadenas/` (ASCII; `stdio`/`string`/`ctype`)
 - IES Calderón: `practicas/madridiescalderonbarcacadenas/`

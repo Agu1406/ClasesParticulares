@@ -24,8 +24,8 @@ package ev1.ut2_controlflujometodos.u04metodos.teoria;
  *   <li><b>Sin return</b> - el metodo termina al llegar a la ultima linea o con {@code return;} vacio (salida anticipada).</li>
  * </ul>
  *
- * <p>Equivale al Ejercicio 1 (void sin parametros) y Ejercicio 2 (void con parametros)
- * en {@code ejercicios/}.</p>
+ * <p>Equivale al E01 (void sin parametros) y al E02 (void con parametros)
+ * en {@code ejercicios/pendientes} y {@code ejercicios/resueltos}.</p>
  *
  * @author Agustin. A. Marquez. Pina
  * @since 03/06/2026

@@ -5,6 +5,8 @@ import java.util.HashMap;
 /**
  * Clase introductoria a los mapas ({@link HashMap}): pares clave -> valor.
  *
+ * <p>Practica en {@code ejercicios/pendientes} y {@code ejercicios/resueltos}, del E11 al E18.</p>
+ *
  * @author Agustin. A. Marquez. Pina
  * @since 03/06/2026
  * @see <a href="mailto:agu1406@outlook.es">agu1406@outlook.es</a>

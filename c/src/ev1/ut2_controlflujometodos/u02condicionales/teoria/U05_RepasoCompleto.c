@@ -4,7 +4,7 @@ U05 — Repaso de condicionales: if, else if, switch, trampas y validacion.
 OBJETIVO:
   - Integrar if / else if / switch / ternario en un solo programa.
   - Repasar trampas tipicas de C (= vs ==, reales, strcmp, rangos).
-  - Validar entrada y montar un menu sencillo.
+  - Leer una opcion de menu con scanf y validar el retorno.
   - Resolver problemas tipicos: IMC, dias del mes, tarifa.
 
 Autor: Agustin. A. Marquez. Pina
@@ -23,21 +23,25 @@ int main(void) {
 
     /*
     PRIMERA PARTE - IMC con else if.
+      Solo entra una rama. Orden: de la franja mas baja a la alta.
+      Guardamos la etiqueta en un puntero a literal para un solo printf.
     */
     printf("--- PRIMERA PARTE: IMC ---\n\n");
 
     double peso = 72.5, altura = 1.78;
     double imc = peso / (altura * altura);
-    printf("Peso %.1f kg, altura %.2f m -> IMC %.1f: ", peso, altura, imc);
+    const char *categoria;
     if (imc < 18.5) {
-        printf("bajo peso\n");
+        categoria = "bajo peso";
     } else if (imc < 25) {
-        printf("peso normal\n");
+        categoria = "peso normal";
     } else if (imc < 30) {
-        printf("sobrepeso\n");
+        categoria = "sobrepeso";
     } else {
-        printf("obesidad\n");
+        categoria = "obesidad";
     }
+    printf("Peso %.1f kg, altura %.2f m -> IMC %.1f: %s\n",
+           peso, altura, imc, categoria);
 
     /*
     SEGUNDA PARTE - Dias del mes (switch + bisiesto).
@@ -60,11 +64,21 @@ int main(void) {
     printf("El mes %d del ano %d tiene %d dias\n", mes, anio, dias);
 
     /*
-    TERCERA PARTE - Menu con switch (datos puestos a mano; en clase usa scanf).
+    TERCERA PARTE - Menu con switch y scanf.
+      Si scanf no lee un entero, forzamos opcion invalida.
     */
     printf("\n--- TERCERA PARTE: Menu ---\n\n");
+    printf("1. Ver perfil\n");
+    printf("2. Editar datos\n");
+    printf("3. Cerrar sesion\n");
+    printf("Opcion: ");
 
-    int opcion = 2;
+    int opcion;
+    if (scanf("%d", &opcion) != 1) {
+        printf("Entrada no numerica.\n");
+        opcion = -1;
+    }
+
     switch (opcion) {
         case 1:
             printf("Has elegido: Ver perfil\n");
@@ -81,28 +95,40 @@ int main(void) {
     }
 
     /*
-    CUARTA PARTE - Trampas de C (resumen para examen).
-      = vs == | ; tras if | reales con epsilon | cadenas con strcmp | rangos con &&
+    CUARTA PARTE - Trampas de C (demos vivas).
+      = vs == | asignacion en if | reales con epsilon | cadenas con strcmp | rangos
     */
     printf("\n--- CUARTA PARTE: Trampas de C ---\n\n");
 
     int x = 3;
+    printf("x empieza en %d\n", x);
+    if (x = 5) {
+        printf("if (x = 5) SI compila: asigna 5 y la condicion vale 5 (verdadero).\n");
+        printf("Ahora x = %d\n", x);
+    }
+    x = 3;
     if (x == 5) {
         printf("x vale 5\n");
     } else {
-        printf("x NO vale 5 (vale %d). Nunca uses = en el if.\n", x);
+        printf("Con == no entra; x sigue siendo %d. Usa ==, no =.\n", x);
     }
 
-    double suma = 0.1 + 0.2;
-    if (fabs(suma - 0.3) < 1e-9) {
-        printf("0.1+0.2 ≈ 0.3 con tolerancia (no con ==)\n");
+    int activo = 1;
+    if ((activo = 0)) {
+        printf("Este texto no sale: la asignacion vale 0 (falso)\n");
     }
+    printf("activo = 0 dentro del if dejo activo en %d\n", activo);
+
+    double suma = 0.1 + 0.2;
+    printf("0.1 + 0.2 == 0.3 -> %d\n", suma == 0.3);
+    printf("con tolerancia     -> %d\n", fabs(suma - 0.3) < 1e-9);
 
     char usuario[] = "admin";
     char escrito[] = "admin";
-    if (strcmp(usuario, escrito) == 0) {
-        printf("strcmp: textos iguales (no uses == entre cadenas)\n");
-    }
+    printf("usuario == escrito (compara direcciones) -> %d\n",
+           usuario == escrito);
+    printf("strcmp(usuario, escrito) == 0            -> %d\n",
+           strcmp(usuario, escrito) == 0);
 
     int z = 7;
     if (z >= 0 && z <= 10) {
@@ -122,7 +148,14 @@ int main(void) {
 
     int gramos = 1200;
     bool urgente = true;
-    double tarifa = gramos <= 500 ? 3.50 : (gramos <= 2000 ? 6.00 : 9.50);
+    double tarifa;
+    if (gramos <= 500) {
+        tarifa = 3.50;
+    } else if (gramos <= 2000) {
+        tarifa = 6.00;
+    } else {
+        tarifa = 9.50;
+    }
     if (urgente) {
         tarifa *= 1.40;
     }

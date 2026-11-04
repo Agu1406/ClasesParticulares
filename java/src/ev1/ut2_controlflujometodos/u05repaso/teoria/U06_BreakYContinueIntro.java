@@ -28,7 +28,7 @@ package ev1.ut2_controlflujometodos.u05repaso.teoria;
  * }
  * }</pre>
  *
- * <p>Ver tambien {@code Ejercicio20_ForConIfPrimos} en {@code ejercicios/resueltos}.</p>
+ * <p>Ver tambien {@code E20_ForConIfPrimos} en {@code ejercicios/resueltos}.</p>
  *
  * @author Agustin. A. Marquez. Pina
  * @since 08/06/2026

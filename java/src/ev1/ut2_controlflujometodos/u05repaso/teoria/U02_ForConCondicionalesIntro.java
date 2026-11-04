@@ -14,7 +14,8 @@ package ev1.ut2_controlflujometodos.u05repaso.teoria;
  *   <li><b>for + switch</b> - traducir un indice a etiquetas (dias, notas, estaciones).</li>
  * </ul>
  *
- * <p>Ejercicios de referencia: 1, 3, 5, 8, 11, 14, 17, 20, 23, 26, 29 en {@code ejercicios/}.</p>
+ * <p>Ejercicios de referencia: E01, E03, E05, E08, E11, E14, E17, E20, E23, E26 y E29
+ * en {@code ejercicios/pendientes} y {@code ejercicios/resueltos}.</p>
  *
  * @author Agustin. A. Marquez. Pina
  * @since 08/06/2026

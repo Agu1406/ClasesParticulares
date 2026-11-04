@@ -40,7 +40,7 @@ package ev1.ut2_controlflujometodos.u04metodos.teoria;
  * {@link U04_MetodosParametrosIntro}, {@link U05_MetodosEstructurasIntro},
  * {@link U06_MetodosSobrecargaIntro}, {@link U07_MetodosComparacionIntro}.</p>
  *
- * <p>Practica en {@code ejercicios/pendientes} y {@code ejercicios/resueltos}.</p>
+ * <p>Practica en {@code ejercicios/pendientes} y {@code ejercicios/resueltos}, del E01 al E10.</p>
  *
  * @author Agustin. A. Marquez. Pina
  * @since 29/05/2026

@@ -8,7 +8,7 @@ package ev1.ut3_stringsyenvolventes.teoria;
  * {@code String} nuevo en cada paso (a diferencia de {@code +=} con {@code String}).</p>
  *
  * <p>Bloque anterior: {@link U02_MetodosString}. Siguiente: {@link U04_EnvolventesIntro}.
- * Practica: {@code Ejercicio9_StringBuilder} en {@code ejercicios/}.</p>
+ * Practica: {@code E09_StringBuilder} en {@code ejercicios/pendientes} y {@code ejercicios/resueltos}.</p>
  *
  * @author Agustin. A. Marquez. Pina
  * @since 08/08/2026

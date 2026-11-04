@@ -26,9 +26,9 @@ package ev1.ut2_controlflujometodos.u05repaso.teoria;
  * <p><b>Orden de estudio sugerido:</b></p>
  * <ol>
  *   <li>Teoria U01-U08 en {@code teoria/}.</li>
- *   <li>Ejercicios 1-10 (un patron de cada combinacion principal).</li>
- *   <li>Ejercicios 11-20 (variantes y algo mas de logica).</li>
- *   <li>Ejercicios 21-30 (consolidacion).</li>
+ *   <li>Ejercicios E01-E10 (un patron de cada combinacion principal).</li>
+ *   <li>Ejercicios E11-E20 (variantes y algo mas de logica).</li>
+ *   <li>Ejercicios E21-E30 (consolidacion).</li>
  *   <li>Practicas {@code pruebaslibres2023} si preparas examen.</li>
  * </ol>
  *

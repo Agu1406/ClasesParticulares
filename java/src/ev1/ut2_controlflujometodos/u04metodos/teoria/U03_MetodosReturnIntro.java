@@ -30,7 +30,7 @@ package ev1.ut2_controlflujometodos.u04metodos.teoria;
  *   <li>Tambien puedes usarlo directamente: {@code System.out.println(esPar(14));}</li>
  * </ul>
  *
- * <p>Equivale a los Ejercicios 3-6 en {@code ejercicios/}.</p>
+ * <p>Equivale a los ejercicios E03 a E06 en {@code ejercicios/pendientes} y {@code ejercicios/resueltos}.</p>
  *
  * @author Agustin. A. Marquez. Pina
  * @since 03/06/2026

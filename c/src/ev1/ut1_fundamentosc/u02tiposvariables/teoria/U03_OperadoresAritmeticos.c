@@ -1,5 +1,5 @@
 /*
-U03 — Operadores aritmeticos.
+U03 — Operadores aritmeticos (+ - * / %).
 
 OBJETIVO:
   - Usar los cinco operadores aritmeticos: + - * / %

@@ -1,11 +1,10 @@
 /*
-U06 — Repaso general de u02tiposvariables.
+U06 — Repaso de u02tiposvariables.
 
 OBJETIVO:
-  - Crear variables de distintos tipos.
-  - Recordar enteros, doubles, char, bool, const y #define.
-  - Practicar operadores aritmeticos, de comparacion y logicos.
-  - Integrarlo en una factura pequena (como cierre de la unidad).
+  - Repasar tipos, aritmetica, comparacion y logica en C.
+  - Cerrar la unidad con una factura pequena (printf alineado).
+  - Recordar division entera, modulo y un char/ASCII.
 
 Autor: Agustin. A. Marquez. Pina
 Contacto: agu1406@outlook.es
@@ -17,102 +16,96 @@ Sitio web: https://www.agustinmarquez.dev
 #include <stdbool.h>
 
 #define IVA 0.21
-#define DESCUENTO_MINIMO_COMPRA 100.0
+#define DESCUENTO_MINIMO 100.0
 #define PORCENTAJE_DESCUENTO 0.10
 
 int main(void) {
     printf("\n¡INICIO DEL PROGRAMA!\n\n");
 
     /*
-    PRIMERA PARTE - Tipos basicos en C.
-      int / double / bool / char / const char * (texto; no hay string).
+    PRIMERA PARTE - Tipos basicos.
     */
-    printf("--- PRIMERA PARTE: Datos del profesor y del alumno ---\n\n");
+    printf("--- PRIMERA PARTE: Tipos ---\n\n");
 
-    const char *nombre_p = "Agustin";
-    const char *nombre_a = "Eduardo";
-    int edad_p = 26;
-    int edad_a = 29;
-    double altura_p = 1.76;
-    double altura_a = 1.74;
-    bool soy_humano = true;
-    bool hoy_martes = false;
-    char inicial_p = 'A';
+    int edad = 19;
+    double media = 7.5;
+    char grupo = 'A';
+    bool repetidor = false;
+    const char *modulo = "Programacion";
 
-    printf("Profesor: %s (%c), %d anos, %.2f m\n", nombre_p, inicial_p, edad_p, altura_p);
-    printf("Alumno:   %s, %d anos, %.2f m\n", nombre_a, edad_a, altura_a);
-    printf("Tipo de edad_p: int | soy_humano && !hoy_martes: %s\n",
-           (soy_humano && !hoy_martes) ? "true" : "false");
+    printf("Alumno de %s | grupo %c | edad %d | media %.1f | repetidor %d\n",
+           modulo, grupo, edad, media, repetidor);
 
     /*
-    SEGUNDA PARTE - Operadores aritmeticos.
+    SEGUNDA PARTE - Aritmetica.
     */
-    printf("\n--- SEGUNDA PARTE: Operadores aritmeticos ---\n\n");
+    printf("\n--- SEGUNDA PARTE: Aritmetica ---\n\n");
 
-    int num1 = 10, num2 = 3;
-    printf("%d + %d = %d\n", num1, num2, num1 + num2);
-    printf("%d - %d = %d\n", num1, num2, num1 - num2);
-    printf("%d * %d = %d\n", num1, num2, num1 * num2);
-    printf("%d / %d (entera) = %d\n", num1, num2, num1 / num2);
-    printf("%d / %d (decimal) = %.2f\n", num1, num2, (double)num1 / num2);
-    printf("%d %% %d = %d\n", num1, num2, num1 % num2);
+    int n1 = 10, n2 = 3;
+    printf("%d + %d = %d\n", n1, n2, n1 + n2);
+    printf("%d / %d (entera) = %d\n", n1, n2, n1 / n2);
+    printf("%d / %d (decimal) = %.2f\n", n1, n2, (double)n1 / n2);
+    printf("%d %% %d = %d\n", n1, n2, n1 % n2);
 
     /*
     TERCERA PARTE - Comparacion y logica.
     */
     printf("\n--- TERCERA PARTE: Comparacion y logica ---\n\n");
 
-    printf("¿Alumno mayor que profesor? %s\n", edad_a > edad_p ? "true" : "false");
-    printf("¿Alturas distintas? %s\n", altura_a != altura_p ? "true" : "false");
-    bool puede_montana = altura_p >= 1.75 && edad_p >= 18;
-    printf("¿Profesor puede montana rusa? %s\n", puede_montana ? "true" : "false");
+    bool aprobado = media >= 5.0;
+    bool matricula = media >= 9.0 && !repetidor;
+    printf("aprobado=%d | candidata a MH=%d\n", aprobado, matricula);
+
+    int altura_cm = 178;
+    bool puede_atraccion = altura_cm >= 140 && edad >= 12;
+    printf("altura %d cm, edad %d -> atraccion: %d\n",
+           altura_cm, edad, puede_atraccion);
 
     /*
-    CUARTA PARTE - Factura con IVA y descuento (cierre practico).
+    CUARTA PARTE - Factura (cierre practico).
     */
     printf("\n--- CUARTA PARTE: Factura ---\n\n");
 
-    const char *producto1 = "Teclado";
-    const char *producto2 = "Raton";
-    const char *producto3 = "Monitor";
-    int unidades1 = 2, unidades2 = 3, unidades3 = 1;
-    double precio1 = 24.90, precio2 = 9.95, precio3 = 129.00;
+    const char *p1 = "Teclado";
+    const char *p2 = "Raton";
+    const char *p3 = "Monitor";
+    int u1 = 2, u2 = 3, u3 = 1;
+    double pr1 = 24.90, pr2 = 9.95, pr3 = 129.00;
 
-    double importe1 = unidades1 * precio1;
-    double importe2 = unidades2 * precio2;
-    double importe3 = unidades3 * precio3;
-    double subtotal = importe1 + importe2 + importe3;
+    double i1 = u1 * pr1;
+    double i2 = u2 * pr2;
+    double i3 = u3 * pr3;
+    double subtotal = i1 + i2 + i3;
 
-    bool aplica_descuento = subtotal >= DESCUENTO_MINIMO_COMPRA;
-    double descuento = aplica_descuento ? subtotal * PORCENTAJE_DESCUENTO : 0.0;
+    bool hay_descuento = subtotal >= DESCUENTO_MINIMO;
+    double descuento = hay_descuento ? subtotal * PORCENTAJE_DESCUENTO : 0.0;
     double base = subtotal - descuento;
     double iva = base * IVA;
     double total = base + iva;
 
     printf("%-10s %5s %9s %10s\n", "Producto", "Uds", "Precio", "Importe");
-    printf("%-10s %5d %9.2f %10.2f\n", producto1, unidades1, precio1, importe1);
-    printf("%-10s %5d %9.2f %10.2f\n", producto2, unidades2, precio2, importe2);
-    printf("%-10s %5d %9.2f %10.2f\n", producto3, unidades3, precio3, importe3);
+    printf("%-10s %5d %9.2f %10.2f\n", p1, u1, pr1, i1);
+    printf("%-10s %5d %9.2f %10.2f\n", p2, u2, pr2, i2);
+    printf("%-10s %5d %9.2f %10.2f\n", p3, u3, pr3, i3);
     printf("-------------------------------------\n");
     printf("%-26s %10.2f\n", "Subtotal:", subtotal);
-    printf("%-26s %10.2f\n", "Descuento (10%):", -descuento);
-    printf("%-26s %10.2f\n", "Base imponible:", base);
-    printf("%-26s %10.2f\n", "IVA (21%):", iva);
+    printf("%-26s %10.2f\n", "Descuento:", -descuento);
+    printf("%-26s %10.2f\n", "Base:", base);
+    printf("%-26s %10.2f\n", "IVA:", iva);
     printf("%-26s %10.2f\n", "TOTAL:", total);
 
     /*
-    QUINTA PARTE - Reparto y caracteres (division / modulo / ASCII).
+    QUINTA PARTE - Modulo y caracteres.
     */
-    printf("\n--- QUINTA PARTE: Reparto y caracteres ---\n\n");
+    printf("\n--- QUINTA PARTE: Modulo y char ---\n\n");
 
     int caramelos = 47, ninos = 6;
-    printf("%d caramelos entre %d ninos: %d cada uno y sobran %d\n",
+    printf("%d caramelos / %d ninos: %d cada uno, sobran %d\n",
            caramelos, ninos, caramelos / ninos, caramelos % ninos);
 
-    char inicial = 'm';
-    char mayuscula = (char)(inicial - 'a' + 'A');
-    int posicion = inicial - 'a' + 1;
-    printf("'%c' -> '%c' (letra numero %d del alfabeto)\n", inicial, mayuscula, posicion);
+    char letra = 'm';
+    char mayus = (char)(letra - 'a' + 'A');
+    printf("'%c' -> '%c' (posicion %d)\n", letra, mayus, letra - 'a' + 1);
 
     printf("\n¡FIN DEL PROGRAMA!\n\n");
     return 0;

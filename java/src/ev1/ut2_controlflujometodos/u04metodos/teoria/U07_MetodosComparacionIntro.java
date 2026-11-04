@@ -21,8 +21,8 @@ package ev1.ut2_controlflujometodos.u04metodos.teoria;
  *   <li>Reutilizar metodos en lugar de copiar y pegar el mismo codigo.</li>
  * </ul>
  *
- * <p>Recorrido teorico: {@link U01_MetodosIntro} ? {@link U06_MetodosSobrecargaIntro}.
- * Ejercicios guiados: {@code ejercicios/pendientes} (Ejercicio1 a Ejercicio10).
+ * <p>Recorrido teorico: de {@link U01_MetodosIntro} a {@link U06_MetodosSobrecargaIntro}.
+ * Ejercicios guiados: {@code ejercicios/pendientes} y {@code ejercicios/resueltos}, del E01 al E10.
  * Practica de centro: {@code practicas/madridiescalderonbarcametodos/}.</p>
  *
  * @author Agustin. A. Marquez. Pina

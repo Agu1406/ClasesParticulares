@@ -22,9 +22,9 @@ package ev1.ut2_controlflujometodos.u05repaso.teoria;
  *   <li>do-while + if / if-else / switch</li>
  * </ul>
  *
- * <p>Recorrido teorico recomendado: {@link U02_ForConCondicionalesIntro} ?
- * {@link U08_MatrizCombinacionesIntro}. Practica: {@code Ejercicio1} … {@code Ejercicio30}
- * en {@code ejercicios/pendientes}.</p>
+ * <p>Recorrido teorico recomendado: de {@link U02_ForConCondicionalesIntro} a
+ * {@link U08_MatrizCombinacionesIntro}. Practica: del E01 al E30
+ * en {@code ejercicios/pendientes} y {@code ejercicios/resueltos}.</p>
  *
  * @author Agustin. A. Marquez. Pina
  * @since 29/05/2026

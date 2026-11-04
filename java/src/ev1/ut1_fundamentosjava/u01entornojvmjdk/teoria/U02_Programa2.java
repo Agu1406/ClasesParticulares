@@ -6,7 +6,7 @@ package ev1.ut1_fundamentosjava.u01entornojvmjdk.teoria;
  * <br>
  *
  * <ul>
- * <li>{@code public class U02_Programa1}: {@code class} es la unidad que agrupa el código; el nombre
+ * <li>{@code public class U02_Programa2}: {@code class} es la unidad que agrupa el código; el nombre
  * coincide con el archivo.</li>
  * <li>{@code public static void main(String[] args)}: punto de entrada del programa; apréndelo de
  * memoria por ahora.</li>

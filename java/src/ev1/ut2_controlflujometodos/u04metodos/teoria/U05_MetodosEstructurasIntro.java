@@ -24,7 +24,7 @@ package ev1.ut2_controlflujometodos.u04metodos.teoria;
  * }
  * }</pre>
  *
- * <p>Equivale a los Ejercicios 7-10 en {@code ejercicios/}.</p>
+ * <p>Equivale a los ejercicios E07 a E10 en {@code ejercicios/pendientes} y {@code ejercicios/resueltos}.</p>
  *
  * @author Agustin. A. Marquez. Pina
  * @since 03/06/2026

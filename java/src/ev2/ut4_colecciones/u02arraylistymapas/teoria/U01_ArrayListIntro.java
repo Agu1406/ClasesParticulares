@@ -5,6 +5,8 @@ import java.util.ArrayList;
 /**
  * Clase introductoria a {@link ArrayList}: listas dinamicas que crecen y se reducen en ejecucion.
  *
+ * <p>Practica en {@code ejercicios/pendientes} y {@code ejercicios/resueltos}, del E01 al E10.</p>
+ *
  * @author Agustin. A. Marquez. Pina
  * @since 03/06/2026
  * @see <a href="mailto:agu1406@outlook.es">agu1406@outlook.es</a>

@@ -25,9 +25,13 @@ Práctica: `practicas/ejemplointernoentorno/` (ficha del programador).
 
 ### u02 tipos y variables
 
-`U01_VariablesIntro` → `U02_VariablesTipos` (enteros/reales/char/bool/`#define`/casteo) → `U03_OperadoresAritmeticos` → `U04_OperadoresComparativos` → `U05_OperadoresLogicos` → `U06_RepasoCompleto` (igual que C++/C#).
+`U01_VariablesIntro` → `U02_VariablesTipos` (enteros/reales/char/bool/`#define`/casteo) → `U03_OperadoresAritmeticos` → `U04_OperadoresComparativos` → `U05_OperadoresLogicos` → `U06_RepasoCompleto`.
+
+Misma secuencia que C++/C#, contenido escrito para C (`%d` para bool, sin fingir `string`).
 
 Práctica: `practicas/ejemplointernotiposvariables/`.
+
+Ejercicios: E01–E10 (pareados pendiente/resuelto).
 
 ### u03 comentarios y entrada
 
@@ -39,8 +43,8 @@ Práctica: `practicas/ejemplointernocomentariosentrada/`.
 
 | Subtema | Teoría clave | Práctica |
 |---------|--------------|----------|
-| u01 operadores | mapa, `++`, precedencia, bits, `math.h` | `ejemplointernooperadoresybasicos` |
-| u02 condicionales | `U01_If` → `U02_IfElse` → `U03_Switch` → `U04_Anidados` → `U05_Repaso` (como C++/C#) | `ejemplointernocondicionales` |
+| u01 operadores | U01 clase densa (+ `-` `*` `/` `%`, ternario, `sizeof`) → `++` → precedencia → bits → `math.h` aula | `ejemplointernooperadoresybasicos` |
+| u02 condicionales | `U01_If` → `U02_IfElse` → `U03_Switch` → `U04_Anidados` → `U05_Repaso` | `ejemplointernocondicionales` |
 | u03 bucles | `U01_For` → `U02_While` → `U03_DoWhile` → `U04_Anidados` (break/centinela en u05repaso) | `ejemplointernobucles` |
 | u04 métodos | **funciones** (el nombre de carpeta es por paridad). Prototipos, valor, `static`, recursión, `*` intro, menús | `ejemplointernometodos` |
 | u05 repaso | Solo **UT1+UT2**. No es el cierre de EV1. | `ejemplointernorepasoev1` |
@@ -48,7 +52,7 @@ Práctica: `practicas/ejemplointernocomentariosentrada/`.
 
 ## UT3 — Cadenas (`ut3_strings`, plana)
 
-`U01_CadenasEnC` (`'\0'`) → `string.h` → `ctype.h` → leer → números ↔ texto → buscar/tokenizar → funciones propias → UTF-8 (política ASCII).
+`U01_CadenasEnC` (`'\0'`) → `string.h` → `ctype.h` → leer → números ↔ texto → buscar/tokenizar → funciones propias → `U08` aviso ASCII (no mini-curso Unicode).
 
 - Práctica interna: `practicas/ejemplointernocadenas/`
 - Centro: `practicas/madridiescalderonbarcacadenas/` (5 ejercicios)
@@ -62,11 +66,20 @@ Práctica: `practicas/ejemplointernoenumstructtypedef/`.
 ## Ritmo sugerido (si das 1–2 sesiones por subtema)
 
 1. Primera semana: u01 entorno (U01, U02, U05) + E01–E05 + ficha.
-2. Segunda: tipos (U01–U07) + práctica factura.
+2. Segunda: tipos (U01–U06) + E01–E10 + práctica.
 3. Tercera: `scanf`/`fgets` + ticket.
 4. Siguientes: un subtema de UT2 por sesión (teoría 20 min, 2–3 ejercicios, práctica si sobra).
 5. Cierre: UT3 informe de frase → UT4 ficha → `U07_CierreEv1`.
 
 ## Qué no entra en EV1
 
-Arrays como unidad, punteros avanzados, `malloc`/`free`, ficheros, listas. Eso es EV2.
+Arrays como unidad, punteros avanzados, `malloc`/`free`, ficheros, listas, `locale`/`wchar`, hilos. Eso es EV2 (o no se enseña en este módulo).
+
+Cabeceras permitidas: ver lista blanca en [`../../README.md`](../../README.md).
+
+## Checklist “se puede dar clase”
+
+- [ ] UT1–UT4 se proyectan solo con ficheros `.c` de este árbol (sin abrir `cpp/` / `csharp/` / `java/`).
+- [ ] Cabeceras de la lista blanca; bool en consola como `0`/`1` o `si`/`no`.
+- [ ] Tipos: U01–U06 + E01–E10; condicionales U01–U05; bucles U01–U04.
+- [ ] Cada subtema tiene práctica interna con `gcc -std=c11 -Wall -Wextra -pedantic … -lm`.

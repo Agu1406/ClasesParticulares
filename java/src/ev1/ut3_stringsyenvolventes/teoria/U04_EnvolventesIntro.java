@@ -11,7 +11,7 @@ import java.util.Scanner;
  *
  * <p>Los tipos envolventes ya se nombraron en UT1; aqui se aplican junto a cadenas.
  * Bloques de String: {@link U01_StringInmutabilidad}, {@link U02_MetodosString},
- * {@link U03_StringBuilderIntro}. Ejercicios 12–13 en {@code ejercicios/pendientes} y
+ * {@link U03_StringBuilderIntro}. Ejercicios E12 y E13 en {@code ejercicios/pendientes} y
  * {@code ejercicios/resueltos}.</p>
  *
  * @author Agustin. A. Marquez. Pina
@@ -19,7 +19,7 @@ import java.util.Scanner;
  * @see U01_StringInmutabilidad
  * @see U02_MetodosString
  * @see U03_StringBuilderIntro
- * @see ev1.ut1_fundamentosjava.u02tiposvariablesconversion.teoria.U02_DatosAvanzados
+ * @see ev1.ut1_fundamentosjava.u02tiposvariablesconversion.teoria.U03_DatosAvanzados
  * @see <a href="mailto:agu1406@outlook.es">agu1406@outlook.es</a>
  * @see <a href="https://github.com/Agu1406/ClasesParticulares">Repositorio GitHub</a>
  * @see <a href="https://www.agustinmarquez.dev">Sitio web</a>

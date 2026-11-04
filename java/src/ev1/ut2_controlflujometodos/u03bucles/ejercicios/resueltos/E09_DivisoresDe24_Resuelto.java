@@ -1,0 +1,26 @@
+package ev1.ut2_controlflujometodos.u03bucles.ejercicios.resueltos;
+
+/**
+ * <p><b>OBJETIVO:</b> Usa un for para mostrar los divisores de 24, uno por linea.</p>
+ *
+ * <br>
+ *
+ * <p><b>SOLUCIÓN:</b> Si 24 % i es 0, i es divisor.</p>
+ *
+ * @author Agustin. A. Marquez. Pina
+ * @since 29/04/2026
+ * @see <a href="mailto:agu1406@outlook.es">agu1406@outlook.es</a>
+ * @see <a href="https://github.com/Agu1406/ClasesParticulares">Repositorio GitHub</a>
+ * @see <a href="https://www.agustinmarquez.dev">Sitio web</a>
+ */
+
+public class E09_DivisoresDe24_Resuelto {
+    public static void main(String[] args) {
+        int numero = 24;
+        for (int i = 1; i <= numero; i++) {
+            if (numero % i == 0) {
+                System.out.println(i);
+            }
+        }
+    }
+}

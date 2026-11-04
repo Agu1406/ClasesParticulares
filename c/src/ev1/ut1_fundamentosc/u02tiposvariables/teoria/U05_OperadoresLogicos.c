@@ -1,19 +1,14 @@
 /*
 U05 — Operadores logicos.
 
-Permiten combinar condiciones: si "X" cumple varias reglas, el programa
-actua de una forma u otra.
+Combinan condiciones: && (Y), || (O), ! (NO).
+El resultado es 0 o 1 (o un bool).
 
 OBJETIVO:
-  - Usar && (AND), || (OR) y ! (NOT).
-  - Encadenar varias condiciones con ejemplos de la vida real.
-  - Entender la evaluacion en cortocircuito.
-  - Conocer las leyes de De Morgan a nivel basico.
-
-En C:
-  - and  -> &&
-  - or   -> ||
-  - not  -> !
+  - Usar &&, || y ! con ejemplos claros.
+  - Ver la tabla de verdad y la precedencia (! luego && luego ||).
+  - Entender el cortocircuito (evita dividir entre 0).
+  - Conocer De Morgan a nivel basico.
 
 Autor: Agustin. A. Marquez. Pina
 Contacto: agu1406@outlook.es
@@ -24,68 +19,51 @@ Sitio web: https://www.agustinmarquez.dev
 #include <stdio.h>
 #include <stdbool.h>
 
-static bool comprobar(const char *nombre, bool valor) {
-    printf("    (se evalua %s -> %d)\n", nombre, valor);
-    return valor;
-}
-
 int main(void) {
     printf("\n¡INICIO DEL PROGRAMA!\n\n");
 
-    int edad_p = 26;
-    double altura_p = 1.76;
-    const char *nombre_p = "Agustin";
-
-    int edad_a = 29;
-    double altura_a = 1.74;
-    const char *nombre_a = "Eduardo";
-
     /*
-    PRIMERA PARTE - && (AND): las DOS (o mas) condiciones deben ser true.
+    PRIMERA PARTE - && : las DOS condiciones deben cumplirse.
+      Ejemplo: para conducir hace falta edad y carnet.
     */
-    printf("--- PRIMERA PARTE: Montana rusa (&&) ---\n\n");
+    printf("--- PRIMERA PARTE: && (Y) ---\n\n");
 
-    bool puede_subir = altura_p >= 1.75 && edad_p >= 18;
-    printf("¿El profesor puede subir? %s\n", puede_subir ? "true" : "false");
+    int edad = 20;
+    bool tiene_carnet = true;
+    bool puede_conducir = edad >= 18 && tiene_carnet;
+    printf("edad=%d carnet=%d -> puede conducir: %d\n",
+           edad, tiene_carnet, puede_conducir);
 
-    puede_subir = altura_a >= 1.75 && edad_a >= 18;
-    printf("¿El alumno puede subir? %s\n", puede_subir ? "true" : "false");
-
-    printf("\n--- Club de Eduardos (varios &&) ---\n\n");
-    bool puede_entrar = edad_a >= 18 && altura_a > 1.50 && nombre_a[0] == 'E';
-    printf("¿El alumno puede entrar? %s\n", puede_entrar ? "true" : "false");
-    puede_entrar = edad_p >= 18 && altura_p > 1.50 && nombre_p[0] == 'E';
-    printf("¿El profesor puede entrar? %s\n", puede_entrar ? "true" : "false");
+    edad = 16;
+    puede_conducir = edad >= 18 && tiene_carnet;
+    printf("edad=%d carnet=%d -> puede conducir: %d\n",
+           edad, tiene_carnet, puede_conducir);
 
     /*
-    SEGUNDA PARTE - || (OR): basta con que UNA condicion sea true.
+    SEGUNDA PARTE - || : basta con que UNA se cumpla.
     */
-    printf("\n--- SEGUNDA PARTE: Tinto de verano (||) ---\n\n");
+    printf("\n--- SEGUNDA PARTE: || (O) ---\n\n");
 
-    bool hoy_cobre = true;
-    bool hoy_sabado = false;
-    bool hoy_domingo = false;
-    bool compro_tinto = hoy_cobre || hoy_sabado || hoy_domingo;
-    printf("¿Compro tinto de verano? %s\n", compro_tinto ? "true" : "false");
+    bool es_festivo = false;
+    bool es_fin_de_semana = true;
+    bool libre = es_festivo || es_fin_de_semana;
+    printf("festivo=%d finde=%d -> dia libre: %d\n",
+           es_festivo, es_fin_de_semana, libre);
 
     /*
-    TERCERA PARTE - ! (NOT): invierte el valor.
+    TERCERA PARTE - ! : invierte.
     */
-    printf("\n--- TERCERA PARTE: Parque con NOT (!) ---\n\n");
+    printf("\n--- TERCERA PARTE: ! (NO) ---\n\n");
 
-    bool hoy_llueve = false;
-    bool vamos_parque = !hoy_llueve;
-    printf("¿Hoy llueve? %s | ¿Vamos al parque? %s\n",
-           hoy_llueve ? "true" : "false",
-           vamos_parque ? "true" : "false");
+    bool llueve = false;
+    bool salgo = !llueve;
+    printf("llueve=%d -> salgo: %d\n", llueve, salgo);
 
-    bool fin_de_semana = hoy_sabado || hoy_domingo;
-    bool dia_ideal = fin_de_semana && !hoy_llueve;
-    printf("¿Dia ideal para parque? %s\n", dia_ideal ? "true" : "false");
+    bool dia_ideal = es_fin_de_semana && !llueve;
+    printf("finde y no llueve -> dia ideal: %d\n", dia_ideal);
 
     /*
-    CUARTA PARTE - Tabla de verdad y precedencia.
-      Precedencia: ! primero, luego &&, luego ||. Usa parentesis.
+    CUARTA PARTE - Tabla de verdad (0 y 1).
     */
     printf("\n--- CUARTA PARTE: Tabla de verdad ---\n\n");
 
@@ -99,34 +77,31 @@ int main(void) {
 
     /*
     QUINTA PARTE - Cortocircuito.
-      En A && B, si A es falso no se evalua B.
-      En A || B, si A es verdadero no se evalua B.
-      Util: if (divisor != 0 && total / divisor > 2)
+      En A && B, si A es 0 no se evalua B.
+      En A || B, si A es 1 no se evalua B.
+      Util para no dividir entre cero.
     */
     printf("\n--- QUINTA PARTE: Cortocircuito ---\n\n");
 
-    printf("falso && algo:\n");
-    comprobar("A", false) && comprobar("B", true);
-    printf("verdadero || algo:\n");
-    comprobar("A", true) || comprobar("B", true);
-
-    int total = 10, divisor = 0;
+    int total = 10;
+    int divisor = 0;
     if (divisor != 0 && total / divisor > 2) {
-        printf("division mayor que 2\n");
+        printf("cociente mayor que 2\n");
     } else {
-        printf("No se dividio entre 0 gracias al cortocircuito\n");
+        printf("No se dividio entre 0: primero se comprobo divisor != 0\n");
     }
 
     /*
     SEXTA PARTE - De Morgan (resumen).
-        !(A && B)  ==  !A || !B
-        !(A || B)  ==  !A && !B
+      !(A && B) equivale a !A || !B
+      !(A || B) equivale a !A && !B
     */
     printf("\n--- SEXTA PARTE: De Morgan ---\n\n");
 
-    bool p = true, q = false;
-    printf("!(p && q) = %d   y   !p || !q = %d\n", !(p && q), !p || !q);
-    printf("!(p || q) = %d   y   !p && !q = %d\n", !(p || q), !p && !q);
+    bool p = true;
+    bool q = false;
+    printf("!(p && q)=%d  |  !p || !q=%d\n", !(p && q), !p || !q);
+    printf("!(p || q)=%d  |  !p && !q=%d\n", !(p || q), !p && !q);
 
     printf("\n¡FIN DEL PROGRAMA!\n\n");
     return 0;

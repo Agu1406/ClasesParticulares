@@ -1,0 +1,60 @@
+package ev1.ut2_controlflujometodos.u02condicionales.ejercicios.resueltos;
+
+/**
+ * <p><b>OBJETIVO:</b> Con el entero 8, usa switch para mostrar el mes del 1 al 12. Otro valor: Mes invalido.</p>
+ *
+ * <br>
+ *
+ * <p><b>SOLUCIÓN:</b> El case 8 escribe Agosto.</p>
+ *
+ * @author Agustin. A. Marquez. Pina
+ * @since 29/04/2026
+ * @see <a href="mailto:agu1406@outlook.es">agu1406@outlook.es</a>
+ * @see <a href="https://github.com/Agu1406/ClasesParticulares">Repositorio GitHub</a>
+ * @see <a href="https://www.agustinmarquez.dev">Sitio web</a>
+ */
+public class E22_MesPorNumero_Resuelto {
+    public static void main(String[] args) {
+        int mes = 8;
+        switch (mes) {
+            case 1:
+                System.out.println("Enero");
+                break;
+            case 2:
+                System.out.println("Febrero");
+                break;
+            case 3:
+                System.out.println("Marzo");
+                break;
+            case 4:
+                System.out.println("Abril");
+                break;
+            case 5:
+                System.out.println("Mayo");
+                break;
+            case 6:
+                System.out.println("Junio");
+                break;
+            case 7:
+                System.out.println("Julio");
+                break;
+            case 8:
+                System.out.println("Agosto");
+                break;
+            case 9:
+                System.out.println("Septiembre");
+                break;
+            case 10:
+                System.out.println("Octubre");
+                break;
+            case 11:
+                System.out.println("Noviembre");
+                break;
+            case 12:
+                System.out.println("Diciembre");
+                break;
+            default:
+                System.out.println("Mes invalido");
+        }
+    }
+}

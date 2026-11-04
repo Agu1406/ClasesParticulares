@@ -22,7 +22,7 @@ package ev1.ut2_controlflujometodos.u03bucles.teoria;
  * </ul>
  *
  * <p>Util cuando no sabes cuantas repeticiones haran falta (lectura hasta sentinel,
- * validacion de menu, etc.). Practica en {@code ejercicios/02-while/} (pendientes y resueltos).</p>
+ * validacion de menu, etc.). Practica en {@code ejercicios/pendientes} y {@code ejercicios/resueltos}, del E11 al E20.</p>
  *
  * @author Agustin. A. Marquez. Pina
  * @since 02/06/2026
