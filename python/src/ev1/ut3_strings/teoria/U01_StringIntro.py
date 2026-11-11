@@ -1,13 +1,11 @@
 """
-U01 — Cadenas str: creacion, indexacion y rebanado.
+U01 — Cadenas str: creacion, longitud, indices y rebanado.
 
 OBJETIVO:
-  - str es inmutable (cada cambio crea una nueva cadena).
-  - Indexacion desde 0; indices negativos cuentan desde el final.
-  - Rebanado [inicio:fin:paso] como en listas.
-  - len(), in, concatenacion con +
-
-Paridad Java UT3 String (conceptos basicos).
+  - Crear cadenas y consultar len() (como Length en C#).
+  - Acceder por indice [0] y [-1].
+  - Extraer trozos con [inicio:fin] / [inicio:fin:paso] (Substring en C#/Java).
+  - Recorrer caracteres con for.
 
 Autor: Agustin. A. Marquez. Pina
 Contacto: agu1406@outlook.es
@@ -15,37 +13,42 @@ Repositorio GitHub: https://github.com/Agu1406/ClasesParticulares
 Sitio web: https://www.agustinmarquez.dev
 """
 
-texto = "  Hola, FP Python  "
-# repr(): devuelve la representacion oficial del texto (muestra espacios)
-print("repr:", repr(texto))
+print("\n¡INICIO DEL PROGRAMA!\n")
 
-# strip(): quita espacios al inicio y al final de la cadena
-limpio = texto.strip()
-# print(): muestra el texto ya sin espacios extra
-print("strip:", limpio)
-# len(): devuelve el numero de caracteres de limpio
-print("longitud:", len(limpio))
+"""
+PRIMERA PARTE — Crear y medir longitud.
+"""
+print("¡DEMO 1: len()!\n")
+saludo = "Hola mundo"
+print("Cadena:", repr(saludo))
+print("Longitud:", len(saludo))
+print('Vacia "" ->', len(""))
 
-# print(): acceso al primer caracter con indice [0]
-print("primer caracter:", limpio[0])
-# print(): rebanado [-6:] toma los ultimos 6 caracteres
-print("ultimos 6:", limpio[-6:])
+"""
+SEGUNDA PARTE — Indices (base 0).
+"""
+print("\n¡DEMO 2: INDICES!\n")
+print("Primer caracter [0]:", saludo[0])
+print("Ultimo [-1]:", saludo[-1])
+print("Espacio [4]:", repr(saludo[4]))
 
-# print(): rebanado [7:9] toma caracteres en posiciones 7 y 8
-print("subcadena [7:9]:", limpio[7:9])
+"""
+TERCERA PARTE — Rebanado (slice).
+"""
+print("\n¡DEMO 3: SLICE!\n")
+frase = "Aprender Python en FP"
+print("Completa:", frase)
+print("[0:8]:", frase[0:8])
+print("[9:]:", frase[9:])
+print("[-2:]:", frase[-2:])
+print("[::2] (de 2 en 2):", frase[::2])
 
-saludo = "Hola" + " " + "mundo"
-# print(): muestra la cadena concatenada con +
-print(saludo)
-# print(): repite "Ha" tres veces con el operador *
-print("Ha" * 3)
-
-# print(): compara cadenas lexicograficamente con <
-print("'abc' < 'abd':", "abc" < "abd")
-
-# for letra in "Python": recorre cada caracter de la cadena
+"""
+CUARTA PARTE — Recorrido.
+"""
+print("\n¡DEMO 4: for letra in cadena!\n")
 for letra in "Python":
-    # print(): muestra cada letra en la misma linea
     print(letra, end=" ")
-# print(): salto de linea al acabar el bucle
 print()
+
+print("\n¡FIN DEL PROGRAMA!\n")

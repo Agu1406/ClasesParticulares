@@ -34,8 +34,8 @@ python/
 | UT | Carpeta Python | Equivalente Java | Estado material |
 |----|----------------|------------------|-----------------|
 | **UT1** | `ut1_fundamentospython` | `ut1_fundamentosjava` | Teoría U01–U03 |
-| **UT2** | `ut2_controlflujometodos` | `ut2_controlflujometodos` | Condicionales, bucles, funciones, validación entrada |
-| **UT3** | `ut3_strings` | `ut3_stringsyenvolventes` | U01–U03 (f-strings, `:<` `:>` `:^`) |
+| **UT2** | `ut2_controlflujometodos` | `ut2_controlflujometodos` | Condicionales, bucles, funciones, validación entrada U01–U05 + E01–E06 |
+| **UT3** | `ut3_strings` | `ut3_stringsyenvolventes` | U01–U06 (índices, inmutabilidad, métodos, f-strings/`:<^>`, join, repaso) + E01–E12 |
 | **UT4** | `ut4_colecciones` | `ut4_colecciones` + NumPy/pandas (5101) | Listas U01–U06 + E01–E12; tuplas U01–U05 + E01–E10; dicts U01–U06 + E01–E12; `u04numpy`/`u05pandas`/`u06repaso`; práctica Sevilla gestor |
 | **UT5** | `ut5_pooexcepcionesio` | `ut5_pooexcepcionesio` | POO U01–U07 + E01–E10 + `tiendacompra`; excepciones U01–U07 + E01–E15; ficheros U01–U07 + E01–E11; examen Elche UMH (`u04examenes`) |
 | **UT6** | `ut6_pooavanzadaestructuras` | `ut6_pooavanzadaestructuras` | u01 herencia/polimorfismo/ABC + prácticas CES; Sevilla ampliación; u02–u05 stub |

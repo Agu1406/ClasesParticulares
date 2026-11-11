@@ -1,0 +1,10 @@
+"""
+OBJETIVO: Funcion es_entero(texto) con isdigit; prueba '18' y 'hola'.
+
+Autor: Agustin. A. Marquez. Pina
+Contacto: agu1406@outlook.es
+Repositorio GitHub: https://github.com/Agu1406/ClasesParticulares
+Sitio web: https://www.agustinmarquez.dev
+"""
+
+# TODO: def es_entero; probar '18' y 'hola'
