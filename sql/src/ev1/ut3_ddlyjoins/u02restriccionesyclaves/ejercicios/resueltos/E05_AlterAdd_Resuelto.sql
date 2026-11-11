@@ -1,0 +1,11 @@
+/*
+OBJETIVO: Escribe ALTER para anadir telefono VARCHAR(20) a profesor.
+@author Agustin. A. Marquez. Pina
+@see mailto:agu1406@outlook.es
+@see https://github.com/Agu1406/ClasesParticulares
+@see https://www.agustinmarquez.dev
+@since 08/11/2026
+*/
+
+-- ENUNCIADO: Escribe ALTER para anadir telefono VARCHAR(20) a profesor.
+ALTER TABLE profesor ADD COLUMN telefono VARCHAR(20) NULL;

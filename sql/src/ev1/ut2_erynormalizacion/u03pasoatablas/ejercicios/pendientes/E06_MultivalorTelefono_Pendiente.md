@@ -1,0 +1,16 @@
+<!--
+OBJETIVO: Cliente con varios telefonos → tablas.
+@author Agustin. A. Marquez. Pina
+@see mailto:agu1406@outlook.es
+@see https://github.com/Agu1406/ClasesParticulares
+@see https://www.agustinmarquez.dev
+@since 08/11/2026
+-->
+
+# E06_MultivalorTelefono (pendiente)
+
+**Enunciado:** Cliente con varios telefonos → tablas.
+
+Escribe tu respuesta debajo.
+
+---

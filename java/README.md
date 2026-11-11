@@ -39,7 +39,7 @@ java/
     ├── ev1/                RA1-RA3  (ut1, ut2, ut3)
     ├── ev2/                RA4-RA6  (ut4, ut5)
     ├── ev3/                RA7-RA9  (ut6, ut7, ut8, ut9/pf)
-    └── ev4/                Solo examenes / simulacros RA1+RA3+RA5 (consola)
+    └── ev4/                Solo examenes / simulacros (RA2 1EV; RA2+RA4+RA6 2EV)
 ```
 
 ### Convencion por subtema (EV1, EV2, EV3)
@@ -271,20 +271,23 @@ En cada clase principal de una practica, documentar con **objetivo pedagogico**,
 | `ev3/ut8_frameworksspring` | `u01spring`, `u02repaso` | **Reservado** — placeholder sin codigo Spring implementado |
 | `ev3/ut9_programacionfuncional/pf` | `u01lambda`, `u02streams`, `u03optional`, `u04principios`, `u05repaso` (legacy) | Lambda, Stream API, Optional, principios PF, TPP EPIG |
 
-### EV4 - Solo examenes (RA1, RA3, RA5)
+### EV4 - Solo examenes (nomenclatura por RA del alumno)
 
 Sin UTs ni teoria: cada examen es una carpeta al estilo del alumno.
 En cada ejercicio: `Main.java` (sin resolver) y `Done.java` (resuelto).
 
-| Examen | Ejercicios |
-|--------|------------|
-| `ev4/E01_ExamenRA123` | `E01_TicketIVA`, `E02_Centinela`, `E03_MenuApp` |
-| `ev4/E02_ExamenRA123` | `E01_ConversorTemperatura`, `E02_CajeroAparcamiento`, `E03_EntrenamientoNumerico` |
-| `ev4/E03_ExamenRA123` | `E01_ConversorMonedas`, `E02_TerminadosEn3`, `E03_AprenderASumar` |
-| `ev4/E04_ExamenRA123` | `E01_FacturaDescuento`, `E02_RegistroEdades`, `E03_MenuCajero` |
-| `ev4/E05_ExamenRA123` | `E01_CalculadoraIMC`, `E02_MultiplosEnRango`, `E03_AdivinaNumero` |
-| `ev4/E06_ExamenRA123` | `E01_NominaSimple`, `E02_SumaHastaLimite`, `E03_MenuEstadisticas` |
-| `ev4/E07_ExamenRA123` | `E01_FacturaLuz`, `E02_ContadorPasos`, `E03_SimplificarFracciones`, `E04_DiaDelAno` (2 h / 10 pts; permite métodos) |
+Sufijo del examen = RA que entran (mapa catalan del centro: RA2 programas sencillos; RA4 clases; RA6 arrays).
+
+| Examen | RA | Ejercicios |
+|--------|-----|------------|
+| `ev4/E01_ExamenRA2` | RA2 (1.ª eval) | `E01_TicketIVA`, `E02_Centinela`, `E03_MenuApp` |
+| `ev4/E02_ExamenRA2` | RA2 (1.ª eval) | `E01_ConversorTemperatura`, `E02_CajeroAparcamiento`, `E03_EntrenamientoNumerico` |
+| `ev4/E03_ExamenRA2` | RA2 (1.ª eval) | `E01_ConversorMonedas`, `E02_TerminadosEn3`, `E03_AprenderASumar` |
+| `ev4/E04_ExamenRA2` | RA2 (1.ª eval) | `E01_FacturaDescuento`, `E02_RegistroEdades`, `E03_MenuCajero` |
+| `ev4/E05_ExamenRA2` | RA2 (1.ª eval) | `E01_CalculadoraIMC`, `E02_MultiplosEnRango`, `E03_AdivinaNumero` |
+| `ev4/E06_ExamenRA2` | RA2 (1.ª eval) | `E01_NominaSimple`, `E02_SumaHastaLimite`, `E03_MenuEstadisticas` |
+| `ev4/E07_ExamenRA2` | RA2 (1.ª eval) | `E01_FacturaLuz`, `E02_ContadorPasos`, `E03_SimplificarFracciones`, `E04_DiaDelAno` (2 h / 10 pts; permite métodos) |
+| `ev4/E08_ExamenRA246` | RA2 + RA4 + RA6 (2.ª eval) | `E01_ButacasCine`, `E02_CifradoCesar`, `E03_InventarioTienda`, `E04_SociosGimnasio` |
 
 Indice de enlaces a examenes/materiales publicos de otros centros: `ev4/FUENTES.md` (no se copian enunciados ajenos por copyright; E04–E06 son originales al estilo 1.ª eval).
 

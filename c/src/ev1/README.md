@@ -43,9 +43,9 @@ Práctica: `practicas/ejemplointernocomentariosentrada/`.
 
 | Subtema | Teoría clave | Práctica |
 |---------|--------------|----------|
-| u01 operadores | U01 clase densa (+ `-` `*` `/` `%`, ternario, `sizeof`) → `++` → precedencia → bits → `math.h` aula | `ejemplointernooperadoresybasicos` |
-| u02 condicionales | `U01_If` → `U02_IfElse` → `U03_Switch` → `U04_Anidados` → `U05_Repaso` | `ejemplointernocondicionales` |
-| u03 bucles | `U01_For` → `U02_While` → `U03_DoWhile` → `U04_Anidados` (break/centinela en u05repaso) | `ejemplointernobucles` |
+| u01 operadores | U01 clase densa → `++` → precedencia → bits → `math.h`; banco **~E01–E23** (calentamiento + bits) | `ejemplointernooperadoresybasicos` |
+| u02 condicionales | `U01_If` → … → `U05_Repaso`; banco **~E01–E30** | `ejemplointernocondicionales` |
+| u03 bucles | `U01_For` → `U02_While` → `U03_DoWhile` → `U04_Anidados` → `U05_Repaso` (break/centinela en u05repaso); banco **~E01–E31** | `ejemplointernobucles` |
 | u04 métodos | **funciones** (el nombre de carpeta es por paridad). Prototipos, valor, `static`, recursión, `*` intro, menús | `ejemplointernometodos` |
 | u05 repaso | Solo **UT1+UT2**. No es el cierre de EV1. | `ejemplointernorepasoev1` |
 | u06 depuración | `assert`, printf-debug, catálogo de bugs, GDB, stderr | `ejemplointernodepuracionaserciones` |
@@ -81,5 +81,5 @@ Cabeceras permitidas: ver lista blanca en [`../../README.md`](../../README.md).
 
 - [ ] UT1–UT4 se proyectan solo con ficheros `.c` de este árbol (sin abrir `cpp/` / `csharp/` / `java/`).
 - [ ] Cabeceras de la lista blanca; bool en consola como `0`/`1` o `si`/`no`.
-- [ ] Tipos: U01–U06 + E01–E10; condicionales U01–U05; bucles U01–U04.
+- [ ] Tipos: U01–U06 + E01–E10; condicionales U01–U05 (~E30); bucles U01–U05 (~E31); operadores ~E23.
 - [ ] Cada subtema tiene práctica interna con `gcc -std=c11 -Wall -Wextra -pedantic … -lm`.
