@@ -51,3 +51,11 @@
 !**/gradle/wrapper/gradle-wrapper.properties
 # Nota: Los archivos .gradle.kts y build.gradle.kts SÍ deben estar en el repositorio
 # La carpeta .gradle/ (caché) ya está ignorada arriba en la línea 5
+
+# Apuntes y documentos binarios de terceros (centros, plataformas): solo locales
+*.pdf
+*.doc
+*.docx
+*.pptx
+*.xlsx
+*.zip
