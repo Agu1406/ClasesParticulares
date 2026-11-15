@@ -1,0 +1,67 @@
+/* ESTILOS GENERALES (todas las páginas)
+   TODO 1: todos los navegadores deben partir de los mismos estilos.
+   Pista: selector * con margin, padding y box-sizing.
+   Define también font-family, color de texto y color de fondo en body. */
+
+
+
+/* CABECERA (común a todas las páginas)
+   TODO 2: avatar a la izquierda, menú en el centro y logo a la derecha.
+   Pistas: display: flex en header, justify-content, align-items, flex-wrap.
+   El avatar es pequeño y redondo (width, height, border-radius: 50%).
+   Quita el subrayado de los enlaces del menú (text-decoration). */
+
+
+
+/* PÁGINA INICIO -> div .presentacion
+   TODO 3: presentación a la izquierda y panel lateral a la derecha.
+   Pistas: display: flex en .presentacion, gap, align-items.
+   Dale fondo blanco, padding y border-radius a las cajas de contenido.
+   Escribe los estilos de títulos y textos solo dentro de .presentacion.
+   TODO 4: iconos de redes en fila que saltan a la línea de abajo al reducir la pantalla.
+   Pistas: display: flex y flex-wrap: wrap, gap, tamaño de las imágenes (width y height). */
+
+
+
+/* PÁGINA HABILIDADES -> div .habilidades
+   TODO 5: estilos propios para el div .habilidades: caja blanca (fondo, padding, border-radius)
+   y títulos de otro color. Aplica los estilos de las tablas solo dentro de .habilidades.
+   Tablas legibles.
+   Pistas: width: 100%, border-collapse: collapse, border y padding en th y td,
+   otro color de fondo en las cabeceras (th). */
+
+
+
+/* PÁGINA PROYECTOS -> div .proyectos
+   TODO 6: tarjetas en fila que saltan de línea (flex y flex-wrap, gap en .tarjetas).
+   TODO 7: aspecto de la tarjeta (ancho, fondo, padding, border-radius).
+   TODO 8: el estado en la esquina superior derecha de la tarjeta.
+   Pistas: position: relative en la tarjeta; position: absolute con top y right en el estado.
+   TODO 9: un estilo distinto para cada estado (nuevo, en curso, completado).
+   Por ejemplo, cambia el color del estado y el borde superior de la tarjeta. */
+
+
+
+/* PÁGINA CONTACTO -> div .contacto
+   TODO 10: caja blanca para el div .contacto y formulario ordenado.
+   Pistas: label con display: block, inputs y textarea con width: 100%, padding y borde.
+   Escribe los estilos solo dentro de .contacto.
+   TODO 11: botón de enviar con color de fondo, color de texto y border-radius. */
+
+
+
+/* PÁGINA CONFIRMACIÓN -> div .confirmacion
+   TODO 12: caja blanca para el div .confirmacion con el texto centrado (text-align)
+   y estilos propios para el título y el enlace. */
+
+
+
+/* PIE DE PÁGINA (común a todas las páginas)
+   TODO 13: fondo de color, texto claro y centrado, enlaces del mismo color que el texto. */
+
+
+
+/* ADAPTACIÓN A MÓVILES
+   TODO 14: con @media (max-width: 700px):
+   - la cabecera pasa a columna (flex-direction: column)
+   - la presentación y el panel lateral también pasan a columna */

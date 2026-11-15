@@ -1,0 +1,404 @@
+/* ESTILOS GENERALES */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f2f4f8;
+    color: #333;
+}
+
+main {
+    padding: 30px;
+}
+
+/* CABECERA */
+
+header {
+    background-color: #172554;
+    color: white;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 40px;
+    flex-direction: row;
+    min-height: 120px;
+    padding: 10px;
+}
+
+.avatar img {
+    width: 80px;
+    height: 80px;
+    margin-right: 20px;
+    margin-left: 20px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+nav {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+}
+
+.logoStudentShuttle {
+    width: 220px;
+    height: 80px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: nowrap;
+    gap: 8px;
+}
+
+.logo {
+    width: 100px;
+    height: auto;
+}
+
+.StudentShuttle {
+    width: auto;
+    height: auto;
+    color: white;
+}
+
+/* PIE DE PAGINA */
+
+footer {
+    background-color: #172554;
+    color: white;
+    padding: 20px;
+    text-align: center;
+    margin-top: 30px;
+}
+
+footer a {
+    color: white;
+    margin: 10px;
+}
+
+/*======================================
+* ESTILOS DE INDEX.HTML (PRESENTACION) *
+======================================*/
+
+.presentacion {
+    display: flex;
+    gap: 30px;
+    align-items: flex-start;
+    max-width: 2000px;
+    margin: auto;
+}
+
+.contenido {
+    background-color: white;
+    padding: 30px;
+    border-radius: 10px;
+    flex: 3;
+}
+
+.contenido h2 {
+    color: #1e40af;
+    margin-bottom: 15px;
+}
+
+.contenido h3 {
+    color: #1e40af;
+    margin-top: 25px;
+    margin-bottom: 12px;
+}
+
+.contenido p {
+    line-height: 1.7;
+    margin-bottom: 12px;
+}
+
+.contenido ul {
+    padding-left: 25px;
+    line-height: 2;
+}
+
+.foto {
+    width: 240px;
+    height: 180px;
+    border-radius: 25px;
+    object-fit: cover;
+    display: block;
+    border: 4px solid #1e40af;
+}
+
+/* REDES SOCIALES */
+
+.panel-lateral {
+    width: 20%;
+    min-height: 200px;
+    padding: 15px;
+    background-color: white;
+    border-radius: 10px;
+    box-sizing: border-box;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    align-items: center;
+}
+
+/* Las redes van en fila y saltan a la línea de abajo si no caben */
+.contenedor-redes {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 10px;
+}
+
+.redes {
+    margin: 10px;
+}
+
+.redes img {
+    width: 35px;
+    height: 35px;
+    object-fit: contain;
+}
+
+/*===========================================
+* ESTILOS DE HABILIDADES.HTML (HABILIDADES) *
+===========================================*/
+
+.habilidades {
+    background-color: white;
+    padding: 30px;
+    max-width: 900px;
+    margin: auto;
+    border-radius: 50px;
+    border: solid #172554 3px;
+}
+
+.habilidades h2 {
+    color: #172554;
+    margin-bottom: 40px;
+    text-align: center;
+}
+
+.habilidades h3 {
+    color: #172554;
+    margin-top: 30px;
+    margin-bottom: 30px;
+}
+
+.habilidades table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.habilidades th,
+.habilidades td {
+    text-align: center;
+    border: 5px solid #172554;
+    padding: 10px;
+}
+
+.habilidades th {
+    background-color: #172554;
+    color: white;
+    font-weight: bold;
+}
+
+/* La barra mide 160px por defecto y hace la columna (th incluido) más ancha que la tabla */
+.habilidades progress {
+    width: 100%;
+}
+/*=======================================
+* ESTILOS DE PROYECTOS.HTML (PROYECTOS) *
+=======================================*/
+
+.proyectos {
+    max-width: 1200px;
+    margin: auto;
+}
+
+.proyectos h2 {
+    color: #1e40af;
+    margin-bottom: 20px;
+}
+
+.tarjetas {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.tarjeta {
+    position: relative;
+    width: 280px;
+    background-color: white;
+    padding: 15px;
+    border-radius: 10px;
+    border-top: 6px solid #999;
+}
+
+.proyectos .tarjeta img {
+    width: 100%;
+    border-radius: 6px;
+    margin-bottom: 10px;
+}
+
+.proyectos .tarjeta h3 {
+    margin-bottom: 8px;
+}
+
+.proyectos .tarjeta p {
+    margin-bottom: 8px;
+}
+
+.fecha {
+    color: #666;
+    font-size: 14px;
+}
+
+/* Estado: esquina superior derecha de la tarjeta */
+.estado {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    padding: 4px 10px;
+    border-radius: 15px;
+    color: white;
+    font-size: 14px;
+}
+
+.nuevo {
+    border-top-color: #f59e0b;
+}
+
+.nuevo .estado {
+    background-color: #f59e0b;
+}
+
+.en-curso {
+    border-top-color: #2563eb;
+}
+
+.en-curso .estado {
+    background-color: #2563eb;
+}
+
+.completado {
+    border-top-color: #16a34a;
+}
+
+.completado .estado {
+    background-color: #16a34a;
+}
+
+/*=====================================
+* ESTILOS DE CONTACTO.HTML (CONTACTO) *
+=====================================*/
+
+.contacto {
+    background-color: white;
+    padding: 30px;
+    border-radius: 10px;
+    max-width: 700px;
+    margin: auto;
+}
+
+.contacto h2 {
+    color: #1e40af;
+    margin-bottom: 15px;
+}
+
+.contacto label {
+    display: block;
+    margin-top: 15px;
+    font-weight: bold;
+}
+
+.contacto p {
+    margin-top: 15px;
+    font-weight: bold;
+}
+
+.contacto input[type="email"],
+.contacto input[type="tel"],
+.contacto input[type="text"],
+.contacto textarea {
+    width: 100%;
+    padding: 8px;
+    margin-top: 5px;
+    border: 1px solid #cbd5e1;
+    border-radius: 5px;
+    font-family: Arial, sans-serif;
+}
+
+.contacto label input[type="checkbox"] {
+    margin-right: 8px;
+}
+
+.contacto button {
+    margin-top: 20px;
+    padding: 10px 20px;
+    background-color: #1e40af;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+/*=============================================
+* ESTILOS DE CONFIRMACION.HTML (CONFIRMACION) *
+=============================================*/
+
+.confirmacion {
+    background-color: white;
+    padding: 30px;
+    border-radius: 10px;
+    max-width: 700px;
+    margin: auto;
+    text-align: center;
+}
+
+.confirmacion h2 {
+    color: #1e40af;
+    margin-bottom: 15px;
+}
+
+.confirmacion p {
+    line-height: 1.7;
+    margin-bottom: 15px;
+}
+
+.confirmacion a {
+    color: #1e40af;
+}
+
+/* ADAPTACION A MOVILES (al final para que no la pisen los estilos de arriba) */
+
+@media (max-width: 700px) {
+
+    header {
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    .presentacion {
+        flex-direction: column;
+    }
+
+    .contenido,
+    .panel-lateral {
+        width: 100%;
+    }
+
+}

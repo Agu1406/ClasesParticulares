@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contacto</title>
+    <link rel="stylesheet" href="css/estilos.css">
+</head>
+<body>
+    <header>
+        <div class="avatar">
+            <img src="imagenes/avatar.webp" alt="miavatar">
+        </div>
+        <nav>
+            <a href="index.html">Inicio</a>
+            <a href="habilidades.html">Mis habilidades</a>
+            <a href="proyectos.html">Mis proyectos</a>
+            <a href="contacto.html">Contacto</a>
+        </nav>
+        <div class="logoStudentShuttle">
+            <img src="imagenes/StudentShuttle.webp" alt="logo" class="logo">
+            <div class="StudentShuttle"> Student Shuttle </div>
+        </div>
+    </header>
+
+    <main>
+        <div class="contacto">
+            <h2>Contacto</h2>
+
+            <!-- method="post": los datos no se ven en la URL (envío seguro).
+                 Si con Live Server da error 405, abre el HTML con doble clic. -->
+            <form action="confirmacion.html" method="post">
+
+                <label for="email">Correo electrónico (obligatorio)</label>
+                <input type="email" id="email" name="email" required>
+
+                <label for="telefono">Teléfono (opcional)</label>
+                <input type="tel" id="telefono" name="telefono" pattern="[0-9]{9}" title="9 números">
+
+                <label for="asunto">Asunto (obligatorio)</label>
+                <input type="text" id="asunto" name="asunto" required>
+
+                <label for="motivo">Motivo de contacto (obligatorio)</label>
+                <textarea id="motivo" name="motivo" rows="5" required></textarea>
+
+                <p>Intereses comunes (opcional)</p>
+                <label><input type="checkbox" name="intereses" value="redes"> Redes</label>
+                <label><input type="checkbox" name="intereses" value="web"> Desarrollo web</label>
+                <label><input type="checkbox" name="intereses" value="emprendimiento"> Emprendimiento</label>
+
+                <button type="submit">Enviar</button>
+            </form>
+        </div>
+    </main>
+
+    <footer>
+        <p>&copy; 2026 David Medina - Student Shuttle</p>
+
+        <a href="#">Política de privacidad</a>
+
+        <a href="mailto:david.medina23@educa.madrid.org">
+            Contacto
+        </a>
+    </footer>
+</body>
+</html>
