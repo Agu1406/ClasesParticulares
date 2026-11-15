@@ -17,33 +17,90 @@ package ev1.ut1_fundamentosjava.u02tiposvariablesconversion.teoria;
  */
 public class U02_CasteoTipos {
     public static void main(String[] args) {
-        // Mis datos de ejemplo: dia favorito, PI y letra favorita
-        int diaFavorito = 14;
-        double valorPI = 3.1416;
-        char letraFavorita = 'A';
+        int edadProfesorE = 26, alturaProfesorE, letraInt;
+        double alturaProfesorD = 1.76, edadProfesorD, letraDouble;
+        char letraChar = 'A';
+        byte edadProfesorB;
+        float alturaProfesorF;
+        boolean esHumano = true;
 
-        // (double) detras del =: pide a Java transformar el 14 (int) en decimal
-        // Java agrega .0 al numero
-        double diaFavoritoConvertido = (double) diaFavorito;
-        System.out.println("El numero 14 convertido en decimal se ve asi: " + diaFavoritoConvertido);
+        /*
+         * Se lee de derecha a izquierda, de la siguiente forma:
+         *
+         * "Transforma edadProfesorE a double y luego guarda el resultado de esa
+         * transformación en edadProfesorD".
+         */
+        edadProfesorD = (double) edadProfesorE;
+        System.out.print("" +
+                "\n¡Ejemplo de conversión de INT a DOUBLE!\n" +
+                "\n" +
+                "- Edad profesor (int): " + edadProfesorE + ".\n" +
+                "- Edad profesor (double): " + edadProfesorD + ".\n" +
+                "");
 
-        // (int) sobre un double: se pierden los decimales (NO redondea; se queda el 3)
-        int valorPIConvertido = (int) valorPI;
-        System.out.println("El valor de PI convertido en entero se ve asi: " + valorPIConvertido);
+        /*
+         * Cuando Java convierte números decimales en números enteros los decimales no
+         * se redondean nunca, se ignoran, como si no existieran y Java se queda solo
+         * con el número entero original.
+         */
+        alturaProfesorE = (int) alturaProfesorD;
+        System.out.print("" +
+                "\n¡Ejemplo de conversión de DOUBLE a INT!\n" +
+                "\n" +
+                "- Altura profesor (double): " + alturaProfesorD + ".\n" +
+                "- Altura profesor (int): " + alturaProfesorE + ".\n" +
+                "");
 
-        // Un char se puede pasar a int: cada letra tiene un numero en la tabla ASCII
-        // Ver https://elcodigoascii.com.ar — la 'A' mayuscula no es lo mismo que 'a'
-        int letraFavoritaConvertida = (int) letraFavorita;
-        System.out.println("La letra A convertida en numero es: " + letraFavoritaConvertida);
+        /*
+         * Para las máquinas no existen las letras, ellas solo ven números, entonces
+         * en los lenguajes de programación cada letra/carácter/símbolo está asociado
+         * a un número; esos números se conocen como ASCII.
+         *
+         * https://elcodigoascii.com.ar
+         */
+        letraInt = (int) letraChar;
+        System.out.print("" +
+                "\n¡Ejemplo de conversión de CHAR a INT!\n" +
+                "\n" +
+                "- Letra (char): " + letraChar + ".\n" +
+                "- Letra (int): " + letraInt + ".\n" +
+                "");
 
-        // Tambien se puede pasar un char a double (ASCII con .0); poco util, pero funciona
-        double letraFavoritaDecimal = (double) letraFavorita;
-        System.out.println("La letra A convertida en decimal: " + letraFavoritaDecimal);
+        /*
+         * Un char también se puede pasar a double: es el mismo código ASCII,
+         * pero con .0 al final. Poco útil en la práctica, pero funciona.
+         */
+        letraDouble = (double) letraChar;
+        System.out.print("" +
+                "\n¡Ejemplo de conversión de CHAR a DOUBLE!\n" +
+                "\n" +
+                "- Letra (char): " + letraChar + ".\n" +
+                "- Letra (double): " + letraDouble + ".\n" +
+                "");
 
-        // El mismo proceso vale para otras primitivas numericas (byte, float, short, etc.)
-        byte diaFavoritoByte = (byte) diaFavorito;
-        float valorPIFloat = (float) valorPI;
-        System.out.println("Dia como byte: " + diaFavoritoByte);
-        System.out.println("PI como float: " + valorPIFloat);
+        /*
+         * El mismo proceso vale para otras primitivas numéricas
+         * (byte, float, short, long, etc.).
+         */
+        edadProfesorB = (byte) edadProfesorE;
+        alturaProfesorF = (float) alturaProfesorD;
+        System.out.print("" +
+                "\n¡Ejemplo de conversión a BYTE y a FLOAT!\n" +
+                "\n" +
+                "- Edad profesor (int): " + edadProfesorE + ".\n" +
+                "- Edad profesor (byte): " + edadProfesorB + ".\n" +
+                "- Altura profesor (double): " + alturaProfesorD + ".\n" +
+                "- Altura profesor (float): " + alturaProfesorF + ".\n" +
+                "");
+
+        /*
+         * boolean NO se puede castear a número ni a char (ni al revés).
+         * Solo admite true o false; lo imprimimos tal cual.
+         */
+        System.out.print("" +
+                "\n¡Boolean no admite casteo!\n" +
+                "\n" +
+                "- ¿Es humano? (boolean): " + esHumano + ".\n" +
+                "");
     }
 }
