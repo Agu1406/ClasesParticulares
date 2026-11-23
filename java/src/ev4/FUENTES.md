@@ -3,6 +3,7 @@
 No se pegan aquí enunciados ajenos completos (derechos de autor). Enlaces para consultar y contrastar.
 Los exámenes `E04`–`E06` de este repo son **originales**, del mismo nivel que una 1.ª evaluación típica (tipos, control, `Scanner`), inspirados en patrones habituales de centros.
 `E07` y `E10` adaptan modelos de **1.ª evaluación**; `E08`, `E09` y `E11` el estilo de **2.ª** (arrays / String / POO).
+`E12` es un simulacro original inspirado en tareas Galicia CIFP (U2T1 tarifas, U2T2 datas, U2T3 viaxe, U2T4 códigos, U2T7 temperaturas); materiales del centro en `ev1/.../practicas/galicia…` (y sueltos en `src/` hasta archivarlos).
 
 ## Exámenes y bancos online
 

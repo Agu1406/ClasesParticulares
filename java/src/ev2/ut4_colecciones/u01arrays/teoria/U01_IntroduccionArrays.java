@@ -3,7 +3,9 @@ package ev2.ut4_colecciones.u01arrays.teoria;
 /**
  * Clase introductoria a los arrays de una dimension.
  *
- * <p>Practica en {@code ejercicios/pendientes} y {@code ejercicios/resueltos}, del E01 al E10.</p>
+ * <p>Practica en {@code ejercicios/pendientes} y {@code ejercicios/resueltos}
+ * (E01–E32). Teoria en orden: U01–U03 (base 1D), U04–U07 (copiar, sumar,
+ * insertar, extremos), U08–U10 (bidimensionales, recorridos, burbuja).</p>
  *
  * 
  * @author Agustin. A. Marquez. Pina

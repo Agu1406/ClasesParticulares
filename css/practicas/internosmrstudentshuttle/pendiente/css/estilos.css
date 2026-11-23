@@ -38,7 +38,9 @@
    TODO 8: el estado en la esquina superior derecha de la tarjeta.
    Pistas: position: relative en la tarjeta; position: absolute con top y right en el estado.
    TODO 9: un estilo distinto para cada estado (nuevo, en curso, completado).
-   Por ejemplo, cambia el color del estado y el borde superior de la tarjeta. */
+   Por ejemplo, cambia el color del estado y el borde superior de la tarjeta.
+   TODO 9b: estilos propios para el div .experiencia: caja blanca (fondo, padding, border-radius),
+   separada de los proyectos (margin-top), y cada puesto con algún detalle (por ejemplo border-left). */
 
 
 
