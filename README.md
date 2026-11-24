@@ -43,6 +43,8 @@ Misma jerarquía `src/ev{N}/ut{N}_{tema}/u{NN}…` y las mismas convenciones de 
 | [`php/`](php/), [`sql/`](sql/), [`linux/`](linux/) | Por CCAA / centro |
 | [`react/`](react/), [`css/`](css/), [`tests/`](tests/README.md), [`portfolio/`](portfolio/) | Tutoriales, estilos, tests, sitio |
 | [`animacion3d/`](animacion3d/README.md) | C.F.G.S. Animaciones 3D, Juegos y Entornos Interactivos (apuntes) |
+| [`calidadsoftware/`](calidadsoftware/madrid/uned/README.md) | UNED — Calidad del Software (PEC / DAFO; PDF versionados) |
+| [`procesamientoparalelo/`](procesamientoparalelo/madrid/uned/README.md) | UNED — Procesamiento Paralelo 71023051 (MPI, exámenes; PDF versionados) |
 
 ## Estructura del Repositorio
 
@@ -116,6 +118,16 @@ Misma jerarquía `src/ev{N}/ut{N}_{tema}/u{NN}…` y las mismas convenciones de 
 - Apuntes del C.F.G.S. Animaciones 3D, Juegos y Entornos Interactivos (curso 26/27)
 - Una carpeta por módulo del aula; sin escenas, texturas ni vídeo
 - Ver [animacion3d/README.md](animacion3d/README.md)
+
+### **calidadsoftware/**
+- UNED (Madrid): Calidad del Software — PEC1 2026-27, caso BOGEY, guía DAFO
+- Documentos en PDF (versionados); Office → PDF
+- Ver [calidadsoftware/madrid/uned/README.md](calidadsoftware/madrid/uned/README.md)
+
+### **procesamientoparalelo/**
+- UNED (Madrid): Procesamiento Paralelo (código 71023051) — guía, práctica MPI, exámenes sep recu
+- Documentos en PDF (versionados); Office → PDF
+- Ver [procesamientoparalelo/madrid/uned/README.md](procesamientoparalelo/madrid/uned/README.md)
 
 ### **portfolio/**
 - Sitio del portfolio (Astro/React); no es asignatura
