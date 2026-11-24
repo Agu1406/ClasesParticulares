@@ -8,8 +8,9 @@ C **no copia el UT1–UT9 de Java** (no hay POO ni Spring). EV1 sí sigue el mis
 
 **Canon de carpetas y nombres:** [`../java/README.md`](../java/README.md). Este README es la guía del módulo C.
 
-- **EV1 (lista para clase):** `src/ev1/` — UT1 a UT4.
-- **Legacy (no usar en clase):** `01-introduccion/`, `02-sintaxis-basica/`, `03-control-flujo/`. Quedan como archivo; el material vivo está en `src/ev1`.
+- **EV1 (lista para clase):** `src/ev1/` — UT1 a UT4 + **UT5 exámenes** (`ut5_examenesev1/`, p. ej. Ej1 Link / “el juego”).
+- **EV2 (en construcción):** `src/ev2/` — UT6 arrays → UT7 punteros → UT8 malloc → UT9 ficheros.
+- **Legacy (no usar en clase):** `01-introduccion/`, `02-sintaxis-basica/`, `03-control-flujo/`. Quedan como archivo; el material vivo está en `src/ev1` (+ `src/ev2`).
 
 ## Requisitos
 
@@ -53,7 +54,8 @@ c/
 ├── 02-sintaxis-basica/      ← LEGACY, no usar
 ├── 03-control-flujo/        ← LEGACY, no usar
 └── src/
-    └── ev1/                 UT1–UT4 (fundamentos, control, strings, struct)
+    ├── ev1/                 UT1–UT5 (temario + última UT = exámenes)
+    └── ev2/                 UT6–UT9 (arrays, punteros, malloc, ficheros)
 ```
 
 ### Mapa EV1
@@ -61,11 +63,23 @@ c/
 | UT | Carpeta | Qué se enseña | Práctica |
 |----|---------|---------------|----------|
 | **UT1** | `ut1_fundamentosc` | gcc, `printf`, tipos, `scanf`/`fgets` | 3 internas |
-| **UT2** | `ut2_controlflujometodos` | operadores, if/switch, bucles, funciones, depuración | 6 internas |
+| **UT2** | `ut2_controlflujometodos` | operadores, if/switch, bucles, funciones, depuración | internas |
 | **UT3** | `ut3_strings` | cadenas, `string.h`, `ctype.h` | interna + Calderón |
 | **UT4** | `ut4_tiposcompuestos` | `enum`, `struct`, `typedef`, `union` | 1 interna |
+| **UT5** | `ut5_examenesev1` | Exámenes / simulacros (UCAM). **“El juego” = Ej1 Link** | 3 prácticas separadas |
 
-`u05repaso` (dentro de UT2) repasa **hasta funciones**. El cierre de toda la EV1 es `ut4/…/teoria/U07_CierreEv1.c`.
+`u05repaso` (dentro de UT2) repasa **hasta funciones**. Cierre temático EV1: `ut4/…/U07_CierreEv1.c`. Exámenes: **UT5**.
+
+### Mapa EV2
+
+| UT | Carpeta | Qué se enseña |
+|----|---------|---------------|
+| **UT6** | `ut6_arrays` | arrays 1D, bucles, paso a funciones (en construcción) |
+| **UT7** | `ut7_punteros` | `*` / `&` / `NULL` (esqueleto) |
+| **UT8** | `ut8_memoriadinamica` | `malloc` / `free` (esqueleto) |
+| **UT9** | `ut9_ficheros` | `FILE *` (esqueleto) |
+
+La última UT de EV2 será `ut10_examenesev2` cuando haya material. Detalle: [`src/ev2/README.md`](src/ev2/README.md).
 
 ### Convención (igual que Java / C++ / C#)
 
@@ -111,7 +125,7 @@ Solo estas en teoría y ejercicios de aula:
 
 ### Qué no entra en EV1 (va a EV2)
 
-`malloc` / `free`, arrays como unidad, punteros avanzados, ficheros (`FILE *`). Sí hay un primer contacto con `&` / `*` en `scanf` y al pasar structs.
+`malloc` / `free`, arrays como unidad, punteros avanzados, ficheros (`FILE *`) — ya tienen carpeta en `src/ev2/`. Sí hay un primer contacto con `&` / `*` en `scanf` y al pasar structs en EV1.
 
 Contenido **nativo C**: no portar lecciones de C++/C#/Java línea a línea. Misma línea UT, ejemplos pensados para `printf`/`scanf` y trampas de C. Bool en consola: `1`/`0` o `si`/`no`, no `"true"`/`"false"`.
 

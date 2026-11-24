@@ -1,6 +1,6 @@
 # EV1 — Mapa para dar clase (C)
 
-Orden oficial: **UT1 → UT2 → UT3 → UT4**. En cada subtema: teoría (`U01_…`) → ejercicios pendientes → práctica interna. Los resueltos se abren **después** de que el alumno lo intente.
+Orden oficial: **UT1 → UT2 → UT3 → UT4 → UT5 (exámenes)**. En cada subtema de UT1–UT4: teoría (`U01_…`) → ejercicios pendientes → práctica interna. Los resueltos se abren **después** de que el alumno lo intente.
 
 Compilar cualquier fichero:
 
@@ -47,7 +47,7 @@ Práctica: `practicas/ejemplointernocomentariosentrada/`.
 | u02 condicionales | `U01_If` → … → `U05_Repaso`; banco **~E01–E30** | `ejemplointernocondicionales` |
 | u03 bucles | `U01_For` → `U02_While` → `U03_DoWhile` → `U04_Anidados` → `U05_Repaso` (break/centinela en u05repaso); banco **~E01–E31** | `ejemplointernobucles` |
 | u04 métodos | **funciones** (el nombre de carpeta es por paridad). Prototipos, valor, `static`, recursión, `*` intro, menús | `ejemplointernometodos` |
-| u05 repaso | Solo **UT1+UT2**. No es el cierre de EV1. | `ejemplointernorepasoev1` |
+| u05 repaso | Solo **UT1+UT2**. No es el cierre de EV1 ni el banco de examenes. | `ejemplointernorepasoev1` |
 | u06 depuración | `assert`, printf-debug, catálogo de bugs, GDB, stderr | `ejemplointernodepuracionaserciones` |
 
 ## UT3 — Cadenas (`ut3_strings`, plana)
@@ -59,9 +59,20 @@ Práctica: `practicas/ejemplointernocomentariosentrada/`.
 
 ## UT4 — Tipos compuestos (`ut4_tiposcompuestos`)
 
-`U01_Enum` → `struct` → `typedef`/anidados → struct y funciones → `union` → `sizeof`/alineación → **`U07_CierreEv1`** (ficha de alumno: cierra la evaluación).
+`U01_Enum` → `struct` → `typedef`/anidados → struct y funciones → `union` → `sizeof`/alineación → **`U07_CierreEv1`** (ficha de alumno).
 
 Práctica: `practicas/ejemplointernoenumstructtypedef/`.
+
+## UT5 — Examenes EV1 (`ut5_examenesev1`)
+
+Ultima UT de EV1: modelos de examen (UCAM), **no** temario nuevo.
+
+- **“El juego”** = Ej1 Link/Zelda → [`practicas/murciaucamej1linkcorazones/`](ut5_examenesev1/practicas/murciaucamej1linkcorazones/)
+- Ej2 robotica → `murciaucamej2ligarobotica/`
+- Simulacro → `murciaucamsimulacrofinal/`
+- PDFs compartidos → `ut5_examenesev1/documentos/`
+
+Detalle: [`ut5_examenesev1/README.md`](ut5_examenesev1/README.md).
 
 ## Ritmo sugerido (si das 1–2 sesiones por subtema)
 
@@ -69,17 +80,18 @@ Práctica: `practicas/ejemplointernoenumstructtypedef/`.
 2. Segunda: tipos (U01–U06) + E01–E10 + práctica.
 3. Tercera: `scanf`/`fgets` + ticket.
 4. Siguientes: un subtema de UT2 por sesión (teoría 20 min, 2–3 ejercicios, práctica si sobra).
-5. Cierre: UT3 informe de frase → UT4 ficha → `U07_CierreEv1`.
+5. Cierre temario: UT3 → UT4 → `U07_CierreEv1`. Luego **UT5** examenes (prioridad: Ej1 Link).
 
 ## Qué no entra en EV1
 
-Arrays como unidad, punteros avanzados, `malloc`/`free`, ficheros, listas, `locale`/`wchar`, hilos. Eso es EV2 (o no se enseña en este módulo).
+Arrays como unidad, punteros avanzados, `malloc`/`free`, ficheros, listas, `locale`/`wchar`, hilos. Eso es EV2 (UT6+).
 
 Cabeceras permitidas: ver lista blanca en [`../../README.md`](../../README.md).
 
 ## Checklist “se puede dar clase”
 
-- [ ] UT1–UT4 se proyectan solo con ficheros `.c` de este árbol (sin abrir `cpp/` / `csharp/` / `java/`).
+- [ ] UT1–UT5 se proyectan solo con ficheros `.c` de este árbol (sin abrir `cpp/` / `csharp/` / `java/`).
 - [ ] Cabeceras de la lista blanca; bool en consola como `0`/`1` o `si`/`no`.
 - [ ] Tipos: U01–U06 + E01–E10; condicionales U01–U05 (~E30); bucles U01–U05 (~E31); operadores ~E23.
 - [ ] Cada subtema tiene práctica interna con `gcc -std=c11 -Wall -Wextra -pedantic … -lm`.
+- [ ] Examen: Ej1 Link en `ut5_examenesev1/practicas/murciaucamej1linkcorazones/`.
