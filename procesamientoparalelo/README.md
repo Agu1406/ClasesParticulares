@@ -27,7 +27,19 @@ mpirun -np 4 ./prog
 
 En Windows (MS-MPI) a veces es `mpiexec -n 4 prog.exe`. En la VM UNED suele bastar `mpirun`.
 
-## Cómo dar clase mañana (~90–120 min)
+## VS Code / Cursor: ¿hace falta instalar extensiones?
+
+**No. No necesitas ninguna extensión de MPI.**
+
+| Qué quieres | Qué hace falta |
+|-------------|----------------|
+| Leer / editar los `.c` | Nada (opcional: extensión **C/C++** de Microsoft solo por colores; no es obligatoria) |
+| Compilar y ejecutar | `mpicc` + `mpirun` en la **terminal** (VM UNED). El botón ▶ / Code Runner **no** sustituye a `mpirun -np N` |
+| Que “funcione en Windows sin VM” | Instalar un MPI (MS-MPI u Open MPI). **Ninguna extensión** lo instala por ti |
+
+Sin `mpicc` en el PATH, ninguna extensión de VS Code arregla la ejecución.
+
+## Cómo dar clase (~90–120 min)
 
 Abre la carpeta **`procesamientoparalelo/`** como workspace.
 
@@ -37,8 +49,8 @@ Abre la carpeta **`procesamientoparalelo/`** como workspace.
 | 15–35 | Send/Recv; alumno intenta el anillo pendiente. | `src/ut2_…/u01sendrecv` + `u02anillo` |
 | 35–55 | **Spawn** (el que más se atasca): padre/hijo, `get_parent`. | `src/ut4_…/u01spawnparent` |
 | 55–70 | Colectivas: Bcast / Scatter / Gather / Reduce. | `src/ut3_…/u01bcastscattergatherreduce` |
-| 70–100 | Exámenes sep 2025 y 2026: recorrer `_Resuelto`, explicar diseño. | `src/ut6_examenes/practicas/` |
-| Si sobra | Práctica ej1 (anillo sentido aleatorio). | `madridunedpractica202627` |
+| 70–100 | Exámenes sep 2025 y 2026: recorrer `_Resuelto`, explicar diseño. | `src/ut6_examenes/examenes/` |
+| Si sobra | Práctica ej1 (anillo sentido aleatorio). | `src/ut6_examenes/practicas/madridunedpractica202627ej1anillo/` |
 
 Orden pedagógico: **UT1 → UT2 → UT4 → UT3 → UT5 → UT6**. En clase mañana puedes saltar UT5 si el tiempo aprieta y dejarlo tras el primer examen.
 
@@ -54,21 +66,23 @@ procesamientoparalelo/
     ├── ut3_colectivas/
     ├── ut4_procesosdinamicos/
     ├── ut5_intercomunicadores/
-    └── ut6_examenes/practicas/
+    └── ut6_examenes/
+        ├── examenes/    ← por convocatoria
+        └── practicas/   ← un directorio por ejercicio (ej1…ej4)
 ```
 
-Cada subtema: `teoria/` (`U01_…c`), `ejercicios/pendientes/` y `ejercicios/resueltos/`.
+Cada subtema UT1–UT5: `teoria/` (`U01_…c`), `ejercicios/pendientes/` y `ejercicios/resueltos/`. Índice UT6: [`src/ut6_examenes/README.md`](src/ut6_examenes/README.md).
 
 ## Mapa rápido de UTs
 
 | UT | Tema | Sirve para |
 |----|------|------------|
-| UT1 | Init, Finalize, rank, size | Arranque |
+| UT1 | Init, Finalize, rank, size (**10 ejercicios** Pendiente/Resuelto) | Arranque |
 | UT2 | Send/Recv, tags, anillo | Examen 2026 P1, práctica ej1 |
 | UT3 | Bcast, Scatter, Gather, Reduce | Examen 2025 P2, finales de anillo |
 | UT4 | `MPI_Comm_spawn`, `get_parent` | Casi todos los problemas de examen |
 | UT5 | Grupos + intercomunicadores | Examen 2026 P2, práctica ej3 |
-| UT6 | Exámenes y práctica UNED resueltos | Machacar prueba presencial |
+| UT6 | `examenes/` + `practicas/` (separados) | Machacar prueba presencial |
 
 ## Autor
 
