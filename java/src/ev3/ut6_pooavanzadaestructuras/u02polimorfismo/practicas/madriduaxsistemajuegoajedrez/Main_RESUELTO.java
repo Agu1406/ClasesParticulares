@@ -8,11 +8,10 @@ import java.util.Scanner;
 
 public class Main_RESUELTO {
     private static PartidaAjedrez partida;
-    private static Scanner scanner;
+    private static Scanner scanner = new Scanner(System.in);
 
     public static void main(String[] args) {
         partida = new PartidaAjedrez();
-        scanner = new Scanner(System.in);
         boolean salir = false;
 
         while (!salir) {

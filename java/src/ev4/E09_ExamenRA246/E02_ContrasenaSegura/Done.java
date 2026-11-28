@@ -23,14 +23,12 @@ public class Done {
 
     public static void main(String[] args) {
         /* --- Variables al principio del metodo --- */
-        Scanner teclado;
+        Scanner teclado = new Scanner(System.in);
         String contrasena;
         char letra;
         int indiceCaracter;
         boolean tieneMayuscula, tieneMinuscula, tieneNumero, tieneEspacio;
         boolean esSegura;
-
-        teclado = new Scanner(System.in);
         contrasena = teclado.nextLine();
 
         tieneMayuscula = false;

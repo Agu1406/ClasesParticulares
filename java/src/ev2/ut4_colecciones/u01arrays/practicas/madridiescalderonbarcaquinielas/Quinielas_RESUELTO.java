@@ -36,7 +36,7 @@ public class Quinielas_RESUELTO {
 	/**
 	 * Scanner para leer datos del teclado.
 	 */
-	private Scanner sc;
+	private Scanner sc = new Scanner(System.in);
 	
 	/**
 	 * Constructor que inicializa la aplicacion.
@@ -46,7 +46,6 @@ public class Quinielas_RESUELTO {
 		quinielas = new Quiniela_RESUELTO[LIMITE_QUINIELAS + 1];
 		quinielaActiva = 0; // Por defecto la quiniela oficial
 		quinielasJugadas = 0;
-		sc = new Scanner(System.in);
 		
 		// Inicializar la quiniela oficial
 		quinielas[0] = new Quiniela_RESUELTO();

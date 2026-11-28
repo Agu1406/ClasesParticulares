@@ -26,13 +26,11 @@ public class Done {
 
     public static void main(String[] args) {
         /* --- Variables al principio del metodo --- */
-        Scanner teclado;
+        Scanner teclado = new Scanner(System.in);
         int[] notas;
         int n, indiceNota, maxima, minima, porEncima;
         double suma, media;
         StringBuilder ordenadas;
-
-        teclado = new Scanner(System.in);
         n = teclado.nextInt();
 
         if (n == 0) {

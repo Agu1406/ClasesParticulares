@@ -99,8 +99,7 @@ public class EjerciciosInicialesFunciones_SIN_RESOLVER {
     }
 
     public static void main(String[] args) {
-        Scanner teclado;
-        teclado = new Scanner(System.in);
+        Scanner teclado = new Scanner(System.in);
         // TODO: probar cada funcion del enunciado con casos de ejemplo
         teclado.close();
     }

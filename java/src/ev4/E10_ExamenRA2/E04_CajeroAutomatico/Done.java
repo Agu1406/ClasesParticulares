@@ -31,10 +31,8 @@ public class Done {
 
     public static void main(String[] args) {
         /* --- Variables al principio del metodo --- */
-        Scanner teclado;
+        Scanner teclado = new Scanner(System.in);
         int cantidad, quedan50, de50, resto, de20, de10;
-
-        teclado = new Scanner(System.in);
         cantidad = teclado.nextInt();
         quedan50 = teclado.nextInt();
 

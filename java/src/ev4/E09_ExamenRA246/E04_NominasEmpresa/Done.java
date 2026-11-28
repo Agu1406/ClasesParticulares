@@ -24,14 +24,12 @@ public class Done {
 
     public static void main(String[] args) {
         /* --- Variables al principio del metodo --- */
-        Scanner teclado;
+        Scanner teclado = new Scanner(System.in);
         Empleado[] empleados;
         Empleado mayor, actual;
         int n, indiceEmpleado, horas;
         String tipo, nombre;
         double total, salario, salarioMayor, sueldoBase, precioHora, ventas;
-
-        teclado = new Scanner(System.in);
         teclado.useLocale(Locale.US);
 
         n = teclado.nextInt();

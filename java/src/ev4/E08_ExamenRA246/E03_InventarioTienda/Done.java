@@ -24,14 +24,12 @@ public class Done {
 
     public static void main(String[] args) {
         /* --- Variables al principio del metodo --- */
-        Scanner teclado;
+        Scanner teclado = new Scanner(System.in);
         Producto[] productos;
         Producto producto;
         int n, indiceProducto, stock, unidades;
         String codigo, op;
         double precio, total, valorProducto;
-
-        teclado = new Scanner(System.in);
         /*
          * Locale.US: el enunciado usa punto decimal (2.50).
          * Sin esto, en un PC en espanol nextDouble esperaria coma.

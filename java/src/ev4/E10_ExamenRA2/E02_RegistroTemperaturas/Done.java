@@ -23,10 +23,8 @@ public class Done {
 
     public static void main(String[] args) {
         /* --- Variables al principio del metodo --- */
-        Scanner teclado;
+        Scanner teclado = new Scanner(System.in);
         int lecturas, suma, maxima, alertas, temperatura;
-
-        teclado = new Scanner(System.in);
         lecturas = 0;
         suma = 0;
         maxima = 0;

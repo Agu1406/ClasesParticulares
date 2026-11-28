@@ -24,13 +24,11 @@ public class Done {
 
     public static void main(String[] args) {
         /* --- Variables al principio del metodo --- */
-        Scanner teclado;
+        Scanner teclado = new Scanner(System.in);
         Cuenta cuenta;
         String titular, operacion;
         double cantidad;
         boolean continuar, retiradaOk;
-
-        teclado = new Scanner(System.in);
         teclado.useLocale(Locale.US);
 
         titular = teclado.nextLine();

@@ -36,10 +36,8 @@ public class Done {
 
     public static void main(String[] args) {
         /* --- Variables al principio del metodo --- */
-        Scanner teclado;
+        Scanner teclado = new Scanner(System.in);
         int extremoA, extremoB, primo, parejas;
-
-        teclado = new Scanner(System.in);
         extremoA = teclado.nextInt();
         extremoB = teclado.nextInt();
 

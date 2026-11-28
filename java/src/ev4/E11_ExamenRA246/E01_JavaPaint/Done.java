@@ -26,13 +26,11 @@ public class Done {
 
     public static void main(String[] args) {
         /* --- Variables al principio del metodo --- */
-        Scanner teclado;
+        Scanner teclado = new Scanner(System.in);
         char[][] tablero;
         int filaCabezal, columnaCabezal;
         char opcion, modo;
         boolean continuar;
-
-        teclado = new Scanner(System.in);
         tablero = new char[TAMANO][TAMANO];
         limpiarTablero(tablero);
         filaCabezal = TAMANO / 2;

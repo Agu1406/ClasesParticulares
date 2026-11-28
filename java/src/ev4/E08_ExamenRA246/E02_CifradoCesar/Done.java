@@ -23,12 +23,10 @@ public class Done {
 
     public static void main(String[] args) {
         /* --- Variables al principio del metodo --- */
-        Scanner teclado;
+        Scanner teclado = new Scanner(System.in);
         int desplazamiento, resto, cambiadas, posicion;
         String mensaje, cifrado;
         char caracter, nueva;
-
-        teclado = new Scanner(System.in);
 
         System.out.print("Introduce el desplazamiento => ");
         desplazamiento = teclado.nextInt();

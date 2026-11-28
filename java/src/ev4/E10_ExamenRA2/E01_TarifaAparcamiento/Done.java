@@ -23,11 +23,9 @@ public class Done {
 
     public static void main(String[] args) {
         /* --- Variables al principio del metodo --- */
-        Scanner teclado;
+        Scanner teclado = new Scanner(System.in);
         int minutos, etiquetaCero;
         double importe;
-
-        teclado = new Scanner(System.in);
         minutos = teclado.nextInt();
         etiquetaCero = teclado.nextInt();
 

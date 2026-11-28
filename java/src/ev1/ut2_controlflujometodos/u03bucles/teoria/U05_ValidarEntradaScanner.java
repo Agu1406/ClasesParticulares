@@ -17,10 +17,8 @@ import java.util.Scanner;
 public class U05_ValidarEntradaScanner {
 
     public static void main(String[] args) {
-        Scanner teclado;
+        Scanner teclado = new Scanner(System.in);
         int edad;
-
-        teclado = new Scanner(System.in);
         System.out.print("Edad (entero): ");
 
         if (!teclado.hasNextInt()) {

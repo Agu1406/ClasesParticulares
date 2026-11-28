@@ -248,10 +248,9 @@ public class EjerciciosInicialesFunciones_RESUELTO {
     }
 
     public static void main(String[] args) {
-        Scanner teclado;
+        Scanner teclado = new Scanner(System.in);
         int contador;
         int valorAleatorio;
-        teclado = new Scanner(System.in);
 
         System.out.println("=== UT3 Ejercicios iniciales con funciones ===\n");
 

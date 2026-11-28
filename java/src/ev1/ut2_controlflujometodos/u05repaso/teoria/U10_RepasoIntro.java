@@ -23,11 +23,9 @@ public class U10_RepasoIntro {
 
     public static void main(String[] args) {
         /* --- Variables al principio del metodo --- */
-        Scanner teclado;
+        Scanner teclado = new Scanner(System.in);
         boolean continuar;
         int opcion;
-
-        teclado = new Scanner(System.in);
         continuar = true;
 
         do {

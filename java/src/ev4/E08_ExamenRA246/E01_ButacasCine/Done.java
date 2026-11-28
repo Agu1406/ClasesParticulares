@@ -23,12 +23,10 @@ public class Done {
 
     public static void main(String[] args) {
         /* --- Variables al principio del metodo --- */
-        Scanner teclado;
+        Scanner teclado = new Scanner(System.in);
         boolean[][] sala;
         boolean continuar;
         int fila, butaca, libres, filaPlano, columna;
-
-        teclado = new Scanner(System.in);
 
         /*
          * false = libre, true = ocupada.

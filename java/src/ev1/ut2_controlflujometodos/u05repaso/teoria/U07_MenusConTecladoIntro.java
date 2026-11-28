@@ -26,9 +26,8 @@ import java.util.Scanner;
 public class U07_MenusConTecladoIntro {
 
     public static void main(String[] args) {
-        Scanner teclado;
+        Scanner teclado = new Scanner(System.in);
         int opcion;
-        teclado = new Scanner(System.in);
         do {
             System.out.println();
             System.out.println("1. Ver saludo");

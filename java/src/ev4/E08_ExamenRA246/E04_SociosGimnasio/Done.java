@@ -24,14 +24,12 @@ public class Done {
 
     public static void main(String[] args) {
         /* --- Variables al principio del metodo --- */
-        Scanner teclado;
+        Scanner teclado = new Scanner(System.in);
         Socio[] socios;
         Socio mayor, actual;
         int n, indiceSocio, meses;
         String tipo, nombre, etiquetaMes;
         double total, importe, importeMayor;
-
-        teclado = new Scanner(System.in);
         teclado.useLocale(Locale.US);
 
         System.out.print("Introduce el numero de socios => ");
