@@ -1,11 +1,11 @@
 package ev1.ut2_controlflujometodos.u03bucles.ejercicios.resueltos;
 
 /**
- * <p><b>OBJETIVO:</b> Usa un do-while para mostrar la tabla de multiplicar del 9, del 1 al 10, con el formato 9 x i = resultado.</p>
+ * <p><b>OBJETIVO:</b> Usa un do-while para mostrar la tabla de multiplicar del 9, del 1 al 10, con el formato 9 x numero = resultado.</p>
  *
  * <br>
  *
- * <p><b>SOLUCIÓN:</b> Cada vuelta imprime 9 * i y luego incrementa i.</p>
+ * <p><b>SOLUCIÓN:</b> Cada vuelta imprime 9 * numero y luego incrementa numero.</p>
  *
  * @author Agustin. A. Marquez. Pina
  * @since 29/04/2026
@@ -16,10 +16,10 @@ package ev1.ut2_controlflujometodos.u03bucles.ejercicios.resueltos;
 
 public class E25_TablaDel9_Resuelto {
     public static void main(String[] args) {
-        int i = 1;
+        int numero = 1;
         do {
-            System.out.println("9 x " + i + " = " + (9 * i));
-            i++;
-        } while (i <= 10);
+            System.out.println("9 x " + numero + " = " + (9 * numero));
+            numero++;
+        } while (numero <= 10);
     }
 }

@@ -29,14 +29,14 @@ public class Done {
         int limiteErrores = n / 2;
         int errores = 0;
 
-        for (int i = 1; i <= n; i++) {
+        for (int numero = 1; numero <= n; numero++) {
             int a = aleatorio.nextInt(91) + 10;
             int b = aleatorio.nextInt(91) + 10;
             int c = aleatorio.nextInt(91) + 10;
             int sumaCorrecta = a + b + c;
 
             System.out.println();
-            System.out.println("Suma " + i + " de " + n + ":");
+            System.out.println("Suma " + numero + " de " + n + ":");
             System.out.print(a + " + " + b + " + " + c + " = ? => ");
             int respuesta = teclado.nextInt();
 

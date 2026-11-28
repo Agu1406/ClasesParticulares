@@ -5,7 +5,7 @@ package ev1.ut2_controlflujometodos.u03bucles.ejercicios.resueltos;
  *
  * <br>
  *
- * <p><b>SOLUCIÓN:</b> i va de 1 a 18. Si 18 % i es 0, i es divisor.</p>
+ * <p><b>SOLUCIÓN:</b> numero va de 1 a 18. Si 18 % numero es 0, numero es divisor.</p>
  *
  * @author Agustin. A. Marquez. Pina
  * @since 29/04/2026
@@ -17,12 +17,12 @@ package ev1.ut2_controlflujometodos.u03bucles.ejercicios.resueltos;
 public class E29_DivisoresDe18_Resuelto {
     public static void main(String[] args) {
         int numero = 18;
-        int i = 1;
+        int numero = 1;
         do {
-            if (numero % i == 0) {
-                System.out.println(i);
+            if (numero % numero == 0) {
+                System.out.println(numero);
             }
-            i++;
-        } while (i <= numero);
+            numero++;
+        } while (numero <= numero);
     }
 }

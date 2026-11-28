@@ -18,8 +18,8 @@ public class E07_ContarVocales_Resuelto {
     public static void main(String[] args) {
         String palabra = "programacion";
         int vocales = 0;
-        for (int i = 0; i < palabra.length(); i++) {
-            char c = Character.toLowerCase(palabra.charAt(i));
+        for (int posicion = 0; posicion < palabra.length(); posicion++) {
+            char c = Character.toLowerCase(palabra.charAt(posicion));
             if (c == 'a' || c == 'e' || c == 'i' || c == 'o' || c == 'u') {
                 vocales++;
             }

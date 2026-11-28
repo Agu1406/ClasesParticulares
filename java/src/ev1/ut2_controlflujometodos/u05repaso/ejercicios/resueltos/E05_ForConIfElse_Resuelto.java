@@ -16,11 +16,11 @@ package ev1.ut2_controlflujometodos.u05repaso.ejercicios.resueltos;
 
 public class E05_ForConIfElse_Resuelto {
     public static void main(String[] args) {
-        for (int i = 1; i <= 15; i++) {
-            if (i > 8) {
-                System.out.println(i + " mayor que 8");
+        for (int numero = 1; numero <= 15; numero++) {
+            if (numero > 8) {
+                System.out.println(numero + " mayor que 8");
             } else {
-                System.out.println(i + " menor o igual que 8");
+                System.out.println(numero + " menor o igual que 8");
             }
         }
     }

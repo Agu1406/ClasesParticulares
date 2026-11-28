@@ -17,15 +17,15 @@ package ev1.ut2_controlflujometodos.u03bucles.ejercicios.resueltos;
 public class E27_ContarVocales_Resuelto {
     public static void main(String[] args) {
         String palabra = "desarrollo";
-        int i = 0;
+        int posicion = 0;
         int vocales = 0;
         do {
-            char c = Character.toLowerCase(palabra.charAt(i));
+            char c = Character.toLowerCase(palabra.charAt(posicion));
             if (c == 'a' || c == 'e' || c == 'i' || c == 'o' || c == 'u') {
                 vocales++;
             }
-            i++;
-        } while (i < palabra.length());
+            posicion++;
+        } while (posicion < palabra.length());
         System.out.println("Vocales: " + vocales);
     }
 }

@@ -57,9 +57,9 @@ public class U05_ArrayListConcesionario {
 		 * Ejercicio 1: encontrar el coche mas caro del stock.
 		 */
 		Coche masCaro = stock.get(0);
-		for (int i = 1; i < stock.size(); i++) {
-			if (stock.get(i).getPrecio() > masCaro.getPrecio()) {
-				masCaro = stock.get(i);
+		for (int posicion = 1; posicion < stock.size(); posicion++) {
+			if (stock.get(posicion).getPrecio() > masCaro.getPrecio()) {
+				masCaro = stock.get(posicion);
 			}
 		}
 		System.out.println("Coche mas caro: " + masCaro);
@@ -98,10 +98,10 @@ public class U05_ArrayListConcesionario {
 		 * Despues   => 4 coches (sin el Clio)
 		 */
 		int indiceVendido = -1;
-		for (int i = 0; i < stock.size(); i++) {
-			Coche coche = stock.get(i);
+		for (int posicion = 0; posicion < stock.size(); posicion++) {
+			Coche coche = stock.get(posicion);
 			if (coche.getMarca().equals("Renault") && coche.getModelo().equals("Clio")) {
-				indiceVendido = i;
+				indiceVendido = posicion;
 				break;
 			}
 		}

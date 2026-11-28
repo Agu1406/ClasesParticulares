@@ -5,7 +5,7 @@ package ev1.ut2_controlflujometodos.u03bucles.ejercicios.resueltos;
  *
  * <br>
  *
- * <p><b>SOLUCIÓN:</b> i empieza en 10. Se imprime, se resta 1 y se repite mientras i sea mayor o igual que 1.</p>
+ * <p><b>SOLUCIÓN:</b> numero empieza en 10. Se imprime, se resta 1 y se repite mientras numero sea mayor o igual que 1.</p>
  *
  * @author Agustin. A. Marquez. Pina
  * @since 29/04/2026
@@ -16,10 +16,10 @@ package ev1.ut2_controlflujometodos.u03bucles.ejercicios.resueltos;
 
 public class E23_CuentaAtras_Resuelto {
     public static void main(String[] args) {
-        int i = 10;
+        int numero = 10;
         do {
-            System.out.println(i);
-            i--;
-        } while (i >= 1);
+            System.out.println(numero);
+            numero--;
+        } while (numero >= 1);
     }
 }

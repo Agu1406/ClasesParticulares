@@ -17,12 +17,12 @@ package ev1.ut2_controlflujometodos.u05repaso.ejercicios.resueltos;
 public class E09_WhileConIfPositivos_Resuelto {
     public static void main(String[] args) {
         int[] valores = {3, -1, 0, 7, -4, 2};
-        int i = 0;
-        while (i < valores.length) {
-            if (valores[i] > 0) {
-                System.out.println(valores[i]);
+        int numero = 0;
+        while (numero < valores.length) {
+            if (valores[numero] > 0) {
+                System.out.println(valores[numero]);
             }
-            i++;
+            numero++;
         }
     }
 }

@@ -16,15 +16,15 @@ package ev1.ut2_controlflujometodos.u05repaso.ejercicios.resueltos;
 
 public class E07_DoWhileConIfElse_Resuelto {
     public static void main(String[] args) {
-        int i = 1;
+        int numero = 1;
         do {
-            int nota = 4 + (i % 7);
+            int nota = 4 + (numero % 7);
             if (nota >= 5) {
                 System.out.println("Nota " + nota + ": Aprobado");
             } else {
                 System.out.println("Nota " + nota + ": Suspenso");
             }
-            i++;
-        } while (i <= 12);
+            numero++;
+        } while (numero <= 12);
     }
 }

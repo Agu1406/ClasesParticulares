@@ -40,8 +40,8 @@ public class Done {
                 }
 
                 int pares = 0;
-                for (int i = inicio; i <= fin; i++) {
-                    if (i % 2 == 0) {
+                for (int numero = inicio; numero <= fin; numero++) {
+                    if (numero % 2 == 0) {
                         pares = pares + 1;
                     }
                 }
@@ -55,8 +55,8 @@ public class Done {
                     System.out.println("Error: n debe ser >= 0.");
                 } else {
                     long resultado = 1;
-                    for (int i = 2; i <= n; i++) {
-                        resultado = resultado * i;
+                    for (int numero = 2; numero <= n; numero++) {
+                        resultado = resultado * numero;
                     }
                     System.out.println(n + "! = " + resultado);
                 }

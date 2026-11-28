@@ -32,8 +32,8 @@ public class MinTemperatures {
      */
     public static int frostDays(int[] temps) {
         int count = 0;
-        for (int i = 0; i < temps.length; i++) {
-            if (temps[i] < 0) {
+        for (int posicion = 0; posicion < temps.length; posicion++) {
+            if (temps[posicion] < 0) {
                 count++;
             }
         }
@@ -53,10 +53,10 @@ public class MinTemperatures {
         }
         int min = temps[0];
         int day = 1;
-        for (int i = 1; i < temps.length; i++) {
-            if (temps[i] < min) {
-                min = temps[i];
-                day = i + 1;
+        for (int posicion = 1; posicion < temps.length; posicion++) {
+            if (temps[posicion] < min) {
+                min = temps[posicion];
+                day = posicion + 1;
             }
         }
         return day;
@@ -69,14 +69,14 @@ public class MinTemperatures {
      * @param offset grados que el sensor marca de mas
      */
     public static void calibrate(int[] temps, int offset) {
-        for (int i = 0; i < temps.length; i++) {
-            temps[i] -= offset;
+        for (int posicion = 0; posicion < temps.length; posicion++) {
+            temps[posicion] -= offset;
         }
     }
 
     /**
      * Calcula la variacion de la temperatura de un dia al siguiente.
-     * Cada posicion i del resultado es {@code temps[i + 1] - temps[i]}.
+     * Cada posicion posicion del resultado es {@code temps[posicion + 1] - temps[posicion]}.
      * No modifica {@code temps}.
      *
      * @param temps temperaturas minimas, una por dia
@@ -87,8 +87,8 @@ public class MinTemperatures {
             return new int[0];
         }
         int[] result = new int[temps.length - 1];
-        for (int i = 0; i < result.length; i++) {
-            result[i] = temps[i + 1] - temps[i];
+        for (int posicion = 0; posicion < result.length; posicion++) {
+            result[posicion] = temps[posicion + 1] - temps[posicion];
         }
         return result;
     }
@@ -102,8 +102,8 @@ public class MinTemperatures {
     public static int longestFrostSpell(int[] temps) {
         int longest = 0;
         int current = 0;
-        for (int i = 0; i < temps.length; i++) {
-            if (temps[i] < 0) {
+        for (int posicion = 0; posicion < temps.length; posicion++) {
+            if (temps[posicion] < 0) {
                 current++;
                 if (current > longest) {
                     longest = current;
@@ -229,9 +229,9 @@ public class MinTemperatures {
     public static void printSummary(int[] temps) {
         System.out.println();
         System.out.println("Dia  Min.");
-        for (int i = 0; i < temps.length; i++) {
-            System.out.printf("%3d%6d", i + 1, temps[i]);
-            if (temps[i] < 0) {
+        for (int posicion = 0; posicion < temps.length; posicion++) {
+            System.out.printf("%3d%6d", posicion + 1, temps[posicion]);
+            if (temps[posicion] < 0) {
                 System.out.print(" *");
             }
             System.out.println();
@@ -287,12 +287,12 @@ public class MinTemperatures {
         int days;
         int[] temps;
         int offset;
-        int i;
+        int posicion;
 
         days = readInt(teclado, "Dias: ", 1, 31);
         temps = new int[days];
-        for (i = 0; i < days; i++) {
-            temps[i] = readInt(teclado, "Dia " + (i + 1) + ": ", -50, 50);
+        for (posicion = 0; posicion < days; posicion++) {
+            temps[posicion] = readInt(teclado, "Dia " + (posicion + 1) + ": ", -50, 50);
         }
         offset = readInt(teclado, "Desvio del sensor: ", -5, 5);
         teclado.close();

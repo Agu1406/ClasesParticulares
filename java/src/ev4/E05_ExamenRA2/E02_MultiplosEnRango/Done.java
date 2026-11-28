@@ -36,10 +36,10 @@ public class Done {
 
         int contador = 0;
         int suma = 0;
-        for (int i = inicio; i <= fin; i++) {
-            if (i % divisor == 0) {
+        for (int numero = inicio; numero <= fin; numero++) {
+            if (numero % divisor == 0) {
                 contador = contador + 1;
-                suma = suma + i;
+                suma = suma + numero;
             }
         }
 

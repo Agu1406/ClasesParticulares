@@ -17,13 +17,13 @@ package ev1.ut2_controlflujometodos.u05repaso.ejercicios.resueltos;
 public class E24_WhileConIfVocales_Resuelto {
     public static void main(String[] args) {
         String palabra = "murcielago";
-        int i = 0;
-        while (i < palabra.length()) {
-            char c = Character.toLowerCase(palabra.charAt(i));
+        int posicion = 0;
+        while (posicion < palabra.length()) {
+            char c = Character.toLowerCase(palabra.charAt(posicion));
             if ("aeiou".indexOf(c) >= 0) {
                 System.out.println("Vocal: " + c);
             }
-            i++;
+            posicion++;
         }
     }
 }

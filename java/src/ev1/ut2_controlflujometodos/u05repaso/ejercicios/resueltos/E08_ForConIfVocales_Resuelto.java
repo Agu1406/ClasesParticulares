@@ -18,8 +18,8 @@ public class E08_ForConIfVocales_Resuelto {
     public static void main(String[] args) {
         String texto = "programacion";
         int vocales = 0;
-        for (int i = 0; i < texto.length(); i++) {
-            char c = Character.toLowerCase(texto.charAt(i));
+        for (int posicion = 0; posicion < texto.length(); posicion++) {
+            char c = Character.toLowerCase(texto.charAt(posicion));
             if (c == 'a' || c == 'e' || c == 'i' || c == 'o' || c == 'u') {
                 vocales++;
             }

@@ -16,14 +16,14 @@ package ev1.ut2_controlflujometodos.u05repaso.ejercicios.resueltos;
 
 public class E19_DoWhileConIfElseParImpar_Resuelto {
     public static void main(String[] args) {
-        int i = 1;
+        int numero = 1;
         do {
-            if (i % 2 == 0) {
-                System.out.println(i + " par");
+            if (numero % 2 == 0) {
+                System.out.println(numero + " par");
             } else {
-                System.out.println(i + " impar");
+                System.out.println(numero + " impar");
             }
-            i++;
-        } while (i <= 18);
+            numero++;
+        } while (numero <= 18);
     }
 }

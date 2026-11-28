@@ -16,9 +16,9 @@ package ev1.ut2_controlflujometodos.u05repaso.ejercicios.resueltos;
 
 public class E01_ForConIf_Resuelto {
     public static void main(String[] args) {
-        for (int i = 1; i <= 30; i++) {
-            if (i % 3 == 0) {
-                System.out.println(i);
+        for (int numero = 1; numero <= 30; numero++) {
+            if (numero % 3 == 0) {
+                System.out.println(numero);
             }
         }
     }

@@ -16,14 +16,14 @@ package ev1.ut2_controlflujometodos.u05repaso.ejercicios.resueltos;
 
 public class E02_WhileConIfElse_Resuelto {
     public static void main(String[] args) {
-        int i = 1;
-        while (i <= 20) {
-            if (i % 2 == 0) {
-                System.out.println(i + " PAR");
+        int numero = 1;
+        while (numero <= 20) {
+            if (numero % 2 == 0) {
+                System.out.println(numero + " PAR");
             } else {
-                System.out.println(i + " IMPAR");
+                System.out.println(numero + " IMPAR");
             }
-            i++;
+            numero++;
         }
     }
 }

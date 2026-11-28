@@ -16,8 +16,8 @@ package ev1.ut2_controlflujometodos.u03bucles.ejercicios.resueltos;
 
 public class E02_Pares2A20_Resuelto {
     public static void main(String[] args) {
-        for (int i = 2; i <= 20; i += 2) {
-            System.out.println(i);
+        for (int numero = 2; numero <= 20; numero += 2) {
+            System.out.println(numero);
         }
     }
 }

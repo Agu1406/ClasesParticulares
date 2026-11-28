@@ -16,14 +16,14 @@ package ev1.ut2_controlflujometodos.u05repaso.ejercicios.resueltos;
 
 public class E12_WhileConIfElseRango_Resuelto {
     public static void main(String[] args) {
-        int i = 1;
-        while (i <= 25) {
-            if (i <= 12) {
-                System.out.println(i + " bajo");
+        int numero = 1;
+        while (numero <= 25) {
+            if (numero <= 12) {
+                System.out.println(numero + " bajo");
             } else {
-                System.out.println(i + " alto");
+                System.out.println(numero + " alto");
             }
-            i++;
+            numero++;
         }
     }
 }

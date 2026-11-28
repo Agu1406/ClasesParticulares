@@ -26,8 +26,8 @@ public class U03_ArrayListRecorridos {
 		 * Util cuando necesitamos el indice o modificar mientras recorremos.
 		 */
 		System.out.println("Recorrido con indice:");
-		for (int i = 0; i < numeros.size(); i++) {
-			System.out.println("Posicion " + i + " -> " + numeros.get(i));
+		for (int posicion = 0; posicion < numeros.size(); posicion++) {
+			System.out.println("Posicion " + posicion + " -> " + numeros.get(posicion));
 		}
 
 		/*
@@ -35,9 +35,9 @@ public class U03_ArrayListRecorridos {
 		 * Empezamos asumiendo que el primero es el mayor y vamos comparando.
 		 */
 		int mayor = numeros.get(0);
-		for (int i = 1; i < numeros.size(); i++) {
-			if (numeros.get(i) > mayor) {
-				mayor = numeros.get(i);
+		for (int posicion = 1; posicion < numeros.size(); posicion++) {
+			if (numeros.get(posicion) > mayor) {
+				mayor = numeros.get(posicion);
 			}
 		}
 		System.out.println("Mayor valor: " + mayor);

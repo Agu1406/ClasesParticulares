@@ -159,8 +159,8 @@ public class U01_OperadoresYBasicosIntro {
         System.out.println("--- OCTAVA PARTE: Coma en el for ---");
         System.out.println();
 
-        for (int i = 0, j = 10; i < j; i += 3, j -= 3) {
-            System.out.println("i = " + i + ", j = " + j);
+        for (int izquierda = 0, derecha = 10; izquierda < derecha; izquierda += 3, derecha -= 3) {
+            System.out.println("izquierda = " + izquierda + ", derecha = " + derecha);
         }
         System.out.println();
         System.out.println("Siguiente: asignacion compuesta e incremento (U02), precedencia (U03).");

@@ -31,11 +31,11 @@ public class U01_BucleDoWhileIntro {
 
     public static void main(String[] args) {
         System.out.println("--- do-while: del 1 al 5 ---");
-        int i = 1;
+        int numero = 1;
         do {
-            System.out.println(i);
-            i++;
-        } while (i <= 5);
+            System.out.println(numero);
+            numero++;
+        } while (numero <= 5);
 
         System.out.println("--- do-while: menu simplificado (sale con 0) ---");
         int opcion;

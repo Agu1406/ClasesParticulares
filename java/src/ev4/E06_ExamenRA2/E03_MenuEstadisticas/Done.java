@@ -1,4 +1,4 @@
-﻿package ev4.E06_ExamenRA2.E03_MenuEstadisticas;
+package ev4.E06_ExamenRA2.E03_MenuEstadisticas;
 
 import java.util.Scanner;
 
@@ -34,8 +34,8 @@ public class Done {
                 } else {
                     System.out.print("Numero 1 => ");
                     int maximo = teclado.nextInt();
-                    for (int i = 2; i <= n; i++) {
-                        System.out.print("Numero " + i + " => ");
+                    for (int numero = 2; numero <= n; numero++) {
+                        System.out.print("Numero " + numero + " => ");
                         int valor = teclado.nextInt();
                         if (valor > maximo) {
                             maximo = valor;
@@ -47,8 +47,8 @@ public class Done {
                 System.out.print("Palabra => ");
                 String palabra = teclado.next();
                 int vocales = 0;
-                for (int i = 0; i < palabra.length(); i++) {
-                    char c = palabra.charAt(i);
+                for (int posicion = 0; posicion < palabra.length(); posicion++) {
+                    char c = palabra.charAt(posicion);
                     if (c == 'a' || c == 'e' || c == 'i' || c == 'o' || c == 'u'
                             || c == 'A' || c == 'E' || c == 'I' || c == 'O' || c == 'U') {
                         vocales = vocales + 1;
@@ -58,8 +58,8 @@ public class Done {
             } else if (opcion == 3) {
                 System.out.print("n => ");
                 int n = teclado.nextInt();
-                for (int i = 1; i <= 12; i++) {
-                    System.out.println(n + " x " + i + " = " + (n * i));
+                for (int numero = 1; numero <= 12; numero++) {
+                    System.out.println(n + " x " + numero + " = " + (n * numero));
                 }
             } else if (opcion == 0) {
                 System.out.println("Hasta luego.");

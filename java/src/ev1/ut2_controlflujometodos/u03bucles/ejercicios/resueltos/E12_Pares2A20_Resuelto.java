@@ -5,7 +5,7 @@ package ev1.ut2_controlflujometodos.u03bucles.ejercicios.resueltos;
  *
  * <br>
  *
- * <p><b>SOLUCIÓN:</b> i empieza en 2 y suma 2 en cada vuelta, hasta 20.</p>
+ * <p><b>SOLUCIÓN:</b> numero empieza en 2 y suma 2 en cada vuelta, hasta 20.</p>
  *
  * @author Agustin. A. Marquez. Pina
  * @since 29/04/2026
@@ -16,10 +16,10 @@ package ev1.ut2_controlflujometodos.u03bucles.ejercicios.resueltos;
 
 public class E12_Pares2A20_Resuelto {
     public static void main(String[] args) {
-        int i = 2;
-        while (i <= 20) {
-            System.out.println(i);
-            i += 2;
+        int numero = 2;
+        while (numero <= 20) {
+            System.out.println(numero);
+            numero += 2;
         }
     }
 }

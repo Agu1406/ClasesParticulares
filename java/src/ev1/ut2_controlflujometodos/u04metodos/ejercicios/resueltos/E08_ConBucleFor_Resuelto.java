@@ -5,7 +5,7 @@ package ev1.ut2_controlflujometodos.u04metodos.ejercicios.resueltos;
  *
  * <br>
  *
- * <p><b>SOLUCIÓN:</b> Un acumulador suma i en el for. main llama con 10.</p>
+ * <p><b>SOLUCIÓN:</b> Un acumulador suma numero en el for. main llama con 10.</p>
  *
  * @author Agustin. A. Marquez. Pina
  * @since 29/04/2026
@@ -17,8 +17,8 @@ package ev1.ut2_controlflujometodos.u04metodos.ejercicios.resueltos;
 public class E08_ConBucleFor_Resuelto {
     public static int sumarDel1AlN(int n) {
         int suma = 0;
-        for (int i = 1; i <= n; i++) {
-            suma += i;
+        for (int numero = 1; numero <= n; numero++) {
+            suma += numero;
         }
         return suma;
     }

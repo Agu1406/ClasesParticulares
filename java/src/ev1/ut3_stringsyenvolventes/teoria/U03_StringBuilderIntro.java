@@ -35,9 +35,9 @@ public class U03_StringBuilderIntro {
 
         // Contraste: += con String crea objetos intermedios en cada vuelta
         String conMas = "";
-        for (int i = 1; i <= 5; i++) {
-            conMas += i;
-            if (i < 5) {
+        for (int numero = 1; numero <= 5; numero++) {
+            conMas += numero;
+            if (numero < 5) {
                 conMas += ", ";
             }
         }
@@ -46,9 +46,9 @@ public class U03_StringBuilderIntro {
         // Preferible en bucles: un solo buffer mutable
         StringBuilder enBucle = new StringBuilder();
         enBucle.append("Numeros: ");
-        for (int i = 1; i <= 5; i++) {
-            enBucle.append(i);
-            if (i < 5) {
+        for (int numero = 1; numero <= 5; numero++) {
+            enBucle.append(numero);
+            if (numero < 5) {
                 enBucle.append(", ");
             }
         }

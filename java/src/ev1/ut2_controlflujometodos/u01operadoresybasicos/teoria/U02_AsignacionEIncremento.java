@@ -120,17 +120,17 @@ public class U02_AsignacionEIncremento {
         /*
         QUINTA PARTE - Contador y acumulador.
           CONTADOR:    cuenta cuantas veces ocurre algo     -> pares++
-          ACUMULADOR:  va sumando valores                   -> suma += k
+          ACUMULADOR:  va sumando valores                   -> suma += numero
         */
         System.out.println("--- QUINTA PARTE: Contador y acumulador ---");
         System.out.println();
 
         int pares = 0;
         int sumaPares = 0;
-        for (int k = 1; k <= 10; k++) {
-            if (k % 2 == 0) {
+        for (int numero = 1; numero <= 10; numero++) {
+            if (numero % 2 == 0) {
                 pares++;
-                sumaPares += k;
+                sumaPares += numero;
             }
         }
         System.out.println("Entre 1 y 10 hay " + pares + " pares y suman " + sumaPares);
@@ -144,8 +144,8 @@ public class U02_AsignacionEIncremento {
         System.out.println("(game over)");
 
         int suma = 0;
-        for (int k = 1; k <= 5; k++) {
-            suma += k;
+        for (int numero = 1; numero <= 5; numero++) {
+            suma += numero;
         }
         System.out.println("Suma del 1 al 5: " + suma);
         System.out.println();

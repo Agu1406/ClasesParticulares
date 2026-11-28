@@ -16,11 +16,11 @@ package ev1.ut2_controlflujometodos.u05repaso.ejercicios.resueltos;
 
 public class E29_ForConIfElseMultiplo_Resuelto {
     public static void main(String[] args) {
-        for (int i = 1; i <= 40; i++) {
-            if (i % 4 == 0) {
-                System.out.println(i + " multiplo de 4");
+        for (int numero = 1; numero <= 40; numero++) {
+            if (numero % 4 == 0) {
+                System.out.println(numero + " multiplo de 4");
             } else {
-                System.out.println(i + " no es multiplo de 4");
+                System.out.println(numero + " no es multiplo de 4");
             }
         }
     }

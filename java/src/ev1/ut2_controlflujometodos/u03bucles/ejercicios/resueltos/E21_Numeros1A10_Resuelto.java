@@ -5,7 +5,7 @@ package ev1.ut2_controlflujometodos.u03bucles.ejercicios.resueltos;
  *
  * <br>
  *
- * <p><b>SOLUCIÓN:</b> El cuerpo se ejecuta y despues se comprueba i &lt;= 10.</p>
+ * <p><b>SOLUCIÓN:</b> El cuerpo se ejecuta y despues se comprueba numero &lt;= 10.</p>
  *
  * @author Agustin. A. Marquez. Pina
  * @since 29/04/2026
@@ -16,10 +16,10 @@ package ev1.ut2_controlflujometodos.u03bucles.ejercicios.resueltos;
 
 public class E21_Numeros1A10_Resuelto {
     public static void main(String[] args) {
-        int i = 1;
+        int numero = 1;
         do {
-            System.out.println(i);
-            i++;
-        } while (i <= 10);
+            System.out.println(numero);
+            numero++;
+        } while (numero <= 10);
     }
 }

@@ -23,8 +23,8 @@ public class E11_ContarCaracteres_Resuelto {
         int caracteresSinEspacios = textoSinEspacios.length();
         System.out.println("Caracteres sin espacios: " + caracteresSinEspacios);
         int cantidadEspacios = 0;
-        for (int i = 0; i < texto.length(); i++) {
-            if (texto.charAt(i) == ' ') {
+        for (int posicion = 0; posicion < texto.length(); posicion++) {
+            if (texto.charAt(posicion) == ' ') {
                 cantidadEspacios++;
             }
         }
@@ -32,8 +32,8 @@ public class E11_ContarCaracteres_Resuelto {
         System.out.println("Caracteres sin espacios (forma 2): " + caracteresSinEspacios2);
         System.out.println("Cantidad de espacios encontrados: " + cantidadEspacios);
         int contador = 0;
-        for (int i = 0; i < texto.length(); i++) {
-            if (texto.charAt(i) != ' ') {
+        for (int posicion = 0; posicion < texto.length(); posicion++) {
+            if (texto.charAt(posicion) != ' ') {
                 contador++;
             }
         }

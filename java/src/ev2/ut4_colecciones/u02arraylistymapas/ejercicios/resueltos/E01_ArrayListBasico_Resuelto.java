@@ -25,8 +25,8 @@ public class E01_ArrayListBasico_Resuelto {
         numeros.add(2);
 
         System.out.println("Valores de la lista:");
-        for (int i = 0; i < numeros.size(); i++) {
-            System.out.println("Posicion " + i + ": " + numeros.get(i));
+        for (int posicion = 0; posicion < numeros.size(); posicion++) {
+            System.out.println("Posicion " + posicion + ": " + numeros.get(posicion));
         }
     }
 }

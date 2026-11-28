@@ -34,10 +34,10 @@ public class U03_BucleWhileIntro {
 
     public static void main(String[] args) {
         System.out.println("--- while: del 1 al 5 ---");
-        int i = 1;
-        while (i <= 5) {
-            System.out.println(i);
-            i++;
+        int numero = 1;
+        while (numero <= 5) {
+            System.out.println(numero);
+            numero++;
         }
 
         System.out.println("--- while: suma acumulada 1+2+3+4+5 ---");

@@ -5,7 +5,7 @@ package ev1.ut2_controlflujometodos.u03bucles.ejercicios.resueltos;
  *
  * <br>
  *
- * <p><b>SOLUCIÓN:</b> Se multiplica el acumulador por i desde 1 hasta 5. El resultado es 120.</p>
+ * <p><b>SOLUCIÓN:</b> Se multiplica el acumulador por numero desde 1 hasta 5. El resultado es 120.</p>
  *
  * @author Agustin. A. Marquez. Pina
  * @since 29/04/2026
@@ -16,12 +16,12 @@ package ev1.ut2_controlflujometodos.u03bucles.ejercicios.resueltos;
 
 public class E28_FactorialDe5_Resuelto {
     public static void main(String[] args) {
-        int i = 1;
+        int numero = 1;
         int factorial = 1;
         do {
-            factorial *= i;
-            i++;
-        } while (i <= 5);
+            factorial *= numero;
+            numero++;
+        } while (numero <= 5);
         System.out.println("Factorial: " + factorial);
     }
 }

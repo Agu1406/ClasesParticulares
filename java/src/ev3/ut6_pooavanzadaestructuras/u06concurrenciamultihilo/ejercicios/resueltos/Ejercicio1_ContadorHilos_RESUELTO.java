@@ -10,7 +10,7 @@ public class Ejercicio1_ContadorHilos_RESUELTO {
 
     public static void main(String[] args) throws InterruptedException {
         Runnable tarea = () -> {
-            for (int i = 0; i < 1000; i++) {
+            for (int numero = 0; numero < 1000; numero++) {
                 synchronized (lock) {
                     contador++;
                 }

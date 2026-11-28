@@ -36,8 +36,8 @@ public class Done {
                     int n = teclado.nextInt();
                     if (n > 0) {
                         int suma = 0;
-                        for (int i = 1; i <= n; i++) {
-                            System.out.print("Entero " + i + " => ");
+                        for (int numero = 1; numero <= n; numero++) {
+                            System.out.print("Entero " + numero + " => ");
                             suma = suma + teclado.nextInt();
                         }
                         System.out.println("Suma = " + suma);
@@ -48,16 +48,16 @@ public class Done {
                 case 2:
                     System.out.print("Tabla del => ");
                     int t = teclado.nextInt();
-                    for (int i = 1; i <= 10; i++) {
-                        System.out.println(t + " x " + i + " = " + (t * i));
+                    for (int numero = 1; numero <= 10; numero++) {
+                        System.out.println(t + " x " + numero + " = " + (t * numero));
                     }
                     break;
                 case 3:
                     System.out.print("¿Cuántos números? => ");
                     int k = teclado.nextInt();
                     if (k > 0) {
-                        for (int i = 1; i <= k; i++) {
-                            System.out.print("Número " + i + " => ");
+                        for (int numero = 1; numero <= k; numero++) {
+                            System.out.print("Número " + numero + " => ");
                             int num = teclado.nextInt();
                             if (num % 2 == 0) {
                                 System.out.println(num + " es par.");

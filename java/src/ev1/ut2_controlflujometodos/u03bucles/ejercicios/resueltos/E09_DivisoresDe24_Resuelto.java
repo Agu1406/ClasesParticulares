@@ -5,7 +5,7 @@ package ev1.ut2_controlflujometodos.u03bucles.ejercicios.resueltos;
  *
  * <br>
  *
- * <p><b>SOLUCIÓN:</b> Si 24 % i es 0, i es divisor.</p>
+ * <p><b>SOLUCIÓN:</b> Si 24 % numero es 0, numero es divisor.</p>
  *
  * @author Agustin. A. Marquez. Pina
  * @since 29/04/2026
@@ -17,9 +17,9 @@ package ev1.ut2_controlflujometodos.u03bucles.ejercicios.resueltos;
 public class E09_DivisoresDe24_Resuelto {
     public static void main(String[] args) {
         int numero = 24;
-        for (int i = 1; i <= numero; i++) {
-            if (numero % i == 0) {
-                System.out.println(i);
+        for (int numero = 1; numero <= numero; numero++) {
+            if (numero % numero == 0) {
+                System.out.println(numero);
             }
         }
     }

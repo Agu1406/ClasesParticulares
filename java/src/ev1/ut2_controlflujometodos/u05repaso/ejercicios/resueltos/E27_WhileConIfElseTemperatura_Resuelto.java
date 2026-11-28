@@ -17,14 +17,14 @@ package ev1.ut2_controlflujometodos.u05repaso.ejercicios.resueltos;
 public class E27_WhileConIfElseTemperatura_Resuelto {
     public static void main(String[] args) {
         int[] temps = {2, 15, 28, 5, 31};
-        int i = 0;
-        while (i < temps.length) {
-            if (temps[i] < 15) {
-                System.out.println(temps[i] + " grados frio");
+        int posicion = 0;
+        while (posicion < temps.length) {
+            if (temps[posicion] < 15) {
+                System.out.println(temps[posicion] + " grados frio");
             } else {
-                System.out.println(temps[i] + " grados calor");
+                System.out.println(temps[posicion] + " grados calor");
             }
-            i++;
+            posicion++;
         }
     }
 }

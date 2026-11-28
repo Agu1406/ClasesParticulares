@@ -31,8 +31,8 @@ public class U03_ArraysLiteralesYLength {
          * Recorrido habitual con for: de 0 hasta length - 1.
          */
         System.out.print("Contenido de notas: ");
-        for (int i = 0; i < notas.length; i++) {
-            System.out.print(notas[i] + " ");
+        for (int posicion = 0; posicion < notas.length; posicion++) {
+            System.out.print(notas[posicion] + " ");
         }
         System.out.println();
     }

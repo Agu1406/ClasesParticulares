@@ -5,7 +5,7 @@ package ev1.ut2_controlflujometodos.u03bucles.ejercicios.resueltos;
  *
  * <br>
  *
- * <p><b>SOLUCIÓN:</b> Un acumulador suma i en cada vuelta. El total es 5050.</p>
+ * <p><b>SOLUCIÓN:</b> Un acumulador suma numero en cada vuelta. El total es 5050.</p>
  *
  * @author Agustin. A. Marquez. Pina
  * @since 29/04/2026
@@ -17,8 +17,8 @@ package ev1.ut2_controlflujometodos.u03bucles.ejercicios.resueltos;
 public class E04_Suma1A100_Resuelto {
     public static void main(String[] args) {
         int suma = 0;
-        for (int i = 1; i <= 100; i++) {
-            suma += i;
+        for (int numero = 1; numero <= 100; numero++) {
+            suma += numero;
         }
         System.out.println("Suma: " + suma);
     }

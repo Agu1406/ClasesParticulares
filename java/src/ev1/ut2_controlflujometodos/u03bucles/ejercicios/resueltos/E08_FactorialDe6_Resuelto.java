@@ -5,7 +5,7 @@ package ev1.ut2_controlflujometodos.u03bucles.ejercicios.resueltos;
  *
  * <br>
  *
- * <p><b>SOLUCIÓN:</b> Se multiplica el acumulador por i desde 1 hasta 6. El resultado es 720.</p>
+ * <p><b>SOLUCIÓN:</b> Se multiplica el acumulador por numero desde 1 hasta 6. El resultado es 720.</p>
  *
  * @author Agustin. A. Marquez. Pina
  * @since 29/04/2026
@@ -17,8 +17,8 @@ package ev1.ut2_controlflujometodos.u03bucles.ejercicios.resueltos;
 public class E08_FactorialDe6_Resuelto {
     public static void main(String[] args) {
         int factorial = 1;
-        for (int i = 1; i <= 6; i++) {
-            factorial *= i;
+        for (int numero = 1; numero <= 6; numero++) {
+            factorial *= numero;
         }
         System.out.println("Factorial: " + factorial);
     }

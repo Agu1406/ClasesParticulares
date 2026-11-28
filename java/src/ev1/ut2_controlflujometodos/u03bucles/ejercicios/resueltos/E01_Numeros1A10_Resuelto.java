@@ -5,7 +5,7 @@ package ev1.ut2_controlflujometodos.u03bucles.ejercicios.resueltos;
  *
  * <br>
  *
- * <p><b>SOLUCIÓN:</b> El contador va de 1 a 10 y cada vuelta imprime i.</p>
+ * <p><b>SOLUCIÓN:</b> El contador va de 1 a 10 y cada vuelta imprime numero.</p>
  *
  * @author Agustin. A. Marquez. Pina
  * @since 29/04/2026
@@ -16,8 +16,8 @@ package ev1.ut2_controlflujometodos.u03bucles.ejercicios.resueltos;
 
 public class E01_Numeros1A10_Resuelto {
     public static void main(String[] args) {
-        for (int i = 1; i <= 10; i++) {
-            System.out.println(i);
+        for (int numero = 1; numero <= 10; numero++) {
+            System.out.println(numero);
         }
     }
 }

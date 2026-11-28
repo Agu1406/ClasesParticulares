@@ -1,11 +1,11 @@
 package ev1.ut2_controlflujometodos.u03bucles.ejercicios.resueltos;
 
 /**
- * <p><b>OBJETIVO:</b> Usa un for para mostrar el cuadrado de cada numero del 1 al 10, con el formato i^2 = resultado.</p>
+ * <p><b>OBJETIVO:</b> Usa un for para mostrar el cuadrado de cada numero del 1 al 10, con el formato numero^2 = resultado.</p>
  *
  * <br>
  *
- * <p><b>SOLUCIÓN:</b> Cada vuelta imprime i * i.</p>
+ * <p><b>SOLUCIÓN:</b> Cada vuelta imprime numero * numero.</p>
  *
  * @author Agustin. A. Marquez. Pina
  * @since 29/04/2026
@@ -16,8 +16,8 @@ package ev1.ut2_controlflujometodos.u03bucles.ejercicios.resueltos;
 
 public class E06_Cuadrados1A10_Resuelto {
     public static void main(String[] args) {
-        for (int i = 1; i <= 10; i++) {
-            System.out.println(i + "^2 = " + (i * i));
+        for (int numero = 1; numero <= 10; numero++) {
+            System.out.println(numero + "^2 = " + (numero * numero));
         }
     }
 }

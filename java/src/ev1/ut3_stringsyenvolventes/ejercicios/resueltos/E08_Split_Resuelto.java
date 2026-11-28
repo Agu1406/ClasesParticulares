@@ -19,8 +19,8 @@ public class E08_Split_Resuelto {
         System.out.println("Texto original: " + textoConEspacios);
         String[] palabras = textoConEspacios.split(" ");
         System.out.println("Palabras separadas:");
-        for (int i = 0; i < palabras.length; i++) {
-            System.out.println("  Palabra " + (i + 1) + ": " + palabras[i]);
+        for (int posicion = 0; posicion < palabras.length; posicion++) {
+            System.out.println("  Palabra " + (posicion + 1) + ": " + palabras[posicion]);
         }
         String textoConComas = "Manzana,Platano,Naranja,Uva";
         System.out.println("\nTexto con comas: " + textoConComas);

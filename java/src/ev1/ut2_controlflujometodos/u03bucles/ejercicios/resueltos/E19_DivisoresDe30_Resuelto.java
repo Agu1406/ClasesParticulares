@@ -5,7 +5,7 @@ package ev1.ut2_controlflujometodos.u03bucles.ejercicios.resueltos;
  *
  * <br>
  *
- * <p><b>SOLUCIÓN:</b> i va de 1 a 30. Si 30 % i es 0, i es divisor.</p>
+ * <p><b>SOLUCIÓN:</b> numero va de 1 a 30. Si 30 % numero es 0, numero es divisor.</p>
  *
  * @author Agustin. A. Marquez. Pina
  * @since 29/04/2026
@@ -17,12 +17,12 @@ package ev1.ut2_controlflujometodos.u03bucles.ejercicios.resueltos;
 public class E19_DivisoresDe30_Resuelto {
     public static void main(String[] args) {
         int numero = 30;
-        int i = 1;
-        while (i <= numero) {
-            if (numero % i == 0) {
-                System.out.println(i);
+        int numero = 1;
+        while (numero <= numero) {
+            if (numero % numero == 0) {
+                System.out.println(numero);
             }
-            i++;
+            numero++;
         }
     }
 }

@@ -236,16 +236,16 @@ public class U10_RepasoIntro {
      * U2A4 / U2A5: while, do-while y for.
      */
     public static void repasoTresBucles() {
-        int i;
+        int posicion;
         int n;
 
         System.out.println("--- 5. Tres bucles ---");
 
         System.out.print("while (0..2): ");
-        i = 0;
-        while (i < 3) {
-            System.out.print(i + " ");
-            i++;
+        posicion = 0;
+        while (posicion < 3) {
+            System.out.print(posicion + " ");
+            posicion++;
         }
         System.out.println("| TRUCO: 0 veces si la condicion ya es falsa.");
 
@@ -258,8 +258,8 @@ public class U10_RepasoIntro {
         System.out.println("| TRUCO: siempre 1 vez; ideal para menus.");
 
         System.out.print("for (indice): ");
-        for (i = 0; i < 3; i++) {
-            System.out.print(i + " ");
+        for (posicion = 0; posicion < 3; posicion++) {
+            System.out.print(posicion + " ");
         }
         System.out.println("| TRUCO: init + condicion + paso en una linea.");
     }
@@ -268,24 +268,24 @@ public class U10_RepasoIntro {
      * U2A5: break vs continue.
      */
     public static void repasoBreakContinue() {
-        int i;
+        int posicion;
 
         System.out.println("--- 6. Break y continue ---");
         System.out.print("continue (salta el 2): ");
-        for (i = 0; i < 5; i++) {
-            if (i == 2) {
+        for (posicion = 0; posicion < 5; posicion++) {
+            if (posicion == 2) {
                 continue;
             }
-            System.out.print(i + " ");
+            System.out.print(posicion + " ");
         }
         System.out.println();
 
         System.out.print("break (para en el 2): ");
-        for (i = 0; i < 5; i++) {
-            if (i == 2) {
+        for (posicion = 0; posicion < 5; posicion++) {
+            if (posicion == 2) {
                 break;
             }
-            System.out.print(i + " ");
+            System.out.print(posicion + " ");
         }
         System.out.println();
         System.out.println("TRUCO: continue = saltar esta vuelta; break = salir del bucle.");
@@ -403,31 +403,31 @@ public class U10_RepasoIntro {
         int heladas;
         int diaFrio;
         int minimo;
-        int i;
+        int posicion;
 
         System.out.println("--- 11. Arrays heladas ---");
         temps = new int[] {2, -1, 0, -3};
         desvio = 1;
         System.out.println("length -> " + temps.length);
 
-        for (i = 0; i < temps.length; i++) {
-            temps[i] = temps[i] - desvio;
+        for (posicion = 0; posicion < temps.length; posicion++) {
+            temps[posicion] = temps[posicion] - desvio;
         }
         System.out.println("Tras calibrar: " + Arrays.toString(temps));
 
         heladas = 0;
-        for (i = 0; i < temps.length; i++) {
-            if (temps[i] < 0) {
+        for (posicion = 0; posicion < temps.length; posicion++) {
+            if (temps[posicion] < 0) {
                 heladas++;
             }
         }
 
         minimo = temps[0];
         diaFrio = 1;
-        for (i = 1; i < temps.length; i++) {
-            if (temps[i] < minimo) {
-                minimo = temps[i];
-                diaFrio = i + 1;
+        for (posicion = 1; posicion < temps.length; posicion++) {
+            if (temps[posicion] < minimo) {
+                minimo = temps[posicion];
+                diaFrio = posicion + 1;
             }
         }
 

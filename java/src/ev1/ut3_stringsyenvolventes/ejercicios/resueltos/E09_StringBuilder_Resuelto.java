@@ -24,9 +24,9 @@ public class E09_StringBuilder_Resuelto {
         System.out.println("Resultado: " + resultado);
         StringBuilder sb2 = new StringBuilder();
         sb2.append("Numeros: ");
-        for (int i = 1; i <= 5; i++) {
-            sb2.append(i);
-            if (i < 5) {
+        for (int numero = 1; numero <= 5; numero++) {
+            sb2.append(numero);
+            if (numero < 5) {
                 sb2.append(", ");
             }
         }

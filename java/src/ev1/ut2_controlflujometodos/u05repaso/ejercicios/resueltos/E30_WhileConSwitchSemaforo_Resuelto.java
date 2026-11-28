@@ -17,15 +17,15 @@ package ev1.ut2_controlflujometodos.u05repaso.ejercicios.resueltos;
 public class E30_WhileConSwitchSemaforo_Resuelto {
     public static void main(String[] args) {
         String[] colores = {"rojo", "amarillo", "verde", "rojo"};
-        int i = 0;
-        while (i < colores.length) {
-            switch (colores[i]) {
+        int numero = 0;
+        while (numero < colores.length) {
+            switch (colores[numero]) {
                 case "rojo" -> System.out.println("Detenerse");
                 case "amarillo" -> System.out.println("Precaucion");
                 case "verde" -> System.out.println("Avanzar");
                 default -> System.out.println("Color desconocido");
             }
-            i++;
+            numero++;
         }
     }
 }

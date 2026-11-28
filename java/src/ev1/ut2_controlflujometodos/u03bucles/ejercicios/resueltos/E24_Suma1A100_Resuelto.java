@@ -5,7 +5,7 @@ package ev1.ut2_controlflujometodos.u03bucles.ejercicios.resueltos;
  *
  * <br>
  *
- * <p><b>SOLUCIÓN:</b> Se suma i y luego i avanza. La condicion se mira al final. El total es 5050.</p>
+ * <p><b>SOLUCIÓN:</b> Se suma numero y luego numero avanza. La condicion se mira al final. El total es 5050.</p>
  *
  * @author Agustin. A. Marquez. Pina
  * @since 29/04/2026
@@ -16,12 +16,12 @@ package ev1.ut2_controlflujometodos.u03bucles.ejercicios.resueltos;
 
 public class E24_Suma1A100_Resuelto {
     public static void main(String[] args) {
-        int i = 1;
+        int numero = 1;
         int suma = 0;
         do {
-            suma += i;
-            i++;
-        } while (i <= 100);
+            suma += numero;
+            numero++;
+        } while (numero <= 100);
         System.out.println("Suma: " + suma);
     }
 }

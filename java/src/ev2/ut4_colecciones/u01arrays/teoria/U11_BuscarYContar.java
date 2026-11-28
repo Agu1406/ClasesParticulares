@@ -17,16 +17,16 @@ public class U11_BuscarYContar {
         int buscado;
         int primera;
         int cuenta;
-        int i;
+        int posicion;
 
         buscado = 3;
         primera = -1;
         cuenta = 0;
 
-        for (i = 0; i < datos.length; i++) {
-            if (datos[i] == buscado) {
+        for (posicion = 0; posicion < datos.length; posicion++) {
+            if (datos[posicion] == buscado) {
                 if (primera < 0) {
-                    primera = i;
+                    primera = posicion;
                 }
                 cuenta++;
             }

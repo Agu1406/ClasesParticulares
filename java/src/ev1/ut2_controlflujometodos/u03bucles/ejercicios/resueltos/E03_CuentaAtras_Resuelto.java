@@ -16,8 +16,8 @@ package ev1.ut2_controlflujometodos.u03bucles.ejercicios.resueltos;
 
 public class E03_CuentaAtras_Resuelto {
     public static void main(String[] args) {
-        for (int i = 10; i >= 1; i--) {
-            System.out.println(i);
+        for (int numero = 10; numero >= 1; numero--) {
+            System.out.println(numero);
         }
     }
 }

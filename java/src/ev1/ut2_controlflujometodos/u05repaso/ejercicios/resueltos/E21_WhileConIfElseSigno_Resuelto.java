@@ -17,16 +17,16 @@ package ev1.ut2_controlflujometodos.u05repaso.ejercicios.resueltos;
 public class E21_WhileConIfElseSigno_Resuelto {
     public static void main(String[] args) {
         int[] nums = {4, -2, 0, 7, -5};
-        int i = 0;
-        while (i < nums.length) {
-            if (nums[i] > 0) {
-                System.out.println(nums[i] + " positivo");
-            } else if (nums[i] < 0) {
-                System.out.println(nums[i] + " negativo");
+        int numero = 0;
+        while (numero < nums.length) {
+            if (nums[numero] > 0) {
+                System.out.println(nums[numero] + " positivo");
+            } else if (nums[numero] < 0) {
+                System.out.println(nums[numero] + " negativo");
             } else {
                 System.out.println("cero");
             }
-            i++;
+            numero++;
         }
     }
 }

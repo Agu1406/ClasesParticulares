@@ -1,11 +1,11 @@
 package ev1.ut2_controlflujometodos.u03bucles.ejercicios.resueltos;
 
 /**
- * <p><b>OBJETIVO:</b> Usa un for para mostrar la tabla de multiplicar del 7, del 1 al 10, con el formato 7 x i = resultado.</p>
+ * <p><b>OBJETIVO:</b> Usa un for para mostrar la tabla de multiplicar del 7, del 1 al 10, con el formato 7 x numero = resultado.</p>
  *
  * <br>
  *
- * <p><b>SOLUCIÓN:</b> Cada vuelta imprime 7 * i.</p>
+ * <p><b>SOLUCIÓN:</b> Cada vuelta imprime 7 * numero.</p>
  *
  * @author Agustin. A. Marquez. Pina
  * @since 29/04/2026
@@ -16,8 +16,8 @@ package ev1.ut2_controlflujometodos.u03bucles.ejercicios.resueltos;
 
 public class E05_TablaDel7_Resuelto {
     public static void main(String[] args) {
-        for (int i = 1; i <= 10; i++) {
-            System.out.println("7 x " + i + " = " + (7 * i));
+        for (int numero = 1; numero <= 10; numero++) {
+            System.out.println("7 x " + numero + " = " + (7 * numero));
         }
     }
 }

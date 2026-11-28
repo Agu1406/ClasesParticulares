@@ -8,9 +8,9 @@ package ev1.ut2_controlflujometodos.u03bucles.teoria;
  *
  * <p>El {@code for} agrupa en una sola linea:</p>
  * <ul>
- *   <li><b>Inicializacion</b> - suele declarar el contador (ej. {@code int i = 0}).</li>
+ *   <li><b>Inicializacion</b> - suele declarar el contador (ej. {@code int numero = 0}).</li>
  *   <li><b>Condicion</b> - se evalua antes de cada vuelta; si es falsa, el bucle termina.</li>
- *   <li><b>Actualizacion</b> - se ejecuta al final de cada vuelta (ej. {@code i++}).</li>
+ *   <li><b>Actualizacion</b> - se ejecuta al final de cada vuelta (ej. {@code numero++}).</li>
  * </ul>
  *
  * <p>Sintaxis:</p>
@@ -33,18 +33,18 @@ public class U02_BucleForIntro {
 
     public static void main(String[] args) {
         System.out.println("--- for: del 1 al 5 ---");
-        for (int i = 1; i <= 5; i++) {
-            System.out.println(i);
+        for (int numero = 1; numero <= 5; numero++) {
+            System.out.println(numero);
         }
 
         System.out.println("--- for: pares del 2 al 10 ---");
-        for (int i = 2; i <= 10; i += 2) {
-            System.out.println(i);
+        for (int numero = 2; numero <= 10; numero += 2) {
+            System.out.println(numero);
         }
 
         System.out.println("--- for: cuenta atras 5 a 1 ---");
-        for (int i = 5; i >= 1; i--) {
-            System.out.println(i);
+        for (int numero = 5; numero >= 1; numero--) {
+            System.out.println(numero);
         }
     }
 }

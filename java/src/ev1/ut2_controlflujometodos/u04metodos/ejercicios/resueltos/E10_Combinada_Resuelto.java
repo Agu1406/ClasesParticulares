@@ -18,8 +18,8 @@ public class E10_Combinada_Resuelto {
     public static String resumenNumero(int n) {
         String paridad = (n % 2 == 0) ? "par" : "impar";
         int suma = 0;
-        for (int i = 1; i <= n; i++) {
-            suma += i;
+        for (int numero = 1; numero <= n; numero++) {
+            suma += numero;
         }
         return "Numero " + n + ", " + paridad + ", suma 1..n = " + suma;
     }

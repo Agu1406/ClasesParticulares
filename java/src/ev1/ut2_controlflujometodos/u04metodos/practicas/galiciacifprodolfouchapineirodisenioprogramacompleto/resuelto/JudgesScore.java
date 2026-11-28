@@ -36,9 +36,9 @@ public class JudgesScore {
      */
     public static int firstMinIndex(int[] scores) {
         int index = 0;
-        for (int i = 1; i < scores.length; i++) {
-            if (scores[i] < scores[index]) {
-                index = i;
+        for (int posicion = 1; posicion < scores.length; posicion++) {
+            if (scores[posicion] < scores[index]) {
+                index = posicion;
             }
         }
         return index;
@@ -53,9 +53,9 @@ public class JudgesScore {
      */
     public static int lastMaxIndex(int[] scores) {
         int index = 0;
-        for (int i = 1; i < scores.length; i++) {
-            if (scores[i] >= scores[index]) {
-                index = i;
+        for (int posicion = 1; posicion < scores.length; posicion++) {
+            if (scores[posicion] >= scores[index]) {
+                index = posicion;
             }
         }
         return index;
@@ -73,9 +73,9 @@ public class JudgesScore {
         int low = firstMinIndex(scores);
         int high = lastMaxIndex(scores);
         int total = 0;
-        for (int i = 0; i < scores.length; i++) {
-            if (i != low && i != high) {
-                total += scores[i];
+        for (int posicion = 0; posicion < scores.length; posicion++) {
+            if (posicion != low && posicion != high) {
+                total += scores[posicion];
             }
         }
         return (double) total / (scores.length - 2);
@@ -119,9 +119,9 @@ public class JudgesScore {
      */
     public static int[] readScores(Scanner teclado, int judges) {
         int[] scores = new int[judges];
-        for (int i = 0; i < scores.length; i++) {
-            String prompt = "Nota del juez " + (i + 1) + ": ";
-            scores[i] = readInt(teclado, prompt, MIN_SCORE, MAX_SCORE);
+        for (int posicion = 0; posicion < scores.length; posicion++) {
+            String prompt = "Nota del juez " + (posicion + 1) + ": ";
+            scores[posicion] = readInt(teclado, prompt, MIN_SCORE, MAX_SCORE);
         }
         return scores;
     }
@@ -136,9 +136,9 @@ public class JudgesScore {
         int low = firstMinIndex(scores);
         int high = lastMaxIndex(scores);
         System.out.printf("%4s %4s%n", "Juez", "Nota");
-        for (int i = 0; i < scores.length; i++) {
-            System.out.printf("%4d %4d", i + 1, scores[i]);
-            if (i == low || i == high) {
+        for (int posicion = 0; posicion < scores.length; posicion++) {
+            System.out.printf("%4d %4d", posicion + 1, scores[posicion]);
+            if (posicion == low || posicion == high) {
                 System.out.print(" descartada");
             }
             System.out.println();
